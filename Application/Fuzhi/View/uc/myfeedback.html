@@ -1,0 +1,175 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+ 
+  <!--body-content--> 
+  <div class="body-content"> 
+   <!-- 用户中心左则菜单开始 --> 
+   	<div id="member-info">
+        <div class="base-info">
+            <a class="member-head" href="javascript:void(0);">
+                <img alt="" src="images/head.jpg" >
+                <b></b>
+            </a>
+        </div>
+         <p class="update-info">
+              <a href="javascript:openUpInfo('info');">更改资料</a><i>|</i>
+             <a href="javascript:openUpInfo('password');">修改密码 </a>
+             <!-- 
+             <a href="javascript:openUpInfo('bindmail');">绑定邮箱 </a><i>|</i>
+             <a href="javascript:openUpInfo('bindphone');">激活手机</a>
+              -->
+        </p>
+        <ul>
+            <li>
+                <a class="my-extend" href="javascript:void(0);">我的</a>
+                <ul>
+                	<!-- 
+                    <li>
+                        <a class="my-mode " href="/uc/mymode">我的模式</a>
+                    </li>
+                    <li>
+                        <a class="my-bookmark " href="/uc/bookmark">我的网址</a>
+                    </li>
+                     -->
+                     <li style="position:relative;">
+                            <span style="color:#fff;display:none" id="myfeedback" class="feedback"></span>
+                        <a class="my-bookmark " href="myfeedback.html" >我的反馈</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    
+    <div id="upUserInfo" class="body-content" style="width: 800px;height: 500px;display: none;">        
+	    <div class="page-position">
+	        <a href="javascript:showUpUserInfo('infomation')" id="infomation" class="infomation-cur" ></a>
+	        <a href="javascript:showUpUserInfo('safetycenter')" id="safetycenter" class="safetycenter"></a>
+<!-- 	        <a href="/updatemail" id="mailcenter" class="mailcenter"></a> -->
+<!-- 	        <a href="/updatephone" id="phonecenter" class="phonecenter"></a> -->
+	    </div>
+	    <div class="clear"></div>
+	    <!-- 修改个人信息 -->
+	    <div id="infomationHTML">
+	    	<form action="User/updateUserInfo.html" class="updateform" id="updateform" method="post" onsubmit="return false;">
+		        <ul class="member-box">
+		            <li>
+		                <label>姓名：</label>
+		                <input class="ui_input" name="realName" type="text" id="realname" maxlength="12" value="" datatype="s1-12" errormsg="昵称至少1个字符,最多12个字符！" />
+		            </li>
+		            <li>
+		                <label>性别：</label>
+		                <input type="radio" style="margin-left:25px;" name="gender" value="1"  />男
+		                <input type="radio" name="gender" value="2" />女
+		            </li>
+		            <li>
+		                <label>手机：</label>
+		               <input class="ui_input" name="mobliePhone" type="text" id="mobilephone" value="" datatype="m" errormsg="手机号码格式不对！"    />
+		            </li>
+		            <li>
+		                <label>邮箱：</label>
+		                <input class="ui_input" name="userEmail" type="text" id="email" value="" datatype="e"/>
+		            </li>
+		        </ul>
+		        <button type="submit" id="btnUpdate" style="width:200px; height:30px; margin-left:100px;">确认修改</button>
+		        <input type="hidden" name="ajaxhandler" value="save" />
+		    </form>
+	    </div>
+	    <!-- 修改密码 -->
+	    <div id="safetycenterHTML" style="display:none;">
+	    	<form action="User/updateUserInfo.html" class="" id="upPwForm" method="post" onsubmit="return false;">
+		        <ol class="member-box">
+		            <li>
+		                <label>当前密码：</label>
+		                <input class="ui_input" name="oldUserPwd" type="password" id="oldPassword" value="" datatype="*6-16" nullmsg="请设置密码！" errormsg="密码范围在6~16位之间！"/>
+		            </li>
+		            <li>
+		                <label style="margin-left:12px;">新密码：</label>
+		                <input class="ui_input" name="userPwd" type="password" id="userPwd" value="" datatype="*6-16" nullmsg="请设置密码！" errormsg="密码范围在6~16位之间！"/>
+		            </li>
+		            <li>
+		                <label>确认密码：</label>
+		                <input class="ui_input" name="userPwd2" type="password" id="userPwd2" value="" datatype="*"  recheck="userPwd" nullmsg="请再输入一次密码！" errormsg="您两次输入的账号密码不一致！"/>
+		            </li>
+		        </ol>
+		        <div class="button_content" >
+		            <button type="submit" id="btnUpdate" style="width:200px; height:30px; margin-left:100px;">确认修改</button>
+		            <input type="hidden" name="ajaxhandler" value="modifypass" />
+		        </div>
+		    </form>  
+	    </div>
+    </div>
+    
+ 
+   <!-- 用户中心左则菜单结束 --> 
+   <div id="member-active"> 
+    <div class="userCenter_right"> 
+     <h1>我的反馈</h1> 
+      <div id="feedback-html"></div>
+      <script id="feedback-tmpl" type="text/template">
+     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="userCenter_table"> 
+      <tbody> 
+       <tr class="firstBg"> 
+        <td height="45" align="center"><span class="bigFont">反馈内容</span></td> 
+        <td><span class="bigFont">作者</span></td> 
+        <td><span class="bigFont">时间</span></td> 
+       </tr>
+      
+      
+			{{ if(it.totalCount&&it.totalCount>0){ }}
+				{{ for (var i = 0, l = it.data.length; i < l; i++) { }}
+				{{ var replyContent=it.data[i].replyContent; }}
+				<tr class="trBg"> 
+        		<td><span class="li_contents">{{=it.data[i].fbContent}}
+					{{ if(replyContent){ }}
+						<span style="position: relative">
+                            <i class="returnTips" onclick="loadResult('{{=it.data[i].id}}');">已回复</i>
+						</span>
+					 {{ } }}
+					</span></td> 
+       			<td>{{=it.data[i].userName}}</td> 
+        		<td>{{=it.data[i].addTime}}</td> 
+       			</tr>
+				{{ if(replyContent){ }}
+				<tr style="display:none" id="tr_{{=it.data[i].id}}" flag="0">
+               		<td colspan="2">
+						<i class="jt01"></i>
+						<span class="returnCons">{{=it.data[i].replyContent}}</span></td>
+               		<td>{{=it.data[i].replyAddTime}}</td>
+         		</tr>
+				{{ } }} 
+			{{ } }} 
+       <tr> 
+        <td colspan="3" style="text-align:center;margin:0px"> 
+         	<div id="listPage" class="megas512"></div> 
+		</td> 
+       </tr> 
+      </tbody> 
+     </table> 
+		{{ } }}
+	   </script>
+    </div> 
+   </div> 
+  </div> 
+   
+  <script type="text/javascript" src="js/account.js" ></script>
+<script type="text/javascript">account.checkLogin();</script> 
+<script type="text/javascript" src="js/service.js" ></script>
+  	<script type="text/javascript" src="js/util/jquery.artDialog.min.js" ></script>
+    <script type="text/javascript" src="js/util/Validform/Validform_v5.3.2_min.js" ></script>
+    <script type="text/javascript" src="js/common.js" ></script>
+    <script type="text/javascript" src="js/uc/uc.js" ></script>
+  
+
+  <link href="js/util/page/pagination.css"  rel="stylesheet" />
+  <script type="text/javascript" src="js/util/page/jquery.pagination.js" ></script>
+  <script type="text/javascript" src="js/util/doT/doT.min.js" ></script>
+  <script type="text/javascript" src="js/uc/myFeedback.js" ></script>
+ </body>
+</html>

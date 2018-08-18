@@ -1,0 +1,77 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+
+<div class="clear"></div>
+				<input type="hidden" id="callFun" value="reloadData" />
+				<div id="history_data-html"></div>
+	      		<script id="history_data-tmpl" type="text/template">
+					<table class="lot-table">
+						<caption></caption>
+						<tr class="head">
+							<td style="width: 10%;">0</td>
+							<td style="width: 10%;">1</td>
+							<td style="width: 10%;">2</td>
+							<td style="width: 10%;">3</td>
+							<td style="width: 10%;">4</td>
+							<td style="width: 10%;">5</td>
+							<td style="width: 10%;">6</td>
+							<td style="width: 10%;">7</td>
+							<td style="width: 10%;">8</td>
+							<td style="width: 10%;">9</td>
+	
+						</tr>
+						<tr valign="top">
+							{{
+								for(var i=0;i<=9;i++){
+									var rowsData=it["num"+i];
+									var odd_even="even";
+									if(i%2!=0){
+										odd_even="odd";
+									}
+							}}
+							<td class="nums {{=odd_even}}"
+								style="padding-left: 1px; line-height: 28px;">
+								{{
+				        			for(var n=0;n<rowsData.length;n++){
+				        				if(n>45)
+				        					break;
+				        		}}
+				        			{{=rowsData[n]}}<br/>
+				        		{{
+				        			}
+				        		}}
+							</td>
+							{{
+								}
+							}}
+						</tr>
+					</table>
+				</script>
+	        <script type="text/javascript">
+			    function reloadData() {
+			        $.get("cqssc/getDataListByAll.do", {count: 100, t: Math.random() }, function (r) {
+			        	doTCompile("history_data", r);
+			        }, 'json');
+			    }
+			    
+			    reloadData();
+			</script>
+	    </div>
+</div>
+</block>

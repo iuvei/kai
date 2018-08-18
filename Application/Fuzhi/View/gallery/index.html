@@ -1,0 +1,47 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/cp_news_common.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<div class="lot-wrap">
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+					<input type="hidden" id="contentId" value="">
+					<div class="method-position"> 
+				      <a href="../" >首页</a> &gt;&gt;
+				      <span>网站公告</span> 
+				    </div>
+				    <div class="method-wrap"> 
+				      <div class="method-cont">
+					  <ul style="height: 168px;">
+                         <volist name="lists" id="data">
+            <li>
+                <a href="gallery/{$data.id}.html" target="_blank">{$data.title}</a>
+            </li>
+        </volist>
+		</ul>
+				       <div class="clear"></div> 
+				       <div style="margin: 20px 0px; ">
+                           <div id="listPage" class="megas512">{$_page}</div>
+                       </div>
+				      </div> 
+				      <div class="clear"></div> 
+				     </div>  
+				<!--  内容结束-->
+				<link href="js/util/page/pagination.css"  rel="stylesheet" />
+			    <script type="text/javascript" src="js/util/page/jquery.pagination.js" ></script>
+			    <script type="text/javascript" src="js/util/doT/doT.min.js" ></script>
+				<script type="text/javascript" src="js/page/channelJiqiao.js" ></script>
+				
+	    </div>
+	</div>
+		        </block>

@@ -1,0 +1,146 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+ 
+<!--body-content-->
+<div class="body-content">
+	<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+		<include file="Public/lottory_op"/>
+
+<div class="clear"></div>
+    <input type="hidden" value="getHistoryData|drawTrend" id="callFun" time="1000" />
+		
+		<div class="index-history">
+			<div class="title mt10">
+				<h2>
+					北京赛车pk10开奖记录</h2>
+				<a href="pk10/kaijiang.html" >查看全部>></a>
+			</div>
+			<table id="history" class="lot-table">
+				<tbody>
+					<tr class="head">
+						<td width="160">时间</td>
+						<td width="350">开奖号码</td>
+						<td colspan="3">冠亚军和</td>
+						<td colspan="5">1~5龍虎</td>
+					</tr>
+				</tbody>
+			</table>
+            <script type="text/javascript">
+                $(function () {
+                    getHistoryData(16);
+                });
+                function drawTrend() {
+                    $.get("pk10/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
+                        //data=[{"Key":"13","Value":"2"},{"Key":"14","Value":"2"},{"Key":"15","Value":"5"},{"Key":"16","Value":"3"},{"Key":"17","Value":"1"},{"Key":"18","Value":"6"},{"Key":"19","Value":"6"},{"Key":"20","Value":"5"},{"Key":"21","Value":"1"},{"Key":"22","Value":"9"},{"Key":"23","Value":"7"},{"Key":"24","Value":"7"},{"Key":"25","Value":"2"},{"Key":"26","Value":"9"},{"Key":"27","Value":"3"},{"Key":"28","Value":"6"},{"Key":"29","Value":"8"},{"Key":"30","Value":"5"},{"Key":"31","Value":"6"},{"Key":"32","Value":"5"},{"Key":"33","Value":"6"},{"Key":"34","Value":"6"},{"Key":"35","Value":"4"},{"Key":"36","Value":"6"},{"Key":"37","Value":"10"}];
+                        data=eval(data);
+                        showChartline("冠军走势图", data, function () { return '冠军'+this.x + '期 开出:' + this.y+"号" }, 0, 10, true, 0, "sContainer");
+                    }, "json");
+
+                }
+                drawTrend();
+                function Search() {
+                    $.get("pk10/kaijiang.do", function (result) {
+                        if(result&&result.rows&&result.rows.length>0){
+                            var j = 0;
+                            var html = '';
+                            for(var i in result.rows){
+                                var data = result.rows[i];
+                                var clsName = "even";
+                                if (j%2==0) {
+                                    clsName = "odd";
+                                }
+                                html += '<tr class="' + clsName + '"><td><p class="p">' + data.termNum + '</p><p class="t">'
+                                + data.lotteryTime.substring(5, 16);
+                                html += '</p></td><td class="nums">';
+                                html += '<i class="pk-no' + data.n1 + '"></i>';
+                                html += '<i class="pk-no' + data.n2 + '"></i>';
+                                html += '<i class="pk-no' + data.n3 + '"></i>';
+                                html += '<i class="pk-no' + data.n4 + '"></i>';
+                                html += '<i class="pk-no' + data.n5 + '"></i>';
+                                html += '<i class="pk-no' + data.n6 + '"></i>';
+                                html += '<i class="pk-no' + data.n7 + '"></i>';
+                                html += '<i class="pk-no' + data.n8 + '"></i>';
+                                html += '<i class="pk-no' + data.n9 + '"></i>';
+                                html += '<i class="pk-no' + data.n10 + '"></i>';
+                                var guanyahe = data.n1 + data.n2;
+                                html += '</td>';
+                                html += '<td>' + guanyahe + '</td>';
+                                var guanyahedx = '大';
+                                if(guanyahe<=11){
+                                    var guanyahedx = '小';
+                                }
+                                html += '<td><p ' + (guanyahedx == "大" ? 'class="r"' : '') + '>' + guanyahedx + '</p></td>';
+                                var guanyaheds = '单';
+                                if(guanyahe%2==0){
+                                    guanyaheds = '双';
+                                }
+                                html += '<td><p ' + (guanyaheds == "单" ? 'class="r"' : '') + '>' + guanyaheds + '</p></td>';
+                                var longhu = new Array();
+                                longhu[0] = (data.n1>data.n10)?"龍":"虎";
+                                longhu[1] = (data.n2>data.n9)?"龍":"虎";
+                                longhu[2] = (data.n3>data.n8)?"龍":"虎";
+                                longhu[3] = (data.n4>data.n7)?"龍":"虎";
+                                longhu[4] = (data.n5>data.n6)?"龍":"虎";
+                                for (var i = 0; i < longhu.length; i++) {
+                                    html += '<td><p ' + (longhu[i] == "龍" ? 'class="r"' : '') + '>' + longhu[i] + '</p></td>';
+                                }
+                                html += '</tr>';
+                                j++;
+                            }
+                            $("#history .head").after(html);
+                        }else{
+                            $("#history tr:gt(0)").remove();
+                        }
+                    }, "json");
+                }
+                //         function drawTrend() {
+                //             $.get("pk10/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
+                // //                 var data = eval(result);
+                //                 showChartline("冠军走势图", data, function () { return this.x + '期:' + this.y }, 0, 10, true, 0, "sContainer");
+                //             }, "json");
+                //         }
+            </script>
+		<div class="lot-article mt10">
+				<div class="l-title">
+					<h2>北京赛车pk10技巧</h2>
+					<a href="jiqiao/pk10/" >更多&gt;&gt;</a>
+				</div>
+				<div class="wrap">
+				
+       <ul>
+	   <li><a target="_blank" href="jiqiao/pk10/{$artical_first['id']}.html" >·{$artical_first['title']}</a></li>
+	   <volist name="lists" id="data">
+		<li><a target="_blank" href="jiqiao/pk10/{$data['id']}.html">·{$data.title}</a></li>
+		</volist>
+						</ul>
+		
+                   
+                 
+				</div>
+			</div>
+            <div class="lot-about mt10">
+                <div class="l-title">
+                    <h2>北京赛车pk10号码走势图</h2>
+                </div>
+                
+                    <div id="sContainer">
+				</div>
+               
+            </div>
+            
+        </div>
+		<div class="clear"></div>
+	</div>
+   </div>
+		</block>

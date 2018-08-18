@@ -1,0 +1,368 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+	<link href="css/qx66_jiqiao.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+    <link href="css/jiqiao.css" rel="stylesheet" />
+	<script src="js/jiqiaoqihao.js"  type="text/javascript"></script>
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			
+<div class="clear"></div> 
+				<!--  内容开始 -->
+					<input type="hidden" id="contentId" value="212">
+					<div class="method-position"> 
+				      <a href="" >首页</a> &gt;
+				      <a href="/jiqiao/{$lottory}/" >{$JiQiaotitle}</a> &gt;
+				      <span>{$info.title}</span>
+				    </div>
+					
+
+<div class="wrap" style="margin-top:-10px;margin-left: -2px;">
+	<div class="article_left">
+	
+	    <h1 class="title">{$info.title}</h1>
+	    <div class="info">
+
+	    <small>时间:</small>{$info.create_time|date='Y-m-d H:i',###} <small>来源:</small>本站 <small>作者:{$info.uid|get_username}</small>
+
+   <script language="javascript" type="text/javascript">hot(687);</script>
+	    </div>
+	    
+	    <div class="content">
+	    {$info.content}
+	    </div>
+	    <div class="bdsharebuttonbox bdshare-button-style1-24" data-bd-bind="1467300783891"><a href="#" class="bds_more" data-cmd="more"></a><a title="分享到QQ空间" href="#" class="bds_qzone" data-cmd="qzone"></a><a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a><a title="分享到微信" href="#" class="bds_weixin" data-cmd="weixin"></a><a title="分享到一键分享" href="#" class="bds_mshare" data-cmd="mshare"></a><a title="分享到QQ好友" href="#" class="bds_sqq" data-cmd="sqq"></a><a title="分享到百度贴吧" href="#" class="bds_tieba" data-cmd="tieba"></a><a title="分享到复制网址" href="#" class="bds_copy" data-cmd="copy"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","weixin","mshare","sqq","tieba","copy"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+<style>
+.article_left .related_articles { overflow:hidden;text-align:left;}
+.article_left .related_articles h3{ border-bottom:1px solid #ddd; height:25px; line-height:25px}
+.article_left .related_articles ul li { font-size:14px; margin-left:4px; height:35px; line-height:35px; overflow:hidden; border-bottom:1px dashed #ddd;background:url(../images/dian.gif) no-repeat left center;padding-left:10px;}
+.article_left .related_articles ul li span{ float:right; color:#999}
+
+</style>
+        <div class="related_articles">
+        <h3>相关文章</h3>
+        <ul>
+		<volist name="lists" id="data">
+                                    <li><span>{$data.create_time|date="Y-m-d",###}</span><a target="_blank" href="jiqiao/{$lottory}/{$data['id']}.html" >{$data.title}</a> </li>
+                            </volist>
+      
+        </ul>
+        </div>
+	</div>
+	<div class="article_right">
+	
+	<div class="sideMenu" style="margin:0 auto">
+			<h3 style="background:#f9f9f9;" class="on"><em></em>北京赛车开奖号码</h3>
+			<ul style="display: block;">
+			 <volist name="list_pk10" id="data">
+			 <li>
+                    <div class="openinfo"><span class="fl">第{$data.dat_expect}期</span> <span class="fr">
+					<?php 
+					echo date("H:i",$data["dat_open_time"]);
+                    $numarr = explode(",",$data["dat_codes"]);
+					?></span></div>
+                    <div class="opennumber">
+                    	<span><?=$numarr[0]?></span>
+                    	<span><?=$numarr[1]?></span>
+                    	<span><?=$numarr[2]?></span>
+                    	<span><?=$numarr[3]?></span>
+                    	<span><?=$numarr[4]?></span>
+                    	<span><?=$numarr[5]?></span>
+                    	<span><?=$numarr[6]?></span>
+                    	<span><?=$numarr[7]?></span>
+                    	<span><?=$numarr[8]?></span>
+                    	<span><?=$numarr[9]?></span>
+                    </div>
+                </li>
+            </volist> 
+
+			</ul>
+
+		<h3 style="background:#f9f9f9;" class="on"><em></em>極速赛车开奖号码</h3>
+		<ul style="display: block;">
+			<volist name="list_jssc" id="data">
+				<li>
+					<div class="openinfo"><span class="fl">第{$data.dat_expect}期</span> <span class="fr">
+					<?php
+					echo date("H:i",$data["dat_open_time"]);
+                    $numarr = explode(",",$data["dat_codes"]);
+					?></span></div>
+					<div class="opennumber">
+						<span><?=$numarr[0]?></span>
+						<span><?=$numarr[1]?></span>
+						<span><?=$numarr[2]?></span>
+						<span><?=$numarr[3]?></span>
+						<span><?=$numarr[4]?></span>
+						<span><?=$numarr[5]?></span>
+						<span><?=$numarr[6]?></span>
+						<span><?=$numarr[7]?></span>
+						<span><?=$numarr[8]?></span>
+						<span><?=$numarr[9]?></span>
+					</div>
+				</li>
+			</volist>
+
+		</ul>
+
+			<h3><em></em>重庆时时彩开奖号码</h3>
+			<ul>
+			<volist name="list_cqssc" id="data">
+				<li>
+                    <div class="openinfo"><span class="fl">第{$data.dat_expect}期</span> <span class="fr">
+					<?php 
+					echo date("H:i",$data["dat_open_time"]);
+                    $numarr = explode(",",$data["dat_codes"]);
+					?>
+					</span></div>
+                    <div class="opennumber">
+                    	<span><?=$numarr[0]?></span>
+                    	<span><?=$numarr[1]?></span>
+                    	<span><?=$numarr[2]?></span>
+                    	<span><?=$numarr[3]?></span>
+                    	<span><?=$numarr[4]?></span>
+                 
+                    </div>
+                </li>	
+ </volist> 
+ </ul>
+			<h3><em></em>广东快乐十分开奖号码</h3>
+			<ul>
+			<volist name="list_gdkl10" id="data">
+				<li>
+                    <div class="openinfo"><span class="fl">第{$data.dat_expect}期</span> <span class="fr">
+					<?php 
+					echo date("H:i",$data["dat_open_time"]);
+                    $numarr = explode(",",$data["dat_codes"]);
+					?>
+					</span></div>
+                    <div class="opennumber">
+                    	<span><?=$numarr[0]?></span>
+                    	<span><?=$numarr[1]?></span>
+                    	<span><?=$numarr[2]?></span>
+                    	<span><?=$numarr[3]?></span>
+                    	<span><?=$numarr[4]?></span>
+						<span><?=$numarr[5]?></span>
+                    	<span><?=$numarr[6]?></span>
+                    	<span><?=$numarr[7]?></span>
+                 
+                    </div>
+                </li>	
+ </volist> 
+ </ul>
+			<h3><em></em>幸运农场开奖号码</h3>
+			<ul>
+			<volist name="list_xync" id="data">
+				<li>
+                    <div class="openinfo"><span class="fl">第{$data.dat_expect}期</span> <span class="fr">
+					<?php 
+					echo date("H:i",$data["dat_open_time"]);
+                    $numarr = explode(",",$data["dat_codes"]);
+					?>
+					</span></div>
+                    <div class="opennumber">
+                    	<span><?=$numarr[0]?></span>
+                    	<span><?=$numarr[1]?></span>
+                    	<span><?=$numarr[2]?></span>
+                    	<span><?=$numarr[3]?></span>
+                    	<span><?=$numarr[4]?></span>
+						<span><?=$numarr[5]?></span>
+                    	<span><?=$numarr[6]?></span>
+                    	<span><?=$numarr[7]?></span>
+                 
+                    </div>
+                </li>	
+ </volist> 
+ </ul>
+			<h3><em></em>極速时时彩开奖号码</h3>
+			<ul>
+			<volist name="list_jsssc" id="data">
+				<li>
+                    <div class="openinfo"><span class="fl">第{$data.dat_expect}期</span> <span class="fr">
+					<?php 
+					echo date("H:i",$data["dat_open_time"]);
+                    $numarr = explode(",",$data["dat_codes"]);
+					?>
+					</span></div>
+                    <div class="opennumber">
+                    	<span><?=$numarr[0]?></span>
+                    	<span><?=$numarr[1]?></span>
+                    	<span><?=$numarr[2]?></span>
+                    	<span><?=$numarr[3]?></span>
+                    	<span><?=$numarr[4]?></span>
+                 
+                    </div>
+                </li>	
+ </volist> 
+ </ul>
+			<h3><em></em>天津时时彩开奖号码</h3>
+			<ul>
+			<volist name="list_tjssc" id="data">
+				<li>
+                    <div class="openinfo"><span class="fl">第{$data.dat_expect}期</span> <span class="fr">
+					<?php 
+					echo date("H:i",$data["dat_open_time"]);
+                    $numarr = explode(",",$data["dat_codes"]);
+					?>
+					</span></div>
+                    <div class="opennumber">
+                    	<span><?=$numarr[0]?></span>
+                    	<span><?=$numarr[1]?></span>
+                    	<span><?=$numarr[2]?></span>
+                    	<span><?=$numarr[3]?></span>
+                    	<span><?=$numarr[4]?></span>
+                    </div>
+                </li>	
+ </volist> 
+ </ul>
+
+ <h3><em></em>广东11选5开奖号码</h3>
+			<ul>
+			<volist name="list_gd11x5" id="data">
+				<li>
+                    <div class="openinfo"><span class="fl">第{$data.dat_expect}期</span> <span class="fr">
+					<?php 
+					echo date("H:i",$data["dat_open_time"]);
+                    $numarr = explode(",",$data["dat_codes"]);
+					?>
+					</span></div>
+                    <div class="opennumber">
+                    	<span><?=$numarr[0]?></span>
+                    	<span><?=$numarr[1]?></span>
+                    	<span><?=$numarr[2]?></span>
+                    	<span><?=$numarr[3]?></span>
+                    	<span><?=$numarr[4]?></span>
+                    </div>
+                </li>	
+ </volist> 
+ </ul>
+			<h3 style="border-bottom:none"><em></em>江苏快三开奖号码</h3>
+			<ul>
+			<volist name="list_jsk3" id="data">
+				<li>
+                    <div class="openinfo"><span class="fl">第{$data.dat_expect}期</span> <span class="fr">
+					<?php 
+					echo date("H:i",$data["dat_open_time"]);
+                    $numarr = explode(",",$data["dat_codes"]);
+					?>
+					</span></div>
+                    <div class="opennumber">
+                    	<span><?=$numarr[0]?></span>
+                    	<span><?=$numarr[1]?></span>
+                    	<span><?=$numarr[2]?></span>
+                 
+                    </div>
+                </li>	
+ </volist> 
+ </ul>
+
+		</div><!-- sideMenu End -->
+		
+		<script type="text/javascript">
+			var ary = location.href.split("&");
+			jQuery(".sideMenu").slide({titCell:"h3", targetCell:"ul",defaultIndex:2,effect:"slideDown",delayTime:300,returnDefault:true});
+		</script>
+<div class="video_list">
+    
+     <h3>视频开奖直播</h3>
+        <ul class="picList">
+          <li>
+            <div class="pic"><a href="/pk10/shipin" target="_blank"> <img src="/style/images/pk10v.jpg"></a></div>
+            
+            <div class="title"><b id="bpk10-time"></b>秒后直播</div>
+          </li>
+          <li>
+			<li>
+				<div class="pic"><a href="/jssc/shipin" target="_blank"> <img src="/style/images/pk10v.jpg"></a></div>
+
+				<div class="title"><b id="bjssc-time"></b>秒后直播</div>
+			</li>
+			<li>
+            <div class="pic"><a href="/cqssc/shipin" target="_blank"><img src="/style/images/cqsscv.jpg"></a> 
+            </div>
+            
+            <div class="title"><b id="bcqssc-time"></b>秒后直播</div>
+          </li>
+          <li>
+            <div class="pic"><a href="/gdkl10/shipin" target="_blank"><img src="/style/images/gdkl10v.jpg"></a>
+            </div>
+            
+            <div class="title"><b id="bgdkl10-time"></b>秒后直播</div>
+          </li>
+          <li>
+            <div class="pic"><a href="/xync/shipin" target="_blank"><img src="/style/images/xyncv.jpg"></a>
+            </div>
+            
+            <div class="title"><b id="bxync-time"></b>秒后直播</div>
+          </li>
+          <li>
+            <div class="pic"><a href="/jsssc/shipin" target="_blank"><img src="/style/images/xjsscv.jpg"></a>
+            </div>
+            
+            <div class="title"><b id="bjsssc-time"></b>秒后直播</div>
+          </li>
+          <li>
+            <div class="pic"><a href="/tjssc/shipin" target="_blank"><img src="/style/images/tjsscv.jpg"></a>
+            </div>
+            
+            <div class="title"><b id="btjssc-time"></b>秒后直播</div>
+          </li>
+          <li>
+            <div class="pic"><a href="/gd11x5/shipin" target="_blank"><img src="/style/images/gd11x5v.jpg"></a>
+            </div>
+            
+            <div class="title"><b id="bgd11x5-time"></b>秒后直播</div>
+          </li>
+          <li>
+            <div class="pic"><a href="/jsk3/shipin" target="_blank"><img src="/style/images/jsk3v.jpg"></a>
+            </div>
+            
+            <div class="title"><b id="bjsk3-time"></b>秒后直播</div>
+          </li>
+        </ul>
+  
+    </div>
+	
+	</div>
+</div>
+
+<script src="/js/jquery.SuperSlide.2.1.1.js"></script>
+
+
+	<script type="text/javascript">
+			var ary = location.href.split("&");
+			jQuery(".sideMenu").slide({titCell:"h3", targetCell:"ul",defaultIndex:2,effect:"slideDown",delayTime:300,returnDefault:true});
+		</script>
+
+
+<script src="/style/js/video_time.js" type="text/javascript" language="javascript"></script>					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				   
+				<script type="text/javascript" src="js/page/jiqiao.js" ></script>
+				<script type="text/javascript">
+					updateViewsDay(0);
+					getHotNews(15,6);
+				</script>
+	    </div>
+	</div>
+		        </block>

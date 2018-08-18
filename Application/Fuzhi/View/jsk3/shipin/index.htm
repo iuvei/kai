@@ -1,0 +1,60 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+<div class="clear"></div> 
+				<input type="hidden" id="callFun" value="Search" time="1000"/>
+				<!--  内容开始 -->
+				<div id="flashContent">
+					<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="980" height="600" id="jsk3" align="middle">
+						<param name="movie" value="Preloader.swf"  />
+						<param name="quality" value="high" />
+						<param name="bgcolor" value="#003300" />
+						<param name="play" value="true" />
+						<param name="loop" value="true" />
+						<param name="wmode" value="window" />
+						<param name="scale" value="showall" />
+						<param name="menu" value="true" />
+						<param name="devicefont" value="false" />
+						<param name="salign" value="" />
+						<param name="allowScriptAccess" value="sameDomain" />
+						<!--[if !IE]>-->
+						<object type="application/x-shockwave-flash" data="Preloader.swf"  width="980" height="600">
+							<param name="movie" value="Preloader.swf"  />
+							<param name="quality" value="high" />
+							<param name="play" value="true" />
+							<param name="loop" value="true" />
+							<param name="wmode" value="window" />
+							<param name="scale" value="showall" />
+							<param name="menu" value="true" />
+							<param name="devicefont" value="false" />
+							<param name="salign" value="" />
+							<param name="allowScriptAccess" value="sameDomain" />
+						<!--<![endif]-->
+                            <a href="http://www.adobe.com/go/getflash">
+                                <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获得 Adobe Flash Player" />
+                            </a>
+						<!--[if !IE]>-->
+						</object>
+						<!--<![endif]-->
+					</object>
+				</div>
+				
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

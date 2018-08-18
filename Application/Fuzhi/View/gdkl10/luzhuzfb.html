@@ -1,0 +1,131 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+			<div style="clear: left; width: 100%; float: left;">
+				<div style="margin-right: 10px;" class="show-bjl">
+					<script type="text/javascript"
+						src="js/My97DatePicker/WdatePicker.js" ></script>
+					选择日期: <input name="dateData" type="text" id="dateData"
+						class="Wdate" value='' onfocus="WdatePicker();"
+						readonly="readonly" /> <span
+						style="padding-left: 10px;"><a
+						style="margin: 0px;" href="javascript:SearchQianhouLuzhu();">查询</a></span>
+				</div>
+				<script type="text/javascript">
+					var vAjax = Boolean("");
+					function updatePickdate(dp) {
+						var selDate = $("#dateData").val();
+	
+						setPaiLu();
+	
+						if (true == vAjax) {
+							var unload = "0";
+							if (dp.cal.date.d == (new Date()).getDate()) {
+								unload = "0";
+							} else {
+								unload = "1";
+							}
+							//冠亚和 路珠选择时间 单独处理(加载局部视图)
+							LuzhuDate(selDate, unload);
+	
+						} else {
+							if (dp.cal.date.d == (new Date()).getDate()) {
+								SearchQianhouLuzhu();
+							} else {
+								SearchQianhouLuzhu();
+							}
+						}
+					}
+					function clearedDate() {
+						SearchQianhouLuzhu();
+					}
+					$(function() {
+						$("#dateData").val("");
+						SearchQianhouLuzhu();
+					})
+					function SearchQianhouLuzhu() {
+						var selDate = $("#dateData").val();
+						$.get('gdkl10/luZhuTongji.do', {
+							date : selDate,
+							type : 5
+						}, function(data) {
+							$("#lot_content").html(data);
+						});
+					}
+				</script>
+			</div>
+			<ul class="lot-number-omit mbottom10 clearleft">
+				<li id="ball-choose" class="ball">
+					<ul style="width: 880px; float: left;">
+						<li><span class="ckb"><b data-c="1"
+								class="checkbox checked"></b></span> <span class="ckb-txt"> <label>第一球</label></span>
+						</li>
+						<li><span class="ckb"><b data-c="2" class="checkbox"></b></span>
+							<span class="ckb-txt"> <label>第二球</label></span></li>
+						<li><span class="ckb"><b data-c="3" class="checkbox"></b></span>
+							<span class="ckb-txt"> <label>第三球</label></span></li>
+						<li><span class="ckb"><b data-c="4" class="checkbox"></b></span>
+							<span class="ckb-txt"> <label>第四球</label></span></li>
+						<li><span class="ckb"><b data-c="5" class="checkbox"></b></span>
+							<span class="ckb-txt"> <label>第五球</label></span></li>
+						<li><span class="ckb"><b data-c="6" class="checkbox"></b></span>
+							<span class="ckb-txt"> <label>第六球</label></span></li>
+						<li><span class="ckb"><b data-c="7" class="checkbox"></b></span>
+							<span class="ckb-txt"> <label>第七球</label></span></li>
+						<li><span class="ckb"><b data-c="8" class="checkbox"></b></span>
+							<span class="ckb-txt"> <label>第八球</label></span></li>
+						<li><span class="InstructionsForUse"> <span
+								class="InstructionsForUse_btn">使用说明 </span> <span
+								class="position"> <span class="content">
+								1.表格需从左向右浏览，右侧一列为最新结果；
+								<br>
+								2.当中断连续开出中、发或白时，则另起一列显示结果；
+								<br>
+								3.
+								<b>中</b>
+								：开出号码为01、02、03、04、05、06、07；
+								<b>發</b>
+								：开出号码为08、09、10、11、12、13、14；
+								<b>白</b>
+								：开出号码为15、16、17、18、19、20。 
+							</span>
+						</span></li>
+					</ul>
+					<ul style="float: right; width: 100px; text-align: right;">
+						<span style="border-bottom: 1px solid red; padding-bottom: 2px;"><a
+							class="all-ball" style="color: red" href="javascript:void(0);">全选</a></span>
+						<!--                 <span style="border-bottom: 1px solid black; padding-bottom: 2px;"><a class="clear-ball" href="javascript:void(0);">清空</a></span> -->
+					</ul>
+				</li>
+
+			</ul>
+			<div id='lot_content'>
+				<script type="text/javascript">
+ 				var lotteryId = 2;
+ 				lotteryLuzhu = "pk10luzhu_bgoe";
+			</script>
+				<div class="clear"></div>
+				<input type="hidden" id="pageName" value="luzhubigorsmall?date="
+					container="lot_content" unload="0" />
+			</div>
+			<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

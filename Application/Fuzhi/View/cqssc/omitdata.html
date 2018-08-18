@@ -1,0 +1,236 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+ 
+  <div class="body-content"> 
+   <div>
+  			<include file="Public/top_ad"/>
+
+<ul class="lot-menu">
+	<li><a href="pk10/"  game = "pk10">北京赛车pk10</a></li>
+	<li><a href=""  game = "cqssc">重庆时时彩</a></li>
+	<li><a href="gdkl10/"  game = "gdkl10">广东快乐十分</a></li>
+	<li><a href="kl8/"  game = "kl8">北京快乐8</a></li>
+	<li><a href="tjssc/"  game="tjssc">天津时时彩</a></li>
+	<li><a href="xync/"  game="xync">幸运农场</a></li>
+	<li><a href="jsk3/"  game="jsk3">江苏骰宝(快3)</a></li>
+<!-- 	<li><a href="/fc3d/" game="fc3d">福彩3d</a></li> -->
+	<li><a href="shssl/"  game="shssl" class="last">上海时时乐</a></li>
+<!-- 	<li><a href="/sdc/" game="sdc" class="last">圣地彩</a></li> -->
+</ul>
+<script type="text/javascript">
+	$('.lot-menu a').removeClass('cur');
+	$('[game="'+beforPageJs.gameName+'"]').addClass('cur');
+</script> 
+   <ul class="lot-award">
+    <li class="logo">
+        <img src="images/cqssc-logo.png"  alt="重庆时时彩"/>
+    </li>
+    <li class="currentAward">
+        <div class="title">
+            最新开奖：
+        </div>
+        <div class="period">
+            
+        </div>
+        <div class="period-info" >每日销售<span>120</span>期，今日剩余<span class="period-leave">--</span>期</div>
+        <div class="lot-nums">
+            <p>正在加载中……<p>
+        </div>
+    </li>
+    <li class="warnTime">
+        <div class="title">
+            <div id="period">&nbsp;</div>
+            <div>距离下期开奖剩余</div>
+        </div>
+        <div class="minute"></div>
+        <div class="t2">分</div>
+        <div class="second"></div>
+        <div class="t2">秒</div>
+         <div class="sound" id="countdown_sound" title="点击关闭提醒声音"></div>
+        <audio src="images/du.mp3"  id="duSound" style="display:none;"></audio>
+    </li>
+<!--     <li class="navi">
+        <ul>
+            <li>
+                <a href="" target="_blank">交流论坛</a>
+            </li>
+            <li>
+                <a href="/diaoyong/" target="_blank" style="color:Red">调用开奖结果</a>
+            </li>
+            <li class="newIcon_postion">
+                <a href="/cqssc/positiontrend.shtml" target="_blank">号码走势图</a>
+                <span class="wen_newIcon2"></span>
+            </li>
+            <li>
+                <a href="/exitData/exitData.html#gameId=1" target="_blank" class="down">下载历史记录</a>
+            </li>
+        </ul>
+    </li> -->
+</ul>
+<script type="text/javascript">    var lotteryLuzhu = "";</script>
+<script src="js/lot/lotcommon.js"  type="text/javascript"></script>
+<script src="js/lot/cqssc/award.js"  type="text/javascript"></script>
+<script src="js/lot/warntime.js"  type="text/javascript"></script>
+   <div class="lot-wrap">
+ <div class="feedbackDiv">以下数据功能由本站提供，使用过程中如有任何意见或建议请<a href="Common/feedback.html" target="_blank">及时反馈</a></div>
+			<div class="web_listOP">
+    <ul id="web_listOP_ul"><li><a href="cqssc/">重庆时时彩</a></li><li><a href="cqssc/kaijiang.html">历史开奖号码</a></li><li><a href="cqssc/luzhunumber.html">号码路珠</a></li><li><a href="cqssc/luzhulonghu.html">龙虎路珠</a></li><li><a href="cqssc/luzhubigorsmall.html">单双大小路珠</a></li><li><a href="cqssc/luzhutotal.html">总和路珠</a></li><li><a href="cqssc/ballstat.html">单双大小历史</a></li><li><a href="cqssc/numberstat.html">历史号码统计</a></li><li><a href="cqssc/zoushitu.html">横版走势图</a></li><li><a href="jiqiao/cqssc/">重庆时时彩技巧</a></li><li><a href="javascript:void(0);" class="redColor">开奖视频</a></li><li class="hover"><a href="cqssc/omitdata.html">遗漏大数据</a><span class="hoticon"></span> </li><li><a href="cqssc/twosidedstat.html">两面数据统计</a><span class="wen_newIcon"></span> </li></ul>
+</div>
+				<div class="clear"></div> 
+       <div>
+           <input type="hidden" time="10000" id="callFun" value="getLmcList" />
+           <div class="lot-search">
+               <div class="car-num">
+                   <ul style="margin-bottom: 20px;" class="lot-number-omit">
+                       <li style="padding-bottom: 2px;" class="ball">
+                           <ul style="width: 850px; _width: 840px; float: left; margin-left: 10px;" id="rankUl">
+                               <li> <a href="javascript:gotoPage(1)" id="rankLi1" class="cur"> 第一球 </a> | </li>
+                               <li> <a href="javascript:gotoPage(2)" id="rankLi2"> 第二球 </a> | </li>
+                               <li> <a href="javascript:gotoPage(3)" id="rankLi3"> 第三球 </a> | </li>
+                               <li> <a href="javascript:gotoPage(4)" id="rankLi4"> 第四球 </a> | </li>
+                               <li> <a href="javascript:gotoPage(5)" id="rankLi5"> 第五球 </a>   </li>
+                           </ul>
+                           <ul style="float: right; width: 120px; text-align: right;">
+                               <li> <select id="dateType" onchange="gotoPage('',this.value)"> <option value="1">最近一个月</option> <option value="3">最近三个月</option> <option value="6">最近半年</option> <option value="12">最近一年</option> </select> </li>
+                           </ul> </li>
+                   </ul>
+               </div>
+           </div>
+           <div class="explain_table">
+               连续遗漏：号码两面连续未出现的次数。如近20期冠军【单】连续5期未开出，则【单】的“连续遗漏”为5
+               <br /> 出现次数：指对应“连续遗漏”的出现次数。如近20期内第1-5、8-12期未开出【单】，则“连续遗漏-5”的出现次数为“2”
+               <br /> 通过分析“遗漏大数据”可分析历史遗漏峰值等
+               <br />
+               <span>想使用更丰富更快速的遗漏功能，请<a href="javascript:void(0)" style="color:red;text-decoration: underline;">点此免费下载</a>【遗漏分析软件】</span>
+           </div>
+           <div class="clear"></div>
+           <div style="margin-bottom:20px;" id="table-datas">
+               <div id="lmc_list-html"></div>
+               <script id="lmc_list-tmpl" type="text/template">
+                   <table class="lot-table">
+                       <tbody>
+                       <tr class="head">
+                           <td colspan="2">大</td>
+                           <td style="background-color: #e9e9e9;" colspan="2">小</td>
+                           <td colspan="2">单</td>
+                           <td style="background-color: #e9e9e9;" colspan="2">双</td>
+                       </tr>
+                       <tr style="font-weight: inherit;" class="head">
+                           <td style="width: 122px;">连续遗漏</td>
+                           <td style="width: 122px;">出现次数</td>
+                           <td style="width: 122px;">连续遗漏</td>
+                           <td style="width: 122px;">出现次数</td>
+                           <td style="width: 122px;">连续遗漏</td>
+                           <td style="width: 122px;">出现次数</td>
+                           <td style="width: 122px;">连续遗漏</td>
+                           <td style="width: 122px;">出现次数</td>
+                       </tr>
+                       {{
+                       var rdObjectArray=[];
+                       /*封装数据*/
+                       function addRdObject(rd){
+                       var isExist=false;
+                       for(var i=0;i<rdObjectArray.length;i++){
+                       var rdObj=rdObjectArray[i];
+                       if(rdObj&&rdObj.continuousNum==rd.continuousNum){
+                       isExist=true;
+                       /*更新已存在数据*/
+                       if(rd.dataType==2){/*大*/
+                       rdObj["t1val"]=rd.continuousTotal;
+                       }else if(rd.dataType==1){/*小*/
+                       rdObj["t2val"]=rd.continuousTotal;
+                       }else if(rd.dataType==3){/*单*/
+                       rdObj["t3val"]=rd.continuousTotal;
+                       }else if(rd.dataType==4){/*双*/
+                       rdObj["t4val"]=rd.continuousTotal;
+                       }
+                       break;
+                       }
+                       }
+                       if (!isExist) {/*第一次保存*/
+                       if(rd.dataType==2){/*大*/
+                       rd["t1val"]=rd.continuousTotal;
+                       }else if(rd.dataType==1){/*小*/
+                       rd["t2val"]=rd.continuousTotal;
+                       }else if(rd.dataType==3){/*单*/
+                       rd["t3val"]=rd.continuousTotal;
+                       }else if(rd.dataType==4){/*双*/
+                       rd["t4val"]=rd.continuousTotal;
+                       }
+                       rdObjectArray.push(rd);
+                       }
+                       return isExist;
+                       }
+                       for (var i = 0; i <it.length; i++) {
+                       addRdObject(it[i]);
+                       }
+
+
+                       for (var i = 0; i <rdObjectArray.length; i++) {
+                       var rdTemp=rdObjectArray[i];
+                       var joClass=i%2==0?"even":"odd";
+
+                       }}
+                       <tr class="{{=joClass}}">
+                           <td>{{=rdTemp.continuousNum}}</td>
+                           <td>{{=rdTemp.t1val==null?"":rdTemp.t1val}}</td>
+                           <td>{{=rdTemp.continuousNum}} </td>
+                           <td>{{=rdTemp.t2val==null?"":rdTemp.t2val}} </td>
+                           <td>{{=rdTemp.continuousNum}} </td>
+                           <td>{{=rdTemp.t3val==null?"":rdTemp.t3val}} </td>
+                           <td>{{=rdTemp.continuousNum}} </td>
+                           <td>{{=rdTemp.t4val==null?"":rdTemp.t4val}} </td>
+                       </tr>
+                       {{
+                       }
+                       }}
+                       </tbody>
+                   </table>
+               </script>
+               <script type="text/javascript">
+                   var request =  GetRequest();
+                   var dateType = request['dateType'];
+                   var gameId = request['gameId'];
+                   var rank = request['rank'];
+                   if(!dateType){
+                       dateType=1;
+                       $("#dateType").val(dateType);
+                   }
+                   if(!gameId)
+                       gameId=1;
+                   if(!rank)
+                       rank=1;
+                   function getLmcList(){
+                       $.post("/missing/getLmcList.do",
+                               {dateType:dateType,gameId:gameId,rank:rank},
+                               function(r) {
+                                   if (r) {
+                                       doTCompile("lmc_list", r.t);
+                                       //处理排名样式
+                                       $("#rankUl li a").removeClass("cur")
+                                       $("#rankLi"+rank).addClass("cur")
+                                   }
+                               }, "json");
+                   }
+                   getLmcList();
+                   function gotoPage(rankNum,dateTypeNum){
+                       if(rankNum)
+                           rank=rankNum;
+                       if(dateTypeNum)
+                           dateType=dateTypeNum;
+                       window.location.href="/cqssc/omitdata.html#dateType="+dateType+"&gameId="+gameId+"&rank="+rank;
+                       getLmcList();
+                   }
+               </script>
+           </div>
+       </div>
+       <div class="clear"></div>
+   </div>
+  </div>
+   </block>

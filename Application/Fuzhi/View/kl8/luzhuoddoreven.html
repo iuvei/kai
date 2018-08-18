@@ -1,0 +1,122 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+<div class="clear"></div> 
+				<!--  内容开始 -->
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+				<input type="hidden" id="callFun" value="getLuzhuOddOrEven"/>
+				<div style="clear: left; width: 100%; float: left;">
+					<div class="show-bjl">
+				      	 选择日期: 
+				      <input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
+				      <span ><a style="margin: 0px;" href="javascript:Search();">查询</a></span>
+				    </div> 
+				</div>
+				<div id="lot-wrap">
+				<div class="clear"></div>
+				<div style="float: right; margin-bottom: 5px; margin-right: 68px;">
+					<span class="InstructionsForUse">
+				        <span class="InstructionsForUse_btn">使用说明
+				        </span>
+				        <span class="position" style="left: -214px;top:26px;">
+				            <span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br />
+				                2.当长龙中断时，则另起一列显示结果；<br />
+				               3.所有开奖号码中，单数超过10个时为单盘，双数超过10个时为双盘，单双个数均为10时为和盘。
+				            </span>
+				        </span>
+				    </span>
+				</div>
+				<div style="height: 35px; width: 100%;"></div>
+				<table class="roadmap-table-caption">
+					<tr>
+						<td><span>今日累计：<span class="count"> 单（<span id="lzd"></span>） 双（<span id="lzs"></span>） 和（<span id="lzh"></span>）
+							</span>
+						</span> 单双和单双</td>
+					</tr>
+				</table>
+				<div style="width: 980px; overflow-x: auto;" class="luzhu_scroll">
+					<div id="lzTotalDs_data-html"></div>
+					<script id="lzTotalDs_data-tmpl" type="text/template">
+					<table class="roadmap-table ">
+						<tr valign="top">
+						  <td class="odd">
+							{{
+								var preNum; 
+								var symbol;
+					            var index=1;
+					            var d=0;
+					            var s=0; 
+					            var h=0; 
+					      	    for(var i=0;i<=it.length;i++){
+					      	    	var num=it[i];
+					      	    	if(!num)
+					      	    		continue;
+					        	    if(num=="单"){
+					        	    	symbol="span";
+					        	    	d+=1;
+					        	    }else if(num=="双"){
+					        	    	symbol="label";
+					        	    	s+=1;
+					        	    }else if(num=="和"){
+					        	    	symbol="p";
+					        	    	h+=1;
+					        	    }
+					        	    if(i==0||preNum==num){
+					      	  }}  
+					      	    	<{{=symbol}}>{{=num}}</{{=symbol}}> 
+			      	    	  {{ 
+					          		}else{
+					          			index+=1;
+					          }}
+			      	    	  		</td><td class="{{=index%2==0?'even':'odd'}}"><{{=symbol}}>{{=num}}</{{=symbol}}> 
+			      	    	  {{
+					          		}
+					          		preNum=num;
+					          	   }
+					           }}
+							  <input type="hidden" id="lzdval" value="{{=d}}"/>
+					          <input type="hidden" id="lzsval" value="{{=s}}"/>
+					          <input type="hidden" id="lzhval" value="{{=h}}"/>
+						</tr>
+					</table>
+				   </script>
+				</div>
+				<script type="text/javascript">
+			      	function getLuzhuOddOrEven(){
+			      		var date=$("#dateData").val();
+			      		$.post("kl8/getLuzhuOddOrEven.do",
+			   				{date:date}, 
+			   				function(r) {
+			    				if (r) {
+			    					doTCompile("lzTotalDs_data", r);
+		    						$("#lzd").html($("#lzdval").val());
+		    						$("#lzs").html($("#lzsval").val());
+		    						$("#lzh").html($("#lzhval").val());
+			    				}
+			   			}, "json");
+			      	}
+			      	getLuzhuOddOrEven();
+			      	function Search() {
+			      		getLuzhuOddOrEven();
+				    }
+				 </script> 
+			</div>
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

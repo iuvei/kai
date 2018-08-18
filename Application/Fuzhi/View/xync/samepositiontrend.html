@@ -1,0 +1,333 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/draw5.css">
+    <link type="text/css" rel="stylesheet" href="css/layout.css">
+    <link type="text/css" rel="stylesheet" href="css/tableAndFont.css">
+    <style type="text/css">
+
+        v\:line, v\:rect, v\:oval, v\:group, v\:stroke, v\:fill, v\:polyline {behavior: url(#default#VML);}
+        .cvs { position: absolute;}
+        #trendChart {padding: 0;position: relative;left:0;top:0;}
+        #canvas{ z-index:999; position:absolute; left:0; top:0;}
+
+    </style>
+    <!--[if lte IE 9]> <style type="text/css">.dateLineTable	*{padding:auto;margin:auto;}</style><![endif]-->
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+					<div class="jsloading"></div>
+				    <input type="hidden" id="callFun" value="drawTrend" />
+				    <div class="web_dateLineBody" ms-controller="chart">
+				
+				        <div class="web_topNav">
+				            <ul>
+				                <li>
+				                    <a href="xync/positiontrend.html" ><span class="web_topNav_img1"></span></a>
+				                    <a href="xync/positiontrend.html" ><span class="web_topNav_font">基本走势图</span></a>
+				                </li>
+				
+				                <li class="hover" style="border-left: 1px solid #e1e1e1;">
+				                    <a href="xync/samepositiontrend.html" ><span class="web_topNav_img2"></span></a>
+				                    <a href="xync/samepositiontrend.html" ><span class="web_topNav_font">同期走势图</span></a>
+				                </li>
+				            </ul>
+				        </div>
+				
+				        <div class="web_dataBallModel03">
+				            <div class="web_ball01s" id="cball">
+				                <div class="left" id="ballchoose">
+				                    <ul>
+				                        <li ms-class="hover:ball==0"><a href="javascript:void(0);" data-ball="0" ms-click="changeball('第一球',0,this)">第一球</a></li>
+				                        <li>|</li>
+				                        <li ms-class="hover:ball==1"><a href="javascript:void(0);" data-ball="1" ms-click="changeball('第二球',1,this)">第二球</a></li>
+				                        <li>|</li>
+				                        <li ms-class="hover:ball==2"><a href="javascript:void(0);" data-ball="2" ms-click="changeball('第三球',2,this)">第三球</a></li>
+				                        <li>|</li>
+				                        <li ms-class="hover:ball==3"><a href="javascript:void(0);" data-ball="3" ms-click="changeball('第四球',3,this)">第四球</a></li>
+				                        <li>|</li>
+				                        <li ms-class="hover:ball==4"><a href="javascript:void(0);" data-ball="4" ms-click="changeball('第五球',4,this)">第五球</a></li>
+				                        <li>|</li>
+				                        <li ms-class="hover:ball==5"><a href="javascript:void(0);" data-ball="5" ms-click="changeball('第六球',5,this)">第六球</a></li>
+				                        <li>|</li>
+				                        <li ms-class="hover:ball==6"><a href="javascript:void(0);" data-ball="6" ms-click="changeball('第七球',6,this)">第七球</a></li>
+				                        <li>|</li>
+				                        <li ms-class="hover:ball==7"><a href="javascript:void(0);" data-ball="7" ms-click="changeball('第八球',7,this)">第八球</a></li>
+				                    </ul>
+				                </div>
+				                <div class="right">
+				                    <ul>
+				                        <li class="li01">选择期数：</li>
+				                        <li>
+				                            <select id="periodCount" class="select1" ms-each-el="selectdata" ms-change="changePeriod(this)">
+				                                <option ms-value="el">{{el}}期</option>
+				                            </select>
+				                        </li>
+				                    </ul>
+				                </div>
+				            </div>
+				
+				            <div class="nextPeriod"><b>当前期：</b><span id="currResult">第{{nextTime}}期&nbsp;&nbsp;待开奖</span></div>
+				            <div class="nextPeriodTip">*以下记录的是最近一个月的第{{time}}期开出的号码走势</div>
+				
+				            <div class="dateLineTable" id="trendChart">
+				
+				                <table width="100%" border="0" cellspacing="1" cellpadding="0">
+				                    <thead>
+				                        <tr>
+				                        <tr>
+				                            <th class="blue3" rowspan="2" valign="middle" width="12%">
+				                                <span style="font-size: 14px;">日期/期号</span>
+				                            </th>
+				                            <th class="blue" colspan="20" valign="middle" width="60%">{{ballName}}走势图</th>
+				                            <th class="blue" colspan="2" valign="middle" width="14%">单双</th>
+				                            <th class="blue" colspan="2" valign="middle" width="14%">大小</th>
+				                        </tr>
+				                        <tr>
+				                            <th class="pinkWhite5" width="3%">1</th>
+				                            <th class="pinkWhite5" width="3%">2</th>
+				                            <th class="pinkWhite5" width="3%">3</th>
+				                            <th class="pinkWhite5" width="3%">4</th>
+				                            <th class="pinkWhite5" width="3%">5</th>
+				                            <th class="pinkWhite5" width="3%">6</th>
+				                            <th class="pinkWhite5" width="3%">7</th>
+				                            <th class="pinkWhite5" width="3%">8</th>
+				                            <th class="pinkWhite5" width="3%">9</th>
+				                            <th class="pinkWhite5" width="3%">10</th>
+				                            <th class="pinkWhite5" width="3%">11</th>
+				                            <th class="pinkWhite5" width="3%">12</th>
+				                            <th class="pinkWhite5" width="3%">13</th>
+				                            <th class="pinkWhite5" width="3%">14</th>
+				                            <th class="pinkWhite5" width="3%">15</th>
+				                            <th class="pinkWhite5" width="3%">16</th>
+				                            <th class="pinkWhite5" width="3%">17</th>
+				                            <th class="pinkWhite5" width="3%">18</th>
+				                            <th class="pinkWhite5" width="3%">19</th>
+				                            <th class="pinkWhite5" width="3%">20</th>
+				                            <th class="huise2" width="7%">单</th>
+				                            <th class="huise2" width="7%">双</th>
+				                            <th class="huise2" width="7%">大</th>
+				                            <th class="huise2" width="7%">小</th>
+				                        </tr>
+				                    </thead>
+				                    <tbody id="chart">
+				                        <tr id="td_award">
+				                            <td class="white2">{{currDate}}&nbsp;&nbsp;{{nextCurrNo}}</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">1</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">2</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">3</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">4</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">5</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">6</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">7</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">8</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">9</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">10</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">11</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">12</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">13</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">14</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">15</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">16</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">17</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">18</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">19</td>
+				                            <td valign="middle" class="pinkWhite5 huiseFont">20</td>
+				
+				                            <td class="white2">单</td>
+				                            <td class="white2">双</td>
+				                            <td class="white2">大</td>
+				                            <td class="white2">小</td>
+				                        </tr>
+				                        <tr ms-repeat="totaldata" style="display: none;" class="data-stat">
+				                            <td class="white2">{{el.Drawing_Date}}&nbsp;&nbsp;{{el.Period}}</td>
+				                            <td valign="middle" ms-repeat-n="ballArrary" ms-class-1="shenred4:el.Nums==n" ms-class-2="pinkWhite5 huiseFont:el.Nums!=n">{{n}}</td>
+				                            <td ms-class-1="greenBg2:el.Odd==1" ms-class-2="white2:el.Odd==0">单</td>
+				                            <td ms-class-1="greenBg2:el.Even==1" ms-class-2="white2:el.Even==0" style="border: none;">双</td>
+				                            <td ms-class-1="yellowBg:el.Big==1" ms-class-2="white2:el.Big==0">大</td>
+				                            <td ms-class-1="yellowBg:el.Small==1" ms-class-2="white2:el.Small==0" style="border: none;">小</td>
+				
+				                        </tr>
+				                    </tbody>
+				                </table>
+				                <div class="trendChartloading">正在加载中……</div>
+				                <input type="hidden" id="periodInfo" ms-duplex="periodInfo" />
+				            </div>
+				        </div>
+				
+				    </div>
+				</div>
+				<script type="text/javascript">
+				    $(function () {
+				        require(['trendChart'], function (trendChart) {
+				            var chartLine = new trendChart({ css: { noyl: "noyl", bline: "bline", lines: [".shenred4"] }, lineWidth: 2, lineColor: "#BB8569" });
+				
+				            var ajaxUrl = "xync/samePositionTrend.do";
+				            //首次读取后台数据
+// 				            var datas = '[{"Period":39,"Drawing_Date":"02-27","Drawing_Time":"15:00","Nums":"11","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-26","Drawing_Time":"15:00","Nums":"9","Big":0,"Small":1,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-25","Drawing_Time":"15:00","Nums":"16","Big":1,"Small":0,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"02-17","Drawing_Time":"15:00","Nums":"7","Big":0,"Small":1,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-16","Drawing_Time":"15:00","Nums":"11","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-15","Drawing_Time":"15:00","Nums":"9","Big":0,"Small":1,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-14","Drawing_Time":"15:00","Nums":"13","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-13","Drawing_Time":"15:00","Nums":"17","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-12","Drawing_Time":"15:00","Nums":"12","Big":1,"Small":0,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"02-11","Drawing_Time":"15:00","Nums":"7","Big":0,"Small":1,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-10","Drawing_Time":"15:00","Nums":"3","Big":0,"Small":1,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-09","Drawing_Time":"15:00","Nums":"6","Big":0,"Small":1,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"02-08","Drawing_Time":"15:00","Nums":"14","Big":1,"Small":0,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"02-07","Drawing_Time":"15:00","Nums":"19","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-06","Drawing_Time":"15:00","Nums":"17","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-05","Drawing_Time":"15:00","Nums":"1","Big":0,"Small":1,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-04","Drawing_Time":"15:00","Nums":"17","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-03","Drawing_Time":"15:00","Nums":"1","Big":0,"Small":1,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-02","Drawing_Time":"15:00","Nums":"13","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-01","Drawing_Time":"15:00","Nums":"14","Big":1,"Small":0,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"01-31","Drawing_Time":"15:00","Nums":"19","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"01-30","Drawing_Time":"15:00","Nums":"10","Big":0,"Small":1,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"01-29","Drawing_Time":"15:00","Nums":"20","Big":1,"Small":0,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"01-28","Drawing_Time":"15:00","Nums":"19","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"01-27","Drawing_Time":"15:00","Nums":"12","Big":1,"Small":0,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"01-26","Drawing_Time":"15:00","Nums":"13","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"01-25","Drawing_Time":"15:00","Nums":"20","Big":1,"Small":0,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"01-24","Drawing_Time":"15:00","Nums":"6","Big":0,"Small":1,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"01-23","Drawing_Time":"15:00","Nums":"4","Big":0,"Small":1,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"01-22","Drawing_Time":"15:00","Nums":"7","Big":0,"Small":1,"Odd":1,"Even":0}]';//走势图数据json
+// 				            var option = '[39,38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,17,16,15,14,13,12,11,10,9,8,7,6,5,4,3,2,1]';//下拉框期号数据json
+							var datas;
+							var option;
+				            var time;//当期期开奖期数
+// 				            var maxcount = '39';//最新开奖期数
+			 				$.get(ajaxUrl, {
+					            id: 0
+					        },
+					        function(r) {
+					            datas = r.chart;
+					            option = r.option;
+					            time = r.time; //当期期开奖时间
+					            var viewmodel = avalon.define('chart', function (vm) {
+					                vm.ballName = "第一球";//走势名称
+					                vm.ball = 0;//球号索引
+					                vm.ballArrary = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];//球号
+					                vm.totaldata = [];//走势图数据
+					                vm.selectdata = [];//绑定下拉框期号数据
+					                vm.time = time;//当期选择期开奖时间
+					                vm.periodInfo = 0;
+					                vm.changeball = function (t, b, o) {
+					                    vm.ballName = t;
+					                    vm.ball = b;
+					                    $(".data-stat").hide();
+					                    $(".trendChartloading").show();
+					                    chartLine.clearLines();
+					                    var vsel = $("#periodCount option:selected").val();
+					                    $.get(ajaxUrl, { id: vm.ball, pid: vsel }, function (data) {
+					                        var dataObj = data;//转换为json对象 
+					                        vm.totaldata = dataObj.chart;
+					
+					                        vm.SetStyle(vsel);
+					                        vm.drawLine();
+					
+					                        $(".data-stat").show();
+					                        $(".trendChartloading").hide();
+					                    }, 'json');
+					                };
+					                vm.changePeriod = function (t, pid) {
+					                    var vperid;
+					                    if ("object" == typeof (t)) {
+					                        vperid = $(t).val();
+					                    } else {
+					                        vperid = pid;
+					                    }
+					
+					                    $(".data-stat").hide();
+					                    $(".trendChartloading").show();
+					                    chartLine.clearLines();
+					                    $.get(ajaxUrl, { id: vm.ball, pid: vperid }, function (data) {
+					                        var dataObj =  data;//转换为json对象 
+					                        vm.totaldata = dataObj.chart;
+					                        vm.time = vperid;
+					
+					                        vm.SetStyle(vperid);
+					                        vm.drawLine();
+					
+					                        $(".data-stat").show();
+					                        $(".trendChartloading").hide();
+					                    }, 'json');
+					                }
+					                vm.currNo = 0;
+					                vm.nextNo = 0;
+					                vm.nextTime = 0;
+					                vm.currDate = "";
+					                vm.newIssue = 0; //最近新一期期号
+					                vm.newNumber = "";//最近新一期开出开奖号码
+					                vm.nextCurrNo = "";//用于存储走势第一条期号
+					
+					                vm.SetStyle = function (vperid) {
+					
+					                    if (vm.nextNo == vperid || (vm.currNo == vperid && ((vperid == vm.newIssue && vm.newNumber == "") || vm.currNo > vm.newIssue))) {
+					                        vm.nextCurrNo = vperid;
+					                        $("#td_award").show();
+					                    } else if (vm.currNo == vperid && vm.totaldata[0].Period != vm.currNo) {
+					                        vm.nextCurrNo = vperid;
+					                        $("#td_award").show();
+					                    }
+					                    else {
+					                        $("#td_award").hide();
+					                    }
+					
+					                }
+					                vm.AddOption = function () {
+					                    if ($("#periodCount option").eq(0).val() != vm.nextNo) {
+					                        $("#periodCount").prepend("<option value='" + vm.nextNo + "'>" + vm.nextNo + "期</option>");
+					                    }
+					                }
+					                vm.SetLoadAwardInfo = function () {
+					                    $.get('xync/ajaxTrend.do', { t: Math.random() }, function (data) {
+					                        vm.currNo = data.current.periodNumber;
+					                        vm.nextNo = data.next.periodNumber;
+					                        vm.nextCurrNo = data.next.periodNumber;
+					                        vm.nextTime = data.next.count;
+					                        vm.currDate = new Date(data.current.awardTime.replace(/-/g, "/")).pattern("MM-dd");
+					                        vm.newIssue = data.newIssue.periodNumber;
+					                        vm.newNumber = data.newIssue.awardNumber;
+					                        if (true == bflag) {
+					
+					                            vm.AddOption();
+					
+					                            if ($("#periodCount option:selected").val() == vm.currNo) {
+					                                vm.changePeriod("", vm.currNo);
+					                            }
+					                        }
+					
+					                    }, 'json').error(function () {
+					
+					                    });
+					                }
+					                vm.drawLine = function () {
+					                    chartLine.clearLines();
+					                    chartLine.reDraw();
+					                };
+					
+					                vm.$watch("periodInfo", function (v) {
+					                    vm.periodInfo = v;
+					                    vm.SetLoadAwardInfo();
+					
+					                });
+					
+					            });
+					            var vjson = datas;
+					            viewmodel.totaldata = vjson;
+					            viewmodel.selectdata = option;
+	// 				            viewmodel.nextTime = maxcount;
+					
+					            $(".data-stat").show();
+					            $(".trendChartloading").hide();
+					            viewmodel.SetLoadAwardInfo();
+					
+					            avalon.scan();
+					            $(".jsloading").hide();
+					            viewmodel.drawLine();
+					       	  },"json");	
+					        
+					        });
+					    });
+					    var vdraw = 0;
+					    var bflag = false;
+					    function drawTrend() {
+					        vdraw += 1;
+					        bflag = true;
+					        $("#periodInfo").val(vdraw);
+					    }
+				
+				</script>
+				<script src="js/avalon.js"  type="text/javascript"></script>
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

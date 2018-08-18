@@ -1,0 +1,49 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/jiqiao.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<include file="Public/top_ad"/>
+
+	    <div class="lot-wrap">
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+					<input type="hidden" id="contentId" value="100">
+					<div class="method-position"> 
+				      <a href="" >首页</a> &gt;&gt;
+				      网站公告 &gt;&gt;
+				      <span>{$info.title}</span>
+				    </div>
+				    <div class="method-wrap">
+					<div class="content"
+						style="margin-right: 0px; width: 90%; padding-top: 40px; padding-left: 5%; width: 90%;">
+					<div class="title">
+						<h1>{$info.title}</h1>
+						<span>日期：{$info.create_time|date='Y-m-d H:i',###}</span>
+						<!-- 				        <span>阅读：513 次</span>  -->
+						 <span>来源：{$info.uid|get_username}</span>
+						
+					</div>
+					<div class="text">
+						
+						<div>
+							<p>{$info.content}</p>
+						</div>
+					</div>
+					<div class="container">
+						<!-- 				        <a href="" target="_blank"></a>  -->
+					</div>
+				</div>
+			</div>
+				<!--  内容结束-->
+				<script type="text/javascript" src="js/page/jiqiao.js" ></script>
+			
+	    </div>
+	</div>
+		        </block>

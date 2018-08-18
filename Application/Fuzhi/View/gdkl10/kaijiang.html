@@ -1,0 +1,217 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+					<div id="lot-wrap"> 
+				     <input type="hidden" value="Search" id="callFun" lottery="gdkl10" /> 
+				     <div class="lot-search"> 
+				      <div class="car-num"> 
+				       <ul class="lot-number-omit" style="margin-bottom: 10px;"> 
+				        <li class="ball" style="padding-bottom: 2px;"> 
+				         <ul style="width: 750px; float: left;margin-left:10px;"> 
+				          <li id="changlong-switch"><b class="checkbox checked" style="margin: 8px 0 0 0;"></b> <span class="ckb-txt"> <label style="cursor:pointer">长龙提醒</label></span></li> 
+				         </ul>
+                            <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+				         <ul style="float: right; width: 220px; text-align: right;"> 
+				          	<li>
+								<span style="display: block; float: left;">
+									<label style="margin: 0px;">选择日期：</label></span>
+								<span style="display: block; float: left;">
+									<input name="dateData" type="text" id="dateData" onClick="WdatePicker();" readonly="readonly" style="height:18px; margin:0px;"></span>
+								<span style="float: left; padding-left: 10px;"><a style="margin: 0px;" href="javascript:Search();">查询</a></span>
+							</li>
+				         </ul> 
+				        </li> 
+				       </ul> 
+				      </div> 
+				     </div> 
+				     <div class="kaijiang_tiptool" id="changlong_warn"> 
+				      <div class="tiptool_head"> 
+				       <ul> 
+				        <li> 长龙连开提醒 </li> 
+				       </ul> 
+				      </div> 
+				      <div class="tiptool_info" id="changlong_info">
+				      <div id="cl_list-html" style="float: left;"></div> 
+				  	  <script id="cl_list-tmpl" type="text/template">
+				  	 	<ul> <li>
+							 {{
+							     var rowsLen=it.length;
+							     for(var i=0;i<rowsLen;i++){ /*循环开始A*/
+							    	  var rd=it[i];
+									  var tRank="";
+									  if(rd.dataType!=7&&rd.dataType!=8){
+										  if(rd.rank==1){
+											  tRank="第一球";
+										  }else if(rd.rank==2){
+											  tRank="第二球";
+										  }else if(rd.rank==3){
+											  tRank="第三球";
+										  }else if(rd.rank==4){
+											  tRank="第四球";
+										  }else if(rd.rank==5){
+											  tRank="第五球";
+										  }else if(rd.rank==6){
+											  tRank="第六球";
+										  }else if(rd.rank==7){
+											  tRank="第七球";
+										  }else if(rd.rank==8){
+											  tRank="第八球";
+										  }else if(rd.rank==9){
+											  tRank="第九球";
+										  }else if(rd.rank==10){
+											  tRank="第十球";
+										  }
+									  }else{
+										  tRank="总和";
+									  }
+									  var tNum=rd.num;
+									  var tType=tNum+":"+rd.dataType;
+									  if(rd.dataType==2){
+										  if(tNum%2==0){
+											  tType="虎";
+										  }else{
+											  tType="龍";
+										  }
+									  }else if(rd.dataType==5){
+										  if(tNum==1){
+											  tType="单";
+										  }else{
+											  tType="双";
+										  }
+									  }else if(rd.dataType==6){
+										  if(tNum==1){
+											  tType="小";
+										  }else{
+											  tType="大";
+										  }
+									  }else if(rd.dataType==7){
+										  if(tNum==1){
+											  tType="单";
+										  }else{
+											  tType="双";
+										  }
+									  }else if(rd.dataType==8){
+										  if(tNum==1){
+											  tType="小";
+										  }else{
+											  tType="大";
+										  }
+									  }
+						  }} 
+							  <span>{{=tRank}}：{{=tType}} {{=rd.nowMissing}} 期</span>
+						{{
+							if((i+1)%6==0){
+						}}
+							</li><li>
+						{{
+							}
+					 	   } 
+						}}
+							 </li>  </ul> 
+					  </script>
+				      </div>
+				     </div> 
+				     <div class="clear"></div> 
+				     <div id="history_data-html"></div>
+				   	 <script id="history_data-tmpl" type="text/template">
+					   	<table class="lot-table" id="history"> 
+					       <tbody>
+					        <tr class="head"> 
+					         <td width="160px"> 时间 </td> 
+					         <td> 开奖号码 </td> 
+					         <td colspan="4"> 总和 </td> 
+					         <td colspan="4">1~4龍虎</td> 
+					        </tr>
+					        {{
+								for (var i = 0; i <it.length; i++) { 
+									var row=it[i];
+									var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
+									var totalNum=row.n1+row.n2+row.n3+row.n4+row.n5+row.n6+row.n7+row.n8;
+									var totalBigOrSmallStr="";
+									if(totalNum==84)
+										totalBigOrSmallStr="和";
+									else if(totalNum>84)
+										totalBigOrSmallStr="大";
+									else if(totalNum<84)
+										totalBigOrSmallStr="小";
+							}}
+						        <tr class="{{=(i+1)%2==0?'even':'odd'}}"> 
+						        <td> <p class="p">{{=row.termNum}} </p> <p class="t">{{=lowDate}}</p> </td> 
+						        <td class="nums"> 
+						        	<span class="no1">{{=row.n1}}</span> 
+						        	<span class="no2">{{=row.n2}}</span> 
+						        	<span class="no3">{{=row.n3}}</span> 
+						        	<span class="no4">{{=row.n4}}</span> 
+						        	<span class="no5">{{=row.n5}}</span> 
+						        	<span class="no6">{{=row.n6}}</span> 
+						        	<span class="no7">{{=row.n7}}</span> 
+						        	<span class="no8">{{=row.n8}}</span> 
+						        </td> 
+						         <td class="wd-50">{{=totalNum}} </td> 
+						         <td class="wd-50"> <p class="{{=totalNum%2!=0?'r':''}}"> {{=totalNum%2==0?"双":"单"}}</p> </td> 
+							     <td class="wd-50"> <p class="{{=totalNum>84?'r':''}}"> {{=totalBigOrSmallStr}}</p> </td>
+							     <td class="wd-50"> <p class="{{=totalNum % 10 > 5?'r':''}}"> {{=totalNum % 10 < 5 ? "尾小" : "尾大"}}</p> </td> 
+							     <td class="wd-50"> <p class="{{=row.n1 > row.n8?'r':''}}"> {{=row.n1 > row.n8?'龍':'虎'}}</p> </td> 
+						         <td class="wd-50"> <p class="{{=row.n2 > row.n7?'r':''}}"> {{=row.n2 > row.n7?'龍':'虎'}}</p> </td> 
+						         <td class="wd-50"> <p class="{{=row.n3 > row.n6?'r':''}}"> {{=row.n3 > row.n6?'龍':'虎'}}</p> </td> 
+						         <td class="wd-50"> <p class="{{=row.n4 > row.n5?'r':''}}"> {{=row.n4 > row.n5?'龍':'虎'}}</p> </td> 
+						        </tr> 
+					        {{
+								}
+							}}
+					        </tbody>
+						 </table> 
+				   	 </script>
+				     </div> 
+				     <script type="text/javascript">
+				    $(function () {
+				        LoadGdkl10TipSet();
+				    })
+			    	function reloadChangLong() {
+				    	$.post("gdkl10/getMergeData.do",
+		    				function(r) {
+		    					if (r) {
+		    						doTCompile("cl_list", r.clList);
+		    					}
+		    			}, "json")
+			        }
+				    reloadChangLong();
+				    
+				    //开奖历史
+			        function getHistoryData(date){
+			    		$.post("gdkl10/getHistoryData.do",
+			   				{count:120,date:date}, 
+			   				function(r) {
+			    				if (r) {
+			    					doTCompile("history_data", r.rows);
+			    				}
+			   			}, "json");
+			        }
+			        getHistoryData(null);
+			        
+				    function Search() {
+				    	getHistoryData($("#dateData").val());
+				    }
+				</script> 
+				</div> 
+				<!--  内容结束-->
+	    </div>
+	</div>
+	</block>

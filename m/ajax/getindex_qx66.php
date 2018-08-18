@@ -1,0 +1,4 @@
+<?php
+$url = "http://m.qx66.com/ajax";
+echo file_get_contents($url);
+/* {"pk10":{"periodNumber":"563180","awardNumbers":"7,9,8,6,10,4,3,5,2,1"},"xyft":{"periodNumber":"012","awardNumbers":"10,4,2,8,7,1,6,5,3,9"},"cqssc":{"periodNumber":"048","awardNumbers":"2,1,4,9,6"},"gdkl10":{"periodNumber":"30","awardNumbers":"10,5,7,12,20,15,19,16"},"xync":{"periodNumber":"38","awardNumbers":"16,3,10,7,15,11,17,9"},"gd11x5":{"periodNumber":"30","awardNumbers":"3,4,5,6,10"},"xjssc":{"periodNumber":"24","awardNumbers":"9,7,5,7,7"},"tjssc":{"periodNumber":"030","awardNumbers":"7,7,1,5,1"},"jsk3":{"periodNumber":"033","awardNumbers":"3,4,6"}} */

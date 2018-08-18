@@ -1,0 +1,163 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+				<div id="lot-wrap">
+					<input type="hidden" value="updateHistoryRecord" id="callFun"  />
+					<div class="lot-search">
+					    选择日期：
+					    <input name="dateData" type="text" id="dateData" onClick="WdatePicker();" readonly="readonly" style="height:18px; margin:0px;"/>
+					    &nbsp;<a href="javascript:Search();">查询</a>
+					</div>
+					<div id="history_data-html"></div>
+	      				<script id="history_data-tmpl" type="text/template">
+			            <table class="lot-table" id="history">
+			                <tr class="head">
+			                    <td width="160px">
+			                       	 时间
+			                    </td>
+			                    <td>
+			                   	     开奖号码
+			                    </td>
+			                    <td style="width: 60px; text-align: center;">
+			                       	 飞盘号
+			                    </td>
+			                    <td style="width: 60px; text-align: center;">
+			                     	   单/双
+			                    </td>
+			                    <td style="width: 60px; text-align: center;">
+			                       	 大/小
+			                    </td>
+			                    <td style="width: 60px; text-align: center;">
+			                       	 上/下
+			                    </td>
+			                    <td style="width: 60px; text-align: center;">
+			                       	 总和
+			                    </td>
+			                    <td style="width: 60px; text-align: center;">
+			                       	 五行
+			                    </td>
+			                </tr>
+			                {{
+								for (var i = 0; i <it.length; i++) { 
+									var row=it[i];
+									var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("MM-dd hh:mm");
+									var totalNum=row.n1+row.n2+row.n3+row.n4+row.n5+row.n6+row.n7+row.n8+row.n9+row.n10+row.n11+row.n12+row.n13+row.n14+row.n15+row.n16+row.n17+row.n18+row.n19+row.n20;
+									
+									var totalBigOrSmallStr = "";
+									if (totalNum == 810)
+										totalBigOrSmallStr = "和";
+									else if (totalNum > 810)
+										totalBigOrSmallStr = "大";
+									else if (totalNum < 810)
+										totalBigOrSmallStr = "小";
+
+									var panhao = "";
+									if (row.n10 == 39) {
+										panhao = "中";
+									} else if (row.n10 > 39) {
+										panhao = "下";
+									} else if (row.n10 < 39) {
+										panhao = "上";
+									}
+									var wuhang = "";
+									if (totalNum >= 210 && totalNum <= 695) {
+										wuhang = "金";
+									} else if (totalNum >= 696 && totalNum <= 763) {
+										wuhang = "木";
+									} else if (totalNum >= 764 && totalNum <= 855) {
+										wuhang = "水";
+									} else if (totalNum >= 856 && totalNum <= 923) {
+										wuhang = "火";
+									} else if (totalNum >= 924 && totalNum <= 1410) {
+										wuhang = "土";
+									}
+										
+							}}
+		                    <tr class="{{=(i+1)%2==0?'even':'odd'}}">
+		                        <td>
+		                        <p class="p">{{=row.termNum}}</p>
+								<p class="t">{{=lowDate}}</p>
+		                        </td>
+		                        <td class="nums">
+									<span>{{=row.n1}}</span>                
+									<span>{{=row.n2}}</span>                
+									<span>{{=row.n3}}</span>                
+									<span>{{=row.n4}}</span>                
+									<span>{{=row.n5}}</span>                
+									<span>{{=row.n6}}</span>                
+									<span>{{=row.n7}}</span>                
+									<span>{{=row.n8}}</span>                
+									<span>{{=row.n9}}</span>                
+									<span>{{=row.n10}}</span>                
+		                            <div class="clear"></div>
+									<span>{{=row.n11}}</span>                
+									<span>{{=row.n12}}</span>                
+									<span>{{=row.n13}}</span>                
+									<span>{{=row.n14}}</span>                
+									<span>{{=row.n15}}</span>                
+									<span>{{=row.n16}}</span>                
+									<span>{{=row.n17}}</span>                
+									<span>{{=row.n18}}</span>                
+									<span>{{=row.n19}}</span>                
+									<span>{{=row.n20}}</span>                
+		                        </td>
+		                        <td>{{=row.n21}}
+		                        </td>
+		                        <td>
+	                                <p class="{{=totalNum%2!=0?'r':''}}">{{=totalNum%2==0?"双":"单"}}</p>
+		                        </td>
+		                        <td>
+	                                <p class="{{=totalBigOrSmallStr=='小'?'':'r'}}">{{=totalBigOrSmallStr}}</p>
+		                        </td>
+		                        <td>
+	                                <p class='{{=panhao=='上'?'r':''}}'>{{=panhao}}</p>
+		                        </td>
+		                        <td>{{=totalNum}}
+		                        </td>
+		                        <td>{{=wuhang}}
+		                        </td>
+		                    </tr>
+		                    {{
+								}
+							}}
+			            </table>
+						</script>
+						<script type="text/javascript">
+							function getHistoryData(date){
+					    		$.post("kl8/getHistoryData.do",
+					   				{count:180,date:date}, 
+					   				function(r) {
+					    				if (r) {
+					    					doTCompile("history_data", r.rows);
+					    				}
+					   			}, "json");
+					        }
+					        getHistoryData(null);
+					        
+						    function Search() {
+						    	getHistoryData($("#dateData").val());
+						    }
+						</script>
+				</div>
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

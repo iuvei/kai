@@ -1,0 +1,181 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+					<div id="lot-wrap">
+						<input type="hidden" id="callFun" value="getDataList" time="6000" />
+						<table style="width: 980px;">
+						    <tr>
+						        <td style="width: 300px; border: none;" id="opencodelist" valign="top">
+						        	<div id="history_data-html"></div> 
+				       				<script id="history_data-tmpl" type="text/template">
+						            <table style="width: 300px;" class="lot-table" id="oplist">
+						            	{{ 
+											for (var i = 0; i <it.length; i++) { 
+												var row=it[i];
+												var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
+												var total=row.n1+row.n2+row.n3;
+										}}
+							            	<tr class="tr_odd">
+						                        <td style="width: 90px;">{{=row.termNum}}
+						                        </td>
+						                        <td style="width: 70px;" class="betgame-num">
+						                            <span style="margin-left: 6px; float: left;">&nbsp;</span>
+						                            {{
+									                	for(var b=1;b<=3;b++){
+									                		var num=eval("row.n"+b);
+									                }}
+									                   <div class="n{{=num}}">{{=num}}</div> 
+									                {{
+									                	}
+									                }}
+						                        </td>
+						                        <td style="width: 35px;">
+						                            <b>{{=total}}</b>
+						                        </td>
+						                        <td style="width: 35px;">
+													{{=total >= 10?"<b style='color:red;'>大":"<b>小"}}</b>
+						                        </td>
+						                     </tr>
+								        {{}}} 
+									</table>
+									</script>
+				        		</td>
+				        		<td valign="top" style="width: 680px; padding-left: 20px;">
+					        		<div id="recommend_list-html"></div> 
+							        <script id="recommend_list-tmpl" type="text/template">
+						           		 <table style="width: 100%;">
+							                <tr valign="top">
+							                    <td id="currentBetGame">
+							                        <!--最新一期的推荐-->
+							                        <table style="width: 100%; margin: 0px;" class="lot-table">
+							                            <tr>
+							                                <td id="newBetGameData" class="betgame-td">
+							                                	{{
+							                                		var rd1=it[0];
+							                                	}}
+							                                        <table style="width: 100%; margin: 0px;" class="lot-table">
+																        <tbody>
+																            <tr>
+																                <td colspan="4" class="betgame-td2">{{=rd1.recTermNum}}★★★ 参考<span style="margin-left: 20px;">开奖号码：等待开奖</span></td>
+																            </tr>
+																           
+																                <tr>
+																                    <td>号码总和</td>
+																                    <td class="betgame-td3" style='width:200px;'><span>{{=rd1.recLotteryNum}}</span><span style="color:red"></span></td>
+																                    <td class="betgame-td3" style="width:100px;"><span>总和{{=rd1.recDsType==1?"单":"双"}}</span><span style="color:red"></span></td>
+																                    <td class="betgame-td3"  style="width:100px;"><span>总和{{=rd1.recDxType==1?"小":"大"}}</span><span style="color:red"></span></td>
+																                </tr>
+																           
+																        </tbody>
+																    </table>
+							                                </td>
+							                            </tr>
+							                        </table>
+							                    </td>
+							                </tr>
+							                {{ 
+							                	for(var j=1;j<it.length;j++){ 
+												    var row=it[j];
+												    var lotteryNum=row.lotteryNum; /*开奖号码*/
+												    var lotteryNumArray=[]; /*开奖数组*/
+												    if(lotteryNum) 
+												    	lotteryNumArray=lotteryNum.split(",");  
+												    var recLotteryNum=row.recLotteryNum; /*推荐号码*/
+												    var recLotteryNumArray=[]; 
+												    if(recLotteryNum) 
+														recLotteryNumArray=recLotteryNum.split(","); /*推荐数组*/
+												    var total=0;/*总和*/
+
+												    for(var t=0;t<lotteryNumArray.length;t++){
+												    	var lnTemp=lotteryNumArray[t];
+												    	total+=parseInt(lnTemp);
+												    }
+												    
+												    var dsDesc="";
+												    if(total%2==0 && row.recDsType==2){
+												    	dsDesc="(赢)";
+												    }
+												    var dxDesc="";
+												    if((total>=14 && row.recDxType==2)||(total<14 && row.recDxType==1)){
+												    	dxDesc="(赢)";
+												    }
+												    var hmDesc = "";/*是否推荐准确*/
+											    	for(var q=0;q<recLotteryNumArray.length;q++){
+											    		var rln=recLotteryNumArray[q];
+											    		if(rln==total){
+											    			hmDesc="(赢)";
+											    			break;
+											    		}
+											    	}
+												    
+							                }}
+									                <tr>
+									                    <td id="historyBetGame" class="betgame-td">
+									                            <table style="width: 100%; margin: 0px;" class="lot-table">
+															        <tbody>
+															            <tr>
+															                <td colspan="4" class="betgame-td2">{{=row.recTermNum}}☆☆☆ 参考<span style="margin-left: 20px;">开奖号码：{{=row.lotteryNum}}</span></td>
+															            </tr>
+															           
+															                <tr>
+															                    <td>号码总和</td>
+															                    <td class="betgame-td3" style='width:200px;'><span>{{=row.recLotteryNum}}</span><span style="color:red">{{=hmDesc}}</span></td>
+															                    <td class="betgame-td3" style="width:100px;"><span>总和{{=row.recDsType==1?"单":"双"}}</span><span style="color:red">{{=dsDesc}}</span></td>
+															                    <td class="betgame-td3"  style="width:100px;"><span>总和{{=row.recDxType==1?"小":"大"}}</span><span style="color:red">{{=dxDesc}}</span></td>
+															                </tr>
+															           
+															        </tbody>
+															    </table>
+									                    </td>
+									                </tr>
+									           {{
+									           		}
+									           }}
+							            </table>
+						            </script>
+							        </td>
+							    </tr>
+							</table>
+						<div id="sound"></div>
+						<script type="text/javascript">
+							var gameId = 10;
+							function getDataList(){
+								$.post("recommend/getList.do",
+					   				{gameId:gameId}, 
+					   				function(r) {
+					    				if (r) {
+					    					doTCompile("recommend_list", r.t);
+					    				}
+					   			}, "json");
+						 		$.post("jsk3/getHistoryData.do",
+					   				{count:100}, 
+					   				function(r) {
+					    				if (r) {
+					    					doTCompile("history_data", r.rows);
+					    				}
+					   			}, "json");
+							 }
+							 getDataList();
+						</script>
+			        </div>
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

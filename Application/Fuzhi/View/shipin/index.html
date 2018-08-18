@@ -1,0 +1,28 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+    <!--body-content-->
+    <div class="body-content">
+        <!-- 彩票大厅 头部 -->
+        <include file="Public/top_ad"/>
+
+        <include file="Public/lottory_latest"/>
+
+        <div class="lot-wrap">
+            <include file="Public/lottory_op"/>
+
+            <div class="clear"></div>
+            <div id="flashContent">
+               <iframe src='{$swfurl}' width="980" rginwidth='0' height='630' scrolling='no' frameborder='0' border='0'></iframe>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</block>

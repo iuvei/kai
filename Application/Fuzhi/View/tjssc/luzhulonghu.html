@@ -1,0 +1,141 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+				<input type="hidden" id="callFun" value="getLuzhuLonghu"/>
+				<div style="clear: left; width: 100%; float: left;">
+					<div class="show-bjl">
+				      	 选择日期: 
+				      <input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
+				      <span ><a style="margin: 0px;" href="javascript:Search();">查询</a></span>
+				    </div> 
+				</div>
+				<div id="lot-wrap">
+					<div class="clear"></div>
+					<div style="float: right; margin-bottom: 5px; margin-right: 68px;">
+						<span class="InstructionsForUse">
+					        <span class="InstructionsForUse_btn">使用说明
+					        </span>
+					        <span class="position" style="left: -214px;top:26px;">
+					            <span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br />
+					                2.当中断连续开出的同一结果时，则另起一列显示结果；<br />
+					                3.龙虎说明：”第一球“号码大于“第五球”号码视为【龙】中奖、反之小于视为【虎】中奖。
+					            </span>
+					        </span>
+					    </span>
+					</div>
+					<div style="height: 35px; width: 100%;"></div>
+					<div id="lz_data-html"></div>
+				      <script id="lz_data-tmpl" type="text/template">
+				      	  {{
+				      	  for(var i=1;i<=1;i++){
+				      		  var row=it[i+""];
+				      		  var totalLong=it["totalLong"+i];
+				      		  var totalHu=it["totalHu"+i];
+				      		  var totalHe=it["totalHe"+i];
+				      	  }}  
+					      	<div class="luzhu t_{{=i}}" style="clear:both;"> 
+						       <table class="roadmap-table-caption"> 
+						        <tbody>
+						         <tr> 
+						          <td> <span>今日累计：<span class="count"> 龍（<span id="lzTotal1{{=i}}">{{=totalLong}}</span>） 
+																         虎（<span id="lzTotal2{{=i}}">{{=totalHu}}</span>） 
+																         和（<span id="lzTotal3{{=i}}">{{=totalHe}}</span>） 
+													  </span> 
+									   </span> 龍虎
+								   </td> 
+						         </tr> 
+						        </tbody>
+						       </table> 
+						       <div style="width: 980px; overflow-x: auto;" class="luzhu_scroll"> 
+						        <table class="roadmap-table mb-15" style="font-family:微软雅黑;"> 
+						         <tbody>
+						          <tr valign="top"> 
+						          <td class="odd">
+						          {{
+						           var preNum; 
+						           var symbol;
+						           var index=1;
+						           var lzTotal1Val=0;
+							       var lzTotal2Val=0;
+							       var lzTotal3Val=0;
+						           for(var n=row.length-1;n>=0;n--){
+						        	   var num=row[n];
+						        	   if(num=="龍"){
+						        		   lzTotal1Val+=1;
+						        		   symbol='<span>龍</span>';
+						        	   }else if(num=="虎"){
+						        		   lzTotal2Val+=1;
+						        		   symbol='<label>虎</label>';
+						        	   }else if(num=="和"){
+						        		   lzTotal3Val+=1;
+						        		   symbol='<p>和</p>';
+						        	    }
+						        	   if(n==row.length-1||preNum==num){
+						          }}	   
+						           		{{=symbol}} 
+						          {{ 
+						          		}else{
+						          			index+=1;
+						          }}
+						          		</td><td class="{{=index%2==0?'even':'odd'}}">{{=symbol}} 
+						          {{
+						          		}
+						          		preNum=num;
+						          	}
+						          }}
+						          <input type="hidden" id="lzTotal1Val{{=i}}" value="{{=lzTotal1Val}}"/>
+						          <input type="hidden" id="lzTotal2Val{{=i}}" value="{{=lzTotal2Val}}"/>
+						          <input type="hidden" id="lzTotal3Val{{=i}}" value="{{=lzTotal3Val}}"/>
+						          </tr> 
+						         </tbody>
+						        </table> 
+						       </div> 
+						      </div> 
+				      	  {{
+				      	  	}
+				          }}
+					  </script>
+					<script type="text/javascript">
+				      	function getLuzhuLonghu(){
+				      		var date=$("#dateData").val();
+				      		$.post("tjssc/getLuzhuLonghu.do",
+				   				{date:date}, 
+				   				function(r) {
+				    				if (r) {
+				    					doTCompile("lz_data", r);
+//				    					for(var i=1;i<=1;i++){/*替换总来与没来数据*/
+//				    						$("#lzTotal1"+i).html($("#lzTotal1Val"+i).val());
+//				    						$("#lzTotal2"+i).html($("#lzTotal2Val"+i).val());
+//				    						$("#lzTotal3"+i).html($("#lzTotal3Val"+i).val());
+//				    					}
+				    				}
+				   			}, "json");
+				      	}
+				      	getLuzhuLonghu();
+				      	function Search() {
+				      		getLuzhuLonghu();
+					    }
+					 </script> 
+				</div>
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

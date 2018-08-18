@@ -1,0 +1,268 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+				<div class="feedbackDiv">以下数据功能由本站提供，使用过程中如有任何意见或建议请<a href="Common/feedback.html" target="_blank">及时反馈</a></div>
+			<div class="web_listOP">
+    <ul id="web_listOP_ul"><li><a href="xyft/">幸运飞艇</a></li><li><a href="xyft/kaijiang.html">历史开奖号码</a></li><li><a href="xyft/luzhulonghu.html">龙虎路珠</a></li><li><a href="xyft/luzhubigorsmall.html">单双大小路珠</a></li><li><a href="xyft/luzhutotal.html">总和路珠</a></li><li><a href="xyft/ballstat.html">单双大小历史</a></li><li><a href="xyft/numberstat.html">历史号码统计</a></li><li><a href="xyft/zoushitu.html">横版走势图</a></li><li><a href="jiqiao/xyft/">幸运飞艇技巧</a></li><li><a href="xyft/shipin" class="redColor">开奖视频</a></li><li><a href="xyft/omitdata.html">遗漏大数据</a><span class="hoticon"></span> </li><li><a href="xyft/twosidedstat.html">两面数据统计</a><span class="wen_newIcon"></span> </li><li class="hover"><a href="xyft/betgame.html">免费参考</a></li></ul>
+</div>
+<div class="clear"></div> 
+				<div> 
+			     <input type="hidden" id="callFun" value="getDataList" /> 
+			     <table style="width: 960px;"> 
+			      <tbody> 
+			       <tr> 
+			        <td valign="top" id="opencodelist" style="width: 300px;"> 
+			         <div id="history_data-html"></div> 
+			         	<script id="history_data-tmpl" type="text/template">
+					       	<table class="lot-table" style="width: 300px;"> 
+					       		 <tbody> 
+					       		<tr>
+				                    <td class="betgame-title" align="center">
+				                    	期号
+				                    </td>
+				                    <td class="betgame-title"">
+				                    	总和大
+				                    </td>
+				                    <td class="betgame-title" align="center">
+				                    	开奖号码
+				                    </td>
+				                    <td class="betgame-title"">
+				                    	总和小
+				                    </td>
+				                </tr>
+								{{ 
+									for (var i = 0; i <it.length; i++) { 
+										var row=it[i];
+										var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
+										var total=row.n1+row.n2+row.n1+row.n3+row.n4+row.n5;
+								}}
+									<tr class="tr_odd">
+				                        <td style="width: 85px;">{{=row.termNum}}
+				                        </td>
+				                        <td style="width: 55px;">
+				                        {{
+				                        	if(total%2){
+				                        }}
+					                        <b>双 </b>
+				                        {{
+				                        	}else{
+				                        }}
+				                            <b style="color:red;">单 </b>
+				                        {{
+				                        	}
+				                        }}
+				                        </td>
+				                        <td style="width: 100px; " class="betgame-num" align="center">
+					                        <div class="n{{=row.n1}}">{{=row.n1}}</div> 
+											<div class="n{{=row.n2}}">{{=row.n2}}</div> 
+											<div class="n{{=row.n3}}">{{=row.n3}}</div> 
+											<div class="n{{=row.n4}}">{{=row.n4}}</div> 
+											<div class="n{{=row.n5}}">{{=row.n5}}</div> 
+				                        </td>
+				                        <td style="width: 55px;">
+				                        {{
+				                        	if(total>22){
+				                        }}
+				                            <b style="color:red;">大</b>
+				                        {{ 
+				                        	} else{
+				                        }}
+					                        <b>小</b>
+				                        {{ 
+				                        	}
+				                        }}
+				                        </td>
+				                    </tr>
+								{{}}}
+								</tbody> 
+				      		</table>
+			      		</script> 
+					</td> 
+			        <td valign="top" style="width: 660px; padding-left: 20px;"> 
+			         <div id="recommend_list-html"></div> 
+			         <script id="recommend_list-tmpl" type="text/template">
+						<table style="width: 100%;">  
+				        <tbody> 
+				         {{ 
+				           var rowsLen=it.length;  
+				      	   var recArray=new Array();
+				           function addRecArray(recTermNum){
+				              var isExist=false;
+				              for(var i=0;i<recArray.length;i++){
+				                if(recArray[i]==recTermNum){
+				                  isExist=true;
+				                  break;
+				                }
+				              }
+				              if (!isExist) {
+				                recArray.push(recTermNum);
+				              }
+				              return isExist;
+				            } 
+				          for (var i = 0; i <rowsLen; i++) { 
+				          var rd=it[i]; 
+				          if(!addRecArray(rd.recTermNum)){
+						}}
+				              <tr valign="top"> 
+				                <td id="currentBetGame"> 
+				                 <table class="lot-table" style="width: 100%; margin: 0px;"> 
+				                  <tbody>
+					                   <tr> 
+					                    <td style="height: 30px; background-color: #F0F0F0;"> 
+					                    <span style="float: left; padding-left: 195px;">{{=rd.recTermNum}}期 ☆☆☆ 参考<span style="margin-left:20px;">开奖号码：{{=(i==0)?"等待开奖":rd.lotteryNum}}</span></span> 
+					                     <div style="float: right; display:none;"> 
+					                      <input type="checkbox" checked="checked" id="soundCheckBox" /> 
+					                      <label style="padding-left: 4px;" for="soundCheckBox">声音提示</label> 
+					                     </div>
+					                     </td> 
+					                   </tr> 
+					                   <tr> 
+					                    <td style="font-size:14px;" > 
+					                     <table style="width:100%;"> 
+					                      <tbody> 
+											{{ 
+											   var p=0;
+									   		   for(var j=i;j<i+6;j++){ 
+											   var row=it[j];
+											   if(!row)
+												   continue;
+											   var lotteryNum=row.lotteryNum; /*开奖号码*/
+											   var recType=row.recType; /*开奖号码*/
+											   var lotteryNumArray=[]; if(lotteryNum) lotteryNumArray=lotteryNum.split(",");  /*开奖数组*/
+											   var recLotteryNum=row.recLotteryNum; /*推荐号码*/
+											   var recLotteryNumArray=[]; 
+											   if(recLotteryNum) 
+													recLotteryNumArray=recLotteryNum.split(","); /*推荐数组*/
+											   var ln=parseInt(lotteryNumArray[p]);  /*当前开奖号码*/
+											   var dsDesc=""; 
+											   if(i!=0&&( (ln%2==0&&row.recDsType==2)||(ln%2!=0&&row.recDsType==1) ))
+											   {
+												dsDesc="(赢)";
+											   } 
+											   var dxDesc=""; 
+											   if(i!=0&&( (ln<=4&&row.recDxType==1)||(ln>4&&row.recDxType==2) )){
+												dxDesc="(赢)";
+											   } 
+											   
+											   var hmDesc=""; 
+												/*判断数组里是否有该数字*/
+												if(isNumExists(recLotteryNumArray,ln)) hmDesc="(赢)"; 
+											   var tn1=parseInt(lotteryNumArray[0]); 
+											   var tn5=parseInt(lotteryNumArray[4]); 
+											   var gyhDesc="";
+											   if(i!=0 && recType==6 && tn1>tn5 && recLotteryNum==1) 
+												gyhDesc="(赢)";
+											   if(recType==6){
+												   if(recLotteryNum==1){
+													   recLotteryNum="龍";
+												   }else{
+													   recLotteryNum="虎";
+												   }
+											   }
+											}}
+					                       <tr> 
+					                        <td>{{=dataTypeNumsDesc["n"+row.recType]}}</td> 
+					                        <td style="width: 174px;height: 29px;line-height: 24px;padding-left: 10px;text-align: left;">
+												<span style="color:;">
+													{{=recLotteryNum}}
+													<span style="color:Red;">{{=hmDesc}}{{=gyhDesc}}</span>
+												</span>
+											</td> 
+					                        <td style="width: 174px;height: 29px;line-height: 24px;padding-left: 10px;text-align: left;">
+												<span style="color:;">
+													{{var ds="";if(row.recType!=11&&row.recDsType){ds=row.recDsType==1?"单":"双"} }}{{=ds}}
+													<span style="color:Red;">{{=dsDesc}}</span>
+												</span>
+											</td> 
+					                        <td style="width: 174px;height: 29px;line-height: 24px;padding-left: 10px;text-align: left;">
+												<span style="color:;">
+													{{var dx="";if(row.recType!=11&&row.recDxType){dx=row.recDxType==1?"小":"大"} }}{{=dx}}
+													<span style="color:Red;">{{=dxDesc}}</span>
+												</span>
+											</td> 
+					                       </tr> 
+					                       <tr></tr> 
+											{{ if(p<10)p++; }}
+											{{ } }}
+					                       <tr>
+											</tr> 
+					                      </tbody> 
+					                     </table></td> 
+					                   </tr> 
+					                  </tbody> 
+					                 </table> </td> 
+					               </tr> 
+									{{ if(i==0){ }}
+									{{ }  
+					          		  }
+					          		} }}
+					            </tbody> 
+					            </table>
+					           </td> 
+					         </tr> 
+					        </tbody> 
+				        </table>
+				 	  </script> 
+				 	 </td> 
+			       </tr> 
+			      </tbody> 
+			     </table> 
+			    </div> 
+			    <script type="text/javascript">
+			 	 var Request =  GetRequest();
+				 var gameId = Request['gameId'];
+				 if(!gameId)
+					 gameId=3;
+				 var dataTypeNumsDesc={
+			  	      "n1":"第一球","n2":"第二球","n3":"第三球","n4":"第四球","n5":"第五球","n6":"龍虎"
+				 };
+				 function getDataList(){
+				 	$.post("recommend/getList.do",
+			   				{gameId:gameId}, 
+			   				function(r) {
+			    				if (r) {
+			    					doTCompile("recommend_list", r.t);
+			    				}
+			   			}, "json");
+				 		$.post("xyft/getHistoryData.do",
+			   				{count:100}, 
+			   				function(r) {
+			    				if (r) {
+			    					doTCompile("history_data", r.rows);
+			    				}
+			   			}, "json");
+				 }
+				 getDataList();
+			   
+			   
+			   function isNumExists(arrays,num){
+				   for(var q=0;q<arrays.length;q++){
+					   if(parseInt(arrays[q])==num){
+						   return true;
+						   break;
+						} 
+					} 
+				   return false; 
+				}
+			   
+			   function lotteryToArray(num){
+				   return num.split(",");
+			   }
+			  </script> 
+	    </div>
+</div>
+</block>

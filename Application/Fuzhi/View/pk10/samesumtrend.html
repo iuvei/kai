@@ -1,0 +1,318 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/draw5.css">
+    <link type="text/css" rel="stylesheet" href="css/layout.css">
+    <link type="text/css" rel="stylesheet" href="css/tableAndFont.css">
+    <style type="text/css">
+
+        v\:line, v\:rect, v\:oval, v\:group, v\:stroke, v\:fill, v\:polyline {behavior: url(#default#VML);}
+        .cvs { position: absolute;}
+        #trendChart {padding: 0;position: relative;left:0;top:0;}
+        #canvas{ z-index:999; position:absolute; left:0; top:0;}
+
+    </style>
+    <!--[if lte IE 9]> <style type="text/css">.dateLineTable	*{padding:auto;margin:auto;}</style><![endif]-->
+</block>
+
+<block name="body">
+ 
+  <div class="body-content"> 
+   <include file="Public/top_ad"/>
+
+      <include file="Public/lottory_latest"/>
+   	<input type="hidden" id="callFun" value="drawTrend" />
+   	<div class ="jsloading"></div>
+    <div class="web_dateLineBody" ms-controller="chart">
+
+        <div class="web_topNav2">
+            <ul>
+                <li>
+                    <a href="pk10/positiontrend.html" ><span class="web_topNav_img1"></span></a>
+                    <a href="pk10/positiontrend.html" ><span class="web_topNav_font">基本走势图</span></a>
+                </li>
+
+                <li class="hover" style="border-left: 1px solid #e1e1e1;">
+                    <a href="pk10/samepositiontrend.html" ><span class="web_topNav_img2"></span></a>
+                    <a href="pk10/samepositiontrend.html" ><span class="web_topNav_font">同期走势图</span></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="web_changeThree">
+            <ul>
+                <a href="pk10/samepositiontrend.html" ><li  tag="position" >位置走势图</li></a>
+                <li class="list"></li>
+                <a href="pk10/samenotrend.html" ><li tag="no">号码走势图</li></a>
+                <li class="list"></li>
+                <a href="pk10/samesumtrend.html" ><li class="hover" tag="sum">冠亚和走势图</li></a>
+            </ul>
+        </div>
+
+        <div class="web_dataBallModel03">
+            <div class="web_ball01s" id="cball">
+                <div class="left" id="ballchoose">
+                    <ul id="ul_sum">
+                        <li><b>冠亚和同期走势图</b></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li class="li01">选择期数：</li>
+                        <li>
+                            <select id="periodCount" class="select" ms-each-el="selectdata" ms-change="changePeriod(this)">
+                                <option ms-value="el">{{el}}期</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="nextPeriod"><b>当前期：</b><span id="currResult">{{nextNo}}&nbsp;&nbsp;{{nextTime}}&nbsp;&nbsp;待开奖</span></div>
+            <div class="nextPeriodTip">*以下记录的是最近一个月每天{{time}}开出的号码走势</div>
+
+            <div class="dateLineTable" id="trendChart">
+                <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <th class="blue3" rowspan="2" valign="middle" width="10%">
+                                <span style="font-size: 14px;">日期</span>
+                            </th>
+                            <th id="col_len" class="blue" colspan="17" valign="middle" width="68%">{{ballName}}走势图</th>
+                            <th class="blue" colspan="2" valign="middle" width="6%">单双</th>
+                            <th class="blue" colspan="2" valign="middle" width="6%">大小</th>
+                            <th class="blue" colspan="3" valign="middle" width="10%">前中后</th>
+                        </tr>
+                        <tr>
+                            <th class="pinkWhite5" width="4%">3</th>
+                            <th class="pinkWhite5" width="4%">4</th>
+                            <th class="pinkWhite5" width="4%">5</th>
+                            <th class="pinkWhite5" width="4%">6</th>
+                            <th class="pinkWhite5" width="4%">7</th>
+                            <th class="pinkWhite5" width="4%">8</th>
+                            <th class="pinkWhite5" width="4%">9</th>
+                            <th class="pinkWhite5" width="4%">10</th>
+                            <th class="pinkWhite5" width="4%">11</th>
+                            <th class="pinkWhite5" width="4%">12</th>
+                            <th class="pinkWhite5" width="4%">13</th>
+                            <th class="pinkWhite5" width="4%">14</th>
+                            <th class="pinkWhite5" width="4%">15</th>
+                            <th class="pinkWhite5" width="4%">16</th>
+                            <th class="pinkWhite5" width="4%" >17</th>
+                            <th class="pinkWhite5" width="4%">18</th>
+                            <th class="pinkWhite5" width="4%">19</th>
+                            <th class="huise2" width="3%">单</th>
+                            <th class="huise2" width="3%">双</th>
+                            <th class="huise2" width="3%">大</th>
+                            <th class="huise2" width="3%">小</th>
+                            <th class="huise2" width="3%">前</th>
+                            <th class="huise2" width="3%">中</th>
+                            <th class="huise2" width="3%">后</th>
+                        </tr>
+
+                    </thead>
+                    <tbody id="chart">
+                        <tr id="td_award">
+                            <td class="white2">{{currDate}}&nbsp;&nbsp;{{nextCurrNo}}</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">3</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">4</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">5</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">6</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">7</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">8</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">9</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">10</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">11</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">12</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">13</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">14</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">15</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">16</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">17</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">18</td>
+                            <td valign="middle" class="pinkWhite5 huiseFont">19</td>
+                            <td class="white2">单</td>
+                            <td class="white2">双</td>
+                            <td class="white2">大</td>
+                            <td class="white2">小</td>
+                            <td class="white2">前</td>
+                            <td class="white2">中</td>
+                            <td class="white2">后</td>
+                        </tr>
+                        <tr ms-repeat="totaldata" style="display: none" class="data-stat">
+                            <td class="white2">{{el.Drawing_Date}}&nbsp;&nbsp;{{el.Period}}</td>
+                            <td valign="middle" ms-repeat-n="ballArrary" ms-class-1="shenred4:el.Nums==n" ms-class-2="pinkWhite5 huiseFont:el.Nums!=n">{{n}}</td>
+                            <td ms-class-1="greenBg2:el.Odd==1" ms-class-2="white2:el.Odd==0">单</td>
+                            <td ms-class-1="greenBg2:el.Even==1" ms-class-2="white2:el.Even==0" style="border: none;">双</td>
+                            <td ms-class-1="yellowBg:el.Big==1" ms-class-2="white2:el.Big==0">大</td>
+                            <td ms-class-1="yellowBg:el.Small==1" ms-class-2="white2:el.Small==0" style="border: none;">小</td>
+                            <td ms-class-1="shenblue2:el.Front==1" ms-class-2="white2:el.Front==0">前</td>
+                            <td ms-class-1="shenblue2:el.Middle==1" ms-class-2="white2:el.Middle==0">中</td>
+                            <td ms-class-1="shenblue2:el.Back==1" ms-class-2="white2:el.Back==0" style="border: none;">后</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="trendChartloading">正在加载中……</div>
+                <input type="hidden" id="periodInfo" ms-duplex="periodInfo" />
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+    $(function() {
+        require(['trendChart'],
+        function(trendChart) {
+            var chartLine = new trendChart({
+                css: {
+                    noyl: "noyl",
+                    bline: "bline",
+                    lines: [".shenred4"]
+                },
+                lineWidth: 2,
+                lineColor: "#BB8569"
+            });
+
+            var ajaxUrl = "pk10/sameSumTrend.do";
+            //首次读取后台数据
+            var datas; //走势图数据json
+            var option; //下拉框期号数据json
+            var time; //当期期开奖时间
+            $.get(ajaxUrl, {
+                id: 0
+            },
+            function(r) {
+                datas = r.chart;
+                option = r.option;
+                time = r.time; //当期期开奖时间
+
+                var viewmodel = avalon.define('chart',
+                function(vm) {
+                    vm.ballName = "冠亚和"; //走势名称
+                    vm.ball = 0; //球号索引
+                    vm.ballArrary = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]; //列头
+                    vm.totaldata = []; //走势图数据
+                    vm.selectdata = []; //绑定下拉框期号数据
+                    vm.time = time; //当期选择期开奖时间
+                    vm.periodInfo = 0;
+                    vm.changePeriod = function(t, pid) {
+                        var vperid;
+                        if ("object" == typeof(t)) {
+                            vperid = $(t).val();
+                        } else {
+                            vperid = pid;
+                        }
+                        $(".data-stat").hide();
+                        $(".trendChartloading").show();
+                        chartLine.clearLines();
+                        $.get(ajaxUrl, {
+                            id: vm.ball,
+                            pid: vperid
+                        },
+                        function(dataObj) {
+                            vm.totaldata = dataObj.chart;
+                            vm.time = dataObj.time;
+
+                            vm.SetStyle(vperid);
+                            vm.drawLine();
+
+                            $(".data-stat").show();
+                            $(".trendChartloading").hide();
+                        },
+                        'json');
+                    }
+                    vm.currNo = 0;
+                    vm.nextNo = 0;
+                    vm.nextTime = "";
+                    vm.currDate = "";
+                    vm.newIssue = 0; //最近新一期期号
+                    vm.newNumber = ""; //最近新一期开出开奖号码
+                    vm.nextCurrNo = ""; //用于存储走势第一条期号
+                    vm.SetStyle = function(vperid) {
+
+                        if (vm.nextNo == vperid || (vm.currNo == vperid && ((vperid == vm.newIssue && vm.newNumber == "") || vm.currNo > vm.newIssue))) {
+                            vm.nextCurrNo = vperid;
+                            $("#td_award").show();
+                        } else if (vm.currNo == vperid && vm.totaldata[0].Period != vm.currNo) {
+                            vm.nextCurrNo = vperid;
+                            $("#td_award").show();
+                        } else {
+                            $("#td_award").hide();
+                        }
+
+                    }
+                    vm.AddOption = function() {
+                        if ($("#periodCount option").eq(0).val() != vm.nextNo) {
+                            $("#periodCount").prepend("<option value='" + vm.nextNo + "'>" + vm.nextNo + "期</option>");
+                        }
+                    }
+                    vm.SetLoadAwardInfo = function() {
+                        $.get('pk10/ajaxTrend.do', {
+                            t: Math.random()
+                        },
+                        function(data) {
+                            //{"time":1409971185065,"current":{"periodNumber":27,"awardTime":"2014-09-06 10:30:00"},"next":{"periodNumber":28,"awardTime":"2014-09-06 10:40:00"}}
+                            vm.currNo = data.current.periodNumber;
+                            vm.nextNo = data.next.periodNumber;
+                            vm.nextCurrNo = data.next.periodNumber;
+                            vm.nextTime = new Date(data.next.awardTime.replace(/-/g, "/")).pattern("MM/dd HH:mm");
+                            vm.currDate = new Date(data.current.awardTime.replace(/-/g, "/")).pattern("MM-dd");
+                            //alert(data.newIssue.periodNumber + ":" + data.newIssue.awardNumber);
+                            vm.newIssue = data.newIssue.periodNumber;
+                            vm.newNumber = data.newIssue.awardNumber;
+
+                            if (true == bflag) {
+
+                                vm.AddOption();
+
+                                if ($("#periodCount option:selected").val() == vm.currNo) {
+                                    vm.changePeriod("", vm.currNo);
+                                }
+                            }
+                        },
+                        'json').error(function() {
+
+    					});
+                    }
+                    vm.drawLine = function() {
+                        chartLine.clearLines();
+                        chartLine.reDraw();
+                    };
+
+                    vm.$watch("periodInfo",
+                    function(v) {
+                        vm.periodInfo = v;
+                        vm.SetLoadAwardInfo();
+                    });
+                });
+                var vjson = datas;
+                viewmodel.totaldata = vjson;
+                viewmodel.selectdata = option;
+
+                $(".data-stat").show();
+                $(".trendChartloading").hide();
+                viewmodel.SetLoadAwardInfo();
+
+                avalon.scan();
+                $(".jsloading").hide();
+                viewmodel.drawLine();
+            },
+            "json");
+        })
+    });
+    var bflag = false;
+
+    var vdraw = 0;
+    function drawTrend() {
+        vdraw += 1;
+        bflag = true;
+        $("#periodInfo").val(vdraw);
+
+    }
+	</script>
+	<script src="js/avalon.js"  type="text/javascript"></script>
+  </div> 
+  <div class="clear"></div> 
+  </block>

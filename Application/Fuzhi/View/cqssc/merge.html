@@ -1,0 +1,494 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+<div class="clear"></div>
+    <input type="hidden" id="callFun" value="load" time="1000"/>
+    <div style="margin-bottom:20px;">
+        <ul class="lot-number-omit">
+            <li class="ball">
+                <ul id="rankUl">
+                    <li>
+                        <a href="javascript:gotoPage('',1)" id="rankLi1" class='cur'>
+                            第一球
+                        </a>
+                        |
+                    </li>
+                    <li>
+                        <a href="javascript:gotoPage('',2)" id="rankLi2" >
+                            第二球
+                        </a>
+                        |
+                    </li>
+                    <li>
+                        <a href="javascript:gotoPage('',3)" id="rankLi3" >
+                            第三球
+                        </a>
+                        |
+                    </li>
+                    <li>
+                        <a href="javascript:gotoPage('',4)" id="rankLi4" >
+                            第四球
+                        </a>
+                        |
+                    </li>
+                    <li>
+                        <a href="javascript:gotoPage('',5)" id="rankLi5" >
+                            第五球
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="type">
+                <ul id="mlist_ul">
+                    <li> <label> <input type="checkbox" name="c_p" id="c_p1" value="mlist-1"/>长龙提醒</label>&nbsp; </li> &nbsp;
+                    <li> <label> <input type="checkbox" name="c_p" id="c_p8" value="mlist-2"/>单码遗漏</label>&nbsp; </li>
+                    <li> <label> <input type="checkbox" name="c_p" id="c_p3" value="mlist-3"/>大小/单双路珠</label>&nbsp; </li>
+                    <li> <label> <input type="checkbox" name="c_p" id="c_p5" value="mlist-4"/>龙虎路珠</label>&nbsp; </li>
+                    <li> <label> <input type="checkbox" name="c_p" id="c_p6" value="mlist-5"/>总和单双/大小路珠</label>&nbsp; </li>
+                    <!--        <li> <label> <input type="checkbox" name="c_p" id="c_p7" value="mlist-6"/>冠亚和大小路珠</label>&nbsp; </li>  -->
+                    <!-- <li> <label> <input type="checkbox" name="c_p" id="c_p2" />号码遗漏</label> &nbsp;</li> -->
+                    <!-- <li> <label> <input type="checkbox" name="c_p" id="c_p9" />上期跟号</label>&nbsp; </li>
+                    <li> <label> <input type="checkbox" name="c_p" id="c_p10" />皇家模式</label> </li>&nbsp; -->
+                    <li > <label id="ballIndex" style="display: none;">0</label>&nbsp; </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="clear"></div>
+        <div id="lot_content">
+            <div id="mlist-1">
+                <table class="merge-title-table" style="margin-bottom: -1px;">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <span>长龙提醒</span>
+                            <!--
+                            <span>长龙提醒 <a href="/pk10/changlongwarn/1" target="_blank" class="changlong-setting"> 设置</a> </span>
+                             -->
+                        </td>
+                        <td>
+                            <!--
+                            <a class="move-down" onclick="movePanel('c_p1','down');" title="向下"></a>
+                             -->
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div style="margin-bottom: 10px;">
+                    <div id="cl_list-html" style="float: left;"></div>
+                    <script id="cl_list-tmpl" type="text/template">
+                        <ul>
+                            <li>
+                                {{
+                                var rowsLen=it.length;
+                                for(var i=0;i<rowsLen;i++){ /*循环开始A*/
+                                var rd=it[i];
+                                var tRank="";
+                                if(rd.rank==1){
+                                tRank="冠";
+                                }else if(rd.rank==2){
+                                tRank="亚";
+                                }else if(rd.rank==3){
+                                tRank="三";
+                                }else if(rd.rank==4){
+                                tRank="四";
+                                }else if(rd.rank==5){
+                                tRank="五";
+                                }else if(rd.rank==6){
+                                tRank="六";
+                                }else if(rd.rank==7){
+                                tRank="七";
+                                }else if(rd.rank==8){
+                                tRank="八";
+                                }else if(rd.rank==9){
+                                tRank="九";
+                                }else if(rd.rank==10){
+                                tRank="十";
+                                }
+                                var tNum=rd.num;
+                                var tType="";
+                                if(rd.dataType==2){
+                                if(tNum==1){
+                                tType="龍";
+                                }else if(tNum==2){
+                                tType="虎";
+                                }else if(tNum==3){
+                                tType="平";
+                                }
+                                }else if(rd.dataType==5){
+                                if(tNum==1){
+                                tType="单";
+                                }else{
+                                tType="双";
+                                }
+                                }else if(rd.dataType==6){
+                                if(tNum==1){
+                                tType="小";
+                                }else{
+                                tType="大";
+                                }
+                                }
+                                }}
+                                <div class="cl_s">
+                                    第{{=tRank}}球：{{=tType}} {{=rd.nowMissing}} 期
+                                </div>
+                                {{
+                                }
+                                }}
+                            </li>
+                        </ul>
+                    </script>
+                </div>
+                &nbsp;<br />
+            </div>
+            <div style="height: 25px; clear: both;"> </div>
+            <div id="mlist-2">
+                <table class="merge-title-table" style="margin-bottom: 0px;">
+                    <tbody>
+                    <tr>
+                        <td>
+					         <span id="showWin">
+					           单码遗漏
+					         </span>
+                        </td>
+                        <td> <!--<a class="move-up" onclick="movePanel('c_p2','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p2','down');" title="向下"></a>--> </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div id="missing_list-html"></div>
+                <script id="missing_list-tmpl" type="text/template">
+                    <table class="lot-table" id="Table1">
+                        <caption>
+                        </caption>
+                        <tr class="head">
+                            <td width="170px">
+                                号码
+                            </td>
+                            <td>
+                                <div class="web_Sortk">
+                                    <ul>
+                                        <li class="ps1">
+                                            遗漏输赢
+                                        </li>
+                                        <li class="btn" id="classUpDown1">
+                                             <span class="btn1" order-cloumn="1" order-type="1">
+                                             </span>
+                                             <span class="btn2" order-cloumn="1" order-type="2">
+                                             </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="web_Sortk">
+                                    <ul>
+                                        <li class="ps1">
+                                            今日出现
+                                        </li>
+                                        <li class="btn" id="classUpDown2">
+                                             <span class="btn1" order-cloumn="2" order-type="1">
+                                             </span>
+                                             <span class="btn2" order-cloumn="2" order-type="2">
+                                             </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="web_Sortk">
+                                    <ul>
+                                        <li class="ps1">
+                                            当前遗漏
+                                        </li>
+                                        <li class="btn " id="classUpDown3">
+                                             <span class="btn1" order-cloumn="3" order-type="1">
+                                             </span>
+                                             <span class="btn2" order-cloumn="3" order-type="2">
+                                             </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="web_Sortk">
+                                    <ul>
+                                        <li class="ps1">
+                                            今日遗漏
+                                        </li>
+                                        <li class="btn  " id="classUpDown4">
+                                             <span class="btn1" order-cloumn="4" order-type="1">
+                                             </span>
+                                             <span class="btn2" order-cloumn="4" order-type="2">
+                                             </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="web_Sortk">
+                                    <ul>
+                                        <li class="ps1">
+                                            一周遗漏
+                                        </li>
+                                        <li class="btn  " id="classUpDown5">
+                                              <span class="btn1" order-cloumn="5" order-type="1">
+                                             </span>
+                                             <span class="btn2" order-cloumn="5" order-type="2">
+                                             </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="web_Sortk">
+                                    <ul>
+                                        <li class="ps1">
+                                            一月遗漏
+                                        </li>
+                                        <li class="btn  " id="classUpDown6">
+                                              <span class="btn1" order-cloumn="6" order-type="1">
+                                             </span>
+                                             <span class="btn2" order-cloumn="6" order-type="2">
+                                             </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="web_Sortk">
+                                    <ul>
+                                        <li class="ps1">
+                                            历史遗漏
+                                        </li>
+                                        <li class="btn  " id="classUpDown7">
+                                              <span class="btn1" order-cloumn="7" order-type="1">
+                                             </span>
+                                             <span class="btn2" order-cloumn="7" order-type="2">
+                                             </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        {{ var rowsLen=it.length; }}
+                        {{ for (var i = 1; i <=rowsLen; i++) { }}
+                        {{ var joClass=i%2==0?"even":"odd"; }}
+                        {{ var row=it[i-1]; }}
+                        <tr class="{{=joClass}}">
+                            <td>
+                                {{=eval('dataTypeNumsDesc['+dataType+'].n'+row.num)}}
+                            </td>
+                            <td>
+                                <span class="{{=row.nowMissing<=0?"lose":"win"}}">
+                                {{var nowMissing=row.nowMissing==null?0:row.nowMissing;}}
+                                {{=nowMissing<=0?"输":"赢"}}{{=Math.abs(nowMissing)}}
+                                </span>
+                            </td>
+                            <td>
+                                {{=row.dayTotalNum==null?0:row.dayTotalNum}}
+                            </td>
+                            <td>
+                                {{=nowMissing>0?0:Math.abs(nowMissing)}}
+                            </td>
+                            <td>
+                                {{=row.dayMissing==null?0:row.dayMissing}}
+                            </td>
+                            <td>
+                                {{=row.weekTotalNum==null?0:row.weekTotalNum}}
+                            </td>
+                            <td>
+                                {{=row.monthTotalNum==null?0:row.monthTotalNum}}
+                            </td>
+                            <td>
+                                {{=row.allTotalNum==null?0:row.allTotalNum}}
+                            </td>
+                        </tr>
+                        {{ } }}
+                    </table>
+                </script>
+                <br />
+            </div>
+            <div id="mlist-3">
+                <table class="merge-title-table">
+                    <tbody>
+                    <tr>
+                        <td> <span>大小/单双路珠</span> </td>
+                        <td> <!--<a class="move-up" onclick="movePanel('c_p4','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p4','down');" title="向下"></a>--> </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div id='dx_lot_content'></div>
+                <br />
+            </div>
+            <div id="mlist-4">
+                <table class="merge-title-table">
+                    <tbody>
+                    <tr>
+                        <td> <span>龙虎路珠</span> </td>
+                        <td> <!--<a class="move-up" onclick="movePanel('c_p5','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p5','down');" title="向下"></a>--> </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div id="luzhu"></div>
+                <br />
+            </div>
+            <div id="mlist-5">
+                <table class="merge-title-table">
+                    <tbody>
+                    <tr>
+                        <td> <span>总和单双/大小路珠</span> </td>
+                        <td><!-- <a class="move-up" onclick="movePanel('c_p6','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p6','down');" title="向下"></a>--> </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div id="jshtml">
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var Request =  GetRequest();
+            var dataType = Request['dataType'];
+            var gameId = Request['gameId'];
+            var rank = Request['rank'];
+            var orderCloumn = Request['orderCloumn'];
+            var orderType = Request['orderType'];
+            if(!dataType)
+                dataType=1;
+            if(!gameId)
+                gameId=1;
+            if(!rank&&dataType==1)
+                rank=1;
+            if(!orderCloumn)
+                orderCloumn=1;
+            if(!orderType)
+                orderType=2;
+            //长龍
+            function getMergeData(){
+                $.post("/cqssc/getMergeData.do",
+                        {rank:rank},
+                        function(r) {
+                            if (r) {
+                                doTCompile("cl_list", r.clList);
+                            }
+                        }, "json");
+            }
+            //连续遗漏
+            var dataTypeNumsDesc={
+                "1":{"n0":"0", "n1":"1","n2":"2","n3":"3","n4":"4","n5":"5","n6":"6","n7":"7","n8":"8","n9":"9","n10":"10"},
+                "2":{"n1":"龙","n2":"虎","n3":"平"},
+                "5":{"n1":"单","n2":"双"},
+                "6":{"n1":"小","n2":"大"},
+                "7":{"n1":"总和单","n2":"总和双"},
+                "8":{"n1":"总和小","n2":"总和大"}
+            };
+            function getMissingList(){
+                var rankVal=rank;
+                if(dataType==2||dataType==7||dataType==8){
+                    rankVal="";
+                }
+                $.post("/missing/getMissingList.do",
+                        {dataType:dataType,gameId:gameId,rank:rankVal,orderCloumn:orderCloumn,orderType:orderType },
+                        function(r) {
+                            if (r) {
+                                doTCompile("missing_list", r.t);
+                                //处理排序样式
+                                $("#classUpDown"+orderCloumn).addClass(orderType==1?"btnUp":"btnDown");
+                                //处理 类型样式
+                                $("#dataTypeUl li a").removeClass("cur")
+                                $("#dataTypeLi"+dataType).addClass("cur")
+                                //处理排名样式
+                                $("#rankUl li a").removeClass("cur")
+                                $("#rankLi"+rank).addClass("cur")
+                            }
+                        }, "json");
+            }
+            //大小路珠
+            function luzhuShow(){
+                for(var i=0;i<11;i++){
+                    $(".t_"+i).hide();
+                }
+                $(".t_"+rank).show();
+            }
+            function searchQianhouLuzhu() {
+                $.get('/cqssc/luZhuTongji.do', {
+                    type:"bseo"
+                }, function(data) {
+                    $("#dx_lot_content").html(data);
+                    luzhuShow();
+                });
+            }
+            //龍虎路珠
+            function searchLuzhu() {
+                $.get("/cqssc/getLonghuLuzhuData.do", {
+                    t : Math.random()
+                }, function(text) {
+                    $('#luzhu').html(text);
+                    luzhuShow();
+                });
+            }
+            //龍虎结束
+
+            //总和路珠
+            function getGuanyaLuzhubseo(){
+                $.get('/cqssc/luZhuTongji.do', {
+                    type:"total"
+                }, function(data) {
+                    $("#jshtml").html(data);
+                });
+            }
+            //总和路珠
+            function load(){
+                getMergeData();
+                getMissingList();
+                searchQianhouLuzhu();
+                getGuanyaLuzhubseo();
+                searchLuzhu();
+            }
+            load();
+            function gotoPage(dataTypeNum,rankNum){
+                if(dataTypeNum)
+                    dataType=dataTypeNum;
+                if(rankNum)
+                    rank=rankNum;
+                window.location.href="/cqssc/merge.html#dataType="+dataType+"&gameId="+gameId+"&rank="+rank+"&orderCloumn="+orderCloumn+"&orderType="+orderType;
+                load();
+            }
+            $(".web_Sortk .btn span").live("click",
+                    function() {
+                        $(".web_Sortk li").removeClass("btnDown");
+                        $(".web_Sortk li").removeClass("btnUp");
+                        $(this).attr("class")=="btn1"?$(this).parents("li").addClass("btnUp"):$(this).parents("li").addClass("btnDown");
+                        orderCloumn=$(this).attr("order-cloumn");
+                        orderType=$(this).attr("order-type");
+                        gotoPage();
+                    }
+            );
+
+            $("input[name='c_p']").live("change",function(){
+                var tid=$(this).attr("value");
+                if($(this).attr("checked")=="checked"){
+                    $("#"+$(this).val()).show();
+                }else{
+                    $("#"+$(this).val()).hide();
+                }
+            })
+        </script>
+    </div>
+    <div class="clear"></div>
+	    </div>
+</div>
+</block>

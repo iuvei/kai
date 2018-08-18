@@ -1,0 +1,293 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+		<include file="Public/lottory_op"/>
+		<div id="lot-wrap" style="margin-bottom:20px;">
+            
+<input type="hidden" id="callFun" value="todaystatlist" time="2000" />
+
+<div id="mobang" style="display: none">
+    <literal><span id="sid{$index}" class="param"><span class="sparam1">参数设置{$index}：当数值为<input tty="0" type="text" style="width: 25px; margin: 0 5px 0 5px;" value="{$star}" id="star{$index}" pid="{$index}" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d]/g,'')" maxlength="3"/>至<input tty="0" type="text" style="width: 25px; margin: 0 5px 0 5px;" value="{$end}" id="end{$index}" pid="{$index}" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d]/g,'')" maxlength="3"/>时为</span><i class="{$bgcolor}"></i><span class="sparam2">色</span><input type="button" class="span" pid="{$index}" value="收起"/></span></literal>
+</div>
+<div id="colorSet">
+    <div class="content" style="padding-bottom:5px;text-align:left"><b>使用说明：</b>提供号码当日的开出次数及近期未开次数，使用参数设置可自定义关注遗漏范围，请根据个人需要手动设置，各参数的数值可设置范围是：2-500。</div>
+    <p>
+        <span id="sid1" class="param"><span class="sparam1">参数设置1：当数值为<input tty="0" style="width: 25px; margin: 0 5px 0 5px; " value="15" type="text" id="star1" pid="1" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d]/g,'')" maxlength="3" />至<input tty="0" style="width: 25px; margin: 0 5px 0 5px;" value="100" type="text" id="end1" pid="1" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d]/g,'')" maxlength="3"/>时为</span><i class="color_red"></i><span class="sparam2">色</span><input type="button" id="spDel" class="span" pid="1" style="display: none;" value="收起"/></span>
+        <input type="button" id="spAdd" class="spanAdd" value="增加"/><input type="button" id="changedata" class="spanAdd" value="确认"/>
+    </p>
+</div>
+
+<div class="clear"></div>
+<div id="tblist">
+        <table class="lot-table" id="openTable">
+        <tr class="head">
+            <td colspan="3">冠  军</td>
+            <td colspan="3" style="background-color: #fff;">亚  军</td>
+            <td colspan="3">第三名</td>
+            <td colspan="3" style="background-color: #fff;">第四名</td>
+            <td colspan="3">第五名</td>
+            <td colspan="3" style="background-color: #fff;">第六名</td>
+            <td colspan="3">第七名</td>
+            <td colspan="3" style="background-color: #fff;">第八名</td>
+            <td colspan="3">第九名</td>
+            <td colspan="3" style="background-color: #fff;">第十名</td>
+        </tr>
+        <tr class="head" style="font-weight: inherit;">
+                <td style="background-color: #fff;">号码</td>
+                <td style="background-color: #fff;">总开</td>
+                <td style="background-color: #fff;">未开</td>
+                <td style="background-color: #fff;">号码</td>
+                <td style="background-color: #fff;">总开</td>
+                <td style="background-color: #fff;">未开</td>
+                <td style="background-color: #fff;">号码</td>
+                <td style="background-color: #fff;">总开</td>
+                <td style="background-color: #fff;">未开</td>
+                <td style="background-color: #fff;">号码</td>
+                <td style="background-color: #fff;">总开</td>
+                <td style="background-color: #fff;">未开</td>
+                <td style="background-color: #fff;">号码</td>
+                <td style="background-color: #fff;">总开</td>
+                <td style="background-color: #fff;">未开</td>
+                <td style="background-color: #fff;">号码</td>
+                <td style="background-color: #fff;">总开</td>
+                <td style="background-color: #fff;">未开</td>
+                <td style="background-color: #fff;">号码</td>
+                <td style="background-color: #fff;">总开</td>
+                <td style="background-color: #fff;">未开</td>
+                <td style="background-color: #fff;">号码</td>
+                <td style="background-color: #fff;">总开</td>
+                <td style="background-color: #fff;">未开</td>
+                <td style="background-color: #fff;">号码</td>
+                <td style="background-color: #fff;">总开</td>
+                <td style="background-color: #fff;">未开</td>
+                <td style="background-color: #fff;">号码</td>
+                <td style="background-color: #fff;">总开</td>
+                <td style="background-color: #fff;">未开</td>
+        </tr>
+		</table>
+</div>
+<script type="text/javascript">
+    var json = [];
+    Array.prototype.remove = function (dx) {
+        if (isNaN(dx) || dx > this.length) { return false; }
+        for (var i = 0, n = 0; i < this.length; i++) {
+            if (this[i] != this[dx]) {
+                this[n++] = this[i]
+            }
+        }
+        this.length -= 1
+    }
+
+    $(function () {
+
+        json.push({ "index": 1, "star": 15, end: 100, color: "red", bgcolor: "color_red" });
+       
+        $(".span").live("click", function () {
+            var vindex = Number($(this).attr("pid"));
+            var vlen = $("#colorSet span[id^='sid']").length;
+            if (vindex == 2) {
+                $("#spDel").hide();
+                if (vlen == 3) {
+                    $("#sid3").remove();
+                    json.remove(2);
+                }
+                $("#sid2").remove();
+                json.remove(1);
+            } else if (vindex == 1 && vlen > 2) {
+                $("#sid2").remove();
+                $("#sid3").remove();
+                $("#spDel").hide();
+                json.remove(2);
+                json.remove(1);
+            } else if (vindex == 1 && vlen > 1) {
+                $("#sid2").remove();
+                $("#spDel").hide();
+                json.remove(1);
+            } else {
+                $("#sid3").remove();
+                json.remove(2);
+            }
+
+            $("#spAdd").show();
+            loadData();
+        });
+
+        $("#colorSet input[tty='0']").live("blur", function () {
+            var pid = Number($(this).attr("pid"));
+            if (isNaN(pid)) {
+                openDialog("参数错误！");
+            } else {
+                var star = $("#star" + pid).val();
+                var end = $("#end" + pid).val();
+                if (star == "" && end == "") {
+                    star = 0;
+                    end = 0;
+                    json[pid - 1].index = 5;
+                } else {
+                    star = Number($("#star" + pid).val());
+                    end = Number($("#end" + pid).val());
+                    json[pid - 1].index = pid;
+                }
+                if (json.length > 0) {
+                    json[pid - 1].star = star;
+                    json[pid - 1].end = end;
+                }
+                
+            }
+        });
+        $("#spAdd").click(function () {
+            //alert(JSON.stringify(json));
+            var len = $("#colorSet input[tty='0']").length;
+            if (isNaN(Number(len))) {
+                openDialog("参数错误！");
+                return;
+            } else {
+                if (len > 4) {
+                    openDialog("最多只能设置3个！");
+                    return;
+                }
+            }
+            var row = Number($("#colorSet input[tty='0']").eq(len - 1).val());
+            var plen = $("#colorSet i").length + 1;
+            var color = "red";
+            var bgcolor = "color_red";
+            if (plen == 2) {
+                color = "blue";
+                bgcolor = "color_blue";
+            } else if (plen == 3) {
+                color = "green";
+                bgcolor = "color_green";
+            }
+            var data = { "index": plen, "star": row + 1, end: row + 50, color: color, bgcolor: bgcolor };
+            json.push(data);
+            setList(data);
+        });
+        $("#changedata").click(function () {
+            loadData();
+        });
+
+    });
+
+    function todaystatlist() {
+        $.get('pk10/findTodayCount.do', { t: Math.random() }, function (text) {
+        	var htmlstr = "<table class='lot-table' id='openTable'><tr class='head'><td colspan='3'>冠  军</td><td colspan='3' style='background-color: #fff;'>亚  军</td><td colspan='3'>第三名</td><td colspan='3' style='background-color: #fff;'>第四名</td><td colspan='3'>第五名</td><td colspan='3' style='background-color: #fff;'>第六名</td><td colspan='3'>第七名</td><td colspan='3' style='background-color: #fff;'>第八名</td><td colspan='3'>第九名</td><td colspan='3' style='background-color: #fff;'>第十名</td></tr><tr class='head' style='font-weight: inherit;'><td style='background-color: #fff;'>号码</td><td style='background-color: #fff;'>总开</td><td style='background-color: #fff;'>未开</td><td style='background-color: #fff;'>号码</td><td style='background-color: #fff;'>总开</td><td style='background-color: #fff;'>未开</td><td style='background-color: #fff;'>号码</td><td style='background-color: #fff;'>总开</td><td style='background-color: #fff;'>未开</td><td style='background-color: #fff;'>号码</td><td style='background-color: #fff;'>总开</td><td style='background-color: #fff;'>未开</td><td style='background-color: #fff;'>号码</td><td style='background-color: #fff;'>总开</td><td style='background-color: #fff;'>未开</td><td style='background-color: #fff;'>号码</td><td style='background-color: #fff;'>总开</td><td style='background-color: #fff;'>未开</td><td style='background-color: #fff;'>号码</td><td style='background-color: #fff;'>总开</td><td style='background-color: #fff;'>未开</td><td style='background-color: #fff;'>号码</td><td style='background-color: #fff;'>总开</td><td style='background-color: #fff;'>未开</td><td style='background-color: #fff;'>号码</td><td style='background-color: #fff;'>总开</td><td style='background-color: #fff;'>未开</td><td style='background-color: #fff;'>号码</td><td style='background-color: #fff;'>总开</td><td style='background-color: #fff;'>未开</td></tr>";
+            var result = htmlstr+ text + "</table>";
+        	$('#tblist').html(result);
+            loadData();
+        });
+    }
+    function openDialog(msg)
+    {
+        $.dialog({
+            title: "提示",
+            padding: '5px',
+            width: 400,
+            height: 50,
+            content: msg,
+            ok: false
+        });
+    }
+    function checkInput() {
+        var ret = 0;
+        if (json.length > 0) {
+            for (var i = 0; i < json.length; i++) {
+                if (json[i].index < 5) {
+                    if ((json[i].end > 0 && json[i].star <= 0) || (json[i].end <= 0 && json[i].star > 0)) {
+                        ret = 2;
+                        openDialog("参数设置" + (i + 1) + ":请输入正确的范围值");
+                        break;
+                    } else if (json[i].end > 500 || json[i].star < 2) {
+                        ret = 1;
+                        openDialog("参数设置" + (i + 1) + ":范围在2-500");
+                        break;
+                    } else if (json[i].end < json[i].star) {
+                        ret = 2;
+                        openDialog("参数设置" + (i + 1) + ":范围结束值必须大于等于开始值");
+                        break;
+                    } else {
+                        if (i > 0) {
+                            if ((json[i - 1].end >= json[i].star && json[i].star >= json[i - 1].star) || (json[i - 1].end >= json[i].end && json[i].end >= json[i - 1].star)) {
+                                ret = 3;
+                                openDialog("参数设置范围不能重复与重叠");
+                                break;
+                            } else if ((json[i - 1].star >= json[i].star && json[i].end >= json[i - 1].end)) {
+                                ret = 3;
+                                openDialog("参数设置范围不能重复与重叠");
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if (json.length > 2 && ret == 0) {
+            if (json[0].index < 5 && json[2].index < 5) {
+                if ((json[0].star >= json[2].star && json[2].end >= json[0].end)) {
+                    ret = 3;
+                    openDialog("参数设置1,3范围不能重复或重叠");
+                } else if ((json[0].end >= json[2].star && json[2].star >= json[0].star) || (json[0].end >= json[2].end && json[2].end >= json[0].star)) {
+                    ret = 3;
+                    openDialog("参数设置1,3范围不能重复或重叠");
+                }
+            }
+        }
+        return ret;
+    }
+    function loadData() {
+       
+        var row = checkInput();
+        //alert(row+" -- "+JSON.stringify(json));
+        if (0 == row) {
+            changedata();
+        }
+    }
+    function setList(data) {
+        var template = $("#mobang").html();
+        var html = [];
+        html.push(template.replaceWith(data));
+        var plen = $("#colorSet i").length + 1;
+        if (plen == 3) {
+            $("#spAdd").hide();
+        } else if (plen > 1) {
+            $("#spDel").show();
+        } else {
+            $("#spDel").hide();
+        }
+        $('#spAdd').before(html.join(""));
+    }
+    function changedata() {
+        if (json.length > 0) {
+            $(".lot-table span").attr("class", "span");
+            $(".lot-table span").each(function () {
+                number = Number($(this).attr("data"));
+                for (var i = 0; i < json.length; i++) {
+                    if (json[i].index < 5 && json[i].star <= number && number <= json[i].end) {
+                        $(this).attr("class", json[i].color);
+                    }
+                }
+            });
+        }
+    }
+    $(function () {
+    	//alert("start");
+    	todaystatlist();
+  });
+</script>
+
+</div>
+	</div>
+	<div class="clear"></div>
+	</block>

@@ -1,0 +1,206 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+				<div class="feedbackDiv">以下数据功能由本站提供，使用过程中如有任何意见或建议请<a href="Common/feedback.html" target="_blank">及时反馈</a></div>
+			<div class="web_listOP">
+    <ul id="web_listOP_ul"><li><a href="gd11x5/">广东11选5</a></li><li><a href="gd11x5/kaijiang.html">历史开奖号码</a></li><li><a href="gd11x5/luzhulonghu.html">龙虎路珠</a></li><li class="hover"><a href="gd11x5/luzhubigorsmall.html">单双大小路珠</a></li><li><a href="gd11x5/luzhutotal.html">总和路珠</a></li><li><a href="gd11x5/ballstat.html">单双大小历史</a></li><li><a href="gd11x5/numberstat.html">历史号码统计</a></li><li><a href="gd11x5/zoushitu.html">横版走势图</a></li><li><a href="jiqiao/gd11x5/">广东11选5技巧</a></li><li><a href="gd11x5/shipin" class="redColor">开奖视频</a></li><li><a href="gd11x5/omitdata.html">遗漏大数据</a><span class="hoticon"></span> </li><li><a href="gd11x5/twosidedstat.html">两面数据统计</a><span class="wen_newIcon"></span> </li></ul>
+</div>
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+					<input type="hidden" id="callFun" value="Search"/>
+					<div style="clear:left; width:100%;float:left;">
+					     <div class="show-bjl">
+					      	 选择日期: 
+						      <input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
+						      <span ><a style="margin: 0px;" href="javascript:Search();">查询</a></span>
+					      </div> 
+					 </div>
+					 
+					 
+					 <div id="lot-wrap">
+					    <ul class="lot-number-omit mbottom10 clearleft">
+					        <li class="ball" id="ball-choose">
+					            <ul style="width: 880px; float: left;">
+					                <li><span class="ckb"><b class="checkbox checked" data-c="1"></b></span><span class="ckb-txt">
+					                    <label>第一球</label></span></li>
+					                <li><span class="ckb"><b class="checkbox checked" data-c="2"></b></span><span class="ckb-txt">
+					                    <label>第二球</label></span></li>
+					                <li><span class="ckb"><b class="checkbox checked" data-c="3"></b></span><span class="ckb-txt">
+					                    <label>第三球</label></span></li>
+					                <li><span class="ckb"><b class="checkbox checked" data-c="4"></b></span><span class="ckb-txt">
+					                    <label>第四球</label></span></li>
+					                <li><span class="ckb"><b class="checkbox checked" data-c="5"></b></span><span class="ckb-txt">
+					                    <label>第五球</label></span></li>
+					                 <li>
+					                    <span class="InstructionsForUse">
+					                        <span class="InstructionsForUse_btn">使用说明
+					                        </span>
+					                        <span class="position">
+					                            <span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br />
+					                                2.当长龙中断时，则另起一列显示结果；<br />
+					                                3.开奖结果为单数时，则“单”中奖，开奖结果为双数时，则“双”中奖，开奖结果为0-4时，则“小”中奖，开奖结果为5-9时，则“大”中奖。
+					                            </span>
+					                        </span>
+					                    </span>
+					                </li>
+					            </ul>
+					            <ul style="float: right; width: 100px; text-align: right;">
+					             <span style="border-bottom:1px solid red; padding-bottom:2px;"><a href="javascript:void(0);" style="color:red" class="all-ball" >全选</a></span>
+					              <span style="border-bottom:1px solid black; padding-bottom:2px;"><a href="javascript:void(0);"  class="clear-ball">清空</a></span>
+					            </ul>
+					        </li>
+					    </ul>
+						<div id='lot_content'>    <script type="text/javascript">   lotteryLuzhu = "xjssc_luzhubigorsmall";</script>
+							<div class="clear"></div>
+							<div id="lzBigOrSmall_data-html"></div>
+				     		<script id="lzBigOrSmall_data-tmpl" type="text/template">
+							{{
+					      	  for(var i=1;i<=5;i++){
+					      		  var dxRow=it["dx"+i];
+					      		  var dsRow=it["ds"+i];
+					      	}}  
+								<div class="luzhu t_{{=i}}"> 
+									<table class="roadmap-table-caption">
+								        <tr>
+								            <td>
+							                    <span>今日累计：<span class="count"> 大（<span id="lzBig{{=i}}">0</span>） 小（<span id="lzSmall{{=i}}">0</span>） </span>
+							                    </span>
+								         		      第{{=i}}球大小
+								            </td>
+								        </tr>
+								    </table>
+					                <div style="width: 980px; overflow-x: auto;" class="luzhu_scroll">
+									    <table class="roadmap-table ">
+									        <tr valign="top">
+									        	<td class="odd">
+									        	{{
+										           var dxPreNum; 
+										           var dxSymbol;
+										           var dxIndex=1;
+										           var lzBigVal=0;
+											       var lzSmallVal=0;
+										           for(var n=0;n<dxRow.length;n++){
+										        	   var num=dxRow[n];
+										        	   if(num=='大'){
+										        		   lzBigVal+=1;
+										        		   dxSymbol="<span>大</span>";
+										        	   }else{
+										        		   lzSmallVal+=1;
+										        		   dxSymbol="<label>小</label>";
+										        	   }
+										        	   if(n==0||dxPreNum==num){
+										           }}	   
+										           		{{=dxSymbol}} 
+										           {{ 
+										          		}else{
+										          			dxIndex+=1;
+										           }}
+										          		</td><td class="{{=dxIndex%2==0?'even':'odd'}}">{{=dxSymbol}} 
+										           {{
+										          		}
+										          		dxPreNum=num;
+										          	 }
+										           }}
+										          <input type="hidden" id="lzBigVal{{=i}}" value="{{=lzBigVal}}"/>
+										          <input type="hidden" id="lzSmallVal{{=i}}" value="{{=lzSmallVal}}"/>
+									        </tr>
+									    </table>
+									</div>
+									<div class="roadmap-bjl"></div>        
+								</div>
+							
+		    					<div class="luzhu t_{{=i}}"> 
+									<table class="roadmap-table-caption">
+								        <tr>
+								            <td>
+							                    <span>今日累计：<span class="count"> 单（<span id="lzd{{=i}}">0</span>） 双（<span id="lzs{{=i}}">0</span>） </span></span>
+								              	  第{{=i}}球单双
+								            </td>
+								        </tr>
+								    </table>
+			                		<div style="width: 980px; overflow-x: auto;" class="luzhu_scroll">
+									    <table class="roadmap-table ">
+									        <tr valign="top">
+												<td class="odd">
+									        	{{
+										           var dsPreNum; 
+										           var dsSymbol;
+										           var dsIndex=1;
+										           var lzdVal=0;
+											   	   var lzsVal=0;
+										           for(var n=0;n<dsRow.length;n++){
+										        	   var num=dsRow[n];
+										        	   if(num=='单'){
+										        		   lzdVal+=1;
+										        		   dsSymbol="<span>单</span>";
+										        	   }else{
+										        		   lzsVal+=1;
+										        		   dsSymbol="<label>双</label>";
+										        	   }
+										        	   if(n==0||dsPreNum==num){
+										           }}	   
+										           		{{=dsSymbol}} 
+										           {{ 
+										          		}else{
+										          			dsIndex+=1;
+										           }}
+										          		</td><td class="{{=dsIndex%2==0?'even':'odd'}}">{{=dsSymbol}} 
+										           {{
+										          		}
+										          		dsPreNum=num;
+										          	 }
+										           }}
+										          <input type="hidden" id="lzdVal{{=i}}" value="{{=lzdVal}}"/>
+										          <input type="hidden" id="lzsVal{{=i}}" value="{{=lzsVal}}"/>
+						                    </tr>
+									    </table>
+									</div>
+									<div class="roadmap-bjl"></div>        
+								</div>
+							{{
+					      	  	}
+					        }}
+							</script>
+						</div>
+	       			 </div>
+	       			 <script type="text/javascript">
+				      	function getLuzhuBigOrSmall(){
+				      		var date=$("#dateData").val();
+				      		$.post("gd11x5/getLuzhuBigOrSmall.do",
+				   				{date:date}, 
+				   				function(r) {
+				    				if (r) {
+				    					doTCompile("lzBigOrSmall_data", r);
+				    					for(var i=1;i<=5;i++){/*替换总来与没来数据*/
+				    						$("#lzBig"+i).html($("#lzBigVal"+i).val());
+				    						$("#lzSmall"+i).html($("#lzSmallVal"+i).val());
+				    						$("#lzd"+i).html($("#lzdVal"+i).val());
+				    						$("#lzs"+i).html($("#lzsVal"+i).val());
+				    					}
+				    				}
+				   			}, "json");
+				      	}
+				      	getLuzhuBigOrSmall();
+				      	function Search() {
+				      		getLuzhuBigOrSmall();
+					    }
+					 </script> 
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

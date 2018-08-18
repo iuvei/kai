@@ -1,0 +1,225 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+        <include file="Public/lottory_op"/>
+<div class="lot-wrap">
+		
+			<div style="margin-bottom: 20px;" id="lot-wrap">
+		
+				<div class="body-content">
+					<div class="zst-type">
+						<a tag="weizhi" class="cur" href="javascript:void(0);">位置走势图</a> <a
+							tag="haoma" href="javascript:void(0);">号码走势图</a> <a tag="guanya"
+							href="javascript:void(0);">冠亚和走势图</a>
+					</div>
+					<input type="hidden" value="drawTrend" id="callFun">
+					<ul class="lot-number-omit" id="zst-weizhi">
+						<li class="ball">
+							<ul>
+								<li><a ball="1" class="cur" href="javascript:void(0);">冠军</a>|
+								</li>
+								<li><a ball="2" href="javascript:void(0);">亚军</a>|</li>
+								<li><a ball="3" href="javascript:void(0);">第三名</a>|</li>
+								<li><a ball="4" href="javascript:void(0);">第四名</a>|</li>
+								<li><a ball="5" href="javascript:void(0);">第五名</a>|</li>
+								<li><a ball="6" href="javascript:void(0);">第六名</a>|</li>
+								<li><a ball="7" href="javascript:void(0);">第七名</a>|</li>
+								<li><a ball="8" href="javascript:void(0);">第八名</a>|</li>
+								<li><a ball="9" href="javascript:void(0);">第九名</a>|</li>
+								<li><a ball="10" href="javascript:void(0);">第十名</a></li>
+							</ul>
+						</li>
+					</ul>
+					<ul style="display: none;" class="lot-number-omit" id="zst-haoma">
+						<li class="ball">
+							<ul>
+								<li><a num="1" href="javascript:void(0);">号码一</a>|</li>
+								<li><a num="2" href="javascript:void(0);">号码二</a>|</li>
+								<li><a num="3" href="javascript:void(0);">号码三</a>|</li>
+								<li><a num="4" href="javascript:void(0);">号码四</a>|</li>
+								<li><a num="5" href="javascript:void(0);">号码五</a>|</li>
+								<li><a num="6" href="javascript:void(0);">号码六</a>|</li>
+								<li><a num="7" href="javascript:void(0);">号码七</a>|</li>
+								<li><a num="8" href="javascript:void(0);">号码八</a>|</li>
+								<li><a num="9" href="javascript:void(0);">号码九</a>|</li>
+								<li><a num="10" href="javascript:void(0);">号码十</a></li>
+							</ul>
+						</li>
+					</ul>
+					<div id="container">
+						<div class="highcharts-container" id="highcharts-0"
+							style="position: relative; overflow: hidden; width: 1000px; height: 400px; text-align: left; line-height: normal; font-family: &amp; amp; quot; Lucida Grande&amp;amp; quot; ,&amp; amp; quot; Lucida Sans Unicode&amp;amp; quot; , Verdana ,Arial,Helvetica,sans-serif; font-size: 12px; left: -0.5px; top: 0px;">
+						</div>
+					</div>
+					<script src="js/highchats/highcharts.js"  type="text/javascript"></script>
+					<script src="js/util/jschart.js"  type="text/javascript"></script>
+					<script type="text/javascript">
+						var ballName = [ "冠军", "亚军", "第三球", "第四球", "第五球", "第六球", "第七球",
+								"第八球", "第九球", "第十球" ];
+						function drawTrend() {
+							var ball = $(".ball ul li .cur").attr("ball");
+							var num = $(".ball ul li .cur").attr("num");
+							var tag = $(".zst-type .cur").attr("tag");
+							if (tag == "guanya") {
+								$.get("pk10/guangyatrenddata.do", {
+									count : 40,
+									t : Math.random()
+								}, function(result) {
+									var data = eval(result);
+									showChartline(" ", data, function() {
+										return this.x + '期:' + this.y
+									}, 0, 20, true);
+								}, "json");
+							} else {
+								if (!num && ball) {
+									$.get("pk10/numbertrendData.do", {
+										ball : ball,
+										count : 40,
+										t : Math.random()
+									}, function(result) {
+										var data = eval(result);
+										showChartline(" ", result, function() {
+											return this.x + '期:' + this.y }, 0, 10, true);
+									}, "json");
+								} else {
+									$.get("pk10/positiontrenddata.do", {
+										ball : num,
+										count : 40,
+										t : Math.random()
+									}, function(result) {
+										var data = eval(result);
+										showPk10line(" ", data, function() {
+											return this.x + '期:' + ballName[this.y - 1]
+										}, true);
+									}, "json");
+								}
+							}
+						}
+						function showPk10line(title, data, fun, showLogo) {
+							var xData = [];
+							var chartData = [];
+							for (var i = 0; i < data.length; i++) {
+								xData.push(data[i].key);
+								var obj = {
+									name : data[i].key,
+									y : data[i].value
+								};
+								chartData.push(obj);
+							}
+							var chart = new Highcharts.Chart({
+								chart : {
+									renderTo : 'container',
+									defaultSeriesType : 'spline'
+								},
+								title : {
+									text : title,
+									style : {
+										'font-weight' : 'bold'
+									}
+								},
+								xAxis : {
+									categories : xData,
+									labels : {
+										style : {
+											fontWeight : 'bold'
+										}
+									}
+								},
+								yAxis : {
+									min : 1,
+									max : 10,
+									tickPixelInterval : 50,
+									title : {
+										text : ''
+									},
+									labels : {
+										formatter : function() {
+											return ballName[this.value - 1];
+										}
+									}
+								},
+								legend : {
+									enabled : false
+								},
+								tooltip : {
+									enable : true,
+									formatter : fun
+								},
+								plotOptions : {
+									spline : {
+										pointPadding : 0,
+										borderWidth : 0,
+										dataLabels : {
+											enabled : true
+										}
+									}
+								},
+								credits : {
+									enabled : showLogo,
+									href : '',
+									text : '',
+									position : {
+										align : 'right',
+										y : 15,
+										verticalAlign : 'top'
+									},
+									style : {
+										fontWeight : 'bold'
+									}
+								},
+								series : [ {
+									name : 'data',
+									data : chartData
+								} ]
+							});
+						}
+						$(function() {
+							$(".ball ul li a").each(function() {
+								$(this).bind("click", function() {
+									$(".ball ul li a").removeClass("cur");
+									$(this).addClass("cur");
+									drawTrend();
+								});
+							});
+							$(".zst-type a").each(function() {
+								$(this).bind("click", function() {
+									$(".zst-type a").removeClass("cur");
+									$(".ball ul li a").removeClass("cur");
+									var tag = $(this).attr("tag");
+									$(this).addClass("cur");
+									if (tag == "weizhi") {
+										$("#zst-weizhi").show();
+										$("#zst-haoma").hide();
+										$("#zst-weizhi a").first().addClass("cur");
+									} else if (tag == "haoma") {
+										$("#zst-haoma").show();
+										$("#zst-weizhi").hide();
+										$("#zst-haoma a").first().addClass("cur");
+									} else {
+										$("#zst-weizhi").hide();
+										$("#zst-haoma").hide();
+									}
+									drawTrend();
+								});
+							});
+							drawTrend();
+						});
+					</script>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	</block>

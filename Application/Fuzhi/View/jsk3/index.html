@@ -1,0 +1,88 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+<div class="clear"></div> 
+				<input type="hidden" id="callFun" value="Search" time="1000"/>
+				<!--  内容开始 -->
+			
+
+			<div class="index-history">
+				<div class="title mt10">
+					<h2>江苏骰宝(快3)开奖记录</h2>
+					<a href="jsk3/kaijiang.html">查看全部&gt;&gt;</a>
+				</div>
+				<table id="history" class="lot-table"> </table>
+				<div style="width: 980px;" class="lot-about mt10">
+					<div class="l-title">
+						<h2>关于江苏骰宝(快3)</h2>
+					</div>
+					<p>江苏骰宝(快3)是高频彩票的一种，其玩法是简单、易懂，游戏模式多样化备受玩家喜爱。
+						游戏玩法：大小、单双、和值、三同号(豹子)、二同号、三不同号、二不同号、三连号等</p>
+				</div>
+				<div class="clear:both;"></div>
+			</div>
+			<script type="text/javascript">
+				   
+				 function Search() {
+					    //$.get("jsk3/getHistoryNumber.do?date=" + $("#dateData").val(), null, function (datas)
+					    var date=$("#dateData").val();
+                        $.post("jsk3/getHistoryData.do",
+                             {count:12}, function(datas) {
+					    	if(datas){
+					    		var data = datas.rows;
+					    		var str = '<tr class="head"><td width="200px">时间</td><td>开奖号码</td><td colspan="2">总和</td></tr>';
+								for(var key in data){
+									var flag = data[key];
+									var num1 = flag.n1;
+									var num2 = flag.n2;
+									var num3 = flag.n3;
+									var total = num1+num2+num3;
+									var lotteryTime = flag.lotteryTime.split(" ");
+									var time = lotteryTime[1];
+									//“小”三粒骰子之点数总和由4点至10点；“大”三粒骰子之点数总和由11点至17点；若三粒骰子平面点数相同，则为通吃，通吃「大」、「小」各注。
+									var desc = "";
+									if(num1==num2 && num2==num3){
+										desc = "通吃";
+									}else if(total>10){
+										desc = "大";
+									}else{
+										desc = "小";
+									}
+									str+='<tr class="even">'+
+											'<td>'+
+												'<p class="p">'+flag.termNum+'</p>'+
+												'<p class="t">'+time+'</p>'+
+											'</td>'+
+											'<td class="nums">'+
+												'<i class="lot-no'+num1+'"></i>'+
+												'<i class="lot-no'+num2+'"></i>'+
+												'<i class="lot-no'+num3+'"></i></td>'+
+											'<td class="wd-150">'+total+'</td>'+
+											'<td class="wd-150"><p>'+desc+'</p></td>'+
+										'</tr>';
+								}
+					    		$('#history').html(str);
+					    	}
+					    }, "json");
+					}
+					Search();
+				</script>
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

@@ -1,0 +1,175 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+					<div> 
+				     <input type="hidden" time="10000" id="callFun" value="getLmcList" /> 
+				     <div class="lot-search"> 
+				      <div class="car-num"> 
+				       <ul style="margin-bottom: 20px;" class="lot-number-omit"> 
+				        <li style="padding-bottom: 2px;" class="ball"> 
+				         <ul style="width: 850px; _width: 840px; float: left; margin-left: 10px;" id="rankUl"> 
+				          <li> <a href="javascript:gotoPage(1)" id="rankLi1" class="cur"> 第一球 </a> | </li> 
+				          <li> <a href="javascript:gotoPage(2)" id="rankLi2"> 第二球 </a> | </li> 
+				          <li> <a href="javascript:gotoPage(3)" id="rankLi3"> 第三球 </a> | </li> 
+				          <li> <a href="javascript:gotoPage(4)" id="rankLi4"> 第四球 </a> | </li> 
+				          <li> <a href="javascript:gotoPage(5)" id="rankLi5"> 第五球 </a> | </li> 
+				          <li> <a href="javascript:gotoPage(6)" id="rankLi6"> 第六球 </a> | </li> 
+				          <li> <a href="javascript:gotoPage(7)" id="rankLi7"> 第七球 </a> | </li> 
+				          <li> <a href="javascript:gotoPage(8)" id="rankLi8"> 第八球 </a>   </li> 
+				         </ul> 
+				         <ul style="float: right; width: 120px; text-align: right;"> 
+				          <li> <select id="dateType" onchange="gotoPage('',this.value)"> <option value="1">最近一个月</option> <option value="3">最近三个月</option> <option value="6">最近半年</option> <option value="12">最近一年</option> </select> </li> 
+				         </ul> </li> 
+				       </ul> 
+				      </div> 
+				     </div> 
+				     <div class="explain_table">
+				       连续遗漏：号码两面连续未出现的次数。如近20期冠军【单】连续5期未开出，则【单】的“连续遗漏”为5 
+				      <br /> 出现次数：指对应“连续遗漏”的出现次数。如近20期内第1-5、8-12期未开出【单】，则“连续遗漏-5”的出现次数为“2” 
+				      <br /> 通过分析“遗漏大数据”可分析历史遗漏峰值等 
+				      <br /> 
+				      <span>想使用更丰富更快速的遗漏功能，请<a href="javascript:void(0)" style="color:red;text-decoration: underline;">点此免费下载</a>【遗漏分析软件】</span> 
+				     </div> 
+				     <div class="clear"></div> 
+				     <div style="margin-bottom:20px;" id="table-datas"> 
+				      <div id="lmc_list-html"></div> 
+				      <script id="lmc_list-tmpl" type="text/template">
+						<table class="lot-table"> 
+				     		<tbody> 
+				       			<tr class="head"> 
+				       				<td colspan="2">大</td> 
+				        			<td style="background-color: #e9e9e9;" colspan="2">小</td> 
+				        			<td colspan="2">单</td> 
+				        			<td style="background-color: #e9e9e9;" colspan="2">双</td> 
+				       			</tr> 
+				       			<tr style="font-weight: inherit;" class="head"> 
+				        			<td style="width: 122px;">连续遗漏</td> 
+				        			<td style="width: 122px;">出现次数</td> 
+				        			<td style="width: 122px;">连续遗漏</td> 
+				        			<td style="width: 122px;">出现次数</td> 
+				        			<td style="width: 122px;">连续遗漏</td> 
+				        			<td style="width: 122px;">出现次数</td> 
+				        			<td style="width: 122px;">连续遗漏</td> 
+				        			<td style="width: 122px;">出现次数</td> 
+				       			</tr> 
+								{{  
+									 var rdObjectArray=[];
+									 /*封装数据*/
+				           			 function addRdObject(rd){
+				              			var isExist=false;
+				              			for(var i=0;i<rdObjectArray.length;i++){
+											var rdObj=rdObjectArray[i];
+				                			if(rdObj&&rdObj.continuousNum==rd.continuousNum){
+				                 			 isExist=true;
+											 /*更新已存在数据*/
+											 if(rd.dataType==2){/*大*/
+												rdObj["t1val"]=rd.continuousTotal;
+											 }else if(rd.dataType==1){/*小*/
+												rdObj["t2val"]=rd.continuousTotal;
+											 }else if(rd.dataType==3){/*单*/
+												rdObj["t3val"]=rd.continuousTotal;
+											 }else if(rd.dataType==4){/*双*/
+												rdObj["t4val"]=rd.continuousTotal;
+											 }
+				                			 break;
+				             			   }
+				             		 	}
+				             		 	if (!isExist) {/*第一次保存*/
+											if(rd.dataType==2){/*大*/
+												rd["t1val"]=rd.continuousTotal;
+											 }else if(rd.dataType==1){/*小*/
+												rd["t2val"]=rd.continuousTotal;
+											 }else if(rd.dataType==3){/*单*/
+												rd["t3val"]=rd.continuousTotal;
+											 }else if(rd.dataType==4){/*双*/
+												rd["t4val"]=rd.continuousTotal;
+											 }
+				              		  		rdObjectArray.push(rd);
+				             		 	}
+				             			return isExist;
+				          			 } 
+									for (var i = 0; i <it.length; i++) {
+										addRdObject(it[i]);
+									}
+				
+				
+									for (var i = 0; i <rdObjectArray.length; i++) {
+									var rdTemp=rdObjectArray[i]; 
+									var joClass=i%2==0?"even":"odd"; 
+										
+								}}
+				       						<tr class="{{=joClass}}"> 
+				        						<td>{{=rdTemp.continuousNum}}</td> 
+				        						<td>{{=rdTemp.t1val==null?"":rdTemp.t1val}}</td> 
+				        						<td>{{=rdTemp.continuousNum}} </td> 
+				        						<td>{{=rdTemp.t2val==null?"":rdTemp.t2val}} </td> 
+				        						<td>{{=rdTemp.continuousNum}} </td> 
+				        						<td>{{=rdTemp.t3val==null?"":rdTemp.t3val}} </td> 
+				        						<td>{{=rdTemp.continuousNum}} </td> 
+				        						<td>{{=rdTemp.t4val==null?"":rdTemp.t4val}} </td> 
+				       						</tr> 
+								{{
+								   }
+								}}
+				      		</tbody> 
+				     	</table> 
+					</script> 
+				      <script type="text/javascript">
+					     var request =  GetRequest();
+					     var dateType = request['dateType'];
+					     var gameId = request['gameId'];
+					     var rank = request['rank'];
+					     if(!dateType){
+					    	 dateType=5;
+					    	 $("#dateType").val(dateType);
+					     }
+					     if(!gameId)
+					         gameId=7;
+					     if(!rank)
+					         rank=1;
+					     function getLmcList(){
+							$.post("missing/getLmcList.do",
+								{dateType:dateType,gameId:gameId,rank:rank}, 
+								function(r) {
+									if (r) {
+										doTCompile("lmc_list", r.t);
+										//处理排名样式
+										$("#rankUl li a").removeClass("cur")
+										$("#rankLi"+rank).addClass("cur")
+									}
+							}, "json");
+					 	} 
+					    getLmcList();
+					 	function gotoPage(rankNum,dateTypeNum){
+					 		if(rankNum)
+				 				rank=rankNum;
+					 		if(dateTypeNum)
+					 			dateType=dateTypeNum;
+				    	 	window.location.href="xync/omitdata.html#dateType="+dateType+"&gameId="+gameId+"&rank="+rank;
+				    	 	getLmcList();
+					 	}
+				     </script> 
+				     </div> 
+				    </div> 
+				    <div class="clear"></div> 
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

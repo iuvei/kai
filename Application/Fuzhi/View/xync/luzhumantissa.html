@@ -1,0 +1,222 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+					<input type="hidden" id="callFun" value="Search"/>
+					<script type="text/javascript">   lotteryLuzhu = "xync_luzhumantissa";</script>
+					<div style="clear:left; width:100%;float:left;"> 
+				     <div class="show-bjl" style="margin-right: 10px;">
+				      	 选择日期: 
+				      <input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
+				      <span style=" padding-left: 10px;"><a style="margin: 0px;" href="javascript:Search();">查询</a></span>
+				     </div> 
+				    </div>
+				    
+				    
+				    <div id="lot-wrap"> 
+				     <ul class="lot-number-omit mbottom10 clearleft">
+				        <li id="ball-choose" class="ball">
+				            <ul style="width: 880px; float: left;">
+				                <li><span class="ckb"><b data-c="1" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码1</label></span></li>
+				                <li><span class="ckb"><b data-c="2" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码2</label></span></li>
+				                <li><span class="ckb"><b data-c="3" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码3</label></span></li>
+				                <li><span class="ckb"><b data-c="4" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码4</label></span></li>
+				                <li><span class="ckb"><b data-c="5" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码5</label></span></li>
+				                <li><span class="ckb"><b data-c="6" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码6</label></span></li>
+				                <li><span class="ckb"><b data-c="7" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码7</label></span></li>
+				                <li><span class="ckb"><b data-c="8" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码8</label></span></li>
+				                <li><span class="ckb"><b data-c="9" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>总和</label></span></li>
+				                 <li>
+				                    <span class="InstructionsForUse">
+				                        <span class="InstructionsForUse_btn">使用说明
+				                        </span>
+				                        <span class="position">
+				                            <span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br />
+				                                2.当长龙中断时，则另起一列显示结果；<br />
+				                                3.尾数大指开出号码的个位大于或等于5为尾大，小于或等于4为尾小。
+				
+				                            </span>
+				                        </span>
+				                    </span>
+				                </li>
+				            </ul>
+				            <ul style="float: right; width: 100px; text-align: right;">
+				                  <span style="border-bottom:1px solid red; padding-bottom:2px;"><a class="all-ball" style="color:red" href="javascript:void(0);">全选</a></span>
+				              <span style="border-bottom:1px solid black; padding-bottom:2px;"><a class="clear-ball" href="javascript:void(0);">清空</a></span>
+				            </ul>
+				        </li>
+				    </ul>
+				     <div id="lot_content"> 
+				      <div id="lz_data-html"></div>
+				      <script id="lz_data-tmpl" type="text/template">
+				      	  {{
+				      	  for(var i=1;i<=8;i++){
+				      		  var row=it[i+""];
+				      	  }}  
+					      	<div class="luzhu t_{{=i}}" style="clear:both;"> 
+						       <table class="roadmap-table-caption"> 
+						        <tbody>
+						         <tr> 
+						          <td> <span>今日累计：<span class="count"> 大（<span id="lzTotal1{{=i}}">0</span>） 
+																		         小（<span id="lzTotal2{{=i}}">0</span>） 
+													  </span> 
+									   </span> 第{{=i}}球尾数
+								   </td> 
+						         </tr> 
+						        </tbody>
+						       </table> 
+						       <div style="width: 980px; overflow-x: auto;" class="luzhu_scroll"> 
+						        <table class="roadmap-table mb-15" style="font-family:微软雅黑;"> 
+						         <tbody>
+						          <tr valign="top"> 
+						          <td class="odd">
+						          {{
+						           var preNum; 
+						           var symbol;
+						           var index=1;
+						           var lzTotal1Val=0;
+							       var lzTotal2Val=0;
+						           for(var n=0;n<row.length;n++){
+						        	   var num=row[n];
+						        	   if(num=="大"){
+						        		   lzTotal1Val+=1;
+						        		   symbol='<span>大</span>';
+						        	   }else if(num=="小"){
+						        		   lzTotal2Val+=1;
+						        		   symbol='<label>小</label>';
+						        	   }
+						        	   if(n==0||preNum==num){
+						          }}	   
+						           		{{=symbol}} 
+						          {{ 
+						          		}else{
+						          			index+=1;
+						          }}
+						          		</td><td class="{{=index%2==0?'even':'odd'}}">{{=symbol}} 
+						          {{
+						          		}
+						          		preNum=num;
+						          	}
+						          }}
+						          <input type="hidden" id="lzTotal1Val{{=i}}" value="{{=lzTotal1Val}}"/>
+						          <input type="hidden" id="lzTotal2Val{{=i}}" value="{{=lzTotal2Val}}"/>
+						          </tr> 
+						         </tbody>
+						        </table> 
+						       </div> 
+						      </div> 
+				      	  {{
+				      	  	}
+				          }}
+					  </script>
+				<div class="luzhu t_9" style="clear:both;"> 
+				<table class="roadmap-table-caption">
+					<tr>
+						<td><span>今日累计：<span class="count"> 大（<span id="lzwd">0</span>） 小（<span id="lzwx">0</span>）
+									</span>
+						</span>总和尾数</td>
+					</tr>
+				</table>
+				<div id="lzTotalWeiDx_data-html"></div>
+				<script id="lzTotalWeiDx_data-tmpl" type="text/template">
+					<table class="roadmap-table ">
+						<tr valign="top">
+						  <td class="odd">
+							{{
+								var preNum; 
+								var symbol;
+					            var index=1;
+					            var d=0;
+					            var x=0; 
+					            var h=0;
+					      	    for(var i=0;i<=it.length;i++){
+					      	    	var num=it[i];
+					      	    	if(!num)
+					      	    		continue;
+					        	    if(num=="大"){
+					        	    	symbol="span";
+					        		    d+=1;
+					        	    } else if(num=="小"){
+					        	    	symbol="label";
+					        			x+=1;
+					        	    }
+					        	    if(i==0||preNum==num){
+					      	  }}  
+					      	    	<{{=symbol}}>{{=num}}</{{=symbol}}> 
+			      	    	  {{ 
+					          		}else{
+					          			index+=1;
+					          }}
+			      	    	  		</td><td class="{{=index%2==0?'even':'odd'}}"><{{=symbol}}>{{=num}}</{{=symbol}}> 
+			      	    	  {{
+					          		}
+					          		preNum=num;
+					          	   }
+					           }}
+							  <input type="hidden" id="lzwdval" value="{{=d}}"/>
+					          <input type="hidden" id="lzwxval" value="{{=x}}"/>
+						</tr>
+					</table>
+				   </script>
+				   </div>
+				      <script type="text/javascript">
+				      	function getLuzhuData(){
+				      		var date=$("#dateData").val();
+				      		$.post("xync/getLuzhuMantissa.do",
+				   				{date:date}, 
+				   				function(r) {
+				    				if (r) {
+				    					doTCompile("lz_data", r);
+				    					for(var i=1;i<=8;i++){/*替换总来与没来数据*/
+				    						$("#lzTotal1"+i).html($("#lzTotal1Val"+i).val());
+				    						$("#lzTotal2"+i).html($("#lzTotal2Val"+i).val());
+				    					}
+				    				}
+				   			}, "json");
+				      		$.post("xync/getLuzhuTotal.do",
+					   				{date:date,type:3}, 
+					   				function(r) {
+					    				if (r) {
+					    					doTCompile("lzTotalWeiDx_data", r);
+				    						$("#lzwd").html($("#lzwdval").val());
+				    						$("#lzwx").html($("#lzwxval").val());
+					    				}
+					   			}, "json");
+				      	}
+				      	getLuzhuData();
+				      	function Search() {
+				      		getLuzhuData();
+					    }
+					 </script> 
+				     </div> 
+				    </div>  
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

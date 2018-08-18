@@ -1,0 +1,117 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+<div class="clear"></div> 
+				<!--  内容开始 -->
+			<div id="lot-wrap">
+                <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+				<input type="hidden" id="callFun" value="updateHistoryRecord">
+				<div class="lot-search">
+					选择日期： <input type="text" readonly="readonly"
+						onfocus="WdatePicker()"
+						id="dateData" name="dateData"> &nbsp;<a
+						href="javascript:Search();">查询</a>
+				</div>
+				<table id="history" class="lot-table">
+					<tbody>
+						<tr class="head">
+							<td width="200px">时间</td>
+							<td>开奖号码</td>
+							<td colspan="2">总和</td>
+						</tr>
+
+						<tr class="even">
+							<td>
+								<p class="p">20150305-080</p>
+								<p class="t">21:50</p>
+							</td>
+							<td class="nums">
+								<i class="lot-no1"></i> 
+								<i class="lot-no1"></i>
+								<i class="lot-no6"></i></td>
+							<td class="wd-150">8</td>
+							<td class="wd-150"><p>小</p></td>
+						</tr>
+						<tr class="odd">
+							<td>
+								<p class="p">20150305-079</p>
+								<p class="t">21:40</p>
+							</td>
+							<td class="nums">
+								<i class="lot-no1"></i> 
+								<i class="lot-no5"></i>
+								<i class="lot-no6"></i></td>
+							<td class="wd-150">12</td>
+							<td class="wd-150"><p class="r">大</p></td>
+						</tr>
+
+					</tbody>
+				</table>
+
+				<script type="text/javascript">
+				   
+				 function Search() {
+					    //$.get("jsk3/getHistoryNumber.do?date=" + $("#dateData").val(), null, function (datas)
+					    var date=$("#dateData").val();
+                        $.post("jsk3/getHistoryData.do",
+                             {count:120,date:date}, function(datas) {
+					    	if(datas){
+					    		var data = datas.rows;
+					    		var str = '<tr class="head"><td width="200px">时间</td><td>开奖号码</td><td colspan="2">总和</td></tr>';
+								for(var key in data){
+									var flag = data[key];
+									var num1 = flag.n1;
+									var num2 = flag.n2;
+									var num3 = flag.n3;
+									var total = num1+num2+num3;
+									var lotteryTime = flag.lotteryTime.split(" ");
+									var time = lotteryTime[1];
+									//“小”三粒骰子之点数总和由4点至10点；“大”三粒骰子之点数总和由11点至17点；若三粒骰子平面点数相同，则为通吃，通吃「大」、「小」各注。
+									var desc = "";
+									if(num1==num2 && num2==num3){
+										desc = "通吃";
+									}else if(total>10){
+										desc = "大";
+									}else{
+										desc = "小";
+									}
+									str+='<tr class="even">'+
+											'<td>'+
+												'<p class="p">'+flag.termNum+'</p>'+
+												'<p class="t">'+time+'</p>'+
+											'</td>'+
+											'<td class="nums">'+
+												'<i class="lot-no'+num1+'"></i>'+
+												'<i class="lot-no'+num2+'"></i>'+
+												'<i class="lot-no'+num3+'"></i></td>'+
+											'<td class="wd-150">'+total+'</td>'+
+											'<td class="wd-150"><p>'+desc+'</p></td>'+
+										'</tr>';
+								}
+					    		$('#history').html(str);
+					    	}
+					    }, "json");
+					}
+					Search();
+				</script>
+
+			</div>
+			<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

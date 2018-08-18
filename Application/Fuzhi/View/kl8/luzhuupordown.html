@@ -1,0 +1,123 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+<div class="clear"></div> 
+				<!--  内容开始 -->
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+				<input type="hidden" id="callFun" value="getLuzhuUpOrDown"/>
+				<div style="clear: left; width: 100%; float: left;">
+					<div class="show-bjl">
+				      	 选择日期: 
+				      <input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
+				      <span ><a style="margin: 0px;" href="javascript:Search();">查询</a></span>
+				    </div> 
+				</div>
+				<div id="lot-wrap">
+				<div class="clear"></div>
+				<div style="float: right; margin-bottom: 5px; margin-right: 68px;">
+					<span class="InstructionsForUse">
+				        <span class="InstructionsForUse_btn">使用说明
+				        </span>
+				        <span class="position" style="left: -214px;top:26px;">
+				            <span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br />
+				                2.当长龙中断时，则另起一列显示结果；<br />
+				                3.上下盘：开奖号码1至40为上盘号码，41至80为下盘号码。开出的20个号码中：如上盘号码（1-40）在此局开出号码数目占多数时，此局为上盘；下盘号码（41-80）在此局开出号码数目占多数时，此局为下盘；上盘号码（1－40）和下盘号码（41-80）在此局开出的数目相同时（各10个数字），此局为中盘。。
+		
+				            </span>
+				        </span>
+				    </span>
+				</div>
+				<div style="height: 35px; width: 100%;"></div>
+				<table class="roadmap-table-caption">
+					<tr>
+						<td><span>今日累计：<span class="count"> 上（<span id="lzs"></span>） 下（<span id="lzx"></span>） 中（<span id="lzz"></span>）
+							</span>
+						</span> 上下盘上下</td>
+					</tr>
+				</table>
+				<div style="width: 980px; overflow-x: auto;" class="luzhu_scroll">
+					<div id="lzTotalSx_data-html"></div>
+					<script id="lzTotalSx_data-tmpl" type="text/template">
+					<table class="roadmap-table ">
+						<tr valign="top">
+						  <td class="odd">
+							{{
+								var preNum; 
+								var symbol;
+					            var index=1;
+					            var s=0;
+					            var x=0; 
+					            var z=0; 
+					      	    for(var i=0;i<=it.length;i++){
+					      	    	var num=it[i];
+					      	    	if(!num)
+					      	    		continue;
+					        	    if(num=="上"){
+					        	    	symbol="span";
+					        	    	s+=1;
+					        	    }else if(num=="下"){
+					        	    	symbol="label";
+					        	    	x+=1;
+					        	    }else if(num=="中"){
+					        	    	symbol="p";
+					        	    	z+=1;
+					        	    }
+					        	    if(i==0||preNum==num){
+					      	  }}  
+					      	    	<{{=symbol}}>{{=num}}</{{=symbol}}> 
+			      	    	  {{ 
+					          		}else{
+					          			index+=1;
+					          }}
+			      	    	  		</td><td class="{{=index%2==0?'even':'odd'}}"><{{=symbol}}>{{=num}}</{{=symbol}}> 
+			      	    	  {{
+					          		}
+					          		preNum=num;
+					          	   }
+					           }}
+							  <input type="hidden" id="lzsval" value="{{=s}}"/>
+					          <input type="hidden" id="lzxval" value="{{=x}}"/>
+					          <input type="hidden" id="lzzval" value="{{=z}}"/>
+						</tr>
+					</table>
+				   </script>
+				</div>
+				<script type="text/javascript">
+			      	function getLuzhuUpOrDown(){
+			      		var date=$("#dateData").val();
+			      		$.post("kl8/getLuzhuUpOrDown.do",
+			   				{date:date}, 
+			   				function(r) {
+			    				if (r) {
+			    					doTCompile("lzTotalSx_data", r);
+		    						$("#lzz").html($("#lzzval").val());
+		    						$("#lzs").html($("#lzsval").val());
+		    						$("#lzx").html($("#lzxval").val());
+			    				}
+			   			}, "json");
+			      	}
+			      	getLuzhuUpOrDown();
+			      	function Search() {
+			      		getLuzhuUpOrDown();
+				    }
+				 </script> 
+			</div>
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

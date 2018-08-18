@@ -1,0 +1,484 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+		<include file="Public/lottory_op"/>
+		<div style="margin-bottom:20px;" id="lot-wrap">
+<div class="tips">
+    小贴士：本栏目是由皇家团队筛选出每天赢率最高的混合模式,按赢率的高低排列,每期有可能会自动变换,胜率低于设定标准不会在此显示。
+    <br>
+    <label style="margin-left: 47px;">
+        淘宝模式是优胜劣汰的设计理念,</label><span style="color: #E84147;">若要一直参考某个窗口,必须点击该窗口进入详细页面,方能固定参考。
+            注：每天16点前为上半场。</span>
+    <br>
+    小技巧：选择当前赢率高的模式进入详细页面,配合路珠进行参考,路珠走势混乱时再回到本页面另行选择其他模式进入。以此往复,赢面极高。
+</div>
+<div id="lot_content">
+    <input type="hidden" time="6000" value="betmode" id="pageName">
+         <a class="betMode" target="_blank" href="pk10/modeinfo/25">
+        <div class="head">冠亚和(E0)
+                <label>
+                    中奖数量：0&nbsp;输&nbsp;
+                    1</label>
+        </div>
+        <div class="period">
+            <span>期&nbsp;&nbsp;&nbsp;&nbsp;号：</span> <b>467508</b>
+        </div>
+        <div class="pk10-betmode">
+                <div>
+                    <span>冠亚和：</span> <span>7,11,12</span>
+                </div>
+        </div>
+        <div class="rate">
+                <span class="r">下半场 86.23%</span>
+                <span class="r">今 51.75%</span>  
+                <span class="r">上 23.09%</span>     
+        </div>
+        <div onclick="AddMode(25,2);return false;" class="collect" style="bottom: -100px;">
+            + 收藏到我的模式 +
+        </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/13">
+        <div class="head">冠亚和(C0)
+                <label>
+                    中奖数量：0&nbsp;输&nbsp;
+                    12</label>
+        </div>
+        <div class="period">
+            <span>期&nbsp;&nbsp;&nbsp;&nbsp;号：</span> <b>467508</b>
+        </div>
+        <div class="pk10-betmode">
+                <div>
+                    <span>冠亚和：</span> <span>12,13,17</span>
+                </div>
+        </div>
+        <div class="rate">
+                <span class="r">下半场 46.62%</span>
+                <span class="r">今 8.11%</span>  
+                <span class="g">上 -23.90%</span>     
+        </div>
+        <div onclick="AddMode(13,2);return false;" class="collect" style="bottom: -100px;">
+            + 收藏到我的模式 +
+        </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/18">
+        <div class="head">冠亚和(C5)
+                <label>
+                    中奖数量：0&nbsp;输&nbsp;
+                    6</label>
+        </div>
+        <div class="period">
+            <span>期&nbsp;&nbsp;&nbsp;&nbsp;号：</span> <b>467508</b>
+        </div>
+        <div class="pk10-betmode">
+                <div>
+                    <span>冠亚和：</span> <span>9,10,13</span>
+                </div>
+        </div>
+        <div class="rate">
+                <span class="r">下半场 35.27%</span>
+                <span class="g">今 -11.73%</span>  
+                <span class="g">上 -50.80%</span>     
+        </div>
+        <div onclick="AddMode(18,2);return false;" class="collect" style="bottom: -100px;">
+            + 收藏到我的模式 +
+        </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/739">
+        <div class="head">14模式(大小2)
+                <span>中奖数量：1&nbsp;赢&nbsp;2</span>
+        </div>
+        <div class="period">
+            <span>期&nbsp;&nbsp;&nbsp;&nbsp;号：</span> <b>467508</b>
+        </div>
+        <div class="pk10-betmode">
+                <div>
+                    <span>第三名：</span> <span>小</span>
+                </div>
+        </div>
+        <div class="rate">
+                <span class="r">下半场 23.70%</span>
+                <span class="r">今 12.31%</span>  
+                <span class="r">上 2.84%</span>     
+        </div>
+        <div onclick="AddMode(739,2);return false;" class="collect">
+            + 收藏到我的模式 +
+        </div>
+                  <div class="clear"></div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/20">
+        <div class="head">冠亚和(D0)
+                <span>中奖数量：1&nbsp;赢&nbsp;1</span>
+        </div>
+        <div class="period">
+            <span>期&nbsp;&nbsp;&nbsp;&nbsp;号：</span> <b>467508</b>
+        </div>
+        <div class="pk10-betmode">
+                <div>
+                    <span>冠亚和：</span> <span>12,13,14,15,17,18,19</span>
+                </div>
+        </div>
+        <div class="rate">
+                <span class="r">下半场 23.02%</span>
+                <span class="r">今 14.07%</span>  
+                <span class="r">上 6.56%</span>     
+        </div>
+        <div onclick="AddMode(20,2);return false;" class="collect">
+            + 收藏到我的模式 +
+        </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/16">
+        <div class="head">冠亚和(C3)
+                <label>
+                    中奖数量：0&nbsp;输&nbsp;
+                    6</label>
+        </div>
+        <div class="period">
+            <span>期&nbsp;&nbsp;&nbsp;&nbsp;号：</span> <b>467508</b>
+        </div>
+        <div class="pk10-betmode">
+                <div>
+                    <span>冠亚和：</span> <span>5,8,9,10,13</span>
+                </div>
+        </div>
+        <div class="rate">
+                <span class="r">下半场 20.61%</span>
+                <span class="g">今 -7.09%</span>  
+                <span class="g">上 -30.06%</span>     
+        </div>
+        <div onclick="AddMode(16,2);return false;" class="collect">
+            + 收藏到我的模式 +
+        </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/765">
+        <div class="head">13模式(1)
+                <span>中奖数量：2&nbsp;赢&nbsp;3</span>
+        </div>
+        <div class="period">
+            <span>期&nbsp;&nbsp;&nbsp;&nbsp;号：</span> <b>467508</b>
+        </div>
+        <div class="pk10-betmode">
+                <div>
+                    <span>冠&#12288;军：</span> <span>单</span>
+                </div>
+                <div>
+                    <span>亚&#12288;军：</span> <span>单</span>
+                </div>
+                <div>
+                    <span>冠亚和：</span> <span>单</span>
+                </div>
+        </div>
+        <div class="rate">
+                <span class="r">下半场 15.21%</span>
+                <span class="r">今 9.59%</span>  
+                <span class="r">上 7.84%</span>     
+        </div>
+        <div onclick="AddMode(765,2);return false;" class="collect">
+            + 收藏到我的模式 +
+        </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/749">
+        <div class="head">14模式(反大小7)
+                <span>中奖数量：1&nbsp;赢&nbsp;3</span>
+        </div>
+        <div class="period">
+            <span>期&nbsp;&nbsp;&nbsp;&nbsp;号：</span> <b>467508</b>
+        </div>
+        <div class="pk10-betmode">
+                <div>
+                    <span>第八名：</span> <span>大</span>
+                </div>
+        </div>
+        <div class="rate">
+                <span class="r">下半场 15.07%</span>
+                <span class="r">今 8.39%</span>  
+                <span class="r">上 2.84%</span>     
+        </div>
+        <div onclick="AddMode(749,2);return false;" class="collect">
+            + 收藏到我的模式 +
+        </div>
+                  <div class="clear"></div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/756">
+        <div class="head">14模式(单双6)
+                <label>
+                    中奖数量：0&nbsp;输&nbsp;
+                    1</label>
+        </div>
+        <div class="period">
+            <span>期&nbsp;&nbsp;&nbsp;&nbsp;号：</span> <b>467508</b>
+        </div>
+        <div class="pk10-betmode">
+                <div>
+                    <span>第七名：</span> <span>双</span>
+                </div>
+        </div>
+        <div class="rate">
+                <span class="r">下半场 15.07%</span>
+                <span class="r">今 8.39%</span>  
+                <span class="r">上 2.84%</span>     
+        </div>
+        <div onclick="AddMode(756,2);return false;" class="collect">
+            + 收藏到我的模式 +
+        </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/760">
+        <div class="head">14模式(单双7)
+                <label>
+                    中奖数量：0&nbsp;输&nbsp;
+                    1</label>
+        </div>
+        <div class="period">
+            <span>期&nbsp;&nbsp;&nbsp;&nbsp;号：</span> <b>467508</b>
+        </div>
+        <div class="pk10-betmode">
+                <div>
+                    <span>第八名：</span> <span>双</span>
+                </div>
+        </div>
+        <div class="rate">
+                <span class="r">下半场 15.07%</span>
+                <span class="r">今 4.47%</span>  
+                <span class="g">上 -4.34%</span>     
+        </div>
+        <div onclick="AddMode(760,2);return false;" class="collect">
+            + 收藏到我的模式 +
+        </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/14">
+        <div class="head">冠亚和(C1)
+                <span>中奖数量：1&nbsp;赢&nbsp;1</span>
+        </div>
+        <div class="period">
+            <span>期&nbsp;&nbsp;&nbsp;&nbsp;号：</span> <b>467508</b>
+        </div>
+        <div class="pk10-betmode">
+                <div>
+                    <span>冠亚和：</span> <span>3,7,8,9,13</span>
+                </div>
+        </div>
+        <div class="rate">
+                <span class="r">下半场 12.97%</span>
+                <span class="g">今 -18.85%</span>  
+                <span class="g">上 -45.11%</span>     
+        </div>
+        <div onclick="AddMode(14,2);return false;" class="collect">
+            + 收藏到我的模式 +
+        </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/17">
+        <div class="head">冠亚和(C4)
+                <span>中奖数量：1&nbsp;赢&nbsp;1</span>
+        </div>
+        <div class="period">
+            <span>期&nbsp;&nbsp;&nbsp;&nbsp;号：</span> <b>467508</b>
+        </div>
+        <div class="pk10-betmode">
+                <div>
+                    <span>冠亚和：</span> <span>13,14,19</span>
+                </div>
+        </div>
+        <div class="rate">
+                <span class="r">下半场 12.32%</span>
+                <span class="r">今 7.79%</span>  
+                <span class="r">上 4.02%</span>     
+        </div>
+        <div onclick="AddMode(17,2);return false;" class="collect">
+            + 收藏到我的模式 +
+        </div>
+                  <div class="clear"></div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/745">
+     <div class="t">14模式(反大小3)</div>     
+            <div class="rate">
+                <span class="r">下半场 12.20%</span>
+                <span class="r">今 1.86%</span>  
+                <span class="g">上 -6.73%</span>     
+            </div>
+            <div onclick="AddMode(745,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/19">
+     <div class="t">冠亚和(D1)</div>     
+            <div class="rate">
+                <span class="r">下半场 10.97%</span>
+                <span class="g">今 -11.48%</span>  
+                <span class="g">上 -30.27%</span>     
+            </div>
+            <div onclick="AddMode(19,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/522">
+     <div class="t">7模式(单双顺141)</div>     
+            <div class="rate">
+                <span class="r">下半场 10.47%</span>
+                <span class="r">今 4.73%</span>  
+                <span class="g">上 -0.03%</span>     
+            </div>
+            <div onclick="AddMode(522,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/605">
+     <div class="t">7模式(单双反48)</div>     
+            <div class="rate">
+                <span class="r">下半场 9.89%</span>
+                <span class="r">今 0.29%</span>  
+                <span class="g">上 -7.69%</span>     
+            </div>
+            <div onclick="AddMode(605,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/752">
+     <div class="t">14模式(单双5)</div>     
+            <div class="rate">
+                <span class="r">下半场 9.32%</span>
+                <span class="r">今 4.47%</span>  
+                <span class="r">上 0.45%</span>     
+            </div>
+            <div onclick="AddMode(752,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/758">
+     <div class="t">14模式(反单双1)</div>     
+            <div class="rate">
+                <span class="r">下半场 9.32%</span>
+                <span class="g">今 -0.75%</span>  
+                <span class="g">上 -9.12%</span>     
+            </div>
+            <div onclick="AddMode(758,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/177">
+     <div class="t">7模式(大小顺148)</div>     
+            <div class="rate">
+                <span class="r">下半场 9.32%</span>
+                <span class="r">今 3.43%</span>  
+                <span class="g">上 -1.47%</span>     
+            </div>
+            <div onclick="AddMode(177,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/623">
+     <div class="t">7模式(单双反65)</div>     
+            <div class="rate">
+                <span class="r">下半场 9.32%</span>
+                <span class="r">今 2.91%</span>  
+                <span class="g">上 -2.42%</span>     
+            </div>
+            <div onclick="AddMode(623,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/337">
+     <div class="t">7模式(大小反132)</div>     
+            <div class="rate">
+                <span class="r">下半场 8.74%</span>
+                <span class="r">今 5.00%</span>  
+                <span class="r">上 1.88%</span>     
+            </div>
+            <div onclick="AddMode(337,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/203">
+     <div class="t">7模式(大小顺174)</div>     
+            <div class="rate">
+                <span class="r">下半场 8.74%</span>
+                <span class="r">今 3.69%</span>  
+                <span class="g">上 -0.51%</span>     
+            </div>
+            <div onclick="AddMode(203,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/253">
+     <div class="t">7模式(大小反48)</div>     
+            <div class="rate">
+                <span class="r">下半场 8.17%</span>
+                <span class="r">今 4.21%</span>  
+                <span class="r">上 0.92%</span>     
+            </div>
+            <div onclick="AddMode(253,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/423">
+     <div class="t">7模式(单双顺42)</div>     
+            <div class="rate">
+                <span class="r">下半场 8.17%</span>
+                <span class="r">今 6.82%</span>  
+                <span class="r">上 5.71%</span>     
+            </div>
+            <div onclick="AddMode(423,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/281">
+     <div class="t">7模式(大小反76)</div>     
+            <div class="rate">
+                <span class="r">下半场 8.17%</span>
+                <span class="r">今 2.91%</span>  
+                <span class="g">上 -1.47%</span>     
+            </div>
+            <div onclick="AddMode(281,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/725">
+     <div class="t">7模式(单双反168)</div>     
+            <div class="rate">
+                <span class="r">下半场 8.17%</span>
+                <span class="r">今 3.17%</span>  
+                <span class="g">上 -0.99%</span>     
+            </div>
+            <div onclick="AddMode(725,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/811">
+     <div class="t">17模式(6-9)</div>     
+            <div class="rate">
+                <span class="r">下半场 7.61%</span>
+                <span class="r">今 8.55%</span>  
+                <span class="r">上 9.34%</span>     
+            </div>
+            <div onclick="AddMode(811,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+         <a class="betMode" target="_blank" href="pk10/modeinfo/571">
+     <div class="t">7模式(单双反14)</div>     
+            <div class="rate">
+                <span class="r">下半场 7.59%</span>
+                <span class="r">今 5.78%</span>  
+                <span class="r">上 4.27%</span>     
+            </div>
+            <div onclick="AddMode(571,2);return false;" class="collect">
+                + 收藏到我的模式 +
+            </div>
+    </a>
+</div>
+<div class="clear"></div>
+</div>
+	</div>
+	<div class="clear"></div>
+	</block>

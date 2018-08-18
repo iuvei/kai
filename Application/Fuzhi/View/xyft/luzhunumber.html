@@ -1,0 +1,165 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+				<div class="feedbackDiv">以下数据功能由本站提供，使用过程中如有任何意见或建议请<a href="Common/feedback.html" target="_blank">及时反馈</a></div>
+			<div class="web_listOP">
+    <ul id="web_listOP_ul"><li><a href="xyft/">幸运飞艇</a></li><li><a href="xyft/kaijiang.html">历史开奖号码</a></li><li class="hover"><a href="xyft/luzhunumber.html">号码路珠</a></li><li><a href="xyft/luzhulonghu.html">龙虎路珠</a></li><li><a href="xyft/luzhubigorsmall.html">单双大小路珠</a></li><li><a href="xyft/luzhutotal.html">总和路珠</a></li><li><a href="xyft/ballstat.html">单双大小历史</a></li><li><a href="xyft/numberstat.html">历史号码统计</a></li><li><a href="xyft/zoushitu.html">横版走势图</a></li><li><a href="jiqiao/xyft/">幸运飞艇技巧</a></li><li><a href="xyft/shipin" class="redColor">开奖视频</a></li><li><a href="xyft/omitdata.html">遗漏大数据</a><span class="hoticon"></span> </li><li><a href="xyft/twosidedstat.html">两面数据统计</a><span class="wen_newIcon"></span> </li></ul>
+</div>
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+					<input type="hidden" id="callFun" value="getLuzhuNumber"/>
+					<script type="text/javascript">   lotteryLuzhu = "xjssc_luzhunumber";</script>
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+					<div style="clear:left; width:100%;float:left;"> 
+				     <div class="show-bjl" style="margin-right: 10px;">
+				      	 选择日期: 
+				      <input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
+				      <span style=" padding-left: 10px;"><a style="margin: 0px;" href="javascript:Search();">查询</a></span>
+				     </div> 
+				    </div>
+				    
+				    
+				    <div id="lot-wrap"> 
+				     <ul class="lot-number-omit mbottom10 clearleft">
+				        <li id="ball-choose" class="ball">
+				            <ul style="width: 880px; float: left;">
+				                <li><span class="ckb"><b data-c="0" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码0</label></span></li>
+				                <li><span class="ckb"><b data-c="1" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码1</label></span></li>
+				                <li><span class="ckb"><b data-c="2" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码2</label></span></li>
+				                <li><span class="ckb"><b data-c="3" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码3</label></span></li>
+				                <li><span class="ckb"><b data-c="4" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码4</label></span></li>
+				                <li><span class="ckb"><b data-c="5" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码5</label></span></li>
+				                <li><span class="ckb"><b data-c="6" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码6</label></span></li>
+				                <li><span class="ckb"><b data-c="7" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码7</label></span></li>
+				                <li><span class="ckb"><b data-c="8" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码8</label></span></li>
+				                <li><span class="ckb"><b data-c="9" class="checkbox checked"></b></span><span class="ckb-txt">
+				                    <label>号码9</label></span></li>
+				                 <li>
+				                    <span class="InstructionsForUse">
+				                        <span class="InstructionsForUse_btn">使用说明
+				                        </span>
+				                        <span class="position" style="display: none;">
+				                            <span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br>
+				                                2.当长龙中断时，则另起一列显示结果；<br>
+				                                3.“X”表示历史对应的某一期未出现该号码，“√”表示历史对应的某一期未出现了该号码。
+				
+				                            </span>
+				                        </span>
+				                    </span>
+				                </li>
+				            </ul>
+				            <ul style="float: right; width: 100px; text-align: right;">
+				                  <span style="border-bottom:1px solid red; padding-bottom:2px;"><a class="all-ball" style="color:red" href="javascript:void(0);">全选</a></span>
+				              <span style="border-bottom:1px solid black; padding-bottom:2px;"><a class="clear-ball" href="javascript:void(0);">清空</a></span>
+				            </ul>
+				        </li>
+				    </ul>
+				     <div id="lot_content"> 
+				      <div id="lzNumber_data-html"></div>
+				      <script id="lzNumber_data-tmpl" type="text/template">
+				      	  {{
+				      	  for(var i=0;i<=9;i++){
+				      		  var row=it[i+""];
+				      	  }}  
+					      	<div class="luzhu t_{{=i}}" style="clear:both;"> 
+						       <table class="roadmap-table-caption"> 
+						        <tbody>
+						         <tr> 
+						          <td> <span>今日累计：<span class="count"> 总来（<span id="zl{{=i}}"></span>） 没来（<span id="ml{{=i}}"></span>） </span> </span> 号码{{=i}} </td> 
+						         </tr> 
+						        </tbody>
+						       </table> 
+						       <div style="width: 980px; overflow-x: auto;" class="luzhu_scroll"> 
+						        <table class="roadmap-table mb-15" style="font-family:微软雅黑;"> 
+						         <tbody>
+						          <tr valign="top"> 
+						          <td class="odd">
+						          {{
+						           var preNum; 
+						           var symbol;
+						           var index=1;
+						           var zl=0;
+							       var ml=0;
+						           for(var n=0;n<row.length;n++){
+						        	   var num=row[n];
+						        	   if(num==0){
+						        		   ml+=1;
+						        		   symbol="<label>&times;</label>";
+						        	   }else{
+						        		   zl+=1;
+						        		   symbol="<span>√</span>";
+						        	   }
+						        	   if(n==0||preNum==num){
+						          }}	   
+						           		{{=symbol}} 
+						          {{ 
+						          		}else{
+						          			index+=1;
+						          }}
+						          		</td><td class="{{=index%2==0?'even':'odd'}}">{{=symbol}} 
+						          {{
+						          		}
+						          		preNum=num;
+						          	}
+						          }}
+						          <input type="hidden" id="zlval{{=i}}" value="{{=zl}}"/>
+						          <input type="hidden" id="mlval{{=i}}" value="{{=ml}}"/>
+						          </tr> 
+						         </tbody>
+						        </table> 
+						       </div> 
+						      </div> 
+				      	  {{
+				      	  	}
+				          }}
+					  </script>
+				      
+				      <script type="text/javascript">
+				      	function getLuzhuNumber(){
+				      		var date=$("#dateData").val();
+				      		$.post("xyft/getLuzhuNumber.do",
+				   				{date:date}, 
+				   				function(r) {
+				    				if (r) {
+				    					doTCompile("lzNumber_data", r);
+				    					for(var i=0;i<=9;i++){/*替换总来与没来数据*/
+				    						$("#zl"+i).html($("#zlval"+i).val());
+				    						$("#ml"+i).html($("#mlval"+i).val());
+				    					}
+				    				}
+				   			}, "json");
+				      	}
+				      	getLuzhuNumber();
+				      	function Search() {
+				      		getLuzhuNumber();
+					    }
+					 </script> 
+				     </div> 
+				    </div>  
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

@@ -1,0 +1,288 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+    <style type="text/css">
+
+        v\:line, v\:rect, v\:oval, v\:group, v\:stroke, v\:fill, v\:polyline {behavior: url(#default#VML);}
+        .cvs { position: absolute;}
+        #trendChart {padding: 0;position: relative;left:0;top:0;}
+        #canvas{ z-index:999; position:absolute; left:0; top:0;}
+
+    </style>
+    <!--[if lte IE 9]> <style type="text/css">.dateLineTable	*{padding:auto;margin:auto;}</style><![endif]-->
+</block>
+
+<block name="body">
+
+    <div class="body-content">
+    <!-- 彩票大厅 头部 -->
+        <include file="Public/top_ad"/>
+
+        <include file="Public/lottory_latest"/>
+
+        <div class="lot-wrap">
+            <include file="Public/lottory_op"/>
+            <div class="clear"></div>
+            <div>
+                <input type="hidden" time="10000" id="callFun" value="awardNewData" />
+                <div class="explain_table">
+                    1、【号码规律统计】提供号码开出位置的历史同位号码统计。例如第1期开出号码1后，在第1期开出号码1的相同位置，第2期开出号码为2，如此以上期开奖号码为参照，辅助预测同位开出的号码；<br />
+                    2、柱形图表为历史同位开出号码的次数分布，用于查看已开出号码的分布及趋势，亦可作为参考辅助杀号。
+                </div>
+                <div class="clear"></div>
+                <div class="lot-search">
+                    <div class="car-num">
+                        <ul class="lot-number-omit" style="margin-bottom: 10px;">
+                            <li class="ball" style="padding-bottom: 2px;">
+                                <ul style="width: 890px; _width: 880px; float: left; margin-left: 10px;" id="rankUl">
+                                    <li> <a href="javascript:gotoPage(1)" id="rankLi1" class="cur">号码1 </a>|</li>
+                                    <li> <a href="javascript:gotoPage(2)" id="rankLi2">号码2 </a>|</li>
+                                    <li> <a href="javascript:gotoPage(3)" id="rankLi3">号码3</a>|</li>
+                                    <li> <a href="javascript:gotoPage(4)" id="rankLi4">号码4</a>|</li>
+                                    <li> <a href="javascript:gotoPage(5)" id="rankLi5">号码5</a>|</li>
+                                    <li> <a href="javascript:gotoPage(6)" id="rankLi6">号码6</a>|</li>
+                                    <li> <a href="javascript:gotoPage(7)" id="rankLi7">号码 7</a>|</li>
+                                    <li> <a href="javascript:gotoPage(8)" id="rankLi8">号码 8</a>|</li>
+                                    <li> <a href="javascript:gotoPage(9)" id="rankLi9">号码 9</a>|</li>
+                                    <li> <a href="javascript:gotoPage(10)" id="rankLi10">号码10</a> |</li>
+                                    <li><a href="pk10/numbertooutput.html">全部号码</a> </li>
+                                </ul>
+                                <ul style="float: right; width: 80px; text-align: right;">
+                                    <li>
+                                        <select id="selDate">
+                                            <option value="60">60期</option>
+                                            <option value="30">30期</option>
+                                            <option value="90">90期</option>
+                                        </select>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                    <div id="chartcontainer" style="height:200px;width:100%"></div>
+                    <div class="clear"></div>
+                    <div class="dateLineTable" style="padding: 0;" id="trendChart">
+                        <div id="history_data-html"></div>
+                        <script id="history_data-tmpl" type="text/template">
+                            <table class="lot-table" id="history" >
+                                <tr class="head">
+                                    <td rowspan="2" width="160">时间
+                                    </td>
+                                    <td width="350" rowspan="2">
+                                        同位开奖号码分布
+                                        <p id="ckb-samepn" style="width:100px;margin:0 auto;">
+                                            <b class="checkbox" style="margin: 10px 5px 0 0;"></b>
+                                            <span style="cursor: pointer;color:#c3271d">显示同位号码</span>
+                                        </p>
+                                    </td>
+                                    <td rowspan="2" width="120">升平降
+                                    </td>
+                                    <td   colspan="2">单双</td>
+                                    <td colspan="2"  >大小</td>
+                                </tr>
+                                <tr class="head">
+                                    <td>单</td>
+                                    <td>双</td>
+                                    <td>大</td>
+                                    <td>小</td>
+                                </tr>
+                                <tbody id="chart">
+                                {{
+                                for (var i = 0; i <it.length; i++) {
+                                var row=it[i];
+                                var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("MM-dd hh:mm");
+                                var odd_even="even";
+                                if((i+1)%2!=2){
+                                odd_even="odd";
+                                }
+                                }}
+                                <tr class='{{=odd_even}}'>
+                                    <td>
+                                        <p class="p">{{=row.termNum}} </p>
+                                        <p class="t">{{=lowDate}}</p>
+                                    </td>
+                                    <td class="nums shade">
+                                        <i class='pk-no{{=row.n1}}' name="num-{{=row.n1}}"></i>
+                                        <i class='pk-no{{=row.n2}}' name="num-{{=row.n2}}"></i>
+                                        <i class='pk-no{{=row.n3}}' name="num-{{=row.n3}}"></i>
+                                        <i class='pk-no{{=row.n4}}' name="num-{{=row.n4}}"></i>
+                                        <i class='pk-no{{=row.n5}}' name="num-{{=row.n5}}"></i>
+                                        <i class='pk-no{{=row.n6}}' name="num-{{=row.n6}}"></i>
+                                        <i class='pk-no{{=row.n7}}' name="num-{{=row.n7}}"></i>
+                                        <i class='pk-no{{=row.n8}}' name="num-{{=row.n8}}"></i>
+                                        <i class='pk-no{{=row.n9}}' name="num-{{=row.n9}}"></i>
+                                        <i class='pk-no{{=row.n10}}' name="num-{{=row.n10}}"></i>
+                                    </td>
+                                    <td name="spj"></td>
+                                    <td name="odd"></td>
+                                    <td name="even"></td>
+                                    <td name="big"></td>
+                                    <td name="small"></td>
+                                </tr>
+                                {{
+                                }
+                                }}
+                                </tbody>
+                            </table>
+                        </script>
+                    </div>
+                    <script type="text/javascript">
+                        var chartLine = null;
+                        var count = $("#selDate").val();
+                        var request =  GetRequest();
+                        var ball = request['ball'];
+                        if(!ball)
+                            ball=1;
+                        function awardNewData() {
+                            $.get("/pk10/getNewestRecord.do", { t: Math.random() }, function (data) {
+                                var numbers = data.numbers.split(',');
+                                var tr1 = $("#chart tr:first");
+                                var clsName = "odd";
+                                if (tr1) {
+                                    clsName = tr1.attr("class") == "odd" ? "even" : "odd";
+                                }
+                                var html = '<tr class="' + clsName + '"><td><p class="p">' + data.period + '</p><p class="t">' + data.drawingTime;
+                                html += '</p></td><td class="nums shade">';
+                                for (var i = 0; i < numbers.length; i++) {
+                                    html += '<i class="pk-no' + numbers[i] + '" name="num-' + numbers[i] + '"></i>';
+                                }
+                                html += '</td>';
+                                html += '<td name="spj"></td>';
+                                //html += '<td name="ch"></td>';
+                                //html += '<td name="zx"></td>';
+                                html += '<td name="odd"></td>';
+                                html += '<td name="even"></td>';
+                                html += '<td name="big"></td>';
+                                html += '<td name="small"></td>';
+                                html += '</tr>';
+                                tr1.before(html);
+                                $("#chart tr:last").remove();
+                                reloadData();
+                            }, 'json');
+
+                        }
+                        //更新图表
+                        function reloadData() {
+                            //处理排名样式
+                            $("#rankUl li a").removeClass("cur")
+                            $("#rankLi"+ball).addClass("cur")
+
+                            count = $("#selDate").val();
+                            $.post("/pk10/getHistoryData.do",
+                                    {count:count},
+                                    function(r) {
+                                        if (r) {
+                                            doTCompile("history_data", r.rows);
+
+                                            ckbSamepnClick();//注册监听事件
+                                            $.get("/pk10/getDataList.do", { num: ball,count:count, t: Math.random() }, function (data) {
+                                                var chartDatas = [];
+                                                if (data.success) {
+                                                    for (var i = 1; i < 11; i++) {
+                                                        chartDatas.push({ Name: "号码" + i, Value: data["num" + i] });
+                                                    }
+                                                    clearDraw();
+                                                    showSelectBall();
+                                                    var list = data.nums;
+                                                    var trs = $("#history tr[class!=head]");
+                                                    for (var i = 0; i < trs.length; i++) {
+                                                        var tr=$(trs[i]);
+                                                        if (i >= count) tr.hide();
+                                                        else {
+                                                            tr.show();
+                                                            var a = list[i], b = list[i + 1];
+                                                            if (a > b) tr.find("[name=spj]").text("升").css("color", "#0000ff");//addClass("td_font_lightblue");
+                                                            else if (a < b) tr.find("[name=spj]").text("降").css("color", "#00a200");//.addClass("td_draklightgreen");
+                                                            else tr.find("[name=spj]").text("平").css("color", "#c3271d");//.addClass("td_red");
+                                                            if (a % 2 != 0) tr.find("[name=odd]").text("单").css("color", "#c3271d");//.addClass("td_draklightgreen");
+                                                            else tr.find("[name=even]").text("双").css("color", "#000");//.addClass("td_draklightgreen");
+                                                            if (a > 5) tr.find("[name=big]").text("大").css("color", "#c3271d");//.addClass("td_lightblue");
+                                                            else tr.find("[name=small]").text("小").css("color", "#000");//.addClass("td_lightblue");
+                                                            if (a == ~~ball) {
+                                                                tr.find("i[name=num-" + a + "]").removeClass("noshade").addClass("numsRed").attr("s", 1);
+                                                            } else {
+                                                                tr.find("i[name=num-" + a + "]").addClass("noshade");
+                                                            }
+                                                            tr.find("i[name=num-" + a + "]").addClass("numline");
+                                                        }
+                                                    }
+                                                    chartLine.reDraw();
+                                                    showColumn(" ", chartDatas, function () {
+                                                        return this.x + ':' + this.y + '(' + (Math.round(this.y / count * 10000) / 100.00) + '%)';
+                                                    });
+                                                }
+                                            }, 'json');
+                                        }
+                                    }, "json");
+                        }
+
+                        function showSelectBall() {
+                            var trs = $("#history tr[class!=head]");
+                            var show = false;
+                            if ($("#ckb-samepn b").hasClass("checked")) {
+                                show = true;
+                            }
+                            for (var i = 0; i < trs.length; i++) {
+                                var tr = $(trs[i]);
+
+                                if (show) {
+                                    if (tr.find("i[name=num-" + ball + "]").attr("s") == 1) continue;
+                                    tr.find("i[name=num-" + ball + "]").addClass("noshade");
+                                } else {
+                                    tr.find("i[name=num-" + ball + "]").removeClass("noshade");
+                                }
+                            }
+                        }
+                        //清除所有
+                        function clearDraw() {
+                            chartLine.clearLines();
+                            $("i").removeClass("noshade").removeClass("numsRed").removeClass("numline").attr("s", 0);
+
+                            $("#history td[name=even],#history td[name=odd],#history td[name=big],#history td[name=small]").text("");
+                            // $("#history td").removeClass("td_drakblue").removeClass("td_draklightgreen").removeClass("td_lightblue");
+                        }
+
+                        function ckbSamepnClick(){
+                            $("#ckb-samepn").click(function () {
+                                var c = $("b", $(this)).attr("data-c");
+
+                                if ($("b", $(this)).attr("class") == "checkbox") {
+                                    $("b", $(this)).addClass("checked");
+                                } else {
+                                    $("b", $(this)).removeClass("checked");
+                                }
+                                showSelectBall();
+                            });
+                        }
+
+                        function gotoPage(ballVal){
+                            if(ballVal)
+                                ball=ballVal;
+
+                            window.location.href="pk10/numberrulestat.html#ball="+ball;
+                            reloadData();
+                        }
+
+                        $(function () {
+                            $("#selDate").on("change", function () {
+                                reloadData();
+                            });
+                            require(['trendChart'], function (e) {
+                                chartLine = new e({ css: { noyl: "noyl", bline: "bline", lines: [".numline"] }, lineWidth: 2, lineColor: "#BB8569" });
+                                reloadData();
+                            });
+
+                        });
+                    </script>
+                    <script src="js/highchats/highcharts.js" type="text/javascript"></script>
+                    <script src="js/util/jschart.js" type="text/javascript"></script>
+                    <script src="js/require.js" type="text/javascript"></script>
+                    <script src="js/trendChart.js" type="text/javascript"></script>
+                </div>
+            </div>
+            </div>
+            <div class="clear"></div>
+</block>

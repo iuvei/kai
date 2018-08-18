@@ -1,0 +1,115 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+				<div class="feedbackDiv">以下数据功能由本站提供，使用过程中如有任何意见或建议请<a href="Common/feedback.html" target="_blank">及时反馈</a></div>
+			<div class="web_listOP">
+    <ul id="web_listOP_ul"><li><a href="pl3/">排列3</a></li><li><a href="pl3/kaijiang.html">历史开奖号码</a></li><li><a href="pl3/luzhulonghu.html">龙虎路珠</a></li><li><a href="pl3/luzhubigorsmall.html">单双大小路珠</a></li><li><a href="pl3/luzhutotal.html">总和路珠</a></li><li><a href="pl3/ballstat.html">单双大小历史</a></li><li><a href="pl3/numberstat.html">历史号码统计</a></li><li><a href="pl3/zoushitu.html">横版走势图</a></li><li><a href="jiqiao/pl3/">排列3技巧</a></li><li><a href="pl3/shipin">开奖视频</a></li><li><a href="javascript:void(0);" class="redColor">开奖视频</a></li><li><a href="pl3/omitdata.html">遗漏大数据</a><span class="hoticon"></span> </li><li class="hover"><a href="pl3/twosidedstat.html">两面数据统计</a><span class="wen_newIcon"></span> </li></ul>
+</div>
+<div class="clear"></div> 
+				<!--  内容开始 -->
+					<input type="hidden" id="callFun" value="twosidedstat" container="cqssctwosidedstat" unload="0" time="10000"/>
+					    <a name="mark"></a>
+					    <ul class="lot-number-omit" style="margin-bottom: 20px;">
+					        <li class="ball" id="choose_ball">
+					            <ul>
+					                <li><a href="javascript:void(0);" ball="1" class="currball">第一球</a>| </li>
+					                <li><a href="javascript:void(0);" ball="2">第二球</a>| </li>
+					                <li><a href="javascript:void(0);" ball="3">第三球</a>| </li>
+					                <li><a href="javascript:void(0);" ball="4">第四球</a>| </li>
+					                <li><a href="javascript:void(0);" ball="5">第五球</a> </li>
+					            </ul>
+					        </li>
+					    </ul>
+					    <div class="twosidedtip">
+					        *以每10期为一组，统计最近20组中单双大小的出现次数。
+					    </div>
+					<div id='cqssctwosidedstat'>
+					<div id="twoSidedStat_data-html"></div>
+	      			<script id="twoSidedStat_data-tmpl" type="text/template">
+						<table class="lot-table">
+						    <caption>
+						    </caption>
+						    <tr class="head">
+						        <td><b>日期</b></td>
+						        <td width="18%"><b>单</b></td>
+						        <td width="18%"><b>双</b></td>
+						        <td width="18%"><b>大</b></td>
+						        <td width="18%"><b>小</b></td>
+						    </tr>
+						    {{
+								for(var i=0;i<it.length;i++){
+									var rowData=it[i];
+									var odd_even="even";
+									if(i%2!=0){
+										odd_even="odd";
+									}
+							}}
+					        <tr class='{{=odd_even}}'>
+					            <td class="align">
+					                <table class="ptable" cellpadding="0" cellspacing="0">
+					                    <tr>
+					                        <td class="td1">{{=rowData.lDate}}</td>
+					                        <td class="td2"><span>{{=rowData.endIndex}}-{{=rowData.startIndex}} 期</span></td>
+					                    </tr>
+					                </table>
+					            </td>
+					            <td>
+					            	{{=rowData.odd}}
+					            </td>
+					            <td>
+					            	{{=rowData.even}}
+					            </td>
+					            <td>
+					            	{{=rowData.big}}
+					            </td>
+					            <td>
+					            	{{=rowData.small}}
+					            </td>
+					        </tr>
+					        {{
+						        }
+					        }}
+						</table>
+					</script>
+					
+					    <script type="text/javascript">
+					        $(function () {
+					            $("#choose_ball ul li a").bind("click", function () {
+					                $("#choose_ball li a.currball").removeClass("currball");
+					                $(this).addClass("currball");
+					                changeBall($(this).attr("ball"));
+					            });
+					        })
+					        function changeBall(ball) {
+					            var _container = $("#callFun").attr("container");
+					            _container = _container ? _container : "lot-wrap";
+					            //$('#'+_container).css("position", "relative").append("<div style='margin:0 auto; width:100%; color:#FFF; position:absolute; top:220px; z-index:11;left:0px;'>数据正在加载中...</div><div class='loaddingBg'></div>");
+					            $.get("pl3/twoSidedStat.do", { t: Math.random(), id: ball }, function (r) {
+					            	doTCompile("twoSidedStat_data", r);
+					            },"json");
+					        }
+					        changeBall(1);
+					        function twosidedstat()
+					        {
+					            changeBall($("#choose_ball li a.currball").attr("ball"));
+					        }
+					    </script>
+					</div>
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

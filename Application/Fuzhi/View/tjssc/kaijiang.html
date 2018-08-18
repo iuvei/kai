@@ -1,0 +1,155 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+				<div id="lot-wrap"> 
+			     <input type="hidden" value="Search" id="callFun" lottery="cqssc" /> 
+			     <div class="lot-search"> 
+			      <div class="lot-search"> 
+			       <div class="car-num"> 
+			        <ul class="lot-number-omit" style="margin-bottom: 10px;"> 
+			         <li class="ball" style="padding-bottom: 2px;"> 
+			          <ul style="width: 750px;_width:740px;  float: left;margin-left:10px;"> 
+			           <li id="twoball-switch"> <b class="checkbox checked" style="margin: 8px 0 0 0;"></b> <span class="ckb-txt"> <label style="cursor:pointer">双号提醒</label> </span> </li> 
+			          </ul>
+                         <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+			          	<ul style="float: right; width: 220px; text-align: right;">
+							<li>
+								<span style="display: block; float: left;">
+									<label style="margin: 0px;">选择日期：</label></span>
+								<span style="display: block; float: left;">
+									<input name="dateData" type="text" id="dateData" onClick="WdatePicker();" readonly="readonly" style="height:18px; margin:0px;"></span>
+								<span style="padding-left: 10px;"><a style="margin: 0px;" href="javascript:Search();">查询</a></span>
+							</li>
+						</ul>
+			         </li> 
+			        </ul> 
+			       </div> 
+			      </div> 
+			     </div> 
+			     <div class="kaijiang_tiptool" id="twoball_remind"> 
+			      <div class="tiptool_head"> 
+			       <ul> 
+			        <li>双号提醒 </li> 
+			       </ul> 
+			      </div> 
+			      <div class="tiptool_info" style="display: block;"> 
+			       <ul> 
+			        <li> <span>本期双号</span> <span>今日开出双号期数</span> <span>下期重复开出期数</span> <span>当前重复开出遗漏</span> <span class="last">今日最大遗漏</span> </li> 
+			        <li> 
+			        	<span id="twoball_balls"></span> 
+			        	<span id="twoball_issuetoday"></span> 
+			        	<span id="twoball_issuenext"></span> 
+			        	<span id="twoball_omitcur"></span> 
+			        	<span class="last" id="twoball_omitmax"></span> 
+			        </li> 
+			       </ul> 
+			      </div> 
+			     </div> 
+			     <div class="clear"></div> 
+			     <div id="history_data-html"></div>
+			   	 <script id="history_data-tmpl" type="text/template">
+			   		<table id="history" class="lot-table">
+				            <tbody>
+								<tr class="head">
+									<td width="160">时间</td>
+									<td>开奖号码</td>
+									<td colspan="3">总和</td>
+									<td style="width: 70px; text-align: center;">龙虎</td>
+									<td style="width: 70px; text-align: center;">前三</td>
+									<td style="width: 70px; text-align: center;">中三</td>
+									<td style="width: 70px; text-align: center;">后三</td>
+								</tr>
+								{{
+									for (var i = 0; i <it.length; i++) { 
+										var row=it[i];
+										var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
+										var totalNum=row.n1+row.n2+row.n3+row.n4+row.n5;
+										var lhStr="";
+										if(row.n1>row.n5){
+											lhStr="龍";
+										}else if(row.n1<row.n5){
+											lhStr="虎";
+										}else if(row.n1==row.n5){
+											lhStr="和";
+										}
+											
+								}}
+										<tr class="{{=(i+1)%2==0?'even':'odd'}}">
+											<td>
+												<p class="p">{{=row.termNum}}</p>
+												<p class="t">{{=lowDate}}</p>
+											</td>
+											<td class="nums">
+												<span class="no"+({{=row.n1}}*1+1)+"">{{=row.n1}}</span>
+												<span class="no"+({{=row.n1}}*1+1)+"">{{=row.n2}}</span>
+												<span class="no"+({{=row.n1}}*1+1)+"">{{=row.n3}}</span>
+												<span class="no"+({{=row.n1}}*1+1)+"">{{=row.n4}}</span>
+												<span class="no"+({{=row.n1}}*1+1)+"">{{=row.n5}}</span>
+											</td>
+											<td>{{=totalNum}}</td>
+											<td class="{{=totalNum%2!=0?'r':''}}"><p>{{=totalNum%2==0?"双":"单"}}</p></td>
+											<td class="{{=totalNum> 22?'r':''}}"><p>{{=totalNum<= 22?"小":"大"}}</p></td>
+											<td><p class="{{=lhStr=='龍'?'r':''}}">{{=lhStr}}</p></td>
+											<td>{{=numFromDesc(row.n1,row.n2,row.n3)}}</td>
+											<td>{{=numFromDesc(row.n2,row.n3,row.n4)}}</td>
+											<td>{{=numFromDesc(row.n3,row.n4,row.n5)}}</td>
+										</tr>
+								{{
+									}
+								}}
+				        	</tbody>
+						</table>
+					</script> 
+			     <script type="text/javascript">
+				    //双号
+				    function reloadTwoBallRemind() {
+			            $.get("tjssc/twoBallRemind.do", { t: Math.random() }, function (json) {
+			                $("#twoball_balls").text(json.TwoSided.length > 0 ? json.TwoSided : "无");
+			                $("#twoball_issuetoday").text(json.IssueToday);
+			                $("#twoball_issuenext").text(json.IssueNext);
+			                $("#twoball_omitcur").text(json.OmitCurrent);
+			                $("#twoball_omitmax").text(json.OmitTodayMax);
+			               },'json'); 
+				    }
+			        reloadTwoBallRemind();
+			        
+			        
+			        //开奖历史
+			        function getHistoryData(date){
+			    		$.post("tjssc/getHistoryData.do",
+			   				{count:120,date:date}, 
+			   				function(r) {
+			    				if (r) {
+			    					doTCompile("history_data", r.rows);
+			    				}
+			   			}, "json");
+			        }
+			        getHistoryData(null);
+			        
+				    function Search() {
+				    	getHistoryData($("#dateData").val());
+				    }
+				
+				</script> 
+			    </div> 
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

@@ -1,0 +1,117 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+<div class="clear"></div> 
+				<!--  内容开始 -->
+					<input type="hidden" id="callFun" value="Search"/>
+					<script type="text/javascript">   lotteryLuzhu = "jsk3_luzhumerge";</script>
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+					<div style="clear:left; width:100%;float:left;"> 
+				     <div class="show-bjl" style="margin-right: 10px;">
+				      	 选择日期: 
+				      <input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
+				      <span style=" padding-left: 10px;"><a style="margin: 0px;" href="javascript:Search();">查询</a></span>
+				     </div> 
+				    </div>
+				    <span class="InstructionsForUse">
+                        <span class="InstructionsForUse_btn">使用说明
+                        </span>
+                        <span class="position" style="display: none;">
+                            <span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br>
+            2.当中断连续开出的同一结果时，则另起一列显示结果；<br>
+            3.“小”三粒骰子之点数总和由4点至10点；“大”三粒骰子之点数总和由11点至17点；若三粒骰子平面点数相同，则为通吃，通吃「大」、「小」各注。
+                            </span>
+                        </span>
+                    </span>
+				    
+				    <div id="lot-wrap"> 
+				     <div id="lot_content"> 
+				      
+				      <div id="contentTotal" style="display: block; border: 1px solid #ffffff">
+						</div>
+				      
+				     </div> 
+				     <script type="text/javascript">
+				      	function getLuzhuNumber(){
+				      		var date=$("#dateData").val();
+				      		$.post("jsk3/getLuzhuTotal.do",
+				   				{date:date}, 
+				   				function(r) {
+				    				if (r) {
+				    					var str3 = 
+				    			'<table class="roadmap-table-caption">'+
+							       '<tbody><tr><td><span>今日累计：';
+							       var str = '</span> 总和大小</td>'+
+							       '</tr></tbody></table>'+
+							    '<div class="luzhu_scroll" style="width: 980px; overflow-x: auto;">'+
+							       '<table class="roadmap-table "><tbody>'+
+							           '<tr valign="top">';
+							           var num1 = 0;
+							           var num2 = 0;
+							           var num3 = 0;
+				    				for(var j=(r.length-1);j>=0;j--){
+				    					var row = r[j];
+				    					str += '<td>';
+				    					for(var i = (row.length-1) ; i>=0 ; i--){
+				    						//str += '<label>'+row[i]+'</label>';
+				    						if(row[i]=="大"){
+				    							str += '<span>大</span>';
+				    							num1++;
+				    						}else if(row[i]=="小"){
+				    							str += '<label>小</label>';
+				    							num2++
+				    						}else{
+				    							str += '<p>'+row[i]+'</p>';
+				    							num3++
+				    						}
+				    					}
+				    					str += '</td>';
+				    				}
+				    				str += '</tr></tbody></table></div>';
+				    				var str2 = '<span class="count"> 大（'+num1+'） 小（'+num2+'） 通吃('+num3+')</span>';
+				    				$('#contentTotal').html(str3+str2+str);
+				    				}
+				   			}, "json");
+				      	}
+				      	getLuzhuNumber();
+				      	function Search() {
+				      		getLuzhuNumber();
+					    }
+					 </script> 
+<!-- 					     <table class="roadmap-table-caption"> -->
+<!-- 						       <tbody><tr><td><span>今日累计：<span class="count"> 大（37） 小（45） 通吃(0)</span> -->
+<!-- 						               </span> 总和大小</td> -->
+<!-- 						       </tr></tbody></table> -->
+<!-- 						   <div class="luzhu_scroll" style="width: 980px; overflow-x: auto;"> -->
+<!-- 						       <table class="roadmap-table "><tbody> -->
+<!-- 						           <tr valign="top"> -->
+<!-- 						                   <td class="even"> -->
+<!-- 						                           <label>小</label> -->
+<!-- 						                   </td> -->
+<!-- 						                   <td class="odd"> -->
+<!-- 						                           <span>大</span> -->
+<!-- 						                           <span>大</span> -->
+<!-- 						                   </td> -->
+<!-- 						           </tr> -->
+<!-- 						       </tbody></table> -->
+<!-- 						   </div> -->
+				    </div>  
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

@@ -1,0 +1,160 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+				<input type="hidden" id="callFun" value="Search"/>
+				<script type="text/javascript">   lotteryLuzhu = "xync_luzhumantissa";</script>
+				<div style="clear:left; width:100%;float:left;"> 
+			     <div class="show-bjl" style="margin-right: 10px;">
+			      	 选择日期: 
+			      <input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
+			      <span style=" padding-left: 10px;"><a style="margin: 0px;" href="javascript:Search();">查询</a></span>
+			     </div> 
+			    </div>
+			    
+			    
+			    <div id="lot-wrap"> 
+			     <ul class="lot-number-omit mbottom10 clearleft">
+			        <li id="ball-choose" class="ball">
+			            <ul style="width: 880px; float: left;">
+			                <li><span class="ckb"><b data-c="1" class="checkbox checked"></b></span><span class="ckb-txt">
+			                    <label>第一球</label></span></li>
+			                <li><span class="ckb"><b data-c="2" class="checkbox checked"></b></span><span class="ckb-txt">
+			                    <label>第二球</label></span></li>
+			                <li><span class="ckb"><b data-c="3" class="checkbox checked"></b></span><span class="ckb-txt">
+			                    <label>第三球</label></span></li>
+			                <li><span class="ckb"><b data-c="4" class="checkbox checked"></b></span><span class="ckb-txt">
+			                    <label>第四球</label></span></li>
+			                 <li>
+				                 <span class="InstructionsForUse">
+			                        <span class="InstructionsForUse_btn">使用说明
+			                        </span>
+			                        <span class="position">
+									<span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br />
+										2.当长龙中断时，则另起一列显示结果；<br />
+										3.龙虎说明：<br />
+										<b>第一球 龙/虎</b>：“第一球”号码大于“第八球”号码视为【龙】中奖、反之小于视为【虎】中奖；<br />
+										<b>第二球 龙/虎</b>：“第二球”号码大于“第七球”号码视为【龙】中奖、反之小于视为【虎】中奖；<br />
+										<b>第三球 龙/虎</b>：“第三球”号码大于“第六球”号码视为【龙】中奖、反之小于视为【虎】中奖；<br />
+										<b>第四球 龙/虎</b>：“第四球”号码大于“第五球”号码视为【龙】中奖、反之小于视为【虎】中奖
+			                            </span>
+			                        </span>
+			                    </span>
+			                </li>
+			            </ul>
+			            <ul style="float: right; width: 100px; text-align: right;">
+			                  <span style="border-bottom:1px solid red; padding-bottom:2px;"><a class="all-ball" style="color:red" href="javascript:void(0);">全选</a></span>
+			              <span style="border-bottom:1px solid black; padding-bottom:2px;"><a class="clear-ball" href="javascript:void(0);">清空</a></span>
+			            </ul>
+			        </li>
+			    </ul>
+			     <div id="lot_content"> 
+			      <div id="lz_data-html"></div>
+			      <script id="lz_data-tmpl" type="text/template">
+			      	  {{
+			      	  for(var i=1;i<=4;i++){
+			      		  var row=it[i+""];
+			      		  var totalLong=it["totalLong"+i];
+			      		  var totalHu=it["totalHu"+i];
+			      		  var totalHe=it["totalHe"+i];
+						 
+			      	  }}  
+				      	<div class="luzhu t_{{=i}}" style="clear:both;"> 
+					       <table class="roadmap-table-caption"> 
+					        <tbody>
+					         <tr> 
+					          <td> <span>今日累计：<span class="count"> 龍（<span id="lzTotal1{{=i}}">{{=totalLong}}</span>） 
+																	         虎（<span id="lzTotal2{{=i}}">{{=totalHu}}</span>） 
+												  </span> 
+								   </span> 第{{=i}}球龍虎
+							   </td> 
+					         </tr> 
+					        </tbody>
+					       </table> 
+					       <div style="width: 980px; overflow-x: auto;" class="luzhu_scroll"> 
+					        <table class="roadmap-table mb-15" style="font-family:微软雅黑;"> 
+					         <tbody>
+					          <tr valign="top"> 
+					          <td class="odd">
+					          {{
+					           var preNum; 
+					           var symbol;
+					           var index=1;
+					           var lzTotal1Val=0;
+						       var lzTotal2Val=0;
+					           for(var n=row.length-1;n>=0;n--){
+					        	   var num=row[n];
+					        	   if(num=="龍"){
+					        		   lzTotal1Val+=1;
+					        		   symbol='<span>龍</span>';
+					        	   }else if(num=="虎"){
+					        		   lzTotal2Val+=1;
+					        		   symbol='<label>虎</label>';
+					        	   }
+					        	   if(n==row.length-1||preNum==num){
+					          }}	   
+					           		{{=symbol}} 
+					          {{ 
+					          		}else{
+					          			index+=1;
+					          }}
+					          		</td><td class="{{=index%2==0?'even':'odd'}}">{{=symbol}} 
+					          {{
+					          		}
+					          		preNum=num;
+					          	}
+					          }}
+					          <input type="hidden" id="lzTotal1Val{{=i}}" value="{{=lzTotal1Val}}"/>
+					          <input type="hidden" id="lzTotal2Val{{=i}}" value="{{=lzTotal2Val}}"/>
+					          </tr> 
+					         </tbody>
+					        </table> 
+					       </div> 
+					      </div> 
+			      	  {{
+			      	  	}
+			          }}
+				  </script>
+			      <script type="text/javascript">
+			      	function getLuzhuData(){
+			      		var date=$("#dateData").val();
+			      		$.post("xync/getLuzhuLonghu.do",
+			   				{date:date}, 
+			   				function(r) {
+			    				if (r) {
+			    					doTCompile("lz_data", r);
+// 			    					for(var i=1;i<=4;i++){/*替换总来与没来数据*/
+// 			    						$("#lzTotal1"+i).html($("#lzTotal1Val"+i).val());
+// 			    						$("#lzTotal2"+i).html($("#lzTotal2Val"+i).val());
+// 			    					}
+			    				}
+			   			}, "json");
+			      	}
+			      	getLuzhuData();
+			      	function Search() {
+			      		getLuzhuData();
+				    }
+				 </script> 
+			     </div> 
+			    </div>  
+			<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

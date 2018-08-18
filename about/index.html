@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)index.html#page1 -->
+<html lang="zh-CN" style="overflow: hidden; height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>关于我们</title>
+
+	<link rel="stylesheet" type="text/css" href="./about_files/aboutus.css">
+    <link rel="stylesheet" type="text/css" href="./about_files/jquery.fullPage.css">
+    <script type="text/javascript" src="./about_files/jquery.min.js"></script>
+    <script type="text/javascript" src="./about_files/jquery-ui-1.10.3.min.js"></script>
+    <script type="text/javascript" src="./about_files/jquery.fullPage.min.js"></script>
+    <script>
+	    $(document).ready(function() {
+	        $.fn.fullpage({
+	            slidesColor: ['#4d9cd7', '#eba318',  '#d8523a', '#77ae1f', '#2ca083'],
+	            anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
+	            menu: '#menu',
+				navigation: true,
+				afterLoad: function(anchorLink, index){
+					if(index == 1 ){
+						$('.s1').find('p').delay(200).animate({
+							left: '50%'
+						}, 1000, 'easeOutExpo');
+						$('.s1').find('h1').fadeIn(1000);
+						$('.s1').find('b').delay(200).animate({
+							bottom: '0'
+						}, 1000, 'easeOutExpo');
+					}
+					if(index == 2 ){
+						$('.s2').find('p').delay(200).animate({
+							left: '50%'
+						}, 1000, 'easeOutExpo');
+						$('.s2').find('h1').fadeIn(1000);
+						$('.s2').find('b').delay(200).animate({
+							bottom: '0'
+						}, 1000, 'easeOutExpo');
+					}
+	
+					if(index == 3){
+						$('.s3').find('p').delay(200).animate({
+							left: '50%'
+						}, 1000, 'easeOutExpo');
+						$('.s3').find('h1').fadeIn(1000);
+						$('.s3').find('b').delay(200).animate({
+							bottom: '0'
+						}, 1000, 'easeOutExpo');
+					}
+					if(index == 4){
+						$('.s4').find('p').delay(200).animate({
+							left: '50%'
+						}, 1000, 'easeOutExpo');
+						$('.s4').find('h1').fadeIn(1000);
+						$('.s4').find('b').delay(200).animate({
+							bottom: '350px'
+						}, 1000, 'easeOutExpo');
+					}
+			
+			
+					if(index == 5){
+						$('.s5').find('p').delay(200).animate({
+							left: '50%'
+						}, 1000, 'easeOutExpo');
+						$('.s5').find('h1').fadeIn(1000);
+						$('.s5').find('b').delay(200).animate({
+							bottom: '70px'
+						}, 1000, 'easeOutExpo');
+					}
+				},
+				onLeave: function(index, direction){
+					if(index == 1){
+						$('.s1').find('p').delay(10).animate({
+							left: '-50%'
+						}, 1000, 'easeOutExpo');
+						$('.s1').find('h1').fadeOut(10);
+						$('.s1').find('b').delay(10).animate({
+							bottom: '-100%'
+						}, 1000, 'easeOutExpo');
+					}
+					if(index == 2){
+						$('.s2').find('p').delay(10).animate({
+							left: '-50%'
+						}, 1000, 'easeOutExpo');
+						$('.s2').find('h1').fadeOut(10);
+						$('.s2').find('b').delay(10).animate({
+							bottom: '-100%'
+						}, 1000, 'easeOutExpo');
+					}
+					if(index == 3){
+						$('.s3').find('p').delay(10).animate({
+							left: '-50%'
+						}, 1000, 'easeOutExpo');
+						$('.s3').find('h1').fadeOut(10);
+						$('.s3').find('b').delay(10).animate({
+							bottom: '-100%'
+						}, 1000, 'easeOutExpo');
+					}
+					if(index == 4){
+						$('.s4').find('p').delay(10).animate({
+							left: '-50%'
+						}, 1000, 'easeOutExpo');
+						$('.s4').find('h1').fadeOut(10);
+						$('.s4').find('b').delay(10).animate({
+							bottom: '-100%'
+						}, 1000, 'easeOutExpo');
+					}
+					if(index == 5){
+						$('.s5').find('ul').delay(10).animate({
+							left: '-50%'
+						}, 1000, 'easeOutExpo');
+						$('.s5').find('h1').fadeOut(10);
+						$('.s5').find('b').delay(10).animate({
+							bottom: '-100%'
+						}, 1000, 'easeOutExpo');
+					}
+				
+				}
+	        });
+	    });
+    </script>
+    <!--[if lte IE 7]><script>window.location.href='http://cdn.dmeng.net/upgrade-your-browser.html?referrer='+location.href;</script><![endif]-->
+</head>
+<body style="overflow: hidden; height: 100%;"><div id="superContainer" style="top: 0px;">
+	<div id="menub">
+	    <ul id="menu">
+	    
+	        <li data-menuanchor="page1" class="active"><a href="./">关于我们</a></li>
+	        <li data-menuanchor="page2"><a href="index.html#page2">成立宗旨</a></li>
+	        <li data-menuanchor="page3" class=""><a href="index.html#page3">广告服务</a></li>
+	        <li data-menuanchor="page4" class=""><a href="index.html#page4">联系我们</a></li>
+	        <li data-menuanchor="page5" class=""><a href="index.html#page5">网站声明</a></li>
+	    </ul>
+	</div>
+	
+	<div class="section s1 table active" data-anchor="page1" style="height: 937px; background-color: rgb(77, 156, 215);"><div class="tableCell" style="height:937px;">
+		<h1 style="display: block;"></h1>
+	    <p style="left: 50%;"><em>于2016年1月项目启动，同年4月正式研发完毕，2.0版正式上线公测。作为国内首家以高频彩专业数据为基础的大型高频彩门户网站，自创立以来，一直致力为高频彩网站与终端用户提供全面、权威、专业的彩票统计、数据分析服务，立志成为高频彩最快开奖第一品牌。作为国内高频彩网站的领头军，我们将不断的努力，与您共创更美好的将来！ </em></p>
+	    <b style="bottom: 0px;"></b>
+	</div></div>
+	<div class="section s2 table" data-anchor="page2" style="height: 937px; background-color: rgb(235, 163, 24);"><div class="tableCell" style="height:937px;">
+		<h1>成立宗旨</h1>
+	    <p><em>盛世直播网立志成为高频彩最快开奖第一品牌，专注于高频彩票资讯与交流，力求提供及时、准确、完整的开奖进行，并围绕开奖进行多元化研发、彩票走势分析、等分析与方法，更好地服务各位彩民。</em></p>
+	    <b></b>
+	</div></div>
+	
+	<div class="section s3 table" data-anchor="page3" style="height: 937px; background-color: rgb(216, 82, 58);"><div class="tableCell" style="height:937px;">
+		<h1 style="display: none;">广告服务</h1>
+	    <p style="left: -50%;"><em>目前盛世直播网正处于高速发展时期，诚招同行进行合作共同创造美好未来！</em></p>
+	    <b style="bottom: -100%;"></b>
+	</div></div>
+	<div class="section s4 table" data-anchor="page4" style="height: 937px; background-color: rgb(119, 174, 31);"><div class="tableCell" style="height:937px;">
+		<h1 style="display: none;">联系我们</h1>
+	    <p style="left: -50%;">
+	        <em>
+	           暂无
+	        </em>
+	    </p>
+	    <b style="bottom: -100%;"><img src="./about_files/m7_2.png" class="im1"><img src="./about_files/m7_3.png" class="im2"></b>
+	</div></div>
+	
+	<div class="section s5 table" data-anchor="page5" style="height: 937px; background-color: rgb(44, 160, 131);"><div class="tableCell" style="height:937px;">
+		<h1 style="display: none;">网站声明</h1>
+	    <p style="left: 50%;"><em>我站对于任何包含、经由或连接、下载或从任何与有关我站服务所获得的任何内容、信息或广告，不声明或保证其正确性或可靠性；并且对于用户经我站服务上的广告、展示而购买、取得的任何产品、信息或资料，我站不负保证责任。用户自行负担使用我站服务的风险。我站服务可能会提供与其他国际互联网网站或资源进行链接。对于前述网站或资源是否可以利用，我站不予担保。因使用或依赖上述网站或资源所生的损失或损害，我站也不负担任何责任。<br>
+	qx66.com<br>
+	二〇一六年四月一日</em></p>
+	    <b style="bottom: -100%;"></b>
+	</div></div>
+
+</div><div id="fullPage-nav" class="right" style="color: rgb(0, 0, 0); margin-top: -53.5px;"><ul><li data-tooltip=""><a href="./about_files/about.html" class="active"><span></span></a></li><li data-tooltip=""><a href="index.html#page2"><span></span></a></li><li data-tooltip=""><a href="index.html#page3" class=""><span></span></a></li><li data-tooltip=""><a href="index.html#page4" class=""><span></span></a></li><li data-tooltip=""><a href="index.html#page5" class=""><span></span></a></li></ul></div></body></html>

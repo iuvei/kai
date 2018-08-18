@@ -1,0 +1,17 @@
+ <iframe src='http://www.qx666.com/style/jsk3/video.swf' width="980" rginwidth='0' height='630' scrolling='no' frameborder='0' border='0'></iframe>
+<style type="text/css">
+	   .divz1{width:50px; height:50px; margin-top:-153px; margin-left:269px; position:fixed;}
+	   .divz2{width:200px; height:50px; margin-top:-530px; margin-left:710px; position:fixed;}
+	   .divz3{width:200px; height:50px; margin-top:-530px; margin-left:30px; position:fixed;}
+	   a{
+text-decoration:none;
+}
+    </style>
+<div class="divz1" style="z-index:30"><img id="zimg" onclick="zimghide();" src="zimg/z_jsk3.png"></div>
+<div class="divz2" style="z-index:30"><a href="javascript:" onclick="top.location.href='http://s20.xtidi.com/jsk3'"><font color="0000FF" size=6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></a></div>
+<div class="divz3" style="z-index:30"><a href="javascript:" onclick="top.location.href='http://s20.xtidi.com/jsk3'"><font color="0000FF" size=6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></a></div>
+<script>
+function zimghide(){
+document.getElementById('zimg').style.display="none";
+}
+</script>

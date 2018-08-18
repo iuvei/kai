@@ -1,0 +1,138 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+<!--body-content-->
+<div class="body-content">
+	<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+		<include file="Public/lottory_op"/>
+		<div class="clear"></div>
+    <input type="hidden" value="getHistoryData|drawTrend" id="callFun" time="1000" />
+		
+		<div class="index-history">
+            <div class="title mt10">
+                <h2>
+                    極速时时彩开奖记录</h2>
+                <a href="cqssc/kaijiang.html" >查看全部&gt;&gt;</a>
+            </div>
+            <div id="history_data-html"></div>
+	      	<script id="history_data-tmpl" type="text/template">
+	      		<table id="history" class="lot-table">
+		            <tbody>
+						<tr class="head">
+							<td width="160">时间</td>
+							<td>开奖号码</td>
+							<td colspan="3">总和</td>
+							<td style="width: 70px; text-align: center;">龙虎</td>
+							<td style="width: 70px; text-align: center;">前三</td>
+							<td style="width: 70px; text-align: center;">中三</td>
+							<td style="width: 70px; text-align: center;">后三</td>
+						</tr>
+						{{
+							for (var i = 0; i <it.length; i++) { 
+								var row=it[i];
+								var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
+								var totalNum=row.n1+row.n2+row.n3+row.n4+row.n5;
+								var lhStr="";
+								if(row.n1>row.n5){
+									lhStr="龍";
+								}else if(row.n1<row.n5){
+									lhStr="虎";
+								}else if(row.n1==row.n5){
+									lhStr="和";
+								}
+									
+						}}
+								<tr class="{{=(i+1)%2==0?'even':'odd'}}">
+									<td>
+										<p class="p">{{=row.termNum}}</p>
+										<p class="t">{{=lowDate}}</p>
+									</td>
+									<td class="nums">
+										<span class="no1">{{=row.n1}}</span>
+										<span class="no2">{{=row.n2}}</span>
+										<span class="no3">{{=row.n3}}</span>
+										<span class="no4">{{=row.n4}}</span>
+										<span class="no5">{{=row.n5}}</span>
+									</td>
+									<td>{{=totalNum}}</td>
+									<td class="{{=totalNum%2!=0?'r':''}}"><p>{{=totalNum%2==0?"双":"单"}}</p></td>
+									<td class="{{=totalNum> 22?'r':''}}"><p>{{=totalNum<= 22?"小":"大"}}</p></td>
+									<td><p class="{{=lhStr=='龍'?'r':''}}">{{=lhStr}}</p></td>
+									<td>{{=numFromDesc(row.n1,row.n2,row.n3)}}</td>
+									<td>{{=numFromDesc(row.n2,row.n3,row.n4)}}</td>
+									<td>{{=numFromDesc(row.n3,row.n4,row.n5)}}</td>
+								</tr>
+						{{
+							}
+						}}
+		        	</tbody>
+				</table>
+			</script>
+			<script src="js/highchats/highcharts.js"  type="text/javascript"></script>
+			<script src="js/util/jschart.js"  type="text/javascript"></script>
+			<script type="text/javascript">
+				$(function(){
+					drawTrend();
+				});
+		        function drawTrend() {
+		            $.get("cqssc/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
+		                showChartline("第一球走势图", data, function () { return this.x + '期:' + this.y }, 0, 10, true, 0, "sContainer");
+		            }, "json");
+		            
+		        }
+		        function getHistoryData(){
+	        		$.post("cqssc/getHistoryData.do",
+	       				{count:12}, 
+	       				function(r) {
+	        				if (r) {
+	        					doTCompile("history_data", r.rows);
+	        				}
+	       			}, "json");
+		        }
+	            getHistoryData();
+		    </script>
+			<div class="lot-article mt10">
+				<div class="l-title">
+					<h2>極速时时彩技巧</h2>
+					<a href="jiqiao/cqssc/" >更多&gt;&gt;</a>
+				</div>
+				<div class="wrap">
+				
+    <ul>
+	   <li><a target="_blank" href="jiqiao/cqssc/{$artical_first['id']}.html" >·{$artical_first['title']}</a></li>
+	   <volist name="lists" id="data">
+		<li><a target="_blank" href="jiqiao/cqssc/{$data['id']}.html">·{$data.title}</a></li>
+		</volist>
+						</ul>
+		
+                   
+                 
+				</div>
+			</div>
+            <div class="lot-about mt10">
+                <div class="l-title">
+                    <h2>極速时时彩号码走势图</h2>
+                </div>
+                
+                    <div id="sContainer">
+				</div>
+               
+            </div>
+            
+        </div>
+		<div class="clear"></div>
+	</div>
+   </div>
+   
+		</block>

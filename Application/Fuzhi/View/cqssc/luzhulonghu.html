@@ -1,0 +1,88 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+
+    <!--  内容开始 -->
+    <div style="clear: left; width: 100%; float: left;">
+        <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+        <div style="margin-right: 10px;" class="show-bjl">
+            选择日期:
+            <input name="dateData" type="text" id="dateData" class="Wdate" value='' onfocus="WdatePicker();" readonly="readonly" />
+            <span style="padding-left: 10px;"><a style="margin: 0px;" href="javascript:updatePickdate();">查 询</a></span>
+        </div>
+        <script type="text/javascript">
+            function updatePickdate() {
+                var selDate = $("#dateData").val();
+                $.get("/cqssc/getLonghuLuzhuData.do", {
+                    t : Math.random(),
+                    date : selDate
+                }, function(text) {
+                    var title = '<div class="clear"></div>'+
+							'<div style="float: right; margin-bottom: 35px; margin-right: 68px;">'+
+								'<span class="InstructionsForUse"> '+
+									'<span class="InstructionsForUse_btn">使用说明 </span> '+
+									'<span style="left: -210px; top: 26px;" class="position"> '+
+										'<span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br>'+
+													'2.当中断连续开出的同一结果时，则另起一列显示结果；<br>'+
+													'3.龙虎说明：”第一球“号码大于“第五球”号码视为【龙】中奖、反之小于视为【虎】中奖。'+
+										'</span>'+
+									'</span>'+
+								'</span>'+
+							'</div><div style="height: 35px; width: 100%;"></div>';
+							$('#lot-wrap').html(title+text);
+						});
+					}
+					function clearedDate() {
+					}
+					$(function() {
+						$("#dateData").val("");
+						updatePickdate();
+					})
+				</script>
+			</div>
+				<div id="lot-wrap">
+<!-- 					<div style="height: 35px; width: 100%;"></div> -->
+<!-- 					<table class="roadmap-table-caption"> -->
+<!-- 						<tbody> -->
+<!-- 							<tr> -->
+<!-- 								<td><span>今日号码累计：<span class="count"> 龍（35） 虎（43） 和（12）</span> 龍虎</span></td> -->
+<!-- 							</tr> -->
+<!-- 						</tbody> -->
+<!-- 					</table> -->
+<!-- 					<div class="luzhu_scroll" style="width: 980px; overflow-x: auto;"> -->
+<!-- 						<table class="roadmap-table "> -->
+<!-- 							<tbody> -->
+<!-- 								<tr valign="top"> -->
+<!-- 									<td class="even"> -->
+<!-- 										<p>和</p> -->
+<!-- 									</td> -->
+<!-- 									<td class="odd"><label>虎</label> <label>虎</label></td> -->
+<!-- 									<td class="even"><span>龍</span></td> -->
+<!-- 									<td class="odd"><p>和</p></td> -->
+<!-- 									<td class="even"><label style="font-weight: bold; display: block;">虎</label></td> -->
+<!-- 								</tr> -->
+<!-- 							</tbody> -->
+<!-- 						</table> -->
+<!-- 					</div> -->
+				</div>
+			<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>
+
+		

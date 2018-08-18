@@ -1,0 +1,416 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+  			<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+		<include file="Public/lottory_op"/>
+
+<div class="clear"></div>
+		<script type="text/javascript">
+		    $(function () {
+		        var fixedMenu = $(".web_listOP");
+		        var x = fixedMenu.offset().left;
+		        var y = fixedMenu.offset().top;
+		
+		        $(window).resize(function () {
+		            fixedMenu.removeAttr("style");
+		            x = fixedMenu.offset().left;
+		            y = fixedMenu.offset().top;
+		        });
+		  
+		
+		        var scrollFunc = function (e) {
+		             if (location.pathname.indexOf("nineplan") > 0) return;
+		            e = e || window.event;
+		            var t1 = document.getElementById("wheelDelta");
+		            var t2 = document.getElementById("detail");
+		            var isup = false;
+		            if (e.wheelDelta) {//IE/Opera/Chrome
+		                isup = e.wheelDelta >= 120;
+		            } else if (e.detail) {//Firefox
+		                isup = e.detail <= -3;
+		            }
+		            var winHeight = $(document).height();
+		            var st = $(document).scrollTop();
+		            if (isup && winHeight > 3500 && st > 1500) {
+		                var pos = { "background": "#f1f1f1", "border": "1px solid #999", "z-index": "9999" };
+		                //if ($.browser.msie && ($.browser.version == "6.0") && !$.support.style) {
+		                //    pos = $.extend({}, pos, { "position": "absolute", "top": $(window).scrollTop()-50 + "px" });
+		                //} else {
+		                    pos = $.extend({}, pos, { "position": "fixed", "top": "0px", "left": (x - 2) + "px" });
+		               // }
+		                fixedMenu.css(pos);
+		                fixedMenu.find("ul").css({ "padding": "3px 0 3px 0" });
+		            } else {
+		                fixedMenu.removeAttr("style");
+		                fixedMenu.find("ul").css({ "padding": "0 0 10px 0" });
+		            }
+		        }
+		        /*注册事件*/
+		        if (document.addEventListener) {
+		            document.addEventListener('DOMMouseScroll', scrollFunc, false);
+		        }//W3C
+		        window.onmousewheel = document.onmousewheel = scrollFunc;//IE/Opera/Chrome
+		    });
+		</script>
+		<div style="clear:left; width:100%;float:left;">
+		    <!-- <div class="show-bjl" style="margin-top: 5px;">
+		        <b class="checkbox checked" id="ckb_pailu"></b>
+		        <label>显示百家牌路</label>
+		    </div> -->
+		     <div class="show-bjl" style="margin-right: 10px;">
+		     <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+		        选择日期:
+		     <input name="dateData" type="text" id="dateData" class="Wdate" value='' onfocus="WdatePicker();" readonly="readonly" />
+		     <span style="padding-left: 10px;"><a style="margin: 0px;" href="javascript:SearchLuzhu();">查询</a></span>
+		    </div>
+		    <script type="text/javascript">
+		        var vAjax = Boolean("");
+		        function updatePickdate(dp) {
+		            var selDate = $("#dateData").val();
+		
+		            setPaiLu();
+		
+		            if (true == vAjax) {
+		                var unload = "0";
+		                if (dp.cal.date.d == (new Date()).getDate()) {
+		                    unload = "0";
+		                } else {
+		                    unload = "1";
+		                }
+		                //冠亚和 路珠选择时间 单独处理(加载局部视图)
+		                LuzhuDate(selDate, unload);
+		
+		            } else {
+		                if (dp.cal.date.d == (new Date()).getDate()) {
+		                    reloadLuzhu(location.href, selDate, 0);
+		                } else {
+		                    reloadLuzhu(location.href, selDate, 1);
+		                }
+		            }
+		        }
+		        function clearedDate() {
+		            reloadLuzhu(location.href, '', 0);
+		        }
+		        $(function () {
+		            $("#dateData").val("");
+		        })
+		    </script>
+		    </div>
+		    <script type="text/javascript">    var lotteryLuzhu = "";</script>
+			<script type="text/javascript">
+			    /*设置牌路*/
+			    function setPaiLu()
+			    {
+			        var isshow = getCookie("showPailu");
+			        if ("1" == isshow) {
+			            $("#ckb_pailu").addClass("checked");
+			        } else {
+			            $("#ckb_pailu").removeClass("checked");
+			        }
+			    }
+			    /*冠亚和 路珠(选择时间) 异步加载*/
+			    function LuzhuDate(selDate, unload)
+			    {
+			        $('#LuzhuSelectDate').css("position", "relative").append("<div style='margin:0 auto; width:100%; color:#FFF; position:absolute; top:220px; z-index:11;left:0px;'>数据正在加载中...</div><div class='loaddingBg'></div>");
+			        $.get("pk10/GuanyaheSelectDate", { t: Math.random(), date: selDate }, function (text) {
+			            $('#LuzhuSelectDate').html(text);
+			            $("#pageName").attr("unload", unload);
+			            $('#LuzhuSelectDate').css("position", "");
+			        });
+			    }
+			    /*异步load路珠*/
+			    function reloadLuzhu(url, date, unload) {
+			        /* var _container = $("#pageName").attr("container");
+			        _container = _container ? _container : "lot-wrap";
+			        $('#' + _container).css("position", "relative").append("<div style='margin:0 auto; width:100%; color:#FFF; position:absolute; top:240px; z-index:11;left:0px;'>数据正在加载中...</div><div class='loaddingBg'></div>");
+			        $.get(url, { t: Math.random(), date: date }, function (text) {
+			            $('#' + _container).html(text);
+			            $("#pageName").attr("unload", unload);
+			            $('#' + _container).css("position", "");
+			        }); */
+			        SearchLuzhu();			    
+			    }
+			    $(function () {
+			        $(".show-bjl label").bind("click", function () {
+			            $("#ckb_pailu").click();
+			        });
+			
+			        $("#ckb_pailu").bind("click", function () {
+			            var check = $(this).hasClass("checked") ? false : true;
+			            var selDate = $("#dateData").val();
+			            var url = location.href;
+			            $.post("/home/pailusetting", { enable: check }, function (result) {
+			                //location.reload();
+			
+			                //由之前的post整个页面 变成局部更新
+			                setPaiLu();
+			
+			                var unload = "0";
+			                if (selDate != "" && new Date(selDate).getDate() == (new Date()).getDate()) {
+			                    unload = "0";
+			                } else {
+			                    unload = "1";
+			                }
+			                var vselectdate = $("#pageName").attr("selectdate");
+			                //冠亚和 路珠选择时间 单独处理(加载局部视图)
+			                if (vselectdate == "LuzhuSelectDate") {
+			                    LuzhuDate(selDate, unload);
+			                } else {
+			                    reloadLuzhu(url, selDate, unload);
+			                }
+			            }, 'json');
+			        });
+			    })
+			</script>
+
+
+        <div id="lot-wrap" style="margin-bottom:20px;">
+            
+	    <ul class="lot-number-omit mbottom10 clearleft">
+	        <li class="ball" id="ball-choose">
+	            <ul style="width: 880px; float: left;">
+	                <li>
+	                    <span class="ckb"><b class="checkbox checked" data-c="1"></b></span>
+	                    <span class="ckb-txt">
+	                        <label>冠军</label></span>
+	                </li>
+	                <li>
+	                    <span class="ckb"><b class="checkbox checked" data-c="2"></b></span>
+	                    <span class="ckb-txt">
+	                        <label>亚军</label></span>
+	                </li>
+	                <li>
+	                    <span class="ckb"><b class="checkbox checked" data-c="3"></b></span>
+	                    <span class="ckb-txt">
+	                        <label>第三名</label></span>
+	                </li>
+	                <li>
+	                    <span class="ckb"><b class="checkbox checked" data-c="4"></b></span>
+	                    <span class="ckb-txt">
+	                        <label>第四名</label></span>
+	                </li>
+	                <li>
+	                    <span class="ckb"><b class="checkbox checked" data-c="5"></b></span>
+	                    <span class="ckb-txt">
+	                        <label>第五名</label></span>
+	                </li>
+	                <li>
+	                    <span class="InstructionsForUse">
+	                        <span class="InstructionsForUse_btn">使用说明
+	                        </span>
+	                        <span class="position">
+	                            <span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br />
+	                                2.当长龙中断时，则另起一列显示结果；<br />
+	                                3.龙虎说明：<br />
+	
+	                                <b>冠　军龙/虎</b>：“第一名”车号大于“第十名”车号视为【龙】中奖、反之小于视为【虎】中奖；<br />
+	                                <b>亚　军龙/虎</b>：“第二名”车号大于“第九名”车号视为【龙】中奖、反之小于视为【虎】中奖；<br />
+	                                <b>第三名龙/虎</b>：“第三名”车号大于“第八名”车号视为【龙】中奖、反之小于视为【虎】中奖；<br />
+	                                <b>第四名龙/虎</b>：“第四名”车号大于“第七名”车号视为【龙】中奖、反之小于视为【虎】中奖；<br />
+	                                <b>第五名龙/虎</b>：“第五名”车号大于“第六名”车号视为【龙】中奖、反之小于视为【虎】中奖。
+	                                
+	                            </span>
+	                        </span>
+	                    </span>
+	                </li>
+	            </ul>
+	            <ul style="float: right; width: 100px; text-align: right;">
+	                <span style="border-bottom: 1px solid red; padding-bottom: 2px;"><a href="javascript:void(0);" style="color: red" class="all-ball">全选</a></span>
+	                <span style="border-bottom: 1px solid black; padding-bottom: 2px;"><a href="javascript:void(0);" class="clear-ball">清空</a></span>
+	            </ul>
+	        </li>
+	
+	    </ul>
+			<div id='lot_content'>    
+				<script type="text/javascript">   lotteryLuzhu = "pk10luzhu_lh";</script>
+			<div class="clear"></div>
+			<!-- <input type="hidden" id="pageName" value="luzhulonghu?date=" container="lot_content" unload="0"/> -->
+			    <div id="luzhu_1" class="luzhu t_1">
+			        
+			    </div>
+			    <div id="luzhu_2" class="luzhu t_2">
+				      
+			    </div>
+			    <div id="luzhu_3" class="luzhu t_3">
+			                   
+			    </div>
+			    <div id="luzhu_4" class="luzhu t_4">
+			                
+			    </div>
+			    <div id="luzhu_5" class="luzhu t_5">
+				<!-- <div class="roadmap-bjl">
+				        <script type="text/javascript">
+				        function getPRData_5(){
+				               return ["龍","虎","1,2,2,2,1,1,2,1,1,2,2,2,1,2,2,1,2,1,2,1,1,1,2,1,1,2,2,1,2,2,2,2,2,1,1,2,2,2,1,2,2,1,1,1,1,2,1,2,1,1,1,1,2,2,1,1,1,2,1,1,1,2,1,2,1,2,2,2,1,2,1,1,1,1,2,1,2,1,1,1,1,2,2,1,1"];
+				        }
+				        </script>
+				        <object  type="application/x-shockwave-flash"  width="980" height="131" id="playerObject_5" data="http://rescsj.56hx.com/flash/proad.swf?v=20140811">
+				            <param name="movie" value="http://rescsj.56hx.com/flash/proad.swf?v=20140811" />
+				            <param name="allowfullscreen" value="true" />
+				            <param name="FlashVars" value="data=getPRData_5" />
+				            <param name="allowscriptaccess" value="always" />
+				            <param name="allownetworking" value="all" />
+				            <param name="wmode" value="transparent" />
+				            <embed src="http://rescsj.56hx.com/flash/proad.swf?v=20140811" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="980" height="132"></embed>
+				        </object>
+				    </div>      -->       
+			    </div>
+			
+			<script type="text/javascript">
+			    $(function () {
+			       /*  changeLuZhuBall(); 
+			        setLuzhuScroll(); */
+			        SearchLuzhu();
+			    });
+			    var NUM_INDEX = {1:'冠军',2:'亚军',3:'第三名',4:'第四名',5:'第五名'};
+			    function luzhu(rows, n){
+			    	var j = 0;
+	            	var html = '<div style="width:980px; overflow-x:auto;" class="luzhu_scroll">'
+	            			+'<table class="roadmap-table "><tr id=luzhudiv'+n+'  valign="top">';
+           			var l1=0;
+		        	var h1=0;
+		        	var flag = false;//如果日期为空，则统计的数值只为今天的
+		        	if($("#dateData").val()!=null && $("#dateData").val()!=""){
+		        		flag = true;
+		        	}
+		        	var today = CurentTime(0);
+		        	var tag1 = '';
+		        	if(CurentTime(-1)==rows[0].lotteryDateStr){
+		        		today = rows[0].lotteryDateStr;
+		        	}
+	            	for(var i=rows.length-1;i >= 0; i--){
+	            		var data = rows[i];
+	            		var a1, a2;
+	            		if(n==1){
+	            			a1 = data.n1;
+	            			a2 = data.n10;
+	            		}else if(n==2){
+	            			a1 = data.n2;
+	            			a2 = data.n9;
+	            		}else if(n==3){
+	            			a1 = data.n3;
+	            			a2 = data.n8;
+	            		}else if(n==4){
+	            			a1 = data.n4;
+	            			a2 = data.n7;
+	            		}else if(n==5){
+	            			a1 = data.n5;
+	            			a2 = data.n6;
+	            		}
+	            		var cl = '';
+	            		var tag = '';
+	                    if(a1>a2){
+	                    	cl = 'odd';
+	                    	tag = '龍';
+	                    		if(today==data.lotteryDateStr){
+	                    			l1++;
+	                    		}
+	                    }else{
+	                    	cl = 'even';
+	                    	tag = '虎';
+	                    		if(today==data.lotteryDateStr){
+	                    			h1++;
+	                    		}
+	                    }
+	                    if(i==rows.length-1){
+	                    	html += "<td class='"+cl+"'>";
+	                    }else if(tag1!=tag){
+	                    	html += "</td><td class='"+cl+"'>";
+	                    }
+	                    if(tag == '虎'){
+	                    	html += '<label>'+tag+'</label>';
+	                    }else{
+	                    	html += '<span>'+tag+'</span>';
+	                    }
+	                   	if(i==0){
+	                   	 	html += '</td>';
+	                   	}
+	                   	tag1 = tag;
+	            	}
+	            	html += '</tr> </table></div>';
+	            	var tmp = '<table class="roadmap-table-caption"><tr><td>'+
+	            		'<span>今日号码累计：<span class="count"> 龍（'+l1+'） 虎（'+h1+'）</span>'+NUM_INDEX[n]+'龍虎</span>'
+	            		+'</td></tr></table>';
+	            	return tmp + html;
+			    }
+			    function SearchLuzhu() {
+			        $.get("pk10/kaijiang.do", { date: $("#dateData").val() }, function (result) {
+			        	var tmp1='', tmp2='', tmp3='', tmp4='', tmp5='';
+			            if(result&&result.rows&&result.rows.length>0){
+			            	tmp1 = luzhu(result.rows, 1);
+			            	tmp2 = luzhu(result.rows, 2);
+			            	tmp3 = luzhu(result.rows, 3);
+			            	tmp4 = luzhu(result.rows, 4);
+			            	tmp5 = luzhu(result.rows, 5);
+			            }
+			            $('#luzhu_1').html(tmp1);
+			            jiequ("luzhudiv1");
+		            	$('#luzhu_2').html(tmp2);
+		            	jiequ("luzhudiv2");
+		            	$('#luzhu_3').html(tmp3);
+		            	jiequ("luzhudiv3");
+		            	$('#luzhu_4').html(tmp4);
+		            	jiequ("luzhudiv4");
+		            	$('#luzhu_5').html(tmp5);
+		            	jiequ("luzhudiv5");
+			        }, "json");
+			    }
+			    function jiequ(str){
+			    	//如果查询日期为空才要截取
+			    	if(($("#dateData").val()==null || $("#dateData").val()=="") && $('#'+str+' td').length>45){
+		            	$('#'+str+' td').slice(0,$('#'+str+' td').length-45).remove();
+		            }
+			    }
+			    function CurentTime(diffrent)
+			    { 
+			        var now = new Date();
+			        
+			        var year = now.getFullYear();       //年
+			        var month = now.getMonth() + 1;     //月
+			        var day = now.getDate();            //日
+			        
+// 			        var hh = now.getHours();            //时
+// 			        var mm = now.getMinutes();          //分
+// 			        var ss = now.getSeconds();           //秒
+			        
+			        var clock = year + "-";
+			        
+			        if(month < 10)
+			            clock += "0";
+			        
+			        clock += month + "-";
+			        
+			        day = (day*1)+diffrent;
+			        if(day < 10)
+			            clock += "0";
+			            
+			        clock += day + "";
+			        
+// 			        if(hh < 10)
+// 			            clock += "0";
+			            
+// 			        clock += hh + ":";
+// 			        if (mm < 10) clock += '0'; 
+// 			        clock += mm + ":"; 
+			         
+// 			        if (ss < 10) clock += '0'; 
+//			        clock += ss; 
+
+			        return(clock); 
+			}
+			</script>
+			</div>
+	</div>
+	</div>
+	</block>

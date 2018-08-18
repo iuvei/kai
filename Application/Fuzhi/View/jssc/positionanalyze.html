@@ -1,0 +1,291 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/draw5.css">
+    <link type="text/css" rel="stylesheet" href="css/layout.css">
+    <link type="text/css" rel="stylesheet" href="css/tableAndFont.css">
+    <style type="text/css">
+
+        v\:line, v\:rect, v\:oval, v\:group, v\:stroke, v\:fill, v\:polyline {behavior: url(#default#VML);}
+        .cvs { position: absolute;}
+        #trendChart {padding: 0;position: relative;left:0;top:0;}
+        #canvas{ z-index:999; position:absolute; left:0; top:0;}
+
+    </style>
+    <!--[if lte IE 9]> <style type="text/css">.dateLineTable	*{padding:auto;margin:auto;}</style><![endif]-->
+</block>
+
+<block name="body">
+ 
+  <div class="body-content"> 
+   <!-- 彩票大厅 头部 -->
+
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+   <div class="lot-wrap">
+   <include file="Public/lottory_op"/>
+   <div class="clear"></div>
+    <div class="web_dateLineBody"> 
+     <input type="hidden" id="callFun" value="updateRecord" /> 
+     <div class="web_changeThree"> 
+      <ul> 
+       <li class="hover">位置走势图</li> 
+       <li class="list"></li> 
+       <li><a href="pk10/numberanalyze.html" > 号码走势图</a></li>
+      </ul> 
+     </div> 
+     <div class="web_huiseBackGround"> 
+      <div class="web_huiseBackGround_title">
+        *请选择3-9个名次进行统计： 
+      </div> 
+      <div class="web_iconList" id="web_tjcar"> 
+       <ul> 
+        <li class="icon1" data-car="1"></li> 
+        <li class="icon2" data-car="2"></li> 
+        <li class="icon3" data-car="3"></li> 
+        <li class="icon4" data-car="4"></li> 
+        <li class="icon5" data-car="5"></li> 
+        <li class="icon6" data-car="6"></li> 
+        <li class="icon7 " data-car="7"></li> 
+        <li class="icon8" data-car="8"></li> 
+        <li class="icon9" data-car="9"></li> 
+        <li class="icon10" data-car="10"></li> 
+       </ul> 
+      </div> 
+      <div class="web_startBtn"> 
+       <ul> 
+        <li><input id="analyzeBtn" type="button" value="开始" /> <span id="warn_msg" style="display: none">*请选择3-9个名次/位置进行统计。</span></li> 
+       </ul> 
+      </div> 
+      <div ms-controller="analyze"> 
+       <div class="web_analysisResults"> 
+        <ul> 
+         <li>分析结果：</li> 
+         <li><span class="huiBalls">1</span></li> 
+         <li>未在选择范围的名次</li> 
+         <li style="padding: 0 8px 0 20px;"><span class="redBalls">1</span></li> 
+         <li>在选择范围的名次</li> 
+         <li class="right"><span>选择期数：</span> <span style="padding: 3px 0 0 0;"> <select name="periodCount" class="select" ms-duplex="periodCount"> <option value="30">最近30期</option> <option value="60">最近60期</option> <option value="90">最近90期</option> </select> </span></li> 
+        </ul> 
+       </div> 
+       <div class="web_Prompt02">
+         *系统将为您读取最近30期-90期对应车号开出的号码，并且为您计算出最终跨度（最大号码减去最小号码）、最大号码及最小号码走势。助您缩小选号范围。 
+       </div> 
+       <div class="jsloading" style="display: none"></div> 
+       <div class="dateLineTable" style="padding: 0 0 15px 0;" id="trendChart"> 
+        <div class="web_noDataDiv">
+          暂无数据。。。。。 
+        </div> 
+        <table id="chart" width="975" border="0" cellspacing="1" cellpadding="0" style="margin: 0 auto; display: none"> 
+         <tbody> 
+          <tr> 
+           <td class="blue">期号</td> 
+           <td class="blue" width="330"> 
+            <div class="web_dataGY"> 
+             <ul> 
+              <li>冠</li> 
+              <li>亚</li> 
+              <li>三</li> 
+              <li>四</li> 
+              <li>五</li> 
+              <li>六</li> 
+              <li>七</li> 
+              <li>八</li> 
+              <li>九</li> 
+              <li style="border: none;">十</li> 
+             </ul> 
+            </div> </td> 
+           <td class="huiWhite2" width="208">跨度走势</td> 
+           <td class="pinkWhite" width="183">最小号码走势</td> 
+           <td class="greenWhite" width="175">最大号码走势</td> 
+          </tr> 
+          <tr ms-repeat="analyDatas"> 
+           <td class="white3">{{el.p}}</td> 
+           <td class="white3"> 
+            <div class="web_numTen5Ball3"> 
+             <ul> 
+              <li ms-repeat-n="el.nums" ms-css-border-right-width="{{$last?'0':'1'}}" ms-class-1="hover2:$cars.indexOf($index+1)&gt;-1">{{n}}</li> 
+             </ul> 
+            </div> </td> 
+           <td class="huiWhite3"> 
+            <div class="web_kj"> 
+             <ul> 
+              <li ms-class="shenblue:1==el.kd">1</li> 
+              <li ms-class="shenblue:2==el.kd">2</li> 
+              <li ms-class="shenblue:3==el.kd">3</li> 
+              <li ms-class="shenblue:4==el.kd">4</li> 
+              <li ms-class="shenblue:5==el.kd">5</li> 
+              <li ms-class="shenblue:6==el.kd">6</li> 
+              <li ms-class="shenblue:7==el.kd">7</li> 
+              <li ms-class="shenblue:8==el.kd">8</li> 
+              <li style="border: none;" ms-class="shenblue:9==el.kd">9</li> 
+             </ul> 
+            </div> </td> 
+           <td class="pinkWhite3"> 
+            <div class="web_kj" style="width: 183px;"> 
+             <ul> 
+              <li ms-class="shenred2:1==el.min">1</li> 
+              <li ms-class="shenred2:2==el.min">2</li> 
+              <li ms-class="shenred2:3==el.min">3</li> 
+              <li ms-class="shenred2:4==el.min">4</li> 
+              <li ms-class="shenred2:5==el.min">5</li> 
+              <li ms-class="shenred2:6==el.min">6</li> 
+              <li ms-class="shenred2:7==el.min">7</li> 
+              <li style="border: none;" ms-class="shenred2:8==el.min">8</li> 
+             </ul> 
+            </div> </td> 
+           <td class="greenWhite2"> 
+            <div class="web_kj" style="width: 183px;"> 
+             <ul> 
+              <li ms-class="greenBg2:3==el.max">3</li> 
+              <li ms-class="greenBg2:4==el.max">4</li> 
+              <li ms-class="greenBg2:5==el.max">5</li> 
+              <li ms-class="greenBg2:6==el.max">6</li> 
+              <li ms-class="greenBg2:7==el.max">7</li> 
+              <li ms-class="greenBg2:8==el.max">8</li> 
+              <li ms-class="greenBg2:9==el.max">9</li> 
+              <li style="border: none;" ms-class="greenBg2:10==el.max">10</li> 
+             </ul> 
+            </div> </td> 
+          </tr> 
+         </tbody> 
+        </table> 
+        <input type="hidden" id="cars" ms-duplex="carsTxt" /> 
+        <input type="hidden" id="dataopened" ms-duplex="flagPeriod" /> 
+       </div> 
+      </div> 
+     </div> 
+     <script type="text/javascript">
+			function updateRecord() {
+				$("#dataopened").val(parseInt($("#dataopened").val()) + 1);
+			}
+			$(function() {
+	
+				$("#web_tjcar ul li").bind("click", function() {
+					$(this).toggleClass("cur");
+				});
+				$("#analyzeBtn").bind("click", function() {
+					var carsli = $("#web_tjcar ul li.cur");
+					if (carsli.length > 2 && carsli.length < 10) {
+						var cars = [];
+						for (var i = 0; i < carsli.length; i++) {
+							cars.push($(carsli[i]).attr("data-car"));
+						}
+						if ($("#cars").val() == cars.join(","))
+							return;
+						$("#cars").val(cars.join(","));
+						$("#warn_msg").hide();
+						$("#canvas").remove();
+						$("#chart").hide();
+						$(".jsloading").show();
+					} else {
+						$("#warn_msg").show();
+					}
+				});
+				require([ 'trendChart' ], function(trendChart) {
+					var chartLine = new trendChart({
+						css : {
+							noyl : "noyl",
+							bline : "bline",
+							lines : [ ".shenblue", ".shenred2", ".greenBg2" ]
+						},
+						lineWidth : 2,
+						lineColor : "#BB8569"
+					});
+	
+					var viewmodel = avalon.define('analyze', function(vm) {
+						vm.carsTxt = "";
+						vm.flagPeriod = -1;
+						vm.$cars = [];
+						vm.$constNums = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
+						vm.analyDatas = [];
+						vm.periodCount = 30;
+						vm.drawLine = function() {
+							chartLine.clearLines();
+							chartLine.reDraw();
+						};
+						vm.calculate = function(a) {
+							var d = a;
+							d.min = d.nums[viewmodel.$cars[0] - 1];
+							d.max = d.nums[viewmodel.$cars[0] - 1];
+							for (var j = viewmodel.$cars.length - 1; j > 0; j--) {
+								d.min = Math.min(d.min,
+										d.nums[viewmodel.$cars[j] - 1]);
+								d.max = Math.max(d.max,
+										d.nums[viewmodel.$cars[j] - 1]);
+							}
+							d.kd = d.max - d.min;
+							return d;
+						}
+						vm.refreshData = function() {
+							$(".web_noDataDiv").hide();
+							$("#chart").hide();
+							$(".jsloading").show();
+							$.get("pk10/getAwardList.do", {
+								t : Math.random(),
+								count : viewmodel.periodCount
+							}, function(data) {
+								viewmodel.analyDatas.clear();
+								for (var i = 0; i < data.datas.length; i++) {
+									viewmodel.analyDatas.push(viewmodel
+											.calculate(data.datas[i]));
+								}
+								$("#chart").show();
+								$(".jsloading").hide();
+								viewmodel.drawLine();
+							}, 'json');
+						}
+						vm.$watch("periodCount", function(v) {
+							//vm.periodCount = v;
+							if (viewmodel.analyDatas.length <= 0)
+								return;
+							viewmodel.analyDatas.clear();
+							$("#canvas").remove();
+							$("#chart").hide();
+							$(".jsloading").show();
+							viewmodel.refreshData();
+						});
+						vm.$watch("carsTxt", function(value, oldvalue) {
+							if (value.length < 3)
+								return;
+							viewmodel.$cars = [];
+							var cts = value.split(",");
+							for (var i = 0; i < cts.length; i++) {
+								viewmodel.$cars.push(~~cts[i]);
+							}
+							viewmodel.refreshData();
+						});
+						vm.$watch("flagPeriod", function(value, oldvalue) {
+							if (value == -1)
+								return;
+							if (viewmodel.analyDatas.length <= 0
+									|| viewmodel.$cars.length < 3)
+								return;
+							$.get("pk10/getAwardList.do", {
+								count : 1,
+								t : Math.random()
+							}, function(data) {
+								var p = data.datas[0];
+								viewmodel.analyDatas
+										.unshift(viewmodel.calculate(p));
+								viewmodel.analyDatas
+										.removeAt(viewmodel.analyDatas.length - 1);
+								viewmodel.drawLine();
+							}, 'json');
+						})
+					});
+	
+					avalon.scan();
+				});
+	
+			});
+		</script> 
+     <script src="js/avalon.js"  type="text/javascript"></script>
+    </div> 
+    <div class="clear"></div> 
+   </div>
+  </div>
+   </block>

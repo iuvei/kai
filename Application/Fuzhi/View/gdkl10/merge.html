@@ -1,0 +1,372 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+				<div class="clear"></div> 
+				<!--  内容开始 -->
+					<div id="lot-wrap"> 
+				     <ul class="lot-number-omit"> 
+				      <li class="ball"> 
+				       <ul id="rankUl">
+					     <li>
+					         <a href="javascript:gotoPage(1)" id="rankLi1" class='cur'>
+					       	   	   第一球
+					         </a>
+					         |
+					     </li>
+					     <li>
+					         <a href="javascript:gotoPage(2)" id="rankLi2" >
+					   	      	第二球
+					         </a>
+					         |
+					     </li>
+					     <li>
+					         <a href="javascript:gotoPage(3)" id="rankLi3" >
+					   	     	第三球
+					         </a>
+					         |
+					     </li>
+					     <li>
+					         <a href="javascript:gotoPage(4)" id="rankLi4" >
+					    	  	 第四球      	
+					         </a>
+					         |
+					     </li>
+					     <li>
+					         <a href="javascript:gotoPage(5)" id="rankLi5" >
+					           	第五球
+					         </a>|
+					      </li>
+					     <li>
+					         <a href="javascript:gotoPage(6)" id="rankLi6" >
+					           	第六球
+					         </a>|
+					      </li>
+					     <li>
+					         <a href="javascript:gotoPage(7)" id="rankLi7" >
+					           	第七球
+					         </a>|
+					      </li>
+					     <li>
+					         <a href="javascript:gotoPage(8)" id="rankLi8" >
+					           	第八球
+					         </a>
+					      </li>
+				     	</ul>
+				      </li> 
+				      <li class="type"> 
+				       <ul> 
+				        <li> <label> <input type="checkbox" name="c_p" id="c_p1"  value="mlist-1"/>长龙提醒</label> </li> 
+				        <li> <label> <input type="checkbox" name="c_p" id="c_p2"  value="mlist-2"/>大小/单双路珠</label> </li> 
+				        <li> <label> <input type="checkbox" name="c_p" id="c_p3"  value="mlist-3"/>东南西北路珠</label> </li> 
+				        <li> <label> <input type="checkbox" name="c_p" id="c_p4"  value="mlist-4"/>总和大小/单双路珠</label> </li> 
+				        <li> <label> <input type="checkbox" name="c_p" id="c_p5"  value="mlist-5"/>和数单双路珠</label> </li> 
+				        <li> <label> <input type="checkbox" name="c_p" id="c_p8" value="mlist-6"/>龙虎路珠</label> </li> 
+				        <li> <label> <input type="checkbox" name="c_p" id="c_p8" value="mlist-7"/>中发白路珠</label> </li> 
+				        <li> <label id="ballIndex" style="display: none;">0</label> </li> 
+				       </ul> </li> 
+				     </ul> 
+				     <div class="clear"></div> 
+					<div id="lot_content">
+				      <input type="hidden" id="pageName" value="merge" time="6000" container="lot_content" /> 
+				      <div id="mlist-1">
+				      <table class="merge-title-table" style="margin-bottom: -1px;"> 
+				       <tbody>
+				        <tr> 
+				         <td> <span>长龙提醒
+<!-- 				          <a href="/gdkl10/changlongwarn/1" target="_blank" class="changlong-setting"> 设置</a> -->
+				           </span> </td> 
+				         <td> 
+<!-- 				         <a class="move-down" onclick="movePanel('c_p1','down');" title="向下"></a>  -->
+				         </td> 
+				        </tr> 
+				       </tbody>
+				      </table> 
+				      <div style="margin-bottom: 10px;">
+				       <div id="cl_list-html" style="float: left;"></div> 
+				  	  <script id="cl_list-tmpl" type="text/template">
+				  	 	
+							 {{
+							     var rowsLen=it.length;
+							     for(var i=0;i<rowsLen;i++){ /*循环开始A*/
+							    	  var rd=it[i];
+									  var tRank="";
+									  if(rd.dataType!=7&&rd.dataType!=8){
+										  if(rd.rank==1){
+											  tRank="第一球";
+										  }else if(rd.rank==2){
+											  tRank="第二球";
+										  }else if(rd.rank==3){
+											  tRank="第三球";
+										  }else if(rd.rank==4){
+											  tRank="第四球";
+										  }else if(rd.rank==5){
+											  tRank="第五球";
+										  }else if(rd.rank==6){
+											  tRank="第六球";
+										  }else if(rd.rank==7){
+											  tRank="第七球";
+										  }else if(rd.rank==8){
+											  tRank="第八球";
+										  }else if(rd.rank==9){
+											  tRank="第九球";
+										  }else if(rd.rank==10){
+											  tRank="第十球";
+										  }
+									  }else{
+										  tRank="总和";
+									  }
+									  var tNum=rd.num;
+									  var tType=tNum+":"+rd.dataType;
+									  if(rd.dataType==2){
+										  if(tNum%2==0){
+											  tType="虎";
+										  }else{
+											  tType="龍";
+										  }
+									  }else if(rd.dataType==5){
+										  if(tNum==1){
+											  tType="单";
+										  }else{
+											  tType="双";
+										  }
+									  }else if(rd.dataType==6){
+										  if(tNum==1){
+											  tType="小";
+										  }else{
+											  tType="大";
+										  }
+									  }else if(rd.dataType==7){
+										  if(tNum==1){
+											  tType="单";
+										  }else{
+											  tType="双";
+										  }
+									  }else if(rd.dataType==8){
+										  if(tNum==1){
+											  tType="小";
+										  }else{
+											  tType="大";
+										  }
+									  }
+						  }} 
+							  <div class="cl_s">{{=tRank}}：{{=tType}} <span style="margin: 0px 10px;">连开</span> {{=rd.nowMissing}} 期</div>
+						{{
+					 	   } 
+						}}
+							
+					  </script> 
+				       <div class="clear"></div> 
+				      </div> 
+				      </div>
+				      <div style="height: 25px; clear: both;"> 
+				      </div> 
+				      <div id="mlist-2">
+				      <table class="merge-title-table"> 
+				       <tbody>
+				        <tr> 
+				         <td> <span>大小/单双路珠</span> </td> 
+<!-- 				         <td> <a class="move-up" onclick="movePanel('c_p2','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p2','down');" title="向下"></a> </td>  -->
+				        </tr> 
+				       </tbody>
+				      </table> 
+				      <div style="width: 980px; overflow-x: auto;" class="luzhu_scroll" id="dsdxlz_content"> 
+				      </div> 
+				      </div>
+				      <br />
+				      <div id="mlist-3"> 
+				      <table class="merge-title-table"> 
+				       <tbody>
+				        <tr> 
+				         <td> <span>东南西北路珠</span> </td> 
+<!-- 				         <td> <a class="move-up" onclick="movePanel('c_p4','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p4','down');" title="向下"></a> </td>  -->
+				        </tr> 
+				       </tbody>
+				      </table> 
+				      <div style="width: 980px; overflow-x: auto;" class="luzhu_scroll" id="dnxblz_content"> 
+				      </div> 
+				      </div>
+				      <br /> 
+				      <div id="mlist-4">
+				      <table class="merge-title-table"> 
+				       <tbody>
+				        <tr> 
+				         <td> <span>总和大小/单双路珠</span> </td> 
+<!-- 				         <td> <a class="move-up" onclick="movePanel('c_p5','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p5','down');" title="向下"></a> </td>  -->
+				        </tr> 
+				       </tbody>
+				      </table> 
+				      <div  id="zhdxdslzContent"> 
+				      </div> 
+				      </div>
+				      <br /> 
+				      <div id="mlist-5">
+				      <table class="merge-title-table"> 
+				       <tbody>
+				        <tr> 
+				         <td> <span>和数单双路珠</span> </td> 
+<!-- 				         <td> <a class="move-up" onclick="movePanel('c_p5','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p5','down');" title="向下"></a> </td>  -->
+				        </tr> 
+				       </tbody>
+				      </table> 
+				      <div  id="hsdsContent"> 
+				      </div> 
+				      </div>
+				      <br />
+				      <div id="mlist-6">
+				      <table class="merge-title-table"> 
+				       <tbody>
+				        <tr> 
+				         <td> <span>龙虎路珠</span> </td> 
+<!-- 				         <td> <a class="move-up" onclick="movePanel('c_p8','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p8','down');" title="向下"></a> </td>  -->
+				        </tr> 
+				       </tbody>
+				      </table> 
+				      <div style="width: 980px; overflow-x: auto;" class="luzhu_scroll" id="lhContent"> 
+				      </div> 
+				      </div>
+				      <br>
+				      <div id="mlist-7">
+				      <table class="merge-title-table"> 
+				       <tbody>
+				        <tr> 
+				         <td> <span>中发白路珠</span> </td> 
+<!-- 				         <td> <a class="move-up" onclick="movePanel('c_p8','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p8','down');" title="向下"></a> </td>  -->
+				        </tr> 
+				       </tbody>
+				      </table> 
+				      <div style="width: 980px; overflow-x: auto;" class="luzhu_scroll" id="zfbContent"> 
+				      </div> 
+				      </div>
+				 </div> 
+				</div>
+				<script type="text/javascript">
+					var Request =  GetRequest();
+	                var rank = Request['rank'];
+	                if(!rank)
+                        rank=1;
+					//长龙
+					function reloadChangLong() {
+				    	$.post("gdkl10/getMergeData.do",
+		    				function(r) {
+		    					if (r) {
+		    						doTCompile("cl_list", r.clList);
+		    					}
+		    			}, "json")
+			        }
+				    reloadChangLong();
+				    
+				    function luzhuShow(){
+				   		for(var i=0;i<11;i++){
+			    			$(".t_"+i).hide();
+			    		}
+			    		$(".t_"+rank).show();
+				   	}
+				    
+				    //单双大小路珠
+				    function dsdxlz() {
+						var selDate = $("#dateData").val();
+						$.get('gdkl10/luZhuTongji.do', {
+							date : selDate,
+							type : 4
+						}, function(data) {
+							$("#dsdxlz_content").html(data);
+							luzhuShow();
+						});
+					}
+				    dsdxlz();
+				    //东南西北路珠
+				    function dnxblz() {
+						var selDate = $("#dateData").val();
+						$.get('gdkl10/luZhuTongji.do', {
+							date : selDate,
+							type : 6
+						}, function(data) {
+							$("#dnxblz_content").html(data);
+							luzhuShow();
+						});
+					}
+				    dnxblz();
+				    //总和路珠
+				    function zhlz() {
+						var selDate = $("#dateData").val();
+						$.get('gdkl10/luZhuTotal.do', {
+							date : selDate
+						}, function(data) {
+							$("#zhdxdslzContent").html(data);
+							$("#zhdxdslzContent").html($("#zhdxdslzContent").html().replace(/\<br\>/g,""));
+							luzhuShow();
+						});
+					}
+				    zhlz();
+				    
+				    //合数单双
+				    function hsds(){
+				    	var selDate = $("#dateData").val();
+						$.get('gdkl10/luZhuTongji.do', {
+							date : selDate,
+							type : 1
+						}, function(data) {
+							$("#hsdsContent").html(data);
+							luzhuShow();
+						});
+				    }
+				    hsds();
+				    //龙虎
+				    function lh(){
+				    	var selDate = $("#dateData").val();
+						$.get('gdkl10/luZhuLonghu.do', {
+							date : selDate
+						}, function(data) {
+							$("#lhContent").html(data);
+						});
+				    }
+				    lh();
+				    //中发白
+				    function zfb(){
+				    	var selDate = $("#dateData").val();
+						$.get('gdkl10/luZhuTongji.do', {
+							date : selDate,
+							type : 5
+						}, function(data) {
+							$("#zfbContent").html(data);
+							luzhuShow();
+						});
+				    }
+				    zfb();
+				    function gotoPage(rankNum){
+			    		if(rankNum)
+			    			rank=rankNum;
+			       	 	window.location.href="gdkl10/merge.html#rank="+rank;
+				       	//处理排名样式
+	   					$("#rankUl li a").removeClass("cur")
+	   					$("#rankLi"+rank).addClass("cur")
+	   					luzhuShow();
+			       	}
+				    $("input[name='c_p']").live("change",function(){
+			        	var tid=$(this).attr("value");
+			        	if($(this).attr("checked")=="checked"){
+			        		$("#"+$(this).val()).show();
+			        	}else{
+			        		$("#"+$(this).val()).hide();
+			        	}
+			        })
+				</script>
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

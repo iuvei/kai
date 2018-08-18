@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{:C('WEB_SITE_NAME')}</title>
+<meta name="keywords" content="{:C('WEB_SITE_KEYWORD')}" />
+<meta name="description" content="{:C('WEB_SITE_DESCRIPTION')}" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="zh-cn" />
+<meta http-equiv="x-ua-compatible" content="ie=7" /> 
+<link rel="stylesheet" href="css/login.css"  />
+<script type="text/javascript" src="js/util/jquery.min.js" ></script>
+<!--[if lt IE 9]>
+    <script type="text/javascript" src="js/html5shiv.js"
+            ></script>
+    <script type="text/javascript">
+        $(function () {
+            $iInput = $('form#loginform input[placeholder],form#registerform .typtin input[placeholder]');
+            $iInput.each(function (i) {
+                $(this).wrap('<div class="input_wrap" style="position:relative;"></div>').after('<p class="forinput_ie">' + $(this).attr("placeholder") + '</p>');
+            });
+
+
+            $('#loginform,#registerform').on('click', 'div.input_wrap', function () {
+                $(this).children('p.forinput_ie').css({display: "none"});
+                $(this).children('input').focus();
+            });
+
+            $('#loginform,#registerform').on('blur', 'div.input_wrap input', function () {
+                $(this).children('p.forinput_ie').css({display: "none"});
+                $(this).children('input').focus();
+                if ($(this).val() === "") {
+                    $(this).siblings().css({display: "block"});
+                }
+            });
+        });
+    </script>
+
+    <![endif]-->
+</head>
+<body>
+<div id="bbsScript" style="display: none;"></div>
+<div id="container">
+    <header>
+	<div id="header">
+		<h1 id="logo">
+			<a title="{:C('WEB_SITE_NAME')}" href="" ></a> <label>{:C('WEB_SITE_NAME')}</label>
+		</h1>
+		<ul id="nav">
+			<li><a class="home" href="" >{:C('WEB_SITE_NAME')}</a></li>
+<!-- 			<li><a class="zhibo" href="#">开奖直播</a></li> -->
+<!-- 			<li><a class="software" href="#">软件中心</a></li> -->
+		</ul>
+	</div>
+</header> 
+    <div class="logincontent_wrap">
+        <div id="logincontent">
+        	<div id="login_form">
+            	<!--提示-->
+                 <div class="typt_notice" id="error_msg">密码不能为空</div>
+            	<!--登录表單-->
+                <form class="animated" id="loginform" action="Common/login.html?" method="post">
+                	<input name="name" type="text" id="name" placeholder="{:C('WEB_SITE_NAME')}用戶名/手机号" />
+                    <input name="password" type="password" id="password" placeholder="密码" />
+                    <p class="login_button">
+                        <a id="btnLogin" href="javascript:void(0);">登录</a> 
+                    </p>
+                    <input type="hidden" name="ajaxhandler" value="login" />
+                    <div class="plus">
+                    	<div class="ckb">
+                            <b class="checkbox checked"></b>
+                            <label>下次自动登录</label>
+                            <input title="下次自动登录" type="hidden" value="true" id="keepLogin" name="keepLogin" />
+                        </div>
+                        <p class="unaccessible">
+                        	<a id="forget_password" href="resetpwd.html"  >忘记密码</a>
+                            <a id="register" href="#">注册帐号</a>
+                        </p>
+                    </div>
+                </form>
+            
+            	<!--注冊表單reg-->
+                <div class="reg_warnmsg" style="display:none;">尊敬的用戶，请如实填写您的注冊资料，以防系統判断为垃圾帐号！</div>
+            	<form class="animated" id="registerform" style="display:none;" action="Common//login.html?" method="post">
+                	<div class="typtin">
+                    	<input type="text" id="registerName" name="registerName" placeholder="由中文或字母开头的3~16位字符" maxlength="16" value=""/>
+                        <input type="password" id="registerPassword" name="registerPassword" value="" placeholder="请输入至少4位字符作为密码"/>
+                        <input type="password" id="registerPassword2" name="registerPassword2" value="" placeholder="请再次输入您的密码"/>
+                        <input type="text" id="mobliePhone" name="mobliePhone" value="" placeholder="真实手机號码，以便接收短信提醒" maxlength="11"/>
+                        <input type="text" id="email" name="email" value="" placeholder="正确邮箱，忘记密码时找回密码"/>
+                        <input type="hidden" id="vc" name="vc" value="86a0e5c6" />
+                        <div class="yzm">
+                        	<input type="text" maxlength="4" id="code" name="code" value="" placeholder="请输入验证码"/>
+                             <img src="ucutil/getValidateCode.do"  id="validcode" onclick='this.src = "/ucutil/getValidateCode.do?" + Math.random()' style="height:30px; width:80px; " />
+                        </div>
+                        <div class="ckb">
+                            <b class="checkbox"></b>
+                            <label>我已阅读并同意{:C('WEB_SITE_NAME')} <a href="" title="使用协议" class="use_treaty" target="_blank">《使用协议》</a></label>
+                            <input title="我已阅读并同意{:C('WEB_SITE_NAME')}" type="checkbox" id="agree" name="agree" style="display:none;"/>
+                        </div>
+                        <p class="reg_button"><a href="javascript:void(0);" >马上注册</a></p>
+                        <button type="button" id="btnRegister" style="display:none">注册</button>
+                    </div>
+                    <div class="side">
+                    	<h6>已有帐号用戶？</h6>
+                        <p><a id="login" href="#">登录</a></p>
+                        <div class="ad1">
+                      <!--  广告-->
+<!--                     <a href="#" target="_blank"><img src="" style="margin-top:12px;" alt="" /></a>     -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--footer-->
+            <div id="footer" class="top1">
+            	<p class="linkbox">
+		<a href="404.html"  rel="nofollow">关于{:C('WEB_SITE_NAME')}</a>|
+<!-- 		<a href="http://www.royaleu.com/business/" target="_blank" rel="nofollow">广告服务</a>|  -->
+<!-- 		<a href="http://www.royaleu.com/about/values.html" target="_blank" rel="nofollow">皇家价值观</a>|  -->
+		<a href="404.html"  target="_blank" rel="nofollow">法律声明</a>
+	</p>
+	<p>{:C('WEB_SITE_NAME')}版权所有 @2008-2014</p>
+ 
+            </div>
+        </div>
+    </div>
+
+<!--     <div class="allserv_wrap"> -->
+<!--         <div class="allserv"> -->
+<!--         	<a class="dropdown_as top2" href="javascript:;"></a> -->
+<!--             <p class="row2"> -->
+<!--                 <a class="a21" href="#"  target="_blank" title="自助下注">自助下注</a> -->
+<!--                 <a class="a22" href="#"  target="_blank" title="应用中心">应用中心</a> -->
+<!--                 <a class="a23" href="#"  target="_blank" title="开奖视频">开奖视频</a> -->
+<!--                 <a class="a25" href="#"  target="_blank" title="时时彩">时时彩</a> -->
+<!--                 <a class="a26" href="#"  target="_blank" title="快3">快3</a> -->
+<!--                 <a class="a27" href="#"  target="_blank" title="时时彩">时时彩</a> -->
+<!--                 <a class="a28" href="#"  target="_blank" title="北京赛车">北京赛车</a> -->
+<!--                 <a class="a29" href="#"  target="_blank" title="快乐十分">快乐十分</a> -->
+<!--                 <a class="a210" href="javascript:;" title="幸运农场">幸运农场</a> -->
+<!--                 <a class="a211" href="javascript:;" title="时时彩视频">时时彩视频</a> -->
+<!--             </p> -->
+<!--         </div> -->
+<!--     </div> -->
+
+</div><!-- close containerTag -->
+<!--
+--------------------------------------------------
+遮罩
+-->
+<div class="black_shade"></div>
+<img class="loading_img" src="images/loading_3.gif"  width="160" />
+<div class="popup1">
+    <div id="b_content">
+        <img  class="f_or_s"  src="images/success.png"  alt="success" />
+        <div class="turn_notice">
+            <h2 class="rreedd">恭喜! 您已成功注冊成为{:C('WEB_SITE_NAME')}会員</h2>
+            <br />
+            
+            <h6>
+                 
+                <a id="back_to_login" class="button_f2 back_btn_color" href="#">返回</a>
+            </h6>
+        </div>
+    </div>
+</div>
+    
+
+<!-- DD_belatedPNG -->
+<!--[if IE 6]>
+<script type="text/javascript" src="404.html" ></script>
+<script type="text/javascript">
+DD_belatedPNG.fix('*');
+</script>
+<![endif]-->
+
+    <script type="text/javascript" src="js/login.js" ></script>
+    <script type="text/javascript">
+        var type = "";
+        if (type != "") {
+            $('#loginform').css({ display: "none" });
+            $('#registerform').css({ display: "block" });
+            $(".reg_warnmsg").css({ display: "block" });
+        }
+	</script>
+	<!-- 统计 -->
+	<div>
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253890555'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/stat.php%3Fid%3D1253890555' type='text/javascript'%3E%3C/script%3E"));</script>
+	</div>
+	
+</body>
+</html>

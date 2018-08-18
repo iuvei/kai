@@ -1,0 +1,216 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+		<include file="Public/lottory_op"/>
+		<div style="clear:left; width:100%;float:left;">
+     <div style="margin-right: 10px;" class="show-bjl">
+      <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+        选择日期:
+    <input name="dateData" type="text" id="dateData" class="Wdate" value='' onfocus="WdatePicker();" readonly="readonly" />
+		     <span style="padding-left: 10px;"><a style="margin: 0px;" href="javascript:SearchQianhouLuzhu();">查询</a></span>
+    </div>
+    <script type="text/javascript">
+        var vAjax = Boolean("");
+        function updatePickdate(dp) {
+            var selDate = $("#dateData").val();
+
+            setPaiLu();
+
+            if (true == vAjax) {
+                var unload = "0";
+                if (dp.cal.date.d == (new Date()).getDate()) {
+                    unload = "0";
+                } else {
+                    unload = "1";
+                }
+                //冠亚和 路珠选择时间 单独处理(加载局部视图)
+                LuzhuDate(selDate, unload);
+
+            } else {
+                if (dp.cal.date.d == (new Date()).getDate()) {
+                	SearchQianhouLuzhu();
+                } else {
+                	SearchQianhouLuzhu();
+                }
+            }
+        }
+        function clearedDate() {
+        	SearchQianhouLuzhu();
+        }
+        $(function () {
+            $("#dateData").val("");
+        })
+    </script>
+    </div>
+<div id='lot_content'>
+	<ul class="lot-number-omit mbottom10 clearleft">
+		<li class="ball" id="ball-choose">
+			<ul style="width: 880px; float: left;">
+				<li><span class="ckb"><b class="checkbox checked"
+						data-c="1"></b></span> <span class="ckb-txt"> <label>号码1</label></span></li>
+				<li><span class="ckb"><b class="checkbox checked"
+						data-c="2"></b></span> <span class="ckb-txt"> <label>号码2</label></span></li>
+				<li><span class="ckb"><b class="checkbox checked"
+						data-c="3"></b></span> <span class="ckb-txt"> <label>号码3</label></span></li>
+				<li><span class="ckb"><b class="checkbox checked"
+						data-c="4"></b></span> <span class="ckb-txt"> <label>号码4</label></span></li>
+				<li><span class="ckb"><b class="checkbox checked"
+						data-c="5"></b></span> <span class="ckb-txt"> <label>号码5</label></span></li>
+				<li><span class="ckb"><b class="checkbox checked"
+						data-c="6"></b></span> <span class="ckb-txt"> <label>号码6</label></span></li>
+				<li><span class="ckb"><b class="checkbox checked"
+						data-c="7"></b></span> <span class="ckb-txt"> <label>号码7</label></span></li>
+				<li><span class="ckb"><b class="checkbox checked"
+						data-c="8"></b></span> <span class="ckb-txt"> <label>号码8</label></span></li>
+				<li><span class="ckb"><b class="checkbox checked"
+						data-c="9"></b></span> <span class="ckb-txt"> <label>号码9</label></span></li>
+				<li><span class="ckb"><b class="checkbox checked"
+						data-c="10"></b></span> <span class="ckb-txt"> <label>号码10</label></span>
+				</li>
+				<li><span class="InstructionsForUse"> <span
+						class="InstructionsForUse_btn">使用说明 </span> <span class="position">
+							<span class="content"> 1.表格需从左向右浏览，右侧一列为最新结果；<br />
+								2.当长龙中断时，则另起一列显示结果；<br /> 3.“前”表示号码开出在前5名，“后”表示号码开出在后5名。<br />
+						</span>
+					</span>
+				</span></li>
+
+			</ul>
+			<ul style="float: right; width: 100px; text-align: right;">
+				<span style="border-bottom: 1px solid red; padding-bottom: 2px;"><a
+					href="javascript:void(0);" style="color: red" class="all-ball">全选</a></span>
+				<span style="border-bottom: 1px solid black; padding-bottom: 2px;"><a
+					href="javascript:void(0);" class="clear-ball">清空</a></span>
+			</ul>
+		</li>
+
+	</ul>
+	<div id='lot_content'>
+		<script type="text/javascript">
+			lotteryLuzhu = "pk10luzhu_lr";
+		</script>
+		<div class="clear"></div>
+		<div id="luzhu_1" class="luzhu t_1">
+			
+		</div>
+		<div id="luzhu_2" class="luzhu t_2">
+		
+		</div>
+		<div id="luzhu_3" class="luzhu t_3">
+		
+		</div>
+		<div id="luzhu_4" class="luzhu t_4">
+		
+		</div>
+		<div id="luzhu_5" class="luzhu t_5">
+		
+		</div>
+		<div id="luzhu_6" class="luzhu t_6">
+		
+		</div>
+		<div id="luzhu_7" class="luzhu t_7">
+		
+		</div>
+		<div id="luzhu_8" class="luzhu t_8">
+		
+		</div>
+		<div id="luzhu_9" class="luzhu t_9">
+		
+		</div>
+		<div id="luzhu_10" class="luzhu t_10">
+		
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+			    $(function () {
+			       /*  changeLuZhuBall(); 
+			        setLuzhuScroll(); */
+			        SearchQianhouLuzhu();
+			    });
+			    function luzhu(rows, n){
+			    	var j = 0;
+	            	var html = '<div style="width:980px; overflow-x:auto;" class="luzhu_scroll">'
+	            			+'<table class="roadmap-table mb-15"><tr valign="top">';
+           			var l1=0;
+		        	var h1=0;
+		        	var tag1 = '';
+	            	for(var i=rows.length-1;i >= 0; i--){
+	            		var data = rows[i];
+	            		var a1, a2;
+	            		var cl = '';
+	            		var tag = '';
+	                    if(n==data.n1||n==data.n2||n==data.n3||n==data.n4||n==data.n5){
+	                    	cl = 'even';
+	                    	tag = '前';
+	                    	l1++;
+	                    }else{
+	                    	cl = 'odd';
+	                    	h1++;
+	                    	tag = '后';
+	                    }
+	                    if(i==rows.length-1){
+	                    	html += "<td class='"+cl+"'>";
+	                    }else if(tag1!=tag){
+	                    	html += "</td><td class='"+cl+"'>";
+	                    }
+	                    if(tag == '后'){
+	                    	html += '<label>'+tag+'</label>';
+	                    }else{
+	                    	html += '<span>'+tag+'</span>';
+	                    }
+	                   	if(i==0){
+	                   	 	html += '</td>';
+	                   	}
+	                   	tag1 = tag;
+	            	}
+	            	html += '</tr> </table></div>';
+	            	var tmp = '<table class="roadmap-table-caption"><tr><td>'+
+	            		'<span>今日号码累计：<span class="count"> 前（'+l1+'） 后（'+h1+'）</span> 号码'+n+'</span>'
+	            		+'</td></tr></table>';
+	            	return tmp + html;
+			    }
+			    function SearchQianhouLuzhu() {
+			        $.get("pk10/kaijiang.do", { date: $("#dateData").val() }, function (result) {
+			        	var tmp1='', tmp2='', tmp3='', tmp4='', tmp5='',tmp6='', tmp7='', tmp8='', tmp9='', tmp10='';
+			            if(result&&result.rows&&result.rows.length>0){
+			            	tmp1 = luzhu(result.rows, 1);
+			            	tmp2 = luzhu(result.rows, 2);
+			            	tmp3 = luzhu(result.rows, 3);
+			            	tmp4 = luzhu(result.rows, 4);
+			            	tmp5 = luzhu(result.rows, 5);
+			            	tmp6 = luzhu(result.rows, 6);
+			            	tmp7 = luzhu(result.rows, 7);
+			            	tmp8 = luzhu(result.rows, 8);
+			            	tmp9 = luzhu(result.rows, 9);
+			            	tmp10 = luzhu(result.rows, 10);
+			            }
+			            $('#luzhu_1').html(tmp1);
+		            	$('#luzhu_2').html(tmp2);
+		            	$('#luzhu_3').html(tmp3);
+		            	$('#luzhu_4').html(tmp4);
+		            	$('#luzhu_5').html(tmp5);
+		            	$('#luzhu_6').html(tmp6);
+		            	$('#luzhu_7').html(tmp7);
+		            	$('#luzhu_8').html(tmp8);
+		            	$('#luzhu_9').html(tmp9);
+		            	$('#luzhu_10').html(tmp10);
+			        }, "json");
+			    }
+			</script>
+	</div>
+	<div class="clear"></div>
+	</block>

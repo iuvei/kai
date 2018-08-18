@@ -1,0 +1,110 @@
+
+<include file="Public/var"/>
+<block name="script"></block>
+<!--foot-->
+<link rel="stylesheet" href="css/footer.css"  />
+<div class="footer">
+  <div class="wrap">
+  <div class="foot_nav"><a href="about/">关于我们</a> | <a href="about/index.html#page5">网站声明</a> | <a href="about/index.html#page4">联系我们</a> | <a href="about/index.html#page3">广告服务</a> | <a href="sitemap.html">网站地图</a></div>
+
+    <p>推荐使用谷歌、火狐、IE9以上浏览器</p>
+    <p style="color:red">郑重提示：购买彩票有风险，投注需谨慎，不得向未满18周岁的青少年出售彩票！</p>
+    <p>敬告用户：除本站产品外，本站所刊登广告的网站和第三方内容一概与本站无关，用户须自行判断广告和第三方内容的真实性，由此所产生的后果本站概不负责！</p>
+  </div>
+  <div class="footer_bottom">Copyright © 2011-2016 All Rights Reserved. Current version is 2.0</div>
+
+</div>
+<!--/foot-->
+
+
+<script type="text/javascript" src="js/util/jquery.slides.min.js" ></script>
+<script type="text/javascript" src="js/util/highcharts.js" ></script>
+<script type="text/javascript" src="js/util/jschart.js" ></script>
+<script type="text/javascript" src="js/service.js" ></script>
+
+
+{:hook('pageFooter', 'widget')}
+<div class="hidden">
+	<block name="hidden"><?php echo $tontji;?></block>
+</div>
+<!--
+<link rel="stylesheet" href="css/zzsc.css">
+<div id="leftsead">
+    <ul>
+        <li>
+            <a href="javascript:void(0)" class="youhui">
+                <img src="http://www.163kai.com/images/l02.png" width="47" height="49" class="shows">
+                <img src="http://www.163kai.com/images/a.png" width="57" height="49" class="hides" style="display: none;">
+                <img src="2.jpg" width="145" class="2wm" style="margin: -100px 57px 0px 0px; display: none;">
+            </a>
+        </li>
+        <li>
+            <a href="http://wpa.qq.com/msgrd?v=3&amp;uin={:C('WEB_SITE_QQ')}&amp;site=qq&amp;menu=yes" target="_blank">
+                <div class="hides" style="width: 161px; margin-right: -163px; display: none;" id="qq">
+                    <div class="hides" id="p1">
+                        <img src="http://www.163kai.com/images/ll04.png">
+                    </div>
+                    <div class="hides" id="p2"><span style="color:#FFF;font-size:13px">{:C('WEB_SITE_QQ')}</span>
+                    </div>
+                </div>
+                <img src="http://www.163kai.com/images/l04.png" width="47" height="49" class="shows" style="display: block;">
+            </a>
+        </li>
+        <li id="tel">
+        <a href="javascript:void(0)">
+            <div class="hides" style="width: 161px; margin-right: -163px; display: none;" id="tels">
+                <div class="hides" id="p1">
+                    <img src="http://www.163kai.com/images/ll05.png">
+                </div>
+                <div class="hides" id="p3"><span style="color:#FFF;font-size:12px">0592-88888888</span>
+                </div>
+            </div>
+        <img src="http://www.163kai.com/images/l05.png" width="47" height="49" class="shows" style="display: block;">
+        </a>
+        </li>
+        <li id="btn">
+        <a id="top_btn">
+            <div class="hides" style="width: 161px; margin-right: -163px; display: none;">
+                <img src="http://www.163kai.com/images/ll06.png" width="161" height="49">
+            </div>
+            <img src="http://www.163kai.com/images/l06.png" width="47" height="49" class="shows" style="display: block;">
+        </a>
+    </li>
+    </ul>
+</div>
+<script>
+
+$(document).ready(function(){
+    
+    $("#leftsead a").hover(function(){
+        if($(this).prop("className")=="youhui"){
+            $(this).children("img.hides").show();
+        }else{
+            $(this).children("div.hides").show();
+            $(this).children("img.shows").hide();
+            $(this).children("div.hides").animate({marginRight:'0px'},'0'); 
+        }
+    },function(){ 
+        if($(this).prop("className")=="youhui"){
+            $(this).children("img.hides").hide();
+        }else{
+            $(this).children("div.hides").animate({marginRight:'-163px'},0,function(){$(this).hide();$(this).next("img.shows").show();});
+        }
+    });
+
+    $("#top_btn").click(function(){if(scroll=="off") return;$("html,body").animate({scrollTop: 0}, 600);});
+
+        //右侧导航 - 二维码
+        $(".youhui").mouseover(function(){
+            $(this).children(".2wm").show();
+        })
+        $(".youhui").mouseout(function(){
+            $(this).children(".2wm").hide();
+        });
+
+
+});
+
+
+</script>
+-->

@@ -1,0 +1,95 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+<div class="clear"></div> 
+				<!--  内容开始 -->
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+				<div id="lot-wrap">
+					<input type="hidden" value="updateHistoryRecord" id="callFun"  />
+					<div class="lot-search">
+					    选择日期：
+					    <input name="dateData" type="text" id="dateData" onClick="WdatePicker();" readonly="readonly" style="height:18px; margin:0px;"/>
+					    &nbsp;<a href="javascript:Search();">查询</a>
+					</div>
+						<div id="history_data-html"></div>
+	      			 	<script id="history_data-tmpl" type="text/template">   
+			            <table class="lot-table" id="history">
+			                <tr class="head">
+			                    <td width="160px">
+			                   	     时间
+			                    </td>
+			                    <td >
+			                    	   开奖号码
+			                    </td>
+			                    <td colspan="3" width="260">
+			                        	总和
+			                    </td>
+			                </tr>
+							{{
+								for (var i = 0; i <it.length; i++) { 
+									var row=it[i];
+									var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
+									var totalNum=row.n1+row.n2+row.n3;
+									var totalBigOrSmallStr="";
+									if (totalNum >= 14)
+										totalBigOrSmallStr="大";
+									else 
+										totalBigOrSmallStr="小";
+										
+							}}
+					       	<tr class="{{=(i+1)%2==0?'even':'odd'}}"> 
+				           		<td> <p class="p">{{=row.termNum}} </p> <p class="t">{{=lowDate}}</p> </td> 
+					            <td class="nums">
+			                        <span class='no1'>{{=row.n1}}</span>
+			                        <span class='no2'>{{=row.n2}}</span>
+			                        <span class='no3'>{{=row.n3}}</span>
+					            </td>
+					            <td>{{=totalNum}}</td>
+					            <td>
+					            	<p class="{{=totalNum%2!=0?'r':''}}"> {{=totalNum%2==0?"双":"单"}}</p>
+					            </td>
+					            <td>
+					            	<p><p class="{{=totalNum>84?'r':''}}"> {{=totalBigOrSmallStr}}</p></p>
+					            </td>
+					        </tr>
+					        {{
+								}
+							}}
+					    </table>
+					    </script>
+						<script type="text/javascript">
+							function getHistoryData(date){
+					    		$.post("shssl/getHistoryData.do",
+					   				{count:180,date:date}, 
+					   				function(r) {
+					    				if (r) {
+					    					doTCompile("history_data", r.rows);
+					    				}
+					   			}, "json");
+					        }
+					        getHistoryData(null);
+					        
+						    function Search() {
+						    	getHistoryData($("#dateData").val());
+						    }
+						</script>
+				</div>
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>

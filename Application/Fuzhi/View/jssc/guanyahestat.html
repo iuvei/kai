@@ -1,0 +1,132 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+        <include file="Public/lottory_op"/>
+        <input type="hidden" id="callFun" value="loadData" time="1000"/>
+<div class="lot-wrap">
+			<div style="clear: left; width: 100%; float: left;">
+                <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+				<div class="show-bjl" style="margin-right: 10px;">
+					选择日期:
+			    <input name="dateData" type="text" id="dateData" class="Wdate" value='' onfocus="WdatePicker();" readonly="readonly" />
+					     <span style="padding-left: 10px;"><a style="margin: 0px;" href="javascript:updatePickdate();">查 询</a></span>
+				</div>
+				<script type="text/javascript">
+					var vAjax = Boolean("True");
+					function updatePickdate(dp) {
+						var selDate = $("#dateData").val();
+						if (true == vAjax) {
+							var unload = "0";
+							//if (dp.cal.date.d == (new Date()).getDate()) {
+							//	unload = "0";
+							//} else {
+							//	unload = "1";
+							//}
+							//冠亚和 路珠选择时间 单独处理(加载局部视图)
+							LuzhuDate(selDate, unload);
+
+						} else {
+							reloadLuzhu(location.href, selDate, 0);
+							if (dp.cal.date.d == (new Date()).getDate()) {
+								reloadLuzhu(location.href, selDate, 0);
+							} else {
+								reloadLuzhu(location.href, selDate, 1);
+							}
+						}
+					}
+					function clearedDate() {
+//		 				reloadLuzhu(location.href, '', 0);
+					}
+					$(function() {
+						$("#dateData").val("");
+					})
+				</script>
+			</div>
+
+			<script type="text/javascript">
+				var lotteryLuzhu = "";
+			</script>
+			<script type="text/javascript">
+				/*冠亚和 路珠(选择时间) 异步加载*/
+				function LuzhuDate(selDate, unload) {
+					$('#LuzhuSelectDate')
+							.css("position", "relative")
+							.append(
+									"<div style='margin:0 auto; width:100%; color:#FFF; position:absolute; top:220px; z-index:11;left:0px;'>数据正在加载中...</div><div class='loaddingBg'></div>");
+					$.get("pk10/guanyaLuzhubseo.do", {
+						t : Math.random(),
+						date : selDate
+					}, function(text) {
+						$('#jshtml').html(text);
+						$("#pageName").attr("unload", unload);
+						$('#LuzhuSelectDate').css("position", "");
+					});
+				}
+				function todayCount() {
+					$.get("pk10/guanyaLuzhuTodayCount.do", {}, function(text) {
+						$('#LuzhuSelectDate').html(text);
+					});
+				}
+				function twosideCount() {
+					$.get("pk10/findGuanYaDXDSLishi.do", {
+						gameId : 50
+					}, function(text) {
+						$('#LuzhuSelectDate').html(text);
+					});
+
+				}
+				function loadData(){
+					$.get("pk10/guanyaLuzhubseo.do", {
+						t : Math.random()
+					}, function(text) {
+						$('#jshtml').html(text);
+					});
+				}
+				$(function() {
+					loadData();
+				})
+			</script>
+
+
+			<div id="lot-wrap" style="margin-bottom: 20px;">
+				<div class="func-category userintro">
+					<span class="span1"> <span class="span2"> 
+							<a onclick="twosideCount()">两面历史 </a> 
+							<a onclick="todayCount()">今日统计 </a> 
+							<a onclick="LuzhuDate()">单双大小路珠 </a></span> <span
+						class="InstructionsForUse span3"> <span
+							class="InstructionsForUse_btn">使用说明 </span> <span
+							class="position" style="left: -214px;"> <span
+								class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br />
+									2.当长龙中断时，则另起一列显示结果<br /> <b>冠亚和单双</b>：“冠亚和值”爲单视为投注“单”的注单视为中奖，爲双视为投注“双”的注单视为中奖，其余视为不中奖；<br />
+									<b>冠亚和大小</b>：“冠亚和值”大于11时投注“大”的注单视为中奖，小于或等于11时投注“小”的注单视为中奖，其余视为不中奖；<br />
+									<b>冠亚和指定</b>：“冠亚和值”可能出现的结果爲3～19， 投中对应“冠亚和值”数字的视为中奖，其余视为不中奖。
+
+							</span>
+						</span>
+					</span>
+
+					</span>
+				</div>
+				<div class="clear"></div>
+				<div id="jshtml"></div>
+
+
+			</div>
+
+		</div>
+	</div>
+	<div class="clear"></div>
+	</block>

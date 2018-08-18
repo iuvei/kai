@@ -1,0 +1,57 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+		<include file="Public/lottory_op"/>
+
+<div class="clear"></div>
+		<input type="hidden" value="numberstat" id="pageName">
+			<table class="lot-table" id="numberstatTable">
+				<caption></caption>
+				<tbody>
+					<tr style="height: 30px;" class="head">
+						<td width="160">日期</td>
+						<td width="60">冠军龍</td>
+						<td width="60">冠军虎</td>
+						<td width="60">亚军龍</td>
+						<td width="60">亚军虎</td>
+						<td width="60">第三名龍</td>
+						<td width="60">第三名虎</td>
+						<td width="60">第四名龍</td>
+						<td width="60">第四名虎</td>
+						<td width="60">第五名龍</td>
+						<td width="60">第五名虎</td>
+					</tr>
+		<!-- 			<tr class="odd"> -->
+		<!-- 				<td>2014-12-29</td> -->
+		<!-- 				<td>81</td> -->
+		<!-- 				<td>72</td> -->
+		<!-- 				<td>77</td> -->
+		<!-- 				<td>76</td> -->
+		<!-- 				<td>68</td> -->
+		<!-- 				<td>85</td> -->
+		<!-- 				<td>76</td> -->
+		<!-- 				<td>77</td> -->
+		<!-- 				<td>74</td> -->
+		<!-- 				<td>79</td> -->
+		<!-- 			</tr> -->
+				</tbody>
+			</table>
+		<script type="text/javascript" src="js/lot/pk10/numberstat.js" ></script>
+		
+	<div class="clear"></div>
+	</div>
+</div>
+	</block>

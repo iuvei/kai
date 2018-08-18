@@ -1,0 +1,91 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+<div class="clear"></div> 
+				<!--  内容开始 -->
+					<div id="lot-wrap"> 
+					   <input type="hidden" id="callFun" value="reloadData" />
+					   <div id="history_data-html"></div>
+	      			   <script id="history_data-tmpl" type="text/template"> 
+					   <table class="lot-table"> 
+					    <caption></caption> 
+					    <tbody>
+					     <tr class="head"> 
+					      <td style="width:5%;">1</td> 
+					      <td style="width:5%;">2</td> 
+					      <td style="width:5%;">3</td> 
+					      <td style="width:5%;">4</td> 
+					      <td style="width:5%;">5</td> 
+					      <td style="width:5%;">6</td> 
+					      <td style="width:5%;">7</td> 
+					      <td style="width:5%;">8</td> 
+					      <td style="width:5%;">9</td> 
+					      <td style="width:5%;">10</td> 
+					      <td style="width:5%;">11</td> 
+					      <td style="width:5%;">12</td> 
+					      <td style="width:5%;">13</td> 
+					      <td style="width:5%;">14</td> 
+					      <td style="width:5%;">15</td> 
+					      <td style="width:5%;">16</td> 
+					      <td style="width:5%;">17</td> 
+					      <td style="width:5%;">18</td> 
+					      <td style="width:5%;">19</td> 
+					      <td style="width:5%;">20</td> 
+					     </tr> 
+					     <tr valign="top"> 
+					     {{
+							for(var i=1;i<=20;i++){
+								var rowsData=it["num"+i];
+								if(!rowsData)
+									continue;
+								var odd_even="even";
+								if(i%2!=0){
+									odd_even="odd";
+								}
+						 }}
+						      <td class="nums {{=odd_even}}" style="padding-left:1px; line-height:28px;">
+						      	{{
+				        			for(var n=0;n<rowsData.length;n++){
+				        				if(n>45)
+				        					break;
+				        		}}
+				        			{{=rowsData[n]}}<br/>
+				        		{{
+				        			}
+				        		}}
+							  </td> 
+					     {{
+							}
+						 }}
+					     </tr> 
+					    </tbody>
+					   </table> 
+					   </script>
+					  </div>
+						<script type="text/javascript">
+						  function reloadData() {
+						      $.get("gdkl10/getDataListByAll.do", {count: 100, t: Math.random() }, function (r) {
+						      	doTCompile("history_data", r);
+						      }, 'json');
+						  }
+						  reloadData();
+						</script>
+				<!--  内容结束-->
+	    </div>
+	</div>
+	</block>

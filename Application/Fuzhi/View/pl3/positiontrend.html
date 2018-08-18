@@ -1,0 +1,578 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/draw5.css">
+    <link type="text/css" rel="stylesheet" href="css/layout.css">
+    <link type="text/css" rel="stylesheet" href="css/tableAndFont.css">
+    <style type="text/css">
+
+        v\:line, v\:rect, v\:oval, v\:group, v\:stroke, v\:fill, v\:polyline {behavior: url(#default#VML);}
+        .cvs { position: absolute;}
+        #trendChart {padding: 0;position: relative;left:0;top:0;}
+        #canvas{ z-index:999; position:absolute; left:0; top:0;}
+
+    </style>
+    <!--[if lte IE 9]> <style type="text/css">.dateLineTable	*{padding:auto;margin:auto;}</style><![endif]-->
+</block>
+
+<block name="body">
+ 
+  <div class="body-content"> 
+   <include file="Public/top_ad"/>
+
+      <include file="Public/lottory_latest"/>
+   
+   	<input type="hidden" id="callFun" value="updateRecord" />
+   	<div class ="jsloading"></div>
+    <div class="web_dateLineBody" ms-controller="chart">
+
+        <div class="web_topNav2">
+            <ul>
+                <li class="hover" style="border-right: 1px solid #e1e1e1;">
+                    <span class="web_topNav_img1"></span>
+                    <span class="web_topNav_font">基本走势图</span>
+                </li>
+
+                <li ><a href="pl3/samepositiontrend.html" >
+                    <span class="web_topNav_img2"></span>
+                    <span class="web_topNav_font">同期走势图</span></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="web_dataBallModel03">
+            <div class="web_ball01s" id="cball">
+                <div class="left">
+                    <ul>
+                        <li ms-class="hover:ball==1"><a href="javascript:void(0);" data-ball="1" ms-click="changeball('第一球',1)">第一球</a></li>
+                        <li>|</li>
+                        <li  ms-class="hover:ball==2"><a href="javascript:void(0);" data-ball="2" ms-click="changeball('第二球',2)">第二球</a></li>
+                        <li>|</li>
+                        <li  ms-class="hover:ball==3"><a href="javascript:void(0);" data-ball="3" ms-click="changeball('第三球',3)">第三球</a></li>
+                        <li>|</li>
+                        <li  ms-class="hover:ball==4"><a href="javascript:void(0);" data-ball="4" ms-click="changeball('第四球',4)">第四球</a></li>
+                        <li>|</li>
+                        <li  ms-class="hover:ball==5"><a href="javascript:void(0);" data-ball="5" ms-click="changeball('第五球',5)">第五球</a></li>
+                        <li id="chkFGX" ms-click="chkFgx"><b ms-class-1="checkbox" ms-class-2="checked:fgxIscheck" ></b><label style="cursor: pointer">分割线</label></li>
+                       
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li class="li01">选择期数：</li>
+                        <li>
+                            <select name="periodCount" class="select" ms-duplex="periodCount">
+                                <option value="40">40期</option>
+                                <option value="90">90期</option>
+                                <option value="0">今日所有</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="dateLineTable">
+                <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                    <tr>
+                        <td rowspan="2" class="blue1" valign="middle">
+                            <span style="font-size: 14px;">统计类型</span>
+                        </td>
+                        <td class="blue" valign="middle" width="580">{{ballName}}</td>
+                        <td class="blue" valign="middle" width="107">回摆(<font class="redColor">*</font>)</td>
+                        <td class="blue" valign="middle" width="71">单双</td>
+                        <td class="blue" valign="middle" width="71">大小</td>
+                    </tr>
+                    <tr>
+                        <td class="huise">
+                            <div class="web_tableLayer web_numBallWidth57">
+                                <ul>
+                                    <li >0</li>    
+                                    <li >1</li>    
+                                    <li >2</li>    
+                                    <li >3</li>    
+                                    <li >4</li>    
+                                    <li >5</li>    
+                                    <li >6</li>    
+                                    <li >7</li>    
+                                    <li >8</li>    
+                                    <li style=border:none>9</li>    
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="huise">
+                            <div class="web_numTenTable web_numBallWidth35 fontNormal" >
+                                <ul>
+                                    <li>反向</li>
+                                    <li>重号</li>
+                                    <li style="border: none;">正向</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="huise">
+                            <div class="web_numTenTable web_numBallWidth35 fontNormal" >
+                                <ul>
+                                    <li>单</li>
+                                    <li style="border: none;">双</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="huise">
+                            <div class="web_numTenTable web_numBallWidth35 fontNormal" >
+                                <ul>
+                                    <li>大</li>
+                                    <li style="border: none;">小</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr ms-repeat="totalDatas" class="data-stat" style="display: none;">
+                        <td class="white" ms-if="!$last">总次数</td>
+                        <td class="white" ms-if="$last">最大遗漏</td>
+                        <td class="white">
+                            <div class="web_numTenTable web_numBallWidth57">
+                                <ul>
+                                    <li ms-repeat-n="el.Nums" ms-css-border-right-width="{{$last?'0':'1'}}">{{n}} </li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="white">
+                            <div class="web_numTenTable web_numBallWidth35" >
+                                <ul>
+                                    <li>{{el.FX}}</li>
+                                    <li>{{el.CH}}</li>
+                                    <li style="border: none;">{{el.ZX}}</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="white">
+                            <div class="web_numTenTable web_numBallWidth35">
+                                <ul>
+                                    <li>{{el.Odd}}</li>
+                                    <li style="border: none;">{{el.Even}}</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="white">
+                            <div class="web_numTenTable web_numBallWidth35" >
+                                <ul>
+                                    <li>{{el.Big}}</li>
+                                    <li style="border: none;">{{el.Small}}</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+               <div class="trendChartloading">正在加载中……</div>
+            </div>
+
+            <div class="web_Prompt01">
+              *回摆：假如本期开出的结果大于上一期开出的结果则为“正向”，假如两期开出的结果相同则为“重号”，反之为“反向”。
+            </div>
+
+            <div class="dateLineTable" style="padding: 0;" id="trendChart">
+                <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                    <tr>
+                        <td rowspan="2" class="blue3"><span>期号</span></td>
+              
+                        <td class="blue4" width="580"><span>{{ballName}}走势</span></td>
+                        <td class="blue4" width="107">回摆</td>
+                        <td class="blue4" width="71">单双</td>
+                        <td class="blue4" width="71">大小</td>
+                    </tr>
+                    <tr>
+                        <td class="huise2">
+                            <div class="web_tableLayer web_numBallWidth57">
+                                <ul>
+                                    <li >0</li>    
+                                    <li >1</li>    
+                                    <li >2</li>    
+                                    <li >3</li>    
+                                    <li >4</li>    
+                                    <li >5</li>    
+                                    <li >6</li>    
+                                    <li >7</li>    
+                                    <li >8</li>    
+                                    <li style=border:none>9</li>    
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="huise2">
+                            <div class="web_numTenl web_numBallWidth35">
+                                <ul>
+                                    <li>反向</li>
+                                    <li>重号</li>
+                                    <li style="border: none;">正向</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="huise2">
+                            <div class="web_numTenl web_numBallWidth35">
+                                <ul>
+                                    <li>单</li>
+                                    <li style="border: none;">双</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="huise2">
+                            <div class="web_numTenl web_numBallWidth35">
+                                <ul>
+                                    <li>大</li>
+                                    <li style="border: none;">小</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                     <tbody id="chart">
+                    <tr ms-repeat="trendDatas" style="display: none" class="data-stat">
+                        <td class="white2" align="center"><span ms-class="redColor:el.isVirtual">{{showPeriod(el.Period)}}</span></td>
+              
+                    
+                        <td class="white2" valign="middle">
+                            <div ms-class-1="web_numTenBall:el.isVirtual" ms-class-2="web_numTens:!el.isVirtual" ms-class-3="web_numBallWidth57">
+                                <ul ms-if="!el.isVirtual">
+                                    <li ms-repeat-n="el.Nums"  ms-css-border-right-width="{{$last?'0':'1'}}" ms-class-1="hover2:n==0">{{n==0?el.Result:n}}</li>
+                                </ul>
+                                <ul ms-if="el.isVirtual">
+                                    <li ms-repeat-n="el.Nums"  ms-css-border-right-width="{{$last?'0':'1'}}" ms-class-1="hover2:n==el.Result" ms-hover="hover" ms-click="virtualBall(el.Period,n)">{{n}}</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="white2">
+                            <div class="web_numTenl web_numBallWidth35">
+                                <ul>
+                                    <li ms-class-1="shenblue:el.FX==0">{{el.FX==0?"反":el.FX}}</li>
+                                    <li ms-class-1="shenblue:el.CH==0">{{el.CH==0?"重":el.CH}}</li>
+                                    <li ms-class-1="shenblue:el.ZX==0" style="border: none;">{{el.ZX==0?"正":el.ZX}}</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="white2">
+                            <div class="web_numTenl web_numBallWidth35">
+                                <ul>
+                                    <li ms-class="greenBg:el.Odd==0">{{el.Odd==0?"单":el.Odd}}</li>
+                                    <li ms-class="greenBg:el.Even==0" style="border: none;">{{el.Even==0?"双":el.Even}}</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="white2">
+                            <div class="web_numTenl web_numBallWidth35">
+                                <ul>
+                                    <li ms-class="shenblue2:el.Big==0">{{el.Big==0?"大":el.Big}}</li>
+                                    <li ms-class="shenblue2:el.Small==0" style="border: none;">{{el.Small==0?"小":el.Small}}</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                         </tbody>
+                </table>
+                <div class="trendChartloading">正在加载中……</div>
+            </div>
+
+        </div>
+        <input type="hidden"  id="dataopened"  ms-duplex="flagPeriod"/>
+    </div>
+    <script type="text/javascript">
+	    function updateRecord() {
+	        $("#dataopened").val(parseInt( $("#dataopened").val())+1);
+	    }
+	</script>
+	<script type="text/javascript">
+	    $(function () { 
+	        require(['trendChart'], function (trendChart) {
+	            var chartLine = new trendChart({ css: { noyl: "noyl", bline: "bline", lines: [".hover2"] }, lineWidth: 2, lineColor: "#BB8569", ckbSplit: "#chkFGX" });
+	            // ckbDistribute: "#chkYL", ckbSplit: "#chkBZX", chkZX: "#chkZX"
+		        $.get("pl3/positionTrend.do", { ball: 1, count: 40, isToday: false, t: Math.random() }, function (r) {
+		        	var datas = r.list;
+		            var stats = r.stat;
+		            var hotcolds = r.hotcold;
+			        var viewmodel = avalon.define('chart', function (vm) {
+			            vm.ballName = '第一球';
+			            vm.ball = 1;
+			            vm.periodCount = 40;
+			            vm.trendDatas = [];
+			            vm.totalDatas = [];
+			            vm.$hotColdDatas = [];
+			            vm.flagPeriod = -1;
+			            vm.updown = 1;
+			            vm.fgxIscheck = true;
+			            vm.hotcoldIscheck = false;
+			            vm.showPeriod = function (period) {
+		                    var p = period % 1000;
+		                    return (Math.floor(period / 1000)) + "-" + p;
+		                }
+			            vm.changeball = function (t, b) {
+			                vm.ballName = t ;
+			                vm.ball = b;
+			                chartLine.clearLines();
+			                $(".data-stat").hide();
+			                $(".trendChartloading").show();
+			                $.get("pl3/positionTrend.do", { ball: vm.ball, count: vm.periodCount, isToday: vm.periodCount == 0, t: Math.random() }, function (data) {
+// 			                    var json = eval(data);
+							
+// 			                    vm.$hotColdDatas = data.hotcold;
+			                    var tdatas = data.list;
+			                    var sdatas = data.stat;
+			                    vm.trendDatas = tdatas;
+			                    vm.totalDatas = sdatas;
+			                    if (viewmodel.trendDatas.length > 0) {
+		                            viewmodel.addVirtualBalls();
+		                            viewmodel.drawLine();
+		                        }
+		                        $(".data-stat").show();
+		                        $(".trendChartloading").hide();
+			                }, 'json');
+			            };
+			            vm.chkFgx = function () {
+		                    vm.fgxIscheck = !vm.fgxIscheck;
+		                    chartLine.splitDisplay();
+		                }
+		                vm.sortDatas = function () {
+		                    viewmodel.trendDatas.sort(function (a, b) {
+		                        var r = a.Period > b.Period ? -1 : 1;
+		                        return vm.$updown * r;
+		                    });
+		                };
+		                vm.removeData = function (p) {
+		                    for (var i = vm.trendDatas.length - 1; i > -1; i--) {
+		                        if (vm.trendDatas[i].Period == p) {
+		                            vm.trendDatas.removeAt(i);
+		                            break;
+		                        }
+		                    }
+		                };
+		                vm.maxData = {
+		                    get: function () {
+		                        if (vm.trendDatas.length > 0) {
+		                            var a = vm.trendDatas[0];
+		                            var b = vm.trendDatas[vm.trendDatas.length - 1];
+		                            if (a.Period > b.Period) return a;
+		                            else return b;
+		                        } else {
+		                            return {};
+		                        }
+		                    }
+		                };
+		                vm.getData = function (p) {
+		                    for (var i = vm.trendDatas.length - 1; i > -1; i--) {
+		                        if (vm.trendDatas[i].Period == p) {
+		                            return vm.trendDatas[i];
+		                        }
+		                    }
+		                    return null;
+		                };
+		                vm.getPrevData = function (p) {
+		                    var a = vm.trendDatas[0];
+		                    var b = vm.trendDatas[vm.trendDatas.length - 1];
+		                    if (a.Period > b.Period) {
+		                        for (var i = 0; i < vm.trendDatas.length - 1; i++) {
+		                            if (vm.trendDatas[i].Period < p) {
+		                                return vm.trendDatas[i];
+		                            }
+		                        }
+		                    } else {
+		                        for (var i = vm.trendDatas.length - 1; i > -1 ; i--) {
+		                            if (vm.trendDatas[i].Period < p) {
+		                                return vm.trendDatas[i];
+		                            }
+		                        }
+		                    }
+		                    return null;
+		                };
+		                vm.drawLine = function () {
+		                    chartLine.clearLines();
+		                    chartLine.reDraw();
+		                };
+		                vm.pushVirtual = function (p) {
+		                    var dt = Math.floor(p / 1000);
+		                    var period = p % 1000;
+		                    if (period > 120) {
+		                        period = 1;
+		                        var y = Math.floor(dt / 10000);
+		                        var m = Math.floor(dt / 100) % 100;
+		                        var d = dt % 100;
+		                        var newDt = new Date(2000 + y, m - 1, d);
+		                        newDt.setDate(newDt.getDate() + 1);
+		                        p = ~~newDt.pattern("yyMMdd") * 1000 + period;
+		                    }
+		                    viewmodel.trendDatas.unshift({ "Period": parseInt(p), Result: -1, "Nums": ["0","1", "2", "3", "4", "5", "6", "7", "8", "9"], isVirtual: true, FX: null, ZX: null, CH: null, Big: null, Small: null, Odd: null, Even: null });
+		                };
+		                vm.virtualBall = function (p, n) {
+		                    var r = vm.getData(p);
+		                    if (r.Result == parseInt(n)) {
+		                        r.Result = -1;
+		                    } else {
+		                        r.Result = parseInt(n);
+		                    }
+		                    vm.calculate(r);
+		                    vm.checkVirtual(p);
+		                    vm.drawLine();
+		                };
+		                vm.checkVirtual = function (p) {
+		                    var maxPeripd = vm.maxData.Period;
+		                    if (p < maxPeripd) {
+		                        for (var i = p + 1; i <= maxPeripd; i++) {
+		                            var next = vm.getData(i);
+		                            if (!next) continue;
+		                            if (next.Result > 0) {
+		                                vm.calculate(next);
+		                            } else {
+		                                break;
+		                            }
+		                        }
+		                    }
+		                };
+		                vm.calculate = function (r) {
+                            r.isVirtual = false;
+		                    var prev = vm.getPrevData(r.Period);
+		                    if ((r && r.Result < 0) || (prev && prev.Result < 0)) {
+		                        r.Result = -1;
+		                        r.FX = null;
+		                        r.ZX = null;
+		                        r.CH = null;
+		                        r.Big = null;
+		                        r.Small = null;
+		                        r.Odd = null;
+		                        r.Even = null;
+		                    }
+		                    else if (r && prev && prev.Result > -1) {
+		                        if (!r.isVirtual) {
+		                            for (var i = 0; i < 10; i++) {
+		                                if (r.Nums[i] == r.Result) {
+		                                    r.Nums[i] = 0;
+		                                }
+		                                else {
+		                                    r.Nums[i] = prev.Nums[i] + 1;
+		                                }
+		                            }
+		                        }
+		                        if (r.Result == prev.Result) {
+		                            r.CH = 0;
+		                            r.FX = prev.FX + 1;
+		                            r.ZX = prev.ZX + 1;
+		                        } else if (r.Result > prev.Result) {
+		                            r.CH = prev.CH + 1;
+		                            r.ZX = 0;
+		                            r.FX = prev.FX + 1;
+		                        } else {
+		                            r.CH = prev.CH + 1;
+		                            r.ZX = prev.ZX + 1;
+		                            r.FX = 0;
+		                        }
+		                        if (r.Result % 2 == 0) {
+		                            r.Even = 0;
+		                            r.Odd = prev.Odd + 1;
+		                        } else {
+		                            r.Odd = 0;
+		                            r.Even = prev.Even + 1;
+		                        }
+		                        if (r.Result > 4) {
+		                            r.Big = 0;
+		                            r.Small = prev.Small + 1;
+		                        } else {
+		                            r.Big = prev.Big + 1;
+		                            r.Small = 0;
+		                        }
+		                    }
+		                };
+		                vm.statTotal = function (d) {
+		                    var newArr = viewmodel.totalDatas;
+
+		                    newArr[0].Nums[d.Result] += 1;
+		                    for (var i = 0; i < 10; i++) {
+		                        if (d.Nums[i] > newArr[1].Nums[i]) {
+		                            newArr[1].Nums[i] = d.Nums[i];
+		                        }
+		                    }
+		                    if (d.ZX == 0) {
+		                        newArr[0].ZX += 1;
+		                    } else if (d.ZX > newArr[1].ZX) {
+		                        newArr[1].ZX = d.ZX;
+		                    }
+		                    if (d.CH == 0) {
+		                        newArr[0].CH += 1;
+		                    } else if (d.CH > newArr[1].CH) {
+		                        newArr[1].CH = d.CH;
+		                    }
+		                    if (d.FX == 0) {
+		                        newArr[0].FX += 1;
+		                    } else if (d.FX > newArr[1].FX) {
+		                        newArr[1].FX = d.FX;
+		                    }
+		                    if (d.Big == 0) {
+		                        newArr[0].Big += 1;
+		                    } else if (d.Big > newArr[1].Big) {
+		                        newArr[1].Big = d.Big;
+		                    }
+		                    if (d.Small == 0) {
+		                        newArr[0].Small += 1;
+		                    } else if (d.Small > newArr[1].Small) {
+		                        newArr[1].Small = d.Small;
+		                    }
+		                    if (d.Odd == 0) {
+		                        newArr[0].Odd += 1;
+		                    } else if (d.Odd > newArr[1].Odd) {
+		                        newArr[1].Odd = d.Odd;
+		                    }
+		                    if (d.Even == 0) {
+		                        newArr[0].Even += 1;
+		                    } else if (d.Even > newArr[1].Even) {
+		                        newArr[1].Even = d.Even;
+		                    }
+
+		                    viewmodel.totalDatas = newArr;
+		                };
+		                vm.addVirtualBalls = function () {
+		                    viewmodel.pushVirtual(viewmodel.maxData.Period + 1);
+		                    viewmodel.pushVirtual(viewmodel.maxData.Period + 1);
+		                    viewmodel.pushVirtual(viewmodel.maxData.Period + 1);
+		                };
+		                vm.$watch("periodCount", function (v) {
+		                    vm.periodCount = v;
+		                    vm.changeball(vm.ballName, vm.ball);
+		                });
+			            vm.$watch("flagPeriod", function (value, oldvalue) {
+			                if (value == -1) return;
+			                $.get("pl3/getxjsscAwardData.do", { t: Math.random() }, function (data) {
+			                	var ds = ~~data.current.awardTime.split(" ")[0].split('-').join('');
+		                        var p = (ds * 1000 + data.current.periodNumber) % 1000000000;
+		                        viewmodel.removeData(p);
+		                        var a = { "Period": p, Result: data.current.awardNumbers.split(',')[viewmodel.ball - 1], "Nums": ["0","1", "2", "3", "4", "5", "6", "7", "8", "9"], isVirtual: false, FX: null, ZX: null, CH: null, Big: null, Small: null, Odd: null, Even: null };
+		                        viewmodel.calculate(a);
+		                        viewmodel.trendDatas.push(a);
+		                        viewmodel.pushVirtual(viewmodel.maxData.Period + 1);
+		                        viewmodel.sortDatas();
+		                        viewmodel.checkVirtual();
+		                        if (viewmodel.periodCount > 0) {
+		                            viewmodel.trendDatas.removeAt(viewmodel.trendDatas.length - 1);
+		                        }
+		                        viewmodel.drawLine();
+		                        viewmodel.statTotal(a);
+			                }, 'json');
+			            })
+			        });
+			      
+			        viewmodel.trendDatas = datas;
+			        viewmodel.totalDatas = stats;
+			        viewmodel.$hotColdDatas = hotcolds;
+			        $(".data-stat").show();
+			        $(".trendChartloading").hide();
+			        if (viewmodel.trendDatas.length > 0) {
+			            viewmodel.addVirtualBalls();
+			        }
+			        //   viewmodel.sortDatas();
+			        avalon.scan();
+			        $(".jsloading").hide();
+			        viewmodel.drawLine();
+		        }, 'json');
+	        
+	   		});
+	    });
+	</script>
+	<script src="js/avalon.js"  type="text/javascript"></script>
+  </div> 
+  <div class="clear"></div> 
+  </block>

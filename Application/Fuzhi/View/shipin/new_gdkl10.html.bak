@@ -1,0 +1,21 @@
+<object type="application/x-shockwave-flash" data="www.qx666.com/style/gdkl10/video.swf" width="980" height="630">
+					<param name="movie" value="http://v.apiplus.cn/flash/gdklsf/Preloader.swf">
+					<param name="quality" value="high">
+					<param name="bgcolor" value="#000000">
+					<param name="play" value="true">
+					<param name="loop" value="true">
+					<param name="wmode" value="window">
+					<param name="scale" value="showall">
+					<param name="menu" value="true">
+					<param name="devicefont" value="false">
+					<param name="salign" value="">
+					<param name="allowScriptAccess" value="*">
+					<param name="wmode" value="transparent">
+					<param name="FlashVars" value="ad=s20.xtidi.com">
+			</object>
+			<style type="text/css">
+       .divz{width:50px; height:50px; margin-top:-45px; margin-left:920px; position:fixed;}
+	   .divz1{width:50px; height:50px; margin-top:-260px; margin-left:400px; position:fixed;}
+    </style>
+<div class="divz" style="z-index:30"><img src="zimg/r_gdklsf.png"></div>
+<div class="divz1" style="z-index:30"><font color="FF0000" size=10>s20.xtidi.com</font></div>

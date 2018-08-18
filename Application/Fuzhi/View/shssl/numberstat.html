@@ -1,0 +1,132 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+<div class="clear"></div> 
+				<!--  内容开始 -->
+					<div id="lot-wrap">
+					<input type="hidden" id="callFun" value="getNumberStat"/>
+						<div id="number_stat_list-html" style="float: left;"></div> 
+						<script id="number_stat_list-tmpl" type="text/template">
+						  <table class="lot-table" >
+						    <caption></caption>
+							    <tr class="head" style="height:30px;">
+							        <td width="151">日期</td>
+							        <td width="58">0</td>
+							        <td width="58">1</td>
+							        <td width="58">2</td>
+							        <td width="58">3</td>
+							        <td width="58">4</td>
+							        <td width="58">5</td>
+							        <td width="58">6</td>
+							        <td width="58">7</td>
+							        <td width="58">8</td>
+							        <td width="58">9</td>
+							        <td width="58">单</td>
+							        <td width="58">双</td>
+							        <td width="58">大</td>
+							        <td width="58">小</td>
+							    </tr>
+							    {{ 
+							    	var rowsLen=it.length;
+							    	var recArray=new Array();
+						            function addRecArray(recTermNum){
+						              var isExist=false;
+						              for(var i=0;i<recArray.length;i++){
+						                if(recArray[i]==recTermNum){
+						                  isExist=true;
+						                  break;
+						                }
+						              }
+						              if (!isExist) {
+						                recArray.push(recTermNum);
+						              }
+						              return isExist;
+						            } 
+							    	for(var i=0;i<rowsLen;i++){ /*循环开始A*/
+							    		var rd=it[i];
+							    		var dataType=rd.dataType;
+							    		var ld=rd.lotteryDate;
+							    		if(dataType==7||dataType==8)
+											continue;
+							    		if(!addRecArray(ld)){
+							    }}
+						        <tr class='{{=(i+1)%2==0?'even':'odd'}}'>
+						            <td>
+						            	{{=ld}}
+						            </td>
+						            <td>{{=getVal(it,ld,1,0)}}
+						            </td>
+						            <td>{{=getVal(it,ld,1,1)}}
+						            </td>
+						            <td>{{=getVal(it,ld,1,2)}}
+						            </td>
+						            <td>{{=getVal(it,ld,1,3)}}
+						            </td>
+						            <td>{{=getVal(it,ld,1,4)}}
+						            </td>
+						            <td>{{=getVal(it,ld,1,5)}}
+						            </td>
+						            <td>{{=getVal(it,ld,1,6)}}
+						            </td>
+						            <td>{{=getVal(it,ld,1,7)}}
+						            </td>
+						            <td>{{=getVal(it,ld,1,8)}}
+						            </td>
+						            <td>{{=getVal(it,ld,1,9)}}
+						            </td>
+						            <td>{{=getVal(it,ld,1,1)+getVal(it,ld,1,3)+getVal(it,ld,1,5)+getVal(it,ld,1,7)+getVal(it,ld,1,9)}}
+						            </td>
+						            <td>{{=getVal(it,ld,1,2)+getVal(it,ld,1,4)+getVal(it,ld,1,6)+getVal(it,ld,1,8)+getVal(it,ld,1,0)}}
+						            </td>
+						            <td>{{=getVal(it,ld,1,5)+getVal(it,ld,1,6)+getVal(it,ld,1,7)+getVal(it,ld,1,8)+getVal(it,ld,1,9)}}
+						            </td>
+<td>{{=getVal(it,ld,1,1)+getVal(it,ld,1,2)+getVal(it,ld,1,3)+getVal(it,ld,1,4)+getVal(it,ld,1,0)}}
+						            </td>
+						        </tr>
+					        {{ 
+							      }
+						     	}
+						    }}
+						</table>
+					 </script>
+					</div>
+					<script type="text/javascript">
+						function getNumberStat(){
+							$.get("shssl/getNumberStat.do",function(r){
+								if (r) {
+									doTCompile("number_stat_list", r);
+								}
+							},"json");
+						}
+						function getVal(datas,date,dataType,num){
+							var dayTotalNum="0";
+							for(var i=0;i<datas.length;i++){
+								var d=datas[i];
+								if(d.lotteryDate==date&&d.num==num&&d.dataType==dataType){
+									dayTotalNum= d.dayTotalNum;
+									break;
+								}
+							}
+							return dayTotalNum;
+						}
+						getNumberStat();
+					</script>
+				<!--  内容结束-->
+	    </div>
+	</div>
+	        </block>
