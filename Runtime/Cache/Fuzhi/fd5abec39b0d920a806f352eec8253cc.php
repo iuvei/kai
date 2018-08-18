@@ -322,7 +322,7 @@
 					<a class="kaijdy" href="javascript:void(0)" target="_blank" rel="nofollow" id="kjdy">开奖调用</a>
 				</li>
 				<li class="zstb_nav nav_li">
-					<a href="/view/zoushitb/zoushitb.html">走势图表 </a>
+					<a href="javascript:void(0)" class="cqft">走势图表 </a>
 				</li>
 				<li id="tryplay">
 					<a href="javascript:void(0)" target="_blank" class="cqft">试玩投注</a>
@@ -845,7 +845,7 @@
 											<div id="pk10_hot">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/PK10/pk10kai.html"><img src="picture/beijinpk.png" alt="北京PK10" /></a>
+														<a href="/pk10"><img src="picture/beijinpk.png" alt="北京PK10" /></a>
 													</div>
 													<div class="num_ul">
 														<h1>北京PK10 <span class="preDrawIssue"> 223366</span> 期</h1>
@@ -900,16 +900,16 @@
 															<a href="javascript:void(0)" data-text="pk10" class="video_a">开奖视频</a>
 														</li>
 														<li>
-															<a href="/view/PK10/pk10_longhulz.html">龙虎路珠</a>
+															<a href="/pk10">龙虎路珠</a>
 														</li>
 														<li>
-															<a href="/view/PK10/pk10_weizhizs.html">位置走势</a>
+															<a href="/pk10">位置走势</a>
 														</li>
 														<li>
-															<a href="/view/PK10/pk10_meiricltj.html">长龙提醒</a>
+															<a href="/pk10">长龙提醒</a>
 														</li>
 														<li>
-															<a href="/view/PK10/pk10_lenrefx.html">冷热分析</a>
+															<a href="/pk10">冷热分析</a>
 														</li>
 													</ul>
 												</div>
@@ -917,7 +917,7 @@
 											<div id="cqSsc_hot">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/shishicai_cq/ssc_index.html"><img src="picture/chognqingssc.png" alt="重庆时时彩" /></a>
+														<a href="/cqssc"><img src="picture/chognqingssc.png" alt="重庆时时彩" /></a>
 													</div>
 													<div class="num_ul">
 														<h1>重庆时时彩 <span class="preDrawIssue"> 223366</span> 期</h1>
@@ -969,94 +969,27 @@
 															<a href="javascript:void(0)" data-text="cqssc" class="video_a">开奖视频</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_cq/ssc_luzhufenxizh.html">路珠分析</a>
+															<a href="/cqssc">路珠分析</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_cq/ssc_dinweizs.html">定位走势</a>
+															<a href="/cqssc">定位走势</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_cq/ssc_meiricltj.html">长龙提醒</a>
+															<a href="/cqssc">长龙提醒</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_cq/ssc_lengrefx.html">冷热分析</a>
+															<a href="/cqssc">冷热分析</a>
 														</li>
 													</ul>
 												</div>
 											</div>
-											<div id="shiyix5_sd_hot">
-												<div class="rowbox1">
-													<div class="imgheadl">
-														<a href="/view/shiyix5_sd/index.html"><img src="picture/shandong11x5.png" alt="十一运夺金" /></a>
-													</div>
-													<div class="num_ul">
-														<h1>十一运夺金 <span class="preDrawIssue"> 223366</span> 期</h1>
-														<p>当前<span class="drawCount">024</span>期，剩<span class="sdrawCountnext">2424</span>期</p>
-														<ul class="kajianhao">
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-														</ul>
-													</div>
-													<div class="nextkai_time">
-														<p>距下期开奖</p>
-														<div class="line linetime cuttime indextime" id="timebox">
-															<span class="bgtime hour">09</span>
-															<span class="hourtxt">时</span>
-															<span class="bgtime minute">26</span>
-															<span>分</span>
-															<span class="bgtime second">56</span>
-															<span>秒</span>
-														</div>
-														<p class="opentyle">开奖中...</p>
-													</div>
-												</div>
-												<div class="rowbox2">
-													<table border="0" cellpadding="1" cellspacing="1">
-														<tr>
-															<th width="40" colspan="3">总和</th>
-															<th>前三</th>
-															<th>中三</th>
-															<th>后三</th>
-														</tr>
-														<tr class="longhu2">
-															<td class="sumNum">&nbsp;</td>
-															<td class="sumBigSmall">&nbsp;</td>
-															<td class="sumSingleDouble">&nbsp;</td>
 
-															<td class="behindThree">&nbsp;</td>
-															<td class="betweenThree">&nbsp;</td>
-															<td class="lastThree">&nbsp;</td>
-														</tr>
-													</table>
-												</div>
-												<div class="rowbox3" id="rowbox3">
-													<ul>
-														<li>
-															<a href="javascript:void(0)" data-text="sdsyydj" class="video_a">开奖视频</a>
-														</li>
-														<li>
-															<a href="/view/shiyix5_sd/zonghelzfx.html">路珠分析</a>
-														</li>
-														<li>
-															<a href="/view/shiyix5_sd/dinweizs.html">定位走势</a>
-														</li>
-														<li>
-															<a href="/view/shiyix5_sd/meiricltj.html">长龙提醒</a>
-														</li>
-														<li>
-															<a href="/view/shiyix5_sd/lengrefx.html">冷热分析</a>
-														</li>
-													</ul>
-												</div>
-											</div>
 										</div>
 										<div id="pk10_li">
 											<div id="pk10">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/PK10/pk10kai.html"><img src="picture/beijinpk.png" alt="北京PK10" /></a>
+														<a href="/pk10+"><img src="/picture/beijinpk.png" alt="北京PK10" /></a>
 													</div>
 													<div class="num_ul">
 														<h1>北京PK10 <span class="preDrawIssue"> 223366</span> 期</h1>
