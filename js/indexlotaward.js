@@ -566,8 +566,6 @@ $(function () {
         }, 'json');
     };
 
-<<<<<<< HEAD
-=======
     var gdkl10_awardTick = function () {
         $.get('gdkl10/getGdkl10AwardData.do?' + Math.random(), {ajaxhandler: 'GetPk10AwardData'}, function (data) {
             if (!data)
@@ -628,7 +626,6 @@ $(function () {
             ;
         });
     };
->>>>>>> 46e754f58d2cf3dd15893025fc47ca0e3712e46b
     var gd11x5_awardTick = function () {
         $.get('gd11x5/getgd11x5AwardData.do?' + Math.random(), { ajaxhandler: 'GetPk10AwardData' }, function (data) {
             if(!data)
@@ -647,17 +644,48 @@ $(function () {
                 for (var i = 0; i < nums.length; i++) {
                         $("#gd11x5 .kajianhao").append("<li class='numblueHead'>"+nums[i]+"</li>")
                 }
+                var type='';
+                if ((Number(nums[0]) == Number(nums[1])) && (Number(nums[0]) == Number(nums[2]))) {
+                    type = '豹子';
+                } else if (((Number(nums[1]) - Number(nums[0])) == (Number(nums[2]) - Number(nums[1]))) && ((Number(nums[1]) - Number(nums[0])) == 1) || (nums[0]+nums[1]+nums[2] == '0,8,9' || nums[0]+nums[1]+nums[2] == '0,1,9')) {
+                    type = '顺子';
+                } else if (Number(nums[0]) == Number(nums[1]) || Number(nums[1]) == Number(nums[2])) {
+                    type = '对子';
+                } else if ((Number(nums[1]) - Number(nums[0])) == 1 || (Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[1]) - Number(nums[2])) == 1) {
+                    type = '半顺';
+                } else {
+                    type = '杂六';
+                }
+                $("#gd11x5").find(".behindThree").text(type);
+                var type1 = '';
+                if ((Number(nums[1]) == Number(nums[2])) && (Number(nums[1]) == Number(nums[3]))) {
+                    type1 = '豹子';
+                } else if (((Number(nums[2]) - Number(nums[1])) == (Number(nums[3]) - Number(nums[2]))) && ((Number(nums[2]) - Number(nums[1])) == 1) || (nums[0]+nums[1]+nums[2] == '0,8,9' || nums[0]+nums[1]+nums[2] == '0,1,9')) {
+                    type1 = '顺子';
+                } else if (Number(nums[1]) == Number(nums[2]) || Number(nums[2]) == Number(nums[3])) {
+                    type1 = '对子';
+                } else if ((Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[3]) - Number(nums[2])) == 1 || (Number(nums[2]) - Number(nums[3])) == 1) {
+                    type1= '半顺';
+                } else {
+                    type1 = '杂六';
+                }
+                $("#gd11x5").find(".betweenThree").text(type1);
+                var type2 = '';
+                if ((Number(nums[2]) == Number(nums[3])) && (Number(nums[2]) == Number(nums[4]))) {
+                    type2 = '豹子';
+                } else if (((Number(nums[3]) - Number(nums[2])) == (Number(nums[4]) - Number(nums[3]))) && ((Number(nums[3]) - Number(nums[2])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
+                    type2 = '顺子';
+                } else if (Number(nums[2]) == Number(nums[3]) || Number(nums[3]) == Number(nums[4])) {
+                    type2 = '对子';
+                } else if ((Number(nums[3]) - Number(nums[2])) == 1 || (Number(nums[4]) - Number(nums[3])) == 1 || (Number(nums[3]) - Number(nums[4])) == 1) {
+                    type2= '半顺';
+                } else {
+                    type2 = '杂六';
+                }
+                $("#gd11x5").find(".lastThree").text(type2);
 
 
-                $("#gd11x5").find(".behindThree").text(123);
-
-                $("#gd11x5").find(".betweenThree").text(123);
-
-                $("#gd11x5").find(".lastThree").text(123);
-
-
-
-                cpNumber = data.current.periodNumber;
+                var cpNumber = data.current.periodNumber;
                 var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-3);
                 //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
                 $("#gd11x5 .drawCount").html(number);
@@ -738,7 +766,6 @@ $(function () {
     };
 
 
-<<<<<<< HEAD
     function typeOf(e, t) {
         if ("san" == e) switch (1 * t) {
             case 0:
@@ -751,8 +778,9 @@ $(function () {
                 return "对子";
             case 4:
                 return "豹子"
-=======
 
+        }
+    }
     function typeOf(nums) {
         if ((Number(nums[0]) == Number(nums[1])) && (Number(nums[0]) == Number(nums[2]))) {
             type = '豹子';
@@ -790,12 +818,9 @@ $(function () {
             type2= '半顺';
         } else {
             type2 = '杂六';
->>>>>>> 46e754f58d2cf3dd15893025fc47ca0e3712e46b
         }
         return data=[type,type1,type2]
     }
-<<<<<<< HEAD
-=======
     /*var gd_awardTick = function () {
      $.get('gdkl10/ajax?' + Math.random(), { ajaxhandler: 'GetGdkl10AwardData' }, function (data) {
      if ((data.current.periodNumber != gd_currentPeriodNumber)) {
@@ -820,7 +845,6 @@ $(function () {
      };*/
 
     window.setTimeout(gdkl10_awardTick, 500);
->>>>>>> 46e754f58d2cf3dd15893025fc47ca0e3712e46b
     window.setTimeout(pk10_awardTick, 5000);
     window.setTimeout(cqssc_awardTick, 5000);
     window.setTimeout(tjssc_awardTick, 5000);
