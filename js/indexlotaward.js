@@ -396,7 +396,7 @@ $(function () {
     };
 
     var tjssc_awardTick = function () {
-        $.get('cqssc/getCqsscAwardData.do?' + Math.random(), { ajaxhandler: 'GetPk10AwardData' }, function (data) {
+        $.get('tjssc/getCqsscAwardData.do?' + Math.random(), { ajaxhandler: 'getCqsscAwardData' }, function (data) {
             if(!data)
                 return;
             if ((data.current.periodNumber != pk10_currentPeriodNumber)) {
@@ -569,7 +569,6 @@ $(function () {
                 var nums = data.current.awardNumbers.split(',');
                 var str = Number(nums[0]) + Number(nums[1]) + Number(Number(nums[2])) + Number(nums[3]) + Number(nums[4]);
                 //  cpNumber = data.current.periodNumber;
-                alert(1111);
                 for (var i = 0; i < nums.length; i++) {
                     $("#gdkl10 .kajianhao").append("<li class='numblueHead'>" + nums[i] + "</li>");
                 }
