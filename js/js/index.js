@@ -416,7 +416,9 @@ indexObj.ajaGxklsf = function (e, t, a) {
     $(".longhu").html(""), $(".longhu").append(o);
     var d = n.preDrawCode.split(",");
     tools.countDown(n.drawTime, n.serverTime, a), animateMethod.pk10end_GaryAddIndex(d, a)
-}, indexObj.sscData = function (e, t, a) {
+},
+
+    indexObj.sscData = function (e, t, a) {
     var n = tools.parseObj(e);
     if ("100002" == n.result.businessCode)throw new Error("error");
     if (n = n.result.data, tools.operatorTime("" == n.drawTime ? "0" : n.drawTime, n.serverTime) <= 0)throw new Error("error");
@@ -424,7 +426,9 @@ indexObj.ajaGxklsf = function (e, t, a) {
     $(a).find(".preDrawIssue").text(n.preDrawIssue), $(a).find(".nextIssue").text(n.drawIssue), $(a).find(".drawCount").text(n.drawCount), $(a).find(".sdrawCountnext").text(1 * i - 1 * n.drawCount), $(a).find(".sumNum").text(n.sumNum), $(a).find(".sumSingleDouble").text(0 == n.sumSingleDouble ? "单" : "双"), $(a).find(".sumBigSmall").text(0 == n.sumBigSmall ? "大" : "小");
     var o = "";
     "0" == n.dragonTiger ? o = "龙" : "1" == n.dragonTiger ? o = "虎" : "2" == n.dragonTiger && (o = "和"), $(a).find(".dragonTiger").text(o), $(a).find(".behindThree").text(typeOf("san", n.behindThree)), $(a).find(".betweenThree").text(typeOf("san", n.betweenThree)), $(a).find(".lastThree").text(typeOf("san", n.lastThree)), animateMethod.sscAnimateEnd(n.preDrawCode, a), tools.countDown(n.drawTime, n.serverTime, a)
-}, indexObj.shiyix5Data = function (e, t, a) {
+},
+
+    indexObj.shiyix5Data = function (e, t, a) {
     var n = tools.parseObj(e);
     if ("100002" == n.result.businessCode)throw new Error("error");
     if (n = n.result.data, tools.operatorTime("" == n.drawTime ? "0" : n.drawTime, n.serverTime) <= 0)throw new Error("error");
