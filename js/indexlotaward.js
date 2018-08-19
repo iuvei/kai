@@ -396,41 +396,34 @@ $(function () {
     };
 
     var tjssc_awardTick = function () {
-        $.get('tjssc/gettjsscAwardData.do?' + Math.random(), { ajaxhandler: 'GetPk10AwardData' }, function (data) {
+        $.get('tjssc/getCqsscAwardData.do?' + Math.random(), { ajaxhandler: 'getCqsscAwardData' }, function (data) {
             if(!data)
                 return;
             if ((data.current.periodNumber != pk10_currentPeriodNumber)) {
+                $("#tjssc .kajianhao").html("");
                 var nums = data.current.awardNumbers.split(',');
                 var str = Number(nums[0])+Number(nums[1])+Number(Number(nums[2]))+Number(nums[3])+Number(nums[4]);
                 //  cpNumber = data.current.periodNumber;
 
-                $("#tjSsc").find(".sumNum").text(str),
-                    $("#tjSsc").find(".sumSingleDouble").text(str%2 == 0 ? "单" : "双"),
-                    $("#tjSsc").find(".sumBigSmall").text(str > 23 ? "大" : "小");
+                $("#tjssc").find(".sumNum").text(str),
+                    $("#tjssc").find(".sumSingleDouble").text(str%2 == 0 ? "单" : "双"),
+                    $("#tjssc").find(".sumBigSmall").text(str > 23 ? "大" : "小");
                 for (var i = 0; i < nums.length; i++) {
                     // str += ;
                     if(nums[i] == 10){
-                        $("#kajianhao2").append("<li class='numblueHead'>"+nums[i]+"</li>");
+                        $("#tjssc .kajianhao").append("<li class='numblueHead'>"+nums[i]+"</li>");
                     }else {
-                        $("#kajianhao2").append("<li class='numblueHead'>"+nums[i]+"</li>");
+                        $("#tjssc .kajianhao").append("<li class='numblueHead'>"+nums[i]+"</li>");
                     }
-                    //alert(nums[i]);
                 }
-
                 if(Number(nums[0]) < Number(nums[4])){
-                    $("#tjSsc").find(".dragonTiger").text("虎");
+                    $("#tjssc").find(".dragonTiger").text("虎");
                 }else if( Number(nums[0]) > Number(nums[4])){
-                    $("#tjSsc").find(".dragonTiger").text("龙");
-                    //  $("#longhu2").append("<td class='dragonTiger'>龙&nbsp;&nbsp;</td>");
+                    $("#tjssc").find(".dragonTiger").text("龙");
                 }else {
-                    $("#tjSsc").find(".dragonTiger").text("和");
-                    //$("#longhu2").append("<td class='dragonTiger'>和&nbsp;&nbsp;</td>");
+                    $("#tjssc").find(".dragonTiger").text("和");
                 }
-
-                $("#tjSsc").find(".behindThree").text(typeOf("san", nun[0]));
-                $("#tjSsc").find(".betweenThree").text(typeOf("san", nun[2]));
-                $("#tjSsc").find(".lastThree").text(typeOf("san", nun[3]));
-
+                //  var type = typeOf(nums);
                 if ((Number(nums[0]) == Number(nums[1])) && (Number(nums[0]) == Number(nums[2]))) {
                     type = '豹子';
                 } else if (((Number(nums[1]) - Number(nums[0])) == (Number(nums[2]) - Number(nums[1]))) && ((Number(nums[1]) - Number(nums[0])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
@@ -442,20 +435,20 @@ $(function () {
                 } else {
                     type = '杂六';
                 }
-                $("#tjSsc").find(".behindThree").text(type);
+                $("#tjssc .longhu2").find(".behindThree").text(type);
                 var type1 = '';
-               if ((Number(nums[1]) == Number(nums[2])) && (Number(nums[1]) == Number(nums[3]))) {
-            type1 = '豹子';
-        } else if (((Number(nums[2]) - Number(nums[1])) == (Number(nums[3]) - Number(nums[2]))) && ((Number(nums[2]) - Number(nums[1])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
-            type1 = '顺子';
-        } else if (Number(nums[1]) == Number(nums[2]) || Number(nums[2]) == Number(nums[3])) {
-            type1 = '对子';
-        } else if ((Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[3]) - Number(nums[2])) == 1) {
-            type1= '半顺';
-        } else {
-            type1 = '杂六';
-        }
-                $("#tjSsc").find(".betweenThree").text(type1);
+                if ((Number(nums[1]) == Number(nums[2])) && (Number(nums[1]) == Number(nums[3]))) {
+                    type1 = '豹子';
+                } else if (((Number(nums[2]) - Number(nums[1])) == (Number(nums[3]) - Number(nums[2]))) && ((Number(nums[2]) - Number(nums[1])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
+                    type1 = '顺子';
+                } else if (Number(nums[1]) == Number(nums[2]) || Number(nums[2]) == Number(nums[3])) {
+                    type1 = '对子';
+                } else if ((Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[3]) - Number(nums[2])) == 1) {
+                    type1= '半顺';
+                } else {
+                    type1 = '杂六';
+                }
+                $("#tjssc .longhu2").find(".betweenThree").text(type1);
                 var type2 = '';
                 if ((Number(nums[2]) == Number(nums[3])) && (Number(nums[2]) == Number(nums[4]))) {
                     type2 = '豹子';
@@ -468,12 +461,12 @@ $(function () {
                 } else {
                     type2 = '杂六';
                 }
-                $("#tjSsc").find(".lastThree").text(type2);
+                $("#tjssc .longhu2").find(".lastThree").text(type2);
                 cpNumber = data.current.periodNumber;
                 var _time = data.current.awardTime.substring(11, 16);
-                //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
-                $("#tjSsc .drawCount").html(data.next.periodNumber);
-                $("#tjSsc .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
+                $("#tjssc .preDrawIssue").html(data.next.periodNumber);
+                //$("#cqSsc .drawCount").html(data.next.periodNumber);
+                $("#tjssc .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
 
                 //drawTrend();
             }
@@ -481,12 +474,12 @@ $(function () {
             window.setTimeout(tjssc_awardTick, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval);
         }, 'json');
     };
-
     var jsssc_awardTick = function () {
         $.get('jsssc/getCqsscAwardData.do?' + Math.random(), { ajaxhandler: 'GetPk10AwardData' }, function (data) {
             if(!data)
                 return;
             if ((data.current.periodNumber != pk10_currentPeriodNumber)) {
+                $("#jsssc #kajianhao3").html("");
                 var nums = data.current.awardNumbers.split(',');
                 var str = Number(nums[0])+Number(nums[1])+Number(Number(nums[2]))+Number(nums[3])+Number(nums[4]);
                 //  cpNumber = data.current.periodNumber;
@@ -562,15 +555,16 @@ $(function () {
                 //drawTrend();
             }
             pk10_currentPeriodNumber = data.current.periodNumber;
-            window.setTimeout(tjssc_awardTick, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval);
+            window.setTimeout(jsssc_awardTick, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval);
         }, 'json');
     };
 
     var gdkl10_awardTick = function () {
         $.get('gdkl10/getGdkl10AwardData.do?' + Math.random(), {ajaxhandler: 'GetPk10AwardData'}, function (data) {
-            if (!data)
+            if (!data){
                 return;
-            if ((data.current.periodNumber != pk10_currentPeriodNumber)) {
+            }
+            if (data.current.periodNumber != pk10_currentPeriodNumber) {
                 $("#gdkl10 .kajianhao").html("");
                 var nums = data.current.awardNumbers.split(',');
                 var str = Number(nums[0]) + Number(nums[1]) + Number(Number(nums[2])) + Number(nums[3]) + Number(nums[4]);
@@ -622,9 +616,11 @@ $(function () {
                 //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
                 $("#gdkl10 .drawCount").html(data.next.periodNumber);
                 $("#gdkl10 .sdrawCountnext").html(data.firstPeriod + 179 - cpNumber);
-            }
-            ;
-        });
+            };
+
+            pk10_currentPeriodNumber = data.current.periodNumber;
+            window.setTimeout(gd11x5_awardTick,data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval);
+        }, 'json');
     };
     var gd11x5_awardTick = function () {
         $.get('gd11x5/getgd11x5AwardData.do?' + Math.random(), { ajaxhandler: 'GetPk10AwardData' }, function (data) {
@@ -766,6 +762,7 @@ $(function () {
     };
 
 
+<<<<<<< HEAD
     function typeOf(e, t) {
         if ("san" == e) switch (1 * t) {
             case 0:
@@ -781,6 +778,8 @@ $(function () {
 
         }
     }
+=======
+>>>>>>> 43661a077bd3baf4f2e22ae42b50ca3d34928338
     function typeOf(nums) {
         if ((Number(nums[0]) == Number(nums[1])) && (Number(nums[0]) == Number(nums[2]))) {
             type = '豹子';
