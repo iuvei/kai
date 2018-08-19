@@ -816,29 +816,7 @@ $(function () {
         }
         return data=[type,type1,type2]
     }
-    /*var gd_awardTick = function () {
-     $.get('gdkl10/ajax?' + Math.random(), { ajaxhandler: 'GetGdkl10AwardData' }, function (data) {
-     if ((data.current.periodNumber != gd_currentPeriodNumber)) {
-     var nums = data.current.awardNumbers.split(',');
-     var str = "";
-     for (var i = 0; i < nums.length; i++) {
-     if (nums[i] > 18) {
-     str = str + "<span class='red'>" + nums[i] + "</span>";
-     }
-     else{
-     str = str + "<span>" + nums[i] + "</span>";
-     }
-     }
-     $(".awardCont03 .cqssc-nums").html(str);
-     var _date = data.current.awardTime.substring(0, 10).replace('-', '').replace('-', '');
-     var _time = data.current.awardTime.substring(11, 16);
-     $(".awardCont03 .period").html(_date + "-" + data.current.periodNumber + " " + _time);
-     }
-     gd_currentPeriodNumber = data.current.periodNumber;
-     window.setTimeout(gd_awardTick, data.next.awardTimeInterval < 10 ? 15000 : data.next.awardTimeInterval);
-     }, 'json');
-     };*/
-
+    
     window.setTimeout(gdkl10_awardTick, 500);
     window.setTimeout(pk10_awardTick, 500);
     window.setTimeout(cqssc_awardTick, 500);
@@ -867,13 +845,3 @@ $(function () {
     $(".lot-trend .play-name a").first().click();
 });
 
-//绘制走势图
-// function drawTrend() {
-//     var ball = $(".lot-trend .play-name .cur").attr("ball");
-//     if (!ball) ball = 1;
-//
-//     $.get("pk10/numbertrendData.do", { ball: ball, count: 25, t: Math.random() }, function (result) {
-//         var data = eval(result);
-//         showChartline("号码走势图", data, function () { return this.x + '期:' + this.y }, 0, 10, true, 1, 'lot-trend-container');
-//     }, "json");
-// }
