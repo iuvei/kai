@@ -818,14 +818,14 @@ $(function () {
     }
     
     window.setTimeout(gdkl10_awardTick, 500);
-    window.setTimeout(pk10_awardTick, 5000);
-    window.setTimeout(cqssc_awardTick, 5000);
-    window.setTimeout(tjssc_awardTick, 5000);
-    window.setTimeout(jsssc_awardTick, 5000);
-    window.setTimeout(jssc_awardTick, 5000);
+    window.setTimeout(pk10_awardTick, 500);
+    window.setTimeout(cqssc_awardTick, 500);
+    window.setTimeout(tjssc_awardTick, 500);
+    window.setTimeout(jsssc_awardTick, 500);
+    window.setTimeout(jssc_awardTick, 500);
     window.setTimeout(xyft_awardTick, 500);
-    window.setTimeout(gd11x5_awardTick, 5000);
-    window.setTimeout(jsk3_awardTick, 5000);
+    window.setTimeout(gd11x5_awardTick, 500);
+    window.setTimeout(jsk3_awardTick, 500);
 
 
     $(".award .lot-menu").hover(function () {
