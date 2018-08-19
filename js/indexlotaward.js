@@ -619,7 +619,7 @@ $(function () {
             };
 
             pk10_currentPeriodNumber = data.current.periodNumber;
-            window.setTimeout(gd11x5_awardTick,data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval);
+            window.setTimeout(gdkl10_awardTick,data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval);
         }, 'json');
     };
     var gd11x5_awardTick = function () {
