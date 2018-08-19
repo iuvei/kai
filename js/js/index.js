@@ -1,34 +1,52 @@
-// function ajaxRequst(e, t) {
-//     "#pk10" == t || "#pk10_hot" == t ? indexObj.ajaxpk10(e, lotCode.pk10, t) : "#jisusc" == t ? indexObj.ajaxpk10(e, lotCode.jisusc, t) : "#xingyft" == t ? indexObj.ajaxpk10(e, lotCode.xingyft, t) : "#cqSsc" == t || "#cqSsc_hot" == t ? indexObj.ajaxSsc(e, lotCode.cqssc, t) : "#tjSsc" == t ? indexObj.ajaxSsc(e, lotCode.tjssc, t) : "#jsssc" == t ? indexObj.ajaxSsc(e, lotCode.jsssc, t) : "#gdklsf" == t ? indexObj.ajaxKlsf(e, lotCode.gdklsf, t) : "#tjklsf" == t ? indexObj.ajaxKlsf(e, lotCode.tjklsf, t) : "#aozxy8" == t ? indexObj.ajaxKlsf(e, lotCode.aozxy8, t) : "#kuai3" == t ? indexObj.ajaxKuai3(e, lotCode.jsksan, t) : "#gxk3" == t ? indexObj.ajaxKuai3(e, lotCode.gxft, t) : "#bjk3" == t ? indexObj.ajaxKuai3(e, lotCode.bjft, t) : "#shiyix5_sd" == t || "#shiyix5_sd_hot" == t ? indexObj.shiyix5(e, lotCode.sdsyydj, t) : "#shiyix5_gd" == t ? indexObj.shiyix5(e, lotCode.gdsyxw, t) : "#11ckeck5_zjef" == t ? indexObj.shiyix5(e, lotCode.zjef, t) : "#cqnc" == t ? indexObj.ajaxCqnc(e, lotCode.cqxync, t) : "#pcdd" == t ? indexObj.ajaxPCdd(e, lotCode.egxy28, t) : "#tcpl3" == t ? indexObj.ajaxTcpl3(e, lotCode.pailie3, t) : "#fc3d" == t ? indexObj.ajaxTcpl3(e, lotCode.fcsd, t) : "#gxklsf" == t && indexObj.ajaGxklsf(e, lotCode.gxklsf, t)
-// }
+
 function PK10(){
      $("#bjpk10").fadeIn(500)
+     $('#body_none').show();
  }
 function CQSSC(){
-    $('#cqssc_1').fadeIn(500)
+    $('#cqssc_1').fadeIn(500);
+    $('#body_none').show();
 }
 
 function TJSSC(){
     $("#tjssc_1").fadeIn(500)
+    $('#body_none').show();
 }
 
 function XYFT(){
     $('#xyft_1').fadeIn(500)
+    $('#body_none').show();
 }
 
 function JSSC(){
     $("#jssc").fadeIn(500)
+    $('#body_none').show();
 }
 
 function JSSSC(){
     $("#jsssc_1").fadeIn(500)
+    $('#body_none').show();
 }
 
 $('.video_box .pk10').click(PK10);
+$('.video_box .cqssc').click(PK10);
+$('.video_box .xyft_1').click(PK10);
+$('.video_box .jsssc_1').click(PK10);
+$('.video_box .tjssc_1').click(PK10);
+$('.video_box .jssc').click(PK10);
 
 
 
+$('#body_none').click(function(){
+    $(this).hide();
 
+    $("#bjpk10").hide()
+    $("#jsssc_1").hide()
+    $("#jssc").hide()
+    $("#tjssc_1").hide()
+    $("#cqssc_1").hide()
+    $('#xyft_1').hide()
+});
 
 
 
