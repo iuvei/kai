@@ -761,8 +761,6 @@ $(function () {
         }, 'json');
     };
 
-
-<<<<<<< HEAD
     function typeOf(e, t) {
         if ("san" == e) switch (1 * t) {
             case 0:
@@ -778,8 +776,6 @@ $(function () {
 
         }
     }
-=======
->>>>>>> 43661a077bd3baf4f2e22ae42b50ca3d34928338
     function typeOf(nums) {
         if ((Number(nums[0]) == Number(nums[1])) && (Number(nums[0]) == Number(nums[2]))) {
             type = '豹子';
