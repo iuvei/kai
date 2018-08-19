@@ -7,8 +7,8 @@
 		<meta name="format-detection" content="telephone=no" />
 		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" />
 		<title>看彩票开奖结果直播，彩票走势图，稳赚技巧方法,来盛世直播网，官方数据!精准无延迟！ </title>
-		<meta name="keywords" content="168彩票开奖结果,168彩票开奖直播,168彩票走势图,168彩票稳赚技巧,168彩票赚钱方法" />
-		<meta name="description " content="168彩票开奖网是彩种最全、开奖最快的专业彩票开奖网站。北京PK10、时时彩、极速赛车、双色球、大乐透…一应俱全！" />
+		<meta name="keywords" content="盛世直播开奖结果,盛世直播开奖直播,盛世直播走势图,盛世直播稳赚技巧,盛世直播赚钱方法" />
+		<meta name="description " content="盛世直播开奖网是彩种最全、开奖最快的专业彩票开奖网站。北京PK10、时时彩、极速赛车、双色球、大乐透…一应俱全！" />
 		<link rel="stylesheet" href="/css/css/headorfood.css" />
 		<link rel="shortcut icon" href="/images/images/icon/168favicon.ico?v=201889947">
 		<link rel="stylesheet" href="/css/css/index.css" />
@@ -69,11 +69,11 @@
 					</li>
 					<li class="logonli liline">|</li>
 					<li class="logonli">
-						<a href="/view/wanfaguize/PK10_wanfaguize.html">帮助中心</a>
+						<a href="/javascript:void(0)">帮助中心</a>
 					</li>
 					<li class="logonli liline">|</li>
 					<li class="miniIphone">
-						<a href="javascript:void()">手机版</a>
+						<a href="javascript:void(0)">手机版</a>
 					</li>
 				</ul>
 			</div>
@@ -166,13 +166,13 @@
 											<a target="_blank" href="javascript:void(0)" id="pc28">加拿大28</a>
 										</li>
 										<li>
-											<a target="_blank" href="javascript:void(0)" id="bjft">北京番攤</a>
+											<a target="_blank" href="javascript:void(0)" id="bjft">北京番摊</a>
 										</li>
 										<li>
 											<a target="_blank" href="/tjssc">天津时时彩</a>
 										</li>
 										<li>
-											<a target="_blank" href="javascript:void(0)" id="cqft">重慶番攤</a>
+											<a target="_blank" href="javascript:void(0)" id="cqft">重庆番摊</a>
 										</li>
 									</ul>
 
@@ -301,7 +301,7 @@
 						</div>
 					</div>
 				</li>
-				<li id="zhusaHao_li">
+	<!--			<li id="zhusaHao_li">
 					<a href="" target="_blank" id="zhusaHao">
 						站长推荐
 						<img class="master_pic1" src="/picture/cpdt_white.png" alt="" />
@@ -309,14 +309,14 @@
 					</a>
 					<img src="/picture/news.png" alt="" id="zhusaHao_img" />
 
-				</li>
+				</li>-->
 
 				<li id="new_zhao">
 					<a href="/view/zhuiShaHao/PK10ganto.html" target="_blank">两面推荐</a>
 					<img src="picture/news.png" alt="" id="ZSHao_img" />
 				</li>
 				<li>
-					<a href="/view/changltx/index.html" target="_blank">长龙提醒</a>
+					<a href="javascript:void(0)" target="_blank" class="changlong">长龙提醒</a>
 				</li>
 				<li>
 					<a class="kaijdy" href="javascript:void(0)" target="_blank" rel="nofollow" id="kjdy">开奖调用</a>
@@ -337,7 +337,7 @@
 				<li class="lasli">
 					<div class="lasli_div">
 						<!--<a id="msit" href="javascript:toM()" target="_blank" class="phoneicon">手机端</a>-->
-						<a id="msit" href="/view/public/jianyue.html?v=201889947" target="_self" class="phoneicon">简约版</a>
+						<a id="msit" href="javascript:void(0)" target="_self" class="phoneicon">简约版</a>
 						<!--<div class="mobilebox mobiledetailnew">
 							<div class="mobiledetail">
 								<img src="picture/168phone.png" alt="" />
@@ -369,6 +369,11 @@
                     alert("敬請期待！");
                     return false;
                 });
+				$(".changlong").click(function () {
+					alert("敬請期待！");
+					return false;
+				});
+
 
 			</script>
 		</div>
@@ -983,6 +988,7 @@
 											</div>
 
 										</div>
+
 										<div id="pk10_li">
 											<div id="pk10">
 												<div class="rowbox1">
@@ -1036,30 +1042,32 @@
 														</tr>
 													</table>
 												</div>
+
 												<div class="rowbox3" id="rowbox3">
 													<ul>
 														<li>
 															<a href="javascript:void(0)" data-text="pk10" class="video_a">开奖视频</a>
 														</li>
 														<li>
-															<a href="/view/PK10/pk10_longhulz.html">龙虎路珠</a>
+															<a href="/pk10">龙虎路珠</a>
 														</li>
 														<li>
-															<a href="/view/PK10/pk10_weizhizs.html">位置走势</a>
+															<a href="/pk10">位置走势</a>
 														</li>
 														<li>
-															<a href="/view/PK10/pk10_meiricltj.html">长龙提醒</a>
+															<a href="/pk10">长龙提醒</a>
 														</li>
 														<li>
-															<a href="/view/PK10/pk10_lenrefx.html">冷热分析</a>
+															<a href="pk10">冷热分析</a>
 														</li>
 													</ul>
 												</div>
 											</div>
+
 											<div id="jisusc">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/jisusaiche/pk10kai.html"><img src="picture/jisusaiche .png" alt="极速赛车" /></a>
+														<a href="/jssc"><img src="picture/jisusaiche .png" alt="极速赛车" /></a>
 													</div>
 													<div class="num_ul">
 														<h1>极速赛车 <span class="preDrawIssue"> 223366</span> 期</h1>
@@ -1114,16 +1122,16 @@
 															<a href="javascript:void(0)" data-text="jisusc" class="video_a">开奖视频</a>
 														</li>
 														<li>
-															<a href="/view/jisusaiche/pk10_longhulz.html">龙虎路珠</a>
+															<a href="/jssc">龙虎路珠</a>
 														</li>
 														<li>
-															<a href="/view/jisusaiche/pk10_weizhizs.html">位置走势</a>
+															<a href="/jssc">位置走势</a>
 														</li>
 														<li>
-															<a href="/view/jisusaiche/pk10_meiricltj.html">长龙提醒</a>
+															<a href="/jssc">长龙提醒</a>
 														</li>
 														<li>
-															<a href="/view/jisusaiche/pk10_lenrefx.html">冷热分析</a>
+															<a href="/jssc">冷热分析</a>
 														</li>
 													</ul>
 												</div>
@@ -1205,7 +1213,7 @@
 											<div id="cqSsc">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/shishicai_cq/ssc_index.html"><img src="picture/chognqingssc.png" alt="重庆时时彩" /></a>
+														<a href="/cqssc"><img src="picture/chognqingssc.png" alt="重庆时时彩" /></a>
 													</div>
 													<div class="num_ul">
 														<h1>重庆时时彩 <span class="preDrawIssue"> 223366</span> 期</h1>
@@ -1257,24 +1265,25 @@
 															<a href="javascript:void(0)" data-text="cqssc" class="video_a">开奖视频</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_cq/ssc_luzhufenxizh.html">路珠分析</a>
+															<a href="/cqssc">路珠分析</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_cq/ssc_dinweizs.html">定位走势</a>
+															<a href="/cqssc">定位走势</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_cq/ssc_meiricltj.html">长龙提醒</a>
+															<a href="/cqssc">长龙提醒</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_cq/ssc_lengrefx.html">冷热分析</a>
+															<a href="/cqssc">冷热分析</a>
 														</li>
 													</ul>
 												</div>
 											</div>
+
 											<div id="tjSsc">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/shishicai_tj/ssc_index.html"><img src="picture/tianjinssc.png" alt="天津时时彩" /></a>
+														<a href="/tjssc"><img src="picture/tianjinssc.png" alt="天津时时彩" /></a>
 													</div>
 													<div class="num_ul">
 														<h1>天津时时彩 <span class="preDrawIssue"> 223366</span> 期</h1>
@@ -1326,16 +1335,16 @@
 															<a href="javascript:void(0)" data-text="tjssc" class="video_a">开奖视频</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_tj/ssc_luzhufenxizh.html">路珠分析</a>
+															<a href="/tjssc">路珠分析</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_tj/ssc_dinweizs.html">定位走势</a>
+															<a href="/tjssc">定位走势</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_tj/ssc_meiricltj.html">长龙提醒</a>
+															<a href="/tjssc">长龙提醒</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_tj/ssc_lengrefx.html">冷热分析</a>
+															<a href="/tjssc">冷热分析</a>
 														</li>
 													</ul>
 												</div>
@@ -1343,10 +1352,10 @@
 											<div id="jsssc">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/shishicai_xj/ssc_index.html"><img src="picture/xinjiangssc.png" alt="新疆时时彩" /></a>
+														<a href="/jsssc"><img src="picture/xinjiangssc.png" alt="新疆时时彩" /></a>
 													</div>
 													<div class="num_ul">
-														<h1>新疆时时彩 <span class="preDrawIssue"> 223366</span> 期</h1>
+														<h1>急速时时彩 <span class="preDrawIssue"> 223366</span> 期</h1>
 														<p>当前<span class="drawCount">024</span>期，剩<span class="sdrawCountnext">2424</span>期</p>
 														<ul class="kajianhao" id="kajianhao3">
 															<!--<li class="numblueHead"></li>-->
@@ -1395,16 +1404,16 @@
 															<a href="javascript:void(0)" data-text="xjssc" class="video_a">开奖视频</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_xj/ssc_luzhufenxizh.html">路珠分析</a>
+															<a href="/jsssc">路珠分析</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_xj/ssc_dinweizs.html">定位走势</a>
+															<a href="/jsssc">定位走势</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_xj/ssc_meiricltj.html">长龙提醒</a>
+															<a href="/jsssc">长龙提醒</a>
 														</li>
 														<li>
-															<a href="/view/shishicai_xj/ssc_lengrefx.html">冷热分析</a>
+															<a href="/jsssc">冷热分析</a>
 														</li>
 													</ul>
 												</div>
@@ -1414,10 +1423,10 @@
 											<div id="shiyix5_sd">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/shiyix5_sd/index.html"><img src="picture/shandong11x5.png" alt="十一运夺金" /></a>
+														<a href="/kl8"><img src="picture/shandong11x5.png" /></a>
 													</div>
 													<div class="num_ul">
-														<h1>十一运夺金 <span class="preDrawIssue"> 223366</span> 期</h1>
+														<h1>快乐8 <span class="preDrawIssue"> 223366</span> 期</h1>
 														<p>当前<span class="drawCount">024</span>期，剩<span class="sdrawCountnext">2424</span>期</p>
 														<ul class="kajianhao">
 															<li class="numblueHead"></li>
@@ -1465,16 +1474,16 @@
 															<a href="javascript:void(0)" data-text="sdsyydj" class="video_a">开奖视频</a>
 														</li>
 														<li>
-															<a href="/view/shiyix5_sd/zonghelzfx.html">路珠分析</a>
+															<a href="/kl8">路珠分析</a>
 														</li>
 														<li>
-															<a href="/view/shiyix5_sd/dinweizs.html">定位走势</a>
+															<a href="/kl8">定位走势</a>
 														</li>
 														<li>
-															<a href="/view/shiyix5_sd/meiricltj.html">长龙提醒</a>
+															<a href="/kl8">长龙提醒</a>
 														</li>
 														<li>
-															<a href="/view/shiyix5_sd/lengrefx.html">冷热分析</a>
+															<a href="/kl8">冷热分析</a>
 														</li>
 													</ul>
 												</div>
@@ -1482,7 +1491,7 @@
 											<div id="shiyix5_gd">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/shiyix5_gd/index.html"><img src="picture/gaungdong11x5.png" alt="广东11选5" /></a>
+														<a href="/gd11x5"><img src="picture/gaungdong11x5.png" alt="广东11选5" /></a>
 													</div>
 													<div class="num_ul">
 														<h1>广东11选5 <span class="preDrawIssue"> 223366</span> 期</h1>
@@ -1533,16 +1542,16 @@
 															<a href="javascript:void(0)" data-text="gdsyxw" class="video_a">开奖视频</a>
 														</li>
 														<li>
-															<a href="/view/shiyix5_gd/zonghelzfx.html">路珠分析</a>
+															<a href="/gd11x5">路珠分析</a>
 														</li>
 														<li>
-															<a href="/view/shiyix5_gd/dinweizs.html">定位走势</a>
+															<a href="/gd11x5">定位走势</a>
 														</li>
 														<li>
-															<a href="/view/shiyix5_gd/meiricltj.html">长龙提醒</a>
+															<a href="/gd11x5">长龙提醒</a>
 														</li>
 														<li>
-															<a href="/view/shiyix5_gd/lengrefx.html">冷热分析</a>
+															<a href="/gd11x5">冷热分析</a>
 														</li>
 													</ul>
 												</div>
@@ -1550,10 +1559,10 @@
 											<div id="11ckeck5_zjef">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/shiyix5_zhejiang/index.html"><img src="picture/zj11x5.png" alt="浙江11选5" /></a>
+														<a href="/shssl"><img src="picture/zj11x5.png" alt="浙江11选5" /></a>
 													</div>
 													<div class="num_ul">
-														<h1>浙江11选5 <span class="preDrawIssue"> 223366</span> 期</h1>
+														<h1>上海时时乐 <span class="preDrawIssue"> 223366</span> 期</h1>
 														<p>当前<span class="drawCount">024</span>期，剩<span class="sdrawCountnext">2424</span>期</p>
 														<ul class="kajianhao">
 															<li class="numblueHead"></li>
@@ -1601,16 +1610,16 @@
 															<a href="javascript:void(0)" data-text="zjef" class="video_a">开奖视频</a>
 														</li>
 														<li>
-															<a href="/view/shiyix5_zhejiang/zonghelzfx.html">路珠分析</a>
+															<a href="/shssl">路珠分析</a>
 														</li>
 														<li>
-															<a href="/view/shiyix5_zhejiang/dinweizs.html">定位走势</a>
+															<a href="/shssl">定位走势</a>
 														</li>
 														<li>
-															<a href="/view/shiyix5_zhejiang/meiricltj.html">长龙提醒</a>
+															<a href="/shssl">长龙提醒</a>
 														</li>
 														<li>
-															<a href="/view/shiyix5_zhejiang/lengrefx.html">冷热分析</a>
+															<a href="/shssl">冷热分析</a>
 														</li>
 													</ul>
 												</div>
@@ -1620,7 +1629,7 @@
 											<div id="gdklsf">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/klsf/klsf_index.html"><img src="picture/guangdongklsf.png" alt="广东快乐十分" /></a>
+														<a href="/gdkl10"><img src="picture/guangdongklsf.png" alt="广东快乐十分" /></a>
 													</div>
 													<div class="num_ul">
 														<h1>广东快乐十分 <span class="preDrawIssue"> 223366</span> 期</h1>
@@ -1671,16 +1680,16 @@
 															<a href="javascript:void(0)" data-text="gdklsf" class="video_a">开奖视频</a>
 														</li>
 														<li>
-															<a href="/view/klsf/klsf_zonghelzfx.html">路珠分析</a>
+															<a href="/gdkl10">路珠分析</a>
 														</li>
 														<li>
-															<a href="/view/klsf/klsf_jibenzs.html">号码分布</a>
+															<a href="/gdkl10">号码分布</a>
 														</li>
 														<li>
-															<a href="/view/klsf/klsf_meiricltj.html">长龙提醒</a>
+															<a href="/gdkl10">长龙提醒</a>
 														</li>
 														<li>
-															<a href="/view/klsf/klsf_daxiaozs.html">大小走势</a>
+															<a href="/gdkl10">大小走势</a>
 														</li>
 													</ul>
 												</div>
@@ -1826,7 +1835,7 @@
 											<div id="kuai3">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/kuai3/kuai3_index.html"><img src="picture/jsk3.png" alt="江苏快3" /></a>
+														<a href="/jsk3"><img src="picture/jsk3.png" alt="江苏快3" /></a>
 													</div>
 													<div class="num_ul">
 														<h1>江苏快3 <span class="preDrawIssue"> 223366</span> 期</h1>
@@ -1872,16 +1881,16 @@
 															<a href="javascript:void(0)" data-text="jsksan" class="video_a">开奖视频</a>
 														</li>
 														<li>
-															<a href="/view/kuai3/kuai3_zonghelz.html">总和路珠</a>
+															<a href="/jsk3">总和路珠</a>
 														</li>
 														<li>
-															<a href="/view/kuai3/kuai3_dinweizs.html">定位走势</a>
+															<a href="/jsk3">定位走势</a>
 														</li>
 														<li>
-															<a href="/view/kuai3/kuai3_meiricltj.html">长龙提醒</a>
+															<a href="/jsk3">长龙提醒</a>
 														</li>
 														<li>
-															<a href="/view/kuai3/kuai3_haomalz.html">号码路珠</a>
+															<a href="/jsk3">号码路珠</a>
 														</li>
 													</ul>
 												</div>
@@ -2017,10 +2026,10 @@
 											<div id="cqnc">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/cqnc/index.html"><img src="picture/chongqingnc.png" alt="重庆农场" /></a>
+														<a href="/xyft"><img src="picture/chongqingnc.png" /></a>
 													</div>
 													<div class="num_ul">
-														<h1>重庆农场 <span class="preDrawIssue"> 223366</span> 期</h1>
+														<h1>幸运飞艇 <span class="preDrawIssue"> 223366</span> 期</h1>
 														<p>当前<span class="drawCount">024</span>期，剩<span class="sdrawCountnext">2424</span>期</p>
 														<ul class="kajianhao">
 															<li class="ncnum01"></li>
@@ -2071,16 +2080,16 @@
 															<a href="javascript:void(0)" data-text="cqxync" class="video_a">开奖视频</a>
 														</li>
 														<li>
-															<a href="/view/cqnc/klsf_zonghelzfx.html">路珠分析</a>
+															<a href="/xyft">路珠分析</a>
 														</li>
 														<li>
-															<a href="/view/cqnc/klsf_daxiaozs.html">大小走势</a>
+															<a href="/xyft">大小走势</a>
 														</li>
 														<li>
-															<a href="/view/cqnc/klsf_meiricltj.html">长龙提醒</a>
+															<a href="/xyft">长龙提醒</a>
 														</li>
 														<li>
-															<a href="/view/cqnc/klsf_jibenzs.html">号码分布</a>
+															<a href="/xyft">号码分布</a>
 														</li>
 													</ul>
 												</div>
@@ -2209,10 +2218,10 @@
 											<div id="tcpl3">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/tcpl3/index.html"><img src="picture/pailie3 .png" alt="体彩排列3" /></a>
+														<a href="/pl3"><img src="picture/pailie3 .png" /></a>
 													</div>
 													<div class="num_ul">
-														<h1>体彩排列3 <span class="preDrawIssue"> 223366</span> 期</h1>
+														<h1>排列3 <span class="preDrawIssue"> 223366</span> 期</h1>
 														<p>当前<span class="drawCount">024</span>期，剩<span class="sdrawCountnext">2424</span>期</p>
 														<ul class="kajianhao">
 															<li class="num_red"></li>
@@ -2256,10 +2265,10 @@
 											<div id="fc3d">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/view/fc3D/index.html"><img src="picture/fc3d .png" alt="福彩3D" /></a>
+														<a href="/jssc"><img src="picture/fc3d .png"  /></a>
 													</div>
 													<div class="num_ul">
-														<h1>福彩3D <span class="preDrawIssue"> 223366</span> 期</h1>
+														<h1>急速赛车 <span class="preDrawIssue"> 223366</span> 期</h1>
 														<p>当前<span class="drawCount">024</span>期，剩<span class="sdrawCountnext">2424</span>期</p>
 														<ul class="kajianhao">
 															<li class="num_red"></li>
@@ -2375,58 +2384,58 @@
 											<ul>
 
 												<li>
-													<a target="_blank" href="/view/PK10/pk10kai.html"><img src="picture/bjpk10.png" alt="北京PK10" /></a>
-													<a target="_blank" href="/view/PK10/pk10kai.html">北京PK10</a>
+													<a target="_blank" href="/pk10"><img src="picture/bjpk10.png" alt="北京PK10" /></a>
+													<a target="_blank" href="/pk10">北京PK10</a>
 												</li>
 
 												<li>
-													<a target="_blank" href="/view/jisusaiche/pk10kai.html"><img src="picture/jisu_saiche.png" alt="极速赛车" /></a>
-													<a target="_blank" href="/view/jisusaiche/pk10kai.html">极速赛车</a>
+													<a target="_blank" href="/jssc"><img src="picture/jisu_saiche.png" alt="极速赛车" /></a>
+													<a target="_blank" href="/jssc">极速赛车</a>
+												</li>
+											<li>
+													<a target="_blank" href="/pl3"><img src="/images/pl3-logo.png" width="52" height="52" /></a>
+													<a target="_blank" href="/pl3">排列3</a>
 												</li>
 												<li>
-													<a target="_blank" href="/view/aozxy5/ssc_index.html"><img src="picture/aozxy5.png" alt="澳洲幸运5" /></a>
-													<a target="_blank" href="/view/aozxy5/ssc_index.html">澳洲幸运5</a>
+													<a target="_blank" href="/gd11x5"><img src="/images/gd11x5-logo.png" width="52" height="52" /></a>
+													<a target="_blank" href="/gd11x5">广东11选5</a>
 												</li>
 												<li>
-													<a target="_blank" href="/view/PC_egxy28/PC_egxy28index.html"><img src="picture/pcdd_1.png" alt="PC蛋蛋28" /></a>
-													<a target="_blank" href="/view/PC_egxy28/PC_egxy28index.html">PC蛋蛋28</a>
-												</li>
-												<li>
-													<a target="_blank" href="/view/cqnc/index.html"><img src="picture/cqnc.png" alt="重庆幸运农场" /></a>
-													<a target="_blank" href="/view/cqnc/index.html">重庆幸运农场</a>
-												</li>
-
-												<li>
-													<a target="_blank" href="/view/klsf/klsf_index.html"><img src="picture/gdklsf.png" alt="广东快乐十分" /></a>
-													<a target="_blank" href="/view/klsf/klsf_index.html">广东快乐十分</a>
+													<a target="_blank" href="jsk3"><img src="/images/jsk3-logo.png" width="52"  height="52" /></a>
+													<a target="_blank" href="jsk3">江苏快三</a>
 												</li>
 
 												<li>
-													<a target="_blank" href="/view/shiyix5_jiangxi/index.html"><img src="picture/11x5_jiangxi.png" alt="江西11选5" /></a>
-													<a target="_blank" href="/view/shiyix5_jiangxi/index.html">江西11选5</a>
+													<a target="_blank" href="/gdkl10"><img src="picture/gdklsf.png" alt="广东快乐十分" /></a>
+													<a target="_blank" href="/gdkl10">广东快乐十分</a>
+												</li>
+
+												<li>
+													<a target="_blank" href="/xyft"><img src="/images/xyft-logo.png" width="52"  height="52"/></a>
+													<a target="_blank" href="/xyft">幸运飞艇</a>
 												</li>
 
 												<li class="first_li">
-													<a target="_blank" href="/view/shishicai_jisu/ssc_index.html"><img src="picture/ssc_jisu.png" alt="极速时时彩" /></a>
-													<a target="_blank" href="/view/shishicai_jisu/ssc_index.html">极速时时彩</a>
+													<a target="_blank" href="/jsssc"><img src="picture/ssc_jisu.png" alt="极速时时彩" /></a>
+													<a target="_blank" href="/jsssc">极速时时彩</a>
 												</li>
 
 												<li>
-													<a target="_blank" href="/view/shishicai_cq/ssc_index.html"><img src="picture/cqssc.png" alt="重庆时时彩" /></a>
-													<a target="_blank" href="/view/shishicai_cq/ssc_index.html">重庆时时彩</a>
+													<a target="_blank" href="/cqssc"><img src="picture/cqssc.png" alt="重庆时时彩" /></a>
+													<a target="_blank" href="/cqssc">重庆时时彩</a>
 												</li>
 												<li>
-													<a target="_blank" href="/view/shiyix5_sd/index.html"><img src="picture/syydj.png" alt="十一运夺金" /></a>
-													<a target="_blank" href="/view/shiyix5_sd/index.html">十一运夺金</a>
+													<a target="_blank" href="/shssl"><img src="/images/shssl-logo.png" width="52" height="52"></a>
+													<a target="_blank" href="/shssl">上海时时乐</a>
 												</li>
 												<li>
-													<a target="_blank" href="/view/shishicai_tj/ssc_index.html"><img src="picture/tjssc.png" alt="天津时时彩" /></a>
-													<a target="_blank" href="/view/shishicai_tj/ssc_index.html">天津时时彩</a>
+													<a target="_blank" href="/tjssc"><img src="picture/tjssc.png" alt="天津时时彩" /></a>
+													<a target="_blank" href="/tjssc">天津时时彩</a>
 												</li>
 
 												<li class="last_li">
-													<a target="_blank" href="/view/aozxy10/pk10kai.html"><img src="picture/aozxy10.png" alt="澳洲幸运10" /></a>
-													<a target="_blank" href="/view/aozxy10/pk10kai.html">澳洲幸运10</a>
+													<a target="_blank" href="kl8"><img src="/images/kl8-logo.png" width="52" height="52"></a>
+													<a target="_blank" href="kl8">快乐8</a>
 												</li>
 
 											</ul>
@@ -2437,7 +2446,7 @@
 									<div class="jiahu">
 										<ul>
 											<li>
-												<a href="/view/zsh/index.html?type=pk10" class="pkxl">
+												<a href="/pk10" class="pkxl">
 													<div class="bgdiv bigbg">
 														<div>
 															<h2>PK10系列</h2>
@@ -2447,7 +2456,7 @@
 												</a>
 											</li>
 											<li class="havemargin">
-												<a href="/view/zsh/index.html?type=cqssc" class="sscxl">
+												<a href="/cqssc" class="sscxl">
 													<div class="bgdiv">
 														<div>
 															<h2>时时彩系列</h2>
@@ -2457,7 +2466,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="/view/zsh/index.html?type=gdsyxw" class="check5xl">
+												<a href="/gd11x5"  class="check5xl">
 													<div class="bgdiv">
 														<div>
 															<h2>11选5系列</h2>
@@ -2467,7 +2476,7 @@
 												</a>
 											</li>
 											<li class="havemargin">
-												<a href="/view/zsh/index.html?type=jsksan" class="k3xl">
+												<a href="/jsk3" class="k3xl">
 													<div class="bgdiv">
 														<div>
 															<h2>快3系列</h2>
@@ -2477,10 +2486,10 @@
 												</a>
 											</li>
 											<li>
-												<a href="/view/zsh/index.html?type=egxy28" class="pcddxl">
+												<a href="/shssl" class="pcddxl">
 													<div class="bgdiv">
 														<div>
-															<h2>PC蛋蛋系列</h2>
+															<h2>上海时时乐</h2>
 															<p><span>购彩计划</span><span>稳赢杀号</span></p>
 														</div>
 													</div>
@@ -2499,66 +2508,67 @@
 												</dd>
 											</dl>
 										</div>
+
 										<div class="newslist">
 											<ul id="fanganyc">
 												<input type="hidden" id="fanganycdata" value="[{&#34;releaseDate&#34;:&#34;2018-08-17&#34;,&#34;image&#34;:&#34;87bd8d87-c998-4a1f-8df8-907b6700f642.jpg&#34;,&#34;title&#34;:&#34;江苏快3推荐（08.17）：上午推荐&#34;,&#34;labels&#34;:&#34;&#34;,&#34;pageView&#34;:425,&#34;newsId&#34;:2743,&#34;description&#34;:&#34;关注的号码：2.4.4；1.4.5；2.4.5；2.4.6(追号期数为：第4-29期)&#34;},{&#34;releaseDate&#34;:&#34;2018-08-17&#34;,&#34;image&#34;:&#34;0eb41e24-5b9c-48e5-83a2-e7d521aa5df6.png&#34;,&#34;title&#34;:&#34;安徽快3推荐（08.17）：上午推荐&#34;,&#34;labels&#34;:&#34;&#34;,&#34;pageView&#34;:99,&#34;newsId&#34;:2742,&#34;description&#34;:&#34;关注的号码：2.3.4；2.4.4；2.3.5；2.4.5；2.3.6；2.5.5；2.4.6；2.5.6(追号期数为：第4-29期)&#34;},{&#34;releaseDate&#34;:&#34;2018-08-17&#34;,&#34;image&#34;:&#34;b7c92170-38fe-4ab9-846d-9e1c84f8e2eb.jpg&#34;,&#34;title&#34;:&#34;湖北快3推荐（08.17）：上午推荐&#34;,&#34;labels&#34;:&#34;&#34;,&#34;pageView&#34;:117,&#34;newsId&#34;:2741,&#34;description&#34;:&#34;关注的号码：1.4.5；2.4.5(追号期数为：第4-29期)&#34;},{&#34;releaseDate&#34;:&#34;2018-08-16&#34;,&#34;image&#34;:&#34;ff728c06-471b-4300-812b-e4c87bbe1d1e.jpg&#34;,&#34;title&#34;:&#34;江西11选5号码推荐8月16日下午&#34;,&#34;labels&#34;:&#34;&#34;,&#34;pageView&#34;:121,&#34;newsId&#34;:2738,&#34;description&#34;:&#34;根据近期走势图看，04,02码较热，06,03码较冷，彩民可以持续关注热码，防止冷码回补。&#34;},{&#34;releaseDate&#34;:&#34;2018-08-16&#34;,&#34;image&#34;:&#34;052f21a0-536e-4b19-8882-ea78592c4cf6.jpg&#34;,&#34;title&#34;:&#34;湖北11选5号码推荐8月16日下午&#34;,&#34;labels&#34;:&#34;&#34;,&#34;pageView&#34;:111,&#34;newsId&#34;:2737,&#34;description&#34;:&#34;根据近期走势图看，05,06码较热，07,11码较冷，彩民可以持续关注热码，防止冷码回补。&#34;},{&#34;releaseDate&#34;:&#34;2018-08-16&#34;,&#34;image&#34;:&#34;36094da9-1fac-453c-b5f4-17f6a375e07c.jpg&#34;,&#34;title&#34;:&#34;浙江11选5号码推荐8月16日下午&#34;,&#34;labels&#34;:&#34;&#34;,&#34;pageView&#34;:96,&#34;newsId&#34;:2736,&#34;description&#34;:&#34;根据近期走势图看，06,03码较热，05,08码较冷，彩民可以持续关注热码，防止冷码回补。&#34;},{&#34;releaseDate&#34;:&#34;2018-08-16&#34;,&#34;image&#34;:&#34;d1c3189c-0abb-4c78-98c1-fe842102021e.jpg&#34;,&#34;title&#34;:&#34;双色球第18095期预测：看好奇数走强&#34;,&#34;labels&#34;:&#34;&#34;,&#34;pageView&#34;:120,&#34;newsId&#34;:2733,&#34;description&#34;:&#34;彩票开奖&#34;},{&#34;releaseDate&#34;:&#34;2018-08-16&#34;,&#34;image&#34;:&#34;0923d935-3377-487e-b24e-7fd0963bf239.jpg&#34;,&#34;title&#34;:&#34;福彩3D第18220期分析：关注三胆538&#34;,&#34;labels&#34;:&#34;&#34;,&#34;pageView&#34;:127,&#34;newsId&#34;:2732,&#34;description&#34;:&#34;彩票开奖&#34;},{&#34;releaseDate&#34;:&#34;2018-08-16&#34;,&#34;image&#34;:&#34;0957e5b7-3508-46f7-a9af-b27a792a2b10.jpg&#34;,&#34;title&#34;:&#34;湖北11选5号码推荐8月16日上午&#34;,&#34;labels&#34;:&#34;&#34;,&#34;pageView&#34;:89,&#34;newsId&#34;:2731,&#34;description&#34;:&#34;根据近期走势图看，10,06码较热，04,01码较冷，彩民可以持续关注热码，防止冷码回补。&#34;},{&#34;releaseDate&#34;:&#34;2018-08-16&#34;,&#34;image&#34;:&#34;0c89e834-014e-4e62-9683-b8a677ef860b.jpg&#34;,&#34;title&#34;:&#34;江西11选5号码推荐8月16日上午&#34;,&#34;labels&#34;:&#34;&#34;,&#34;pageView&#34;:99,&#34;newsId&#34;:2730,&#34;description&#34;:&#34;根据近期走势图看，08,02码较热，06,03码较冷，彩民可以持续关注热码，防止冷码回补。&#34;}]">
 												
 												<li>
-													<a target="_blank" href="news/detail-2743.html">
+													<a target="_blank" href="javascript:void (0)">
 														江苏快3推荐（08.17）：上午推荐
 													</a>
 												</li>
 												
 												<li>
-													<a target="_blank" href="news/detail-2742.html">
+													<a target="_blank" href="javascript:void (0)">
 														安徽快3推荐（08.17）：上午推荐
 													</a>
 												</li>
 												
 												<li>
-													<a target="_blank" href="news/detail-2741.html">
+													<a target="_blank" href="javascript:void (0)">
 														湖北快3推荐（08.17）：上午推荐
 													</a>
 												</li>
 												
 												<li>
-													<a target="_blank" href="news/detail-2738.html">
+													<a target="_blank" href="javascript:void (0)">
 														江西11选5号码推荐8月16日下午
 													</a>
 												</li>
 												
 												<li>
-													<a target="_blank" href="news/detail-2737.html">
+													<a target="_blank" href="javascript:void (0)">
 														湖北11选5号码推荐8月16日下午
 													</a>
 												</li>
 												
 												<li>
-													<a target="_blank" href="news/detail-2736.html">
+													<a target="_blank" href="javascript:void (0)">
 														浙江11选5号码推荐8月16日下午
 													</a>
 												</li>
 												
 												<li>
-													<a target="_blank" href="news/detail-2733.html">
+													<a target="_blank" href="javascript:void (0)">
 														双色球第18095期预测：看好奇数走强
 													</a>
 												</li>
 												
 												<li>
-													<a target="_blank" href="news/detail-2732.html">
+													<a target="_blank" href="javascript:void (0)">
 														福彩3D第18220期分析：关注三胆538
 													</a>
 												</li>
 												
 												<li>
-													<a target="_blank" href="news/detail-2731.html">
+													<a target="_blank" href="javascript:void (0)">
 														湖北11选5号码推荐8月16日上午
 													</a>
 												</li>
 												
 												<li>
-													<a target="_blank" href="news/detail-2730.html">
+													<a target="_blank" href="javascript:void (0)">
 														江西11选5号码推荐8月16日上午
 													</a>
 												</li>
@@ -2566,7 +2576,7 @@
 											</ul>
 										</div>
 										<div class="adviertisement">
-											<a href="/view/PK10/pk10kai.html" target="_blank">
+											<a href="/pk10" target="_blank">
 												<img src="picture/adviertisement.png" alt="" />
 											</a>
 										</div>
@@ -2593,20 +2603,20 @@
 															<dl>
 																<dt class="toolicon1"><i></i>走势</dt>
 																<dd>
-																	<a href="/view/PK10/pk10kai.html">更多</a>
+																	<a href="/pk10">更多</a>
 																</dd>
 															</dl>
 														</div>
 														<div class="toolsr3">
 															<ul>
 																<li>
-																	<a href="/view/PK10/pk10_guanyahezs.html">冠亚和走势</a>
+																	<a href="/pk10">冠亚和走势</a>
 																</li>
 																<li>
-																	<a href="/view/PK10/pk10_weizhizs.html">位置走势</a>
+																	<a href="/pk10">位置走势</a>
 																</li>
 																<li>
-																	<a href="/view/PK10/pk10_haomazs.html">号码走势</a>
+																	<a href="/pk10">号码走势</a>
 																</li>
 															</ul>
 														</div>
@@ -2615,26 +2625,26 @@
 															<dl>
 																<dt class="toolicon1"><i></i>遗漏</dt>
 																<dd>
-																	<a href="/view/PK10/pk10kai.html">更多</a>
+																	<a href="/pk10">更多</a>
 																</dd>
 															</dl>
 														</div>
 														<div class="toolsr3">
 															<ul>
 																<li>
-																	<a href="/view/PK10/pk10_guanyahezs.html">冠亚和</a>
+																	<a href="/pk10">冠亚和</a>
 																</li>
 																<li>
-																	<a href="/view/PK10/pk10_weizhizs.html">冠军遗漏</a>
+																	<a href="/pk10">冠军遗漏</a>
 																</li>
 																<li>
-																	<a href="/view/PK10/pk10_weizhizs.html?second">亚军遗漏</a>
+																	<a href="/pk10">亚军遗漏</a>
 																</li>
 																<li>
-																	<a href="/view/PK10/pk10_weizhizs.html?third">第三名遗漏</a>
+																	<a href="/pk10">第三名遗漏</a>
 																</li>
 																<li>
-																	<a href="/view/PK10/pk10_weizhizs.html?fourth">第四名遗漏</a>
+																	<a href="/pk10">第四名遗漏</a>
 																</li>
 															</ul>
 														</div>
@@ -2672,20 +2682,20 @@
 															<dl>
 																<dt class="toolicon1"><i></i>走势</dt>
 																<dd>
-																	<a href="/view/shishicai_cq/ssc_index.html">更多</a>
+																	<a href="/cqssc">更多</a>
 																</dd>
 															</dl>
 														</div>
 														<div class="toolsr3">
 															<ul>
 																<li>
-																	<a href="/view/shishicai_cq/ssc_jibenzs.html">基本走势</a>
+																	<a href="/cqssc">基本走势</a>
 																</li>
 																<li>
-																	<a href="/view/shishicai_cq/ssc_longhuzs.html">龙虎走势</a>
+																	<a href="/cqssc">龙虎走势</a>
 																</li>
 																<li>
-																	<a href="/view/shishicai_cq/ssc_xingtaizs.html">形态走势</a>
+																	<a href="/cqssc">形态走势</a>
 																</li>
 															</ul>
 														</div>
@@ -2693,26 +2703,26 @@
 															<dl>
 																<dt class="toolicon1"><i></i>遗漏</dt>
 																<dd>
-																	<a href="/view/shishicai_cq/ssc_index.html">更多</a>
+																	<a href="/cqssc">更多</a>
 																</dd>
 															</dl>
 														</div>
 														<div class="toolsr3">
 															<ul>
 																<li>
-																	<a href="/view/shishicai_cq/ssc_zhonghefx.html">综合分析</a>
+																	<a href="/cqssc">综合分析</a>
 																</li>
 																<li>
-																	<a href="/view/shishicai_cq/ssc_dinweizs.html">定位走势</a>
+																	<a href="/cqssc">定位走势</a>
 																</li>
 																<li>
-																	<a href="/view/shishicai_cq/ssc_dinweizs.html?second">第二球走势</a>
+																	<a href="/cqssc">第二球走势</a>
 																</li>
 																<li>
-																	<a href="/view/shishicai_cq/ssc_dinweizs.html?third">第三球走势</a>
+																	<a href="/cqssc">第三球走势</a>
 																</li>
 																<li>
-																	<a href="/view/shishicai_cq/ssc_dinweizs.html?fourth">第四球走势</a>
+																	<a href="/cqssc">第四球走势</a>
 																</li>
 															</ul>
 														</div>
@@ -2864,7 +2874,7 @@
 												<input type="hidden" id="ofNoLoad" value="noLoad" />
 												<input type="hidden" id="ifindex" value="index" />
 												<div class="imgheadl">
-													<a href="/view/PK10/pk10kai.html"><img src="picture/beijinpk.png" alt="北京PK10" /></a>
+													<a href="/pk10"><img src="picture/beijinpk.png" alt="北京PK10" /></a>
 												</div>
 												<div class="inforr">
 													<h1>北京PK10第<span style="display: inline-block;"  class="preDrawIssue"></span>期开奖</h1>
@@ -3307,7 +3317,7 @@
 										<div class="cztypelt">
 											<div class="rowbox1">
 												<div class="imgheadl">
-													<a href="/view/shiyix5_gd/index.html"><img src="picture/gaungdong11x5.png" alt="广东11选5" /></a>
+													<a href="/gd11x5"><img src="picture/gaungdong11x5.png" alt="广东11选5" /></a>
 												</div>
 												<div class="inforr">
 													<span class="nextIssue displaynone"></span>
@@ -3358,16 +3368,16 @@
 											<table border="0" cellpadding="1" cellspacing="1">
 												<tr>
 													<td>
-														<a href="/view/shiyix5_gd/kjhistory.html">历史开奖</a>
+														<a href="/gd11x5">历史开奖</a>
 													</td>
 													<td>
-														<a href="/view/shiyix5_gd/zonghelzfx.html">路珠分析</a>
+														<a href="/gd11x5">路珠分析</a>
 													</td>
 													<td>
-														<a href="/view/shiyix5_gd/danshuangdxls.html">单双大小历史</a>
+														<a href="/gd11x5">单双大小历史</a>
 													</td>
 													<td>
-														<a href="/view/shiyix5_gd/jibenzs.html">基本走势</a>
+														<a href="/gd11x5">基本走势</a>
 													</td>
 												</tr>
 											</table>
@@ -3457,56 +3467,35 @@
 		<li class="about_li">
 			<div><span class="about"></span><span class="">关于我们</span></div>
 			<p class="p1">
-				<a href="/view/about_us/about_us.html">关于我们</a>
+				<a href="/about">关于我们</a>
 			</p>
 			<p>
-				<a href="/view/about_us/cus_serv.html">客服中心</a>
+				<a href="/about/index.html#page3">广告服务</a>
 			</p>
 			<p>
-				<a href="/view/about_us/coop_com.html">商务合作</a>
+				<a href="/about/index.html#page4">联系我们</a>
+			</p>
+			<p class="p1">
+				<a href="/sitemap.html">网站地图</a>
 			</p>
 			<p>
-				<a href="/view/about_us/disclaimer.html">免责声明</a>
+				<a href="/about/index.html#page5">网站声明</a>
 			</p>
 		</li>
 		<li class="about_li">
-			<div><span class="rewards"></span><span class="">中奖神器</span></div>
-			<p class="p1">
-				<a href="/view/PK10/pk10kai.html">开奖号码</a>
-			</p>
-			<p>
-				<a href="/view/zoushitb/zoushitb.html">走势图表</a>
-			</p>
-			<p>
-				<a href="/view/wanfaguize/PK10_wanfaguize.html">玩法规则</a>
-			</p>
-			<!--<p>
-							<a href="javascript:void(0)">遗漏数据</a>
-						</p>-->
+			<div style="width: 500px;height: 100px; text-align: center;font-size: 12px;margin-top: 50px">
+				<div>推荐使用谷歌、火狐、IE9以上浏览器</div>
+				<div style="color: red">郑重提示：购买彩票有风险，投注需谨慎，不得向未满18周岁的青少年出售彩票！</div>
+				<div>敬告用户：除本站产品外，本站所刊登广告的网站和第三方内容一概与本站无关，用户须自行判断广告和第三方内容的真实性，由此所产生的后果本站概不负责！</div>
+			</div>
 		</li>
-		<li class="about_li">
-			<div><span class="call"></span><span class="">免费调用</span></div>
-			<!--<p class="p1">
-							<a href="javascript:void(0)">彩票开奖联盟</a>
-						</p>-->
-			<p class="p1">
-				<a href="http://168kai.com/" class="zzwzdh" target="_blank" rel="nofollow">自助网址导航</a>
-			</p>
-			<p>
-				<a  class="kaijdy" href="http://kj.kai861.com/" target="_blank" rel="nofollow">开奖调用</a>
-			</p>
-		</li>
-		<li>
-			<!--<div><img src="picture/gongzh.png" alt="" style="width: 100%;"/></div>
-			<p>扫一扫，关注168公众号</p>-->
-		</li>
+
 	</ul>
 </div>
 
 <div class="footer3">
 	<div class="footer3c">
-		Copyright <span id="localyears"></span> www.168kai.com All rights reserved 彩票开奖网 版权所有 粤ICP备09298233号
-		<a style="display: inline;margin-left: 5px;" href="http://www.cnzz.com/stat/website.php?web_id=1261504940" target="_blank" title="站长统计">站长统计</a>
+		Copyright <span id="localyears"></span> Copyright © 2011-2016 All Rights Reserved. Current version is 2.0 盛世直播开奖网
 		<script type="text/javascript" src="/js/js/tools.js" ></script>
 		<script type="text/javascript">
 			$("#localyears").text(new Date().getFullYear());
@@ -3525,12 +3514,7 @@
 					<li>
 						<a class="kefuicon" target="_blank" href="http://crm2.qq.com/page/portalpage/wpa.php?lang=&uin=800057725&cref=http://www.168kai.cc&ref=&pt=168%E5%BC%80%E5%A5%96%E7%BD%91&f=1&ty=1&ap=&as="></a>
 					</li>
-					<li>
-						<!--用户反馈模态框-->
-						<span class="fankuicon fankuicon_a" data-toggle="modal" data-target="#myModal">
-							<span class="fankuicons"></span>
-						</span>
-					</li>
+
 					<li>
 						<a class="topicon" id="gotop" href="javascript:"></a>
 					</li>
@@ -3545,7 +3529,7 @@
 			<!-- 模态框（Modal） -->
 			<div class="modal fade" style="z-index: 999;" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog" style="margin: 30px auto;margin-top: 130px;">
-					<div class="modal-content">
+					<div class="modal-content"">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="picture/close.png" alt="" /></button>
 							<h4 class="modal-title" id="myModalLabel">在线反馈</h4>
