@@ -24,6 +24,7 @@ function kuaicase(n) {
 }
 
 var animateMethod = {}, intervalSsc = null, animateID = {}, time = 600, pk10animate = !1, pkid, publicHeadOrf = {};
+<<<<<<< HEAD
 animateMethod.loadingList = function (n, i) {
     i ? $(n).append('<div id="loadingbox"></div>') : $(n).find("#loadingbox").remove()
 }, animateMethod.pk10OpenAnimate = function (n) {
@@ -45,6 +46,33 @@ animateMethod.loadingList = function (n, i) {
     }, 100);
     animateID[n] = e
 }, animateMethod.pk10OpenAnimate_GaryAddIndex = function (n) {
+=======
+
+animateMethod.loadingList = function (n, i) {
+    i ? $(n).append('<div id="loadingbox"></div>') : $(n).find("#loadingbox").remove()
+},
+
+    animateMethod.pk10OpenAnimate = function (n) {
+        var i = 600;
+        $(n + " .numberbox").find("li");
+        $(n).find(".opentyle").show(), $(n).find(".cuttime").hide();
+
+        var e = setInterval(function () {
+            var e = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], a = [];
+            i--;
+            for (var t = 0; t < 10; t++) {
+                var r = Math.floor(Math.random() * e.length);
+                a[t] = e[r], e.splice(r, 1)
+            }
+            for (var l = "", d = 0; d < 10; d++) {
+                var o = a[d] < 10 ? "numsm0" + a[d] : "numsm" + a[d];
+                l += 9 == d ? "<li style='margin-right: 0px;' class='" + o + "'></li>" : "<li class='" + o + "'></li>"
+            }
+            $(n).find(".numberbox").empty(), $(n).find(".numberbox").append(l), 100 == i && $("#waringbox").show(300)
+        }, 100);
+        animateID[n] = e
+    }, animateMethod.pk10OpenAnimate_GaryAddIndex = function (n) {
+>>>>>>> 665522059fff1f3250848b6e94b2ba22aa14f77a
     var i = 600;
     $(n + " .numberbox").find("li");
     $(n).find(".opentyle").show(), $(n).find(".cuttime").hide();
@@ -138,7 +166,11 @@ animateMethod.loadingList = function (n, i) {
             var r = Math.floor(Math.random() * n.length);
             a[t] = n[r], n.splice(r, 1)
         }
+<<<<<<< HEAD
         for (var l = "", d = 0; d < 10; d++) l += "<li class='ncnum0" + a[d] + "'></li>";
+=======
+        for (var l = "", d = 0; d < 10; d++)l += "<li class='ncnum0" + a[d] + "'></li>";
+>>>>>>> 665522059fff1f3250848b6e94b2ba22aa14f77a
         $(e).empty(), $(e).append(l), 100 == i && $("#waringbox").show(300)
     }, 100), animateID[n] = intervalSsc
 }, animateMethod.cqncAnimateEnd = function (n, i) {
