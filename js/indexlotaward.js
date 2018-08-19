@@ -757,7 +757,7 @@ $(function () {
                 //drawTrend();
             }
             pk10_currentPeriodNumber = data.current.periodNumber;
-            window.setTimeout(gd11x5_awardTick,data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval);
+            window.setTimeout(jsk3_awardTick,data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval);
         }, 'json');
     };
 
