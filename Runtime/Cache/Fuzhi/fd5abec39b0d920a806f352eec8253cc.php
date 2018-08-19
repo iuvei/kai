@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?>﻿d<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?>﻿<!DOCTYPE html>
 <html>
 
 	<head>
@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
 		<meta name="format-detection" content="telephone=no" />
 		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" />
-		<title>看彩票开奖结果直播，彩票走势图，稳赚技巧方法,来168彩票开奖网，官方数据!精准无延迟！ </title>
+		<title>看彩票开奖结果直播，彩票走势图，稳赚技巧方法,来盛世直播网，官方数据!精准无延迟！ </title>
 		<meta name="keywords" content="168彩票开奖结果,168彩票开奖直播,168彩票走势图,168彩票稳赚技巧,168彩票赚钱方法" />
 		<meta name="description " content="168彩票开奖网是彩种最全、开奖最快的专业彩票开奖网站。北京PK10、时时彩、极速赛车、双色球、大乐透…一应俱全！" />
 		<link rel="stylesheet" href="/css/css/headorfood.css" />
@@ -847,20 +847,20 @@
 													<div class="imgheadl">
 														<a href="/pk10"><img src="picture/beijinpk.png" alt="北京PK10" /></a>
 													</div>
-													<div class="num_ul">
-														<h1>北京PK10 <span class="preDrawIssue"> 223366</span> 期</h1>
-														<p>当前<span class="drawCount">024</span>期，剩<span class="sdrawCountnext">2424</span>期</p>
-														<ul id="jnumber" class="numberbox">
-															<li class="nub01"></li>
-															<li class="nub02"></li>
-															<li class="nub03"></li>
-															<li class="nub04"></li>
-															<li class="nub05"></li>
-															<li class="nub06"></li>
-															<li class="nub07"></li>
-															<li class="nub08"></li>
-															<li class="nub09"></li>
-															<li class="nub10 li_after"></li>
+													<div class="num_ul" id="">
+														<h1>北京PK10 <span class="preDrawIssue"> </span>179 期</h1>
+														<p>当前<span class="drawCount"></span>期，剩<span class="sdrawCountnext"><?php echo ($totalExpect); ?></span>期</p>
+														<ul id="numberbox" class="numberbox">
+															<!--<li class="nub01"></li>-->
+															<!--<li class="nub02"></li>-->
+															<!--<li class="nub03"></li>-->
+															<!--<li class="nub04"></li>-->
+															<!--<li class="nub05"></li>-->
+															<!--<li class="nub06"></li>-->
+															<!--<li class="nub07"></li>-->
+															<!--<li class="nub08"></li>-->
+															<!--<li class="nub09"></li>-->
+															<!--<li class="nub10 li_after"></li>-->
 														</ul>
 													</div>
 													<div class="nextkai_time">
@@ -876,21 +876,19 @@
 														<p class="opentyle">开奖中...</p>
 													</div>
 												</div>
-												<div class="rowbox2">
+												<div class="rowbox2" id="rowbox">
 													<table border="0" cellpadding="1" cellspacing="1">
 														<tr>
 															<th colspan="5">1-5龙虎</th>
 															<th colspan="3">冠亚和</th>
 														</tr>
 														<tr class="longhu">
-															<td>&nbsp;</td>
-															<td>&nbsp;</td>
-															<td>&nbsp;</td>
-															<td>&nbsp;</td>
-															<td>&nbsp;</td>
-															<td class="sumFS">&nbsp;</td>
-															<td class="sumBigSamll">&nbsp;</td>
-															<td class="sumSingleDouble">&nbsp;</td>
+															<!--<td>&nbsp;</td>-->
+															<!--<td>&nbsp;</td>-->
+															<!--<td>&nbsp;</td>-->
+															<!--<td>&nbsp;</td>-->
+															<!--<td>&nbsp;</td>-->
+
 														</tr>
 													</table>
 												</div>
@@ -917,17 +915,17 @@
 											<div id="cqSsc_hot">
 												<div class="rowbox1">
 													<div class="imgheadl">
-														<a href="/cqssc"><img src="picture/chognqingssc.png" alt="重庆时时彩" /></a>
+														<a href="/cqssc"><img src="/picture/chognqingssc.png" alt="重庆时时彩" /></a>
 													</div>
 													<div class="num_ul">
 														<h1>重庆时时彩 <span class="preDrawIssue"> 223366</span> 期</h1>
 														<p>当前<span class="drawCount">024</span>期，剩<span class="sdrawCountnext">2424</span>期</p>
-														<ul class="kajianhao">
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
+														<ul class="kajianhao" id="kajianhao">
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
 														</ul>
 													</div>
 													<div class="nextkai_time">
@@ -952,7 +950,7 @@
 															<th>中三</th>
 															<th>后三</th>
 														</tr>
-														<tr class="longhu2">
+														<tr class="longhu2" id="longhu2">
 															<td class="sumNum">&nbsp;&nbsp;</td>
 															<td class="sumSingleDouble">&nbsp;&nbsp;</td>
 															<td class="sumBigSmall">&nbsp;&nbsp;</td>
@@ -995,16 +993,16 @@
 														<h1>北京PK10 <span class="preDrawIssue"> 223366</span> 期</h1>
 														<p>当前<span class="drawCount">024</span>期，剩<span class="sdrawCountnext">2424</span>期</p>
 														<ul id="jnumber" class="numberbox">
-															<li class="nub01"></li>
-															<li class="nub02"></li>
-															<li class="nub03"></li>
-															<li class="nub04"></li>
-															<li class="nub05"></li>
-															<li class="nub06"></li>
-															<li class="nub07"></li>
-															<li class="nub08"></li>
-															<li class="nub09"></li>
-															<li class="nub10 li_after"></li>
+															<!--<li class="nub01"></li>-->
+															<!--<li class="nub02"></li>-->
+															<!--<li class="nub03"></li>-->
+															<!--<li class="nub04"></li>-->
+															<!--<li class="nub05"></li>-->
+															<!--<li class="nub06"></li>-->
+															<!--<li class="nub07"></li>-->
+															<!--<li class="nub08"></li>-->
+															<!--<li class="nub09"></li>-->
+															<!--<li class="nub10 li_after"></li>-->
 														</ul>
 													</div>
 													<div class="nextkai_time">
@@ -1027,14 +1025,14 @@
 															<th colspan="3">冠亚和</th>
 														</tr>
 														<tr class="longhu">
-															<td>&nbsp;</td>
-															<td>&nbsp;</td>
-															<td>&nbsp;</td>
-															<td>&nbsp;</td>
-															<td>&nbsp;</td>
-															<td class="sumFS">&nbsp;</td>
-															<td class="sumBigSamll">&nbsp;</td>
-															<td class="sumSingleDouble">&nbsp;</td>
+															<!--<td>&nbsp;</td>-->
+															<!--<td>&nbsp;</td>-->
+															<!--<td>&nbsp;</td>-->
+															<!--<td>&nbsp;</td>-->
+															<!--<td>&nbsp;</td>-->
+															<!--<td class="sumFS">&nbsp;</td>-->
+															<!--<td class="sumBigSamll">&nbsp;</td>-->
+															<!--<td class="sumSingleDouble">&nbsp;</td>-->
 														</tr>
 													</table>
 												</div>
@@ -1067,16 +1065,16 @@
 														<h1>极速赛车 <span class="preDrawIssue"> 223366</span> 期</h1>
 														<p>当前<span class="drawCount">024</span>期，剩<span class="sdrawCountnext">2424</span>期</p>
 														<ul id="jnumber" class="numberbox">
-															<li class="nub01"></li>
-															<li class="nub02"></li>
-															<li class="nub03"></li>
-															<li class="nub04"></li>
-															<li class="nub05"></li>
-															<li class="nub06"></li>
-															<li class="nub07"></li>
-															<li class="nub08"></li>
-															<li class="nub09"></li>
-															<li class="nub10 li_after"></li>
+															<!--<li class="nub01"></li>-->
+															<!--<li class="nub02"></li>-->
+															<!--<li class="nub03"></li>-->
+															<!--<li class="nub04"></li>-->
+															<!--<li class="nub05"></li>-->
+															<!--<li class="nub06"></li>-->
+															<!--<li class="nub07"></li>-->
+															<!--<li class="nub08"></li>-->
+															<!--<li class="nub09"></li>-->
+															<!--<li class="nub10 li_after"></li>-->
 														</ul>
 													</div>
 													<div class="nextkai_time">
@@ -1099,14 +1097,14 @@
 															<th colspan="3">冠亚和</th>
 														</tr>
 														<tr class="longhu">
-															<td>&nbsp;</td>
-															<td>&nbsp;</td>
-															<td>&nbsp;</td>
-															<td>&nbsp;</td>
-															<td>&nbsp;</td>
-															<td class="sumFS">&nbsp;</td>
-															<td class="sumBigSamll">&nbsp;</td>
-															<td class="sumSingleDouble">&nbsp;</td>
+															<!--<td>&nbsp;</td>-->
+															<!--<td>&nbsp;</td>-->
+															<!--<td>&nbsp;</td>-->
+															<!--<td>&nbsp;</td>-->
+															<!--<td>&nbsp;</td>-->
+															<!--<td class="sumFS">&nbsp;</td>-->
+															<!--<td class="sumBigSamll">&nbsp;</td>-->
+															<!--<td class="sumSingleDouble">&nbsp;</td>-->
 														</tr>
 													</table>
 												</div>
@@ -1212,12 +1210,12 @@
 													<div class="num_ul">
 														<h1>重庆时时彩 <span class="preDrawIssue"> 223366</span> 期</h1>
 														<p>当前<span class="drawCount">024</span>期，剩<span class="sdrawCountnext">2424</span>期</p>
-														<ul class="kajianhao">
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
+														<ul class="kajianhao" >
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
 														</ul>
 													</div>
 													<div class="nextkai_time">
@@ -1281,12 +1279,12 @@
 													<div class="num_ul">
 														<h1>天津时时彩 <span class="preDrawIssue"> 223366</span> 期</h1>
 														<p>当前<span class="drawCount">024</span>期，剩<span class="sdrawCountnext">2424</span>期</p>
-														<ul class="kajianhao">
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
+														<ul class="kajianhao" id="kajianhao2">
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
 														</ul>
 													</div>
 													<div class="nextkai_time">
@@ -1342,7 +1340,7 @@
 													</ul>
 												</div>
 											</div>
-											<div id="xjSsc">
+											<div id="jsssc">
 												<div class="rowbox1">
 													<div class="imgheadl">
 														<a href="/view/shishicai_xj/ssc_index.html"><img src="picture/xinjiangssc.png" alt="新疆时时彩" /></a>
@@ -1350,12 +1348,12 @@
 													<div class="num_ul">
 														<h1>新疆时时彩 <span class="preDrawIssue"> 223366</span> 期</h1>
 														<p>当前<span class="drawCount">024</span>期，剩<span class="sdrawCountnext">2424</span>期</p>
-														<ul class="kajianhao">
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
-															<li class="numblueHead"></li>
+														<ul class="kajianhao" id="kajianhao3">
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
+															<!--<li class="numblueHead"></li>-->
 														</ul>
 													</div>
 													<div class="nextkai_time">
@@ -3086,7 +3084,7 @@
 											</table>
 										</div>
 									</li>
-									<li class="cztypell" id="xjSsc">
+									<li class="cztypell" id="jsssc">
 										<div class="cztypelt">
 											<div class="rowbox1">
 												<div class="imgheadl">
@@ -3610,6 +3608,7 @@
 	<script type="text/javascript" src="/js/js/jquery.flexslider-min.js"></script>
 	<script type="text/javascript" src="/js/js/pk10_index.js"></script>
 	<script type="text/javascript" src="/js/js/animate.js"></script>
+	<script type="text/javascript" src="/js/indexlotaward.js"></script>
 	<script type="text/javascript" src="/js/js/index.js"></script>
 	<script src="/js/js/idangerous.swiper.min.js"></script>
 	<script>
