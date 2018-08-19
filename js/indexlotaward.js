@@ -567,53 +567,53 @@ $(function () {
     };
 
     var gdkl10_awardTick = function () {
-        $.get('gdkl10/getGdkl10AwardData.do?' + Math.random(), { ajaxhandler: 'GetPk10AwardData' }, function (data) {
-            if(!data)
+        $.get('gdkl10/getGdkl10AwardData.do?' + Math.random(), {ajaxhandler: 'GetPk10AwardData'}, function (data) {
+            if (!data)
                 return;
             if ((data.current.periodNumber != pk10_currentPeriodNumber)) {
                 $("#gdkl10 .kajianhao").html("");
                 var nums = data.current.awardNumbers.split(',');
-                var str = Number(nums[0])+Number(nums[1])+Number(Number(nums[2]))+Number(nums[3])+Number(nums[4]);
+                var str = Number(nums[0]) + Number(nums[1]) + Number(Number(nums[2])) + Number(nums[3]) + Number(nums[4]);
                 //  cpNumber = data.current.periodNumber;
                 for (var i = 0; i < nums.length; i++) {
-                    $("#gdkl10 .kajianhao").append("<li class='numblueHead'>"+ nums[i] +"</li>");
+                    $("#gdkl10 .kajianhao").append("<li class='numblueHead'>" + nums[i] + "</li>");
                 }
                 $("#gdkl10").find(".sumNum").text(str),
-                    $("#gdkl10").find(".sumSingleDouble").text(str%2 == 0 ? "单" : "双"),
+                    $("#gdkl10").find(".sumSingleDouble").text(str % 2 == 0 ? "单" : "双"),
                     $("#gdkl10").find(".sumBigSmall").text(str > 23 ? "大" : "小");
-               var str_2 =  String(str);
-                if(str_2.charAt(str_2.length-1) > 5){
+                var str_2 = String(str);
+                if (str_2.charAt(str_2.length - 1) > 5) {
                     $("#gdkl10 .longhu2").find(".lastBigSmall").text("尾大");
-                }else {
+                } else {
                     $("#gdkl10 .longhu2").find(".lastBigSmall").text("尾小");
                 }
 
-                if(Number(nums[0]) < Number(nums[7])){
+                if (Number(nums[0]) < Number(nums[7])) {
                     $("#gdkl10 .longhu2").find(".firstDragonTiger").text("虎");
-                }else if( Number(nums[0]) > Number(nums[7])){
+                } else if (Number(nums[0]) > Number(nums[7])) {
                     $("#gdkl10 .longhu2").find(".firstDragonTiger").text("龙");
-                }else {
+                } else {
                     $("#gdkl10 .longhu2").find(".firstDragonTiger").text("和");
                 }
-                if(Number(nums[1]) < Number(nums[6])){
+                if (Number(nums[1]) < Number(nums[6])) {
                     $("#gdkl10 .longhu2").find(".secondDragonTiger").text("虎");
-                }else if( Number(nums[1]) > Number(nums[6])){
+                } else if (Number(nums[1]) > Number(nums[6])) {
                     $("#gdkl10 .longhu2").find(".secondDragonTiger").text("龙");
-                }else {
+                } else {
                     $("#gdkl10 .longhu2").find(".secondDragonTiger").text("和");
                 }
-                if(Number(Number(nums[2])) < Number(nums[5])){
+                if (Number(Number(nums[2])) < Number(nums[5])) {
                     $("#gdkl10 .longhu2").find(".thirdDragonTiger").text("虎");
-                }else if( Number(Number(nums[2])) > Number(nums[5])){
+                } else if (Number(Number(nums[2])) > Number(nums[5])) {
                     $("#gdkl10 .longhu2").find(".thirdDragonTiger").text("龙");
-                }else {
+                } else {
                     $("#gdkl10 .longhu2").find(".thirdDragonTiger").text("和");
                 }
-                if(Number(nums[3]) < Number(nums[4])){
+                if (Number(nums[3]) < Number(nums[4])) {
                     $("#gdkl10 .longhu2").find(".fourthDragonTiger").text("虎");
-                }else if( Number(nums[4]) < Number(nums[3])){
+                } else if (Number(nums[4]) < Number(nums[3])) {
                     $("#gdkl10 .longhu2").find(".fourthDragonTiger").text("龙");
-                }else {
+                } else {
                     $("#gdkl10 .longhu2").find(".fourthDragonTiger").text("和");
                 }
 
@@ -621,13 +621,55 @@ $(function () {
                 var _time = data.current.awardTime.substring(11, 16);
                 //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
                 $("#gdkl10 .drawCount").html(data.next.periodNumber);
-                $("#gdkl10 .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
+                $("#gdkl10 .sdrawCountnext").html(data.firstPeriod + 179 - cpNumber);
+            }
+            ;
+        });
+    };
+    var gd11x5_awardTick = function () {
+        $.get('gd11x5/getgd11x5AwardData.do?' + Math.random(), { ajaxhandler: 'GetPk10AwardData' }, function (data) {
+            if(!data)
+                return;
+            if ((data.current.periodNumber != pk10_currentPeriodNumber)) {
 
+                $("#gd11x5 .kajianhao").html("");
+                var nums = data.current.awardNumbers.split(',');
+                var str = Number(nums[0])+Number(nums[1])+Number(nums[2])+Number(nums[3])+Number(nums[4]);
+                //  cpNumber = data.current.periodNumber;
+
+                $("#gd11x5 .longhu2").find(".sumNum").text(str),
+                    $("#gd11x5 .longhu2").find(".sumSingleDouble").text(str%2 == 0 ? "双" : "单"),
+                    $("#gd11x5 .longhu2").find(".sumBigSmall").text(str == 30? "和":str > 30 ? "大" : "小");
+
+                for (var i = 0; i < nums.length; i++) {
+                        $("#gd11x5 .kajianhao").append("<li class='numblueHead'>"+nums[i]+"</li>")
+                }
+
+
+                if ((nums[0] == nums[1]) && (nums[0] == nums[2]))
+                {    type = '豹子';}
+                else if (((nums[1] - nums[0]) == (nums[2] - nums[1])) && ((nums[1] - nums[0]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {    type = '顺子';}
+                else if (nums[0] == nums[1] || nums[1] == nums[2]) {    type = '对子';} else if ((nums[1] - nums[0]) == 1 || (nums[2] - nums[1]) == 1) {    type = '半顺';}
+                else {    type = '杂六';}$("#tjSsc").find(".behindThree").text(type);var type1 = '';if ((nums[1] == nums[2]) && (nums[1] == nums[3])) {    type1 = '豹子';}
+                else if (((nums[2] - nums[1]) == (nums[3] - nums[2])) && ((nums[2] - nums[1]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {    type1 = '顺子';}
+                else if (nums[1] == nums[2] || nums[2] == nums[3]) {    type1 = '对子';} else if ((nums[2] - nums[1]) == 1 || (nums[3] - nums[2]) == 1) {    type1= '半顺';}
+                else {    type1 = '杂六';}$("#tjSsc").find(".betweenThree").text(type1);var type2 = '';if ((nums[2] == nums[3]) && (nums[2] == nums[4]))
+                {    type2 = '豹子';} else if (((nums[3] - nums[2]) == (nums[4] - nums[3])) && ((nums[3] - nums[2]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9)))
+                {    type2 = '顺子';} else if (nums[2] == nums[3] || nums[3] == nums[4]) {    type2 = '对子';} else if ((nums[3] - nums[2]) == 1 || (nums[4] - nums[3]) == 1)
+                {    type2= '半顺';} else {    type2 = '杂六';}
+
+
+
+                cpNumber = data.current.periodNumber;
+                var _time = data.current.awardTime.substring(11, 16);
+                //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
+                $("#cqSsc_hot .drawCount").html(data.next.periodNumber);
+                $("#cqSsc_hot .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
 
                 //drawTrend();
             }
             pk10_currentPeriodNumber = data.current.periodNumber;
-            window.setTimeout(tjssc_awardTick, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval);
+            window.setTimeout(gd11x5_awardTick,data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval);
         }, 'json');
     };
 
@@ -703,6 +745,8 @@ $(function () {
     window.setTimeout(jsssc_awardTick, 5000);
     window.setTimeout(jssc_awardTick, 5000);
     window.setTimeout(xyft_awardTick, 500);
+    window.setTimeout(gd11x5_awardTick, 5000);
+//    window.setTimeout(gd_awardTick, 500);
 
     $(".award .lot-menu").hover(function () {
         $(this).parents(".lot").children(".lot-menu").removeClass("cur");
