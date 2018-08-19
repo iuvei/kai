@@ -2,12 +2,15 @@
 namespace Fuzhi\BLL;
 
 use Fuzhi\BLL\RemoteDataMgr;
+
 require_once "RemoteDataMgr.php";
 require_once "ZstAnalyser.php";
 require_once "ConfigMgr.php";
+
 class LottoryDataMgr
 {
     private static $_instance = null;
+
     public static function getInstance()
     {
         if (is_null(self::$_instance) || isset(self::$_instance)) {
@@ -15,8 +18,10 @@ class LottoryDataMgr
         }
         return self::$_instance;
     }
+
     private $prename = 'lot_';
     public $types;
+
     static function getAwardData($type, $page, $param)
     {
         $ret = '';
@@ -94,19 +99,21 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     private function getLottoryByCnt($module, $lotType, $count)
     {
-        $lotType = (int) $lotType;
-        $count = (int) $count;
+        $lotType = (int)$lotType;
+        $count = (int)$count;
         $ret = $module->query("select replace(dat_expect,'-','') dat_expect,dat_codes,dat_open_time from {$this->prename}data where dat_type=%d order by dat_expect desc limit %d", $lotType, $count);
         if ($ret === false) {
             $ret = array();
         }
         return $ret;
     }
+
     private function getLottoryByDate($module, $lotType, $date)
     {
-        $lotType = (int) $lotType;
+        $lotType = (int)$lotType;
         $date = date('Y-m-d', strtotime($date));
         $startTime = strtotime($date . ' 00:00:00');
         $endTime = strtotime($date . ' 23:59:59');
@@ -116,6 +123,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     private function getData($type, $page, $param)
     {
         $ret = false;
@@ -128,10 +136,10 @@ class LottoryDataMgr
             if ($page == "numbertrendData.do") {
                 $ret = $this->getNumberTrendData($type, $page, $lotType, $expire);
             } else {
-                if ($page == 'getPk10AwardData.do' || $page == 'getPk10AwardTimes.do' || $page == 'getCqsscAwardData.do' || $page == 'getCqsscAwardTimes.do' || $page == 'getGdkl10AwardData.do' || $page == 'getGdkl10AwardTimes.do' || $page == 'getJsk3AwardData.do' || $page == 'getJsk3AwardTimes.do' || $page == 'gettjsscAwardData.do' || $page == 'getxjsscAwardData.do' || $page == 'getfc3dAwardData.do'  || $page == 'getpl3AwardData.do' || $page == 'getgd11x5AwardData.do' || $page == 'gettjsscAwardTimes.do' || $page == 'getpl3AwardTimes.do' || $page == 'getfc3dcAwardTimes.do' || $page == 'getxjsscAwardTimes.do' || $page == 'getShsslAwardData.do' || $page == 'getShsslAwardTimes.do' || $page == 'getXyncAwardData.do' || $page == 'getXyncAwardTimes.do' || $page == 'getkl8AwardData.do' || $page == 'getkl8AwardTimes.do') {
-					//die("s");
+                if ($page == 'getPk10AwardData.do' || $page == 'getPk10AwardTimes.do' || $page == 'getCqsscAwardData.do' || $page == 'getCqsscAwardTimes.do' || $page == 'getGdkl10AwardData.do' || $page == 'getGdkl10AwardTimes.do' || $page == 'getJsk3AwardData.do' || $page == 'getJsk3AwardTimes.do' || $page == 'gettjsscAwardData.do' || $page == 'getxjsscAwardData.do' || $page == 'getfc3dAwardData.do' || $page == 'getpl3AwardData.do' || $page == 'getgd11x5AwardData.do' || $page == 'gettjsscAwardTimes.do' || $page == 'getpl3AwardTimes.do' || $page == 'getfc3dcAwardTimes.do' || $page == 'getxjsscAwardTimes.do' || $page == 'getShsslAwardData.do' || $page == 'getShsslAwardTimes.do' || $page == 'getXyncAwardData.do' || $page == 'getXyncAwardTimes.do' || $page == 'getkl8AwardData.do' || $page == 'getkl8AwardTimes.do') {
+                    //die("s");
                     $ret = $this->getAwardTime($type, $page, $lotType, $expire);
-				//	var_dump($ret);die;
+                    //	var_dump($ret);die;
                 } else {
                     if ($page == "GetPk10AnalysisData") {
                         $ret = $this->getPk10AnalysisData($type, $page, $lotType, $expire);
@@ -231,7 +239,7 @@ class LottoryDataMgr
                             } else {
                                 if ($type == 'jsssc') {
                                     $ret = $this->getcqsscData($type, $page, $param);
-                                }else{
+                                } else {
                                     if ($type == 'missing') {
                                         if ($page == "getMissingList.do") {
                                             $ret = $this->getMissingList($type, $page, $param);
@@ -254,6 +262,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     private function getPk10Data($type, $page, $param)
     {
         $ret = false;
@@ -308,6 +317,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     private function getcqsscData($type, $page, $param)
     {
         $ret = false;
@@ -330,6 +340,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     private function getGdkl10Data($type, $page, $param)
     {
         $ret = false;
@@ -348,6 +359,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     private function getKl8Data($type, $page, $param)
     {
         $ret = false;
@@ -362,6 +374,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     private function getXyncData($type, $page, $param)
     {
         $ret = false;
@@ -384,10 +397,11 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getNumberTrendData($type, $page, $lotType, $expire)
     {
-        $ball = (int) wjStrFilter(I('get.ball'));
-        $count = (int) wjStrFilter(I('get.count'));
+        $ball = (int)wjStrFilter(I('get.ball'));
+        $count = (int)wjStrFilter(I('get.count'));
         $cacheName = $lotType . '_' . $page . '_' . $ball . '_' . $count;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
@@ -403,7 +417,7 @@ class LottoryDataMgr
                 if ($lotType == 22) {
                     $retData[$i]["Value"] = "" . ZstAnalyser::getArrSum($OpenCodes);
                 } else {
-                    $retData[$i]["Value"] = "" . (int) $OpenCodes[$ball - 1];
+                    $retData[$i]["Value"] = "" . (int)$OpenCodes[$ball - 1];
                 }
                 $retData[$i]["Key"] = substr($openedCaiList[$i]["dat_expect"], -2);
             }
@@ -412,13 +426,14 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     private function getHistoryData($type, $page, $lotType, $expire)
     {
         if (IS_POST) {
-            $count = (int) wjStrFilter(I('post.count'));
+            $count = (int)wjStrFilter(I('post.count'));
             $date = wjStrFilter(I('post.date'));
         } else {
-            $count = (int) wjStrFilter(I('get.count'));
+            $count = (int)wjStrFilter(I('get.count'));
             $date = wjStrFilter(I('get.date'));
         }
         $cacheName = $type . '_' . $page . '_' . $count . '_' . $date;
@@ -430,7 +445,7 @@ class LottoryDataMgr
             $retData["code"] = null;
             $retData["msg"] = null;
             $retData["rows"] = array();
-			if(isset($_GET['adate'])) $date=date("Y-m-d",time());
+            if (isset($_GET['adate'])) $date = date("Y-m-d", time());
             if ($date == '' || $date == 'null') {
                 $openedCaiList = $this->getLottoryByCnt($module, $lotType, $count);
             } else {
@@ -450,7 +465,7 @@ class LottoryDataMgr
                 $retData["rows"][$i]["gameId"] = $this->getGameIdByLotType($lotType);
                 for ($j = 0; $j < 21; $j++) {
                     if ($j < count($OpenCodes)) {
-                        $retData["rows"][$i]["n" . ($j + 1)] = (int) $OpenCodes[$j];
+                        $retData["rows"][$i]["n" . ($j + 1)] = (int)$OpenCodes[$j];
                     } else {
                         $retData["rows"][$i]["n" . ($j + 1)] = null;
                     }
@@ -464,6 +479,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     private function getAwardTime($type, $page, $lotType, $expire)
     {
         $module = M();
@@ -474,20 +490,20 @@ class LottoryDataMgr
         if (substr($page, -7) == "Data.do") {
             $kjHao = $module->query("select dat_codes,replace(dat_expect,'-','') dat_expect, dat_open_time from {$this->prename}data where dat_type={$lotType} order by dat_expect desc limit 1");
             //print_r($kjHao);exit;
-			//echo $module->getLastSql();
+            //echo $module->getLastSql();
             $time = $kjHao[0]['dat_open_time'];
             $currentNo = $this->getGameCurrentNo($lotType, $module, $time);
-			//var_dump($currentNo);die;
+            //var_dump($currentNo);die;
             $nextNo = $this->getGameNextNo($lotType, $module, $time);
         } else {
             $currentNo = $this->getGameCurrentNo($lotType, $module, $time);
-			//dump($lotType);die;
+            //dump($lotType);die;
             $nextNo = $this->getGameNextNo($lotType, $module, $time);
-			//$newqihao = str_replace("-","",$currentNo['actionNo']);
+            //$newqihao = str_replace("-","",$currentNo['actionNo']);
             $kjHao = $module->query("select dat_codes from {$this->prename}data where dat_type={$lotType} and dat_expect='{$currentNo['actionNo']}'");
-			if(!is_array($kjHao) || !$kjHao['dat_codes']){
-				$kjHao = $module->query("select dat_codes from {$this->prename}data where dat_type={$lotType} order by dat_id desc limit 1");
-			}
+            if (!is_array($kjHao) || !$kjHao['dat_codes']) {
+                $kjHao = $module->query("select dat_codes from {$this->prename}data where dat_type={$lotType} order by dat_id desc limit 1");
+            }
 
         }
         $pan = null;
@@ -501,7 +517,7 @@ class LottoryDataMgr
             }
             $kjHao = '';
             foreach ($data as $value) {
-                $t = (int) $value;
+                $t = (int)$value;
                 if ($lotType == 23) {
                     $t = $t > 9 ? $t : '0' . $t;
                 }
@@ -512,7 +528,7 @@ class LottoryDataMgr
             }
         }
         $retData["time"] = $MillisecondTime;
-       // print_r($currentNo);exit;
+        // print_r($currentNo);exit;
         $retData["firstPeriod"] = $currentNo["actionNo"] - $currentNo["actionNoIndex"];
         $retData["apiVersion"] = 1;
         $retData["current"]["awardTime"] = $currentNo["actionTime"];
@@ -521,7 +537,7 @@ class LottoryDataMgr
         } else {
             $retData["current"]["periodNumber"] = $currentNo["actionNo"];
         }
-		//print_r($currentNo["actionNo"]);exit;
+        //print_r($currentNo["actionNo"]);exit;
         $retData["current"]["fullPeriodNumber"] = $currentNo["actionNo"];
         $retData["current"]["periodNumberStr"] = null;
         $retData["current"]["awardTimeInterval"] = 0;
@@ -547,6 +563,7 @@ class LottoryDataMgr
         $ret = json_encode($retData);
         return $ret;
     }
+
     function getPk10AnalysisData($type, $page, $lotType, $expire)
     {
         $module = M();
@@ -571,7 +588,7 @@ class LottoryDataMgr
             }
             $kjHao = '';
             foreach ($data as $value) {
-                $t = (int) $value;
+                $t = (int)$value;
                 if ($lotType == 23) {
                     $t = $t > 9 ? $t : '0' . $t;
                 }
@@ -592,6 +609,7 @@ class LottoryDataMgr
         $ret = json_encode($retData);
         return $ret;
     }
+
     function getBallStat($type, $page, $lotType, $expire)
     {
         $cacheName = $type . '_' . $page . '_' . wjStrFilter(I('get.today'));
@@ -636,23 +654,23 @@ class LottoryDataMgr
                         $foundNew = true;
                     }
                 }
-				//dump($history);die;
+                //dump($history);die;
                 krsort($history);
-				
+
                 if (count($history) > 29) {
                     $history = array_slice($history, 0, 29);
                 }
                 if ($foundNew) {
                     $cfg->setValue($module, $type, "BallStatLast19Days", json_encode($history));
                 }
-				
+
                 foreach ($history as $date => $showsHis) {
                     $isEmpty = true;
                     foreach ($showsHis as $values) {
                         foreach ($values as $value) {
-							//dump($values);
+                            //dump($values);
                             if ($value <> 0) {
-								//unset($history[$date]);
+                                //unset($history[$date]);
                                 $isEmpty = false;
                             }
                         }
@@ -660,34 +678,35 @@ class LottoryDataMgr
                     //if ($isEmpty) {
                     //   break;
                     //}
-					//echo $iOpenCodeCnt;die;
-					if(!$isEmpty){
-                    for ($i = 0; $i < $iOpenCodeCnt; $i++) {
-                        for ($j = 0; $j < 4; $j++) {
-                            $row = array();
-                            $row['id'] = $iIndex++;
-                            $row['gameId'] = null;
-                            $row['rank'] = $i + 1;
-                            $row['dataType'] = $j < 2 ? 6 : 5;
-                            $row['num'] = $j % 2 + 1;
-                            $row['nowMissing'] = null;
-                            $row['dayMissing'] = null;
-                            $row['dayTotalNum'] = $showsHis[$i][$j];
-                            $row['lotteryDate'] = $date . " 00:00:00";
-                            $row['lotteryTime'] = null;
-                            $retData[] = $row;
+                    //echo $iOpenCodeCnt;die;
+                    if (!$isEmpty) {
+                        for ($i = 0; $i < $iOpenCodeCnt; $i++) {
+                            for ($j = 0; $j < 4; $j++) {
+                                $row = array();
+                                $row['id'] = $iIndex++;
+                                $row['gameId'] = null;
+                                $row['rank'] = $i + 1;
+                                $row['dataType'] = $j < 2 ? 6 : 5;
+                                $row['num'] = $j % 2 + 1;
+                                $row['nowMissing'] = null;
+                                $row['dayMissing'] = null;
+                                $row['dayTotalNum'] = $showsHis[$i][$j];
+                                $row['lotteryDate'] = $date . " 00:00:00";
+                                $row['lotteryTime'] = null;
+                                $retData[] = $row;
+                            }
                         }
                     }
                 }
-				}
-				//dump($retData);die;
+                //dump($retData);die;
             }
             $ret = json_encode($retData);
             S($cacheName, $ret, array('type' => 'file', 'expire' => $expire));
         }
-		//dump($ret);die;
+        //dump($ret);die;
         return $ret;
     }
+
     function getPk10MergeData($type, $page, $lotType, $expire)
     {
         $cacheName = $type . '_' . $page;
@@ -712,12 +731,12 @@ class LottoryDataMgr
                 for ($i = 0; $i < 10; $i++) {
                     for ($j = 0; $j < 3; $j++) {
                         if ($j == 0) {
-                            $isTarget = (int) $OpenCodes[$i] > 5;
+                            $isTarget = (int)$OpenCodes[$i] > 5;
                         } else {
                             if ($j == 1) {
-                                $isTarget = (int) $OpenCodes[$i] % 2 != 0;
+                                $isTarget = (int)$OpenCodes[$i] % 2 != 0;
                             } else {
-                                $isTarget = (int) $OpenCodes[$i] > (int) $OpenCodes[9 - $i];
+                                $isTarget = (int)$OpenCodes[$i] > (int)$OpenCodes[9 - $i];
                             }
                         }
                         if ($isTarget && $omits[$i][$j * 2] < 0) {
@@ -777,7 +796,7 @@ class LottoryDataMgr
                     $row = array();
                     $row['id'] = $iIndex++;
                     $row['gameId'] = null;
-                    $row['rank'] = (int) $keys[$i] + 1;
+                    $row['rank'] = (int)$keys[$i] + 1;
                     $row['dataType'] = $key < 2 ? 6 : ($key < 4 ? 5 : 2);
                     $row['num'] = $key < 2 ? $key % 2 : $key % 2 + 1;
                     $row['nowMissing'] = $lastValue;
@@ -793,6 +812,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getPk10KaiJiang($type, $page, $lotType, $expire)
     {
         $date = wjStrFilter(I('get.date'));
@@ -821,7 +841,7 @@ class LottoryDataMgr
                 $retData["rows"][$i]["gameId"] = $this->getGameIdByLotType($lotType);
                 for ($j = 0; $j < 21; $j++) {
                     if ($j < 10) {
-                        $retData["rows"][$i]["n" . ($j + 1)] = (int) $OpenCodes[$j];
+                        $retData["rows"][$i]["n" . ($j + 1)] = (int)$OpenCodes[$j];
                     } else {
                         $retData["rows"][$i]["n" . ($j + 1)] = null;
                     }
@@ -835,6 +855,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getMissingList($type, $page, $param)
     {
         $ret = false;
@@ -842,11 +863,11 @@ class LottoryDataMgr
         $postParam = "";
         $cacheName = NULL;
         $expire = 2;
-        $dataType = (int) wjStrFilter(I('post.dataType'));
-        $gameId = (int) wjStrFilter(I('post.gameId'));
-        $rank = (int) wjStrFilter(I('post.rank'));
-        $orderCloumn = (int) wjStrFilter(I('post.orderCloumn'));
-        $orderType = (int) wjStrFilter(I('post.orderType'));
+        $dataType = (int)wjStrFilter(I('post.dataType'));
+        $gameId = (int)wjStrFilter(I('post.gameId'));
+        $rank = (int)wjStrFilter(I('post.rank'));
+        $orderCloumn = (int)wjStrFilter(I('post.orderCloumn'));
+        $orderType = (int)wjStrFilter(I('post.orderType'));
         $cacheName = $type . '_' . $page . '_' . $dataType . '_' . $gameId . '_' . $rank . '_' . $orderCloumn . '_' . $orderType;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
@@ -1117,9 +1138,9 @@ class LottoryDataMgr
                         break;
                     }
                     $row = array();
-                    $row["num"] = (int) $b;
-                    $row["nowMissing"] = $o == 0 ? $ballWin[$b] : -(int) $o;
-                    $row["dayTotalNum"] = (int) $ballCnt[$b];
+                    $row["num"] = (int)$b;
+                    $row["nowMissing"] = $o == 0 ? $ballWin[$b] : -(int)$o;
+                    $row["dayTotalNum"] = (int)$ballCnt[$b];
                     $row["dayMissing"] = $o;
                     $row["weekTotalNum"] = $o;
                     $row["monthTotalNum"] = $o;
@@ -1136,6 +1157,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getPk10EobsLuZhu($type, $page, $lotType, $expire)
     {
         $cacheName = $type . '_' . $page;
@@ -1186,6 +1208,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function addPk10LzValue(&$data, $value, $cntKey, &$cnt, &$lastValue, &$iIndex, $cntOther = '')
     {
         if ($value == $cntKey) {
@@ -1209,6 +1232,7 @@ class LottoryDataMgr
             }
         }
     }
+
     function addPk10LzHeader(&$value, $iBall, $iCnt, $iTotal, $first, $second, $descr)
     {
         $data = "";
@@ -1219,6 +1243,7 @@ class LottoryDataMgr
         $data = $data . "<table class=\"roadmap-table \"><tbody><tr valign=\"top\">";
         $value = $data . $value;
     }
+
     function getPk10GuanYaLuzhuBseo($type, $page, $lotType, $expire)
     {
         $cacheName = $type . '_' . $page;
@@ -1285,6 +1310,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getPk10LuZhuHeOtherTemplate($descr, $value1, $value2, $cols, $expect, $mark)
     {
         $ret = '';
@@ -1295,6 +1321,7 @@ class LottoryDataMgr
         $ret = $ret . "<div class='betdata'><div><span>冠亚和：</span> <span>{$mark}</span></div></div><div class='bottom'></div></div></td></tr></table>";
         return $ret;
     }
+
     function addPk10LuZhuHeOtherValue(&$data, $value, $cntKey, &$cnt, &$lastValue, &$iIndex)
     {
         if ($value == $cntKey) {
@@ -1314,10 +1341,11 @@ class LottoryDataMgr
             $data = $data . "<p>" . $value . "</p>";
         }
     }
+
     function getPk10DataList($type, $page, $lotType, $expire)
     {
-        $num = (int) wjStrFilter(I('get.num'));
-        $count = (int) wjStrFilter(I('get.count'));
+        $num = (int)wjStrFilter(I('get.num'));
+        $count = (int)wjStrFilter(I('get.count'));
         $cacheName = $type . '_' . $page . '_' . $num . '_' . $count;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
@@ -1336,10 +1364,10 @@ class LottoryDataMgr
                         continue;
                     }
                     if ($pos > -1) {
-                        $nums[] = (int) $OpenCodes[$pos];
+                        $nums[] = (int)$OpenCodes[$pos];
                     }
                     for ($i = 0; $i < 10; $i++) {
-                        if ((int) $OpenCodes[$i] == $num) {
+                        if ((int)$OpenCodes[$i] == $num) {
                             $pos = $i;
                             break;
                         }
@@ -1360,6 +1388,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function findPk10TodayCount($type, $page, $lotType, $expire)
     {
         $cacheName = $type . '_' . $page;
@@ -1420,11 +1449,12 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function findPk10LongHuLiShi($type, $page, $lotType, $expire)
     {
-        $gameId = (int) wjStrFilter(I('get.gameId'));
-        $type = (int) wjStrFilter(I('get.type'));
-        $rows = (int) wjStrFilter(I('get.rows'));
+        $gameId = (int)wjStrFilter(I('get.gameId'));
+        $type = (int)wjStrFilter(I('get.type'));
+        $rows = (int)wjStrFilter(I('get.rows'));
         $cacheName = $type . '_' . $page . '_' . $gameId . '_' . $type . '_' . $rows;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
@@ -1482,6 +1512,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function calZstDataPk10LongHuDay($module, $lotType, $day)
     {
         $shows = array();
@@ -1506,9 +1537,10 @@ class LottoryDataMgr
         }
         return $shows;
     }
+
     protected function getDataListByAll($type, $page, $lotType, $expire)
     {
-        $count = (int) wjStrFilter(I('get.count'));
+        $count = (int)wjStrFilter(I('get.count'));
         $cacheName = $type . '_' . $page . '_' . $count;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
@@ -1532,15 +1564,15 @@ class LottoryDataMgr
                 }
                 for ($i = 0; $i < $iAllCodesCnt; $i++) {
                     if ($pos[$i] > -1) {
-                        $nums[$i][] = (int) $OpenCodes[$pos[$i]];
+                        $nums[$i][] = (int)$OpenCodes[$pos[$i]];
                         $pos[$i] = -1;
                     }
                 }
                 for ($i = 0; $i < $iOpenCodeCnt; $i++) {
                     if ($bFirstZero) {
-                        $pos[(int) $OpenCodes[$i]] = $i;
+                        $pos[(int)$OpenCodes[$i]] = $i;
                     } else {
-                        $pos[(int) $OpenCodes[$i] - 1] = $i;
+                        $pos[(int)$OpenCodes[$i] - 1] = $i;
                     }
                 }
             }
@@ -1557,6 +1589,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function findPk10ColdHotNumber($type, $page, $lotType, $expire)
     {
         $cacheName = $type . '_' . $page;
@@ -1600,7 +1633,7 @@ class LottoryDataMgr
                     }
                     if ($iColumn == 1) {
                         if ($cnt >= 4) {
-                            $ZstData = $ZstData . "<i style='position: relative;' class='pk-no" . (int) $ball . "'>";
+                            $ZstData = $ZstData . "<i style='position: relative;' class='pk-no" . (int)$ball . "'>";
                             $ZstData = $ZstData . "<span style='display: none;' class='redBalls2'>{$cnt}</span></i>";
                         } else {
                             $ZstData = $ZstData . "</td>" . $rowHead;
@@ -1609,14 +1642,14 @@ class LottoryDataMgr
                     }
                     if ($iColumn == 2) {
                         if ($cnt >= 2) {
-                            $ZstData = $ZstData . "<i style='position: relative;' class='pk-no" . (int) $ball . "'></i>";
+                            $ZstData = $ZstData . "<i style='position: relative;' class='pk-no" . (int)$ball . "'></i>";
                         } else {
                             $ZstData = $ZstData . "</td>" . $rowHead;
                             $iColumn = 3;
                         }
                     }
                     if ($iColumn == 3) {
-                        $ZstData = $ZstData . "<i style='position: relative;' class='pk-no" . (int) $ball . "'></i>";
+                        $ZstData = $ZstData . "<i style='position: relative;' class='pk-no" . (int)$ball . "'></i>";
                     }
                 }
                 $ZstData = $ZstData . "</td></tr>";
@@ -1627,11 +1660,12 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getLmcList($type, $page, $param)
     {
-        $dateType = (int) wjStrFilter(I('post.dateType'));
-        $gameId = (int) wjStrFilter(I('post.gameId'));
-        $rank = (int) wjStrFilter(I('post.rank'));
+        $dateType = (int)wjStrFilter(I('post.dateType'));
+        $gameId = (int)wjStrFilter(I('post.gameId'));
+        $rank = (int)wjStrFilter(I('post.rank'));
         $expire = 2;
         $cacheName = $type . '_' . $page;
         $ret = S($cacheName);
@@ -1704,6 +1738,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function calLmcListDay($module, $lotType, $day, $rank, $threshold)
     {
         $shows = array();
@@ -1722,7 +1757,7 @@ class LottoryDataMgr
             if (count($OpenCodes) <= $rank) {
                 continue;
             }
-            $code = (int) $OpenCodes[$rank];
+            $code = (int)$OpenCodes[$rank];
             $m = $code >= $threshold ? 0 : 1;
             $n = $code >= $threshold ? 1 : 0;
             $omits[$m]++;
@@ -1745,9 +1780,10 @@ class LottoryDataMgr
         }
         return $shows;
     }
+
     function getTodayNum($type, $page, $param)
     {
-        $gameId = (int) wjStrFilter(I('get.gameId'));
+        $gameId = (int)wjStrFilter(I('get.gameId'));
         $expire = 2;
         $cacheName = $type . '_' . $page . '_' . $gameId;
         $ret = S($cacheName);
@@ -1768,7 +1804,7 @@ class LottoryDataMgr
             for ($i = 0; $i < count($openedCaiList); $i++) {
                 $OpenCodes = ZstAnalyser::getCodeArr($openedCaiList[$i]["dat_codes"]);
                 for ($j = 0; $j < count($OpenCodes); $j++) {
-                    $ball = (int) $OpenCodes[$j];
+                    $ball = (int)$OpenCodes[$j];
                     $ballCnt[$ball]++;
                     if ($ball % 2 != 0) {
                         $valueCnt[0]++;
@@ -1831,9 +1867,10 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function findPk10TwosideCount($type, $page, $lotType, $expire)
     {
-        $typeA = (int) wjStrFilter(I('get.type'));
+        $typeA = (int)wjStrFilter(I('get.type'));
         $cacheName = $type . '_' . $page . '_' . $typeA;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
@@ -1848,7 +1885,7 @@ class LottoryDataMgr
                     if (count($OpenCodes) < 10) {
                         continue;
                     }
-                    $m = (int) ($iIndex / 10);
+                    $m = (int)($iIndex / 10);
                     if ($iIndex % 10 == 0) {
                         $shows[$m]["date"] = '';
                         $shows[$m]["start"] = '';
@@ -1890,9 +1927,10 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getPk10AwardList($type, $page, $lotType, $expire)
     {
-        $count = (int) wjStrFilter(I('get.count'));
+        $count = (int)wjStrFilter(I('get.count'));
         $cacheName = $type . '_' . $page . '_' . $count;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
@@ -1908,9 +1946,9 @@ class LottoryDataMgr
                         continue;
                     }
                     $row = array();
-                    $row['p'] = (double) $openedCai['dat_expect'];
+                    $row['p'] = (double)$openedCai['dat_expect'];
                     for ($i = 0; $i < count($OpenCodes); $i++) {
-                        $OpenCodes[$i] = (int) $OpenCodes[$i];
+                        $OpenCodes[$i] = (int)$OpenCodes[$i];
                     }
                     $row['nums'] = $OpenCodes;
                     $retData['datas'][] = $row;
@@ -1921,10 +1959,11 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getPk10PositionTrendData($type, $page, $lotType, $expire)
     {
-        $ball = (int) wjStrFilter(I('get.ball'));
-        $count = (int) wjStrFilter(I('get.count'));
+        $ball = (int)wjStrFilter(I('get.ball'));
+        $count = (int)wjStrFilter(I('get.count'));
         $cacheName = $lotType . '_' . $page . '_' . $ball . '_' . $count;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
@@ -1937,7 +1976,7 @@ class LottoryDataMgr
                     continue;
                 }
                 for ($j = 0; $j < 10; $j++) {
-                    if ((int) $OpenCodes[$j] == $ball) {
+                    if ((int)$OpenCodes[$j] == $ball) {
                         break;
                     }
                 }
@@ -1949,9 +1988,10 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getPk10GuangYaTrendData($type, $page, $lotType, $expire)
     {
-        $count = (int) wjStrFilter(I('get.count'));
+        $count = (int)wjStrFilter(I('get.count'));
         $cacheName = $lotType . '_' . $page . '_' . $count;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
@@ -1971,6 +2011,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getTwoBallRemind($type, $page, $lotType, $expire)
     {
         $cacheName = $lotType . '_' . $page;
@@ -1993,7 +2034,7 @@ class LottoryDataMgr
                     continue;
                 }
                 for ($j = 0; $j < count($OpenCodes); $j++) {
-                    $OpenCodes[$j] = (int) $OpenCodes[$j];
+                    $OpenCodes[$j] = (int)$OpenCodes[$j];
                 }
                 $twoBall = ZstAnalyser::fetchRepeatMemberInArray($OpenCodes);
                 if (count($twoBall) > 0) {
@@ -2018,6 +2059,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getcqsscLuZhuTongji($type, $page, $lotType, $expire)
     {
         $typeA = wjStrFilter(I('get.type'));
@@ -2108,6 +2150,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getcqsscLonghuLuzhuData($type, $page, $lotType, $expire)
     {
         $cacheName = $type . '_' . $page;
@@ -2115,7 +2158,7 @@ class LottoryDataMgr
         if ($ret === false || $ret == '') {
             $ZstData = '';
             $module = M();
-            $today =  empty($_GET['date']) ? date('Y-m-d') : $_GET['date'];
+            $today = empty($_GET['date']) ? date('Y-m-d') : $_GET['date'];
             $values = array();
             $cnt = array();
             $last = array();
@@ -2152,6 +2195,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function addcqsscLonghuLuzhuDataHeader(&$value, $iCntOne, $iCntTwo, $iCntThree, $first, $second, $three, $descr)
     {
         $data = "";
@@ -2165,6 +2209,7 @@ class LottoryDataMgr
         $data = $data . "<table class=\"roadmap-table \"><tbody><tr valign=\"top\">";
         $value = $data . $value;
     }
+
     function getcqsscHaomaLuData($type, $page, $lotType, $expire)
     {
         $date = wjStrFilter(I('get.date'));
@@ -2198,7 +2243,7 @@ class LottoryDataMgr
                     continue;
                 }
                 for ($i = 0; $i < $iOpenCodeCnt; $i++) {
-                    $OpenCodes[$i] = (int) $OpenCodes[$i];
+                    $OpenCodes[$i] = (int)$OpenCodes[$i];
                 }
                 for ($i = 0; $i < $iAllCodesCnt; $i++) {
                     if (in_array($i, $OpenCodes)) {
@@ -2218,6 +2263,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getNumberStat($type, $page, $lotType, $expire)
     {
         $cacheName = $type . '_' . $page . '_' . wjStrFilter(I('get.today'));
@@ -2287,29 +2333,30 @@ class LottoryDataMgr
                     //if ($isEmpty) {
                     //    break;
                     //}
-					if(!$isEmpty){
-                    for ($i = 0; $i < count($showsHis); $i++) {
-                        $row = array();
-                        $row['id'] = null;
-                        $row['gameId'] = null;
-                        $row['rank'] = null;
-                        $row['dataType'] = $dataTypes[$i][0];
-                        $row['num'] = $dataTypes[$i][1];
-                        $row['nowMissing'] = null;
-                        $row['dayMissing'] = null;
-                        $row['dayTotalNum'] = $showsHis[$i];
-                        $row['lotteryDate'] = $date;
-                        $row['lotteryTime'] = null;
-                        $retData[] = $row;
+                    if (!$isEmpty) {
+                        for ($i = 0; $i < count($showsHis); $i++) {
+                            $row = array();
+                            $row['id'] = null;
+                            $row['gameId'] = null;
+                            $row['rank'] = null;
+                            $row['dataType'] = $dataTypes[$i][0];
+                            $row['num'] = $dataTypes[$i][1];
+                            $row['nowMissing'] = null;
+                            $row['dayMissing'] = null;
+                            $row['dayTotalNum'] = $showsHis[$i];
+                            $row['lotteryDate'] = $date;
+                            $row['lotteryTime'] = null;
+                            $retData[] = $row;
+                        }
                     }
                 }
-				}
             }
             $ret = json_encode($retData);
             S($cacheName, $ret, array('type' => 'file', 'expire' => $expire));
         }
         return $ret;
     }
+
     function calcqsscNumberStatDay($module, $lotType, $day)
     {
         $shows = array();
@@ -2327,9 +2374,9 @@ class LottoryDataMgr
             }
             for ($i = 0; $i < $iOpenCodeCnt; $i++) {
                 if ($bFirstZero) {
-                    $shows[(int) $OpenCodes[$i]]++;
+                    $shows[(int)$OpenCodes[$i]]++;
                 } else {
-                    $shows[(int) $OpenCodes[$i] - 1]++;
+                    $shows[(int)$OpenCodes[$i] - 1]++;
                 }
                 if ($OpenCodes[$i] % 2 != 0) {
                     $shows[$iAllCodesCnt]++;
@@ -2356,9 +2403,10 @@ class LottoryDataMgr
         }
         return $shows;
     }
+
     function getTwoSidedStat($type, $page, $lotType, $expire)
     {
-        $id = (int) wjStrFilter(I('get.id'));
+        $id = (int)wjStrFilter(I('get.id'));
         $cacheName = $type . '_' . $page . '_' . $id;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
@@ -2375,7 +2423,7 @@ class LottoryDataMgr
                     if (count($OpenCodes) != $iOpenCodeCnt) {
                         continue;
                     }
-                    $m = (int) ($iIndex / 10);
+                    $m = (int)($iIndex / 10);
                     if ($iIndex % 10 == 0) {
                         $shows[$m]["small"] = 0;
                         $shows[$m]["big"] = 0;
@@ -2386,9 +2434,9 @@ class LottoryDataMgr
                         $shows[$m]["odd"] = 0;
                     }
                     $shows[$m]["lDate"] = date('Y-m-d', $openedCai["dat_open_time"]);
-                    $shows[$m]["endIndex"] = (int) substr($openedCai['dat_expect'], -3);
+                    $shows[$m]["endIndex"] = (int)substr($openedCai['dat_expect'], -3);
                     if ($shows[$m]["startIndex"] == 0) {
-                        $shows[$m]["startIndex"] = (int) substr($openedCai['dat_expect'], -3);
+                        $shows[$m]["startIndex"] = (int)substr($openedCai['dat_expect'], -3);
                     }
                     if ($OpenCodes[$id - 1] > $iOpenCodeCnt / 2) {
                         $shows[$m]["big"]++;
@@ -2408,9 +2456,10 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getGdkl10LuZhuTongji($type, $page, $lotType, $expire)
     {
-        $typeA = (int) wjStrFilter(I('get.type'));
+        $typeA = (int)wjStrFilter(I('get.type'));
         $date = empty($_GET['date']) ? date('Y-m-d') : $_GET['date'];
         $today = empty($_GET['date']) ? date('Y-m-d') : $_GET['date'];
         if ($date == '' || $date > $today) {
@@ -2479,7 +2528,7 @@ class LottoryDataMgr
                             continue;
                         }
                         for ($i = 0; $i < $iOpenCodeCnt; $i++) {
-                            $value = (int) $OpenCodes[$i] % 4;
+                            $value = (int)$OpenCodes[$i] % 4;
                             $cnt[($value - 1) % 4][$i]++;
                             if ($value == 1) {
                                 $value = '東';
@@ -2578,7 +2627,7 @@ class LottoryDataMgr
                                     continue;
                                 }
                                 for ($i = 0; $i < $iOpenCodeCnt; $i++) {
-                                    $value = (int) $OpenCodes[$i];
+                                    $value = (int)$OpenCodes[$i];
                                     if ($value < 8) {
                                         $value = '中';
                                         $cnt[0][$i]++;
@@ -2670,6 +2719,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getLuZhuLonghu($type, $page, $lotType, $expire)
     {
         $date = empty($_GET['date']) ? date('Y-m-d') : $_GET['date'];
@@ -2733,6 +2783,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getGetLuZhuLonghu($type, $page, $lotType, $expire)
     {
         $date = wjStrFilter(I('post.date'));
@@ -2809,6 +2860,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getGdkl10LuZhuTotal($type, $page, $lotType, $expire)
     {
         $date = wjStrFilter(I('get.date'));
@@ -2865,6 +2917,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getLuzhuNumber($type, $page, $lotType, $expire)
     {
         $date = wjStrFilter(I('post.date'));
@@ -2877,7 +2930,7 @@ class LottoryDataMgr
         if ($ret === false || $ret == '') {
             $shows = array();
             $module = M();
-			$iOpenCodeCnt = $this->getOpenCodeCntByLotType($lotType);
+            $iOpenCodeCnt = $this->getOpenCodeCntByLotType($lotType);
             $iAllCodesCnt = $this->getAllCodesCntByLotType($lotType);
             $bFirstZero = $this->isStartFromZero($lotType);
             $openedCaiList = $this->getLottoryByDate($module, $lotType, $date);
@@ -2891,7 +2944,7 @@ class LottoryDataMgr
                     $row[] = 0;
                 }
                 for ($i = 0; $i < $iOpenCodeCnt; $i++) {
-                    $OpenCodes[$i] = (int) $OpenCodes[$i];
+                    $OpenCodes[$i] = (int)$OpenCodes[$i];
                     $k = $OpenCodes[$i] - 1;
                     if ($bFirstZero) {
                         $k = $OpenCodes[$i];
@@ -2918,6 +2971,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getLuzhuTotal($type, $page, $lotType, $expire)
     {
         $date = empty($_REQUEST['date']) ? date('Y-m-d') : $_REQUEST['date'];
@@ -3000,6 +3054,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getKl8LuzhuOddOrEven($type, $page, $lotType, $expire)
     {
         $date = wjStrFilter(I('post.date'));
@@ -3034,6 +3089,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getKl8LuzhuUpOrDown($type, $page, $lotType, $expire)
     {
         $date = wjStrFilter(I('post.date'));
@@ -3068,6 +3124,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getLuzhuBigOrSmall($type, $page, $lotType, $expire)
     {
         $date = wjStrFilter(I('post.date'));
@@ -3113,6 +3170,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getXyncLuzhuZfb($type, $page, $lotType, $expire)
     {
         $date = empty($_REQUEST['date']) ? date('Y-m-d') : $_REQUEST['date'];
@@ -3141,7 +3199,7 @@ class LottoryDataMgr
                     continue;
                 }
                 for ($i = 0; $i < $iOpenCodeCnt; $i++) {
-                    $value = (int) $OpenCodes[$i];
+                    $value = (int)$OpenCodes[$i];
                     if ($value < 8) {
                         $values[0][$i][] = "中";
                     } else {
@@ -3162,6 +3220,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getXyncLuzhuDnxb($type, $page, $lotType, $expire)
     {
         $date = empty($_REQUEST['date']) ? date('Y-m-d') : $_REQUEST['date'];
@@ -3190,7 +3249,7 @@ class LottoryDataMgr
                     continue;
                 }
                 for ($i = 0; $i < $iOpenCodeCnt; $i++) {
-                    $value = (int) $OpenCodes[$i] % 4;
+                    $value = (int)$OpenCodes[$i] % 4;
                     if ($value == 1) {
                         $value = '東';
                     } else {
@@ -3216,6 +3275,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getXyncLuzhuMerge($type, $page, $lotType, $expire)
     {
         $date = empty($_REQUEST['date']) ? date('Y-m-d') : $_REQUEST['date'];
@@ -3257,10 +3317,11 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getXyncLuzhuMantissa($type, $page, $lotType, $expire)
     {
         $date = wjStrFilter(I('get.date'));
-        $today =empty($_REQUEST['date']) ? date('Y-m-d') : $_REQUEST['date'];
+        $today = empty($_REQUEST['date']) ? date('Y-m-d') : $_REQUEST['date'];
         if ($date == '' || $date > $today) {
             $date = $today;
         }
@@ -3297,10 +3358,11 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getPositionTrend($type, $page, $lotType, $expire)
     {
-        $ball = (int) wjStrFilter(I('get.ball'));
-        $count = (int) wjStrFilter(I('get.count'));
+        $ball = (int)wjStrFilter(I('get.ball'));
+        $count = (int)wjStrFilter(I('get.count'));
         $isToday = wjStrFilter(I('get.isToday'));
         $cacheName = $lotType . '_' . $page . '_' . $ball . '_' . $count . '_' . $isToday;
         $ret = S($cacheName);
@@ -3437,7 +3499,7 @@ class LottoryDataMgr
                     }
                     $row["Drawing_Date"] = null;
                     $row["Drawing_Time"] = null;
-                    $row["Period"] = (double) $openedCai['dat_expect'];
+                    $row["Period"] = (double)$openedCai['dat_expect'];
                     $row["Nums"] = $tmp;
                     $row["ZX"] = $omits2[2] >= 0 ? 0 : $iniOmit - $omits2[2];
                     $row["FX"] = $omits2[0] >= 0 ? 0 : $iniOmit - $omits2[0];
@@ -3509,9 +3571,10 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getAllSumTrend($type, $page, $lotType, $expire)
     {
-        $count = (int) wjStrFilter(I('get.count'));
+        $count = (int)wjStrFilter(I('get.count'));
         $isToday = wjStrFilter(I('get.isToday'));
         $cacheName = $lotType . '_' . $page . '_' . $count . '_' . $isToday;
         $ret = S($cacheName);
@@ -3688,7 +3751,7 @@ class LottoryDataMgr
                     }
                     $row["Drawing_Date"] = null;
                     $row["Drawing_Time"] = null;
-                    $row["Period"] = (double) $openedCai['dat_expect'];
+                    $row["Period"] = (double)$openedCai['dat_expect'];
                     $row["Nums"] = $tmp;
                     $row["ZX"] = $omits2[2] >= 0 ? 0 : $iniOmit - $omits2[2];
                     $row["FX"] = $omits2[0] >= 0 ? 0 : $iniOmit - $omits2[0];
@@ -3757,10 +3820,11 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getNumberTrend($type, $page, $lotType, $expire)
     {
-        $ball = (int) wjStrFilter(I('get.ball'));
-        $count = (int) wjStrFilter(I('get.count'));
+        $ball = (int)wjStrFilter(I('get.ball'));
+        $count = (int)wjStrFilter(I('get.count'));
         $isToday = wjStrFilter(I('get.isToday'));
         $cacheName = $lotType . '_' . $page . '_' . $ball . '_' . $count . '_' . $isToday;
         $ret = S($cacheName);
@@ -3805,7 +3869,7 @@ class LottoryDataMgr
                     }
                     $value = -1;
                     for ($i = 0; $i < count($OpenCodes); $i++) {
-                        if ((int) $OpenCodes[$i] == $ball) {
+                        if ((int)$OpenCodes[$i] == $ball) {
                             $value = $i;
                             break;
                         }
@@ -3901,7 +3965,7 @@ class LottoryDataMgr
                     }
                     $row["Drawing_Date"] = null;
                     $row["Drawing_Time"] = null;
-                    $row["Period"] = (double) $openedCai['dat_expect'];
+                    $row["Period"] = (double)$openedCai['dat_expect'];
                     $row["Nums"] = $tmp;
                     $row["ZX"] = $omits2[2] >= 0 ? 0 : $iniOmit - $omits2[2];
                     $row["FX"] = $omits2[0] >= 0 ? 0 : $iniOmit - $omits2[0];
@@ -3970,9 +4034,10 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getGuanYaTrend($type, $page, $lotType, $expire)
     {
-        $count = (int) wjStrFilter(I('get.count'));
+        $count = (int)wjStrFilter(I('get.count'));
         $isToday = wjStrFilter(I('get.isToday'));
         $cacheName = $lotType . '_' . $page . '_' . $count . '_' . $isToday;
         $ret = S($cacheName);
@@ -4033,7 +4098,7 @@ class LottoryDataMgr
                     if (count($OpenCodes) < $iOpenCodeCnt) {
                         continue;
                     }
-                    $value = (int) $OpenCodes[0] + (int) $OpenCodes[1];
+                    $value = (int)$OpenCodes[0] + (int)$OpenCodes[1];
                     $value = $value < 10 ? '0' . $value : $value;
                     foreach ($omits as $b => $cnt) {
                         if ($value == $b && $cnt < 0) {
@@ -4150,7 +4215,7 @@ class LottoryDataMgr
                     }
                     $row["Drawing_Date"] = null;
                     $row["Drawing_Time"] = null;
-                    $row["Period"] = (double) $openedCai['dat_expect'];
+                    $row["Period"] = (double)$openedCai['dat_expect'];
                     $row["Nums"] = $tmp;
                     $row["ZX"] = $omits2[2] >= 0 ? 0 : $iniOmit - $omits2[2];
                     $row["FX"] = $omits2[0] >= 0 ? 0 : $iniOmit - $omits2[0];
@@ -4219,10 +4284,11 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getSamePositionTrend($type, $page, $lotType, $expire)
     {
-        $id = (int) wjStrFilter(I('get.id'));
-        $pid = (int) wjStrFilter(I('get.pid'));
+        $id = (int)wjStrFilter(I('get.id'));
+        $pid = (int)wjStrFilter(I('get.pid'));
         $cacheName = $lotType . '_' . $page . '_' . $id . '_' . $pid;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
@@ -4302,7 +4368,7 @@ class LottoryDataMgr
                     $row = array();
                     $row["Drawing_Date"] = date('m-d', $openedCai["dat_open_time"]);
                     $row["Drawing_Time"] = date('H:i', $openedCai["dat_open_time"]);
-                    $row["Period"] = (double) $openedCai['dat_expect'];
+                    $row["Period"] = (double)$openedCai['dat_expect'];
                     $row["Nums"] = $OpenCodes[$id];
                     $row["ZX"] = 0;
                     $row["FX"] = 0;
@@ -4333,10 +4399,11 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getSameNoTrend($type, $page, $lotType, $expire)
     {
-        $id = (int) wjStrFilter(I('get.id'));
-        $pid = (int) wjStrFilter(I('get.pid'));
+        $id = (int)wjStrFilter(I('get.id'));
+        $pid = (int)wjStrFilter(I('get.pid'));
         $cacheName = $lotType . '_' . $page . '_' . $id . '_' . $pid;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
@@ -4416,7 +4483,7 @@ class LottoryDataMgr
                     }
                     $value = -1;
                     for ($i = 0; $i < count($OpenCodes); $i++) {
-                        if ((int) $OpenCodes[$i] == $id + 1) {
+                        if ((int)$OpenCodes[$i] == $id + 1) {
                             $value = $i;
                             break;
                         }
@@ -4427,7 +4494,7 @@ class LottoryDataMgr
                     $row = array();
                     $row["Drawing_Date"] = date('m-d', $openedCai["dat_open_time"]);
                     $row["Drawing_Time"] = date('H:i', $openedCai["dat_open_time"]);
-                    $row["Period"] = (double) $openedCai['dat_expect'];
+                    $row["Period"] = (double)$openedCai['dat_expect'];
                     $row["Nums"] = $descr[$value];
                     $row["ZX"] = 0;
                     $row["FX"] = 0;
@@ -4458,10 +4525,11 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getSameSumTrend($type, $page, $lotType, $expire)
     {
-        $id = (int) wjStrFilter(I('get.id'));
-        $pid = (int) wjStrFilter(I('get.pid'));
+        $id = (int)wjStrFilter(I('get.id'));
+        $pid = (int)wjStrFilter(I('get.pid'));
         $cacheName = $lotType . '_' . $page . '_' . $id . '_' . $pid;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
@@ -4554,11 +4622,11 @@ class LottoryDataMgr
                     if (count($OpenCodes) < $iOpenCodeCnt) {
                         continue;
                     }
-                    $value = (int) $OpenCodes[0] + (int) $OpenCodes[1];
+                    $value = (int)$OpenCodes[0] + (int)$OpenCodes[1];
                     $row = array();
                     $row["Drawing_Date"] = date('m-d', $openedCai["dat_open_time"]);
                     $row["Drawing_Time"] = date('H:i', $openedCai["dat_open_time"]);
-                    $row["Period"] = (double) $openedCai['dat_expect'];
+                    $row["Period"] = (double)$openedCai['dat_expect'];
                     $row["Nums"] = $value;
                     $row["ZX"] = 0;
                     $row["FX"] = 0;
@@ -4589,6 +4657,7 @@ class LottoryDataMgr
         }
         return $ret;
     }
+
     function getAjaxTrend($type, $page, $lotType, $expire)
     {
         $module = M();
@@ -4609,7 +4678,7 @@ class LottoryDataMgr
             }
             $kjHao = '';
             foreach ($data as $value) {
-                $t = (int) $value;
+                $t = (int)$value;
                 if ($lotType == 23) {
                     $t = $t > 9 ? $t : '0' . $t;
                 }
@@ -4630,6 +4699,7 @@ class LottoryDataMgr
         $ret = json_encode($retData);
         return $ret;
     }
+
     function getLotTypeByGameId($gameId)
     {
         if ($gameId == 50) {
@@ -4665,6 +4735,7 @@ class LottoryDataMgr
         }
         return 0;
     }
+
     function getLotTypeByType($type)
     {
         if ($type == 'pk10') {
@@ -4673,34 +4744,35 @@ class LottoryDataMgr
             if ($type == 'cqssc') {
                 return 1;
             } else {
-               switch($type){
-				   case 'gdkl10':
-				   return 21;
-				   case 'jsssc':
-				   return 40;
-				   case 'xyft':
-				   return 34;
-				   case 'jsk3':
-				   return 22;
-				   case 'tjssc':
-				   return 3;
-				   case 'kl8':
-				   return 23;
-				   case 'shssl':
-				   return 24;
-				   case 'jssc':
-				   return 39;
-				   case 'gd11x5':
-				   return 6;
-				   case 'fc3d':
-				   return 9;
-				   case 'pl3':
-				   return 10;
-			   }
+                switch ($type) {
+                    case 'gdkl10':
+                        return 21;
+                    case 'jsssc':
+                        return 40;
+                    case 'xyft':
+                        return 34;
+                    case 'jsk3':
+                        return 22;
+                    case 'tjssc':
+                        return 3;
+                    case 'kl8':
+                        return 23;
+                    case 'shssl':
+                        return 24;
+                    case 'jssc':
+                        return 39;
+                    case 'gd11x5':
+                        return 6;
+                    case 'fc3d':
+                        return 9;
+                    case 'pl3':
+                        return 10;
+                }
             }
         }
         return 0;
     }
+
     function getGameIdByLotType($lotType)
     {
         if ($lotType == 20 || $lotType == 34) {
@@ -4736,6 +4808,7 @@ class LottoryDataMgr
         }
         return 0;
     }
+
     function getOpenCodeCntByLotType($lotType)
     {
         if ($lotType == 20 || $lotType == 34) {
@@ -4771,6 +4844,7 @@ class LottoryDataMgr
         }
         return 0;
     }
+
     function getAllCodesCntByLotType($lotType)
     {
         if ($lotType == 20 || $lotType == 34) {
@@ -4806,6 +4880,7 @@ class LottoryDataMgr
         }
         return 0;
     }
+
     function isStartFromZero($lotType)
     {
         if ($lotType == 20 || $lotType == 34) {
@@ -4841,6 +4916,7 @@ class LottoryDataMgr
         }
         return false;
     }
+
     function getGameAllExpects($lotType)
     {
         if ($lotType == 20 || $lotType == 34) {
@@ -4876,6 +4952,7 @@ class LottoryDataMgr
         }
         return false;
     }
+
     function getGameNextNo($type, $module, $time)
     {
         $type = intval($type);
@@ -4896,19 +4973,20 @@ class LottoryDataMgr
         }
         return $return;
     }
+
     public function getGameCurrentNo($type, $module, $time)
     {
         $type = intval($type);
         $types = $this->getTypes($module);
 
         $kjTime = $types[$type]["data_ftime"];
-        $atime = date('H:i:s', $time +$kjTime);
+        $atime = date('H:i:s', $time + $kjTime);
 
         $sql = "select actionNo, actionTime from {$this->prename}data_time where type={$type} and actionTime<='%s' order by actionTime desc limit 1";
 
         $return = $module->query($sql, $atime);
 
-		//var_dump($return);die;
+        //var_dump($return);die;
         if (!$return) {
             $sql = "select actionNo, actionTime from {$this->prename}data_time where type={$type} order by actionTime desc limit 1";
             $return = $module->query($sql);
@@ -4923,6 +5001,7 @@ class LottoryDataMgr
 
         return $return;
     }
+
     public function getTypeFtime($type, $module)
     {
         $Ftime = 0;
@@ -4936,6 +5015,7 @@ class LottoryDataMgr
         }
         return intval($Ftime);
     }
+
     public function getTypes($module)
     {
         if ($this->types) {
@@ -4951,11 +5031,13 @@ class LottoryDataMgr
         }
         return $this->types = $data;
     }
+
     private function setTimeNo(&$actionTime, &$time)
     {
         $actionTime = wjStrFilter($actionTime);
         $actionTime = date('Y-m-d ', $time) . $actionTime;
     }
+
     public function noHdCQSSC(&$actionNo, &$actionTime, $time = null)
     {
         $actionNo = wjStrFilter($actionNo);
@@ -4967,6 +5049,7 @@ class LottoryDataMgr
             $actionNo = date('Ymd-', $time) . substr(1000 + $actionNo, 1);
         }
     }
+
     public function onHdXjSsc(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
@@ -4976,11 +5059,13 @@ class LottoryDataMgr
             $actionNo = date('Ymd-', $time) . substr(1000 + $actionNo, 1);
         }
     }
+
     public function noHd(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('Ymd-', $time) . substr(100 + $actionNo, 1);
     }
+
     public function noxHd(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
@@ -4989,11 +5074,13 @@ class LottoryDataMgr
         }
         $actionNo = date('Ymd-', $time) . substr(100 + $actionNo, 1);
     }
+
     public function no0Hd(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('Ymd-', $time) . substr(1000 + $actionNo, 1);
     }
+
     public function no6Hd(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
@@ -5004,16 +5091,19 @@ class LottoryDataMgr
             $actionTime = date('Y-m-d 21:40', $time);
         }
     }
+
     public function no0Hdk3(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('md', $time) . substr(100 + $actionNo, 1);
     }
+
     public function no0Hdf(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('Ymd-', $time) . substr(10000 + $actionNo, 1);
     }
+
     public function pai3(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
@@ -5024,25 +5114,29 @@ class LottoryDataMgr
             $actionTime = date('Y-m-d 18:30', $time);
         }
     }
+
     public function GXklsf(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
         $actionNo = date('Yz', $time) . substr(100 + $actionNo, 1) + 100;
         $actionNo = substr($actionNo, 0, 4) . substr(substr($actionNo, 4) + 100000, 1);
     }
+
     public function BJpk10(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
-		//echo $actionNo;die;
+        //echo $actionNo;die;
         $actionNo = 179 * (strtotime(date('Y-m-d', $time)) - strtotime('2007-11-18')) / 3600 / 24 + $actionNo - 1267;
     }
+
     public function Kuai8(&$actionNo, &$actionTime, $time = null)
     {
         $this->setTimeNo($actionTime, $time);
-		strtotime('2004-09-19');
+        strtotime('2004-09-19');
         $actionNo = 179 * (strtotime(date('Y-m-d', $time)) - strtotime('2004-09-19')) / 3600 / 24 + $actionNo - 2584;//20160625
-		//$actionNo = 179 * (strtotime(date('Y-m-d', $time)) - strtotime('2004-09-19')) / 3600 / 24 + $actionNo - 77;
+        //$actionNo = 179 * (strtotime(date('Y-m-d', $time)) - strtotime('2004-09-19')) / 3600 / 24 + $actionNo - 77;
     }
+
     private function calPk10BallStateDay($module, $lotType, $day)
     {
         $shows = array();

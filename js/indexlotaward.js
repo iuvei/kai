@@ -485,7 +485,7 @@ $(function () {
                 //  cpNumber = data.current.periodNumber;
 
                 $("#jsssc").find(".sumNum").text(str),
-                    $("#jsssc").find(".sumSingleDouble").text(str%2 == 0 ? "单" : "双"),
+                    $("#jsssc").find(".sumSingleDouble").text(str%2 == 0 ? "双" : "单"),
                     $("#jsssc").find(".sumBigSmall").text(str > 23 ? "大" : "小");
                 for (var i = 0; i < nums.length; i++) {
                     // str += ;
@@ -623,8 +623,6 @@ $(function () {
             window.setTimeout(gd11x5_awardTick,data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval);
         }, 'json');
     };
-
-
     var gd11x5_awardTick = function () {
         $.get('gd11x5/getgd11x5AwardData.do?' + Math.random(), { ajaxhandler: 'GetPk10AwardData' }, function (data) {
             if(!data)
@@ -645,25 +643,19 @@ $(function () {
                 }
 
 
-                if ((nums[0] == nums[1]) && (nums[0] == nums[2]))
-                {    type = '豹子';}
-                else if (((nums[1] - nums[0]) == (nums[2] - nums[1])) && ((nums[1] - nums[0]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {    type = '顺子';}
-                else if (nums[0] == nums[1] || nums[1] == nums[2]) {    type = '对子';} else if ((nums[1] - nums[0]) == 1 || (nums[2] - nums[1]) == 1) {    type = '半顺';}
-                else {    type = '杂六';}$("#tjSsc").find(".behindThree").text(type);var type1 = '';if ((nums[1] == nums[2]) && (nums[1] == nums[3])) {    type1 = '豹子';}
-                else if (((nums[2] - nums[1]) == (nums[3] - nums[2])) && ((nums[2] - nums[1]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {    type1 = '顺子';}
-                else if (nums[1] == nums[2] || nums[2] == nums[3]) {    type1 = '对子';} else if ((nums[2] - nums[1]) == 1 || (nums[3] - nums[2]) == 1) {    type1= '半顺';}
-                else {    type1 = '杂六';}$("#tjSsc").find(".betweenThree").text(type1);var type2 = '';if ((nums[2] == nums[3]) && (nums[2] == nums[4]))
-                {    type2 = '豹子';} else if (((nums[3] - nums[2]) == (nums[4] - nums[3])) && ((nums[3] - nums[2]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9)))
-                {    type2 = '顺子';} else if (nums[2] == nums[3] || nums[3] == nums[4]) {    type2 = '对子';} else if ((nums[3] - nums[2]) == 1 || (nums[4] - nums[3]) == 1)
-                {    type2= '半顺';} else {    type2 = '杂六';}
+                $("#gd11x5").find(".behindThree").text(123);
+
+                $("#gd11x5").find(".betweenThree").text(123);
+
+                $("#gd11x5").find(".lastThree").text(123);
 
 
 
                 cpNumber = data.current.periodNumber;
-                var _time = data.current.awardTime.substring(11, 16);
+                var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-3);
                 //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
-                $("#cqSsc_hot .drawCount").html(data.next.periodNumber);
-                $("#cqSsc_hot .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
+                $("#gd11x5 .drawCount").html(number);
+                $("#gd11x5 .sdrawCountnext").html(cpNumber-number);
 
                 //drawTrend();
             }
@@ -672,6 +664,72 @@ $(function () {
         }, 'json');
     };
 
+    var jsk3_awardTick = function () {
+        $.get('jsk3/getJsk3AwardData.do?' + Math.random(), { ajaxhandler: 'GetPk10AwardData' }, function (data) {
+            if(!data)
+                return;
+            if ((data.current.periodNumber != pk10_currentPeriodNumber)) {
+
+
+                var nums = data.current.awardNumbers.split(',');
+                var str = Number(nums[0])+Number(nums[1])+Number(nums[2]);
+                //  cpNumber = data.current.periodNumber;
+
+                    $("#kuai3 .rowbox2").find(".sumNum").text(str),
+                    $("#kuai3 .rowbox2").find(".sumSingleDouble").text(str%2 == 0 ? "双" : "单"),
+                    $("#kuai3 .rowbox2").find(".sumBigSmall").text(str > 10 ? "大" : "小");
+
+                for (var i = 0; i < nums.length; i++) {
+                    $("#kuai3 .kajianhao li:eq(" + i +")").removeClass()
+
+                    $("#kuai3 .kajianhao li:eq(" + i +")").addClass('num'+nums[i])
+                }
+
+                 function test(a){
+                     switch (a){
+                         case "1":
+                             return "鱼";
+                             break;
+                         case "2":
+                             return "虾";
+                             break;
+                         case "3":
+                             return "葫芦";
+                             break;
+                         case "4":
+                             return "金钱";
+                             break;
+                         case "5":
+                             return "蟹";
+                             break;
+                         default:
+                             return "鸡";
+
+                 }
+             }
+                var type_one = test(nums[0]);
+                var type_two = test(nums[1]);
+                var type_three = test(nums[2]);
+
+                $("#kuai3").find(".firstSeafood").text(type_one);
+
+                $("#kuai3").find(".secondSeafood").text(type_two);
+
+                $("#kuai3").find(".thirdSeafood").text(type_three);
+
+                var cpNumber = data.current.periodNumber;
+                var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-2);
+
+                $("#kuai3 .preDrawIssue").html(cpNumber);
+                $("#kuai3 .drawCount").html(number);
+                $("#kuai3 .sdrawCountnext").html(cpNumber-number);
+
+                //drawTrend();
+            }
+            pk10_currentPeriodNumber = data.current.periodNumber;
+            window.setTimeout(gd11x5_awardTick,data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval);
+        }, 'json');
+    };
 
 
     function typeOf(nums) {
@@ -745,7 +803,8 @@ $(function () {
     window.setTimeout(jssc_awardTick, 5000);
     window.setTimeout(xyft_awardTick, 500);
     window.setTimeout(gd11x5_awardTick, 5000);
-//    window.setTimeout(gd_awardTick, 500);
+    window.setTimeout(jsk3_awardTick, 5000);
+
 
     $(".award .lot-menu").hover(function () {
         $(this).parents(".lot").children(".lot-menu").removeClass("cur");
