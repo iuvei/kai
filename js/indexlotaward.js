@@ -46,61 +46,61 @@ $(function () {
                     }
                    //alert(nums[i]);
                 }
-                if(nums[0] > nums[9] ){
+                if(Number(nums[0]) > nums[9] ){
                     $("#pk10_hot .longhu").append("<td>龙</td>");
                     $("#pk10 .longhu").append("<td>龙</td>");
-                }else if(nums[0] < nums[9]) {
+                }else if(Number(nums[0]) < nums[9]) {
                     $("#pk10_hot .longhu").append("<td>虎</td>");
                     $("#pk10 .longhu").append("<td>虎</td>");
                 }else {
-                    $("#pk10_hot .longhu").append("<td>龙</td>");
-                    $("#pk10 .longhu").append("<td>龙</td>");
+                    $("#pk10_hot .longhu").append("<td>和</td>");
+                    $("#pk10 .longhu").append("<td>和</td>");
                 }
-                if(nums[1] >nums[8] ){
+                if(Number(nums[1]) >nums[8] ){
                     $("#pk10_hot .longhu").append("<td>龙</td>");
                     $("#pk10 .longhu").append("<td>龙</td>");
-                }else if(nums[1] <nums[8]) {
+                }else if(Number(nums[1]) <nums[8]) {
                     $("#pk10_hot .longhu").append("<td>虎</td>");
                     $("#pk10 .longhu").append("<td>虎</td>");
                 }else {
-                    $("#pk10_hot .longhu").append("<td>龙</td>");
-                    $("#pk10 .longhu").append("<td>龙</td>");
+                    $("#pk10_hot .longhu").append("<td>和</td>");
+                    $("#pk10 .longhu").append("<td>和</td>");
                 }
-                if(nums[2] >nums[7] ){
+                if(Number(nums[2]) >Number(nums[7]) ){
                     $("#pk10_hot .longhu").append("<td>龙</td>");
                     $("#pk10 .longhu").append("<td>龙</td>");
-                }else if(nums[2] < nums[7]) {
+                }else if(Number(nums[2]) < Number(nums[7])) {
                     $("#pk10_hot .longhu").append("<td>虎</td>");
                     $("#pk10 .longhu").append("<td>虎</td>");
                 }else {
-                    $("#pk10_hot .longhu").append("<td>龙</td>");
-                    $("#pk10 .longhu").append("<td>龙</td>");
+                    $("#pk10_hot .longhu").append("<td>和</td>");
+                    $("#pk10 .longhu").append("<td>和</td>");
                 }
-                if(nums[3] >nums[6] ){
+                if(Number(nums[3]) >Number(nums[6]) ){
                     $("#pk10_hot .longhu").append("<td>龙</td>");
                     $("#pk10 .longhu").append("<td>龙</td>");
-                }else if(nums[3] <nums[6] ){
+                }else if(Number(nums[3]) <Number(nums[6]) ){
                     $("#pk10_hot .longhu").append("<td>虎</td>");
                     $("#pk10 .longhu").append("<td>虎</td>");
                 }else {
-                    $("#pk10_hot .longhu").append("<td>龙</td>");
-                    $("#pk10 .longhu").append("<td>龙</td>");
+                    $("#pk10_hot .longhu").append("<td>和</td>");
+                    $("#pk10 .longhu").append("<td>和</td>");
                 }
 
-                if(nums[4] < nums[5]){
+                if(Number(nums[4]) > Number(nums[5])){
                     $("#pk10_hot .longhu").append("<td>龙</td>");
                     $("#pk10 .longhu").append("<td>龙</td>");
-                }else if( nums[4] > nums[5]){
+                }else if( Number(nums[4]) < Number(nums[5])){
                     $("#pk10_hot .longhu").append("<td>虎</td>");
                     $("#pk10 .longhu").append("<td>虎</td>");
                 }else {
-                    $("#pk10_hot .longhu").append("<td>龙</td>");
-                    $("#pk10 .longhu").append("<td>龙</td>");
+                    $("#pk10_hot .longhu").append("<td>和</td>");
+                    $("#pk10 .longhu").append("<td>和</td>");
                 }
                 var num = Number(nums[0])+ Number(nums[1]);
                 $("#pk10_hot .longhu").append("<td class='sumFS'>"+ num +"</td>");
                 $("#pk10 .longhu").append("<td class='sumFS'>"+ num +"</td>");
-               // alert( nums[0]+ nums[1]);
+               // alert( Number(nums[0])+ Number(nums[3]));
                 if(num <= 11){
                     $("#pk10_hot .longhu").append("<td class='sumBigSamll'>小</td>");
                     $("#pk10 .longhu").append("<td class='sumBigSamll'>小</td>");
@@ -132,6 +132,89 @@ $(function () {
         }, 'json');
     };
 
+    var xyft_awardTick = function () {
+        $.get('xyft/getPk10AwardData.do?' + Math.random(), { ajaxhandler: 'GetPk10AwardData' }, function (data) {
+            if(!data)
+                return;
+            if ((data.current.periodNumber != pk10_currentPeriodNumber)) {
+                $("#xyft .numberbox").html("");
+                $("#xyft .longhu").html("");
+                var nums = data.current.awardNumbers.split(',');
+                var str = "";
+                for (var i = 0; i < nums.length; i++) {
+                    // str += ;
+                    if(nums[i] == 10){
+                        $("#xyft .numberbox").append("<li class='nub" + nums[i] + "'></li>");
+                    }else {
+                        $("#xyft .numberbox").append("<li class='nub0" + nums[i] + "'></li>");
+                    }
+                    //alert(nums[i]);
+                }
+                if(Number(nums[0]) > nums[9] ){
+                    $("#xyft .longhu").append("<td>龙</td>");
+                }else if(Number(nums[0]) < nums[9]) {
+                    $("#xyft .longhu").append("<td>虎</td>");
+                }else {
+                    $("#xyft .longhu").append("<td>和</td>");
+                }
+                if(Number(nums[1]) >nums[8] ){
+                    $("#xyft .longhu").append("<td>龙</td>");
+                }else if(Number(nums[1]) <nums[8]) {
+                    $("#xyft .longhu").append("<td>虎</td>");
+                }else {
+                    $("#xyft .longhu").append("<td>和</td>");
+                }
+                if(Number(nums[2]) >Number(nums[7]) ){
+                    $("#xyft .longhu").append("<td>龙</td>");
+                }else if(Number(nums[2]) < Number(nums[7])) {
+                   // $("#pk10_hot .longhu").append("<td>虎</td>");
+                    $("#xyft .longhu").append("<td>虎</td>");
+                }else {
+                    $("#xyft .longhu").append("<td>和</td>");
+                }
+                if(Number(nums[3]) >Number(nums[6]) ){
+                    $("#xyft .longhu").append("<td>龙</td>");
+                }else if(Number(nums[3]) <Number(nums[6]) ){
+                    $("#xyft .longhu").append("<td>虎</td>");
+                }else {
+                    $("#xyft .longhu").append("<td>和</td>");
+                }
+
+                if(Number(nums[4]) > Number(nums[5])){
+                    $("#xyft .longhu").append("<td>龙</td>");
+                }else if( Number(nums[4]) < Number(nums[5])){
+                    $("#xyft .longhu").append("<td>虎</td>");
+                }else {
+                    $("#xyft .longhu").append("<td>和</td>");
+                }
+                var num = Number(nums[0])+ Number(nums[1]);
+                $("#xyft .longhu").append("<td class='sumFS'>"+ num +"</td>");
+                // alert( Number(nums[0])+ Number(nums[3]));
+                if(num <= 11){
+                    $("#xyft .longhu").append("<td class='sumBigSamll'>小</td>");
+                }else {
+                    $("#xyft .longhu").append("<td class='sumBigSamll'>大</td>");
+                }
+                if(num%2 ==0)
+                {
+                    $("#xyft .longhu").append("<td class='sumSingleDouble'>双</td>");
+                }else {
+                    $("#xyft .longhu").append("<td class='sumSingleDouble'>单</td>");
+                }
+
+                cpNumber = data.current.periodNumber;
+                var _time = data.current.awardTime.substring(11, 16);
+                //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
+                $("#xyft .drawCount").html(data.next.periodNumber);
+                $("#xyft .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
+
+                //drawTrend();
+            }
+            pk10_currentPeriodNumber = data.current.periodNumber;
+            window.setTimeout(pk10_awardTick, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval);
+        }, 'json');
+    };
+
     var jssc_awardTick = function () {
         $.get('jssc/getPk10AwardData.do?' + Math.random(), { ajaxhandler: 'GetPk10AwardData' }, function (data) {
             if(!data)
@@ -150,45 +233,47 @@ $(function () {
                     }
                     //alert(nums[i]);
                 }
-                if(nums[0] > nums[9] ){
+                if(Number(nums[0]) > nums[9] ){
                     $("#jisusc .longhu").append("<td>龙</td>");
-                }else if(nums[0] < nums[9]) {
+                }else if(Number(nums[0]) < nums[9]) {
                     $("#jisusc .longhu").append("<td>虎</td>");
                 }else {
-                    $("#jisusc .longhu").append("<td>龙</td>");
+                    $("#jisusc .longhu").append("<td>和</td>");
                 }
-                if(nums[1] >nums[8] ){
+                if(Number(nums[1]) >nums[8] ){
                     $("#jisusc .longhu").append("<td>龙</td>");
-                }else if(nums[1] <nums[8]) {
+                }else if(Number(nums[1]) <nums[8]) {
                     $("#jisusc .longhu").append("<td>虎</td>");
                 }else {
-                    $("#jisusc .longhu").append("<td>龙</td>");
+                    $("#jisusc .longhu").append("<td>和</td>");
                 }
-                if(nums[2] >nums[7] ){
+                if(Number(nums[2]) >Number(nums[7]) ){
                     $("#jisusc .longhu").append("<td>龙</td>");
-                }else if(nums[2] < nums[7]) {
+                }else if(Number(nums[2]) < Number(nums[7])) {
                     $("#jisusc .longhu").append("<td>虎</td>");
                 }else {
-                    $("#jisusc .longhu").append("<td>龙</td>");
+                    $("#jisusc .longhu").append("<td>和</td>");
                 }
-                if(nums[3] >nums[6] ){
+                if(Number(nums[3]) >Number(nums[6]) ){
                     $("#jisusc .longhu").append("<td>龙</td>");
-                }else if(nums[3] <nums[6] ){
+                }else if(Number(nums[3]) <Number(nums[6]) ){
                     $("#jisusc .longhu").append("<td>虎</td>");
                 }else {
-                    $("#jisusc .longhu").append("<td>龙</td>");
+                    $("#jisusc .longhu").append("<td>和</td>");
                 }
 
-                if(nums[4] < nums[5]){
+                if(Number(nums[4]) > Number(nums[5])){
+
                     $("#jisusc .longhu").append("<td>龙</td>");
-                }else if( nums[4] > nums[5]){
+                }else if( Number(nums[4]) < Number(nums[5])){
+
                     $("#jisusc .longhu").append("<td>虎</td>");
                 }else {
-                    $("#jisusc .longhu").append("<td>龙</td>");
+                    $("#jisusc .longhu").append("<td>和</td>");
                 }
                 var num = Number(nums[0])+ Number(nums[1]);
                 $("#jisusc .longhu").append("<td class='sumFS'>"+ num +"</td>");
-                // alert( nums[0]+ nums[1]);
+                // alert( Number(nums[0])+ Number(nums[3]));
                 if(num <= 11){
                     $("#jisusc .longhu").append("<td class='sumBigSamll'>小</td>");
                 }else {
@@ -222,7 +307,7 @@ $(function () {
                 $("#kajianhao5").html("");
                 $("#kajianhao").html("");
                 var nums = data.current.awardNumbers.split(',');
-                var str = Number(nums[0])+Number(nums[1])+Number(nums[2])+Number(nums[3])+Number(nums[4]);
+                var str = Number(nums[0])+Number(nums[1])+Number(Number(nums[2]))+Number(nums[3])+Number(nums[4]);
               //  cpNumber = data.current.periodNumber;
 
                     $("#cqSsc_hot").find(".sumNum").text(str),
@@ -241,10 +326,10 @@ $(function () {
                         $("#kajianhao").append("<li class='numblueHead'>"+nums[i]+"</li>");
                     }
                 }
-                if(nums[0] < nums[4]){
+                if(Number(nums[0]) < Number(nums[4])){
                     $("#cqSsc_hot").find(".dragonTiger").text("虎");
                     $("#cqSsc").find(".dragonTiger").text("虎");
-                }else if( nums[0] > nums[4]){
+                }else if( Number(nums[0]) > Number(nums[4])){
                     $("#cqSsc").find(".dragonTiger").text("龙");
                     $("#cqSsc_hot").find(".dragonTiger").text("龙");
                   //  $("#longhu2").append("<td class='dragonTiger'>龙&nbsp;&nbsp;</td>");
@@ -253,13 +338,14 @@ $(function () {
                     $("#cqSsc").find(".dragonTiger").text("和");
                     //$("#longhu2").append("<td class='dragonTiger'>和&nbsp;&nbsp;</td>");
                 }
-                if ((nums[0] == nums[1]) && (nums[0] == nums[2])) {
+              //  var type = typeOf(nums);
+                if ((Number(nums[0]) == Number(nums[1])) && (Number(nums[0]) == Number(nums[2]))) {
                     type = '豹子';
-                } else if (((nums[1] - nums[0]) == (nums[2] - nums[1])) && ((nums[1] - nums[0]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
+                } else if (((Number(nums[1]) - Number(nums[0])) == (Number(nums[2]) - Number(nums[1]))) && ((Number(nums[1]) - Number(nums[0])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
                     type = '顺子';
-                } else if (nums[0] == nums[1] || nums[1] == nums[2]) {
+                } else if (Number(nums[0]) == Number(nums[1]) || Number(nums[1]) == Number(nums[2])) {
                     type = '对子';
-                } else if ((nums[1] - nums[0]) == 1 || (nums[2] - nums[1]) == 1) {
+                } else if ((Number(nums[1]) - Number(nums[0])) == 1 || (Number(nums[2]) - Number(nums[1])) == 1) {
                     type = '半顺';
                 } else {
                     type = '杂六';
@@ -267,27 +353,27 @@ $(function () {
                 $("#longhu2").find(".behindThree").text(type);
                 $("#cqSsc .longhu2").find(".behindThree").text(type);
                 var type1 = '';
-                if ((nums[1] == nums[2]) && (nums[1] == nums[3])) {
-                    type1 = '豹子';
-                } else if (((nums[2] - nums[1]) == (nums[3] - nums[2])) && ((nums[2] - nums[1]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
-                    type1 = '顺子';
-                } else if (nums[1] == nums[2] || nums[2] == nums[3]) {
-                    type1 = '对子';
-                } else if ((nums[2] - nums[1]) == 1 || (nums[3] - nums[2]) == 1) {
-                    type1= '半顺';
-                } else {
-                    type1 = '杂六';
-                }
+               if ((Number(nums[1]) == Number(nums[2])) && (Number(nums[1]) == Number(nums[3]))) {
+            type1 = '豹子';
+        } else if (((Number(nums[2]) - Number(nums[1])) == (Number(nums[3]) - Number(nums[2]))) && ((Number(nums[2]) - Number(nums[1])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
+            type1 = '顺子';
+        } else if (Number(nums[1]) == Number(nums[2]) || Number(nums[2]) == Number(nums[3])) {
+            type1 = '对子';
+        } else if ((Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[3]) - Number(nums[2])) == 1) {
+            type1= '半顺';
+        } else {
+            type1 = '杂六';
+        }
                 $("#longhu2").find(".betweenThree").text(type1);
                 $("#cqSsc .longhu2").find(".betweenThree").text(type1);
                 var type2 = '';
-                if ((nums[2] == nums[3]) && (nums[2] == nums[4])) {
+                if ((Number(nums[2]) == Number(nums[3])) && (Number(nums[2]) == Number(nums[4]))) {
                     type2 = '豹子';
-                } else if (((nums[3] - nums[2]) == (nums[4] - nums[3])) && ((nums[3] - nums[2]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
+                } else if (((Number(nums[3]) - Number(nums[2])) == (Number(nums[4]) - Number(nums[3]))) && ((Number(nums[3]) - Number(nums[2])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
                     type2 = '顺子';
-                } else if (nums[2] == nums[3] || nums[3] == nums[4]) {
+                } else if (Number(nums[2]) == Number(nums[3]) || Number(nums[3]) == Number(nums[4])) {
                     type2 = '对子';
-                } else if ((nums[3] - nums[2]) == 1 || (nums[4] - nums[3]) == 1) {
+                } else if ((Number(nums[3]) - Number(nums[2])) == 1 || (Number(nums[4]) - Number(nums[3])) == 1) {
                     type2= '半顺';
                 } else {
                     type2 = '杂六';
@@ -315,7 +401,7 @@ $(function () {
                 return;
             if ((data.current.periodNumber != pk10_currentPeriodNumber)) {
                 var nums = data.current.awardNumbers.split(',');
-                var str = Number(nums[0])+Number(nums[1])+Number(nums[2])+Number(nums[3])+Number(nums[4]);
+                var str = Number(nums[0])+Number(nums[1])+Number(Number(nums[2]))+Number(nums[3])+Number(nums[4]);
                 //  cpNumber = data.current.periodNumber;
 
                 $("#tjSsc").find(".sumNum").text(str),
@@ -330,21 +416,10 @@ $(function () {
                     }
                     //alert(nums[i]);
                 }
-                // var nun = Number(nums[0])+Number(nums[1])+Number(nums[2])+Number(nums[3])+Number(nums[4]);
-                // $("#longhu2").append("<td class='sumNum'> "+ nun +" &nbsp;&nbsp;</td>");
-                // if(nun%2 == 0){
-                //     $("#longhu2").append("<td class='sumSingleDouble'>双 &nbsp;&nbsp;</td>");
-                // }else {
-                //     $("#longhu2").append("<td class='sumSingleDouble'>单&nbsp;&nbsp;</td>");
-                // }
-                // if(nun <= 23){
-                //     $("#longhu2").append("<td class='sumBigSmall'>小&nbsp;&nbsp;</td>");
-                // }else {
-                //     $("#longhu2").append("<td class='sumBigSmall'>大&nbsp;&nbsp;</td>");
-                // }
-                if(nums[0] < nums[4]){
+
+                if(Number(nums[0]) < Number(nums[4])){
                     $("#tjSsc").find(".dragonTiger").text("虎");
-                }else if( nums[0] > nums[4]){
+                }else if( Number(nums[0]) > Number(nums[4])){
                     $("#tjSsc").find(".dragonTiger").text("龙");
                     //  $("#longhu2").append("<td class='dragonTiger'>龙&nbsp;&nbsp;</td>");
                 }else {
@@ -356,39 +431,39 @@ $(function () {
                 $("#tjSsc").find(".betweenThree").text(typeOf("san", nun[2]));
                 $("#tjSsc").find(".lastThree").text(typeOf("san", nun[3]));
 
-                if ((nums[0] == nums[1]) && (nums[0] == nums[2])) {
+                if ((Number(nums[0]) == Number(nums[1])) && (Number(nums[0]) == Number(nums[2]))) {
                     type = '豹子';
-                } else if (((nums[1] - nums[0]) == (nums[2] - nums[1])) && ((nums[1] - nums[0]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
+                } else if (((Number(nums[1]) - Number(nums[0])) == (Number(nums[2]) - Number(nums[1]))) && ((Number(nums[1]) - Number(nums[0])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
                     type = '顺子';
-                } else if (nums[0] == nums[1] || nums[1] == nums[2]) {
+                } else if (Number(nums[0]) == Number(nums[1]) || Number(nums[1]) == Number(nums[2])) {
                     type = '对子';
-                } else if ((nums[1] - nums[0]) == 1 || (nums[2] - nums[1]) == 1) {
+                } else if ((Number(nums[1]) - Number(nums[0])) == 1 || (Number(nums[2]) - Number(nums[1])) == 1) {
                     type = '半顺';
                 } else {
                     type = '杂六';
                 }
                 $("#tjSsc").find(".behindThree").text(type);
                 var type1 = '';
-                if ((nums[1] == nums[2]) && (nums[1] == nums[3])) {
-                    type1 = '豹子';
-                } else if (((nums[2] - nums[1]) == (nums[3] - nums[2])) && ((nums[2] - nums[1]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
-                    type1 = '顺子';
-                } else if (nums[1] == nums[2] || nums[2] == nums[3]) {
-                    type1 = '对子';
-                } else if ((nums[2] - nums[1]) == 1 || (nums[3] - nums[2]) == 1) {
-                    type1= '半顺';
-                } else {
-                    type1 = '杂六';
-                }
+               if ((Number(nums[1]) == Number(nums[2])) && (Number(nums[1]) == Number(nums[3]))) {
+            type1 = '豹子';
+        } else if (((Number(nums[2]) - Number(nums[1])) == (Number(nums[3]) - Number(nums[2]))) && ((Number(nums[2]) - Number(nums[1])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
+            type1 = '顺子';
+        } else if (Number(nums[1]) == Number(nums[2]) || Number(nums[2]) == Number(nums[3])) {
+            type1 = '对子';
+        } else if ((Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[3]) - Number(nums[2])) == 1) {
+            type1= '半顺';
+        } else {
+            type1 = '杂六';
+        }
                 $("#tjSsc").find(".betweenThree").text(type1);
                 var type2 = '';
-                if ((nums[2] == nums[3]) && (nums[2] == nums[4])) {
+                if ((Number(nums[2]) == Number(nums[3])) && (Number(nums[2]) == Number(nums[4]))) {
                     type2 = '豹子';
-                } else if (((nums[3] - nums[2]) == (nums[4] - nums[3])) && ((nums[3] - nums[2]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
+                } else if (((Number(nums[3]) - Number(nums[2])) == (Number(nums[4]) - Number(nums[3]))) && ((Number(nums[3]) - Number(nums[2])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
                     type2 = '顺子';
-                } else if (nums[2] == nums[3] || nums[3] == nums[4]) {
+                } else if (Number(nums[2]) == Number(nums[3]) || Number(nums[3]) == Number(nums[4])) {
                     type2 = '对子';
-                } else if ((nums[3] - nums[2]) == 1 || (nums[4] - nums[3]) == 1) {
+                } else if ((Number(nums[3]) - Number(nums[2])) == 1 || (Number(nums[4]) - Number(nums[3])) == 1) {
                     type2= '半顺';
                 } else {
                     type2 = '杂六';
@@ -413,7 +488,7 @@ $(function () {
                 return;
             if ((data.current.periodNumber != pk10_currentPeriodNumber)) {
                 var nums = data.current.awardNumbers.split(',');
-                var str = Number(nums[0])+Number(nums[1])+Number(nums[2])+Number(nums[3])+Number(nums[4]);
+                var str = Number(nums[0])+Number(nums[1])+Number(Number(nums[2]))+Number(nums[3])+Number(nums[4]);
                 //  cpNumber = data.current.periodNumber;
 
                 $("#jsssc").find(".sumNum").text(str),
@@ -428,21 +503,10 @@ $(function () {
                     }
                     //alert(nums[i]);
                 }
-                // var nun = Number(nums[0])+Number(nums[1])+Number(nums[2])+Number(nums[3])+Number(nums[4]);
-                // $("#longhu2").append("<td class='sumNum'> "+ nun +" &nbsp;&nbsp;</td>");
-                // if(nun%2 == 0){
-                //     $("#longhu2").append("<td class='sumSingleDouble'>双 &nbsp;&nbsp;</td>");
-                // }else {
-                //     $("#longhu2").append("<td class='sumSingleDouble'>单&nbsp;&nbsp;</td>");
-                // }
-                // if(nun <= 23){
-                //     $("#longhu2").append("<td class='sumBigSmall'>小&nbsp;&nbsp;</td>");
-                // }else {
-                //     $("#longhu2").append("<td class='sumBigSmall'>大&nbsp;&nbsp;</td>");
-                // }
-                if(nums[0] < nums[4]){
+
+                if(Number(nums[0]) < Number(nums[4])){
                     $("#jsssc").find(".dragonTiger").text("虎");
-                }else if( nums[0] > nums[4]){
+                }else if( Number(nums[0]) > Number(nums[4])){
                     $("#jsssc").find(".dragonTiger").text("龙");
                     //  $("#longhu2").append("<td class='dragonTiger'>龙&nbsp;&nbsp;</td>");
                 }else {
@@ -450,39 +514,39 @@ $(function () {
                     //$("#longhu2").append("<td class='dragonTiger'>和&nbsp;&nbsp;</td>");
                 }
 
-                if ((nums[0] == nums[1]) && (nums[0] == nums[2])) {
+                if ((Number(nums[0]) == Number(nums[1])) && (Number(nums[0]) == Number(nums[2]))) {
                     type = '豹子';
-                } else if (((nums[1] - nums[0]) == (nums[2] - nums[1])) && ((nums[1] - nums[0]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
+                } else if (((Number(nums[1]) - Number(nums[0])) == (Number(nums[2]) - Number(nums[1]))) && ((Number(nums[1]) - Number(nums[0])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
                     type = '顺子';
-                } else if (nums[0] == nums[1] || nums[1] == nums[2]) {
+                } else if (Number(nums[0]) == Number(nums[1]) || Number(nums[1]) == Number(nums[2])) {
                     type = '对子';
-                } else if ((nums[1] - nums[0]) == 1 || (nums[2] - nums[1]) == 1) {
+                } else if ((Number(nums[1]) - Number(nums[0])) == 1 || (Number(nums[2]) - Number(nums[1])) == 1) {
                     type = '半顺';
                 } else {
                     type = '杂六';
                 }
                 $("#jsssc").find(".behindThree").text(type);
                 var type1 = '';
-                if ((nums[1] == nums[2]) && (nums[1] == nums[3])) {
-                    type1 = '豹子';
-                } else if (((nums[2] - nums[1]) == (nums[3] - nums[2])) && ((nums[2] - nums[1]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
-                    type1 = '顺子';
-                } else if (nums[1] == nums[2] || nums[2] == nums[3]) {
-                    type1 = '对子';
-                } else if ((nums[2] - nums[1]) == 1 || (nums[3] - nums[2]) == 1) {
-                    type1= '半顺';
-                } else {
-                    type1 = '杂六';
-                }
+               if ((Number(nums[1]) == Number(nums[2])) && (Number(nums[1]) == Number(nums[3]))) {
+            type1 = '豹子';
+        } else if (((Number(nums[2]) - Number(nums[1])) == (Number(nums[3]) - Number(nums[2]))) && ((Number(nums[2]) - Number(nums[1])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
+            type1 = '顺子';
+        } else if (Number(nums[1]) == Number(nums[2]) || Number(nums[2]) == Number(nums[3])) {
+            type1 = '对子';
+        } else if ((Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[3]) - Number(nums[2])) == 1) {
+            type1= '半顺';
+        } else {
+            type1 = '杂六';
+        }
                 $("#jsssc").find(".betweenThree").text(type1);
                 var type2 = '';
-                if ((nums[2] == nums[3]) && (nums[2] == nums[4])) {
+                if ((Number(nums[2]) == Number(nums[3])) && (Number(nums[2]) == Number(nums[4]))) {
                     type2 = '豹子';
-                } else if (((nums[3] - nums[2]) == (nums[4] - nums[3])) && ((nums[3] - nums[2]) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
+                } else if (((Number(nums[3]) - Number(nums[2])) == (Number(nums[4]) - Number(nums[3]))) && ((Number(nums[3]) - Number(nums[2])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
                     type2 = '顺子';
-                } else if (nums[2] == nums[3] || nums[3] == nums[4]) {
+                } else if (Number(nums[2]) == Number(nums[3]) || Number(nums[3]) == Number(nums[4])) {
                     type2 = '对子';
-                } else if ((nums[3] - nums[2]) == 1 || (nums[4] - nums[3]) == 1) {
+                } else if ((Number(nums[3]) - Number(nums[2])) == 1 || (Number(nums[4]) - Number(nums[3])) == 1) {
                     type2= '半顺';
                 } else {
                     type2 = '杂六';
@@ -502,23 +566,112 @@ $(function () {
         }, 'json');
     };
 
+    var gdkl10_awardTick = function () {
+        $.get('gdkl10/getGdkl10AwardData.do?' + Math.random(), { ajaxhandler: 'GetPk10AwardData' }, function (data) {
+            if(!data)
+                return;
+            if ((data.current.periodNumber != pk10_currentPeriodNumber)) {
+                $("#gdkl10 .kajianhao").html("");
+                var nums = data.current.awardNumbers.split(',');
+                var str = Number(nums[0])+Number(nums[1])+Number(Number(nums[2]))+Number(nums[3])+Number(nums[4]);
+                //  cpNumber = data.current.periodNumber;
+                for (var i = 0; i < nums.length; i++) {
+                    $("#gdkl10 .kajianhao").append("<li class='numblueHead'>"+ nums[i] +"</li>");
+                }
+                $("#gdkl10").find(".sumNum").text(str),
+                    $("#gdkl10").find(".sumSingleDouble").text(str%2 == 0 ? "单" : "双"),
+                    $("#gdkl10").find(".sumBigSmall").text(str > 23 ? "大" : "小");
+               var str_2 =  String(str);
+                if(str_2.charAt(str_2.length-1) > 5){
+                    $("#gdkl10 .longhu2").find(".lastBigSmall").text("尾大");
+                }else {
+                    $("#gdkl10 .longhu2").find(".lastBigSmall").text("尾小");
+                }
+
+                if(Number(nums[0]) < Number(nums[7])){
+                    $("#gdkl10 .longhu2").find(".firstDragonTiger").text("虎");
+                }else if( Number(nums[0]) > Number(nums[7])){
+                    $("#gdkl10 .longhu2").find(".firstDragonTiger").text("龙");
+                }else {
+                    $("#gdkl10 .longhu2").find(".firstDragonTiger").text("和");
+                }
+                if(Number(nums[1]) < Number(nums[6])){
+                    $("#gdkl10 .longhu2").find(".secondDragonTiger").text("虎");
+                }else if( Number(nums[1]) > Number(nums[6])){
+                    $("#gdkl10 .longhu2").find(".secondDragonTiger").text("龙");
+                }else {
+                    $("#gdkl10 .longhu2").find(".secondDragonTiger").text("和");
+                }
+                if(Number(Number(nums[2])) < Number(nums[5])){
+                    $("#gdkl10 .longhu2").find(".thirdDragonTiger").text("虎");
+                }else if( Number(Number(nums[2])) > Number(nums[5])){
+                    $("#gdkl10 .longhu2").find(".thirdDragonTiger").text("龙");
+                }else {
+                    $("#gdkl10 .longhu2").find(".thirdDragonTiger").text("和");
+                }
+                if(Number(nums[3]) < Number(nums[4])){
+                    $("#gdkl10 .longhu2").find(".fourthDragonTiger").text("虎");
+                }else if( Number(nums[4]) < Number(nums[3])){
+                    $("#gdkl10 .longhu2").find(".fourthDragonTiger").text("龙");
+                }else {
+                    $("#gdkl10 .longhu2").find(".fourthDragonTiger").text("和");
+                }
+
+                cpNumber = data.current.periodNumber;
+                var _time = data.current.awardTime.substring(11, 16);
+                //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
+                $("#gdkl10 .drawCount").html(data.next.periodNumber);
+                $("#gdkl10 .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
+
+
+                //drawTrend();
+            }
+            pk10_currentPeriodNumber = data.current.periodNumber;
+            window.setTimeout(tjssc_awardTick, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval);
+        }, 'json');
+    };
 
 
 
-
-    function typeOf(e, t) {
-        if ("san" == e) switch (1 * t) {
-            case 0:
-                return "杂六";
-            case 1:
-                return "半顺";
-            case 2:
-                return "顺子";
-            case 3:
-                return "对子";
-            case 4:
-                return "豹子"
+    function typeOf(nums) {
+        if ((Number(nums[0]) == Number(nums[1])) && (Number(nums[0]) == Number(nums[2]))) {
+            type = '豹子';
+        } else if (((Number(nums[1]) - Number(nums[0])) == (Number(nums[2]) - Number(nums[1]))) && ((Number(nums[1]) - Number(nums[0])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
+            type = '顺子';
+        } else if (Number(nums[0]) == Number(nums[1]) || Number(nums[1]) == Number(nums[2])) {
+            type = '对子';
+        } else if ((Number(nums[1]) - Number(nums[0])) == 1 || (Number(nums[2]) - Number(nums[1])) == 1) {
+            type = '半顺';
+        } else {
+            type = '杂六';
         }
+        
+        var type1 = '';
+        if ((Number(nums[1]) == Number(nums[2])) && (Number(nums[1]) == Number(nums[3]))) {
+            type1 = '豹子';
+        } else if (((Number(nums[2]) - Number(nums[1])) == (Number(nums[3]) - Number(nums[2]))) && ((Number(nums[2]) - Number(nums[1])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
+            type1 = '顺子';
+        } else if (Number(nums[1]) == Number(nums[2]) || Number(nums[2]) == Number(nums[3])) {
+            type1 = '对子';
+        } else if ((Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[3]) - Number(nums[2])) == 1) {
+            type1= '半顺';
+        } else {
+            type1 = '杂六';
+        }
+
+        var type2 = '';
+        if ((Number(nums[2]) == Number(nums[3])) && (Number(nums[2]) == Number(nums[4]))) {
+            type2 = '豹子';
+        } else if (((Number(nums[3]) - Number(nums[2])) == (Number(nums[4]) - Number(nums[3]))) && ((Number(nums[3]) - Number(nums[2])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
+            type2 = '顺子';
+        } else if (Number(nums[2]) == Number(nums[3]) || Number(nums[3]) == Number(nums[4])) {
+            type2 = '对子';
+        } else if ((Number(nums[3]) - Number(nums[2])) == 1 || (Number(nums[4]) - Number(nums[3])) == 1) {
+            type2= '半顺';
+        } else {
+            type2 = '杂六';
+        }
+        return data=[type,type1,type2]
     }
     /*var gd_awardTick = function () {
      $.get('gdkl10/ajax?' + Math.random(), { ajaxhandler: 'GetGdkl10AwardData' }, function (data) {
@@ -543,13 +696,13 @@ $(function () {
      }, 'json');
      };*/
 
-//    window.setTimeout(cq_awardTick, 500);
+    window.setTimeout(gdkl10_awardTick, 500);
     window.setTimeout(pk10_awardTick, 5000);
     window.setTimeout(cqssc_awardTick, 5000);
     window.setTimeout(tjssc_awardTick, 5000);
     window.setTimeout(jsssc_awardTick, 5000);
     window.setTimeout(jssc_awardTick, 5000);
-//    window.setTimeout(gd_awardTick, 500);
+    window.setTimeout(xyft_awardTick, 500);
 
     $(".award .lot-menu").hover(function () {
         $(this).parents(".lot").children(".lot-menu").removeClass("cur");
