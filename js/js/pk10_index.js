@@ -632,27 +632,23 @@ $(".bothover").hover(function() {
 var urlbublic = config.publicUrl;
 //请求list数据
 function listData() {
-	$.ajax({
-		url: urlbublic + "pks/getPksHistoryList.do",
-		type: "GET",
-		data: {
-			"lotCode":lotCode
-		},
-		beforeSend: function() {},
-		success: function(data) {
+    $.get('pk10/getPk10AwardData.do?' + Math.random(), { ajaxhandler: 'GetPk10AwardData' }, function (data) {
+
+    	if(!data){
+            setTimeout(function() {
+                listData(); //请求后台加载数据传入一下期期数
+            }, 1000);
+            if(config.ifdebug) {
+                console.log("data error");
+            }
+            //createHtml(data);
+		}
 			createHtmlList(data);
 			animateMethod.loadingList("#jrsmhmtj", false);
 			tools.resetListColor();//加载列表颜色
-		},
-		error: function(data) {
-			setTimeout(function() {
-				listData(); //请求后台加载数据传入一下期期数
-			}, 1000);
-			if(config.ifdebug) {
-				console.log("data error");
-			}
-			//createHtml(data);	
-		}
+
+
+
 	});
 }
 //今日双面/号码统计
