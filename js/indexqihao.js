@@ -551,7 +551,7 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
      $("#tjssc .sdrawCountnext").html(120-cpNumber);
 
  });
- $.getJSON("/gd11x5/getgd11x5AwardTimes.do",
+ $.getJSON("/gd11x5/getPk10AwardTimes.do",
  function(data){
      timer(parseInt((data.next.awardTimeInterval)/1000),"gd11x5 .nextkai_time");
      $("#gd11x5 .kajianhao").html("");
