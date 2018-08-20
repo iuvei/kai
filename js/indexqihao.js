@@ -483,6 +483,7 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
  function(data){
      timer(parseInt((data.next.awardTimeInterval)/1000),"tjssc .nextkai_time");
      timers(parseInt((data.next.awardTimeInterval)/1000),".tjssc_1 .cuttime");
+     $("#tjssc .kajianhao").html("");
      var nums = data.current.awardNumbers.split(',');
      var str = Number(nums[0])+Number(nums[1])+Number(Number(nums[2]))+Number(nums[3])+Number(nums[4]);
      //  cpNumber = data.current.periodNumber;
@@ -546,8 +547,8 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
      $("#tjssc .longhu2").find(".lastThree").text(type2);
      cpNumber = data.current.periodNumber;
      var _time = data.current.awardTime.substring(11, 16);
-     $("#tjssc .preDrawIssue").html(cpNumber);
-     //$("#cqSsc .drawCount").html(data.next.periodNumber);
+     $("#tjssc .preDrawIssue").html(120);
+     $("#tjssc .drawCount").html(cpNumber);
      $("#tjssc .sdrawCountnext").html(120-cpNumber);
 
  });
