@@ -12,11 +12,9 @@ class ApiController extends Controller{
             );
             return json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         }
-<<<<<<< HEAD
-        file_put_contents('lgc.log',date("Y-m-d H:i:s".$_POST),FILE_APPEND);
-=======
+
         file_put_contents('lgc.log',date("Y-m-d H:i:s".$_POST."</br>"),FILE_APPEND);
->>>>>>> 72628539c2aac1fd701e3ae99d53b5b1f20954e9
+
         $data = json_decode($_POST,true);
         if(empty($data['name'])){
             $arr = array(
@@ -26,11 +24,9 @@ class ApiController extends Controller{
             return json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         }
         $res = M('lot_type')->where(array('name'=>$data['name']))->find();
-<<<<<<< HEAD
-        file_put_contents('lgc.log',date("Y-m-d H:i:s".$res),FILE_APPEND);
-=======
+
         file_put_contents('lgc.log',date("Y-m-d H:i:s".$res."</br>"),FILE_APPEND);
->>>>>>> 72628539c2aac1fd701e3ae99d53b5b1f20954e9
+
         if(empty($res)){
             $arr = array(
                 'code'=>false,
@@ -45,11 +41,8 @@ class ApiController extends Controller{
             'dat_codes'=>$data['code'],
         );
         $res = M('lot_data')->add($where);
-<<<<<<< HEAD
-        file_put_contents('lgc.log',date("Y-m-d H:i:s".$res),FILE_APPEND);
-=======
+
         file_put_contents('lgc.log',date("Y-m-d H:i:s".$res."</br>"),FILE_APPEND);
->>>>>>> 72628539c2aac1fd701e3ae99d53b5b1f20954e9
         if($res < 1){
             $arr = array(
                 'code'=>false,
