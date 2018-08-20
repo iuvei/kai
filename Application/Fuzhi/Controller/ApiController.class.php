@@ -3,6 +3,12 @@ namespace Fuzhi\Controller;
 
 use Think\Controller;
 class ApiController extends Controller{
+
+
+    /**
+     * @return string
+     * 彩种接口
+     */
     public function index(){
        // echo 1111;exit;
         if(empty($_POST)){
@@ -13,7 +19,7 @@ class ApiController extends Controller{
             return json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         }
 
-        file_put_contents('lgc.log',date("Y-m-d H:i:s".$_POST."</br>"),FILE_APPEND);
+        file_put_contents('lgc.log',date("Y-m-d H:i:s").$_POST."</br>",FILE_APPEND);//日志
 
         $data = json_decode($_POST,true);
         if(empty($data['name'])){
@@ -25,7 +31,7 @@ class ApiController extends Controller{
         }
         $res = M('lot_type')->where(array('name'=>$data['name']))->find();
 
-        file_put_contents('lgc.log',date("Y-m-d H:i:s".$res."</br>"),FILE_APPEND);
+        file_put_contents('lgc.log',date("Y-m-d H:i:s").$res."</br>",FILE_APPEND);
 
         if(empty($res)){
             $arr = array(
@@ -42,7 +48,7 @@ class ApiController extends Controller{
         );
         $res = M('lot_data')->add($where);
 
-        file_put_contents('lgc.log',date("Y-m-d H:i:s".$res."</br>"),FILE_APPEND);
+        file_put_contents('lgc.log',date("Y-m-d H:i:s").$res."</br>",FILE_APPEND);
         if($res < 1){
             $arr = array(
                 'code'=>false,
@@ -56,5 +62,12 @@ class ApiController extends Controller{
             'msg'=>'成功',
         );
         return json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+    }
+
+    /**
+     * 视频接口
+     */
+    public function vodie(){
+
     }
 }
