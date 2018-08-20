@@ -49,6 +49,17 @@ $('#body_none').click(function(){
 });
 
 
+$('.video_box .v_right').click(function(){
+
+  $('.video_box .video_box_ul').css({'position':'relative','left':'-236px'})
+
+});
+$('.video_box .v_left').click(function(){
+
+    $('.video_box .video_box_ul').css({'position':'relative','left':' 0px'})
+});
+
+
 
 
 
