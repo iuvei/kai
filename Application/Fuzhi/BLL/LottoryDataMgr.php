@@ -13,6 +13,7 @@ class LottoryDataMgr
 
     public static function getInstance()
     {
+
         if (is_null(self::$_instance) || isset(self::$_instance)) {
             self::$_instance = new self();
         }
@@ -24,6 +25,7 @@ class LottoryDataMgr
 
     static function getAwardData($type, $page, $param)
     {
+
         $ret = '';
         $ver = '1.1';
         if (S('lanmaocai_version') != $ver) {
@@ -4956,6 +4958,7 @@ class LottoryDataMgr
     function getGameNextNo($type, $module, $time)
     {
         $type = intval($type);
+       
         $types = $this->getTypes($module);
         $kjTime = $types[$type]["data_ftime"];
         $atime = date('H:i:s', $time + $kjTime);
