@@ -104,7 +104,8 @@ class ApiController extends Controller{
        // $db_name = 'th_game_queue_'.$_GET['gamekey'];
         $res =  M("data_time")->where('stop_time','>',date('H:i:s'))->find();
         $game =  M('th_game')->where('sname',$_GET['gamekey'])->find();
-          print_r(date('H:i:s'));exit;
+        echo  M("data_time")->getLastsql();
+          print_r($res);exit;
         $where = array(
             'game_id'=>$game['id'],
             'issue'=>$res['issue']-1
