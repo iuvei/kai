@@ -7,8 +7,11 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
  // $("#pk10period").html(data.current.periodNumber);
  // $("#pk10-timeqihao").html(data.next.periodNumber);
 // timer(parseInt((data.next.awardTimeInterval)/1000),"pk10-time");
+     //228.89 awardTimeInterval
+
      //$("#pk10_hot .nextkai_time .second").html((data.next.awardTimeInterval)/1000);
- timers(parseInt((data.next.awardTimeInterval)/1000),"pk10_hot .nextkai_time .minute","pk10_hot .nextkai_time .second");
+timers(parseInt((data.next.awardTimeInterval)/1000),"pk10_hot .nextkai_time .minute");
+ timers(parseInt((data.next.awardTimeInterval)/1000),"pk10_hot .nextkai_time .second");
 //  var str = new Array();
 //  var codenum = data.current.awardNumbers;
 //  /* if(codenum==""){
