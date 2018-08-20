@@ -10,7 +10,8 @@ function setApiurl() {
     if (checkStorage('token') && checkStorage('host')) {
         var host = getStorage('host'),
             tk = getStorage('token');
-        apiurl = host + '/event/present_expect?gamekey=' + gamekey + '&tk=' + tk;
+        apiurl = '/Fuzhi/Api/vodie?gamekey=' + gamekey ;
+       // apiurl = host + '/event/present_expect?gamekey=' + gamekey + '&tk=' + tk;
     } else {
         objCount.innerHTML = '登陆错误';
         console.log(objCount);
