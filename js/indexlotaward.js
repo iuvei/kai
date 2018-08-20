@@ -676,7 +676,7 @@ $(function () {
                     type2 = '顺子';
                 } else if (Number(nums[2]) == Number(nums[3]) || Number(nums[3]) == Number(nums[4])) {
                     type2 = '对子';
-                } else if ((Number(nums[3]) - Number(nums[2])) == 1 || (Number(nums[4]) - Number(nums[3])) == 1 || (Number(nums[3]) - Number(nums[4])) == 1) {
+                } else if ((Number(nums[3]) - Number(nums[2])) == 1 || (Number(nums[4]) - Number(nums[3])) == 1 || (Number(nums[3]) - Number(nums[4])) == 1 || (Number(nums[2]) - Number(nums[3])) == 1) {
                     type2= '半顺';
                 } else {
                     type2 = '杂六';
