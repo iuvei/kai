@@ -4958,6 +4958,7 @@ class LottoryDataMgr
     function getGameNextNo($type, $module, $time)
     {
         $type = intval($type);
+       
         $types = $this->getTypes($module);
         $kjTime = $types[$type]["data_ftime"];
         $atime = date('H:i:s', $time + $kjTime);
