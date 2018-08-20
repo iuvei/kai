@@ -1,3 +1,0 @@
-<?php
-//000000000002s:453:"{"success":true,"code":null,"msg":null,"rows":[{"id":0,"betEndTime":null,"termNum":"701410","lotteryNum":"07030102100405080906","lotteryTime":"2018-08-17 12:02:30","gameId":50,"n1":7,"n2":3,"n3":1,"n4":2,"n5":10,"n6":4,"n7":5,"n8":8,"n9":9,"n10":6,"n11":null,"n12":null,"n13":null,"n14":null,"n15":null,"n16":null,"n17":null,"n18":null,"n19":null,"n20":null,"n21":null,"lotteryDate":"2018-08-17 00:00:00","lotteryDateStr":"2018-08-17","termNumStr":""}]}";
-?>
