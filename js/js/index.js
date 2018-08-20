@@ -1,39 +1,49 @@
 
 function PK10(){
+    localStorage.setItem('host','https://api.dk1288.com/');
+    alert("登录即可观看！");
      $("#bjpk10").fadeIn(500)
      $('#body_none').show();
  }
 function CQSSC(){
+    localStorage.setItem('host','https://api.dk1288.com/');
+    alert("登录即可观看！");
     $('#cqssc_1').fadeIn(500);
     $('#body_none').show();
 }
 
 function TJSSC(){
-    $("#tjssc_1").fadeIn(500)
-    $('#body_none').show();
+ alert("敬请期待!");
+ return ;
 }
 
 function XYFT(){
+    localStorage.setItem('host','https://api.dk1288.com/');
+    alert("登录即可观看！");
     $('#xyft_1').fadeIn(500)
     $('#body_none').show();
 }
 
 function JSSC(){
+    localStorage.setItem('host','https://api.dk1288.com/');
+    alert("登录即可观看！");
     $("#jssc").fadeIn(500)
     $('#body_none').show();
 }
 
 function JSSSC(){
+    localStorage.setItem('host','https://api.dk1288.com/');
+    alert("登录即可观看！");
     $("#jsssc_1").fadeIn(500)
     $('#body_none').show();
 }
 
 $('.video_box .pk10').click(PK10);
-$('.video_box .cqssc').click(PK10);
-$('.video_box .xyft_1').click(PK10);
-$('.video_box .jsssc_1').click(PK10);
-$('.video_box .tjssc_1').click(PK10);
-$('.video_box .jssc').click(PK10);
+$('.video_box .cqssc').click(CQSSC);
+$('.video_box .xyft_1').click(XYFT);
+$('.video_box .jsssc_1').click(JSSSC);
+$('.video_box .tjssc_111').click(TJSSC);
+$('.video_box .jssc').click(JSSC);
 
 
 
@@ -163,58 +173,59 @@ function openVdio(e) {
         })
     }), ifopen = !0)
 }
-function iframe(e) {
-    var t = {
-        pk10: "PK10/video.html?10001",
-        cqssc: "SSC/index.html?10002",
-        tjssc: "SSC/index.html?10003",
-        xjssc: "SSC/index.html?10004",
-        jsssc: "jsssc/",
-        gdklsf: "GDklsf/index.html?10005",
-        sdsyydj: "11x5_video/index.html?10008",
-        gdsyxw: "11x5_video/index.html?10006",
-        jsksan: "kuai3_video/Kuai3.html?10007",
-        jisusc: "PK10/video.html?10037",
-        xingyft: "jisuft_video/index.html?10035",
-        tjklsf: "GDklsf/index.html?10034",
-        aozxy8: "GDklsf/index.html?10011",
-        zjef: "11x5_video/index.html?10025",
-        gxft: "kuai3_video/Kuai3.html?10026",
-        bjft: "kuai3_video/Kuai3.html?10033",
-        cqxync: "cqnc/index.html?10009",
-        pailie3: "fc3DVideo/index.html?10043",
-        fcsd: "fc3DVideo/index.html?10041",
-        gxklsf: "gxklsf_video/index.html?10038"
-    }, a = {
-        pk10: "北京PK10",
-        cqssc: "重庆时时彩",
-        tjssc: "天津时时彩",
-        xjssc: "新疆时时彩",
-        jsssc: "新疆时时彩",
-        gdklsf: "广东快乐十分",
-        sdsyydj: "十一运夺金",
-        gdsyxw: "广东11选5",
-        jsksan: "江苏快3",
-        jisusc: "极速赛车",
-        xingyft: "极速飞艇",
-        tjklsf: "天津快乐十分",
-        aozxy8: "澳洲幸运8",
-        zjef: "浙江11选5",
-        gxft: "广西快3",
-        bjft: "北京快3",
-        cqxync: "重庆幸运农场",
-        egxy28: "pc蛋蛋幸运28",
-        qxc: "体彩七星彩",
-        pailie3: "体彩排列3",
-        fcsd: "福彩3D",
-        gxklsf: "广西快乐十分"
-    };
-    $("#videobox").find("#vtitle").text(a[e]), $("#videoIframe").find("iframe").attr("src", "//kj.kai861.com/view/video/" + t[e])
-}
+// function iframe(e) {
+//     var t = {
+//         pk10: "PK10/video.html?10001",
+//         cqssc: "SSC/index.html?10002",
+//         tjssc: "SSC/index.html?10003",
+//         xjssc: "SSC/index.html?10004",
+//         jsssc: "jsssc/",
+//         gdklsf: "GDklsf/index.html?10005",
+//         sdsyydj: "11x5_video/index.html?10008",
+//         gdsyxw: "11x5_video/index.html?10006",
+//         jsksan: "kuai3_video/Kuai3.html?10007",
+//         jisusc: "PK10/video.html?10037",
+//         xingyft: "jisuft_video/index.html?10035",
+//         tjklsf: "GDklsf/index.html?10034",
+//         aozxy8: "GDklsf/index.html?10011",
+//         zjef: "11x5_video/index.html?10025",
+//         gxft: "kuai3_video/Kuai3.html?10026",
+//         bjft: "kuai3_video/Kuai3.html?10033",
+//         cqxync: "cqnc/index.html?10009",
+//         pailie3: "fc3DVideo/index.html?10043",
+//         fcsd: "fc3DVideo/index.html?10041",
+//         gxklsf: "gxklsf_video/index.html?10038"
+//     }, a = {
+//         pk10: "北京PK10",
+//         cqssc: "重庆时时彩",
+//         tjssc: "天津时时彩",
+//         xjssc: "新疆时时彩",
+//         jsssc: "新疆时时彩",
+//         gdklsf: "广东快乐十分",
+//         sdsyydj: "十一运夺金",
+//         gdsyxw: "广东11选5",
+//         jsksan: "江苏快3",
+//         jisusc: "极速赛车",
+//         xingyft: "极速飞艇",
+//         tjklsf: "天津快乐十分",
+//         aozxy8: "澳洲幸运8",
+//         zjef: "浙江11选5",
+//         gxft: "广西快3",
+//         bjft: "北京快3",
+//         cqxync: "重庆幸运农场",
+//         egxy28: "pc蛋蛋幸运28",
+//         qxc: "体彩七星彩",
+//         pailie3: "体彩排列3",
+//         fcsd: "福彩3D",
+//         gxklsf: "广西快乐十分"
+//     };
+//   //  $("#videobox").find("#vtitle").text(a[e]), $("#videoIframe").find("iframe").attr("src", "//kj.kai861.com/view/video/" + t[e])
+// }
 
 
 $(function () {
-    ajaxRequst("", "#pk10"), ajaxRequst("", "#pk10_hot"), ajaxRequst("", "#jisusc"), ajaxRequst("", "#xingyft"), ajaxRequst("", "#cqSsc"), ajaxRequst("", "#cqSsc_hot"), ajaxRequst("", "#tjSsc"), ajaxRequst("", "#jsssx"), ajaxRequst("", "#gdklsf"), ajaxRequst("", "#tjklsf"), ajaxRequst("", "#aozxy8"), ajaxRequst("", "#shiyix5_sd"), ajaxRequst("", "#shiyix5_sd_hot"), ajaxRequst("", "#shiyix5_gd"), ajaxRequst("", "#11ckeck5_zjef"), ajaxRequst("", "#kuai3"), ajaxRequst("", "#gxk3"), ajaxRequst("", "#bjk3"), ajaxRequst("", "#cqnc"), ajaxRequst("", "#fc3d"), ajaxRequst("", "#tcpl3"), ajaxRequst("", "#gxklsf"), ajaxRequst("", "#sdsyydj"), $("#gotop").click(function () {
+    // ajaxRequst("", "#pk10"), ajaxRequst("", "#pk10_hot"), ajaxRequst("", "#jisusc"), ajaxRequst("", "#xingyft"), ajaxRequst("", "#cqSsc"), ajaxRequst("", "#cqSsc_hot"), ajaxRequst("", "#tjSsc"), ajaxRequst("", "#jsssx"), ajaxRequst("", "#gdklsf"), ajaxRequst("", "#tjklsf"), ajaxRequst("", "#aozxy8"), ajaxRequst("", "#shiyix5_sd"), ajaxRequst("", "#shiyix5_sd_hot"), ajaxRequst("", "#shiyix5_gd"), ajaxRequst("", "#11ckeck5_zjef"), ajaxRequst("", "#kuai3"), ajaxRequst("", "#gxk3"), ajaxRequst("", "#bjk3"), ajaxRequst("", "#cqnc"), ajaxRequst("", "#fc3d"), ajaxRequst("", "#tcpl3"), ajaxRequst("", "#gxklsf"), ajaxRequst("", "#sdsyydj"),
+    $("#gotop").click(function () {
         return $("body,html").animate({scrollTop: 0}, 500), $(this).hide(), !1
     }), $(document).scroll(function () {
         $(this).scrollTop() > 10 ? $("#gotop").show() : $("#gotop").hide()

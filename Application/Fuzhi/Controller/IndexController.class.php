@@ -5,6 +5,8 @@ class IndexController extends HomeController
 {
     public function index()
     {
+        ThinkPHP:
+        cookie('token','u10343u.bG9naW5faXA9MTkyLjE2OC4xMzguNjcmdWlkPTEwMzQzJmJlZ2ludGltZT0xNTM0NDk5MDc3JmVuZHRpbWU9MTUzNzAyNzIwMA.ed44a61834591bddef6cd0782e6fc646');
         $perPage = 10;
         $ids = D('Category')->getChildrenId(1);
 

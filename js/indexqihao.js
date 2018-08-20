@@ -3,15 +3,12 @@ window.setInterval("indexdata()",30000);
 function indexdata(){
 $.getJSON("/pk10/getPk10AwardTimes.do",
  function(data){
- timer(parseInt((data.next.awardTimeInterval)/1000),"pk10_hot .nextkai_time");
- timer(parseInt((data.next.awardTimeInterval)/1000),"pk10 .nextkai_time");
- timers(parseInt((data.next.awardTimeInterval)/1000),".pk10 .cuttime");
+
      $("#pk10_hot .numberbox").html("");
      $("#pk10 .numberbox").html("");
      $("#pk10_hot .longhu").html("");
      $("#pk10 .longhu").html("");
      var nums = data.current.awardNumbers.split(',');
-     var str = "";
      for (var i = 0; i < nums.length; i++) {
          // str += ;
          if(nums[i] == 10){
@@ -93,7 +90,9 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
          $("#pk10_hot .longhu").append("<td class='sumSingleDouble'>单</td>");
          $("#pk10 .longhu").append("<td class='sumSingleDouble'>单</td>");
      }
-
+     timer(parseInt((data.next.awardTimeInterval)/1000),"pk10_hot .nextkai_time");
+     timer(parseInt((data.next.awardTimeInterval)/1000),"pk10 .nextkai_time");
+     timers(parseInt((data.next.awardTimeInterval)/1000),".pk10 .cuttime");
      cpNumber = data.current.periodNumber;
      var _time = data.current.awardTime.substring(11, 16);
      //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
@@ -180,7 +179,7 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
      $("#xyft .sdrawCountnext").html(180-cpNumber);
 
  });
- $.getJSON("/cqssc/getPk10AwardTimes.do",
+ $.getJSON("/cqssc/getCqsscAwardTimes.do",
  function(data){
      timer(parseInt((data.next.awardTimeInterval)/1000),"cqSsc_hot .nextkai_time");
      timer(parseInt((data.next.awardTimeInterval)/1000),"cqSsc .nextkai_time");
@@ -270,7 +269,7 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
 
  
  });
- $.getJSON("/gdkl10/getPk10AwardTimes.do",
+ $.getJSON("/gdkl10/getGdkl10AwardTimes.do",
  function(data){
 
      timer(parseInt((data.next.awardTimeInterval)/1000),"gdkl10 .nextkai_time");
@@ -402,7 +401,7 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
      $("#jisusc .drawCount").html(cpNumber);
      $("#jisusc .sdrawCountnext").html(Number(data.firstPeriod )+ 179-cpNumber);
  });
- $.getJSON("/jsssc/getPk10AwardTimes.do",
+ $.getJSON("/jsssc/getCqsscAwardTimes.do",
  function(data){
      timer(parseInt((data.next.awardTimeInterval)/1000),"jsssc .nextkai_time");
      timers(parseInt((data.next.awardTimeInterval)/1000),".jsssc_1 .cuttime");
@@ -479,7 +478,7 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
      $("#jsssc .drawCount").html(number);
      $("#jsssc .sdrawCountnext").html(120-number);
  });
- $.getJSON("/tjssc/getPk10AwardTimes.do",
+ $.getJSON("/tjssc/getCqsscAwardTimes.do",
  function(data){
      timer(parseInt((data.next.awardTimeInterval)/1000),"tjssc .nextkai_time");
      timers(parseInt((data.next.awardTimeInterval)/1000),".tjssc_1 .cuttime");
@@ -665,7 +664,7 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
      $("#kuai3").find(".thirdSeafood").text(type_three);
 
      var cpNumber = data.current.periodNumber;
-     var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-2);
+    // var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-2);
 
      //  $("#kuai3 .preDrawIssue").html(cpNumber);
      $("#kuai3 .drawCount").html(cpNumber);
@@ -686,8 +685,6 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
 		minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
 		second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
 	}
-        var str='<s></s>'+minute+'分'+'<s></s>'+second+'秒';
-        var str_2='<s></s>'+minute+'分'+'<s></s>'+second+'秒';
     if(minute == 0 && second <= 30){
         $("#"+div+" .opentyle").text("开奖中...");
     }else {
@@ -697,6 +694,7 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
     $("#"+div+" .second").text(second);
 
 	intDiff--;
+    if(intDiff==0) location.reload();
 	}, 1000);
 }
 function timers(intDiff,div){
@@ -711,8 +709,6 @@ function timers(intDiff,div){
             minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
             second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
         }
-        var str='<s></s>'+minute+'分'+'<s></s>'+second+'秒';
-        var str_2='<s></s>'+minute+'分'+'<s></s>'+second+'秒';
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
         }else {
@@ -721,5 +717,6 @@ function timers(intDiff,div){
         $(div+" .minute").text(minute);
         $(div+" .second").text(second);
         intDiff--;
+        if(intDiff==0) location.reload();
     }, 1000);
 }

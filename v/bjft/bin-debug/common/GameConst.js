@@ -5,8 +5,6 @@ setApiurl();
 
 //检查是否提交请求
 function setApiurl() {
-   
-
     if (checkStorage('token') && checkStorage('host')) {
         var host = getStorage('host'),
             tk = getStorage('token');

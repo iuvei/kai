@@ -3,11 +3,14 @@ function setStorage(objName, objValue, objHours) {
 }
 
 function getStorage(objName) {//获取指定名称的cookie的值
+
     return localStorage.getItem(objName)
 }
 
 function checkStorage(objName) {//获取指定名称的cookie的值
+   // document.cookie="token="+username;
     var v = getStorage(objName);
+    //alert(v);
     if (v == undefined || v == 'null' || v == null || v == '') {
         return false;
     } else {
