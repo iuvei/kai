@@ -7,8 +7,8 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
  // $("#pk10period").html(data.current.periodNumber);
  // $("#pk10-timeqihao").html(data.next.periodNumber);
 // timer(parseInt((data.next.awardTimeInterval)/1000),"pk10-time");
-     $("#pk10_hot .nextkai_time .second").html((data.next.awardTimeInterval)/1000);
-// timers(parseInt((data.next.awardTimeInterval)/1000),"second");
+     //$("#pk10_hot .nextkai_time .second").html((data.next.awardTimeInterval)/1000);
+ timers(parseInt((data.next.awardTimeInterval)/1000),"pk10_hot .nextkai_time .minute","pk10_hot .nextkai_time .second");
 //  var str = new Array();
 //  var codenum = data.current.awardNumbers;
 //  /* if(codenum==""){
@@ -127,7 +127,7 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
  });
 }
  
- function timer(intDiff,div){
+ function timer(intDiff,div,div_2){
 	window.setInterval(function(){
 	var day=0,
 		hour=0,
@@ -139,8 +139,11 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
 		minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
 		second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
 	}
-	var str='<s></s>'+minute+'分'+'<s></s>'+second+'秒';
-	$("#"+div).html(str);
+        var str='<s></s>'+minute+'分'+'<s></s>'+second+'秒';
+        var str_2='<s></s>'+minute+'分'+'<s></s>'+second+'秒';
+
+	//$("#"+div).text(minute);
+	$("#"+div_2).text(second);
 	intDiff--;
 	}, 1000);
 }
