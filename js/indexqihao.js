@@ -3,6 +3,7 @@ window.setInterval("indexdata()",30000);
 function indexdata(){
 $.getJSON("/pk10/getPk10AwardTimes.do",
  function(data){
+     localStorage.setItem('pk10', data);
  timer(parseInt((data.next.awardTimeInterval)/1000),"pk10_hot .nextkai_time");
  timer(parseInt((data.next.awardTimeInterval)/1000),"pk10 .nextkai_time");
  timers(parseInt((data.next.awardTimeInterval)/1000),".pk10 .cuttime");
