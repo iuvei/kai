@@ -626,6 +626,7 @@ $(function () {
         }, 'json');
     };
     var gd11x5_awardTick = function () {
+
         $.get('gd11x5/getgd11x5AwardData.do?' + Math.random(), { ajaxhandler: 'GetPk10AwardData' }, function (data) {
             if(!data)
                 return;

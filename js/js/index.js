@@ -1,13 +1,13 @@
 
 function PK10(){
     localStorage.setItem('host','https://api.dk1288.com/');
-    alert("登录即可观看！");
+    $('#bjpk10').attr('src','/v/bjpk10')
      $("#bjpk10").fadeIn(500)
      $('#body_none').show();
  }
 function CQSSC(){
     localStorage.setItem('host','https://api.dk1288.com/');
-    alert("登录即可观看！");
+    $('#bjpk10').attr('src','/v/cqssc')
     $('#cqssc_1').fadeIn(500);
     $('#body_none').show();
 }
@@ -19,21 +19,21 @@ function TJSSC(){
 
 function XYFT(){
     localStorage.setItem('host','https://api.dk1288.com/');
-    alert("登录即可观看！");
+    $('#bjpk10').attr('src','/v/xyft')
     $('#xyft_1').fadeIn(500)
     $('#body_none').show();
 }
 
 function JSSC(){
     localStorage.setItem('host','https://api.dk1288.com/');
-    alert("登录即可观看！");
+    $('#bjpk10').attr('src','/v/bjpk10')
     $("#jssc").fadeIn(500)
     $('#body_none').show();
 }
 
 function JSSSC(){
     localStorage.setItem('host','https://api.dk1288.com/');
-    alert("登录即可观看！");
+    $('#bjpk10').attr('src','/v/cqssc')
     $("#jsssc_1").fadeIn(500)
     $('#body_none').show();
 }

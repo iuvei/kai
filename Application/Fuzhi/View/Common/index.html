@@ -21,7 +21,6 @@
 	</head>
 	<style>
 
-
 		#body_none
 		{
 			width:100%;
@@ -33,7 +32,16 @@
 		.video_box .video_box_ul{
 			width: 2505px;
 			position: relative;
-			left: -200px;
+		}
+		.kj_video{
+
+		}
+		.kj_video iframe{
+			width:600px;height: 500px;position:fixed;
+			top:50%;
+			left:50%;
+			transform:translateX(-50%) translateY(-50%);
+			z-index: 99;
 		}
 
 	</style>
@@ -46,6 +54,18 @@
 
 	<body>
 <div id="body_none" style="display: none"></div>
+<div class="kj_video">
+	<iframe id="bjpk10" src="/v/bjpk10" style="display: none;"></iframe>
+	<iframe id="cqssc_1" src="/v/cqssc" style="display: none;"></iframe>
+	<iframe id="xyft_1" src="/v/xyft" style="display: none;"></iframe>
+	<iframe id="jssc" src="/v/bjpk10" style="display: none;"></iframe>
+	<iframe id="jsssc_1" src="/v/cqssc" style="display: none;"></iframe>
+	<iframe id="tjssc_1" src="/v/cqssc" style="display: none;"></iframe>
+	<!--<iframe id="gdkl10_1" src="/v/bjpk10" style="display: none;width:600px;height: 500px;position: absolute;z-index: 99;left: 34%"></iframe>-->
+	<!--<iframe id="jsk3" src="/v/bjpk10" style="display: none;width:600px;height: 500px;position: absolute;z-index: 99;left: 34%"></iframe>-->
+	<!--<iframe id="gd11x5_1" src="/v/bjpk10" style="display: none;width:600px;height: 500px;position: absolute;z-index: 99;left: 34%"></iframe>-->
+</div>
+
 		<div class="bodybox">
 			<div class="bgdiv">
 				<script>
@@ -778,18 +798,6 @@
 									</div>
 								</div>
 <!--视频-->
-
-								<iframe id="bjpk10" src="/v/bjpk10" style="display: none;width:600px;height: 500px;position: absolute;z-index: 99;left: 34%"></iframe>
-								<iframe id="cqssc_1" src="/v/cqssc" style="display: none;width:600px;height: 500px;position: absolute;z-index: 99;left: 34%"></iframe>
-								<iframe id="xyft_1" src="/v/xyft" style="display: none;width:600px;height: 500px;position: absolute;z-index: 99;left: 34%"></iframe>
-								<iframe id="jssc" src="/v/bjpk10" style="display: none;width:600px;height: 500px;position: absolute;z-index: 99;left: 34%"></iframe>
-								<iframe id="jsssc_1" src="/v/cqssc" style="display: none;width:600px;height: 500px;position: absolute;z-index: 99;left: 34%"></iframe>
-								<iframe id="tjssc_1" src="/v/cqssc" style="display: none;width:600px;height: 500px;position: absolute;z-index: 99;left: 34%"></iframe>
-
-								<!--<iframe id="gdkl10_1" src="/v/bjpk10" style="display: none;width:600px;height: 500px;position: absolute;z-index: 99;left: 34%"></iframe>-->
-								<!--<iframe id="jsk3" src="/v/bjpk10" style="display: none;width:600px;height: 500px;position: absolute;z-index: 99;left: 34%"></iframe>-->
-								<!--<iframe id="gd11x5_1" src="/v/bjpk10" style="display: none;width:600px;height: 500px;position: absolute;z-index: 99;left: 34%"></iframe>-->
-
 
 <script>
 	$("#v_right").click(function () {
