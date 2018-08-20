@@ -614,7 +614,7 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
      $("#gd11x5 .sdrawCountnext").html(85-number);
 
  });
-  $.getJSON("/jsk3/getjsk3AwardTimes.do",
+  $.getJSON("/jsk3/getPk10AwardTimes.do",
  function(data){
      timer(parseInt((data.next.awardTimeInterval)/1000),"kuai3 .nextkai_time");
      var nums = data.current.awardNumbers.split(',');
