@@ -68,6 +68,25 @@ class ApiController extends Controller{
      * 视频接口
      */
     public function vodie(){
+        if(empty(I('get.gamekey'))){
+            $arr = array(
+                'code'=>false,
+                'msg'=>'参数为空',
+            );
+        return json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        }
+        $data = I('get.gamekey');
+        $info = M('lot_type')->where(array('name'=>$data))->find();
+        if(empty($info)){
+            $arr = array(
+                'code'=>false,
+                'msg'=>'没有这个彩种',
+            );
+        return json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+        }
+
+
+
 
     }
 }
