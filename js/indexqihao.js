@@ -720,7 +720,6 @@ function timers(intDiff,div){
         }
         $(div+" .minute").text(minute);
         $(div+" .second").text(second);
-
         intDiff--;
     }, 1000);
 }
