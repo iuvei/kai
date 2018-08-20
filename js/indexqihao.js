@@ -3,24 +3,25 @@ window.setInterval("indexdata()",30000);
 function indexdata(){
 $.getJSON("/pk10/getPk10AwardTimes.do",
  function(data){
- $("#pk10-timeqihaob").html("第"+data.next.periodNumber+"期");
- $("#pk10period").html(data.current.periodNumber);
- $("#pk10-timeqihao").html(data.next.periodNumber);
- timer(parseInt((data.next.awardTimeInterval)/1000),"pk10-time");
- timers(parseInt((data.next.awardTimeInterval)/1000),"bpk10-time");
- var str = new Array();
- var codenum = data.current.awardNumbers;
- /* if(codenum==""){
-	 alert("s");
- } */
- str = codenum.split(",");
- codenum = "";
- for (i=0;i<str.length;i++ ) 
-{ 
- codenum+= '<span class="no'+str[i]+'"></span>';
-} 
-
- $("#pk10").html(codenum);
+ // $("#pk10-timeqihaob").html("第"+data.next.periodNumber+"期");
+ // $("#pk10period").html(data.current.periodNumber);
+ // $("#pk10-timeqihao").html(data.next.periodNumber);
+// timer(parseInt((data.next.awardTimeInterval)/1000),"pk10-time");
+     $("#pk10_hot .nextkai_time .second").html((data.next.awardTimeInterval)/1000);
+// timers(parseInt((data.next.awardTimeInterval)/1000),"second");
+//  var str = new Array();
+//  var codenum = data.current.awardNumbers;
+//  /* if(codenum==""){
+// 	 alert("s");
+//  } */
+//  str = codenum.split(",");
+//  codenum = "";
+//  for (i=0;i<str.length;i++ )
+// {
+//  codenum+= '<span class="no'+str[i]+'"></span>';
+// }
+//
+//  $("#pk10").html(codenum);
  
  });
  $.getJSON("/xyft/getPk10AwardTimes.do",
@@ -61,14 +62,14 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
 
  str = codenum.split(",");
  codenum = "";
- for (i=0;i<str.length;i++ ) 
-{ 
+ for (i=0;i<str.length;i++ )
+{
  if(str[i]==19 || str[i]==20){
-	codenum+= '<span class="blue">'+str[i]+'</span>'; 
+	codenum+= '<span class="blue">'+str[i]+'</span>';
  }else{
     codenum+= '<span class="red">'+str[i]+'</span>';
  }
- } 
+ }
 
  $("#gdkl10").html(codenum);
  });

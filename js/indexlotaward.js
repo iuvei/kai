@@ -120,10 +120,12 @@ $(function () {
                 cpNumber = data.current.periodNumber;
                 var _time = data.current.awardTime.substring(11, 16);
               //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
-                $("#pk10_hot .drawCount").html(data.next.periodNumber);
-                $("#pk10 .drawCount").html(data.next.periodNumber);
-                $("#pk10_hot .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
-                $("#pk10 .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
+                $("#pk10_hot .drawCount").html(cpNumber);
+                $("#pk10 .drawCount").html(cpNumber);
+                $("#pk10_hot .sdrawCountnext").html(Number(data.firstPeriod )+ 179-cpNumber);
+                $("#pk10 .sdrawCountnext").html(Number(data.firstPeriod) + 179-cpNumber);
+                        $("#pk10 .second").html((data.next.awardTimeInterval) / 1000);
+                      //  timers(parseInt(), "second");
 
                 //drawTrend();
             }
@@ -205,8 +207,9 @@ $(function () {
                 cpNumber = data.current.periodNumber;
                 var _time = data.current.awardTime.substring(11, 16);
                 //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
-                $("#xyft .drawCount").html(data.next.periodNumber);
-                $("#xyft .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
+              //      var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-3);
+                $("#xyft .drawCount").html(cpNumber);
+                $("#xyft .sdrawCountnext").html(180-cpNumber);
 
                 //drawTrend();
             }
@@ -289,8 +292,9 @@ $(function () {
                 cpNumber = data.current.periodNumber;
                 var _time = data.current.awardTime.substring(11, 16);
                 //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
-                $("#jisusc .drawCount").html(data.next.periodNumber);
-                $("#jisusc .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
+                $("#jisusc .drawCount").html(cpNumber);
+                $("#jisusc .sdrawCountnext").html(Number(data.firstPeriod )+ 179-cpNumber);
+
 
             }
             pk10_currentPeriodNumber = data.current.periodNumber;
@@ -382,12 +386,10 @@ $(function () {
                 $("#cqSsc .longhu2").find(".lastThree").text(type2);
                 cpNumber = data.current.periodNumber;
                 var _time = data.current.awardTime.substring(11, 16);
-                  $("#cqSsc .preDrawIssue").html(data.next.periodNumber);
-                $("#cqSsc_hot .drawCount").html(data.next.periodNumber);
-                $("#cqSsc_hot .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
-                //$("#cqSsc .drawCount").html(data.next.periodNumber);
-                $("#cqSsc .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
-
+                $("#cqSsc .num_ul .drawCount").html(cpNumber);
+                $("#cqSsc_hot .num_ul .drawCount").html(cpNumber);
+                $("#cqSsc .num_ul .sdrawCountnext").html(120-cpNumber);
+                $("#cqSsc_hot .num_ul .sdrawCountnext").html(120-cpNumber);
                 //drawTrend();
             }
             pk10_currentPeriodNumber = data.current.periodNumber;
@@ -464,9 +466,9 @@ $(function () {
                 $("#tjssc .longhu2").find(".lastThree").text(type2);
                 cpNumber = data.current.periodNumber;
                 var _time = data.current.awardTime.substring(11, 16);
-                $("#tjssc .preDrawIssue").html(data.next.periodNumber);
+                $("#tjssc .preDrawIssue").html(cpNumber);
                 //$("#cqSsc .drawCount").html(data.next.periodNumber);
-                $("#tjssc .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
+                $("#tjssc .sdrawCountnext").html(120-cpNumber);
 
                 //drawTrend();
             }
@@ -548,8 +550,9 @@ $(function () {
                 cpNumber = data.current.periodNumber;
                 var _time = data.current.awardTime.substring(11, 16);
                 //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
-                $("#jsssc .drawCount").html(data.next.periodNumber);
-                $("#jsssc .sdrawCountnext").html(data.firstPeriod+179-cpNumber);
+                var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-3);
+                $("#jsssc .drawCount").html(number);
+                $("#jsssc .sdrawCountnext").html(120-number);
 
 
                 //drawTrend();
@@ -614,8 +617,8 @@ $(function () {
                 cpNumber = data.current.periodNumber;
                 var _time = data.current.awardTime.substring(11, 16);
                 //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
-                $("#gdkl10 .drawCount").html(data.next.periodNumber);
-                $("#gdkl10 .sdrawCountnext").html(data.firstPeriod + 179 - cpNumber);
+                $("#gdkl10 .drawCount").html(cpNumber);
+                $("#gdkl10 .sdrawCountnext").html(84 - cpNumber);
             };
 
             pk10_currentPeriodNumber = data.current.periodNumber;
@@ -685,7 +688,7 @@ $(function () {
                 var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-3);
                 //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
                 $("#gd11x5 .drawCount").html(number);
-                $("#gd11x5 .sdrawCountnext").html(cpNumber-number);
+                $("#gd11x5 .sdrawCountnext").html(85-number);
 
                 //drawTrend();
             }
@@ -750,9 +753,9 @@ $(function () {
                 var cpNumber = data.current.periodNumber;
                 var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-2);
 
-                $("#kuai3 .preDrawIssue").html(cpNumber);
-                $("#kuai3 .drawCount").html(number);
-                $("#kuai3 .sdrawCountnext").html(cpNumber-number);
+              //  $("#kuai3 .preDrawIssue").html(cpNumber);
+                $("#kuai3 .drawCount").html(cpNumber);
+                $("#kuai3 .sdrawCountnext").html(82 - cpNumber);
 
                 //drawTrend();
             }
