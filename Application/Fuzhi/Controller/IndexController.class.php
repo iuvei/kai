@@ -5,8 +5,6 @@ class IndexController extends HomeController
 {
     public function index()
     {
-        ThinkPHP:
-        cookie('token','u10343u.bG9naW5faXA9MTkyLjE2OC4xMzguNjcmdWlkPTEwMzQzJmJlZ2ludGltZT0xNTM0NDk5MDc3JmVuZHRpbWU9MTUzNzAyNzIwMA.ed44a61834591bddef6cd0782e6fc646');
         $perPage = 10;
         $ids = D('Category')->getChildrenId(1);
 
@@ -311,7 +309,12 @@ class IndexController extends HomeController
         $module = M();
         $threads = $module->query("SELECT a.* FROM dz_forum_thread as a order by tid desc limit 1");
         $this->assign('threads', $threads);
-		
+
+        $top_com = $module->query("SELECT * FROM ot_config where `name` ='SITE_TOP_MSG' limit 1");
+
+        $this->assign('top_com', $top_com[0]['value']);
+
+
 		$list_pk10 = $module->query("SELECT * FROM lot_data where dat_type=20 order by dat_open_time desc limit 4");
         $this->assign('list_pk10', $list_pk10);
 		

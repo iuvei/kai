@@ -123,7 +123,7 @@
 				</div>
 				<div class="hotcontent">
 					<marquee direction="left" behavior="scroll" scrollamount="6" onmouseover=this.stop() onmouseout=this.start()>
-						<!--<span class="hoticon"></span>--><span class="textspace" id="noticeContent">欢迎光临盛世直播网</span>
+						<!--<span class="hoticon"></span>--><span class="textspace" id="noticeContent"><?php echo $top_com; ?></span>
 					</marquee>
 				</div>
 				<!--<ul>
@@ -3427,58 +3427,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="footer1">
-	<ul>
-		<li class="lileft">
-			<div style="width: 100px;height: 60px">
-				<img src="/style/images/logo.gif"  width="100" height="60">
-			</div>
-			<p>最专业的彩票开奖网站</p>
-			<p>数据分析最全面的开奖数据平台 </p>
-		</li>
-		<li class="about_li">
-			<div><span class="about"></span><span class="">关于我们</span></div>
-			<p class="p1">
-				<a href="/about">关于我们</a>
-			</p>
-			<p>
-				<a href="/about/index.html#page3">广告服务</a>
-			</p>
-			<p>
-				<a href="/about/index.html#page4">联系我们</a>
-			</p>
-			<p class="p1">
-				<a href="/sitemap.html">网站地图</a>
-			</p>
-			<p>
-				<a href="/about/index.html#page5">网站声明</a>
-			</p>
-		</li>
-		<li class="about_li">
-			<div style="width: 500px;height: 100px; text-align: center;font-size: 12px;margin-top: 50px">
-				<div>推荐使用谷歌、火狐、IE9以上浏览器</div>
-				<div style="color: red">郑重提示：购买彩票有风险，投注需谨慎，不得向未满18周岁的青少年出售彩票！</div>
-				<div>敬告用户：除本站产品外，本站所刊登广告的网站和第三方内容一概与本站无关，用户须自行判断广告和第三方内容的真实性，由此所产生的后果本站概不负责！</div>
-			</div>
-		</li>
-
-	</ul>
-</div>
-
-<div class="footer3">
-	<div class="footer3c">
-		Copyright <span id="localyears"></span> Copyright © 2011-2016 All Rights Reserved. Current version is 2.0 盛世直播开奖网
-		<script type="text/javascript" src="/js/js/tools.js" ></script>
-		<script type="text/javascript">
-			$("#localyears").text(new Date().getFullYear());
-			toolBoxs.setK();//为开奖调用增加域名
-			var logoLocation = window.location.href.indexOf("zsh/index"); //如果是站长推荐页面，就修改底部的彩种logo图片
-			if(logoLocation !== -1){
-				$(".lileft").find("img").attr("src","../../images/images/zshImage/logoBottom.png?v=201889947");
-			}
-		</script>
-	</div>
-</div>
+			<include file="Public/footer"/>
 		</div>
 		<div class="fixedgoBack">
 			<div class="fix1200">
@@ -3501,7 +3450,7 @@
 			<!-- 模态框（Modal） -->
 			<div class="modal fade" style="z-index: 999;" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				<div class="modal-dialog" style="margin: 30px auto;margin-top: 130px;">
-					<div class="modal-content"">
+					<div class="modal-content">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="picture/close.png" alt="" /></button>
 							<h4 class="modal-title" id="myModalLabel">在线反馈</h4>
