@@ -79,6 +79,13 @@ class ApiController extends Controller{
             return json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         }
         $data = I('get.gamekey');
+        if($data == 'pk10' || $data == 'jssc' || $data == 'xyft'){
+            $date = date('H:i:s',strtotime(date('H:i:s'))+300);
+        }elseif ($data == 'jsssc'){
+            $date = date('H:i:s',strtotime(date('H:i:s'))+75);
+        }elseif ($data == 'cqssc' || $data == 'gd11x5' || $data == 'jsk3' || $data == 'gdkl10'){
+            $date = date('H:i:s',strtotime(date('H:i:s'))+600);
+        }
         $data = $this->caizhong($data);
         if($data == 404){
             $arr = array(
@@ -102,35 +109,47 @@ class ApiController extends Controller{
         }
         $data = array();
        // $db_name = 'th_game_queue_'.$_GET['gamekey'];
-        $res =  M("data_time")->where('stop_time','>',date('H:i:s'))->find();
-        $game =  M('th_game')->where('sname',$_GET['gamekey'])->find();
-        echo  M("data_time")->getLastsql();
-          print_r($res);exit;
-        $where = array(
-            'game_id'=>$game['id'],
-            'issue'=>$res['issue']-1
+
+
+        $where1['actionTime'] = array('BETWEEN',array(date('H:i:s'),$date));
+
+        $where1['type'] =  $info['id'];
+        $date = date('H:i:s');
+        //$res =  M()->query("select * from `lot_data_time` where `actionTime` >= {$date} and `type` = {$info} limit 1 ");
+        $res =  M('data_time')->where($where1)->find();
+        $where2 = array(
+            'dat_type'=>$info['id'],
+           // 'b.actionNo'=>$res['actionNo']-1,
         );
-        $res_2 =  M("th_game_result")->where($where)->find();
+        $game =  M('data')->where($where2)->find();
+
+//        $max = time();
+//        $min = $max - 7*24*60*60;
+//        $start = date('Y-m-d H:i:s', $min);
+//        $end = date('Y-m-d H:i:s', $max);
+//        //echo  M("data")->getLastsql();
+        //print_r($res);exit;
         $data['errorcode'] = 0;
         $data['errormsg'] = '';
         $data['present']['now']=date('Y-m-d H:i:s');
-        $data['present']['expect']=$res['issue'];
-        $data['present']['start_buytime']=$res['open_time'];
-        $data['present']['start_remaining']=$res['open_time'] - time();
-        $data['present']['start_buytimestamp']=date('Y-m-d H:i:s',$res['open_time']);
-        $data['present']['stop_buytime']=$res['stop_time'];
-        $data['present']['stop_remaining']=$res['stop_time'] - time();
-        $data['present']['stop_buytimestamp']=date('Y-m-d H:i:s',$res['stop_time']);
-        $data['present']['opentime']=$res['close_time'];
-        $data['present']['opentime_remaining']=$res['close_time'] - time();
-        $data['present']['opentimestamp']=date('Y-m-d H:i:s',$res['close_time']);
-        $data['present']['status']=$res['status'];
-        $data['last_opencode']['expect']=$res_2['issue'];
-        $data['last_opencode']['opencode']=$res_2['number'];
-        $data['last_opencode']['opentime']=date('Y-m-d H:i:s',$res_2['open_time']);
-        $data['last_opencode']['opentimestamp']=$res_2['open_time'];
-        $res = $this->getAwardTime($info['id']);
-        echo $res;exit;
+        $data['present']['expect']=$res['actionNo'];
+        $data['present']['start_buytime']=$res['stopTime'];
+        $data['present']['start_remaining']=strtotime($res['stopTime']) - time();
+        $data['present']['start_buytimestamp']=date('Y-m-d ').$res['stopTime'];
+        $data['present']['stop_buytime']=$res['stopTime'];
+        $data['present']['stop_remaining']=strtotime($res['stopTime']) - time();
+        $data['present']['stop_buytimestamp']=date('Y-m-d ').$res['stopTime'];
+        $data['present']['opentime']=$res['actionTime'];
+        $data['present']['opentime_remaining']=strtotime($res['actionTime']) - time();
+        $data['present']['opentimestamp']=date('Y-m-d ').$res['actionTime'];
+        $data['present']['status']=1;//因为暂时没有此字段 $game['status'];
+        $data['last_opencode']['expect']=$game['dat_expect'];
+        $data['last_opencode']['opencode']=$game['dat_codes'];
+        $data['last_opencode']['opentime']=date('Y-m-d H:i:s',$game['dat_open_time']);
+        $data['last_opencode']['opentimestamp']=$game['dat_open_time'];
+       // $res = $this->getAwardTime($info['id']);
+        echo json_encode($data,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+        print_r($data);exit;
 
     }
     private function caizhong($data){
