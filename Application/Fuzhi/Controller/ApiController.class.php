@@ -133,7 +133,8 @@ class ApiController extends Controller{
      */
     public function vodie(){
         C('DB_PREFIX','lot_');
-        if(empty(I('get.gamekey'))){
+        $gamekey = I('get.gamekey');
+        if(empty($gamekey)){
             $arr = array(
                 'code'=>false,
                 'msg'=>'参数为空',
@@ -141,7 +142,7 @@ class ApiController extends Controller{
             return json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
         }
 
-        $data = I('get.gamekey');
+        $data = $gamekey;
         $data = $this->caizhong($data);
       //  print_r($data);exit;
         if($data == 404){

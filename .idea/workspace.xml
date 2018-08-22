@@ -2,63 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a20835e2-41f8-4401-9b4d-792ffdc3b8ff" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/indexqihao.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/indexqihao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/2index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/2index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/ajax/getindex.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/ajax/getindex.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/ajax/pk10_trend.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/ajax/pk10_trend.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/conn.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/conn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqssc/award.js" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/award.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqssc/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqssc/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqssc/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gd11x5/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gd11x5/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gd11x5/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gd11x5/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gd11x5/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gd11x5/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/detail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pk10/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pk10/highcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/highcharts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pk10/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pk10/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/ajax_changlong.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/ajax_hmyldata.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/ajax_rmhmdata.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/ajax_trend.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/award.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/cltj.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/data1.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/demodata.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/detail.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/highcharts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/hmzs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/hmzs.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/jiqiao.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/lrtj.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xjssc/smtj.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xyft/award.js" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/award.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xyft/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xyft/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xyft/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xyft/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xyft/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/lrtj.php" afterDir="false" />
     </list>
     <ignored path="kai.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -136,6 +80,34 @@
       <usages-collector id="statistics.php.composer.command.options" />
       <usages-collector id="statistics.js.language.service.starts" />
     </session>
+    <session id="1657319033">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="log" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PLAIN_TEXT" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="php" value="50" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PHP" value="50" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="kai" />
@@ -160,11 +132,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11476">
-              <caret line="605" column="31" selection-start-line="605" selection-start-column="31" selection-end-line="605" selection-end-column="31" />
+            <state relative-caret-position="584">
+              <caret line="159" column="48" selection-start-line="159" selection-start-column="48" selection-end-line="159" selection-end-column="48" />
               <folding>
                 <element signature="e#35#56#0#PHP" expanded="true" />
               </folding>
@@ -199,12 +171,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/indexqihao.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="239" column="124" selection-start-line="239" selection-start-column="124" selection-end-line="239" selection-end-column="124" />
+            <state relative-caret-position="261">
+              <caret line="241" column="103" selection-start-line="241" selection-start-column="103" selection-end-line="241" selection-end-column="103" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lgc.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1189069" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lgc1.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-346500" />
           </provider>
         </entry>
       </file>
@@ -299,11 +285,11 @@
         <option value="$PROJECT_DIR$/m/gdkl10/index.php" />
         <option value="$PROJECT_DIR$/m/gdkl10/detail.php" />
         <option value="$PROJECT_DIR$/m/gdkl10/cltj.php" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php" />
         <option value="$PROJECT_DIR$/m/pk10/cltj.php" />
         <option value="$PROJECT_DIR$/m/jssc/cltj.php" />
         <option value="$PROJECT_DIR$/m/xyft/cltj.php" />
         <option value="$PROJECT_DIR$/js/indexqihao.js" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php" />
       </list>
     </option>
   </component>
@@ -326,6 +312,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -367,13 +354,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="conn.php&#9;FILE&#9;file://C:/Proj/kai/m/conn.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -405,17 +392,18 @@
       <workItem from="1534612432420" duration="8562000" />
       <workItem from="1534657774927" duration="8092000" />
       <workItem from="1534925292346" duration="136000" />
+      <workItem from="1534927089397" duration="893000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64463000" />
+    <option name="totallyTimeSpent" value="65356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26068377" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2633547" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -466,10 +454,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/Thcommission.php" />
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/IndexController.class.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/HomeController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -685,9 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="172" column="64" selection-start-line="172" selection-start-column="64" selection-end-line="172" selection-end-column="64" />
-          <folding>
-            <element signature="e#117#138#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -759,16 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11476">
-          <caret line="605" column="31" selection-start-line="605" selection-start-column="31" selection-end-line="605" selection-end-column="31" />
-          <folding>
-            <element signature="e#35#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/pk10/cltj.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1539">
@@ -792,8 +763,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/indexqihao.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="239" column="124" selection-start-line="239" selection-start-column="124" selection-end-line="239" selection-end-column="124" />
+        <state relative-caret-position="261">
+          <caret line="241" column="103" selection-start-line="241" selection-start-column="103" selection-end-line="241" selection-end-column="103" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lgc.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1189069" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lgc1.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-346500" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="159" column="48" selection-start-line="159" selection-start-column="48" selection-end-line="159" selection-end-column="48" />
+          <folding>
+            <element signature="e#35#56#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
