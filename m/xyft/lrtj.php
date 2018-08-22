@@ -110,10 +110,12 @@ include("../conn.php");
 				ballNames["8"] = "第八名";
 				ballNames["9"] = "第九名";
 				ballNames["10"] = "第十名";
-            
-               $.get("ajax_rmhmdata.php", {ball: ball,t:Math.random()}, function (result) {
+                var name = "<?=$name?>";
+               $.get("/Fuzhi/Api/leng_re", {ball: ball,id:name,t:Math.random()}, function (result) {
             	   layer.closeAll();
                     var data = eval(result);
+
+                   console.log(ball);
                     showChartline(ballNames[ball]+"热门号码",data,ballNames[ball],'re');
                }, "json");
             }
@@ -131,9 +133,11 @@ include("../conn.php");
 				ballNames["8"] = "第八名";
 				ballNames["9"] = "第九名";
 				ballNames["10"] = "第十名";
-               $.get("ajax_hmyldata.php", {ball: ball,t:Math.random()}, function (result) {
+				var name = "<?=$name?>";
+               $.get("/Fuzhi/Api/leng_re", {ball: ball,id:name,t:Math.random()}, function (result) {
             	   layer.closeAll();
                     var data = eval(result);
+                    console.log(data);
                     showChartline(ballNames[ball]+"号码遗漏",data,ballNames[ball],'leng');
                }, "json");
             }

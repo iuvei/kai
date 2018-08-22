@@ -4,22 +4,28 @@ const ONETHINK_ADDON_PATH = './Addons/';
 define('APP_PATH',str_replace("\m","",dirname(__FILE__)));
 $self = $_SERVER['PHP_SELF'];
 if(strpos($self,"xyft")){
+    $name = 34;
 	$web_type = "幸运飞艇";
 }elseif(strpos($self,"cqssc")){
+    $name = 1;
 	$web_type = "重庆时时彩";
 }elseif(strpos($self,"gdkl10")){
+    $name = 21;
 	$web_type = "广东快乐十分";
 }elseif(strpos($self,"jssc")){
 	$web_type = "極速賽車";
+    $name = 39;
 }elseif(strpos($self,"jsssc")){
 	$web_type = "極速时时彩";
-}elseif(strpos($self,"tjssc")){
-	$web_type = "天津时时彩";
+    $name = 40;
 }elseif(strpos($self,"gd11x5")){
+    $name = 6;
 	$web_type = "广东11选5";
 }elseif(strpos($self,"jsk3")){
+    $name = 22;
 	$web_type = "江苏快三";
 }else{
+    $name = 20;
 	$web_type = "北京赛车PK10";
 }
 $dbcon = include(APP_PATH."/Application/Common/Conf/config.php");

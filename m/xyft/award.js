@@ -39,8 +39,10 @@ $(function () {
         }
     }
     var awardTick = function () {
-        $.post('../../xyft/getxyftAwardTimes.do', { t: Math.random() }, function (data) {
+        $.post('../../xyft/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
             //计数请求次数
+            console.log(currentPeriodNumber);
+            console.log(data);
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
                 timeInterval = 16000;
@@ -137,6 +139,7 @@ $(function () {
 function getHistoryData(count,date) {
 	layer.open({type: 2,time: 1});
     $.get("../../xyft/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
+        console.log(result);
         if(result&&result.rows){
         	var j = 0;
         	var html = '';

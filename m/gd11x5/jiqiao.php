@@ -51,7 +51,7 @@ $cid = 48;
        <li><a href="smtj.php">双面</a></li>
        
        <li><a href="hmzs.php">走势</a></li>
-       <li><a href="lrtj.php">冷热</a></li>
+<!--       <li><a href="lrtj.php">冷热</a></li>-->
        <li><a href="jiqiao.php" class="cur">技巧</a></li>
        
      </ul>
@@ -63,8 +63,14 @@ $cid = 48;
     
         <ul>
 		<?php
-		$query = mysql_query("select * from ot_document where category_id=$cid order by update_time desc limit 15");
-		while($row = mysql_fetch_array($query)){?>
+//		$query = mysql_query("select * from ot_document where category_id=$cid order by update_time desc limit 15");
+//		while($row = mysql_fetch_array($query))
+        $mysqli = new mysqli('localhost', 'root', 'root', 'kaijiang');
+        $sql="select * from ot_document where category_id=$cid order by update_time desc limit 15";
+        $result = $mysqli->query($sql);
+        $row = $result->fetch_assoc();
+        while( $row = $result->fetch_assoc())
+        {?>
         <li>
 		<span class="list-arrow"></span>
 		<a href="detail.php?cid=<?=$cid?>&id=<?=$row['id']?>" title="<?=$row['title']?>"><?=$row['title']?></a>

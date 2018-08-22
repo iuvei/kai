@@ -491,7 +491,6 @@ class LottoryDataMgr
         $kjHao = null;
         if (substr($page, -7) == "Data.do") {
             $kjHao = $module->query("select dat_codes,replace(dat_expect,'-','') dat_expect, dat_open_time from {$this->prename}data where dat_type={$lotType} order by dat_expect desc limit 1");
-            //print_r($kjHao);exit;
             //echo $module->getLastSql();
             $time = $kjHao[0]['dat_open_time'];
             $currentNo = $this->getGameCurrentNo($lotType, $module, $time);
@@ -503,11 +502,14 @@ class LottoryDataMgr
             $nextNo = $this->getGameNextNo($lotType, $module, $time);
             //$newqihao = str_replace("-","",$currentNo['actionNo']);
             $kjHao = $module->query("select dat_codes from {$this->prename}data where dat_type={$lotType} and dat_expect='{$currentNo['actionNo']}'");
+
             if (!is_array($kjHao) || !$kjHao['dat_codes']) {
-                $kjHao = $module->query("select dat_codes from {$this->prename}data where dat_type={$lotType} order by dat_id desc limit 1");
+                $kjHao = $module->query("select dat_codes,dat_expect from {$this->prename}data where dat_type={$lotType} order by dat_id desc limit 1");
             }
 
         }
+       //print_r($kjHao);exit;
+        $dat_expect = $kjHao[0]['dat_expect'];
         $pan = null;
         if ($kjHao === false || count($kjHao) == 0) {
             $kjHao = null;
@@ -530,14 +532,16 @@ class LottoryDataMgr
             }
         }
         $retData["time"] = $MillisecondTime;
-        // print_r($currentNo);exit;
-        $retData["firstPeriod"] = $currentNo["actionNo"] - $currentNo["actionNoIndex"];
+        // print_r($currentNo);
+        //$retData["firstPeriod"] = $currentNo["actionNo"] - $currentNo["actionNoIndex"];
+        $retData["firstPeriod"] = $dat_expect - $currentNo["actionNoIndex"];//测试数据是否正常
         $retData["apiVersion"] = 1;
         $retData["current"]["awardTime"] = $currentNo["actionTime"];
-        if ($lotType == 1 || $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lotType == 24 || $lotType == 35 || $lotType == 6 || $lotType == 34) {
+        if ($lotType == 1 || $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lotType == 24 || $lotType == 35 || $lotType == 6 || $lotType == 34 || $lotType == 40) {
             $retData["current"]["periodNumber"] = $currentNo["actionNoIndex"];
         } else {
-            $retData["current"]["periodNumber"] = $currentNo["actionNo"];
+            $retData["current"]["periodNumber"] =$dat_expect;//测试数据是否正常
+           // $retData["current"]["periodNumber"] = $currentNo["actionNo"];
         }
         //print_r($currentNo["actionNo"]);exit;
         $retData["current"]["fullPeriodNumber"] = $currentNo["actionNo"];
@@ -552,7 +556,8 @@ class LottoryDataMgr
         if ($lotType == 1 || $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lotType == 24 || $lotType == 35 || $lotType == 6 || $lotType == 34) {
             $retData["next"]["periodNumber"] = $nextNo["actionNoIndex"];
         } else {
-            $retData["next"]["periodNumber"] = $nextNo["actionNo"];
+           // $retData["next"]["periodNumber"] = $nextNo["actionNo"];
+            $retData["next"]["periodNumber"] =$dat_expect;//测试数据是否正常
         }
         $retData["next"]["fullPeriodNumber"] = 0;
         $retData["next"]["periodNumberStr"] = "{$nextNo["actionNo"]}";
@@ -4989,7 +4994,7 @@ class LottoryDataMgr
 
         $return = $module->query($sql, $atime);
 
-        //var_dump($return);die;
+       // var_dump($return);die;
         if (!$return) {
             $sql = "select actionNo, actionTime from {$this->prename}data_time where type={$type} order by actionTime desc limit 1";
             $return = $module->query($sql);
@@ -5001,7 +5006,7 @@ class LottoryDataMgr
         if (($fun = $types[$type]['onGetNoed']) && method_exists($this, $fun)) {
             $this->{$fun}($return['actionNo'], $return['actionTime'], $time);
         }
-
+      //  var_dump($return);die;
         return $return;
     }
 

@@ -18,7 +18,7 @@ $(function () {
             _container = _container ? _container : "lot-wrap";
 
             setTimeout(function () {
-                $.get('http://m.qx66.com/cqssc/' + _page, { t: Math.random() }, function (text) {
+                $.get('http://m.qx66.com/jssc/' + _page, { t: Math.random() }, function (text) {
                     $('#' + _container).html(text);
                     //文字闪烁
                     Glitter();
@@ -39,10 +39,9 @@ $(function () {
         }
     }
     var awardTick = function () {
-        $.post('../../cqssc/getcqsscAwardTimes.do', { t: Math.random() }, function (data) {
+        $.post('../../jssc/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
             //计数请求次数
             requireCount += 1;
-
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
                 timeInterval = 16000;
                 window.setTimeout(afterAwarded, 1000);
@@ -97,7 +96,7 @@ $(function () {
     var cpCurrAwardData = null;
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
-        $.post('../../cqssc/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
+        $.post('../../jssc/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 
@@ -137,7 +136,7 @@ $(function () {
 });
 function getHistoryData(count,date) {
 	layer.open({type: 2,time: 1});
-    $.get("../../cqssc/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
+    $.get("../../jssc/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
         if(result&&result.rows){
         	var j = 0;
         	var html = '';
@@ -150,14 +149,19 @@ function getHistoryData(count,date) {
         		html += '<li class="' + clsName + '">';
 				html += '<table width="100%">';
 				html += '<tr>';
-        		html += '<td width="14%">' + data.termNum.substring(8, 16) +'期</td>';
+        		html += '<td width="14%">' + data.termNum.substring(3, 6) +'期</td>';
 				html += '<td width="14%">'+ data.lotteryTime.substring(10, 16)+'</td>';	
-                html += '<td class="">';			
-				html += '<i class="ball-red">' + data.n1 + '</i>';
-				html += '<i class="ball-red">' + data.n2 + '</i>';
-				html += '<i class="ball-red">' + data.n3 + '</i>';
-				html += '<i class="ball-red">' + data.n4 + '</i>';
-				html += '<i class="ball-red">' + data.n5 + '</i>';
+                html += '<td class="nums">';			
+				html += '<i class="no' + data.n1 + '">' + data.n1 + '</i>';
+				html += '<i class="no' + data.n2 + '">' + data.n2 + '</i>';
+				html += '<i class="no' + data.n3 + '">' + data.n3 + '</i>';
+				html += '<i class="no' + data.n4 + '">' + data.n4 + '</i>';
+				html += '<i class="no' + data.n5 + '">' + data.n5 + '</i>';
+				html += '<i class="no' + data.n6 + '">' + data.n6 + '</i>';
+				html += '<i class="no' + data.n7 + '">' + data.n7 + '</i>';
+				html += '<i class="no' + data.n8 + '">' + data.n8 + '</i>';
+				html += '<i class="no' + data.n9 + '">' + data.n9 + '</i>';
+				html += '<i class="no' + data.n10 + '">' + data.n10 + '</i>';
                 var guanyahe = data.n1 + data.n2;
                 html += '</td>';
             

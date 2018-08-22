@@ -39,7 +39,7 @@ $(function () {
         }
     }
     var awardTick = function () {
-        $.post('../../xjssc/getxjsscAwardTimes.do', { t: Math.random() }, function (data) {
+        $.post('../../jsssc/getxjsscAwardTimes.do', { t: Math.random() }, function (data) {
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -96,7 +96,7 @@ $(function () {
     var cpCurrAwardData = null;
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
-        $.post('../../xjssc/getxjsscAwardTimes.do', {t: Math.random() }, function (data) {
+        $.post('../../jsssc/getxjsscAwardTimes.do', {t: Math.random() }, function (data) {
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 
@@ -136,7 +136,7 @@ $(function () {
 });
 function getHistoryData(count,date) {
 	layer.open({type: 2,time: 1});
-    $.get("../../xjssc/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
+    $.get("../../jsssc/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
         if(result&&result.rows){
         	var j = 0;
         	var html = '';

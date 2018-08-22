@@ -13,7 +13,7 @@ include("../conn.php");
 
     
 <meta name="format-detection"content="telephone=no"/>
-<title><?=$web_type?>长龙统计_<?=$webtitle?>手机版</title>
+<title><?=$web_type?>开奖直播_<?=$web_type?>开奖历史记录_<?=$webtitle?>手机版</title>
 <script src="../style/js/jquery.js"></script>
 <script src="../style/js/layer.js"></script>
 <script src="../style/js/lotcommon.js" type="text/javascript"></script>
@@ -46,64 +46,96 @@ include("../conn.php");
 <div class="gametool">
 
      <ul class="fl">
-    <li><a href="./">首页</a></li>
+     <li><a href="./" class="cur">首页</a></li>
        <li><a href="smtj.php">双面</a></li>
-       <li><a href="cltj.php" class="cur">长龙</a></li>
+       <li><a href="cltj.php">长龙</a></li>
        <li><a href="hmzs.php">走势</a></li>
        <li><a href="lrtj.php">冷热</a></li>
        <li><a href="jiqiao.php">技巧</a></li>
        
      </ul>
+     <ul class="fr">
+     <input type="date" name="dateData" id="dateData" onchange="Search()"/>  
 
+
+     </ul>
 
 </div>
-<div style="height:40px;"></div>
 
-<table class="lot-table">
-			<thead>
-					<tr class="head">
-					
-				  <td>长龙连开统计</td>
-              
 
-				  </tr>
-				  </thead>
-				<tbody id="changlong">
-				<tr>
-					<td>
-						<img src="../style/images/loading2.gif">					</td>
-				<tr>
-				</tbody>
+<input type="hidden" id="callFun" value="refresh" time="2000"/>
+
+
+<div class="video">
+<a class="sp" href="shipin.php">视频开奖直播</a>
+<a class="qq" style="border-left:1px solid #ddd" href="<?=$qqun?>" target="_blank">高手交流QQ群</a>
+</div>
+
+ <div class="tabletop-sp">
+ <table width="100%">
+<tr>
+<td width="14%">期号</td>
+<td width="14%">时间</td>
+<td>开奖号码</td>
+</tr>
+
 </table>
+ </div>
 
 
+<div style="height:103px;">
+
+</div>
+
+
+ <div class="openlist">
+  <ul id="historyList">
+  </ul>
+ </div>
    
 <?php include("../public/footer.php"); ?>
 
- <script type="text/javascript">
- $(function () {
-	 changLong();
- });
- function changLong() {
-     var id = "<?= $name?>";
-     layer.open({type: 2,time: 1});
-     $.get("/Fuzhi/Api/changlong", {id:id}, function (result) {
-         var data = eval(result);
-         if(data){
-             var html = '';
-             console.log(data);
-             for(var o=0; o<data.length;o++){
-                 console.log(data[o].type);
-                 var info = eval(data[o]);
-                 console.log(info.data[0].title);
-                 html += "<tr><td> "+ data[o].type +"</td><td>"+info.data[0].title+"</td><td> "+info.data[0].name+" 期</td>" +
-                     "<td>"+info.data[1].title+"</td><td> "+info.data[1].name+" 期</td><td>"+info.data[2].title+"</td><td> "+info.data[2].name+" 期</td></tr>";
-             }
-         }
-         $("#changlong").html(html);
 
-     },"json");
- }
-			</script> 
+      <script type="text/javascript">
+      
+  
+  	
+$(function () {
+
+	
+	//显示默认日期
+	var now = new Date();
+
+
+
+  
+    $("#dateData").val(now.getFullYear()+"-"+((now.getMonth()+1)<10?"0":"")+(now.getMonth()+1)+"-"+(now.getDate()<10?"0":"")+now.getDate());
+
+
+
+
+	//提取记录
+
+    getHistoryData('200','');
+
+
+});
+//搜索
+
+
+function Search() {
+	
+	getHistoryData('200', $("#dateData").val());
+	return false;
+}
+//刷新
+function refresh(){
+
+	getHistoryData('200','');
+
+}
+
+</script> 	
+
 </body>
 </html>

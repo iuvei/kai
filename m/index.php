@@ -243,25 +243,25 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                 </a>
             </li>
             
-				<li class="kaij-mylist-li" id="tjssc">
-                <a href="tjssc/">
-                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-tjssc"></span></div>
-                <div class="kaij-mylist-r">
-                    <div class="kaij-mylist-hd">
-                        <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-	                    <div class="itm-tit">天津时时彩<span class="itm-qih" id="qihao">载入中</span></div>
-                    </div>
-                    <div class="kaij-mylist-bd">
-                        <div class="itm-result">
-                            <div class="ball-wrap" id="number">
-	                            <img src="style/images/loading2.gif" alt="载入中">
-	                            </div>
-                        </div>
-                    </div>
-                </div>
-                <span class="list-arrow"></span>
-                </a>
-            </li>
+<!--				<li class="kaij-mylist-li" id="tjssc">-->
+<!--                <a href="tjssc/">-->
+<!--                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-tjssc"></span></div>-->
+<!--                <div class="kaij-mylist-r">-->
+<!--                    <div class="kaij-mylist-hd">-->
+<!--                        <div class="itm-time">下期开奖：<span id="time">载入中</span></div>-->
+<!--	                    <div class="itm-tit">天津时时彩<span class="itm-qih" id="qihao">载入中</span></div>-->
+<!--                    </div>-->
+<!--                    <div class="kaij-mylist-bd">-->
+<!--                        <div class="itm-result">-->
+<!--                            <div class="ball-wrap" id="number">-->
+<!--	                            <img src="style/images/loading2.gif" alt="载入中">-->
+<!--	                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <span class="list-arrow"></span>-->
+<!--                </a>-->
+<!--            </li>-->
             
 			<li class="kaij-mylist-li" id="gd11x5">
                 <a href="gd11x5/">
@@ -337,9 +337,10 @@ $(function() {
     CheckAward("gd11x5", "GetGd11x5AwardTimes", this.gd11x5_downTimer, gd11x5_number, "gd11x5");
     CheckAward("jsssc", "GetXjsscAwardTimes", this.jsssc_downTimer, jsssc_number, "jsssc");
     CheckAward("tjssc", "GetTjsscAwardTimes", this.tjssc_downTimer, tjssc_number, "tjssc");
-    CheckAward("jsk3", "GetJsk3AwardTimes", this.jsk3_downTimer, jsk3_number, "jsk3"); 
-    IndexOpen()
+    CheckAward("jsk3", "GetJsk3AwardTimes", this.jsk3_downTimer, jsk3_number, "jsk3");
+    IndexOpen();
 });
+ IndexOpen();
 function showTime(page, timeSpan, time, qihao) {
     if (time < 1) {
         if (page == "pk10") {
@@ -388,29 +389,31 @@ function CheckAward(page, method, downTimer, number, timeSpan) {
 function IndexOpen() {
     $.post("ajax/getindex.php", {},
     function(data) {
-        $("#pk10 #qihao").text('第' + data.pk10.periodNumber + '期');
-        var nums = data.pk10.awardNumbers.split(',');
+        console.log(data);
+        $("#pk10 #qihao").text('第' + data.pk10.dat_expect + '期');
+        var nums = data.pk10.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
-            str = str + "<i class='no" + nums[i] + "'>" + nums[i] + "</i>"
+
+            str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i] + "</i>"
         }
         $("#pk10 #number").html(str);
-        $("#xyft #qihao").text('第' + data.xyft.periodNumber + '期');
-        var nums = data.xyft.awardNumbers.split(',');
+        $("#xyft #qihao").text('第' + data.xyft.dat_expect + '期');
+        var nums = data.xyft.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
-            str = str + "<i class='no" + nums[i] + "'>" + nums[i] + "</i>"
+            str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i] + "</i>"
         }
         $("#xyft #number").html(str);
-        $("#cqssc #qihao").text('第' + data.cqssc.periodNumber + '期');
-        var nums = data.cqssc.awardNumbers.split(',');
+        $("#cqssc #qihao").text('第' + data.cqssc.dat_expect + '期');
+        var nums = data.cqssc.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='ball-red'>" + nums[i] + "</i>"
         }
         $("#cqssc #number").html(str);
-        $("#gdkl10 #qihao").text('第' + pad(data.gdkl10.periodNumber, 3) + '期');
-        var nums = data.gdkl10.awardNumbers.split(',');
+        $("#gdkl10 #qihao").text('第' + pad(data.gdkl10.dat_expect, 3) + '期');
+        var nums = data.gdkl10.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
             if (parseInt(nums[i]) > 18) {
@@ -420,39 +423,39 @@ function IndexOpen() {
             }
         }
         $("#gdkl10 #number").html(str);
-        $("#jssc #qihao").text('第' + pad(data.xync.periodNumber, 3) + '期');
-        var nums = data.xync.awardNumbers.split(',');
+        $("#jssc #qihao").text('第' + pad(data.jssc.dat_expect, 3) + '期');
+        var nums = data.jssc.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='ball-red'>" + nums[i] + "</i>"
         }
         $("#jssc #number").html(str);
-        $("#gd11x5 #qihao").text('第' + pad(data.gd11x5.periodNumber, 3) + '期');
-        var nums = data.gd11x5.awardNumbers.split(',');
+        $("#gd11x5 #qihao").text('第' + pad(data.gd11x5.dat_expect, 3) + '期');
+        var nums = data.gd11x5.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='ball-red'>" + nums[i] + "</i>"
         }
         $("#gd11x5 #number").html(str);
-        $("#jsssc #qihao").text('第' + pad(data.xjssc.periodNumber, 3) + '期');
-        var nums = data.xjssc.awardNumbers.split(',');
+        $("#jsssc #qihao").text('第' + pad(data.jsssc.dat_expect, 3) + '期');
+        var nums = data.jsssc.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='ball-red'>" + nums[i] + "</i>"
         }
         $("#jsssc #number").html(str);
-        $("#tjssc #qihao").text('第' + data.tjssc.periodNumber + '期');
-        var nums = data.tjssc.awardNumbers.split(',');
+        // $("#tjssc #qihao").text('第' + data.tjssc.dat_expect + '期');
+        // var nums = data.tjssc.dat_codes.split(',');
+        // var str = "";
+        // for (var i = 0; i < nums.length; i++) {
+        //     str = str + "<i class='ball-red'>" + nums[i] + "</i>"
+        // }
+        //$("#tjssc #number").html(str);
+        $("#jsk3 #qihao").text('第' + data.jsk3.dat_expect + '期');
+        var nums = data.jsk3.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
-            str = str + "<i class='ball-red'>" + nums[i] + "</i>"
-        }
-        $("#tjssc #number").html(str);
-        $("#jsk3 #qihao").text('第' + data.jsk3.periodNumber + '期');
-        var nums = data.jsk3.awardNumbers.split(',');
-        var str = "";
-        for (var i = 0; i < nums.length; i++) {
-            str = str + "<i class='ball-red'>" + nums[i] + "</i>"
+            str = str + "<i class='ball-red' style='background-color: #EF5E5E;color: #fff;'>" + nums[i] + "</i>"
         }
         $("#jsk3 #number").html(str)
     },

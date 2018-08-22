@@ -1,5 +1,10 @@
 <?php 
 include("../conn.php");
+$cid = (int)$_GET['cid'];
+$id = (int)$_GET['id'];
+mysql_query("update ot_document set view=view+1 where id=$id");
+$info = mysql_fetch_array(mysql_query("select * from ot_document where id=$id limit 1"));
+$infos = mysql_fetch_array(mysql_query("select * from ot_document_article where id=$id limit 1"));
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -13,7 +18,7 @@ include("../conn.php");
 
     
 <meta name="format-detection"content="telephone=no"/>
-<title><?=$web_type?>长龙统计_<?=$webtitle?>手机版</title>
+<title><?=$web_type?>技巧_<?=$webtitle?>手机版</title>
 <script src="../style/js/jquery.js"></script>
 <script src="../style/js/layer.js"></script>
 <script src="../style/js/lotcommon.js" type="text/javascript"></script>
@@ -48,62 +53,45 @@ include("../conn.php");
      <ul class="fl">
     <li><a href="./">首页</a></li>
        <li><a href="smtj.php">双面</a></li>
-       <li><a href="cltj.php" class="cur">长龙</a></li>
+       <li><a href="cltj.php">长龙</a></li>
        <li><a href="hmzs.php">走势</a></li>
        <li><a href="lrtj.php">冷热</a></li>
-       <li><a href="jiqiao.php">技巧</a></li>
+       <li><a href="jiqiao.php" class="cur">技巧</a></li>
        
      </ul>
 
 
 </div>
 <div style="height:40px;"></div>
+<div class="article">
 
-<table class="lot-table">
-			<thead>
-					<tr class="head">
-					
-				  <td>长龙连开统计</td>
-              
+        <h1 class="title"><?=$info['title']?></h1>
+	    <div class="info">
 
-				  </tr>
-				  </thead>
-				<tbody id="changlong">
-				<tr>
-					<td>
-						<img src="../style/images/loading2.gif">					</td>
-				<tr>
-				</tbody>
-</table>
+	    <small>时间:</small><?php echo date("Y-m-d H:i:s",$info['update_time']); ?><small>来源:</small><?=$webtitle?> <small>点击:</small>
+  <span><?=$info['view']?></span> 次
+	    </div>
+	    
+	    <div class="content">
+	   <?=$infos['content']?>
+	   </div>
+<div class="list">
+        <h3>相关文章</h3>
+        <ul>
+       <?php
+		$query = mysql_query("select * from ot_document where category_id=$cid and id<>$id order by update_time desc limit 15");
+		while($row = mysql_fetch_array($query)){?>
+        <li>
+		<span class="list-arrow"></span>
+		<a href="detail.php?cid=<?=$cid?>&id=<?=$row['id']?>" title="<?=$row['title']?>"><?=$row['title']?></a>
+		</li>
+		<?php } ?>  
+        </ul>
+        </div>
+         
+</div>
 
 
-   
 <?php include("../public/footer.php"); ?>
-
- <script type="text/javascript">
- $(function () {
-	 changLong();
- });
- function changLong() {
-     var id = "<?= $name?>";
-     layer.open({type: 2,time: 1});
-     $.get("/Fuzhi/Api/changlong", {id:id}, function (result) {
-         var data = eval(result);
-         if(data){
-             var html = '';
-             console.log(data);
-             for(var o=0; o<data.length;o++){
-                 console.log(data[o].type);
-                 var info = eval(data[o]);
-                 console.log(info.data[0].title);
-                 html += "<tr><td> "+ data[o].type +"</td><td>"+info.data[0].title+"</td><td> "+info.data[0].name+" 期</td>" +
-                     "<td>"+info.data[1].title+"</td><td> "+info.data[1].name+" 期</td><td>"+info.data[2].title+"</td><td> "+info.data[2].name+" 期</td></tr>";
-             }
-         }
-         $("#changlong").html(html);
-
-     },"json");
- }
-			</script> 
 </body>
 </html>

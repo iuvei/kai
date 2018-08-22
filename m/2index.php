@@ -260,25 +260,25 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                 </a>
             </li>
             
-				<li class="kaij-mylist-li" id="tjssc">
-                <a href="../tjssc/">
-                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-tjssc"></span></div>
-                <div class="kaij-mylist-r">
-                    <div class="kaij-mylist-hd">
-                        <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-	                    <div class="itm-tit">天津时时彩<span class="itm-qih" id="qihao">载入中</span></div>
-                    </div>
-                    <div class="kaij-mylist-bd">
-                        <div class="itm-result">
-                            <div class="ball-wrap" id="number">
-	                            <img src="style/images/loading2.gif" alt="载入中">
-	                            </div>
-                        </div>
-                    </div>
-                </div>
-                <span class="list-arrow"></span>
-                </a>
-            </li>
+<!--				<li class="kaij-mylist-li" id="tjssc">-->
+<!--                <a href="../tjssc/">-->
+<!--                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-tjssc"></span></div>-->
+<!--                <div class="kaij-mylist-r">-->
+<!--                    <div class="kaij-mylist-hd">-->
+<!--                        <div class="itm-time">下期开奖：<span id="time">载入中</span></div>-->
+<!--	                    <div class="itm-tit">天津时时彩<span class="itm-qih" id="qihao">载入中</span></div>-->
+<!--                    </div>-->
+<!--                    <div class="kaij-mylist-bd">-->
+<!--                        <div class="itm-result">-->
+<!--                            <div class="ball-wrap" id="number">-->
+<!--	                            <img src="style/images/loading2.gif" alt="载入中">-->
+<!--	                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <span class="list-arrow"></span>-->
+<!--                </a>-->
+<!--            </li>-->
             
 			<li class="kaij-mylist-li" id="gd11x5">
                 <a href="../gd11x5/">

@@ -63,8 +63,11 @@ $cid = 49;
     
         <ul>
 		<?php
-		$query = mysql_query("select * from ot_document where category_id=$cid order by update_time desc limit 15");
-		while($row = mysql_fetch_array($query)){?>
+        $mysqli = new mysqli('localhost', 'root', 'root', 'kaijiang');
+        $sql="select * from ot_document where category_id=$cid order by update_time desc limit 15";
+        $result = $mysqli->query($sql);
+        $row = $result->fetch_assoc();
+		while( $row = $result->fetch_assoc()){?>
         <li>
 		<span class="list-arrow"></span>
 		<a href="detail.php?cid=<?=$cid?>&id=<?=$row['id']?>" title="<?=$row['title']?>"><?=$row['title']?></a>

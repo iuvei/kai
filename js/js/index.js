@@ -44,7 +44,13 @@ $('.video_box .xyft_1').click(XYFT);
 $('.video_box .jsssc_1').click(JSSSC);
 $('.video_box .tjssc_111').click(TJSSC);
 $('.video_box .jssc').click(JSSC);
-
+// $("#pk10_hot.video_a").click(PK10);
+// $("#cqSsc_hot.video_a").click(CQSSC);
+// $("#pk10.video_a").click(PK10);
+// $("#jisusc.video_a").click(PK10);
+// $("#xyft.video_a").click(XYFT);
+// $("#cqSsc.video_a").click(CQSSC);
+// $("#jsssc.video_a").click(CQSSC);
 
 
 $('#body_none').click(function(){

@@ -50,7 +50,7 @@ include("../conn.php");
        <li><a href="smtj.php">双面</a></li>
        
        <li><a href="hmzs.php">走势</a></li>
-       <li><a href="lrtj.php">冷热</a></li>
+<!--       <li><a href="lrtj.php">冷热</a></li>-->
        <li><a href="jiqiao.php">技巧</a></li>
        
      </ul>

@@ -85,12 +85,19 @@ include("../conn.php");
 	 changLong();
  });
  function changLong() {
+     var id = "<?= $name?>";
 	 layer.open({type: 2,time: 1});
-     $.get("ajax_changlong.php", {}, function (data) {
+     $.get("/Fuzhi/Api/changlong", {id:id}, function (result) {
+         var data = eval(result);
      	if(data){
      		var html = '';
-     		 for(var o in data){  
-     		        html += '<tr><td>'+data[o].title+" "+data[o].num+' 期</td></tr>';
+     		console.log(data);
+     		 for(var o=0; o<data.length;o++){
+     		     console.log(data[o].type);
+     		     var info = eval(data[o]);
+     		     console.log(info.data[0].title);
+     		        html += "<tr><td> "+ data[o].type +"</td><td>"+info.data[0].title+"</td><td> "+info.data[0].name+" 期</td>" +
+                        "<td>"+info.data[1].title+"</td><td> "+info.data[1].name+" 期</td><td>"+info.data[2].title+"</td><td> "+info.data[2].name+" 期</td></tr>";
      		      }  
      	}
      	$("#changlong").html(html);

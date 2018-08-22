@@ -2,16 +2,63 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a20835e2-41f8-4401-9b4d-792ffdc3b8ff" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/fd5abec39b0d920a806f352eec8253cc.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/fd5abec39b0d920a806f352eec8253cc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/indexlotaward.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/indexlotaward.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js/animate.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/js/animate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/js/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/indexqihao.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/indexqihao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js/pk10_index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/js/pk10_index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/2index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/2index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/ajax/getindex.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/ajax/getindex.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/ajax/pk10_trend.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/ajax/pk10_trend.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/conn.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/conn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/cqssc/award.js" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/award.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/cqssc/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/hmzs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/cqssc/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/cqssc/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/lrtj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gd11x5/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/cltj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gd11x5/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gd11x5/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/hmzs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gd11x5/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gd11x5/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gd11x5/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/lrtj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gdkl10/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/cltj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gdkl10/detail.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/detail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gdkl10/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/hmzs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gdkl10/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gdkl10/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gdkl10/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/lrtj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gdkl10/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/smtj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jsk3/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/hmzs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jsk3/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jsk3/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/lrtj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/pk10/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/cltj.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m/pk10/highcharts.js" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/highcharts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/pk10/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/pk10/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/lrtj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/ajax_changlong.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/ajax_hmyldata.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/ajax_rmhmdata.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/ajax_trend.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/award.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/cltj.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/data1.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/demodata.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/detail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/highcharts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/hmzs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/hmzs.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/jiqiao.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/lrtj.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xjssc/smtj.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xyft/award.js" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/award.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xyft/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/cltj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xyft/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/hmzs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xyft/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xyft/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xyft/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/lrtj.php" afterDir="false" />
     </list>
     <ignored path="kai.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,41 +72,61 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-517793876">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="2" />
-          <entry key="js" value="12" />
-          <entry key="php" value="3" />
+          <entry key="html" value="6" />
+          <entry key="js" value="35" />
+          <entry key="log" value="15" />
+          <entry key="php" value="117" />
           <entry key="ts" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="2" />
-          <entry key="JavaScript" value="12" />
-          <entry key="PHP" value="3" />
+          <entry key="HTML" value="6" />
+          <entry key="JavaScript" value="35" />
+          <entry key="PHP" value="117" />
+          <entry key="PLAIN_TEXT" value="15" />
           <entry key="TypeScript" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="43" />
-          <entry key="js" value="1127" />
+          <entry key="html" value="82" />
+          <entry key="js" value="1297" />
+          <entry key="log" value="2" />
+          <entry key="php" value="3284" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="44" />
-          <entry key="JavaScript" value="1126" />
+          <entry key="HTML" value="85" />
+          <entry key="JavaScript" value="1296" />
+          <entry key="PHP" value="3282" />
+          <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.rename.constructor" />
@@ -75,102 +142,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/gdkl10/cltj.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1691">
+              <caret line="89" column="17" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/gdkl10/lrtj.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2204">
+              <caret line="116" column="44" selection-start-line="116" selection-start-column="18" selection-end-line="116" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="11476">
+              <caret line="605" column="31" selection-start-line="605" selection-start-column="31" selection-end-line="605" selection-end-column="31" />
+              <folding>
+                <element signature="e#35#56#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/pk10/cltj.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1539">
+              <caret line="81" selection-start-line="81" selection-end-line="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/jssc/cltj.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1995">
+              <caret line="105" column="2" selection-start-line="105" selection-start-column="2" selection-end-line="105" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/xyft/cltj.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1311">
+              <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html">
+        <entry file="file://$PROJECT_DIR$/js/indexqihao.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-243">
-              <caret line="1058" column="57" selection-start-line="1058" selection-start-column="53" selection-end-line="1058" selection-end-column="57" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#33967#33973#0" expanded="true" />
-                <element signature="e#33973#33979#0" expanded="true" />
-                <element signature="e#34028#34034#0" expanded="true" />
-                <element signature="e#34034#34040#0" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/js/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret column="1285" selection-start-column="1285" selection-end-column="1285" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/js/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-start-column="3" selection-end-line="2" selection-end-column="4" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/lot/jssc/award.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="700">
-              <caret line="118" column="104" selection-start-line="118" selection-start-column="75" selection-end-line="118" selection-end-column="104" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/jsk3/award.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2869">
-              <caret line="151" column="67" selection-start-line="151" selection-start-column="58" selection-end-line="151" selection-end-column="67" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="130" column="116" selection-start-line="130" selection-start-column="99" selection-end-line="130" selection-end-column="116" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/RemoteDataMgr.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/indexlotaward.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1710">
-              <caret line="90" column="71" selection-start-line="90" selection-start-column="71" selection-end-line="90" selection-end-column="71" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#2;n#li#1;n#ul#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="394">
+              <caret line="239" column="124" selection-start-line="239" selection-start-column="124" selection-end-line="239" selection-end-column="124" />
             </state>
           </provider>
         </entry>
@@ -179,37 +212,40 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>cuttime</find>
-      <find>nextIssue</find>
-      <find>ajaxpk10</find>
-      <find>preDrawCode</find>
-      <find>xjssc</find>
-      <find>drawCount1</find>
-      <find>sdrawCount1</find>
-      <find>preDrawIssue</find>
-      <find>cqSsc</find>
-      <find>index.js</find>
+      <find>firstPeriod</find>
       <find>drawCount</find>
-      <find>sdrawCountnext</find>
-      <find>sumNum</find>
-      <find>longhu</find>
-      <find>半顺</find>
-      <find>betweenThree</find>
-      <find>sumBigSmall</find>
-      <find>awardNumbers</find>
-      <find>numblueHead</find>
-      <find>tjssc</find>
-      <find>tjs</find>
-      <find>cqSsc_hot</find>
-      <find>极速时时彩</find>
-      <find>jsssc</find>
-      <find>jisus</find>
-      <find>kajianhao</find>
-      <find>index.j</find>
-      <find>san</find>
-      <find>id=&quot;pk10&quot;</find>
+      <find>/Fuzhi/Api/vodie?</find>
+      <find>apiurl</find>
+      <find>vodie</find>
+      <find>Fuzhi/Api/vodie</find>
+      <find>xyft</find>
+      <find>itm-result</find>
+      <find>conn.php</find>
+      <find>odd</find>
+      <find>openlist</find>
+      <find>historyList</find>
+      <find>ajax_rmhmdata</find>
       <find>pk10</find>
+      <find>699648</find>
+      <find>getPk10AwardTimes</find>
+      <find>getHistoryData</find>
+      <find>pk10_trend</find>
+      <find>period</find>
+      <find>video_a</find>
+      <find>no9</find>
+      <find>ifr</find>
+      <find>rmhmdata</find>
+      <find>tjssc</find>
+      <find>container</find>
+      <find>$web_type</find>
+      <find>name</find>
+      <find>xjssc/getHistoryData</find>
+      <find>xjssc/getxjsscAwardTimes</find>
+      <find>ajax_changlong</find>
     </findStrings>
+    <replaceStrings>
+      <replace>pk10_</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -217,13 +253,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/js/pk10_index.js" />
-        <option value="$PROJECT_DIR$/js/js/animate.js" />
-        <option value="$PROJECT_DIR$/m/pk10/highcharts.js" />
-        <option value="$PROJECT_DIR$/js/js/config.js" />
+        <option value="$PROJECT_DIR$/m/xyft/ajax_changlong.php" />
+        <option value="$PROJECT_DIR$/m/xyft/jiqiao.php" />
+        <option value="$PROJECT_DIR$/m/pk10/jiqiao.php" />
+        <option value="$PROJECT_DIR$/m/jsk3/jiqiao.php" />
+        <option value="$PROJECT_DIR$/m/cqssc/jiqiao.php" />
+        <option value="$PROJECT_DIR$/m/cqssc/cltj.php" />
+        <option value="$PROJECT_DIR$/m/ajax/pk10_trend.php" />
+        <option value="$PROJECT_DIR$/m/cqssc/award.js" />
+        <option value="$PROJECT_DIR$/m/xyft/award.js" />
+        <option value="$PROJECT_DIR$/m/jssc/award.js" />
+        <option value="$PROJECT_DIR$/m/cqssc/hmzs.php" />
+        <option value="$PROJECT_DIR$/m/jssc/hmzs.php" />
+        <option value="$PROJECT_DIR$/m/jsk3/hmzs.php" />
+        <option value="$PROJECT_DIR$/m/jsssc/hmzs.php" />
+        <option value="$PROJECT_DIR$/m/xyft/hmzs.php" />
         <option value="$PROJECT_DIR$/js/js/index.js" />
-        <option value="$PROJECT_DIR$/js/indexlotaward.js" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" />
+        <option value="$PROJECT_DIR$/m/index.php" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/Controller/ThcommissionController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/Controller/DragonController.class.php" />
+        <option value="$PROJECT_DIR$/m/pk10/highcharts.js" />
+        <option value="$PROJECT_DIR$/m/function.php" />
+        <option value="$PROJECT_DIR$/m/xyft/index.php" />
+        <option value="$PROJECT_DIR$/m/conn.php" />
+        <option value="$PROJECT_DIR$/m/xyft/highcharts.js" />
+        <option value="$PROJECT_DIR$/m/xyft/lrtj.php" />
+        <option value="$PROJECT_DIR$/m/pk10/lrtj.php" />
+        <option value="$PROJECT_DIR$/m/jsssc/lrtj.php" />
+        <option value="$PROJECT_DIR$/m/jssc/lrtj.php" />
+        <option value="$PROJECT_DIR$/m/jsk3/lrtj.php" />
+        <option value="$PROJECT_DIR$/m/gdkl10/lrtj.php" />
+        <option value="$PROJECT_DIR$/m/gd11x5/lrtj.php" />
+        <option value="$PROJECT_DIR$/m/cqssc/lrtj.php" />
+        <option value="$PROJECT_DIR$/m/jsk3/hmzs.js" />
+        <option value="$PROJECT_DIR$/m/jsssc/award.js" />
+        <option value="$PROJECT_DIR$/m/gd11x5/hmzs.php" />
+        <option value="$PROJECT_DIR$/m/gd11x5/index.php" />
+        <option value="$PROJECT_DIR$/m/gd11x5/jiqiao.php" />
+        <option value="$PROJECT_DIR$/m/gd11x5/detail.php" />
+        <option value="$PROJECT_DIR$/m/gd11x5/cltj.php" />
+        <option value="$PROJECT_DIR$/m/gdkl10/smtj.php" />
+        <option value="$PROJECT_DIR$/m/gdkl10/jiqiao.php" />
+        <option value="$PROJECT_DIR$/m/gdkl10/hmzs.php" />
+        <option value="$PROJECT_DIR$/m/gdkl10/index.php" />
+        <option value="$PROJECT_DIR$/m/gdkl10/detail.php" />
+        <option value="$PROJECT_DIR$/m/gdkl10/cltj.php" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php" />
+        <option value="$PROJECT_DIR$/m/pk10/cltj.php" />
+        <option value="$PROJECT_DIR$/m/jssc/cltj.php" />
+        <option value="$PROJECT_DIR$/m/xyft/cltj.php" />
+        <option value="$PROJECT_DIR$/js/indexqihao.js" />
       </list>
     </option>
   </component>
@@ -238,9 +318,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
     <option name="width" value="1932" />
-    <option name="height" value="1056" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -277,25 +356,11 @@
               <item name="kai" type="462c0819:PsiDirectoryNode" />
               <item name="Application" type="462c0819:PsiDirectoryNode" />
               <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kai" type="b2602c69:ProjectViewProjectNode" />
               <item name="kai" type="462c0819:PsiDirectoryNode" />
-              <item name="Application" type="462c0819:PsiDirectoryNode" />
-              <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="Common" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kai" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kai" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -306,8 +371,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="SearchEverywhereHistoryKey" value="conn.php&#9;FILE&#9;file://C:/Proj/kai/m/conn.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Proj\kai\Application\Fuzhi\Controller" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -333,17 +404,18 @@
       <updated>1534609775771</updated>
       <workItem from="1534612432420" duration="8562000" />
       <workItem from="1534657774927" duration="8092000" />
+      <workItem from="1534925292346" duration="136000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16654000" />
+    <option name="totallyTimeSpent" value="64463000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <frame x="-8" y="0" width="1932" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553419" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26068377" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -365,22 +437,22 @@
       <window_info anchor="right" id="Database" order="3" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25267094" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25801283" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="1" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Message" order="3" />
-      <window_info anchor="bottom" id="Find" order="4" />
-      <window_info anchor="bottom" id="Run" order="5" />
-      <window_info anchor="bottom" id="Debug" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info anchor="bottom" id="版本控制" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="版本控制" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -394,134 +466,334 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Common/index22.html">
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/Thcommission.php" />
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/IndexController.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/HomeController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="740" column="3" selection-start-line="740" selection-start-column="3" selection-end-line="740" selection-end-column="71" />
+        <state relative-caret-position="190">
+          <caret line="10" column="21" lean-forward="true" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="16261" column="54" lean-forward="true" selection-start-line="16261" selection-start-column="54" selection-end-line="16261" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js/pk10_index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12236">
-          <caret line="644" column="9" selection-start-line="644" selection-start-column="9" selection-end-line="644" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/2index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="411" column="47" selection-start-line="411" selection-start-column="47" selection-end-line="411" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js/animate.js">
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/ThcommissionController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/jsk3/award.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2869">
-          <caret line="151" column="67" selection-start-line="151" selection-start-column="58" selection-end-line="151" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/RemoteDataMgr.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="90" column="71" selection-start-line="90" selection-start-column="71" selection-end-line="90" selection-end-column="71" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#2;n#li#1;n#ul#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="152" column="4" selection-start-line="152" selection-start-column="4" selection-end-line="152" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret column="1285" selection-start-column="1285" selection-end-column="1285" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/lot/jssc/award.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="118" column="104" selection-start-line="118" selection-start-column="75" selection-end-line="118" selection-end-column="104" />
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/m/pk10/highcharts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="495" column="66" selection-start-line="495" selection-start-column="66" selection-end-line="495" selection-end-column="66" />
+        <state relative-caret-position="-433">
+          <caret line="3276" column="24" selection-start-line="3276" selection-start-column="24" selection-end-line="3276" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="412" column="9" lean-forward="true" selection-start-line="412" selection-start-column="9" selection-end-line="412" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94829">
+          <caret line="4982" column="5" selection-start-line="4982" selection-start-column="5" selection-end-line="4982" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/xyft/ajax_rmhmdata.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/xyft/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/conn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="30" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/xyft/highcharts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="295" column="122" lean-forward="true" selection-start-line="295" selection-start-column="122" selection-end-line="295" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/xyft/hmzs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="50" column="124" selection-start-line="50" selection-start-column="124" selection-end-line="50" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/public/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/xyft/lrtj.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
-          <caret line="130" column="116" selection-start-line="130" selection-start-column="99" selection-end-line="130" selection-end-column="116" />
+          <caret line="113" column="100" selection-start-line="112" selection-start-column="15" selection-end-line="113" selection-end-column="100" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js/index.js">
+    <entry file="file://$PROJECT_DIR$/m/pk10/lrtj.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-start-column="3" selection-end-line="2" selection-end-column="4" />
+        <state relative-caret-position="577">
+          <caret line="134" column="101" selection-start-line="134" selection-start-column="101" selection-end-line="134" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/jsssc/lrtj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="114" column="101" selection-start-line="114" selection-start-column="101" selection-end-line="114" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/jssc/lrtj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="134" column="101" selection-start-line="134" selection-start-column="101" selection-end-line="134" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/cqssc/lrtj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="134" column="101" selection-start-line="134" selection-start-column="101" selection-end-line="134" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/util/jschart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1406">
+          <caret line="78" column="9" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/style/js/layer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="1" column="2902" selection-start-line="1" selection-start-column="2902" selection-end-line="1" selection-end-column="2902" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/jsk3/lrtj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="138" column="26" selection-start-line="138" selection-start-column="26" selection-end-line="138" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/jsk3/hmzs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="722">
+          <caret line="50" column="104" selection-start-line="50" selection-start-column="104" selection-end-line="50" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/jsssc/award.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="92" column="6" lean-forward="true" selection-start-line="92" selection-start-column="6" selection-end-line="92" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gd11x5/hmzs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="52" column="45" lean-forward="true" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gd11x5/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gd11x5/ajax_changlong.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="2" lean-forward="true" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gd11x5/ajax_hmyldata.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gd11x5/ajax_rmhmdata.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gd11x5/ajax_trend.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gd11x5/cltj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="703">
+          <caret line="52" column="9" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gd11x5/data1.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gd11x5/demodata.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gd11x5/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="57" column="45" lean-forward="true" selection-start-line="57" selection-start-column="11" selection-end-line="57" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gd11x5/lrtj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1843">
+          <caret line="135" column="101" selection-start-line="135" selection-start-column="101" selection-end-line="135" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gd11x5/jiqiao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/DragonController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="172" column="64" selection-start-line="172" selection-start-column="64" selection-end-line="172" selection-end-column="64" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#117#138#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/indexlotaward.js">
+    <entry file="file://$PROJECT_DIR$/m/function.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        <state relative-caret-position="19">
+          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html">
+    <entry file="file://$PROJECT_DIR$/m/gdkl10/ajax_changlong.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-243">
-          <caret line="1058" column="57" selection-start-line="1058" selection-start-column="53" selection-end-line="1058" selection-end-column="57" />
+        <state relative-caret-position="38">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gdkl10/detail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gdkl10/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-962">
+          <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gdkl10/hmzs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="52" column="45" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gdkl10/jiqiao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="53" column="45" selection-start-line="53" selection-start-column="10" selection-end-line="53" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/jsk3/smtj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3933" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gdkl10/smtj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-494">
+          <caret line="52" column="45" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gdkl10/cltj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1691">
+          <caret line="89" column="17" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gdkl10/lrtj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2204">
+          <caret line="116" column="44" selection-start-line="116" selection-start-column="18" selection-end-line="116" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11476">
+          <caret line="605" column="31" selection-start-line="605" selection-start-column="31" selection-end-line="605" selection-end-column="31" />
           <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#33967#33973#0" expanded="true" />
-            <element signature="e#33973#33979#0" expanded="true" />
-            <element signature="e#34028#34034#0" expanded="true" />
-            <element signature="e#34034#34040#0" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#35#56#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/pk10/cltj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1539">
+          <caret line="81" selection-start-line="81" selection-end-line="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/jssc/cltj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1995">
+          <caret line="105" column="2" selection-start-line="105" selection-start-column="2" selection-end-line="105" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/xyft/cltj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1311">
+          <caret line="69" column="26" selection-start-line="69" selection-start-column="26" selection-end-line="69" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/indexqihao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="239" column="124" selection-start-line="239" selection-start-column="124" selection-end-line="239" selection-end-column="124" />
         </state>
       </provider>
     </entry>

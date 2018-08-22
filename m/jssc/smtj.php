@@ -50,7 +50,7 @@ include("../conn.php");
        <li><a href="smtj.php" class="cur">双面</a></li>
        <li><a href="cltj.php">长龙</a></li>
        <li><a href="hmzs.php">走势</a></li>
-<!--       <li><a href="lrtj.php">冷热</a></li>-->
+       <li><a href="lrtj.php">冷热</a></li>
        <li><a href="jiqiao.php">技巧</a></li>
        
      </ul>
@@ -254,14 +254,16 @@ include("../conn.php");
 	            	
 	            	
 
-	            	html += '<tr class="head"><td colspan="6">第一球</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da1+'</td><td>'+x1+'</td><td>'+d1+'</td><td>'+s1+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第二球</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da2+'</td><td>'+x2+'</td><td>'+d2+'</td><td>'+s2+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第三球</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da3+'</td><td>'+x3+'</td><td>'+d3+'</td><td>'+s3+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第四球</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da4+'</td><td>'+x4+'</td><td>'+d4+'</td><td>'+s4+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第五球</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da5+'</td><td>'+x5+'</td><td>'+d5+'</td><td>'+s5+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第六球</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da6+'</td><td>'+x6+'</td><td>'+d6+'</td><td>'+s6+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第七球</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da7+'</td><td>'+x7+'</td><td>'+d7+'</td><td>'+s7+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第八球</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da8+'</td><td>'+x8+'</td><td>'+d8+'</td><td>'+s8+'</td></tr>';
+	            	html += '<tr class="head"><td colspan="6">冠军</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da1+'</td><td>'+x1+'</td><td>'+d1+'</td><td>'+s1+'</td></tr>';
+	            	html += '<tr class="head"><td colspan="6">亚军</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da2+'</td><td>'+x2+'</td><td>'+d2+'</td><td>'+s2+'</td></tr>';
+	            	html += '<tr class="head"><td colspan="6">第三名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da3+'</td><td>'+x3+'</td><td>'+d3+'</td><td>'+s3+'</td></tr>';
+	            	html += '<tr class="head"><td colspan="6">第四名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da4+'</td><td>'+x4+'</td><td>'+d4+'</td><td>'+s4+'</td></tr>';
+	            	html += '<tr class="head"><td colspan="6">第五名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da5+'</td><td>'+x5+'</td><td>'+d5+'</td><td>'+s5+'</td></tr>';
+	            	html += '<tr class="head"><td colspan="6">第六名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da6+'</td><td>'+x6+'</td><td>'+d6+'</td><td>'+s6+'</td></tr>';
+	            	html += '<tr class="head"><td colspan="6">第七名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da7+'</td><td>'+x7+'</td><td>'+d7+'</td><td>'+s7+'</td></tr>';
+	            	html += '<tr class="head"><td colspan="6">第八名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da8+'</td><td>'+x8+'</td><td>'+d8+'</td><td>'+s8+'</td></tr>';
+	            	html += '<tr class="head"><td colspan="6">第九名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da9+'</td><td>'+x9+'</td><td>'+d9+'</td><td>'+s9+'</td></tr>';
+	            	html += '<tr class="head"><td colspan="6">第十名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da10+'</td><td>'+x10+'</td><td>'+d10+'</td><td>'+s10+'</td></tr>';
 
 	            	html += '</tr>';
 	   
@@ -269,7 +271,7 @@ include("../conn.php");
 			    }
 			    function shuangmiantongji() {
 			    	layer.open({type: 2,time: 1});
-					$.get("../../gdkl10/getHistoryData.do?adate",
+					$.get("../../pk10/getHistoryData.do?adate",
  function(result){
 var dan='';
 			            if(result&&result.rows){

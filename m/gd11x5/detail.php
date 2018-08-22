@@ -55,7 +55,7 @@ $infos = mysql_fetch_array(mysql_query("select * from ot_document_article where 
        <li><a href="smtj.php">双面</a></li>
        
        <li><a href="hmzs.php">走势</a></li>
-       <li><a href="lrtj.php">冷热</a></li>
+<!--       <li><a href="lrtj.php">冷热</a></li>-->
        <li><a href="jiqiao.php" class="cur">技巧</a></li>
        
      </ul>
