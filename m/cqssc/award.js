@@ -39,7 +39,7 @@ $(function () {
         }
     }
     var awardTick = function () {
-        $.post('../../cqssc/getcqsscAwardTimes.do', { t: Math.random() }, function (data) {
+        $.post('../../cqssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
             //计数请求次数
             requireCount += 1;
 

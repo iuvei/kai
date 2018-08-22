@@ -39,7 +39,7 @@ $(function () {
         }
     }
     var awardTick = function () {
-        $.post('../../gdkl10/getgdkl10AwardTimes.do', { t: Math.random() }, function (data) {
+        $.post('../../gdkl10/getGdkl10AwardTimes.do', { t: Math.random() }, function (data) {
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {

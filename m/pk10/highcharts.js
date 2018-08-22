@@ -1,4 +1,4 @@
-container/*
+/*
  Highcharts JS v4.0.3 (2014-07-03)
 
  (c) 2009-2014 Torstein Honsi

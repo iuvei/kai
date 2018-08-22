@@ -49,7 +49,7 @@ $cid = 2;
      <ul class="fl">
     <li><a href="./">首页</a></li>
        <li><a href="smtj.php">双面</a></li>
-       <li><a href="cltj.php">长龙</a></li>
+<!--       <li><a href="cltj.php">长龙</a></li>-->
        <li><a href="hmzs.php">走势</a></li>
 <!--       <li><a href="lrtj.php">冷热</a></li>-->
        <li><a href="jiqiao.php" class="cur">技巧</a></li>

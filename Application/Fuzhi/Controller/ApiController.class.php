@@ -14,15 +14,16 @@ class ApiController extends Controller{
      */
     public function index(){
        // echo 1111;exit;
-        if(empty($_POST)){
+        $data = $_POST;
+        if(empty($data)){
             $arr = array(
                 'code'=>false,
                 'msg'=>'参数为空',
             );
             echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
         }
-        file_put_contents('lgc1.log',date("Y-m-d H:i:s").var_export($_POST,true)."</br>",FILE_APPEND);//日志
-        $data = $_POST;
+        file_put_contents('lgc1.log',date("Y-m-d H:i:s").var_export($data,true)."</br>",FILE_APPEND);//日志
+
         if(empty($data['name'])){
             $arr = array(
                 'code'=>false,
@@ -44,6 +45,7 @@ class ApiController extends Controller{
             );
             echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
         }
+
         $where = array(
             'dat_type'=>$res['id'],
             'dat_open_time'=>time(),
@@ -53,7 +55,7 @@ class ApiController extends Controller{
         C('DB_PREFIX','lot_');
         $res = M('data')->add($where);
 
-        file_put_contents('lgc2.log',date("Y-m-d H:i:s").var_export($res,true)."</br>",FILE_APPEND);
+        file_put_contents('lgc2.log',date("Y-m-d H:i:s").var_export($res,true).M('data')->getLastsql()."</br>",FILE_APPEND);
         if($res < 1){
             $arr = array(
                 'code'=>false,
@@ -525,6 +527,7 @@ class ApiController extends Controller{
         }
         C('DB_PREFIX','lot_');
         $res = M('data')->where(array('dat_type'=>$data['id']))->order('dat_open_time desc')->limit(50)->select();
+
         $info = array();
         foreach($res as $k => $v){
             $info[$k] = explode(',',$v['dat_codes']);

@@ -11,10 +11,58 @@ $result = $mysqli->query($sql);
 $row = $result->fetch_assoc();
 while( $row = $result->fetch_assoc()){
 	$exp = explode(",",$row['dat_codes']);
-	$tarr = array(
-	0=>substr($row['dat_expect'],-2),
-	1=>$exp[$ball],
-	2=>"<article class='infos'>
+	if($typeid == 1 || $typeid == 40){
+        $tarr = array(
+            0=>substr($row['dat_expect'],-2),
+            1=>$exp[$ball],
+            2=>"<article class='infos'>
+			<table><tr><td class='no'>".$row['dat_expect']."期</td><td><div class='sortDown'>
+				<div class='p'><div class='hm no".$exp[0]."'></div></div>
+				<div class='p'><div class='hm no".$exp[1]."'></div></div>
+				<div class='p'><div class='hm no".$exp[2]."'></div></div>
+				<div class='p'><div class='hm no".$exp[3]."'></div></div>
+				<div class='p'><div class='hm no".$exp[4]."'></div></div>
+				</div></td></tr></table>
+			</article>"
+        );
+    }elseif($typeid == 21){
+        $tarr = array(
+            0=>substr($row['dat_expect'],-2),
+            1=>$exp[$ball],
+            2=>"<article class='infos'>
+			<table><tr><td class='no'>".$row['dat_expect']."期</td><td><div class='sortDown'>
+				<div class='p'><div class='hm no".$exp[0]."'></div></div>
+				<div class='p'><div class='hm no".$exp[1]."'></div></div>
+				<div class='p'><div class='hm no".$exp[2]."'></div></div>
+				<div class='p'><div class='hm no".$exp[3]."'></div></div>
+				<div class='p'><div class='hm no".$exp[4]."'></div></div>
+				<div class='p'><div class='hm no".$exp[5]."'></div></div>
+				<div class='p'><div class='hm no".$exp[6]."'></div></div>
+				<div class='p'><div class='hm no".$exp[7]."'></div></div>
+			
+				</div></td></tr></table>
+			</article>"
+        );
+    }elseif($typeid == 6){
+        $tarr = array(
+            0=>substr($row['dat_expect'],-2),
+            1=>$exp[$ball],
+            2=>"<article class='infos'>
+			<table><tr><td class='no'>".$row['dat_expect']."期</td><td><div class='sortDown'>
+				<div class='p'><div class='hm no".$exp[0]."'></div></div>
+				<div class='p'><div class='hm no".$exp[1]."'></div></div>
+				<div class='p'><div class='hm no".$exp[2]."'></div></div>
+				<div class='p'><div class='hm no".$exp[3]."'></div></div>
+				<div class='p'><div class='hm no".$exp[4]."'></div></div>
+			
+				</div></td></tr></table>
+			</article>"
+        );
+    }else{
+        $tarr = array(
+            0=>substr($row['dat_expect'],-2),
+            1=>$exp[$ball],
+            2=>"<article class='infos'>
 			<table><tr><td class='no'>".$row['dat_expect']."期</td><td><div class='sortDown'>
 				<div class='p'><div class='hm no".$exp[0]."'></div></div>
 				<div class='p'><div class='hm no".$exp[1]."'></div></div>
@@ -28,7 +76,9 @@ while( $row = $result->fetch_assoc()){
 				<div class='p'><div class='hm no".$exp[9]."'></div></div>
 				</div></td></tr></table>
 			</article>"
-	);
+        );
+    }
+
 	$array[]=$tarr;
     
 }
