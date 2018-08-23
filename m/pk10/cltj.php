@@ -175,9 +175,7 @@ include("../conn.php");
 
         </tr>
     </table>
-    <tbody>
 
-    </tbody>
 </table>
 
 
@@ -243,6 +241,14 @@ include("../conn.php");
             lh(data['lh'][n]);
             dx_guanya(dx);
             ds_guanya(ds);
+            $('table tr').each(function(i){                   // 遍历 tr
+                $(this).children('td').each(function(j){  // 遍历 tr 的各个 td
+                    if($(this).text() == 0 ){
+                        $(this).text('')
+                    }
+                });
+            });
+
         }
      	
      },"json");
@@ -272,6 +278,14 @@ include("../conn.php");
              if(n < 5 ){
                  lh(data['lh'][n]);
              }
+             $('table tr').each(function(i){                   // 遍历 tr
+                 $(this).children('td').each(function(j){  // 遍历 tr 的各个 td
+                     if($(this).text() == 0 ){
+                         $(this).text('')
+                     }
+                 });
+             });
+
 
          }
 

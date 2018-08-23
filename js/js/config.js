@@ -404,7 +404,7 @@ tools.loadloginR = function (t, e) {
         t.indexOf("android") > 0 && (s = !0);
         var d = "windows ce" == t.match(/windows ce/i), r = "windows mobile" == t.match(/windows mobile/i);
         if (e || i || n || o || a || s || d || r) {
-            -1 != window.location.href.indexOf("1680100.com") ? window.location.href = "//m.1680100" + tools.getCom() : window.location.href = "//m." + tools.YM() + tools.getCom()
+            // -1 != window.location.href.indexOf("1680100.com") ? window.location.href = "//m.1680100" + tools.getCom() : window.location.href = "//m." + tools.YM() + tools.getCom()
         }
     }
 }, tools.countDown = function (t, e, i) {
@@ -1292,9 +1292,10 @@ tools.initListen = function () {
         })
     })
 };
-    function SetHome(t) {
-        document.all ? (document.body.style.behavior = "url(#default#homepage)", document.body.setHomePage(t)) : alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!")
-    }
+
+function SetHome(t) {
+    document.all ? (document.body.style.behavior = "url(#default#homepage)", document.body.setHomePage(t)) : alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!")
+}
 
 function addFavorite2() {
     var t = window.location, e = document.title, i = navigator.userAgent.toLowerCase();
@@ -1703,7 +1704,7 @@ tools.loadloginR = function (t, e) {
         t.indexOf("android") > 0 && (s = !0);
         var d = "windows ce" == t.match(/windows ce/i), r = "windows mobile" == t.match(/windows mobile/i);
         if (e || i || n || o || a || s || d || r) {
-            -1 != window.location.href.indexOf("1680100.com") ? window.location.href = "//m.1680100" + tools.getCom() : window.location.href = "//m." + tools.YM() + tools.getCom()
+            // -1 != window.location.href.indexOf("1680100.com") ? window.location.href = "//m.1680100" + tools.getCom() : window.location.href = "//m." + tools.YM() + tools.getCom()
         }
     }
 }, tools.countDown = function (t, e, i) {

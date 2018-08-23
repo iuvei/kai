@@ -63,7 +63,7 @@ $cid = 49;
     
         <ul>
 		<?php
-        $mysqli = new mysqli('localhost', 'root', 'root', 'kaijiang');
+        $mysqli = new mysqli('localhost', 'root', '123456', 'kaijiang');
         $sql="select * from ot_document where category_id=$cid order by update_time desc limit 15";
         $result = $mysqli->query($sql);
         $row = $result->fetch_assoc();

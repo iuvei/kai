@@ -1,6 +1,7 @@
 $(document).ready(function () { 
     if(!IsPC() && confirm("系统判断您是手机访问,是否切换到手机版?")){
-		location.href="m";
+		 location.href="/m";
+        //location.href=location.href+'/m';
 	}
     $("#floatShow").bind("click", function () {
         $('#onlineService').animate({ width: 'show', opacity: 'show' }, 'normal', function () { $('#onlineService').show(); }); $('#floatShow').attr('style', 'display:none'); $('#floatHide').attr('style', 'display:block');
