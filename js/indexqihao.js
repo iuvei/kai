@@ -223,6 +223,8 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
          type = '豹子';
      }else if (((Number(nums[1]) - Number(nums[0])) == (Number(nums[2]) - Number(nums[1]))) && ((Number(nums[0]) - Number(nums[1])) == 1)  && ((Number(nums[1]) - Number(nums[2])) == 1)  && ((Number(nums[0]) - Number(nums[2])) == 1)  && ((Number(nums[2]) - Number(nums[0])) == 1) || (nums[0]+nums[1]+nums[2] == '0,8,9' || nums[0]+nums[1]+nums[2] == '0,1,9')) {
          type = '顺子';
+     }else if ((Number(nums[0]) - Number(nums[1])) == 2 && (Number(nums[1]) - Number(nums[2])) == -1 || (Number(nums[1]) - Number(nums[0])) == 2 && (Number(nums[1]) - Number(nums[2])) == 1 || (Number(nums[1]) - Number(nums[2])) == 2 && (Number(nums[1]) - Number(nums[0])) == 1 || (Number(nums[2]) - Number(nums[1])) == 2 && (Number(nums[1]) - Number(nums[0])) == -1){
+         type = '顺子';
      } else if (Number(nums[0]) == Number(nums[1]) || Number(nums[1]) == Number(nums[2]) || Number(nums[0]) == Number(nums[2])  ) {
          type = '对子';
      } else if ((Number(nums[0]) - Number(nums[1])) == 1 ||(Number(nums[1]) - Number(nums[0])) == 1 || (Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[1]) - Number(nums[2])) == 1 || (Number(nums[0]) - Number(nums[2])) == 1 || (Number(nums[2]) - Number(nums[0])) == 1 || (nums[2]+ nums[0] == '0,9' || nums[1]+ nums[0] == '0,9'|| nums[1]+ nums[2] == '0,9' || nums[0]+ nums[2] == '0,9' || nums[0]+ nums[1] == '0,9'|| nums[2]+ nums[1] == '0,9')) {
@@ -237,7 +239,9 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
          type1 = '豹子';
      }  else if (((Number(nums[2]) - Number(nums[1])) == (Number(nums[3]) - Number(nums[2]))) && ((Number(nums[1]) - Number(nums[2])) == 1) && ((Number(nums[3]) - Number(nums[1])) == 1) && ((Number(nums[1]) - Number(nums[3])) == 1) && ((Number(nums[2]) - Number(nums[3])) == 1)|| (nums[0]+nums[1]+nums[2] == '0,8,9' || nums[0]+nums[1]+nums[2] == '0,1,9')) {
          type1 = '顺子';
-     } else if (Number(nums[1]) == Number(nums[2]) || Number(nums[2]) == Number(nums[3]) || Number(nums[3]) == Number(nums[1])) {
+     }else if ((Number(nums[1]) - Number(nums[2])) == 2 && (Number(nums[2]) - Number(nums[3])) == -1 || (Number(nums[2]) - Number(nums[1])) == 2 && (Number(nums[2]) - Number(nums[3])) == 1 || (Number(nums[2]) - Number(nums[3])) == 2 && (Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[3]) - Number(nums[2])) == 2 && (Number(nums[2]) - Number(nums[1])) == -1){
+         type1 = '顺子';
+     }  else if (Number(nums[1]) == Number(nums[2]) || Number(nums[2]) == Number(nums[3]) || Number(nums[3]) == Number(nums[1])) {
          type1 = '对子';
      } else if ((Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[1]) - Number(nums[2])) == 1 || (Number(nums[2]) - Number(nums[3])) == 1 || (Number(nums[3]) - Number(nums[2])) == 1 || (Number(nums[1]) - Number(nums[3])) == 1 || (Number(nums[3]) - Number(nums[1])) == 1|| (nums[3]+ nums[1] == '0,9' || nums[2]+ nums[1] == '0,9'|| nums[2]+ nums[3] == '0,9' || nums[3]+ nums[2] == '0,9' || nums[1]+ nums[3] == '0,9' || nums[1]+ nums[2] == '0,9')) {
          type1= '半顺';
@@ -250,6 +254,8 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
      if ((Number(nums[2]) == Number(nums[3])) && (Number(nums[2]) == Number(nums[4]))) {
          type2 = '豹子';
      }else if (((Number(nums[3]) - Number(nums[2])) == (Number(nums[4]) - Number(nums[3]))) && ((Number(nums[2]) - Number(nums[3])) == 1) && ((Number(nums[3]) - Number(nums[4])) == 1) && ((Number(nums[4]) - Number(nums[2])) == 1)  && ((Number(nums[2]) - Number(nums[4])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))){
+         type2 = '顺子';
+     }else if ((Number(nums[2]) - Number(nums[3])) == 2 && (Number(nums[3]) - Number(nums[4])) == -1 || (Number(nums[3]) - Number(nums[2])) == 2 && (Number(nums[3]) - Number(nums[4])) == 1 || (Number(nums[3]) - Number(nums[4])) == 2 && (Number(nums[3]) - Number(nums[2])) == 1 || (Number(nums[4]) - Number(nums[3])) == 2 && (Number(nums[3]) - Number(nums[2])) == -1){
          type2 = '顺子';
      } else if (Number(nums[2]) == Number(nums[3]) || Number(nums[3]) == Number(nums[4]) || Number(nums[1]) == Number(nums[4])) {
          type2 = '对子';
@@ -437,6 +443,8 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
          type = '豹子';
      }else if (((Number(nums[1]) - Number(nums[0])) == (Number(nums[2]) - Number(nums[1]))) && ((Number(nums[0]) - Number(nums[1])) == 1)  && ((Number(nums[1]) - Number(nums[2])) == 1)  && ((Number(nums[0]) - Number(nums[2])) == 1)  && ((Number(nums[2]) - Number(nums[0])) == 1) || (nums[0]+nums[1]+nums[2] == '0,8,9' || nums[0]+nums[1]+nums[2] == '0,1,9')) {
          type = '顺子';
+     }else if ((Number(nums[0]) - Number(nums[1])) == 2 && (Number(nums[1]) - Number(nums[2])) == -1 || (Number(nums[1]) - Number(nums[0])) == 2 && (Number(nums[1]) - Number(nums[2])) == 1 || (Number(nums[1]) - Number(nums[2])) == 2 && (Number(nums[1]) - Number(nums[0])) == 1 || (Number(nums[2]) - Number(nums[1])) == 2 && (Number(nums[1]) - Number(nums[0])) == -1){
+         type = '顺子';
      } else if (Number(nums[0]) == Number(nums[1]) || Number(nums[1]) == Number(nums[2]) || Number(nums[0]) == Number(nums[2])  ) {
          type = '对子';
      } else if ((Number(nums[0]) - Number(nums[1])) == 1 ||(Number(nums[1]) - Number(nums[0])) == 1 || (Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[1]) - Number(nums[2])) == 1 || (Number(nums[0]) - Number(nums[2])) == 1 || (Number(nums[2]) - Number(nums[0])) == 1 || (nums[2]+ nums[0] == '0,9' || nums[1]+ nums[0] == '0,9'|| nums[1]+ nums[2] == '0,9' || nums[0]+ nums[2] == '0,9' || nums[0]+ nums[1] == '0,9'|| nums[2]+ nums[1] == '0,9')) {
@@ -448,6 +456,8 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
      var type1 = '';
      if ((Number(nums[1]) == Number(nums[2])) && (Number(nums[1]) == Number(nums[3]))) {
          type1 = '豹子';
+     } else if ((Number(nums[1]) - Number(nums[2])) == 2 && (Number(nums[2]) - Number(nums[3])) == -1 || (Number(nums[2]) - Number(nums[1])) == 2 && (Number(nums[2]) - Number(nums[3])) == 1 || (Number(nums[2]) - Number(nums[3])) == 2 && (Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[3]) - Number(nums[2])) == 2 && (Number(nums[2]) - Number(nums[1])) == -1){
+         type1 = '顺子';
      }  else if (((Number(nums[2]) - Number(nums[1])) == (Number(nums[3]) - Number(nums[2]))) && ((Number(nums[1]) - Number(nums[2])) == 1) && ((Number(nums[3]) - Number(nums[1])) == 1) && ((Number(nums[1]) - Number(nums[3])) == 1) && ((Number(nums[2]) - Number(nums[3])) == 1)|| (nums[0]+nums[1]+nums[2] == '0,8,9' || nums[0]+nums[1]+nums[2] == '0,1,9')) {
          type1 = '顺子';
      } else if (Number(nums[1]) == Number(nums[2]) || Number(nums[2]) == Number(nums[3]) || Number(nums[1]) == Number(nums[3])) {
@@ -463,7 +473,9 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
          type2 = '豹子';
      } else if (((Number(nums[3]) - Number(nums[2])) == (Number(nums[4]) - Number(nums[3]))) && ((Number(nums[2]) - Number(nums[3])) == 1) && ((Number(nums[3]) - Number(nums[4])) == 1) && ((Number(nums[4]) - Number(nums[2])) == 1)  && ((Number(nums[2]) - Number(nums[4])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))){
          type2 = '顺子';
-     } else if (Number(nums[2]) == Number(nums[3]) || Number(nums[3]) == Number(nums[4]) || Number(nums[2]) == Number(nums[4])) {
+     } else if ((Number(nums[2]) - Number(nums[3])) == 2 && (Number(nums[3]) - Number(nums[4])) == -1 || (Number(nums[3]) - Number(nums[2])) == 2 && (Number(nums[3]) - Number(nums[4])) == 1 || (Number(nums[3]) - Number(nums[4])) == 2 && (Number(nums[3]) - Number(nums[2])) == 1 || (Number(nums[4]) - Number(nums[3])) == 2 && (Number(nums[3]) - Number(nums[2])) == -1){
+         type2 = '顺子';
+     }else if (Number(nums[2]) == Number(nums[3]) || Number(nums[3]) == Number(nums[4]) || Number(nums[2]) == Number(nums[4])) {
          type2 = '对子';
      } else if  ((Number(nums[3]) - Number(nums[2])) == 1 || (Number(nums[2]) - Number(nums[3])) == 1 || (Number(nums[3]) - Number(nums[4])) == 1 || (Number(nums[4]) - Number(nums[3])) == 1 || (Number(nums[2]) - Number(nums[4])) == 1 || (Number(nums[4]) - Number(nums[2])) == 1|| (nums[4]+ nums[2] == '0,9' || nums[3]+ nums[2] == '0,9'|| nums[3]+ nums[4] == '0,9' || nums[4]+ nums[3] == '0,9' || nums[2]+ nums[4] == '0,9' || nums[2]+ nums[3] == '0,9')) {
          type2= '半顺';
@@ -572,6 +584,8 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
          type = '豹子';
      } else if ((Number(nums_1[1]) - Number(nums_1[0])) == (Number(nums_1[2]) - Number(nums_1[1])) && (Number(nums_1[1]) - Number(nums_1[0]) == 1) || (nums_1 == Array(0, 8, 9) || nums_1 == Array(0, 1, 9))) {
          type = '顺子';
+     }else if ((Number(nums[0]) - Number(nums[1])) == 2 && (Number(nums[1]) - Number(nums[2])) == -1 || (Number(nums[1]) - Number(nums[0])) == 2 && (Number(nums[1]) - Number(nums[2])) == 1 || (Number(nums[1]) - Number(nums[2])) == 2 && (Number(nums[1]) - Number(nums[0])) == 1 || (Number(nums[2]) - Number(nums[1])) == 2 && (Number(nums[1]) - Number(nums[0])) == -1){
+         type = '顺子';
      } else if (Number(nums[0]) == Number(nums[1]) || Number(nums[1]) == Number(nums[2]) || Number(nums[0]) == Number(nums[2])  ) {
          type = '对子';
      } else if ((Number(nums[0]) - Number(nums[1])) == 1 ||(Number(nums[1]) - Number(nums[0])) == 1 || (Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[1]) - Number(nums[2])) == 1 || (Number(nums[0]) - Number(nums[2])) == 1 || (Number(nums[2]) - Number(nums[0])) == 1 || (nums[2]+ nums[0] == '0,9' || nums[1]+ nums[0] == '0,9'|| nums[1]+ nums[2] == '0,9' || nums[0]+ nums[2] == '0,9' || nums[0]+ nums[1] == '0,9'|| nums[2]+ nums[1] == '0,9')) {
@@ -584,6 +598,8 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
      if ((Number(nums[1]) == Number(nums[2])) && (Number(nums[1]) == Number(nums[3]))) {
          type1 = '豹子';
      } else if (((Number(nums[2]) - Number(nums[1])) == (Number(nums[3]) - Number(nums[2]))) && ((Number(nums[1]) - Number(nums[2])) == 1) && ((Number(nums[3]) - Number(nums[1])) == 1) && ((Number(nums[1]) - Number(nums[3])) == 1) && ((Number(nums[2]) - Number(nums[3])) == 1)|| (nums[0]+nums[1]+nums[2] == '0,8,9' || nums[0]+nums[1]+nums[2] == '0,1,9')) {
+         type1 = '顺子';
+     }else if ((Number(nums[1]) - Number(nums[2])) == 2 && (Number(nums[2]) - Number(nums[3])) == -1 || (Number(nums[2]) - Number(nums[1])) == 2 && (Number(nums[2]) - Number(nums[3])) == 1 || (Number(nums[2]) - Number(nums[3])) == 2 && (Number(nums[2]) - Number(nums[1])) == 1 || (Number(nums[3]) - Number(nums[2])) == 2 && (Number(nums[2]) - Number(nums[1])) == -1){
          type1 = '顺子';
      } else if (Number(nums[1]) == Number(nums[2]) || Number(nums[2]) == Number(nums[3]) || Number(nums[1]) == Number(nums[3])) {
          type1 = '对子';
@@ -598,7 +614,9 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
          type2 = '豹子';
      } else if (((Number(nums[3]) - Number(nums[2])) == (Number(nums[4]) - Number(nums[3]))) && ((Number(nums[2]) - Number(nums[3])) == 1) && ((Number(nums[3]) - Number(nums[4])) == 1) && ((Number(nums[4]) - Number(nums[2])) == 1)  && ((Number(nums[2]) - Number(nums[4])) == 1) || (nums == Array(0, 8, 9) || nums == Array(0, 1, 9))) {
          type2 = '顺子';
-     } else if (Number(nums[2]) == Number(nums[3]) || Number(nums[3]) == Number(nums[4]) || Number(nums[1]) == Number(nums[4])) {
+     } else if ((Number(nums[2]) - Number(nums[3])) == 2 && (Number(nums[3]) - Number(nums[4])) == -1 || (Number(nums[3]) - Number(nums[2])) == 2 && (Number(nums[3]) - Number(nums[4])) == 1 || (Number(nums[3]) - Number(nums[4])) == 2 && (Number(nums[3]) - Number(nums[2])) == 1 || (Number(nums[4]) - Number(nums[3])) == 2 && (Number(nums[3]) - Number(nums[2])) == -1){
+         type2 = '顺子';
+     }else if (Number(nums[2]) == Number(nums[3]) || Number(nums[3]) == Number(nums[4]) || Number(nums[1]) == Number(nums[4])) {
          type2 = '对子';
      } else if  ((Number(nums[3]) - Number(nums[2])) == 1 || (Number(nums[2]) - Number(nums[3])) == 1 || (Number(nums[3]) - Number(nums[4])) == 1 || (Number(nums[4]) - Number(nums[3])) == 1 || (Number(nums[2]) - Number(nums[4])) == 1 || (Number(nums[4]) - Number(nums[2])) == 1|| (nums[4]+ nums[2] == '0,9' || nums[3]+ nums[2] == '0,9'|| nums[3]+ nums[4] == '0,9' || nums[4]+ nums[3] == '0,9' || nums[2]+ nums[4] == '0,9' || nums[2]+ nums[3] == '0,9')) {
          type2= '半顺';
