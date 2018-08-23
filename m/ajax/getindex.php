@@ -25,7 +25,7 @@ function gettopdata($id){
 //    }
 //
 //    mysqli_select_db("kaijiang",$con);
-    $mysqli = new mysqli('localhost', 'root', 'root', 'kaijiang');
+    $mysqli = new mysqli('localhost', 'root', '123456', 'kaijiang');
     $sql="select dat_expect,dat_codes from lot_data where `dat_type`=$id order by dat_open_time desc limit 1";
     $result = $mysqli->query($sql);
     $row = $result->fetch_assoc();

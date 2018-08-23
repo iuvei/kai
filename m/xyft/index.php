@@ -38,7 +38,6 @@ include("../conn.php");
 <div class="daojishi">
  <div class="fl"><?=$web_type?></div>
  <div class="fr"><em id="period"></em>期开奖剩余：<span id="time"></span></div>
-    <span><?=$self?></span>
 </div>
 <div class="h100">
 

@@ -61,12 +61,19 @@ include("../conn.php");
 
 <table class="lot-table">
 			<thead>
-					<tr class="head">
-					
-				  <td>长龙连开统计</td>
-              
+           <span style="margin-left: 145px;">长龙连开统计</span>
+            <tr class="head">
+                <td>   </td>
+                <td>龙</td>
+                <td>虎</td>
+                <td>和</td>
 
-				  </tr>
+             </tr>
+           <tr class="head" >
+               <td>龙</td>
+               <td>虎</td>
+               <td>和</td>
+           </tr>
 				  </thead>
 				<tbody id="changlong">
 				<tr>
@@ -93,11 +100,10 @@ include("../conn.php");
              var html = '';
              console.log(data);
              for(var o=0; o<data.length;o++){
-                 console.log(data[o].type);
+                 console.log(data[o]);
                  var info = eval(data[o]);
-                 console.log(info.data[0].title);
-                 html += "<tr><td> "+ data[o].type +"</td><td>"+info.data[0].title+"</td><td> "+info.data[0].name+" 期</td>" +
-                     "<td>"+info.data[1].title+"</td><td> "+info.data[1].name+" 期</td><td>"+info.data[2].title+"</td><td> "+info.data[2].name+" 期</td></tr>";
+               //  console.log(info.data[0].title);
+               //  html += "<tr><td> "+ data[o].name +"</td><td>"+data[o].num+" 期</td></tr>";
              }
          }
          $("#changlong").html(html);

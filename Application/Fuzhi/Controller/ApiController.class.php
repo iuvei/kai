@@ -528,95 +528,160 @@ class ApiController extends Controller{
         C('DB_PREFIX','lot_');
         $res = M('data')->where(array('dat_type'=>$data['id']))->order('dat_open_time desc')->limit(50)->select();
 
+
         $info = array();
         foreach($res as $k => $v){
             $info[$k] = explode(',',$v['dat_codes']);
         }
+
         $lh = array();
         $lh_2 = array();
         $lh_3 = array();
         $lh_4 = array();
         $lh_5 = array();
+        $num = array();
        foreach($info as $n_k => $n_v){
-            if($n_v[0]>$n_v[9] ){
-               $lh[$n_k] = '龙';
-           }else if($n_v[0]< $n_v[9] ){
-               $lh[$n_k] = '虎';
+           if($n_v[0]+$n_v[1] < 12 ){
+               $lh_2[0][$n_k] = '小';
            }else{
-               $lh[$n_k] = '和';
+               $lh_2[0][$n_k] = '大';
+           }
+           if(($n_v[0]+$n_v[1])%2 == 0){
+               $lh_2[1][$n_k] = '双';
+           }else{
+               $lh_2[1][$n_k] = '单';
+           }
+           $num[0][$n_k] =preg_replace('/^0+/','',$n_v[0]);
+           $num[1][$n_k] =preg_replace('/^0+/','',$n_v[1]);
+           $num[2][$n_k] =preg_replace('/^0+/','',$n_v[2]);
+           $num[3][$n_k] =preg_replace('/^0+/','',$n_v[3]);
+           $num[4][$n_k] =preg_replace('/^0+/','',$n_v[4]);
+           $num[5][$n_k] =preg_replace('/^0+/','',$n_v[5]);
+           $num[6][$n_k] =preg_replace('/^0+/','',$n_v[6]);
+           $num[7][$n_k] =preg_replace('/^0+/','',$n_v[7]);
+           $num[8][$n_k] =preg_replace('/^0+/','',$n_v[8]);
+           $num[9][$n_k] =preg_replace('/^0+/','',$n_v[9]);
+            if($n_v[0]>$n_v[9] ){
+               $lh[0][$n_k] = '龙';
+           }else if($n_v[0]< $n_v[9] ){
+               $lh[0][$n_k] = '虎';
+           }else{
+               $lh[0][$n_k] = '和';
            }
            if($n_v[1]>$n_v[8] ){
-               $lh_2[$n_k]= '龙';
+               $lh[1][$n_k]= '龙';
            }else if($n_v[1]< $n_v[8] ){
-               $lh_2[$n_k] = '虎';
+               $lh[1][$n_k] = '虎';
            }else{
-               $lh_2[$n_k]= '和';
+               $lh[1][$n_k]= '和';
            }
            if($n_v[2]>$n_v[7] ){
-               $lh_3[$n_k] = '龙';
+               $lh[2][$n_k] = '龙';
            }else if($n_v[2]< $n_v[7] ){
-               $lh_3[$n_k]= '虎';
+               $lh[2][$n_k]= '虎';
            }else{
-               $lh_3[$n_k] = '和';
+               $lh[2][$n_k] = '和';
            }
            if($n_v[3]>$n_v[6] ){
-               $lh_4[$n_k] = '龙';
+               $lh[3][$n_k] = '龙';
            }else if($n_v[3]< $n_v[6] ){
-               $lh_4[$n_k] = '虎';
+               $lh[3][$n_k] = '虎';
            }else{
-               $lh_4[$n_k] = '和';
+               $lh[3][$n_k] = '和';
            }
            if($n_v[4]>$n_v[5] ){
-               $lh_5[$n_k] = '龙';
+               $lh[4][$n_k] = '龙';
            }else if($n_v[4]< $n_v[9] ){
-               $lh_5[$n_k] = '虎';
+               $lh[4][$n_k] = '虎';
            }else{
-               $lh_5[$n_k] = '和';
+               $lh[4][$n_k] = '和';
            }
        }
-        $lh_6[0]['type'] = '冠军';
-        $lh_6[0]['data'][0]['name'] =substr_count(implode($lh,','),'龙') ;
-        $lh_6[0]['data'][0]['title'] ='龙' ;
-        $lh_6[0]['data'][1]['name'] =substr_count(implode($lh,','),'虎') ;
-        $lh_6[0]['data'][1]['title'] ='虎' ;
-        $lh_6[0]['data'][2]['name'] =substr_count(implode($lh,','),'和') ;
-        $lh_6[0]['data'][2]['title'] ='和' ;
 
-        $lh_6[1]['type'] = '亚军';
-        $lh_6[1]['data'][0]['name'] =substr_count(implode($lh_2,','),'龙') ;
-        $lh_6[1]['data'][0]['title'] ='龙' ;
-        $lh_6[1]['data'][1]['name'] =substr_count(implode($lh_2,','),'虎') ;
-        $lh_6[1]['data'][1]['title'] ='虎' ;
-        $lh_6[1]['data'][2]['name'] =substr_count(implode($lh_2,','),'和') ;
-        $lh_6[1]['data'][2]['title'] ='和' ;
+        for($i=0;$i<10;$i++)
+        {
+            $data['num'][$i] = $this->sdsd($num[$i]);
+        }
+        for($i=0;$i<5;$i++)
+        {
+            $data['lh'][$i] = $this->sdsd($lh[$i]);
+        }
+        $data['dx'][0] = $this->sdsd($lh_2[0]);
+        $data['ds'][0] = $this->sdsd($lh_2[1]);
 
-        $lh_6[2]['type'] = '季军';
-        $lh_6[2]['data'][0]['name'] =substr_count(implode($lh_3,','),'龙') ;
-        $lh_6[2]['data'][0]['title'] ='龙' ;
-        $lh_6[2]['data'][1]['name'] =substr_count(implode($lh_3,','),'虎') ;
-        $lh_6[2]['data'][1]['title'] ='虎' ;
-        $lh_6[2]['data'][2]['name'] =substr_count(implode($lh_3,','),'和') ;
-        $lh_6[2]['data'][2]['title'] ='和' ;
+        $info_2['dx'][0] =$this-> cl($data['dx'][0]);
+        $info_2['ds'][0] =$this-> cl($data['ds'][0]);
+        for($i=0;$i<10;$i++)
+        {
+            $info_2['num'][$i] =$this-> cl($data['num'][$i]);
+        }
+        for($i=0;$i<5;$i++)
+        {
+            $info_2['lh'][$i] =$this-> cl($data['lh'][$i]);
+        }
 
+        echo json_encode($info_2,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+    }
 
-        $lh_6[3]['type'] = '第四名';
-        $lh_6[3]['data'][0]['name'] =substr_count(implode($lh_4,','),'龙') ;
-        $lh_6[3]['data'][0]['title'] ='龙' ;
-        $lh_6[3]['data'][1]['name'] =substr_count(implode($lh_4,','),'虎') ;
-        $lh_6[3]['data'][1]['title'] ='虎' ;
-        $lh_6[3]['data'][2]['name'] =substr_count(implode($lh_4,','),'和') ;
-        $lh_6[3]['data'][2]['title'] ='和' ;
+    /**
+     * @param $data
+     * @return array
+     * 去掉=1 的数据
+     */
+    public function cl($data){
+        $info = array();
+        $n = 0;
+        foreach($data as $k => $v){
+            if($v['times'] != 1){
+                $info[$n]['num'] = $v['times'];
+                $info[$n]['name'] = $v['type'];
+                $n++;
+            }
+        }
+        return $info;
+    }
 
-        $lh_6[4]['type'] = '第五名';
-        $lh_6[4]['data'][0]['name'] =substr_count(implode($lh_5,','),'龙') ;
-        $lh_6[4]['data'][0]['title'] ='龙' ;
-        $lh_6[4]['data'][1]['name'] =substr_count(implode($lh_5,','),'虎') ;
-        $lh_6[4]['data'][1]['title'] ='虎' ;
-        $lh_6[4]['data'][2]['name'] =substr_count(implode($lh_5,','),'和') ;
-        $lh_6[4]['data'][2]['title'] ='和' ;
+    /**
+     * @param $lh
+     * @return array
+     * 获取连续出现的值
+     */
+    public function sdsd2($lh){
+        $arr = array();
+        $one = 0 ;
+        foreach($lh as $k => $v){
+            if(empty($arr)){
+                $arr[$one]=array('times'=>1,'type'=>$v[$one]);
+                continue;
+            }
+            if($arr[$one]['type'] ==  $v[$one]){
+                $arr[$one]['times'] = $arr[$one]['times'] + 1;
+                continue;
+            }else{
+                $one = $one + 1 ;
+                $arr[$one] = array("times"=>1,'type'=>$v[$one]);
+            }
+        }
+        return $arr;
+    }
 
-        //print_r($lh_6);
-        echo json_encode($lh_6,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+    public function sdsd($lh){
+        $arr = array();
+        $one = 0 ;
+        foreach($lh as $k => $v){
+            if(empty($arr)){
+                $arr[$one]=array('times'=>1,'type'=>$v);
+                continue;
+            }
+            if($arr[$one]['type'] ==  $v){
+                $arr[$one]['times'] = $arr[$one]['times'] + 1;
+                continue;
+            }else{
+                $one = $one + 1 ;
+                $arr[$one] = array("times"=>1,'type'=>$v);
+            }
+        }
+        return $arr;
     }
 
 }

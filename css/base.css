@@ -96,7 +96,7 @@ input{display: inline-block;border:none;}
 .header-plus{position: relative;z-index: 9999;color:#666;width: 100%;margin: 0;background: #fff;}
 .header-toptray-plus{width: 100%;height: 30px;line-height: 30px;color:#666;background: #fff;*position: relative;*z-index:9999; border-bottom:1px solid #ddd}
 .toptray-plus{_position:relative;}
-.header-plus .head-toptray-logo{position: relative; height:85px; line-height:85px; background:url(/style/images/headerBg.jpg) no-repeat; }
+.header-plus .head-toptray-logo{position: relative; height:85px; line-height:85px; background:url(/style/images/headerbg.jpg) no-repeat; }
 .header-plus .logo-box h1{white-space: nowrap;text-indent: -100%;overflow: hidden;height: 0;width: 0;}
 .header-plus .logo-box img{ height:82px;}
 
