@@ -48,7 +48,6 @@ function JSSSC(){
     $('#body_none').show();
 }
 $("#img").click(function () {
-
     if(none = 1){
         $("#bjpk10").hide();
     } if(none = 2){
@@ -73,7 +72,7 @@ $('.video_box .jssc').click(JSSC);
 
 $('#body_none').click(function(){
     $(this).hide();
-
+    $("#img").hide();
     $("#bjpk10").hide()
     $("#jsssc_1").hide()
     $("#jssc").hide()
@@ -1180,7 +1179,8 @@ $(function () {
     }), $(".video_box").on("click", "ul>li>a", function (e) {
         e.preventDefault(), openVdio($(this).attr("href"))
     })
-}), indextools.userXahao = function (e, t, a) {
+}),
+    indextools.userXahao = function (e, t, a) {
     $.ajax({
         type: "get",
         url: publicUrl + "KillNum/getPksKillPlanList.do?lotCode=" + e,
@@ -1199,7 +1199,8 @@ $(function () {
             console.log(e)
         }
     })
-}, indextools.userXahao_adddom = function (e, t) {
+}
+, indextools.userXahao_adddom = function (e, t) {
     for (var a = [], n = 0; n < t[e + "Num"].length; n++) {
         var i = t[e + "Num"][n];
         n % 2 == 0 && a.push(i)
@@ -1216,12 +1217,7 @@ $(function () {
         data: {lasCount: t, hisCount: a},
         dataType: "json",
         success: function (e) {
-            "object" == typeof e || (e = JSON.parse(e));
-            var e = e.result.data, t = $(".SSCsanhao>.rank>span.active").attr("data-text");
-            indextools.userXahaoSsc_adddom(t, e), $(".SSCsanhao>.rank").on("click", "span", function () {
-                var t = $(this).attr("data-text");
-                $(this).addClass("active").siblings(".active").removeClass(), indextools.userXahaoSsc_adddom(t, e)
-            })
+            console.log(e)
         },
         error: function (e) {
             console.log(e)
@@ -1281,12 +1277,7 @@ $(function () {
             data: {lasCount: t, hisCount: a},
             dataType: "json",
             success: function (e) {
-                "object" == typeof e || (e = JSON.parse(e));
-                var e = e.result.data, t = $(".SSCsanhao>.rank>span.active").attr("data-text");
-                indextools.userXahaoSsc_adddom(t, e), $(".SSCsanhao>.rank").on("click", "span", function () {
-                    var t = $(this).attr("data-text");
-                    $(this).addClass("active").siblings(".active").removeClass(), indextools.userXahaoSsc_adddom(t, e)
-                })
+                console.log(e)
             },
             error: function (e) {
                 console.log(e)

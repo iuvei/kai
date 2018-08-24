@@ -101,6 +101,8 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
      $("#pk10_hot .sdrawCountnext").html(Number(data.firstPeriod )+ 179-cpNumber);
      $("#pk10 .sdrawCountnext").html(Number(data.firstPeriod) + 179-cpNumber);
  });
+
+
  $.getJSON("/xyft/getPk10AwardTimes.do",
  function(data){
 
@@ -488,7 +490,7 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
      //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
      var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-3);
      $("#jsssc .drawCount").html(number);
-     $("#jsssc .sdrawCountnext").html(1153-number);
+     $("#jsssc .sdrawCountnext").html(1152-number);
  });
  // $.getJSON("/tjssc/getCqsscAwardTimes.do",
  // function(data){
@@ -693,12 +695,13 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
 }
  
  function timer(intDiff,div){
+
 	window.setInterval(function(){
 	var day=0,
 		hour=0,
 		minute=0,
 		second=0;//时间默认值		
-	if(intDiff > 0){
+	if(intDiff-1 > 0){
 		day = Math.floor(intDiff / (60 * 60 * 24));
 		hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
 		minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
@@ -712,8 +715,14 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
     if(hour != 0 || hour != null || hour != ''){
         $("#"+div+" .hour").text(hour);
     }
-    $("#"+div+" .minute").text(minute);
-    $("#"+div+" .second").text(second);
+    if(minute == 0 && second <= 30){
+        $("#"+div+" .minute").text(minute);
+        $("#"+div+" .second").text(second);
+    }else {
+        $("#"+div+" .minute").text(minute);
+        $("#"+div+" .second").text(second);
+    }
+
 
 	intDiff--;
     if(intDiff==0) location.reload();
@@ -725,7 +734,7 @@ function timers(intDiff,div){
             hour=0,
             minute=0,
             second=0;//时间默认值
-        if(intDiff > 0){
+        if(intDiff-1 > 0){
             day = Math.floor(intDiff / (60 * 60 * 24));
             hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
             minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
