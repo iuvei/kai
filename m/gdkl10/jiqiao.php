@@ -49,7 +49,7 @@ $cid = 2;
      <ul class="fl">
     <li><a href="./">首页</a></li>
        <li><a href="smtj.php">双面</a></li>
-<!--       <li><a href="cltj.php">长龙</a></li>-->
+       <li><a href="cltj.php">长龙</a></li>
        <li><a href="hmzs.php">走势</a></li>
 <!--       <li><a href="lrtj.php">冷热</a></li>-->
        <li><a href="jiqiao.php" class="cur">技巧</a></li>
@@ -59,12 +59,15 @@ $cid = 2;
 
 </div>
 <div style="height:40px;"></div>
+
 <div class="list">
     
         <ul>
 		<?php
 //		$query = mysql_query("select * from ot_document where category_id=$cid order by update_time desc limit 15");
 //		while($row = mysql_fetch_array($query))
+
+
         $mysqli = new mysqli('localhost', 'root', 'root', 'kaijiang');
         $sql="select * from ot_document where category_id=$cid order by update_time desc limit 15";
         $result = $mysqli->query($sql);

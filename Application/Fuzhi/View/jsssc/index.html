@@ -105,14 +105,22 @@
 			<div class="lot-article mt10">
 				<div class="l-title">
 					<h2>極速时时彩技巧</h2>
-					<a href="jiqiao/cqssc/" >更多&gt;&gt;</a>
+					<a href="jiqiao/jsssc/" >更多&gt;&gt;</a>
 				</div>
 				<div class="wrap">
 				
     <ul>
-	   <li><a target="_blank" href="jiqiao/cqssc/{$artical_first['id']}.html" >·{$artical_first['title']}</a></li>
+
+	   <li>
+		   <?php if(!empty($artical_first['id'])){ ?>
+		   <a target="_blank" href="jiqiao/jsssc/{$artical_first['id']}.html" >·{$artical_first['title']}</a>
+	   		<?php } ?>
+	   </li>
 	   <volist name="lists" id="data">
-		<li><a target="_blank" href="jiqiao/cqssc/{$data['id']}.html">·{$data.title}</a></li>
+		<li>
+			<?php if(!empty($data['id'])){ ?>
+			<a target="_blank" href="jiqiao/jsssc/{$data['id']}.html">·{$data.title}</a></li>
+		   	<?php } ?>
 		</volist>
 						</ul>
 		

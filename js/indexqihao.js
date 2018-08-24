@@ -488,7 +488,7 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
      //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
      var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-3);
      $("#jsssc .drawCount").html(number);
-     $("#jsssc .sdrawCountnext").html(120-number);
+     $("#jsssc .sdrawCountnext").html(1153-number);
  });
  // $.getJSON("/tjssc/getCqsscAwardTimes.do",
  // function(data){
@@ -709,6 +709,9 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
     }else {
         $("#"+div+" .opentyle").text("");
     }
+    if(hour != 0 || hour != null || hour != ''){
+        $("#"+div+" .hour").text(hour);
+    }
     $("#"+div+" .minute").text(minute);
     $("#"+div+" .second").text(second);
 
@@ -732,6 +735,9 @@ function timers(intDiff,div){
             $("#"+div+" .opentyle").text("开奖中...");
         }else {
             $("#"+div+" .opentyle").text("");
+        }
+        if(hour != 0 || hour != null || hour != ''){
+            $(div+" .hour").text(hour);
         }
         $(div+" .minute").text(minute);
         $(div+" .second").text(second);

@@ -134,10 +134,17 @@
 				<div class="wrap">
 
         <ul>
-	   <li><a target="_blank" href="jiqiao/xyft/{$artical_first['id']}.html" >·{$artical_first['title']}</a></li>
-	   <volist name="lists" id="data">
-		<li><a target="_blank" href="jiqiao/xyft/{$data['id']}.html">·{$data.title}</a></li>
-		</volist>
+			<li>
+				<?php if(!empty($artical_first['id'])){ ?>
+				<a target="_blank" href="jiqiao/xyft/{$artical_first['id']}.html" >·{$artical_first['title']}</a>
+				<?php } ?>
+			</li>
+			<volist name="lists" id="data">
+				<li>
+					<?php if(!empty($data['id'])){ ?>
+					<a target="_blank" href="jiqiao/xyft/{$data['id']}.html">·{$data.title}</a></li>
+				<?php } ?>
+			</volist>
 						</ul>
 		
                    

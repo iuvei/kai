@@ -279,12 +279,10 @@ include("../conn.php");
                     lh(data['lh'][n]);
                 }
                 $('table tr').each(function(i){                   // 遍历 tr
-                    $(this).children('td').each(function(j){  // 遍历 tr 的各个 td
-                        if($(this).text() == 0 ){
-                            $(this).text('')
-                        }
-                    });
-                });
+                           $(this).children('td').each(function(j){  // 遍历 tr 的各个 td
+                               $(this).text('');
+                             });
+                       });
 
             }
 

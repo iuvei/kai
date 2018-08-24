@@ -1,11 +1,15 @@
-
+var none = 0;
 function PK10(){
+    $("#img").show();
+    none = 1;
     localStorage.setItem('host','https://api.dk1288.com/');
     $('#bjpk10').attr('src','/v/bjpk10')
      $("#bjpk10").fadeIn(500)
      $('#body_none').show();
  }
 function CQSSC(){
+    $("#img").show();
+    none = 2;
     localStorage.setItem('host','https://api.dk1288.com/');
     $('#cqssc_1').attr('src','/v/cqssc')
     $('#cqssc_1').fadeIn(500);
@@ -18,39 +22,53 @@ function TJSSC(){
 }
 
 function XYFT(){
+    none = 3;
+    $("#img").show();
     localStorage.setItem('host','https://api.dk1288.com/');
-    $('#xyft_1').attr('src','/v/xyft')
-    $('#xyft_1').fadeIn(500)
+    $('#xyft_1').attr('src','/v/xyft');
+    $('#xyft_1').fadeIn(500);
     $('#body_none').show();
 }
 
 function JSSC(){
+    none = 1; none = 4;
+    $("#img").show();
     localStorage.setItem('host','https://api.dk1288.com/');
-    $('#jssc').attr('src','/v/bjpk10')
-    $("#jssc").fadeIn(500)
+    $('#jssc').attr('src','/v/bjpk10');
+    $("#jssc").fadeIn(500);
     $('#body_none').show();
 }
 
 function JSSSC(){
+    none = 5;
+    $("#img").show();
     localStorage.setItem('host','https://api.dk1288.com/');
-    $('#jsssc_1').attr('src','/v/cqssc')
-    $("#jsssc_1").fadeIn(500)
+    $('#jsssc_1').attr('src','/v/cqssc');
+    $("#jsssc_1").fadeIn(500);
     $('#body_none').show();
 }
+$("#img").click(function () {
 
+    if(none = 1){
+        $("#bjpk10").hide();
+    } if(none = 2){
+        $("#cqssc_1").hide();
+    } if(none = 3){
+        $("#xyft_1").hide();
+    } if(none = 4){
+        $("#jssc").hide();
+    } if(none = 5){
+        $("#jsssc_1").hide();
+    }
+    $("#img").hide();
+    $("#body_none").hide();
+});
 $('.video_box .pk10').click(PK10);
 $('.video_box .cqssc').click(CQSSC);
 $('.video_box .xyft_1').click(XYFT);
 $('.video_box .jsssc_1').click(JSSSC);
 $('.video_box .tjssc_111').click(TJSSC);
 $('.video_box .jssc').click(JSSC);
-// $("#pk10_hot.video_a").click(PK10);
-// $("#cqSsc_hot.video_a").click(CQSSC);
-// $("#pk10.video_a").click(PK10);
-// $("#jisusc.video_a").click(PK10);
-// $("#xyft.video_a").click(XYFT);
-// $("#cqSsc.video_a").click(CQSSC);
-// $("#jsssc.video_a").click(CQSSC);
 
 
 $('#body_none').click(function(){

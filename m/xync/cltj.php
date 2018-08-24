@@ -86,7 +86,8 @@ include("../conn.php");
  });
  function changLong() {
 	 layer.open({type: 2,time: 1});
-     $.get("ajax_changlong.php", {}, function (data) {
+     var id = "<?= $name?>";
+     $.get("/Fuzhi/Api/changlong", {id:id}, function (data) {
      	if(data){
      		var html = '';
      		 for(var o in data){  

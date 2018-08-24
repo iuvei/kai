@@ -13,7 +13,7 @@ class ApiController extends Controller{
      * 彩种接口
      */
     public function index(){
-       // echo 1111;exit;
+
         $data = $_POST;
         if(empty($data)){
             $arr = array(
@@ -533,93 +533,274 @@ class ApiController extends Controller{
         foreach($res as $k => $v){
             $info[$k] = explode(',',$v['dat_codes']);
         }
-
         $lh = array();
         $lh_2 = array();
-        $lh_3 = array();
-        $lh_4 = array();
-        $lh_5 = array();
         $num = array();
        foreach($info as $n_k => $n_v){
-           if($n_v[0]+$n_v[1] < 12 ){
-               $lh_2[0][$n_k] = '小';
-           }else{
-               $lh_2[0][$n_k] = '大';
-           }
-           if(($n_v[0]+$n_v[1])%2 == 0){
-               $lh_2[1][$n_k] = '双';
-           }else{
-               $lh_2[1][$n_k] = '单';
-           }
-           $num[0][$n_k] =preg_replace('/^0+/','',$n_v[0]);
-           $num[1][$n_k] =preg_replace('/^0+/','',$n_v[1]);
-           $num[2][$n_k] =preg_replace('/^0+/','',$n_v[2]);
-           $num[3][$n_k] =preg_replace('/^0+/','',$n_v[3]);
-           $num[4][$n_k] =preg_replace('/^0+/','',$n_v[4]);
-           $num[5][$n_k] =preg_replace('/^0+/','',$n_v[5]);
-           $num[6][$n_k] =preg_replace('/^0+/','',$n_v[6]);
-           $num[7][$n_k] =preg_replace('/^0+/','',$n_v[7]);
-           $num[8][$n_k] =preg_replace('/^0+/','',$n_v[8]);
-           $num[9][$n_k] =preg_replace('/^0+/','',$n_v[9]);
-            if($n_v[0]>$n_v[9] ){
-               $lh[0][$n_k] = '龙';
-           }else if($n_v[0]< $n_v[9] ){
-               $lh[0][$n_k] = '虎';
-           }else{
-               $lh[0][$n_k] = '和';
-           }
-           if($n_v[1]>$n_v[8] ){
-               $lh[1][$n_k]= '龙';
-           }else if($n_v[1]< $n_v[8] ){
-               $lh[1][$n_k] = '虎';
-           }else{
-               $lh[1][$n_k]= '和';
-           }
-           if($n_v[2]>$n_v[7] ){
-               $lh[2][$n_k] = '龙';
-           }else if($n_v[2]< $n_v[7] ){
-               $lh[2][$n_k]= '虎';
-           }else{
-               $lh[2][$n_k] = '和';
-           }
-           if($n_v[3]>$n_v[6] ){
-               $lh[3][$n_k] = '龙';
-           }else if($n_v[3]< $n_v[6] ){
-               $lh[3][$n_k] = '虎';
-           }else{
-               $lh[3][$n_k] = '和';
-           }
-           if($n_v[4]>$n_v[5] ){
-               $lh[4][$n_k] = '龙';
-           }else if($n_v[4]< $n_v[9] ){
-               $lh[4][$n_k] = '虎';
-           }else{
-               $lh[4][$n_k] = '和';
+
+           if($data['id'] == 1 || $data['id'] == 40){
+               if($n_v[0] == 0){
+                $n_v[0] = 10;
+               }else if( $n_v[1] == 0 ){
+                   $n_v[1] = 10;
+               }else if($n_v[2] == 0 ){
+                   $n_v[2] = 10;
+               }else if($n_v[3] == 0){
+                    $n_v[3] = 10;
+               }else if( $n_v[4]==0 ){
+                   $n_v[4] = 10;
+               }
+               $num[0][$n_k] =$n_v[0];
+               $num[1][$n_k] = $n_v[1];
+               $num[2][$n_k] = $n_v[2];
+               $num[3][$n_k] = $n_v[3];
+               $num[4][$n_k] = $n_v[4];
+                $count = $n_v[0]+$n_v[1]+$n_v[2]+$n_v[3]+$n_v[4];
+               if ( $count< 23) {
+                   $lh_2[0][$n_k] = '小';
+               } else {
+                   $lh_2[0][$n_k] = '大';
+               }
+               if ($count % 2 == 0) {
+                   $lh_2[1][$n_k] = '双';
+               } else {
+                   $lh_2[1][$n_k] = '单';
+               }
+               if ($n_v[0] > $n_v[4]) {
+                   $lh[0][$n_k] = '龙';
+               } else if ($n_v[0] < $n_v[4]) {
+                   $lh[0][$n_k] = '虎';
+               } else {
+                   $lh[0][$n_k] = '和';
+               }
+
+           }else if($data['id'] == 21){
+               $num[0][$n_k] = preg_replace('/^0+/', '', $n_v[0]);
+               $num[1][$n_k] = preg_replace('/^0+/', '', $n_v[1]);
+               $num[2][$n_k] = preg_replace('/^0+/', '', $n_v[2]);
+               $num[3][$n_k] = preg_replace('/^0+/', '', $n_v[3]);
+               $num[4][$n_k] = preg_replace('/^0+/', '', $n_v[4]);
+               $num[5][$n_k] = preg_replace('/^0+/', '', $n_v[5]);
+               $num[6][$n_k] = preg_replace('/^0+/', '', $n_v[6]);
+               $num[7][$n_k] = preg_replace('/^0+/', '', $n_v[7]);
+               $count = $n_v[0]+$n_v[1]+$n_v[2]+$n_v[3]+$n_v[4]+$n_v[5]+$n_v[6]+$n_v[7];
+               if ($count < 84) {
+                   $lh_2[0][$n_k] = '小';
+               }else if($count = 84){
+                   $lh_2[0][$n_k] = '和';
+               } else {
+                   $lh_2[0][$n_k] = '大';
+               }
+               if(substr($count,-1)<= 4){
+                   $lh_2[2][$n_k] = '尾小';
+               }else{
+                   $lh_2[2][$n_k] = '尾大';
+               }
+               if ($count % 2 == 0) {
+                   $lh_2[1][$n_k] = '双';
+               } else {
+                   $lh_2[1][$n_k] = '单';
+               }
+               if ($n_v[0] > $n_v[7]) {
+                   $lh[0][$n_k] = '龙';
+               } else if ($n_v[0] < $n_v[7]) {
+                   $lh[0][$n_k] = '虎';
+               } else {
+                   $lh[0][$n_k] = '和';
+               }
+               if ($n_v[1] > $n_v[6]) {
+                   $lh[1][$n_k] = '龙';
+               } else if ($n_v[1] < $n_v[6]) {
+                   $lh[1][$n_k] = '虎';
+               } else {
+                   $lh[1][$n_k] = '和';
+               }
+               if ($n_v[2] > $n_v[5]) {
+                   $lh[2][$n_k] = '龙';
+               } else if ($n_v[2] < $n_v[5]) {
+                   $lh[2][$n_k] = '虎';
+               } else {
+                   $lh[2][$n_k] = '和';
+               }
+               if ($n_v[3] > $n_v[4]) {
+                   $lh[3][$n_k] = '龙';
+               } else if ($n_v[3] < $n_v[4]) {
+                   $lh[3][$n_k] = '虎';
+               } else {
+                   $lh[3][$n_k] = '和';
+               }
+
+
+           }else if($data['id'] == 6){
+
+
+               $num[0][$n_k] = preg_replace('/^0+/', '', $n_v[0]);
+               $num[1][$n_k] = preg_replace('/^0+/', '', $n_v[1]);
+               $num[2][$n_k] = preg_replace('/^0+/', '', $n_v[2]);
+               $num[3][$n_k] = preg_replace('/^0+/', '', $n_v[3]);
+               $num[4][$n_k] = preg_replace('/^0+/', '', $n_v[4]);
+               $count = $n_v[0]+$n_v[1]+$n_v[2]+$n_v[3]+$n_v[4];
+               if ($count < 30) {
+                   $lh_2[0][$n_k] = '小';
+               }else if ($count == 30) {
+                   $lh_2[0][$n_k] = '和';
+               } else {
+                   $lh_2[0][$n_k] = '大';
+               }
+               if ($count % 2 == 0) {
+                   $lh_2[1][$n_k] = '双';
+               } else {
+                   $lh_2[1][$n_k] = '单';
+               }
+               if ($n_v[0] > $n_v[4]) {
+                   $lh[0][$n_k] = '龙';
+               } else if ($n_v[0] < $n_v[4]) {
+                   $lh[0][$n_k] = '虎';
+               } else {
+                   $lh[0][$n_k] = '和';
+               }
+
+
+           } else{
+               if ($n_v[0] + $n_v[1] < 12) {
+                   $lh_2[0][$n_k] = '小';
+               } else {
+                   $lh_2[0][$n_k] = '大';
+               }
+               if (($n_v[0] + $n_v[1]) % 2 == 0) {
+                   $lh_2[1][$n_k] = '双';
+               } else {
+                   $lh_2[1][$n_k] = '单';
+               }
+               $num[0][$n_k] = preg_replace('/^0+/', '', $n_v[0]);
+               $num[1][$n_k] = preg_replace('/^0+/', '', $n_v[1]);
+               $num[2][$n_k] = preg_replace('/^0+/', '', $n_v[2]);
+               $num[3][$n_k] = preg_replace('/^0+/', '', $n_v[3]);
+               $num[4][$n_k] = preg_replace('/^0+/', '', $n_v[4]);
+               $num[5][$n_k] = preg_replace('/^0+/', '', $n_v[5]);
+               $num[6][$n_k] = preg_replace('/^0+/', '', $n_v[6]);
+               $num[7][$n_k] = preg_replace('/^0+/', '', $n_v[7]);
+               $num[8][$n_k] = preg_replace('/^0+/', '', $n_v[8]);
+               $num[9][$n_k] = preg_replace('/^0+/', '', $n_v[9]);
+               if ($n_v[0] > $n_v[9]) {
+                   $lh[0][$n_k] = '龙';
+               } else if ($n_v[0] < $n_v[9]) {
+                   $lh[0][$n_k] = '虎';
+               } else {
+                   $lh[0][$n_k] = '和';
+               }
+               if ($n_v[1] > $n_v[8]) {
+                   $lh[1][$n_k] = '龙';
+               } else if ($n_v[1] < $n_v[8]) {
+                   $lh[1][$n_k] = '虎';
+               } else {
+                   $lh[1][$n_k] = '和';
+               }
+               if ($n_v[2] > $n_v[7]) {
+                   $lh[2][$n_k] = '龙';
+               } else if ($n_v[2] < $n_v[7]) {
+                   $lh[2][$n_k] = '虎';
+               } else {
+                   $lh[2][$n_k] = '和';
+               }
+               if ($n_v[3] > $n_v[6]) {
+                   $lh[3][$n_k] = '龙';
+               } else if ($n_v[3] < $n_v[6]) {
+                   $lh[3][$n_k] = '虎';
+               } else {
+                   $lh[3][$n_k] = '和';
+               }
+               if ($n_v[4] > $n_v[5]) {
+                   $lh[4][$n_k] = '龙';
+               } else if ($n_v[4] < $n_v[9]) {
+                   $lh[4][$n_k] = '虎';
+               } else {
+                   $lh[4][$n_k] = '和';
+               }
+
+
            }
        }
-
-        for($i=0;$i<10;$i++)
-        {
-            $data['num'][$i] = $this->sdsd($num[$i]);
-        }
-        for($i=0;$i<5;$i++)
-        {
-            $data['lh'][$i] = $this->sdsd($lh[$i]);
-        }
+       // print_r($lh_2);exit;
         $data['dx'][0] = $this->sdsd($lh_2[0]);
         $data['ds'][0] = $this->sdsd($lh_2[1]);
 
         $info_2['dx'][0] =$this-> cl($data['dx'][0]);
         $info_2['ds'][0] =$this-> cl($data['ds'][0]);
-        for($i=0;$i<10;$i++)
-        {
-            $info_2['num'][$i] =$this-> cl($data['num'][$i]);
-        }
-        for($i=0;$i<5;$i++)
-        {
-            $info_2['lh'][$i] =$this-> cl($data['lh'][$i]);
+
+
+        if($data['id'] == 1 || $data['id']==40){
+
+            for($i=0;$i<5;$i++)
+            {
+                $data['num'][$i] = $this->sdsd($num[$i]);
+            }
+            $data['lh'][0] = $this->sdsd($lh[0]);
+
+            for($i=0;$i<5;$i++)
+            {
+                $info_2['num'][$i] =$this-> cl($data['num'][$i]);
+            }
+                $info_2['lh'][0] =$this-> cl($data['lh'][0]);
+
+        }else if($data['id'] == 21){
+
+            for($i=0;$i<8;$i++)
+            {
+                $data['num'][$i] = $this->sdsd($num[$i]);
+            }
+            for($i=0;$i<4;$i++)
+            {
+                $data['lh'][$i] = $this->sdsd($lh[$i]);
+            }
+
+            $data['w'][0] = $this->sdsd($lh_2[2]);
+            for($i=0;$i<8;$i++)
+            {
+                $info_2['num'][$i] =$this-> cl($data['num'][$i]);
+            }
+            for($i=0;$i<4;$i++)
+            {
+                $info_2['lh'][$i] =$this-> cl($data['lh'][$i]);
+            }
+
+            $info_2['w'][0] =$this-> cl($data['w'][0]);
+
+        }else if($data['id'] == 6){
+
+            for($i=0;$i<5;$i++)
+            {
+                $data['num'][$i] = $this->sdsd($num[$i]);
+            }
+            $data['lh'][0] = $this->sdsd($lh[0]);
+            $data['lh'][0] = $this->sdsd($lh[0]);
+            $info_2['w'][0] =$this-> cl($data['w'][0]);
+            for($i=0;$i<5;$i++)
+            {
+                $info_2['num'][$i] =$this-> cl($data['num'][$i]);
+            }
+            $info_2['lh'][0] =$this-> cl($data['lh'][0]);
+        }else{
+            for($i=0;$i<10;$i++)
+            {
+                $data['num'][$i] = $this->sdsd($num[$i]);
+            }
+            for($i=0;$i<5;$i++)
+            {
+                $data['lh'][$i] = $this->sdsd($lh[$i]);
+            }
+
+            for($i=0;$i<10;$i++)
+            {
+                $info_2['num'][$i] =$this-> cl($data['num'][$i]);
+            }
+            for($i=0;$i<5;$i++)
+            {
+                $info_2['lh'][$i] =$this-> cl($data['lh'][$i]);
+            }
         }
 
+    //rint_r($info_2);exit;
         echo json_encode($info_2,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
     }
 
