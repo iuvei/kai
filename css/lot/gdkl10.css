@@ -1,6 +1,8 @@
 .lot-nums
 {
-    border:solid 1px #cccccc;
+    border: solid 1px #f1f1f1;
+
+    border-radius: 4px;
     padding-top:5px;
     padding-left:15px;
     clear:both;
@@ -29,16 +31,19 @@
 .nums
 {
     width:440px;
-    padding-left:10px;
+    /*padding-left:10px;*/
 }
 .nums span {
-    float: left;
-    width: 8%;
+    display: inline-block;
+    width: 30px;
     font-size: 16px;
     font-weight: bold;
-    line-height: 35px;
+    line-height: 30px;
     margin: 0px 9px;
     font-family: Arial, '宋体', '黑体', Verdana, Geneva, sans-serif;
+    background: #0d76c6;
+    border-radius: 15px;
+    color: #ffffff !important;
 }
 .lot-table .no1
 {
@@ -85,7 +90,7 @@
 
     .lot-table .ptable .td1 {
         border: none;
-        width: 40%;
+        width: 50%;
         text-align: center;
     }
 
@@ -104,7 +109,8 @@
 }
 
 /*大、单、西、发、龍*//*小、双、虎*//*东、中*//*白、南*//*北*/
-.lot-award .warnTime{ float:right;}
+.lot-award .warnTime{ float:left;}
+.lot-award li{ margin-left: 20px;}
 .lot-award .currentAward{ width:512px;}
 .lot-award .currentAward .title{ height:24px; line-height:24px;}
 .lot-award .currentAward .period,.lot-award .currentAward .period-info{ line-height:24px;}

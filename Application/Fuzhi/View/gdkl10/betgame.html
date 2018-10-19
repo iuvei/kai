@@ -18,15 +18,21 @@
 			<include file="Public/lottory_op"/>
 				<div class="clear"></div> 
 				<!--  内容开始 -->
+	<div class="merge-title-table-title" style="margin-bottom: 10px;">
+
+		<span class="bbbb">免费推荐</span>
+
+
+	</div>
 					<div id="lot-wrap"> 
 				     <input type="hidden" id="callFun" value="getDataList" /> 
-				     <table style="width: 980px;"> 
+				     <table style="width:1198px;">
 				      <tbody>
 				       <tr> 
 				        <td style="width: 300px;" id="opencodelist" valign="top">
 				        <div id="history_data-html"></div> 
 				        <script id="history_data-tmpl" type="text/template">
-					      <table style="width: 300px;" class="lot-table"> 
+					      <table style="width: 340px;" class="lot-table">
 					          <tbody>
 					          {{ 
 								for (var i = 0; i <it.length; i++) { 
@@ -34,7 +40,7 @@
 									var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
 							  }}
 					           <tr class="tr_odd"> 
-					            <td style="width:120px;"> 
+					            <td style="width:160px;">
 					            	<p style="float: left; padding-left:5px;">{{=row.termNum}}</p>
 					            	<p style="margin-right: 5px; color: #656565; float: right;">{{=lowDate}}</p> 
 					            </td> 

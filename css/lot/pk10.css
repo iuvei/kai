@@ -1,10 +1,10 @@
 .lot-nums {
-    border: solid 1px #cccccc;
+    border: solid 1px #f1f1f1;
     padding-top: 5px;
     padding-left: 15px;
     clear: both;
     width: 338px;
-    background-color: #fff;
+    background-color: #ffffff;border-radius: 4px;
     height: 32px;
 }
 
@@ -18,86 +18,61 @@
 
 .nums {
     width: 344px;
-    padding-left: 8px;
-}
-
-    .nums i {
-        background: url("../../images/pk10-nums.gif") no-repeat;
-        width: 25px;
-        height: 25px;
-        float: left;
-        padding-right: 4px;
-        padding-left: 5px;
-    }
-
-.shade i {
-    background: url("../../images/pk10-nums-shade.gif") no-repeat;
+    /*padding-left: 8px;*/
 }
 
 
-.noshade {
-    background: url("../../images/pk10-nums.gif") no-repeat !important;
-}
 
-.nums .output-li {
-    background: url("../../images/pk10-nums.gif") no-repeat;
-    width: 35px;
-    height: 25px;
-    float: left;
-    margin-left: 5px;
-    margin-bottom: 4px;
-    padding-right: 3px;
-}
 
-.lot-nums .no1,
-.lot-table .pk-no1 {
-    background-position: 0px 0px !important;
-}
+/*.lot-nums .no1,*/
+/*.lot-table .pk-no1 {*/
+    /*background-position: 0px 0px !important;*/
+/*}*/
 
-.lot-nums .no2,
-.lot-table .pk-no2 {
-    background-position: 0px -27px !important;
-}
+/*.lot-nums .no2,*/
+/*.lot-table .pk-no2 {*/
+    /*background-position: 0px -27px !important;*/
+/*}*/
 
-.lot-nums .no3,
-.lot-table .pk-no3 {
-    background-position: 0px -54px !important;
-}
+/*.lot-nums .no3,*/
+/*.lot-table .pk-no3 {*/
+    /*background-position: 0px -54px !important;*/
+/*}*/
 
-.lot-nums .no4,
-.lot-table .pk-no4 {
-    background-position: 0px -81px !important;
-}
+/*.lot-nums .no4,*/
+/*.lot-table .pk-no4 {*/
+    /*background-position: 0px -81px !important;*/
+/*}*/
 
-.lot-nums .no5,
-.lot-table .pk-no5 {
-    background-position: 0px -108px !important;
-}
+/*.lot-nums .no5,*/
+/*.lot-table .pk-no5 {*/
+    /*background-position: 0px -108px !important;*/
+/*}*/
 
-.lot-nums .no6,
-.lot-table .pk-no6 {
-    background-position: 0px -135px !important;
-}
+/*.lot-nums .no6,*/
+/*.lot-table .pk-no6 {*/
+    /*background-position: 0px -135px !important;*/
+/*}*/
 
-.lot-nums .no7,
-.lot-table .pk-no7 {
-    background-position: 0px -162px !important;
-}
+/*.lot-nums .no7,*/
+/*.lot-table .pk-no7 {*/
+    /*background-position: 0px -162px !important;*/
+/*}*/
 
-.lot-nums .no8,
-.lot-table .pk-no8 {
-    background-position: 0px -189px !important;
-}
+/*.lot-nums .no8,*/
+/*.lot-table .pk-no8 {*/
+    /*background-position: 0px -189px !important;*/
+/*}*/
 
-.lot-nums .no9,
-.lot-table .pk-no9 {
-    background-position: 0px -216px !important;
-}
+/*.lot-nums .no9,*/
+/*.lot-table .pk-no9 {*/
+    /*background-position: 0px -216px !important;*/
+/*}*/
 
-.lot-nums .no10,
-.lot-table .pk-no10 {
-    background-position: 0px -243px !important;
-}
+/*.lot-nums .no10,*/
+/*.lot-table .pk-no10 {*/
+    /*background-position: 0px -243px !important;*/
+/*}*/
 
 .lot-table .ptable {
     width: 80%;
@@ -125,15 +100,15 @@
         width: 150px;
         height: 30px;
         line-height: 30px;
-        border: solid 1px #333333;
+        /*border: solid 1px #333333;*/
         display: block;
         float: left;
-        font-weight: bold;
+        font-weight: bold;text-align: center;
     }
 
     .zst-type .cur {
         color: #fff;
-        background-color: #333333;
+        background-color: #333333; text-align: center;
     }
 
 .pk10_newIcon {
@@ -162,16 +137,22 @@
     position: absolute;
     top: -8px;
 }
+.bg_u4  input{display: inline-block;
+    color: #333;
+    width: 75px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 4px;
+    border-color: #e73f3f;
+    background: #e73f3f;
+    color: #fff;    margin-top: 3px;}
 /*参数设置*/
-#colorSet {
-    float: left;
-    padding: 0 0 10px 0;
-}
 
-    #colorSet .param {
+#colorSet .param {
         float: left;
         display: block;
-        padding: 3px 10px 0 0;
+        padding: 0px 10px 0 0;
        
     }
 
@@ -193,7 +174,7 @@
     #colorSet .span {
         float: left;
         display: block;
-        height: 23px;
+        height: 21px;
         /*background: #eee;
         border: 1px solid #b6b6b6;*/
         cursor: pointer;
@@ -206,14 +187,14 @@
         float: left;
         display: block;
         /* width: 40px; */
-        height: 23px;
+        height: 21px;
         /*background: #eee;
         border: 1px solid #b6b6b6;*/
         cursor: pointer;
         padding: 0 5px 0 5px;
         margin-left:1px;
-        margin-top:3px;
-        margin-top:5px\9;
+        /*margin-top:3px;*/
+        /*margin-top:5px\9;*/
     }
     #colorSet .color_red {
         background-color: red;
@@ -295,7 +276,8 @@
         background: url("../../images/pk10-nums-red.gif") no-repeat;
     }
     
-.lot-award .warnTime{ float:right;}
+.lot-award .warnTime{ float:left;}
+.lot-award li{ margin-left: 20px;}
 .lot-award .currentAward{ width:512px;}
 .lot-award .currentAward .title{ height:24px; line-height:24px;}
 .lot-award .currentAward .period,.lot-award .currentAward .period-info{ line-height:24px;}
@@ -310,4 +292,53 @@
 .lot-nums .no7{ background-position:0 -246px !important;}
 .lot-nums .no8{ background-position:0 -287px !important;}
 .lot-nums .no9{ background-position:0 -328px !important;}
-.lot-nums .no10{ background-position:0 -369px !important;}    
+.lot-nums .no10{ background-position:0 -369px !important;}
+
+
+
+
+
+.noshade {
+    background: url("../../images/pk10-nums.gif") no-repeat !important;
+}
+
+.nums i {
+    width:40px; height:40px; background:url("../../images/num1.png") no-repeat 0 0;
+    display: inline-block;
+    margin: 5px;
+    border-radius: 5px;
+}
+.shade i {
+    background: url("../../images/pk10-nums-shade.gif") no-repeat;
+}
+
+.nums .output-li {
+    background: url("../../images/pk10-nums.gif") no-repeat;
+    width: 35px;
+    height: 25px;
+    float: left;
+    margin-left: 5px;
+    margin-bottom: 4px;
+    padding-right: 3px;
+}
+.nums .output-li { width:40px; height:40px; background:url("../../images/num1.png") no-repeat 0 0; padding-right:0; margin-right:10px;}
+.lot-nums .no1,
+.lot-table .pk-no1{ background-position:0 0 !important;}
+.lot-nums .no2,
+.lot-table .pk-no2{ background-position:0 -41px !important;}
+.lot-nums .no3,
+.lot-table .pk-no3{ background-position:0 -82px !important;}
+.lot-nums .no4,
+.lot-table .pk-no4{ background-position:0 -123px !important;}
+.lot-nums .no5,
+.lot-table .pk-no5{ background-position:0 -164px !important;}
+.lot-nums .no6,
+.lot-table .pk-no6{ background-position:0 -205px !important;}
+.lot-nums .no7,
+.lot-table .pk-no7{ background-position:0 -246px !important;}
+.lot-nums .no8,
+.lot-table .pk-no8{ background-position:0 -287px !important;}
+.lot-nums .no9,
+.lot-table .pk-no9{ background-position:0 -328px !important;}
+.lot-nums .no10,
+.lot-table .pk-no10{ background-position:0 -369px !important;}

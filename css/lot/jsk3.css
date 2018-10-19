@@ -1,5 +1,6 @@
 .lot-nums {
-    border: solid 1px #cccccc;
+    border: solid 1px #f1f1f1;
+    border-radius: 4px;
     padding-top: 5px;
     padding-left: 15px;
     clear: both;
@@ -84,7 +85,8 @@
     padding-left: 10px;
     text-align: left;
 }
-.lot-award .warnTime{ float:right;}
+.lot-award .warnTime{ float:left;}
+.lot-award li{ margin-left: 20px;}
 .lot-award .currentAward{ width:512px;}
 .lot-award .currentAward .title{ height:24px; line-height:24px;}
 .lot-award .currentAward .period,.lot-award .currentAward .period-info{ line-height:24px;}

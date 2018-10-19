@@ -23,11 +23,11 @@
 
 			<div class="index-history">
 				<div class="title mt10">
-					<h2>江苏骰宝(快3)开奖记录</h2>
+					<h2>开奖记录</h2>
 					<a href="jsk3/kaijiang.html">查看全部&gt;&gt;</a>
 				</div>
 				<table id="history" class="lot-table"> </table>
-				<div style="width: 980px;" class="lot-about mt10">
+				<div style="width:1198px;" class="lot-about mt10">
 					<div class="l-title">
 						<h2>关于江苏骰宝(快3)</h2>
 					</div>
@@ -45,7 +45,7 @@
                              {count:12}, function(datas) {
 					    	if(datas){
 					    		var data = datas.rows;
-					    		var str = '<tr class="head"><td width="200px">时间</td><td>开奖号码</td><td colspan="2">总和</td></tr>';
+					    		var str = '<tr class="head"><td width="120px">时间</td><td width="160px">期号</td><td>开奖号码</td><td colspan="2">总和</td></tr>';
 								for(var key in data){
 									var flag = data[key];
 									var num1 = flag.n1;
@@ -64,10 +64,8 @@
 										desc = "小";
 									}
 									str+='<tr class="even">'+
-											'<td>'+
-												'<p class="p">'+flag.termNum+'</p>'+
-												'<p class="t">'+time+'</p>'+
-											'</td>'+
+											'<td><p class="">'+time+'</p></td>'+
+												'<td><p class="">'+flag.termNum+'</p></td>'+
 											'<td class="nums">'+
 												'<i class="lot-no'+num1+'"></i>'+
 												'<i class="lot-no'+num2+'"></i>'+

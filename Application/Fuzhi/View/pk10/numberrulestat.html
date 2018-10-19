@@ -25,9 +25,10 @@
         <div class="lot-wrap">
             <include file="Public/lottory_op"/>
             <div class="clear"></div>
+
             <div>
                 <input type="hidden" time="10000" id="callFun" value="awardNewData" />
-                <div class="explain_table">
+                <div class="explain_table" style="margin-top: 10px;">
                     1、【号码规律统计】提供号码开出位置的历史同位号码统计。例如第1期开出号码1后，在第1期开出号码1的相同位置，第2期开出号码为2，如此以上期开奖号码为参照，辅助预测同位开出的号码；<br />
                     2、柱形图表为历史同位开出号码的次数分布，用于查看已开出号码的分布及趋势，亦可作为参考辅助杀号。
                 </div>
@@ -36,20 +37,26 @@
                     <div class="car-num">
                         <ul class="lot-number-omit" style="margin-bottom: 10px;">
                             <li class="ball" style="padding-bottom: 2px;">
-                                <ul style="width: 890px; _width: 880px; float: left; margin-left: 10px;" id="rankUl">
-                                    <li> <a href="javascript:gotoPage(1)" id="rankLi1" class="cur">号码1 </a>|</li>
-                                    <li> <a href="javascript:gotoPage(2)" id="rankLi2">号码2 </a>|</li>
-                                    <li> <a href="javascript:gotoPage(3)" id="rankLi3">号码3</a>|</li>
-                                    <li> <a href="javascript:gotoPage(4)" id="rankLi4">号码4</a>|</li>
-                                    <li> <a href="javascript:gotoPage(5)" id="rankLi5">号码5</a>|</li>
-                                    <li> <a href="javascript:gotoPage(6)" id="rankLi6">号码6</a>|</li>
-                                    <li> <a href="javascript:gotoPage(7)" id="rankLi7">号码 7</a>|</li>
-                                    <li> <a href="javascript:gotoPage(8)" id="rankLi8">号码 8</a>|</li>
-                                    <li> <a href="javascript:gotoPage(9)" id="rankLi9">号码 9</a>|</li>
-                                    <li> <a href="javascript:gotoPage(10)" id="rankLi10">号码10</a> |</li>
+                                <div class="merge-title-table-title" style="margin-bottom: 10px">
+
+                                    <span class="bbbb">号码规律统计</span>
+
+
+                                </div>
+                                <ul style="width: 1100px; _width: 880px; float: left; margin-left: 10px; margin-bottom: 10px;" id="rankUl">
+                                    <li> <a href="javascript:gotoPage(1)" id="rankLi1" class="cur">号码1 </a></li>
+                                    <li> <a href="javascript:gotoPage(2)" id="rankLi2">号码2 </a></li>
+                                    <li> <a href="javascript:gotoPage(3)" id="rankLi3">号码3</a></li>
+                                    <li> <a href="javascript:gotoPage(4)" id="rankLi4">号码4</a></li>
+                                    <li> <a href="javascript:gotoPage(5)" id="rankLi5">号码5</a></li>
+                                    <li> <a href="javascript:gotoPage(6)" id="rankLi6">号码6</a></li>
+                                    <li> <a href="javascript:gotoPage(7)" id="rankLi7">号码 7</a></li>
+                                    <li> <a href="javascript:gotoPage(8)" id="rankLi8">号码 8</a></li>
+                                    <li> <a href="javascript:gotoPage(9)" id="rankLi9">号码 9</a></li>
+                                    <li> <a href="javascript:gotoPage(10)" id="rankLi10">号码10</a></li>
                                     <li><a href="pk10/numbertooutput.html">全部号码</a> </li>
                                 </ul>
-                                <ul style="float: right; width: 80px; text-align: right;">
+                                <ul style="float: right; width: 70px; text-align: right;">
                                     <li>
                                         <select id="selDate">
                                             <option value="60">60期</option>
@@ -69,11 +76,11 @@
                         <script id="history_data-tmpl" type="text/template">
                             <table class="lot-table" id="history" >
                                 <tr class="head">
-                                    <td rowspan="2" width="160">时间
+                                    <td rowspan="2" width="180">时间
                                     </td>
-                                    <td width="350" rowspan="2">
+                                    <td width="650" rowspan="2">
                                         同位开奖号码分布
-                                        <p id="ckb-samepn" style="width:100px;margin:0 auto;">
+                                        <p id="ckb-samepn" style="width:136px;margin:0 auto;">
                                             <b class="checkbox" style="margin: 10px 5px 0 0;"></b>
                                             <span style="cursor: pointer;color:#c3271d">显示同位号码</span>
                                         </p>

@@ -24,35 +24,41 @@
 			<div class="car-num">
 				<ul style="margin-bottom: 10px;" class="lot-number-omit">
 					<li style="padding-bottom: 2px;" class="ball">
+						<div class="merge-title-table-title" style="margin-bottom: 10px;margin-top: -10px">
+
+							<span class="bbbb">历史开奖</span>
+							<script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+							<ul style="float: right; width: 265px; text-align: right;">
+								<li>
+								<span style="display: block; float: left;">
+									<label style="margin: 0px;position: relative;top: 3px;">选择日期：</label></span>
+									<span style="display: block; float: left;">
+									<input name="dateData" type="text" id="dateData"  class="Wdate" onClick="WdatePicker();" readonly="readonly" style=""></span>
+									<span style="padding-left: 10px;"><a style=" " href="javascript:Search();" class="a-bottom">查询</a></span>
+								</li>
+							</ul>
+
+						</div>
 						<ul style="width: 750px; _width: 740px; float: left; margin-left: 10px;">
 							<li id="ballstat-switch">
-								<b style="margin: 8px 0 0 0;" class="checkbox checked"></b>
+								<b style="" class="checkbox checked"></b>
 								<span class="ckb-txt">
 									<label style="cursor: pointer">今日双面统计</label>
 								</span>
 							</li>
 							<li id="changlong-switch">
-								<b style="margin: 8px 0 0 0;" class="checkbox checked"></b>
+								<b style="" class="checkbox checked"></b>
 								<span class="ckb-txt">
 									<label style="cursor: pointer">长龙提醒</label></span></li>
 							<li id="car-switch">
-								<b style="margin: 8px 0 0 0;" class="checkbox checked"></b>
+								<b style="" class="checkbox checked"></b>
 								<span class="ckb-txt">
 									<label style="cursor: pointer">查看车号分布</label>
 								</span>
 							</li>
 	
 						</ul>
-						<script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
-						<ul style="float: right; width: 220px; text-align: right;">
-							<li>
-								<span style="display: block; float: left;">
-									<label style="margin: 0px;">选择日期：</label></span>
-								<span style="display: block; float: left;">
-									<input name="dateData" type="text" id="dateData" onClick="WdatePicker();" readonly="readonly" style="height:18px; margin:0px;"></span>
-								<span style="padding-left: 10px;"><a style="margin: 0px;" href="javascript:Search();">查询</a></span>
-							</li>
-						</ul>
+
 					</li>
 				</ul>
 			</div>
@@ -366,7 +372,15 @@
 			</div>
 		</div>
 		<ul style="font-family: '微软雅黑'" id="ball-choose">
-			<li style="line-height: 13px;"><span style="font-size: 14px;">查看车号分布：</span></li>
+			<li style="border: 0;
+    padding-left: 8px;
+    /*clear: both;*/
+    width: 593px;
+    text-align: left;
+    height: 40px;
+    line-height: 30px; margin-bottom: 10px"><span style="color: #666666;
+    font-weight: bold;
+    font-size: 16px;">查看车号分布</span></li>
 			<li>
 				<span class="pk10"><b data-c="1" class="checkbox"></b></span>
 				<span class="ckb-txt">
@@ -417,7 +431,7 @@
 				<span class="ckb-txt">
 					<label style="cursor: pointer">号10</label></span>
 			</li>
-			<li style="position:relative;">
+			<li style="position:relative;border: 0;">
 				<div class="bg_u4">
 				  <input type="button" onclick="SetChk()" value="还原" style="*padding-top:3px">
 				</div>
@@ -428,8 +442,9 @@
 			<table id="history" class="lot-table">
 				<tbody>
 					<tr class="head">
-						<td width="160">时间</td>
-						<td width="350">开奖号码</td>
+						<td width="120">时间</td>
+						<td width="140">期号</td>
+						<td width="650">开奖号码</td>
 						<td colspan="3">冠亚军和</td>
 						<td colspan="5">1~5龍虎</td>
 					</tr>

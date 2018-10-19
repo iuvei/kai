@@ -1,4 +1,4 @@
-<div class="feedbackDiv">以下数据功能由本站提供，使用过程中如有任何意见或建议请<a href="Common/feedback.html"  target="_blank">及时反馈</a></div>
+<div class="feedbackDiv">以下数据功能由本站提供，使用过程中如有任何意见或建议请<a href="javascript: void(0)"  target="_blank" style="margin-bottom: -2px;">及时反馈</a></div>
 <div class="web_listOP">
     <ul id="web_listOP_ul">
 
@@ -6,6 +6,7 @@
 </div>
 <script type="text/javascript" src="js/Data/cfg/gameDate.js" ></script>
 <script type="text/javascript">
+
     var gameNameTemp=beforPageJs.gameName|| beforPageJs_gameName;
 
     if(pathname.indexOf("/jiqiao/")>=0){
@@ -16,36 +17,44 @@
         }else if (pathname.indexOf("/gdkl10/") >= 0){
             gameNameTemp="gdkl10";
         }else if (pathname.indexOf("/kl8/") >= 0){
-            gameNameTemp="kl8";
-        }else if (pathname.indexOf("/tjssc/") >= 0){
-            gameNameTemp="tjssc";
+            gameNameTemp="/kl8";
         }else if (pathname.indexOf("/jssc/") >= 0){
             gameNameTemp="jssc";
         }else if (pathname.indexOf("/jsk3/") >= 0){
             gameNameTemp="jsk3";
-        }else if (pathname.indexOf("/shssl/") >= 0){
-            gameNameTemp="shssl";
+        }else if (pathname.indexOf("/pc28/") >= 0){
+            gameNameTemp="pc28";
         }else if (pathname.indexOf("/jsssc/") >= 0){
             gameNameTemp="jsssc";
         }else if (pathname.indexOf("/gd11x5/") >= 0){
             gameNameTemp="gd11x5";
         }else if (pathname.indexOf("/xyft/") >= 0){
             gameNameTemp="xyft";
-        }else if (pathname.indexOf("/fc3d/") >= 0){
-            gameNameTemp="fc3d";
-        }else if (pathname.indexOf("/pl3/") >= 0){
-            gameNameTemp="pl3";
+        }else if (pathname.indexOf("/cqft/") >= 0){
+            gameNameTemp="cqft";
+        }else if (pathname.indexOf("/bjft/") >= 0){
+            gameNameTemp="bjft";
+        }else if (pathname.indexOf("/pc28/") >= 0){
+            gameNameTemp="pc28";
+        }else if (pathname.indexOf("/txffc/") >= 0){
+            gameNameTemp="txffc";
+        }else if (pathname.indexOf("/tcssc/") >= 0){
+            gameNameTemp="tcssc";
+        }else if (pathname.indexOf("/tcpk10/") >= 0){
+            gameNameTemp="tcpk10";
         }
     }
+    console.log(gameNameTemp);
     var list = webListOP[gameNameTemp];
- //   console.log(webListOP);
+    //console.log(list);
     if (list.length > 0) {
         var html = '';
         for (var i = 0, max = list.length; i < max; i++) {
             var obj = list[i];
             var href = obj.href, title = obj.title, aClass = obj.aClass, spanClass = obj.spanClass, text = obj.text;
+          //  console.log(spanClass);console.log(aClass);console.log(text);
             html += '<li ' + (href.indexOf("/"+beforPageJs.pageName +".html") >= 0 ? 'class="hover">' : '>')
-            + '<a href="' + href + '" ' + (title ? 'title="'+title+'" ' : '')
+            + '<a href="/' + href + '" ' + (title ? 'title="'+title+'" ' : '')
             + (aClass ? 'class="'+aClass+'" ' : '') + '>' + text + '</a>'
             + (spanClass ? '<span class="'+spanClass+'"></span> ' : '') + '</li>';
         }

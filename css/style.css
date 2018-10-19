@@ -1,9 +1,10 @@
 @import "base.css";
 
 .lot-menu {
-    width: 998px;
-    border: solid 1px #f2dcaf;
-    height: 37px;
+    width: 1200px;
+    border-bottom: 1px solid #e5e5e5;
+	/* height: 37px; */
+	overflow: hidden;
     background-color: #fff;
     margin-top: 10px;
     border-top: none;
@@ -16,23 +17,21 @@
 
         .lot-menu li a {
             display: block;
-            line-height: 37px;
-            width: 125px;
-            border-right: solid 1px #f2dcaf;
+            line-height: 37px; padding: 0 8px;
             height: 37px;
             color: #666;
         }
 .addTopLine {
-    border-top: 1px solid #f2dcaf;
+    /*border-top: 1px solid #f2dcaf;*/
 }
 .lot-menu li a:hover {
-	background-color: #f63;
-	color: #fff
+	border-bottom: 1px solid #e73f3f;
+	color: #e73f3f
 }
 
 .lot-menu li .cur {
-	background-color: #f63;
-	color: #fff
+	 border-bottom: 1px solid #e73f3f;
+	color: #e73f3f
 }
 
 .lot-menu li .last {
@@ -91,7 +90,7 @@
 }
 
 .lot-award .warnTime {
-	border: solid 1px #ccc;
+	border: solid 1px #e5e5e5;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border-radius: 4px;
@@ -107,8 +106,8 @@
 }
 
 .warnTime .title {
-	margin-left: 5px;
-	margin-right: 15px
+	/*margin-left: 5px;*/
+	margin-right: -2px
 }
 
 .warnTime .title div {
@@ -117,7 +116,7 @@
 }
 
 .warnTime #period {
-	width: 80px;
+	width: 120px;
 	color: green;
 	font-weight: bold
 }
@@ -179,14 +178,14 @@
 }
 
 .lot-wrap {
-	background-color: #FFF;
-	padding: 10px 1px
+	background-color: #FFF;    width: 1200px;
+	padding: 10px 0px;    overflow: hidden;
 }
 
 .lot-flat {
 	height: 90px;
 	margin-bottom: 10px;
-	border-bottom: dotted 1px #ccc
+	border-bottom: dotted 1px #e5e5e5
 }
 
 .lot-wrap .h-125 {
@@ -211,7 +210,7 @@
 	width: 99px;
 	height: 31px;
 	background-color: #fff;
-	border: solid 1px #ccc
+	border: solid 1px #e5e5e5
 }
 
 .lot-flat .right {
@@ -249,16 +248,16 @@
 }
 
 .l-title {
-	height: 37px;
-	line-height: 37px;
+	height: 50px;
+	line-height: 50px;
 	padding: 0 10px;
 	background-color: #ececec;
 	border-bottom: solid 1px #ddd
 }
 
 .lot-wrap .index-history .title h2, .l-title h2 {
-	font-size: 12px;
-	font-weight: bold;
+	font-size: 18px;
+	font-weight: 800;color: #333333;
 	float: left;
 	display: block
 }
@@ -274,26 +273,30 @@
 }
 
 .lot-wrap .index-history .title {
-	height: 37px;
-	line-height: 37px;
+	height: 50px;
+	line-height:50px;
 	padding: 0 10px;
-	background-color: #ececec;
-	border: solid 1px #ccc;
+	background-color: #f9f9f9;
+	border: 1px solid #e5e5e5;
 	border-bottom: 0
 }
 
 .lot-table {
-	width: 100%;
-	text-align: center
+	width:1200px;
+	text-align: center;
 }
+.lot-table td{font-size: 16px;    color: #666666;}
 
 .lot-table .head {
 	height: 40px;
-	background-color: #f2f2f2
+	background-color: #f9f9f9;font-weight: 800;color: #666666;
 }
 
+.lot-table .head2 td{
+	font-size: 12px;
+}
 .lot-table td {
-	border: solid 1px #ccc;
+	border: solid 1px #e5e5e5;
 	height: 37px
 }
 
@@ -320,14 +323,14 @@
 }
 
 #history .p {
-	float: left;
-	padding-left: 15px
+	float: right ;padding-right: 8px;
+
 }
 
 #history .t {
-	margin-right: 15px;
+	/*margin-right: 15px;*/
 	color: #6f8a97;
-	float: right
+	float: left; padding-left: 8px
 }
 
 #history p {
@@ -343,8 +346,8 @@
 }
 
 .lot-article {
-	width: 338px;
-	height: 220px;
+	width: 560px;
+	height: 231px;
 	float: left;
 	border: solid 1px #ddd
 }
@@ -440,20 +443,21 @@
 }
 
 .lot-search #dateData {
-	height: 20px;
+	height: 25px;
 	width: 100px;
-	padding: 0 5px
+	padding: 0 5px;
+	background-color: #ffffff;     border: 1px solid #e5e5e5;
 }
 
 .roadmap-table-caption {
 	width: 100%;
 	color: #666;
 	text-align: left;
-	line-height: 30px;
-	border: solid 1px #ccc;
+	line-height: 43px;
+	border: solid 1px #e5e5e5;
 	margin-bottom: -1px;
-	height: 30px;
-	background-color: #f4f4f4
+	height: 43px;
+	background-color: #f4f4f4;font-size: 14px;
 }
 
 .roadmap-table-caption .r {
@@ -493,12 +497,12 @@
 }
 
 .roadmap-table td {
-	border: solid 1px #ccc;
+	border: solid 1px #e5e5e5;
 	line-height: 18px;
 	padding-top: 5px;
 	text-align: center;
 	font-size: 14px;
-	width: 27px
+	min-width: 25px;
 }
 
 .roadmap-table .odd {
@@ -512,7 +516,7 @@
 
 .roadmap-table label {
 	display: block;
-	color: blue
+	color: #666666
 }
 
 .roadmap-table p {
@@ -573,50 +577,88 @@
 }
 
 .lot-number-omit {
-	line-height: 32px
-}
+	line-height: 32px;
+	width: 1200px;
+	min-height: 32px;
+	/*padding-top: 10px;*/
+	/* padding-bottom: 10px; */
 
+}
+#rankUl,#dataTypeUl{ margin-left: 12px;}
 .lot-number-omit .ball {
-	width: 100%;
-	height: 32px;
-	background-color: #f7f7f7;
-	border-top: solid 1px #a6a5a5;
-	border-bottom: dashed 1px #ccc
+	width: 100%; margin-bottom: 10px;
+	/*height: 40px;*/
+	/*background-color: #dadada;*/
+	/*border-top: solid 1px #a6a5a5;*/
+	/*border-bottom: dashed 1px #e5e5e5*/
 }
 
 .lot-number-omit .ball ul li {
-	float: left
+	float: left;    position: relative;
 }
 
 .lot-number-omit .ball ul li a {
-	margin: 0 15px;
-	color: #333
+	margin: 0 3px;
+	display: inline-block;
+	color: #333; width: 75px;  height: 30px;line-height: 30px; text-align: center;border-radius: 4px;
+	/*border-color: #e73f3f;*/
+	/*background: #e73f3f;*/
+	/*color: #fff;*/
+	vertical-align: middle;
+
+}
+.lot-number-omit .ball ul li a:hover {
+
+	color: #fff!important;
+
 }
 
 .lot-number-omit .type {
-	width: 1000px;
-	margin-bottom: 20px;
-	height: 32px
+	width: 1200px;
+	margin-bottom: 10px;
+	height: 32px;    clear: both;
 }
 
 .lot-number-omit .type li {
-	float: left
+	float: left;
+	color: #666;
+	cursor: pointer;
+	margin-left: 5px;
+	/*border: 1px solid #dddddd;*/
+	height: 32px;
+	line-height: 32px;
+	padding: 0 15px;
+	border-radius: 4px;
 }
 
 .lot-number-omit .type ul li a {
-	margin: 0 10px;
-	color: #666
+	margin: 3px 10px;
+	padding: 0 6px;
+	border-radius: 4px;
+	color: #666;    height: 32px;
+	line-height: 32px;
 }
 
 .lot-number-omit .ball ul li a:hover, .lot-number-omit .type ul li a:hover,
 	.lot-number-omit .ball ul li .cur, .lot-number-omit .type ul li .cur {
-	color: #e84147
+	color: #ffffff;
+	background: #ffb200;
+}
+.lot-number-omit .type ul li .cur {
+	color: #ffffff;
+	background: #ffb200;
+}
+
+#dataTypeUl li{ margin: 3px 10px;}
+#dataTypeUl li .cur { width: 100%; height: 100%;
+	color: #ffffff;line-height: 32px;margin-right: 8px;
+	background: #ffb200;
 }
 
 .lot-number-omit .ball .ckb {
 	display: block;
 	float: left;
-	padding: 9px 0 0 15px
+	/*padding: 9px 0 0 10px*/
 }
 
 .lot-number-omit .ball .ckb-txt {
@@ -624,9 +666,18 @@
 	float: left;
 	color: #666;
 	cursor: pointer;
-	margin-left: 3px
+	margin-left: 5px;
+	/* border: 1px solid #dddddd; */
+	border-radius: 4px;
+	padding-left: 0px;
+	padding-right: 10px;
+	text-align: center;
 }
-
+.lot-number-omit .ball .checkbox{
+	/*position: absolute;*/
+	/*left: 15px;*/
+	/*top: 7.3px;*/margin-top: 8px;
+}
 .lot-table .ball {
 	width: 100%
 }
@@ -637,12 +688,12 @@
 }
 
 .lot-table .ball .bg1 {
-	width: 23px;
+	width: 27px;
 	background-color: #fff
 }
 
 .lot-table .ball .bg2 {
-	width: 23px;
+	width: 27px;
 	background-color: #ececec
 }
 
@@ -651,16 +702,16 @@
 }
 
 .f14 .ball {
-	background: url("../404.html") no-repeat center #fafafa;
+	background: url("../404.html") no-repeat center #f0f0f0;
 	width: 32px
 }
 
 .func-category {
 	line-height: 25px;
 	text-align: right;
-	padding-left: 10px;
-	margin-bottom: 15px;
-	border-bottom: dashed 1px #ccc
+	padding-left: 10px;margin-top: 10px;
+	/*margin-bottom: 15px;*/
+	/*border-bottom: dashed 1px #e5e5e5*/
 }
 
 .func-category a {
@@ -675,7 +726,7 @@
 
 #container {
 	width: 1000px;
-	height: 400px
+	height: 400px; margin: 30px auto 0;
 }
 
 .copy_share {
@@ -716,7 +767,7 @@
 }
 
 .tips {
-	width: 953px;
+	width: 1170px;
 	border: solid 1px #fed22f;
 	background-color: #fff0a5;
 	text-align: left;
@@ -759,7 +810,7 @@
 	line-height: 25px;
 	display: block;
 	text-align: left;
-	border: solid 1px #ccc
+	border: solid 1px #e5e5e5
 }
 
 .betMode:hover {
@@ -774,7 +825,7 @@
 .betMode .head {
 	background-color: #f4f4f4;
 	height: 25px;
-	border-bottom: solid 1px #ccc;
+	border-bottom: solid 1px #e5e5e5;
 	padding-left: 15px
 }
 
@@ -787,7 +838,7 @@
 	background-color: #f4f4f4;
 	height: 25px;
 	padding-left: 15px;
-	border-top: solid 1px #ccc
+	border-top: solid 1px #e5e5e5
 }
 
 .betMode .head span, .betMode .rate span, .modeList .rate span span {
@@ -828,7 +879,7 @@
 	overflow: hidden;
 	line-height: 25px;
 	text-align: left;
-	border: solid 1px #ccc
+	border: solid 1px #e5e5e5
 }
 
 .pk10-modelist {
@@ -838,7 +889,7 @@
 
 .modeList .period {
 	padding-left: 8px;
-	border-bottom: solid 1px #ccc;
+	border-bottom: solid 1px #e5e5e5;
 	background-color: #f4f4f4
 }
 
@@ -928,18 +979,20 @@
 	width: 100%;
 	color: #1d1d1d;
 	text-align: left;
-	line-height: 30px;
-	border: solid 1px #ccc;
+	line-height: 40px;
+	border-bottom: solid 1px #e5e5e5;
 	margin-bottom: -1px;
-	height: 30px;
-	background-color: #f4f4f4
+	height: 40px;
+	background-color: #ffffff
 }
 
 .merge-title-table span {
-	font-family: 寰蒋闆呴粦;
+
 	float: left;
-	font-size: 14px;
-	padding-left: 5px
+	padding: 0 0 0 10px;
+	color: #666666;
+	font-weight: bold;
+	font-size: 16px;
 }
 
 .show-win {
@@ -977,22 +1030,22 @@
 	float: left;
 	height: 32px;
 	line-height: 32px;
-	border: solid 1px #ccc
+	border: solid 1px #e5e5e5
 }
 
 .cl_s {
-	width: 320px;
+	width: 297px;
 	text-align: center;
 	background-color: #fff;
 	float: left;
 	height: 32px;
 	line-height: 32px;
-	border: solid 1px #ccc
+	border: solid 1px #e5e5e5
 }
 
 .changlong-title {
 	height: 30px;
-	border-bottom: dashed 1px #ccc;
+	border-bottom: dashed 1px #e5e5e5;
 	line-height: 30px;
 	width: 100%;
 	margin-bottom: 15px
@@ -1085,7 +1138,7 @@
 	padding-bottom: 5px;
 	padding-right: 10px;
 	margin-bottom: 9px;
-	border-bottom: dashed 1px #ccc;
+	border-bottom: dashed 1px #e5e5e5;
 	text-indent: 2em
 }
 
@@ -1117,7 +1170,7 @@
 }
 
 .close {
-	border: 1px solid #ccc;
+	border: 1px solid #e5e5e5;
 	width: 40px;
 	height: 18px;
 	line-height: 18px;
@@ -1148,10 +1201,10 @@
 	width: 270px;
 	line-height: 25px;
 	float: right;
-	margin-bottom: 18px;
+	margin-bottom: 5px;
 	overflow: hidden;
 	line-height: 30px;
-	border: solid 1px #ccc;
+	border: solid 1px #e5e5e5;
 	border-left: 0
 }
 
@@ -1166,7 +1219,7 @@
 .betMode-one .head {
 	background-color: #f4f4f4;
 	height: 30px;
-	border-bottom: solid 1px #ccc;
+	border-bottom: solid 1px #e5e5e5;
 	padding-left: 15px
 }
 
@@ -1174,7 +1227,7 @@
 	background-color: #f4f4f4;
 	height: 30px;
 	padding-left: 15px;
-	border-top: solid 1px #ccc
+	border-top: solid 1px #e5e5e5
 }
 
 .betMode-one .head span, .betMode-one .bottom span {
@@ -1191,8 +1244,8 @@
 }
 
 .lot-search input {
-	vertical-align: -2px;
-	_vertical-align: -1px;
+	/*vertical-align: -8px;*/
+	/*_vertical-align: -1px;*/
 	margin-right: 2px
 }
 
@@ -1255,8 +1308,8 @@
 	text-align: center;
 	font-family: '寰蒋闆呴粦';
 	font-size: 12px;
-	width: 978px;
-	border: 1px solid #ccc;
+	width: 1198px;
+	border-bottom: 1px solid #e5e5e5;
 	border-bottom: 0;
 	float: left;
 	clear: left;
@@ -1265,11 +1318,17 @@
 
 .kaijiang_tiptool .tiptool_head {
 	background: #FFF;
-	width: 978px;
-	height: 30px;
-	background: #f4f4f4;
+	width: 1198px;
+
 	text-align: center;
-	border-bottom: 1px solid #ccc
+	border-bottom: 1px solid #e5e5e5;
+
+	font-weight: bold;
+	height: 40px;line-height: 40px;
+	color: #666666;
+
+
+	font-size: 16px;
 }
 
 .tiptool_head ul {
@@ -1282,8 +1341,8 @@
 .tiptool_head li {
 	display: block;
 	float: left;
-	font-size: 14px;
-	padding: 5px 10px 0 10px
+	/*font-size: 14px;*/
+	padding: 0px 0px 0px 10px
 }
 
 .tiptool_info {
@@ -1302,8 +1361,8 @@
 }
 
 .tiptool_info li {
-	width: 978px;
-	border-bottom: 1px solid #ccc;
+	width: 1198px;
+	border-bottom: 1px solid #e5e5e5;
 	display: block;
 	float: left;
 	clear: left;
@@ -1311,9 +1370,9 @@
 }
 
 .tiptool_info li span {
-	width: 160px;
+	width: 238px;
 	height: 35px;
-	border-right: 1px solid #ccc;
+	border-right: 1px solid #e5e5e5;
 	display: block;
 	float: left
 }
@@ -1346,19 +1405,31 @@
 }
 
 #lot-wrap #ball-choose {
-	width: 980px;
+	width: 1198px;
 	padding: 8px 0 8px 0;
 	float: left;
-	clear: left
+	clear: left;
+	background: #ffffff;
+	/* border: 1px solid #e5e5e5; */
 }
 
 #lot-wrap #ball-choose li {
 	float: left;
-	margin: 0 10px 0 0
-}
 
+	color: #666;
+	cursor: pointer;
+	margin-left: 5px;
+	border: 0px solid #dddddd;
+	height: 32px;
+	line-height: 32px;
+	padding: 0 5px;
+	border-radius: 4px;
+}
+#lot-wrap #ball-choose li .checkbox{margin-top: 8px;
+
+margin-right: 0px;}
 .dataTableKuang {
-	width: 978px;
+	width: 1198px;
 	font-family: "寰蒋闆呴粦";
 	font-size: 12px;
 	margin-bottom: 10px
@@ -1370,28 +1441,34 @@
 }
 
 .dataTableKuang table .huisekColor {
-	background: #f4f4f4
+	background: #ffffff
 }
 
 .dataTableKuang table .huisekColor2 {
-	background: #eee
+	background: #fafafa
 }
 
 .dataTableKuang table .firstTd {
-	height: 31px;
+
 	text-align: left;
 	font-size: 14px;
-	line-height: 31px
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 .dataTableKuang table .firstTd span {
 	display: block;
-	padding: 0 0 0 10px
-}
+	padding: 0 0 0 10px;    color: #666666;
 
+	font-weight: bold;
+
+	font-size: 16px;
+}
+.dataTableKuang table td{ font-size: 16px; color: #666666}
 .dataTableKuang table .huisekColor2 td {
 	width: 10%;
-	height: 37px
+	height: 37px;    border-left: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5;
 }
 
 .dataTableKuangList table .huisekColor2 td {
@@ -1400,9 +1477,10 @@
 
 .web_ballPaiMing {
 	width: 100%;
-	height: 20px;
+	height: 26px;
 	text-align: center;
-	line-height: 26px
+	line-height: 26px;
+	border-bottom: 1px solid #e5e5e5;
 }
 
 .web_bigAndSmall {
@@ -1424,14 +1502,15 @@
 	display: block;
 	height: 31px;
 	float: left;
-	text-align: center
+	text-align: center;border-left: 1px solid #e5e5e5;    margin-left: -1px;font-size: 14px;
+
 }
 
 .web_bigAndSmall2 {
 	width: 100%;
 	height: 31px;
 	text-align: center;
-	line-height: 31px
+	line-height: 31px;    border-bottom: 1px solid #e5e5e5;
 }
 
 .web_bigAndSmall2 ul {
@@ -1443,18 +1522,18 @@
 }
 
 .web_bigAndSmall2 ul li {
-	width: 23px;
+	width: 25%;
 	display: block;
 	height: 31px;
 	float: left;
 	text-align: center;
 	background: #fff;
-	border-right: 1px solid #ccc
+	border-left: 1px solid #e5e5e5 !important; font-size: 12px; margin-left: -1px;
 }
 
 .dataTableKuangList {
-	width: 978px;
-	font-family: "寰蒋闆呴粦";
+	width: 1198px;
+
 	font-size: 12px
 }
 
@@ -1491,15 +1570,16 @@
 .twosidedtip {
 	color: red;
 	text-align: left;
-	height: 30px
+	height: 30px;    text-indent: 12px;
 }
 
 #choose_ball .currball {
-	color: red
+	color: #ffffff;
+	background: #ffb200;
 }
 
 .web_moreVideo {
-	width: 980px;
+	width: 1200px;
 	height: 125px
 }
 
@@ -1596,8 +1676,10 @@
 
 .explain_table {
 	text-align: left;
-	width: 958px !important;
-	border: 1px solid #cdcdcd;
+	width: 1176px !important;
+	border: 1px solid #e5e5e5;
+	border-left: 0;
+	border-right: 0;
 	font-size: 12px;
 	color: #666;
 	padding: 10px;
@@ -1608,35 +1690,37 @@
 }
 
 .web_listOP {
-	width: 985px;
+	width: 1200px;
 	margin: 0 auto;
-	clear: left
+	clear: left;
 }
 
 .web_listOP ul {
 	float: left;
-	clear: left;
-	padding: 0 0 10px 0
+	clear: left;    width: 100%;
+	padding: 0 0 5px 0;background: #ffffff;
 }
 
 .web_listOP li {
-	width: 103px;
-	height: 35px;
+
+	height: 30px;
 	margin: 3px;
 	display: block;
 	float: left;
 	cursor: pointer;
-	background: url("../images/changeXuan1.png") no-repeat center;
+	/*background: url("../images/changeXuan1.png") no-repeat center;*/
 	text-align: center;
 	color: #666;
-	line-height: 35px;
-	font-family: "瀹嬩綋";
-	font-size: 12px;
+	line-height: 30px;
+
+	font-size: 14px;
 	position: relative
 }
 
 .web_listOP li.hover {
-	background: url("../images/changeXuan2.png") no-repeat center
+	/*background: url("../images/changeXuan2.png") no-repeat center*/
+	background: #e73f3f;
+	border-radius: 4px;
 }
 
 .web_listOP li.listLong {
@@ -1658,7 +1742,7 @@
 .hoticon {
 	width: 20px;
 	height: 11px;
-	background: url("../images/hoticon.gif.jpg") no-repeat;
+	/*background: url("../images/hoticon.gif.jpg") no-repeat;*/
 	font-size: 0;
 	position: absolute;
 	right: -3px;
@@ -1693,14 +1777,16 @@
 	color: #333;
 	text-decoration: none;
 	width: 103px;
-	height: 35px;
+	height: 30px;
 	display: block
 }
 
 .web_listOP a:hover {
 	color: #fff;
 	text-decoration: none;
-	background: url("../images/changeXuan2.png") no-repeat center
+	/*background: url("../images/changeXuan2.png") no-repeat center*/
+	background: #e73f3f;
+	border-radius: 4px;
 }
 
 .web_listOP li.hover a {
@@ -1782,7 +1868,7 @@
 
 .betgame-td {
 	font-size: 14px;
-	border-top: 1px solid #ccc
+	border-top: 1px solid #e5e5e5
 }
 
 .InstructionsForUse {
@@ -1814,7 +1900,7 @@
 .InstructionsForUse .position {
 	position: absolute;
 	top: 26px;
-	left: 0;
+	left: -215px;
 	display: none;
 	z-index: 998
 }
@@ -1848,11 +1934,11 @@
 }
 
 .feedbackDiv {
-	padding-bottom: 5px;
+	padding: 8px 0;
 	color: #999;
 	text-align: left;
-	font-family: "寰蒋闆呴粦";
-	font-size: 12px
+
+	font-size: 12px;padding-left: 12px;background: #ffffff;
 }
 
 .feedbackDiv a {
@@ -1879,12 +1965,12 @@
 .centerTwo_3_b a{color:#fff;}
 
 .lot-award1 {
-	padding: 6px;
-	height: 82px;
+	padding: 6px;overflow: hidden;
+	/*height: 91px;*/
 	text-align: left;
-	background-color:#FFFDF1;
-	border:1px solid #F2DCAF;
-	margin-top:2px;
+	background-color:#fafafa;
+	border:1px solid #f5f5f5;
+	/*margin-top:2px;*/
 }
 .warnTime a{
 text-indent:-9999px;
@@ -1917,3 +2003,98 @@ background: url(../images/sp_btn.png)
 	color:#ffff00;
 	background: url(../images/sp_btn.png) no-repeat 0px -24px;
 }
+
+/*添加代码20181015*/
+#lot_content,#lot-wrap{background: #ffffff}
+.a-bottom{    display: inline-block;
+	color: #333;
+	width: 75px;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+	border-radius: 4px;
+	border-color: #e73f3f;
+	background: #e73f3f;
+	color: #fff!important;
+	vertical-align: middle;}
+#number_stat_list-html{width: 1198px;}
+#mlist_ul{ margin-left: 12px; margin-top: 3px;}
+
+
+/*参数设置*/
+#colorSet {
+	float: left;
+	padding: 10px!important;
+	width: 1180px;
+	margin: 0px auto 2px;
+	overflow: hidden;
+	background: #ffffff;
+
+}#colorSet input{    height: 18px;
+	 line-height: 18px;
+	 text-align: center;
+	 border-radius: 4px;
+	 border-color: #e73f3f;
+	 background: #e73f3f;
+	 color: #fff;}
+#colorSet .sparam1 input{ border-color: #989393;
+	border: 1px solid #989393;
+	background: #ffffff;
+	width: 22px;
+	color: #000;vertical-align: middle;}
+
+.lot-award .warnTime{ float:left!important;}
+.lot-award li{ margin-left: 20px!important;}
+.zst-type {
+
+	padding-left: 10px;
+}
+
+
+.bg_u4 input {
+	display: inline-block;
+	color: #333;
+	width: 75px;
+	height: 31px!important;
+	line-height: 31px!important;
+	text-align: center;
+	border-radius: 4px;
+	border-color: #e73f3f;
+	background: #e73f3f;
+	/* height: 40px; */
+	color: #fff;
+	margin-top: 9px!important;
+}
+.Wdate {
+	height: 22px!important;
+	width: 100px;
+	border: #ccc8c8 1px solid!important;}
+
+
+.merge-title-table-title {
+	width: 100%;
+	color: #1d1d1d;
+	text-align: left;
+	line-height: 45px;
+	border-bottom: solid 1px #e5e5e5;
+	/* margin-bottom: -1px; */
+	height: 45px;
+	background-color: #ffffff;    clear: both;
+
+	/* padding-bottom: 10px; */
+	/* margin-bottom: 10px; */
+
+}
+
+.merge-title-table-title .bbbb{color: #666666;
+	font-weight: bold; margin-left: 10px; display: block;float: left;
+	font-size: 16px}
+#selDate{width: 60px;
+	height: 30px;
+	border: 1px solid #ddd;
+	border-radius: 4px;}
+select{
+	height: 30px;
+	border: 1px solid #ddd;
+	border-radius: 4px;}
+.luzhu{ margin: 0 auto;}

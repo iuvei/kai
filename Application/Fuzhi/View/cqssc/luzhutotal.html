@@ -19,13 +19,19 @@
 
     <!--  内容开始 -->
     <div style="clear: left; width: 100%; float: left;">
+		<div class="merge-title-table-title" style="margin-bottom: -3px">
+
+			<span class="bbbb">总和路珠</span>
+
+			<div style="margin-right: -67px;margin-bottom: 0" class="show-bjl">
+				选择日期: <input type="text" readonly="readonly"
+							 onfocus="WdatePicker()"
+							 value="" class="Wdate" id="dateData" name="dateData">
+				<span style="padding-left: 10px; margin-right: 155px;"><a class="a-bottom" style="margin: 0px;" href="javascript:updatePickdate();">查 询</a></span>
+			</div>
+		</div>
         <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
-        <div style="margin-right: 10px;" class="show-bjl">
-            选择日期: <input type="text" readonly="readonly"
-                         onfocus="WdatePicker()"
-                         value="" class="Wdate" id="dateData" name="dateData">
-            <span style="padding-left: 10px;"><a style="margin: 0px;" href="javascript:updatePickdate();">查 询</a></span>
-        </div>
+
         <script type="text/javascript">
             function updatePickdate() {
                 var selDate = $("#dateData").val();
@@ -34,8 +40,8 @@
                     type:"total"
                 }, function(data) {
                     var title = '<div class="clear"></div>'+
-								
-								'<div style="float: right; margin-bottom: 35px; margin-right: 68px;">'+
+
+								'<div style="float: right; margin-right: 75px;margin-top: -37px;">'+
 									'<span class="InstructionsForUse"> '+
 									'<span class="InstructionsForUse_btn">使用说明 </span> '+
 									'<span class="position" style="left: -210px; top: 26px;"> '+

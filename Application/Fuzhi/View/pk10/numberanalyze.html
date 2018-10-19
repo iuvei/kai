@@ -29,17 +29,31 @@
 <div class="clear"></div>
        <div class="web_dateLineBody">
            <input type="hidden" id="callFun" value="updateRecord" />
+           <div class="merge-title-table-title" style="margin-bottom: 10px;">
+
+               <span class="bbbb">免费多选分析</span>
+
+
+           </div>
            <div class="web_changeThree">
                <ul>
                    <li><a href="/pk10/positiontrend.html">位置走势图</a></li>
                    <li class="list"></li>
                    <li class="hover">号码走势图</li>
                </ul>
+               <div class="web_huiseBackGround_title" style="float: right;width: 170px;
+    height: 36px;
+    margin: 0 auto 0px;
+     background: none;
+    font-size: 12px;
+    line-height: 36px;
+    text-align: left;
+    text-indent: 12px;padding-right: 10px;">
+                   *请选择3-9个名次进行统计。
+               </div>
            </div>
            <div class="web_huiseBackGround">
-               <div class="web_huiseBackGround_title">
-                   *请选择3-9个号码进行统计：
-               </div>
+
                <div class="web_iconList2" id="web_tj">
                    <ul>
                        <li class="icon1" data-num="1"></li>
@@ -78,11 +92,11 @@
                        <div class="web_noDataDiv">
                            暂无数据。。。。。
                        </div>
-                       <table id="chart" width="975" border="0" cellspacing="1" cellpadding="0" style="margin:0 auto; display: none">
+                       <table id="chart" width="1200" border="0" cellspacing="1" cellpadding="0" style="margin:0 auto; display: none">
                            <tbody>
                            <tr>
-                               <td class="blue">期号</td>
-                               <td class="blue" width="330">
+                               <td class="blue"  width="135">期号</td>
+                               <td class="blue">
                                    <div class="web_dataGY">
                                        <ul>
                                            <li>1号</li>
@@ -97,9 +111,9 @@
                                            <li style="border:none;">10号</li>
                                        </ul>
                                    </div> </td>
-                               <td class="huiWhite2" width="208">跨度走势</td>
-                               <td class="pinkWhite" width="183">最小位置走势</td>
-                               <td class="greenWhite" width="175">最大位置走势</td>
+                               <td class="huiWhite2" >跨度走势</td>
+                               <td class="pinkWhite" >最小位置走势</td>
+                               <td class="greenWhite">最大位置走势</td>
                            </tr>
                            <tr ms-repeat="analyDatas">
                                <td class="white3">{{el.p}}</td>

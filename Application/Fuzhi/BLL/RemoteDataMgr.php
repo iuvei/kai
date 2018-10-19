@@ -22,6 +22,7 @@ class RemoteDataMgr
                 S($cacheName, $ret, array('type' => 'file', 'expire' => $expire));
             }
         }
+
         RemoteDataMgr::record($cacheName, $ret);
         return $ret;
     }

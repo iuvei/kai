@@ -21,22 +21,30 @@
 					 <div id="lot-wrap"> 
 					   <input type="hidden" id="callFun" value="twosidedstat" container="gdkl10twosidedstat" unload="0" time="10000" /> 
 					   <a name="mark"></a> 
-					   <ul class="lot-number-omit" style="margin-bottom: 20px;"> 
-					    <li class="ball" id="choose_ball"> 
+					   <ul class="lot-number-omit" style="margin-bottom: 10px;overflow: hidden">
+					    <li class="ball" id="choose_ball">
+							<div class="merge-title-table-title" style="margin-bottom: 10px;">
+
+								<span class="bbbb">两面数据统计</span>
+
+								<div class="twosidedtip" style="float: right">
+									*以每10期为一组，统计最近20组中单双大小的出现次数。
+								</div>
+							</div>
 					     <ul> 
-					      <li><a href="javascript:void(0);" ball="1" class="currball">第一球</a>| </li> 
-					      <li><a href="javascript:void(0);" ball="2">第二球</a>| </li> 
-					      <li><a href="javascript:void(0);" ball="3">第三球</a>| </li> 
-					      <li><a href="javascript:void(0);" ball="4">第四球</a>| </li> 
-					      <li><a href="javascript:void(0);" ball="5">第五球</a>| </li> 
-					      <li><a href="javascript:void(0);" ball="6">第六球</a>| </li> 
-					      <li><a href="javascript:void(0);" ball="7">第七球</a>| </li> 
+					      <li><a href="javascript:void(0);" ball="1" class="currball">第一球</a> </li>
+					      <li><a href="javascript:void(0);" ball="2">第二球</a></li>
+					      <li><a href="javascript:void(0);" ball="3">第三球</a> </li>
+					      <li><a href="javascript:void(0);" ball="4">第四球</a> </li>
+					      <li><a href="javascript:void(0);" ball="5">第五球</a> </li>
+					      <li><a href="javascript:void(0);" ball="6">第六球</a> </li>
+					      <li><a href="javascript:void(0);" ball="7">第七球</a> </li>
 					      <li><a href="javascript:void(0);" ball="8">第八球</a> </li> 
-					     </ul> </li> 
+					     </ul>
+
+						</li>
 					   </ul> 
-					   <div class="twosidedtip">
-					     *以每10期为一组，统计最近20组中单双大小的出现次数。 
-					   </div> 
+
 					   <div id="gdkl10twosidedstat">
 					    <div id="twoSidedStat_data-html"></div>
 		      		    <script id="twoSidedStat_data-tmpl" type="text/template">

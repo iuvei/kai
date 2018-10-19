@@ -17,9 +17,8 @@ img, input, select {
 }
 
 /** 设置默认字体 **/
-body,
-button, input, select, textarea,p,span /* for ie */ {
-    font: 12px/1.5 tahoma, arial, Microsoft Yahei, sans-serif;
+body{
+    font: 14px/1 Tahoma,微软雅黑,\\5FAE\8F6F\96C5\9ED1,sans-serif;
 }
 h1, h2, h3, h4, h5, h6 { font-size: 100%; }
 address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
@@ -139,9 +138,9 @@ input{display: inline-block;border:none;}
     -ms-transition: -ms-transform .2s ease-in;
     -o-transition: -o-transform .2s ease-in;}
 	
-.nav-plus li .dropdown-ul{position:absolute;top:46px; left: 0; right: 0; border:solid 2px #e63442;border-top:none;background: #fff;box-shadow: 1px 1px 1px #e7e7e7;}
-.nav-plus li .dropdown-ul li{ float: none;font-size: 14px;line-height: 35px;height: 35px; width:107px;}
-.nav-plus li .dropdown-ul a:link,.nav-plus li .dropdown-ul a:visited{color:#333; display: block; float: none; width:107px;text-align: center;}
+.nav-plus li .dropdown-ul{position:absolute;top:46px; left: 0; right: 0; border:solid 2px #ff7b00;border-top:none;background: #fff;box-shadow: 1px 1px 1px #e7e7e7;}
+.nav-plus li .dropdown-ul li{ float: none;font-size: 14px;line-height: 35px;height: 35px; width:113px;}
+.nav-plus li .dropdown-ul a:link,.nav-plus li .dropdown-ul a:visited{color:#333; display: block; float: none; width:113px;text-align: center;}
 .nav-plus li .dropdown-ul a:hover{background: #f6f6f6;color:#F13131;text-decoration: none;}
 * {
     padding: 0;
@@ -651,7 +650,7 @@ body {
 
 .body-content {
     margin: 0 auto;
-    width: 1000px;
+    width: 1200px;
     clear: both;
 }
 
@@ -1043,6 +1042,7 @@ a.pagelink:hover {
 .checkbox {
     display: block;
     width: 15px;
+    /*margin-top: 2px;*/
     float: left;
     height: 15px;
     cursor: pointer;
@@ -1050,7 +1050,7 @@ a.pagelink:hover {
 }
 
 .checked {
-    background: url("../images/checkbox.png") 0px 0px no-repeat;
+    background: url("../images/checkbox.png") 0px 1px no-repeat;
 }
 
 .show-bjl {
@@ -1086,14 +1086,14 @@ a.pagelink:hover {
     }
 
 .w980 a {
-    width: 980px;
+    width: 1200px;
     height: 60px;
     margin-top: 5px;
     display: block;
 }
 
 .w980 img {
-    width: 980px;
+    width: 1200px;
     height: 60px;
 }
 

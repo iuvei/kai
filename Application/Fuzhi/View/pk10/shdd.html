@@ -18,20 +18,26 @@
 <div class="clear"></div>
        <div style="margin-bottom:20px;">
            <input type="hidden" time="60000" id="callFun" value="getDataList" />
+           <div class="merge-title-table-title" style="margin-bottom: 10px; ">
+
+               <span class="bbbb">杀号定胆</span>
+               <div style="float: right; margin-right: 6px"> 杀号：专家认为当期不可能开出的号码</div>
+
+           </div>
            <ul class="lot-number-omit" id="zst-weizhi">
                <li class="ball">
                    <ul id="rankUl">
-                       <li> <a href="javascript:gotoPage(1)" id="rankLi1" class="cur">冠军 </a>|</li>
-                       <li> <a href="javascript:gotoPage(2)" id="rankLi2">亚军 </a>|</li>
-                       <li> <a href="javascript:gotoPage(3)" id="rankLi3">第三球 </a>|</li>
-                       <li> <a href="javascript:gotoPage(4)" id="rankLi4">第四球 </a>|</li>
-                       <li> <a href="javascript:gotoPage(5)" id="rankLi5">第五球 </a>|</li>
-                       <li> <a href="javascript:gotoPage(6)" id="rankLi6">第六球 </a>|</li>
-                       <li> <a href="javascript:gotoPage(7)" id="rankLi7">第七球 </a>|</li>
-                       <li> <a href="javascript:gotoPage(8)" id="rankLi8">第八球 </a>|</li>
-                       <li> <a href="javascript:gotoPage(9)" id="rankLi9">第九球 </a>|</li>
+                       <li> <a href="javascript:gotoPage(1)" id="rankLi1" class="cur">冠军 </a></li>
+                       <li> <a href="javascript:gotoPage(2)" id="rankLi2">亚军 </a></li>
+                       <li> <a href="javascript:gotoPage(3)" id="rankLi3">第三球 </a></li>
+                       <li> <a href="javascript:gotoPage(4)" id="rankLi4">第四球 </a></li>
+                       <li> <a href="javascript:gotoPage(5)" id="rankLi5">第五球 </a></li>
+                       <li> <a href="javascript:gotoPage(6)" id="rankLi6">第六球 </a></li>
+                       <li> <a href="javascript:gotoPage(7)" id="rankLi7">第七球 </a></li>
+                       <li> <a href="javascript:gotoPage(8)" id="rankLi8">第八球 </a></li>
+                       <li> <a href="javascript:gotoPage(9)" id="rankLi9">第九球 </a></li>
                        <li> <a href="javascript:gotoPage(10)" id="rankLi10">第十球 </a></li>
-                       <li style="color: red">杀号：专家认为当期不可能开出的号码 <select id="rowNumSel" onchange="gotoPage('',this.value)"> <option value="10">近10期</option> <option value="20">近20期</option> <option value="50">近50期</option> <option value="100">近100期</option> </select> </li>
+                       <li style="color: red; padding-left: 15px;float: right;margin-right: 4px"><select id="rowNumSel" onchange="gotoPage('',this.value)"> <option value="10">近10期</option> <option value="20">近20期</option> <option value="50">近50期</option> <option value="100">近100期</option> </select> </li>
                    </ul> </li>
            </ul>
            <div id="data_list-html" style="float: left;"></div>

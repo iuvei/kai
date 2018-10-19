@@ -18,58 +18,65 @@
 			<include file="Public/lottory_op"/>
 <div class="clear"></div> 
 				<!--  内容开始 -->
-			<div style="clear: left; width: 100%; float: left;">
-				<div style="margin-right: 10px;" class="show-bjl">
-					<script type="text/javascript"
+
+	<div class="merge-title-table-title" style="margin-bottom: 0px;">
+
+		<span class="bbbb">总和路珠</span>
+		<div style="float: right;">
+			<div style="margin-right: 10px;" class="show-bjl">
+				<script type="text/javascript"
 						src="js/My97DatePicker/WdatePicker.js" ></script>
-					选择日期: <input name="dateData" type="text" id="dateData"
-						class="Wdate" value='' onfocus="WdatePicker();"
-						readonly="readonly" /> <span
-						style="padding-left: 10px;"><a
-						style="margin: 0px;" href="javascript:SearchQianhouLuzhu();">查询</a></span>
-				</div>
-				<script type="text/javascript">
-					var vAjax = Boolean("");
-					function updatePickdate(dp) {
-						var selDate = $("#dateData").val();
-	
-						setPaiLu();
-	
-						if (true == vAjax) {
-							var unload = "0";
-							if (dp.cal.date.d == (new Date()).getDate()) {
-								unload = "0";
-							} else {
-								unload = "1";
-							}
-							//冠亚和 路珠选择时间 单独处理(加载局部视图)
-							LuzhuDate(selDate, unload);
-	
-						} else {
-							if (dp.cal.date.d == (new Date()).getDate()) {
-								SearchQianhouLuzhu();
-							} else {
-								SearchQianhouLuzhu();
-							}
-						}
-					}
-					function clearedDate() {
-						SearchQianhouLuzhu();
-					}
-					$(function() {
-						$("#dateData").val("");
-						SearchQianhouLuzhu();
-					})
-					function SearchQianhouLuzhu() {
-						var selDate = $("#dateData").val();
-						$.get('gdkl10/luZhuTotal.do', {
-							date : selDate
-						}, function(data) {
-							$("#contentTotal").html(data);
-						});
-					}
-				</script>
+				选择日期: <input name="dateData" type="text" id="dateData"
+							 class="Wdate" value='' onfocus="WdatePicker();"
+							 readonly="readonly" /> <span
+					style="padding-left: 10px;"><a class="a-bottom"
+												   style="margin: 0px;" href="javascript:SearchQianhouLuzhu();" class="a-bottom">查询</a></span>
 			</div>
+			<script type="text/javascript">
+                var vAjax = Boolean("");
+                function updatePickdate(dp) {
+                    var selDate = $("#dateData").val();
+
+                    setPaiLu();
+
+                    if (true == vAjax) {
+                        var unload = "0";
+                        if (dp.cal.date.d == (new Date()).getDate()) {
+                            unload = "0";
+                        } else {
+                            unload = "1";
+                        }
+                        //冠亚和 路珠选择时间 单独处理(加载局部视图)
+                        LuzhuDate(selDate, unload);
+
+                    } else {
+                        if (dp.cal.date.d == (new Date()).getDate()) {
+                            SearchQianhouLuzhu();
+                        } else {
+                            SearchQianhouLuzhu();
+                        }
+                    }
+                }
+                function clearedDate() {
+                    SearchQianhouLuzhu();
+                }
+                $(function() {
+                    $("#dateData").val("");
+                    SearchQianhouLuzhu();
+                })
+                function SearchQianhouLuzhu() {
+                    var selDate = $("#dateData").val();
+                    $.get('gdkl10/luZhuTotal.do', {
+                        date : selDate
+                    }, function(data) {
+                        $("#contentTotal").html(data);
+                    });
+                }
+			</script>
+		</div>
+
+	</div>
+
 			<div id='lot_content'>
 				<div id="contentTotal" style="display: block; border: 1px solid #ffffff">
 				</div>

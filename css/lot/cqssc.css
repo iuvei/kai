@@ -1,11 +1,15 @@
 .lot-nums {
-    border: solid 1px #cccccc;
+
     padding-top: 5px;
     padding-left: 15px;
     clear: both;
     width: 338px;
-    background-color: #fff;
+
     height: 32px;
+    border: solid 1px #f1f1f1;
+
+    background-color: #ffffff;
+    border-radius: 4px;
 }
 
 .lot-nums span {
@@ -25,17 +29,21 @@
 
 .nums {
     width: 300px;
-    padding-left: 50px;
+    /*padding-left: 50px;*/
 }
 
     .nums span {
-        float: left;
-        width: 10%;
+       display: inline-block;
+        width: 30px;
         font-size: 16px;
         font-weight: bold;
-        line-height: 35px;
+        line-height: 30px;
         margin: 0px 9px;
         font-family: Arial, '宋体', '黑体', Verdana, Geneva, sans-serif;
+        background: #0d76c6;
+        border-radius: 15px;
+        color: #ffffff !important;
+
     }
 
 .lot-table .no1 {
@@ -67,10 +75,16 @@
 }
 
 .betgame-num div {
-    padding: 0px 6px;
-    float: left;
+    display: inline-block;
     font-weight: bold;
     font-size: 13px;
+    background: #0d76c6;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 15px;
+    color: #ffffff;
+    margin: 3px 5px;
 }
 
 .lot-table .ptable {
@@ -81,7 +95,7 @@
 
     .lot-table .ptable .td1 {
         border: none;
-        width: 40%;
+        width: 50%;
         text-align: center;
     }
 
@@ -90,7 +104,7 @@
         text-align: right;
     }
 .lot-table .betgame-title {
-    text-align: left;
+    text-align: center;
     background-color: #F0F0F0;
     padding-left: 13px;
 }
@@ -109,7 +123,10 @@
     text-align: left;
 }
 
-.lot-award .warnTime{ float:right;}
+.lot-award .warnTime{ float:left;}
+.lot-award li {
+    margin-left: 20px;
+}
 .lot-award .currentAward{ width:512px;}
 .lot-award .currentAward .title{ height:24px; line-height:24px;}
 .lot-award .currentAward .period,.lot-award .currentAward .period-info{ line-height:24px;}

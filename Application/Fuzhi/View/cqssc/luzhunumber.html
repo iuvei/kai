@@ -15,36 +15,53 @@
 <include file="Public/lottory_latest"/>
 
 <div class="lot-wrap">
-    <div style="clear: left; width: 100%; float: left;">
-        <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
-        <div style="margin-right: 10px;" class="show-bjl">
-            选择日期:
-            <input name="dateData" type="text" id="dateData" class="Wdate" value='' onfocus="WdatePicker();" readonly="readonly" />
-            <span style="padding-left: 10px;"><a style="margin: 0px;" href="javascript:updatePickdate();">查询</a></span>
-        </div>
-        <script type="text/javascript">
-            function updatePickdate() {
-                var selDate = $("#dateData").val();
-                $.get("/cqssc/getHaomaLuData.do", {
-                    t : Math.random(),
-                    date : selDate
-                }, function(text) {
-                    $('#lot_content').html(text);
-                });
-            }
-            function clearedDate() {
-            }
-            $(function() {
-                $("#dateData").val("");
-                updatePickdate();
-            })
-        </script>
-    </div>
+
 
     <include file="Public/lottory_op"/>
-				<ul class="lot-number-omit clearleft mbottom10">
+
+				<ul class="lot-number-omit clearleft " style="margin-bottom: 7px">
 					<li id="ball-choose" class="ball">
-						<ul style="width: 880px; float: left;">
+						<div class="merge-title-table-title" style="margin-bottom: 10px">
+
+							<span class="bbbb">上期历史</span>
+
+							<div style=" float: right;  margin-right:0px;">
+								<script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+								<div style="margin-right: 10px;" class="show-bjl">
+									选择日期:
+									<input name="dateData" type="text" id="dateData" class="Wdate" value='' onfocus="WdatePicker();" readonly="readonly" />
+									<span style="padding-left: 10px;"><a style="margin: 0px;    display: inline-block;
+    color: #333;
+    width: 75px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 4px;
+    border-color: #e73f3f;
+    background: #e73f3f;
+    color: #fff;
+    vertical-align: middle;" href="javascript:updatePickdate();" class="a-bottom">查询</a></span>
+								</div>
+								<script type="text/javascript">
+                                    function updatePickdate() {
+                                        var selDate = $("#dateData").val();
+                                        $.get("/cqssc/getHaomaLuData.do", {
+                                            t : Math.random(),
+                                            date : selDate
+                                        }, function(text) {
+                                            $('#lot_content').html(text);
+                                        });
+                                    }
+                                    function clearedDate() {
+                                    }
+                                    $(function() {
+                                        $("#dateData").val("");
+                                        updatePickdate();
+                                    })
+								</script>
+							</div>
+						</div>
+						<ul style="width:1112px; float: left; margin-left: 10px" >
 							<li><span class="ckb"><b data-c="1"
 									class="checkbox checked"></b></span><span class="ckb-txt"> <label>号码0</label></span></li>
 							<li><span class="ckb"><b data-c="2"
@@ -65,7 +82,7 @@
 									class="checkbox checked"></b></span><span class="ckb-txt"> <label>号码8</label></span></li>
 							<li><span class="ckb"><b data-c="10"
 									class="checkbox checked"></b></span><span class="ckb-txt"> <label>号码9</label></span></li>
-							<li><span class="InstructionsForUse"> 
+							<li style="float: right;"><span class="InstructionsForUse">
 									<span class="InstructionsForUse_btn">使用说明 </span> 
 									<span class="position"> 
 										<span class="content">
@@ -76,6 +93,7 @@
 									</span>
 								</span>
 							</li>
+
 						</ul>
 <!-- 						<ul style="float: right; width: 100px; text-align: right;"> -->
 <!-- 							<span style="border-bottom: 1px solid red; padding-bottom: 2px;"><a -->

@@ -24,6 +24,24 @@ if(strpos($self,"xyft")){
 }elseif(strpos($self,"jsk3")){
     $name = 22;
 	$web_type = "江苏快三";
+}elseif(strpos($self,"bjft")){
+    $name = 42;
+    $web_type = "北京番摊";
+}elseif(strpos($self,"cqft")){
+    $name = 41;
+    $web_type = "重庆番摊";
+}elseif(strpos($self,"pc28")){
+    $name = 43;
+    $web_type = "加拿大28";
+}elseif(strpos($self,"txffc")){
+    $name = 44;
+    $web_type = "腾讯分分彩";
+}elseif(strpos($self,"tcpk10")){
+    $web_type = "头彩PK10";
+    $name = 46;
+}elseif(strpos($self,"tcssc")){
+    $web_type = "头彩时时彩";
+    $name = 45;
 }else{
     $name = 20;
 	$web_type = "北京赛车PK10";

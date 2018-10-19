@@ -12,7 +12,7 @@
 	color:#ccc
 }
 .footer .foot_nav a {
-	padding:0px 10px 0px 10px; font-size:14px
+	padding:0px 10px 0px 10px; font-size:14px;display: inline;
 }
 .footer .footer_bottom { background:#333; height:38px; line-height:38px; color:#f8f8f8; margin-top:10px;}
 .footer .footer_bottom a{ color:#fff}

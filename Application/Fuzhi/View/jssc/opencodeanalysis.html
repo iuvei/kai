@@ -18,12 +18,19 @@
 		<div id="lot-wrap" style="margin-bottom:20px;">
             
 <input type="hidden" id="callFun" value="todaystatlist" time="2000" />
+            <div class="merge-title-table-title">
 
+                <span class="bbbb">今日号码统计</span>
+
+                <div class="content" style="padding-bottom:5px; float: right">
+                    <b>使用说明：</b>提供号码当日的开出次数及近期未开次数，使用参数设置可自定义关注遗漏范围，请根据个人需要手动设置，各参数的数值可设置范围是：2-500。
+                </div>
+            </div>
 <div id="mobang" style="display: none">
     <literal><span id="sid{$index}" class="param"><span class="sparam1">参数设置{$index}：当数值为<input tty="0" type="text" style="width: 25px; margin: 0 5px 0 5px;" value="{$star}" id="star{$index}" pid="{$index}" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d]/g,'')" maxlength="3"/>至<input tty="0" type="text" style="width: 25px; margin: 0 5px 0 5px;" value="{$end}" id="end{$index}" pid="{$index}" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d]/g,'')" maxlength="3"/>时为</span><i class="{$bgcolor}"></i><span class="sparam2">色</span><input type="button" class="span" pid="{$index}" value="收起"/></span></literal>
 </div>
 <div id="colorSet">
-    <div class="content" style="padding-bottom:5px;text-align:left"><b>使用说明：</b>提供号码当日的开出次数及近期未开次数，使用参数设置可自定义关注遗漏范围，请根据个人需要手动设置，各参数的数值可设置范围是：2-500。</div>
+
     <p>
         <span id="sid1" class="param"><span class="sparam1">参数设置1：当数值为<input tty="0" style="width: 25px; margin: 0 5px 0 5px; " value="15" type="text" id="star1" pid="1" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d]/g,'')" maxlength="3" />至<input tty="0" style="width: 25px; margin: 0 5px 0 5px;" value="100" type="text" id="end1" pid="1" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onafterpaste="this.value=this.value.replace(/[^\d]/g,'')" maxlength="3"/>时为</span><i class="color_red"></i><span class="sparam2">色</span><input type="button" id="spDel" class="span" pid="1" style="display: none;" value="收起"/></span>
         <input type="button" id="spAdd" class="spanAdd" value="增加"/><input type="button" id="changedata" class="spanAdd" value="确认"/>
@@ -290,4 +297,7 @@
 </div>
 	</div>
 	<div class="clear"></div>
+    <style>.lot-table td {
+        font-size: 14px;
+    }</style>
 	</block>

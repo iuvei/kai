@@ -21,8 +21,7 @@
 		
 		<div class="index-history">
             <div class="title mt10">
-                <h2>
-                    重庆时时彩开奖记录</h2>
+                <h2>开奖记录</h2>
                 <a href="cqssc/kaijiang.html" >查看全部&gt;&gt;</a>
             </div>
             <div id="history_data-html"></div>
@@ -30,13 +29,16 @@
 	      		<table id="history" class="lot-table">
 		            <tbody>
 						<tr class="head">
-							<td width="160">时间</td>
-							<td>开奖号码</td>
+							<td width="120">时间</td>
+							<td width="140">期号</td>
+							<td width="680">开奖号码</td>
 							<td colspan="3">总和</td>
 							<td style="width: 70px; text-align: center;">龙虎</td>
 							<td style="width: 70px; text-align: center;">前三</td>
 							<td style="width: 70px; text-align: center;">中三</td>
 							<td style="width: 70px; text-align: center;">后三</td>
+							<td style="width: 70px; text-align: center;">梭哈</td>
+							<td style="width: 70px; text-align: center;">斗牛</td>
 						</tr>
 						{{
 							for (var i = 0; i <it.length; i++) { 
@@ -55,8 +57,12 @@
 						}}
 								<tr class="{{=(i+1)%2==0?'even':'odd'}}">
 									<td>
-										<p class="p">{{=row.termNum}}</p>
-										<p class="t">{{=lowDate}}</p>
+
+										<p class="">{{=lowDate}}</p>
+									</td>
+									<td>
+									<p class="">{{=row.termNum}}</p>
+
 									</td>
 									<td class="nums">
 										<span class="no1">{{=row.n1}}</span>
@@ -65,13 +71,15 @@
 										<span class="no4">{{=row.n4}}</span>
 										<span class="no5">{{=row.n5}}</span>
 									</td>
-									<td>{{=totalNum}}</td>
-									<td class="{{=totalNum%2!=0?'r':''}}"><p>{{=totalNum%2==0?"双":"单"}}</p></td>
-									<td class="{{=totalNum> 22?'r':''}}"><p>{{=totalNum<= 22?"小":"大"}}</p></td>
+									<td  width="50px">{{=totalNum}}</td>
+									<td class="{{=totalNum%2!=0?'r':''}}"  width="50px"><p>{{=totalNum%2==0?"双":"单"}}</p></td>
+									<td class="{{=totalNum> 22?'r':''}}"  width="50px"><p>{{=totalNum<= 22?"小":"大"}}</p></td>
 									<td><p class="{{=lhStr=='龍'?'r':''}}">{{=lhStr}}</p></td>
 									<td>{{=numFromDesc(row.n1,row.n2,row.n3)}}</td>
 									<td>{{=numFromDesc(row.n2,row.n3,row.n4)}}</td>
 									<td>{{=numFromDesc(row.n3,row.n4,row.n5)}}</td>
+									<td>{{=suoha([row.n1,row.n2,row.n3,row.n4,row.n5])}}</td>
+									<td>{{=douniu([row.n1,row.n2,row.n3,row.n4,row.n5])}}</td>
 								</tr>
 						{{
 							}
@@ -101,7 +109,149 @@
 	       			}, "json");
 		        }
 	            getHistoryData();
-		    </script>
+
+                function douniu(nums){
+                    //var nums = str.split(',');
+                    var i = 0, j = 0, k = 0,nSum = 0,b=0,a=0;
+                    var num = '';
+                    var num2 = '';
+                    var num3='';
+                    var text = '';
+
+                    if(nums == [0,0,0,0,0]){
+                        niu ='牛牛';
+                    }else {
+                        for(i = 0; i <nums.length; ++ i)
+                        {
+                            for(j = i + 1; j < nums.length; ++ j)
+                            {
+                                for(k = j + 1; k < nums.length; ++ k)
+                                {
+                                    nSum = Number(nums[i]) + Number(nums[j]) + Number(nums[k]);
+                                    //  console.log(nSum);
+                                    nSum = Number(nSum)%10;
+                                    // console.log(nSum);
+                                    // alert(nSum);
+                                    if(nSum == 0){
+                                        num = i;
+                                        num2 = j;
+                                        num3=k;
+                                        text = '有牛';
+                                        break;
+                                    }
+                                }
+
+                            }
+
+                        }
+
+                        nums[num] = null;
+                        nums[num2] = null;
+                        nums[num3] = null;
+                     
+
+                        var num4=[];
+                        var num5=0;
+                        var niu = '';
+                        if(num2 ==0 || num2 != null || num ==0  || num != null|| num3 == 0 || num3 !=null){
+                            for(var t=0;t<nums.length;t++){
+                                if(nums[t] != null && nums[t] != '' ){
+                                    num4[num5]=nums[t]
+                                    num5++;
+                                }
+                            }
+                            console.log(num4);
+                            if(num4 == 0 || num4 == null || num4 == ''){
+                                niu ='牛牛';
+                            }else {
+                                if (num4.length <= 2) {
+                                    if (num4[1]) {
+                                        niu = Number(num4[0]) + Number(num4[1]);
+                                    } else {
+                                        niu = Number(num4[0]);
+                                    }
+
+                                    if (niu > 10) {
+                                        niu = niu - 10;
+                                    } else if (niu == 10) {
+                                        niu = '牛牛';
+                                    }
+                                } else {
+                                    niu = '没牛';
+                                }
+                            }
+                        }else {
+                            niu ='没牛';
+                        }
+                    }
+                    if( niu !='没牛' && niu !='牛牛'){
+                        niu = '牛'+ niu;
+                        return niu;
+					}else {
+                        return niu;
+					}
+
+
+                }
+
+                function suoha(nums){
+                    // console.log(nums);
+                    if(Number(nums[4])-Number(nums[3]) == 1 && Number(nums[3])-Number(nums[2]) == 1 && Number(nums[2])-Number(nums[1]) == 1 && Number(nums[1])-Number(nums[0]) == 1 || nums == [0,1,2,3,4] || nums == [6,7,8,9,0] ||
+                        nums == [7,8,9,0,1] || nums == [8,9,0,1,2] || nums == [9,0,1,2,3]){
+                        suo = '顺子';
+                    }else {
+                        var _res = []; //
+
+                        nums.sort();
+                        for (var i = 0; i < nums.length;) {
+                            var count = 0;
+                            for (var j = i; j < nums.length; j++) {
+                                if (nums[i] == nums[j]) {
+                                    count++;
+                                }
+                            }
+                            _res.push([nums[i], count]);
+                            i += count;
+                        }
+                        //     console.log(_res)
+                        //_res 二维数维中保存了 值和值的重复数
+                        var _newArr = [];
+                        for (var i = 0; i < _res.length; i++) {
+                            // console.log(_res[i][0] + "重复次数:" + _res[i][1]);
+                            if(_res[i][1] > 1){
+                                _newArr.push(_res[i][1]);
+                            }
+
+                        }
+
+                        //   console.log(_newArr);
+                        var suo = '';
+                        // / alert(_newArr);
+                        if(_newArr){
+                            if(_newArr.length == 1 && _newArr[0] == 2){
+                                suo = '对子';
+                            }else if(_newArr.length == 2 && _newArr[0] == 2 && _newArr[1] == 2){
+                                suo = '两对';
+                            }else if(_newArr.length == 1 && _newArr[0] == 3){
+                                suo = '三条';
+                            }else if(_newArr.length == 1 && _newArr[0] == 4){
+                                suo = '四条';
+                            }else if(_newArr.length == 1 && _newArr[0] == 5){
+                                suo = '五条';
+                            }else if(_newArr.length == 2 && _newArr[0] == 2 & _newArr[1] == 3 || _newArr[0] == 3 && _newArr[1] == 2) {
+                                suo = '葫芦';
+                            }else {
+                                suo = '散号';
+                            }
+                        }else {
+                            suo = '散号';
+
+                        }
+                    }
+                    return suo;
+                }
+
+			</script>
 			<div class="lot-article mt10">
 				<div class="l-title">
 					<h2>重庆时时彩技巧</h2>

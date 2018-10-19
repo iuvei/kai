@@ -17,44 +17,10 @@
 <div class="lot-wrap">
 			<include file="Public/lottory_op"/>
 				<div class="clear"></div>
-					<div class="index-head">
-	                    <div style="margin-bottom: 20px;">
-	                        <a name="info">
-	                        </a>
-	                        <ul class="lot-number-omit" style="margin-bottom: 20px;">
-	                            <li class="ball">
-	                                <ul id="rankUl">
-	                                    <li>
-	                                        <a href="javascript:gotoPage('',1)" id="rankLi1" class='cur'>
-	                                      	      第一球
-	                                        </a>
-	                                        |
-	                                    </li>
-	                                    <li>
-	                                        <a href="javascript:gotoPage('',2)" id="rankLi2" >
-	                                      	      第二球
-	                                        </a>
-	                                        |
-	                                    </li>
-	                                    <li>
-	                                        <a href="javascript:gotoPage('',3)" id="rankLi3" >
-	                                  	                  第三球
-	                                        </a>
-	                                        |
-	                                    </li>
-	                                    <li>
-	                                        <a href="javascript:gotoPage('',4)" id="rankLi4" >
-	                                   	                  第四球   
-	                                        </a>
-	                                        |
-	                                    </li>
-	                                    <li>
-	                                        <a href="javascript:gotoPage('',5)" id="rankLi5" >
-	                                        		第五球   
-	                                        </a>
-	                                    </li>
-	                                    <li>
-	                                        <span class="InstructionsForUse">
+    <div class="merge-title-table-title" style="">
+
+        <span class="bbbb">号码遗漏统计</span>
+        <span class="InstructionsForUse" style="float: right;    margin-right: 79px;">
 	                                            <span class="InstructionsForUse_btn ">
 	                                                	使用说明
 	                                            </span>
@@ -66,10 +32,52 @@
 						                            </span>
 	                                            </span>
 	                                        </span>
+
+    </div>
+					<div class="index-head">
+	                    <div style="margin-bottom: 20px;">
+	                        <a name="info">
+	                        </a>
+	                        <ul class="lot-number-omit" style="margin-bottom: 20px; position: relative;">
+	                            <li class="ball">
+	                                <ul id="rankUl">
+	                                    <li>
+	                                        <a href="javascript:gotoPage('',1)" id="rankLi1" class='cur'>
+	                                      	      第一球
+	                                        </a>
+
 	                                    </li>
+	                                    <li>
+	                                        <a href="javascript:gotoPage('',2)" id="rankLi2" >
+	                                      	      第二球
+	                                        </a>
+
+	                                    </li>
+	                                    <li>
+	                                        <a href="javascript:gotoPage('',3)" id="rankLi3" >
+	                                  	                  第三球
+	                                        </a>
+
+	                                    </li>
+	                                    <li>
+	                                        <a href="javascript:gotoPage('',4)" id="rankLi4" >
+	                                   	                  第四球   
+	                                        </a>
+
+	                                    </li>
+	                                    <li>
+	                                        <a href="javascript:gotoPage('',5)" id="rankLi5" >
+	                                        		第五球   
+	                                        </a>
+	                                    </li>
+
 	                                </ul>
 	                            </li>
-	                            <li class="type">
+	                            <li class="type" style=" width: 460px;
+    position: absolute;
+    left: 783px;
+    top: 0px;
+">
 	                                <ul id="dataTypeUl">
 	                                    <li>
 	                                        <a href="javascript:gotoPage(8)" id="dataTypeLi8">
@@ -337,4 +345,25 @@
 				<div class="clear"></div>
 	    </div>
 </div>
+    <style>.lot-number-omit .type li {
+        float: left;
+        color: #666;
+        cursor: pointer;
+        margin-left: 5px;
+        /* border: 1px solid #dddddd; */
+        height: 32px;
+        line-height: 32px;
+         padding: 0 0px;
+        border-radius: 4px;
+    }
+
+    .lot-number-omit .type ul li a {
+        margin: 3px 0px;
+        padding: 0 6px;
+        border-radius: 4px;
+        color: #666;
+
+    }
+
+    </style>
 	        </block>

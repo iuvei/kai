@@ -6,7 +6,10 @@ class EmptyController extends HomeController
 {
     public function _empty($name)
     {
-
+	header("Access-Control-Allow-Origin: *");
+header('Access-Control-Allow-Methods:OPTIONS, GET, POST'); // 允许option，get，post请求
+header('Access-Control-Allow-Headers:x-requested-with'); // 允许x-requested-with请求头
+header('Access-Control-Max-Age:86400'); // 允许访问的有效期
         $ctrlName = CONTROLLER_NAME;
         $ctrlName = strtolower($ctrlName);
         $name = strtolower($name);
@@ -82,7 +85,7 @@ class EmptyController extends HomeController
 			 
 		}
         $this->assign('lottory', $ctrlName);
-        if ($ctrlName == 'pk10' || $ctrlName == 'cqssc' || $ctrlName == 'gdkl10' || $ctrlName == 'jssc' || $ctrlName == 'jsk3' || $ctrlName == 'kl8' || $ctrlName == 'tjssc' || $ctrlName == 'jsssc'  || $ctrlName == 'xyft'  || $ctrlName == 'fc3d' || $ctrlName == 'pl3' || $ctrlName == 'pl3' || $ctrlName == 'gd11x5' || $ctrlName == 'shssl') {
+        if ($ctrlName == 'tcpk10' || $ctrlName == 'tcssc' || $ctrlName == 'pk10' || $ctrlName == 'cqssc' || $ctrlName == 'gdkl10' || $ctrlName == 'jssc' || $ctrlName == 'jsk3' || $ctrlName == 'kl8' || $ctrlName == 'bjft' || $ctrlName == 'jsssc'  || $ctrlName == 'xyft'  || $ctrlName == 'fc3d' || $ctrlName == 'pl3' || $ctrlName == 'pl3' || $ctrlName == 'gd11x5' || $ctrlName == 'cqft' || $ctrlName == 'pc28' || $ctrlName == 'txffc') {
             $lottoryName = '';
             $totalExpect = 0;
             if ($ctrlName == 'pk10') {
@@ -125,14 +128,14 @@ class EmptyController extends HomeController
                                 $this->keyword = C("WEB_SITE_jsssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                 $this->description = C("WEB_SITE_jsssc_DESCR");
                                 $lottoryName = "极速时时彩";
-                                $totalExpect = 120;
+                                $totalExpect = 1152;
                             } else {
                                 if ($ctrlName == 'jssc') {
                                     $this->title = $title_c.C("WEB_SITE_JSSC_TITLE") . ' - ' . C('WEB_SITE_TITLE');
                                     $this->keyword = C("WEB_SITE_JSSC_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                     $this->description = C("WEB_SITE_JSSC_DESCR");
                                     $lottoryName = "极速赛车";
-                                    $totalExpect = 179;
+                                    $totalExpect = 1152;
                                 } else {
                                     if ($ctrlName == 'jsk3') {
                                         $this->title = $title_c.C("WEB_SITE_JSK3_TITLE") . ' - ' . C('WEB_SITE_TITLE');
@@ -162,20 +165,52 @@ class EmptyController extends HomeController
                                 $lottoryName = "幸运飞艇";
                                 $totalExpect = 180;
 											}else{
-												if ($ctrlName == 'fc3d') {
-                                $this->title = $title_c.'福彩3d开奖视频_福彩3d开奖号码_福彩3d开奖记录 - ' . C('WEB_SITE_TITLE');
+												if ($ctrlName == 'bjft') {
+                                $this->title = $title_c.'北京番摊开奖视频_北京番摊开奖号码_北京番摊开奖记录 - ' . C('WEB_SITE_TITLE');
                                 $this->keyword = C("WEB_SITE_xjssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                 $this->description = C("WEB_SITE_xjssc_DESCR");
-                                $lottoryName = "福彩3d";
-                                $totalExpect = 1;
+                                $lottoryName = "北京番摊";
+                                $totalExpect = 179;
 												}else{
-													if ($ctrlName == 'pl3') {
-                                $this->title = $title_c.'排列3开奖视频_排列3开奖号码_排列3开奖记录 - ' . C('WEB_SITE_TITLE');
+													if ($ctrlName == 'cqft') {
+                                $this->title = $title_c.'重庆番摊开奖视频_重庆番摊开奖号码_重庆番摊开奖记录 - ' . C('WEB_SITE_TITLE');
                                 $this->keyword = C("WEB_SITE_xjssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                 $this->description = C("WEB_SITE_xjssc_DESCR");
-                                $lottoryName = "排列3";
-                                $totalExpect = 1;
-												}
+                                $lottoryName = "重庆番摊";
+                                $totalExpect = 120;
+												}else{
+                                                        if ($ctrlName == 'pc28') {
+                                                            $this->title = $title_c.'加拿大28开奖视频_加拿大28开奖号码_加拿大28开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                            $this->keyword = C("WEB_SITE_xjssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                            $this->description = C("WEB_SITE_xjssc_DESCR");
+                                                            $lottoryName = "加拿大28";
+                                                            $totalExpect = 1;
+                                                        }else{
+                                                            if ($ctrlName == 'txffc') {
+                                                                $this->title = $title_c.'腾讯分分彩开奖视频_腾讯分分彩开奖号码_腾讯分分彩开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                $this->keyword = C("WEB_SITE_xjssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                $this->description = C("WEB_SITE_xjssc_DESCR");
+                                                                $lottoryName = "腾讯分分彩";
+                                                                $totalExpect = 1440;
+                                                            }else{
+                                                                if ($ctrlName == 'tcpk10') {
+                                                                    $this->title = $title_c.'头彩PK10开奖视频_头彩PK10开奖号码_头彩PK10开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                    $this->keyword = C("WEB_SITE_tcpk10_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                    $this->description = C("WEB_SITE_tcpk10_DESCR");
+                                                                    $lottoryName = "头彩PK10";
+                                                                    $totalExpect = 1440;
+                                                                }else{
+                                                                    if ($ctrlName == 'tcssc') {
+                                                                        $this->title = $title_c.'头彩时时彩开奖视频_头彩时时彩开奖号码_头彩时时彩开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                        $this->keyword = C("WEB_SITE_tcssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                        $this->description = C("WEB_SITE_tcssc_DESCR");
+                                                                        $lottoryName = "头彩时时彩";
+                                                                        $totalExpect = 1440;
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
 												}
 												
 											}
@@ -245,13 +280,29 @@ class EmptyController extends HomeController
                         $id = 41;
 						$swfurl = "http://f.907794.com/kl8/Preloader.swf";
                         break;
-                    case 'tjssc':
+                    case 'bjft':
 					    $swfurl = "http://f.907794.com/pk10/Preloader.swf";
                         $id = 40;
                         break;
-                    case 'shssl':
+                    case 'cqft':
 					    $swfurl = "http://f.907794.com/pk10/Preloader.swf";
                         $id = 44;
+                        break;
+                    case 'pc28':
+                        $swfurl = "http://f.907794.com/pc28/Preloader.swf";
+                        $id = 55;
+                        break;
+                    case 'txffc':
+                        $swfurl = "http://f.907794.com/txffc/Preloader.swf";
+                        $id = 56;
+                        break;
+                    case 'tcpk10':
+                        $swfurl = "http://f.907794.com/tcpk10/Preloader.swf";
+                        $id = 45;
+                        break;
+                    case 'tcssc':
+                        $swfurl = "http://f.907794.com/tcssc/Preloader.swf";
+                        $id = 46;
                         break;
                     default:
 					    $swfurl = "http://f.907794.com/pk10/Preloader.swf";
@@ -286,63 +337,51 @@ class EmptyController extends HomeController
                 if ($name == "shipin") {
 				 switch ($ctrlName) {
                     case 'pk10':
-					    $swfurl = "Application/Fuzhi/View/shipin/new_pk10.html";
-						//http://www.1396cp.me/video/bjpk10/bjpk10.swf
-						//http://pk10.041.net/v/pk10.swf
-						//http://f.907794.com/pk10/Preloader.swf
+					    $swfurl = "v/bjpk10";
                         break;
                     case 'cqssc':
-					    $swfurl = "Application/Fuzhi/View/shipin/new_cqssc.html";
-						//http://www.1396cp.me/video/cqssc/cqssc.swf
-						//http://f.907794.com/shishicai/shishicai_self.swf
+					    $swfurl = "v/cqssc";
                         break;
-//						case 'xjssc':
-//						$swfurl = "Application/Fuzhi/View/shipin/new_xjssc.html";
-//                        break;
 						case 'gd11x5':
-						$swfurl = "Application/Fuzhi/View/shipin/new_gd11x5.html";
+						$swfurl = "v/gd11x5";
                         break;
 						case 'xyft':
-						$swfurl = "Application/Fuzhi/View/shipin/new_xyft.html";
-						//http://f.907794.com/xyft/SpeedBoat.swf
+						$swfurl = "v/xyft";
                         break;
-						case 'fc3d':
-						$swfurl = "Application/Fuzhi/View/shipin/new_fc3d.html";
+						case 'bjft':
+						$swfurl = "v/bjft";
                         break;
-						case 'pl3':
-						$swfurl = "Application/Fuzhi/View/shipin/new_pl3.html";
+						case 'cqft':
+						$swfurl = "v/cqft";
                         break;
                     case 'gdkl10':
-					    $swfurl = "Application/Fuzhi/View/shipin/new_gdkl10.html";
-						//http://www.1396cp.me/video/gdklsf/gdklsf.swf
-						//http://f.907794.com/gdkl10/horserace_self.swf
+					    $swfurl = "v/gdklsf";
                         break;
-//                    case 'xync':
-//					    $swfurl = "Application/Fuzhi/View/shipin/new_xync.html";
-//                        break;
                     case 'jsk3':
-						$swfurl = "Application/Fuzhi/View/shipin/new_jsk3.html";
-                        break;
-                    case 'kl8':
-						$swfurl = "Application/Fuzhi/View/shipin/new_kl8.html";
-                        break;
-                    case 'tjssc':
-					    $swfurl = "Application/Fuzhi/View/shipin/new_tjssc.html";
-                        break;
-                    case 'shssl':
-					    $swfurl = "http://rescsj.56hx.com/flash/shssl/shssl.swf?v=20140805";
+						$swfurl = "v/jsk3";
                         break;
                      case 'jsssc':
-                         $swfurl = "Application/Fuzhi/View/shipin/new_jsssc.html";
+                         $swfurl = "v/cqssc";
                          break;
                      case 'jssc':
-                         $swfurl = "Application/Fuzhi/View/shipin/new_jssc.html";
+                         $swfurl = "v/bjpk10";
+                         break;
+                     case 'pc28':
+                         $swfurl = "v/jnd28";
+                         break;
+                     case 'txffc':
+                         $swfurl = "v/txffc";
+                         break;
+                     case 'tcpk10':
+                         $swfurl = "v/tcpk10";
+                         break;
+                     case 'tcssc':
+                         $swfurl = "v/tcssc";
                          break;
                     default:
-					    $swfurl = "Application/Fuzhi/View/shipin/new_pk10.html";
+					    $swfurl = "v/bjpk10";
                         break;
-                } 
-				    //$swfurl = "http://rescsj.56hx.com/flash/$ctrlName/$ctrlName.swf?v=20140805";
+                }
 					$this->assign('swfurl', $swfurl);
                     $this->assign('lottory', $ctrlName);
                     $this->display("{$name}:index");
@@ -384,20 +423,24 @@ class EmptyController extends HomeController
                             $JiQiaotitle = '广东快乐十分技巧';
                             $id = 2;
                             break;
-//                        case 'xync':
-//                            $JiQiaotitle = '幸运农场技巧';
-//                            $id = 45;
-//                            break;
+                        case 'pc28':
+                            $JiQiaotitle = '加拿大技巧';
+                            $id = 55;
+                            break;
+                        case 'txffc':
+                            $JiQiaotitle = '腾讯分分彩技巧';
+                            $id = 56;
+                            break;
                         case 'jsk3':
                             $JiQiaotitle = '江苏快3技巧';
                             $id = 39;
                             break;
-                        case 'kl8':
-                            $JiQiaotitle = '快乐8技巧';
+                        case 'bjft':
+                            $JiQiaotitle = '北京番摊';
                             $id = 41;
                             break;
-                        case 'tjssc':
-                            $JiQiaotitle = '天津时时彩技巧';
+                        case 'cqft':
+                            $JiQiaotitle = '重庆番摊';
                             $id = 40;
                             break;
 //							 case 'xjssc':
@@ -431,6 +474,14 @@ class EmptyController extends HomeController
                         case 'jssc':
                             $JiQiaotitle = '極速賽車技巧';
                             $id = 54;
+                            break;
+                        case 'tcssc':
+                            $JiQiaotitle = '头彩时时彩技巧';
+                            $id = 55;
+                            break;
+                        case 'tcpk10':
+                            $JiQiaotitle = '头彩pk10技巧';
+                            $id = 56;
                             break;
                         default:
                             $JiQiaotitle = '重庆时时彩技巧';
@@ -466,35 +517,50 @@ class EmptyController extends HomeController
 
                         $list_jssc = $module->query("SELECT * FROM lot_data where dat_type=39 order by dat_open_time desc limit 4");
                         $this->assign('list_jssc', $list_jssc);
-		
+
 						$list_cqssc = $module->query("SELECT * FROM lot_data where dat_type=1 order by dat_open_time desc limit 4");
         				$this->assign('list_cqssc', $list_cqssc);
-		
+
 						$list_gdkl10 = $module->query("SELECT * FROM lot_data where dat_type=21 order by dat_open_time desc limit 4");
         				$this->assign('list_gdkl10', $list_gdkl10);
-		
+
 						$list_xync = $module->query("SELECT * FROM lot_data where dat_type=18 order by dat_open_time desc limit 4");
 						$this->assign('list_xync', $list_xync);
-		
+
 						$list_jsssc = $module->query("SELECT * FROM lot_data where dat_type=40 order by dat_open_time desc limit 4");
 						$this->assign('list_jsssc', $list_jsssc);
-		
-						$list_tjssc = $module->query("SELECT * FROM lot_data where dat_type=3 order by dat_open_time desc limit 4");
-					    $this->assign('list_tjssc', $list_tjssc);
-		
+
+						$list_bjft = $module->query("SELECT * FROM lot_data where dat_type=42 order by dat_open_time desc limit 4");
+					    $this->assign('list_bjft', $list_bjft);
+
+                        $list_cqft = $module->query("SELECT * FROM lot_data where dat_type=41 order by dat_open_time desc limit 4");
+                        $this->assign('list_cqft', $list_cqft);
+
 						$list_gd11x5 = $module->query("SELECT * FROM lot_data where dat_type=6 order by dat_open_time desc limit 4");
 						$this->assign('list_gd11x5', $list_gd11x5);
-		
+
 						$list_jsk3 = $module->query("SELECT * FROM lot_data where dat_type=22 order by dat_open_time desc limit 4");
-						$this->assign('list_jsk3', $list_jsk3);	
-						
-						$lists = D('Document')->page(!empty($_GET["p"]) ? $_GET["p"] : 1, $perPage)->lists($id);
+						$this->assign('list_jsk3', $list_jsk3);
+
+                        $list_pc28 = $module->query("SELECT * FROM lot_data where dat_type=43 order by dat_open_time desc limit 4");
+                        $this->assign('list_pc28', $list_pc28);
+
+                        $list_txffc = $module->query("SELECT * FROM lot_data where dat_type=44 order by dat_open_time desc limit 4");
+                        $this->assign('list_txffc', $list_txffc);
+
+                        $list_tcpk10 = $module->query("SELECT * FROM lot_data where dat_type=44 order by dat_open_time desc limit 4");
+                        $this->assign('list_tcpk10', $list_tcpk10);
+
+                        $list_tcssc = $module->query("SELECT * FROM lot_data where dat_type=44 order by dat_open_time desc limit 4");
+                        $this->assign('list_tcssc', $list_tcssc);
+
+                        $lists = D('Document')->page(!empty($_GET["p"]) ? $_GET["p"] : 1, $perPage)->lists($id);
                         $page = new \Think\Page(get_list_count($id), $perPage);
                         $_page = $page->show();
                         $_page = str_replace("/index.php?s=", "", $_page);
                         $this->assign('lists', $lists);
                         $this->assign('_page', $_page);
-						
+
                         $this->display("jiqiao/article");
                     } else {
                         $lists = D('Document')->page(empty($_GET["p"]) ? 1 : $_GET["p"], $perPage)->lists($id);
@@ -520,16 +586,34 @@ class EmptyController extends HomeController
 		
 						$list_jsssc = $module->query("SELECT * FROM lot_data where dat_type=40 order by dat_open_time desc limit 4");
 						$this->assign('list_jsssc', $list_jsssc);
-		
-						$list_tjssc = $module->query("SELECT * FROM lot_data where dat_type=3 order by dat_open_time desc limit 4");
-					    $this->assign('list_tjssc', $list_tjssc);
+
+                        $list_bjft = $module->query("SELECT * FROM lot_data where dat_type=42 order by dat_open_time desc limit 4");
+                        $this->assign('list_bjft', $list_bjft);
+
+                        $list_cqft = $module->query("SELECT * FROM lot_data where dat_type=41 order by dat_open_time desc limit 4");
+                        $this->assign('list_cqft', $list_cqft);
 		
 						$list_gd11x5 = $module->query("SELECT * FROM lot_data where dat_type=6 order by dat_open_time desc limit 4");
 						$this->assign('list_gd11x5', $list_gd11x5);
 		
 						$list_jsk3 = $module->query("SELECT * FROM lot_data where dat_type=22 order by dat_open_time desc limit 4");
 						$this->assign('list_jsk3', $list_jsk3);
+
+                        $list_pc28 = $module->query("SELECT * FROM lot_data where dat_type=43 order by dat_open_time desc limit 4");
+                        $this->assign('list_pc28', $list_pc28);
+
+                        $list_txffc = $module->query("SELECT * FROM lot_data where dat_type=44 order by dat_open_time desc limit 4");
+                        $this->assign('list_txffc', $list_txffc);
+
+                        $list_tcpk10 = $module->query("SELECT * FROM lot_data where dat_type=46 order by dat_open_time desc limit 4");
+                        $this->assign('list_tcpk10', $list_tcpk10);
+
+                        $list_tcssc = $module->query("SELECT * FROM lot_data where dat_type=45 order by dat_open_time desc limit 4");
+                        $this->assign('list_tcssc', $list_tcssc);
+
                         $this->display("jiqiao/index");
+
+
                     }
                 } else {
                     if ($ctrlName == 'common') {

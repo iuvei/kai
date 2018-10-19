@@ -1,0 +1,114 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+ 
+  <div class="body-content"> 
+   <!-- 彩票大厅 头部 -->
+
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+   <div class="lot-wrap"> 
+   <include file="Public/lottory_op"/>
+    <div style="margin-bottom:20px;"> 
+     <input type="hidden" value="reloadData" id="callFun" time="1000" />
+     <div class="explain_table">
+	    1、【号码规律统计】提供号码开出位置的历史同位号码统计。例如第1期开出号码1后，在第1期开出号码1的相同位置，第2期开出号码为2，如此以上期开奖号码为参照，辅助预测同位开出的号码；<br />
+		2、柱形图表为历史同位开出号码的次数分布，用于查看已开出号码的分布及趋势，亦可作为参考辅助杀号。
+	 </div> 
+	 <div class="clear"></div>
+		 <div class="lot-search">
+			 <div class="car-num">
+		        <ul class="lot-number-omit" style="margin-bottom: 10px;">
+		            <li class="ball" style="padding-bottom: 2px;">
+		                <ul style="width: 890px; _width: 880px; float: left; margin-left: 10px;">
+		                    <li><a href="pk10/numberrulestat.html#ball=1"  data-ball="1" >号码1</a>| </li>
+		                    <li><a href="pk10/numberrulestat.html#ball=2"  data-ball="2" >号码2</a>| </li>
+		                    <li><a href="pk10/numberrulestat.html#ball=3"  data-ball="3" >号码3</a>| </li>
+		                    <li><a href="pk10/numberrulestat.html#ball=4"  data-ball="4" >号码4</a>| </li>
+		                    <li><a href="pk10/numberrulestat.html#ball=5"  data-ball="5" >号码5</a>|  </li>
+		                    <li><a href="pk10/numberrulestat.html#ball=6"  data-ball="6" >号码6</a>| </li>
+		                    <li><a href="pk10/numberrulestat.html#ball=7"  data-ball="7" >号码7</a>| </li>
+		                    <li><a href="pk10/numberrulestat.html#ball=8"  data-ball="8" >号码8</a>| </li>
+		                    <li><a href="pk10/numberrulestat.html#ball=9"  data-ball="9" >号码9</a>| </li>
+		                    <li><a href="pk10/numberrulestat.html#ball=10"  data-ball="10" >号码10</a> |</li>
+		                    <li><a href="javascript:void(0);" class="cur">全部号码</a> </li>
+		                </ul>
+		                <ul style="float: right; width: 80px; text-align: right;">
+		                    <li>
+		                        <select id="selDate">
+		                            <option value="60">60期</option>
+		                            <option value="30">30期</option>
+		                            <option value="90">90期</option>
+		                        </select>
+		                    </li>
+		                </ul>
+		            </li>
+		        </ul>
+			</div>
+			<div class="clear"></div>
+			<div>
+				<div id="history_data-html"></div>
+	      		<script id="history_data-tmpl" type="text/template">
+		      		<table class="lot-table" id="allDatas">
+				        <caption></caption>
+				        <tr class="head">
+				                <td>1</td>
+				                <td>2</td>
+				                <td>3</td>
+				                <td>4</td>
+				                <td>5</td>
+				                <td>6</td>
+				                <td>7</td>
+				                <td>8</td>
+				                <td>9</td>
+				                <td>10</td>
+				        </tr>
+				        <tr valign="top">
+						{{
+							for(var i=1;i<=10;i++){
+								var rowsData=it["num"+i];
+								var odd_even="even";
+								if(i%2!=0){
+									odd_even="odd";
+								}
+						}}
+					        <td class="nums {{=odd_even}}" style="padding-left:30px;" name="r_data_{{=i}}">
+				        		{{
+				        			for(var n=0;n<rowsData.length;n++){
+				        		}}
+				        			<i class="output-li pk-no{{=rowsData[n]}}"></i>
+				        		{{
+				        			}
+				        		}}
+						    </td>
+						{{
+							}
+						}}
+						</tr>
+					</table>
+				</script>
+		    </div>
+		    <script type="text/javascript">
+			    function reloadData() {
+			        var count = $("#selDate").val();
+			        $.get("pk10/getDataListByAll.do", {count: count, t: Math.random() }, function (r) {
+			        	doTCompile("history_data", r);
+			        }, 'json');
+			    }
+			    
+			    reloadData();
+			
+			    $("#selDate").on("change", function () {
+			        reloadData();
+			    });
+			</script>
+		</div>
+    </div> 
+    <div class="clear"></div> 
+    </block>

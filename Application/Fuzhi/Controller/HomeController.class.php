@@ -29,10 +29,10 @@ class HomeController extends Controller
         $this->assign('description', $this->description);
         $this->assign('tontji', $this->tontji);
         $this->assign('BaseUrl', $this->BaseUrl);
-        $this->assign('WEB_SITE_AD_TOP1_PIC', C('WEB_SITE_AD_TOP1_PIC',''));//暫時爲空
-        $this->assign('WEB_SITE_AD_TOP2_PIC', C('WEB_SITE_AD_TOP2_PIC',''));
-        $this->assign('WEB_SITE_AD_TOP3_PIC', C('WEB_SITE_AD_TOP3_PIC',''));
-        $this->assign('WEB_SITE_AD_TOP4_PIC', C('WEB_SITE_AD_TOP4_PIC',''));
+        $this->assign('WEB_SITE_AD_TOP1_PIC');//暫時爲空
+        $this->assign('WEB_SITE_AD_TOP2_PIC');
+        $this->assign('WEB_SITE_AD_TOP3_PIC');
+        $this->assign('WEB_SITE_AD_TOP4_PIC');
         if (!C('WEB_SITE_CLOSE')) {
             $this->error('站点已经关闭，请稍后访问~');
         }

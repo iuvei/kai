@@ -19,6 +19,12 @@
 <div class="clear"></div>
     <input type="hidden" id="callFun" value="load" time="1000"/>
     <div style="margin-bottom:20px;">
+        <div class="merge-title-table-title" style="margin-bottom: 10px">
+
+            <span class="bbbb">综合版面</span>
+
+
+        </div>
         <ul class="lot-number-omit">
             <li class="ball">
                 <ul id="rankUl">
@@ -26,47 +32,48 @@
                         <a href="javascript:gotoPage('',1)" id="rankLi1" class='cur'>
                             第一球
                         </a>
-                        |
+
                     </li>
                     <li>
                         <a href="javascript:gotoPage('',2)" id="rankLi2" >
                             第二球
                         </a>
-                        |
+
                     </li>
                     <li>
                         <a href="javascript:gotoPage('',3)" id="rankLi3" >
                             第三球
                         </a>
-                        |
+
                     </li>
                     <li>
                         <a href="javascript:gotoPage('',4)" id="rankLi4" >
                             第四球
                         </a>
-                        |
+
                     </li>
                     <li>
                         <a href="javascript:gotoPage('',5)" id="rankLi5" >
                             第五球
                         </a>
                     </li>
+                    <ul id="mlist_ul" style="float: right">
+                        <li> <label> <input type="checkbox" name="c_p" id="c_p1" value="mlist-1"/>长龙提醒</label>&nbsp; </li> &nbsp;
+                        <li> <label> <input type="checkbox" name="c_p" id="c_p8" value="mlist-2"/>单码遗漏</label>&nbsp; </li>
+                        <li> <label> <input type="checkbox" name="c_p" id="c_p3" value="mlist-3"/>大小/单双路珠</label>&nbsp; </li>
+                        <li> <label> <input type="checkbox" name="c_p" id="c_p5" value="mlist-4"/>龙虎路珠</label>&nbsp; </li>
+                        <li> <label> <input type="checkbox" name="c_p" id="c_p6" value="mlist-5"/>总和单双/大小路珠</label>&nbsp; </li>
+                        <!--        <li> <label> <input type="checkbox" name="c_p" id="c_p7" value="mlist-6"/>冠亚和大小路珠</label>&nbsp; </li>  -->
+                        <!-- <li> <label> <input type="checkbox" name="c_p" id="c_p2" />号码遗漏</label> &nbsp;</li> -->
+                        <!-- <li> <label> <input type="checkbox" name="c_p" id="c_p9" />上期跟号</label>&nbsp; </li>
+                        <li> <label> <input type="checkbox" name="c_p" id="c_p10" />皇家模式</label> </li>&nbsp; -->
+                        <li > <label id="ballIndex" style="display: none;">0</label>&nbsp; </li>
+                    </ul>
                 </ul>
             </li>
-            <li class="type">
-                <ul id="mlist_ul">
-                    <li> <label> <input type="checkbox" name="c_p" id="c_p1" value="mlist-1"/>长龙提醒</label>&nbsp; </li> &nbsp;
-                    <li> <label> <input type="checkbox" name="c_p" id="c_p8" value="mlist-2"/>单码遗漏</label>&nbsp; </li>
-                    <li> <label> <input type="checkbox" name="c_p" id="c_p3" value="mlist-3"/>大小/单双路珠</label>&nbsp; </li>
-                    <li> <label> <input type="checkbox" name="c_p" id="c_p5" value="mlist-4"/>龙虎路珠</label>&nbsp; </li>
-                    <li> <label> <input type="checkbox" name="c_p" id="c_p6" value="mlist-5"/>总和单双/大小路珠</label>&nbsp; </li>
-                    <!--        <li> <label> <input type="checkbox" name="c_p" id="c_p7" value="mlist-6"/>冠亚和大小路珠</label>&nbsp; </li>  -->
-                    <!-- <li> <label> <input type="checkbox" name="c_p" id="c_p2" />号码遗漏</label> &nbsp;</li> -->
-                    <!-- <li> <label> <input type="checkbox" name="c_p" id="c_p9" />上期跟号</label>&nbsp; </li>
-                    <li> <label> <input type="checkbox" name="c_p" id="c_p10" />皇家模式</label> </li>&nbsp; -->
-                    <li > <label id="ballIndex" style="display: none;">0</label>&nbsp; </li>
-                </ul>
-            </li>
+            <!--<li class="type">-->
+
+            <!--</li>-->
         </ul>
         <div class="clear"></div>
         <div id="lot_content">

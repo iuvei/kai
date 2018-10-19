@@ -118,7 +118,7 @@ $(function () {
             $(".warnTime #period").html("第" + data.next.periodNumber + "期");
             $(" .lot-award .currentAward .period-info .period-leave").html(data.firstPeriod+179-cpNumber);
              
-            loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
+            loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);
@@ -145,8 +145,8 @@ function getHistoryData(count) {
                 if (j%2==0) {
                     clsName = "odd";
                 }
-        		html += '<tr class="' + clsName + '"><td><p class="p">' + data.termNum + '</p><p class="t">' 
-        				+ data.lotteryTime.substring(5, 16);
+        		html += '<tr class="' + clsName + '"><td><p class="">' + data.lotteryTime.substring(5, 16)+ '</p></td><td><p class="">'
+        				+  data.termNum ;
                 html += '</p></td><td class="nums">';
                 html += '<i class="pk-no' + data.n1 + '"></i>';
                 html += '<i class="pk-no' + data.n2 + '"></i>';

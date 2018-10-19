@@ -46,7 +46,7 @@
     position: relative;
     width: 100%;
     background: #f0f0f0;
-    height: 1940px
+    height: 1950px
 }
 
 .bodybox .menubannboxc .menubox {
@@ -346,7 +346,7 @@
 }
 
 .bodybox .menubannboxc .menubox .zhezao main .lottey_title ul .check {
-    color: #ff7b00
+    color: #e73f3f
 }
 
 .bodybox .menubannboxc .menubox .zhezao main .lottey_title ul .check:after {
@@ -354,18 +354,18 @@
     height: 3px;
     width: 100%;
     position: absolute;
-    border-bottom: 3px solid #ff7b00;
+    border-bottom: 3px solid #e73f3f;
     display: inline-block;
     left: 0;
     bottom: -1px
 }
 
 .bodybox .menubannboxc .menubox .zhezao main .view_box {
-    padding: 20px 40px;
+    padding:20px 40px 5px;
     background: #fff
 }
 
-.bodybox .menubannboxc .menubox .zhezao main .view_box #check5_li, .bodybox .menubannboxc .menubox .zhezao main .view_box #hot_li, .bodybox .menubannboxc .menubox .zhezao main .view_box #klsf_li, .bodybox .menubannboxc .menubox .zhezao main .view_box #kuai3_li, .bodybox .menubannboxc .menubox .zhezao main .view_box #other_li, .bodybox .menubannboxc .menubox .zhezao main .view_box #pk10_li, .bodybox .menubannboxc .menubox .zhezao main .view_box #ssc_li {
+.bodybox .menubannboxc .menubox .zhezao main .view_box #check5_li,.bodybox .menubannboxc .menubox .zhezao main .view_box #qita, .bodybox .menubannboxc .menubox .zhezao main .view_box #hot_li, .bodybox .menubannboxc .menubox .zhezao main .view_box #klsf_li, .bodybox .menubannboxc .menubox .zhezao main .view_box #kuai3_li, .bodybox .menubannboxc .menubox .zhezao main .view_box #other_li, .bodybox .menubannboxc .menubox .zhezao main .view_box #pk10_li, .bodybox .menubannboxc .menubox .zhezao main .view_box #ssc_li {
     height: 0;
     -webkit-transition: height .5s;
     transition: height .5s;
@@ -466,7 +466,7 @@
     height: 36px;
     width: 36px;
     color: #fff;
-    background: #ff7b00
+    background: #e73f3f
 }
 
 .bodybox .menubannboxc .menubox .zhezao main .view_box .rowbox1 .nextkai_time span.hour, .bodybox .menubannboxc .menubox .zhezao main .view_box .rowbox1 .nextkai_time span.hourtxt {
@@ -528,7 +528,7 @@
 }
 
 .bodybox .menubannboxc .menubox .zhezao main .view_box .rowbox3 ul li a:hover {
-    color: #ff7b00
+    color: #e73f3f
 }
 
 .bodybox .menubannboxc .menubox .zhezao main .view_box .rowbox3 .width25 {
@@ -1615,5 +1615,5 @@
 
 .orangeBG {
     height: 60px;
-    background: #ff7b00 !important
+    background: #444444 !important
 }

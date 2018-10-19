@@ -1,0 +1,510 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/draw5.css">
+    <link type="text/css" rel="stylesheet" href="css/layout.css">
+    <link type="text/css" rel="stylesheet" href="css/tableAndFont.css">
+    <style type="text/css">
+
+        v\:line, v\:rect, v\:oval, v\:group, v\:stroke, v\:fill, v\:polyline {behavior: url(#default#VML);}
+        .cvs { position: absolute;}
+        #trendChart {padding: 0;position: relative;left:0;top:0;}
+        #canvas{ z-index:999; position:absolute; left:0; top:0;}
+
+    </style>
+    <!--[if lte IE 9]> <style type="text/css">.dateLineTable	*{padding:auto;margin:auto;}</style><![endif]-->
+</block>
+
+<block name="body">
+ 
+  <div class="body-content"> 
+   <include file="Public/top_ad"/>
+
+      <include file="Public/lottory_latest"/>
+   	<input type="hidden" id="callFun" value="updateRecord" />
+   	<div class ="jsloading"></div>
+    <div class="web_dateLineBody" ms-controller="chart">
+
+        <div class="web_topNav2">
+            <ul>
+                <li class="hover" style="border-right: 1px solid #e1e1e1;">
+                    <span class="web_topNav_img1"></span>
+                    <span class="web_topNav_font">基本走势图</span>
+                </li>
+
+                <li ><a href="pk10/samepositiontrend.html" >
+                    <span class="web_topNav_img2"></span>
+                    <span class="web_topNav_font">同期走势图</span></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="web_changeThree">
+            <ul>
+                <li><a href="pk10/positiontrend.html" >位置走势图</a></li>
+                <li class="list"></li>
+                <li class="hover">号码走势图</li>
+                <li class="list"></li>
+                <li><a href="pk10/guanyatrend.html" >冠亚和走势图</a></li>
+            </ul>
+        </div>
+
+        <div class="web_dataBallModel03">
+            <div class="web_ball01s" id="cball">
+                <div class="left">
+                   <ul>
+                        <li ms-class="hover:ball==1"><a href="javascript:void(0);" data-num="1" ms-click="changenum(1)">号码1</a></li>
+                        <li>|</li>
+                        <li  ms-class="hover:ball==2"><a href="javascript:void(0);" data-num="2" ms-click="changenum(2)">号码2</a></li>
+                        <li>|</li>
+                        <li  ms-class="hover:ball==3"><a href="javascript:void(0);" data-num="3" ms-click="changenum(3)">号码3</a></li>
+                        <li>|</li>
+                        <li  ms-class="hover:ball==4"><a href="javascript:void(0);" data-num="4" ms-click="changenum(4)">号码4</a></li>
+                        <li>|</li>
+                        <li  ms-class="hover:ball==5"><a href="javascript:void(0);" data-num="5" ms-click="changenum(5)">号码5</a></li>
+                        <li >|</li>
+                        <li  ms-class="hover:ball==6"><a href="javascript:void(0);" data-num="6" ms-click="changenum(6)">号码6</a></li>
+                        <li>|</li>
+                        <li  ms-class="hover:ball==7"><a href="javascript:void(0);" data-num="7" ms-click="changenum(7)">号码7</a></li>
+                        <li>|</li>
+                        <li  ms-class="hover:ball==8"><a href="javascript:void(0);" data-num="8" ms-click="changenum(8)">号码8</a></li>
+                        <li>|</li>
+                        <li  ms-class="hover:ball==9"><a href="javascript:void(0);" data-num="9" ms-click="changenum(9)">号码9</a></li>
+                        <li>|</li>
+                        <li  ms-class="hover:ball==10"><a href="javascript:void(0);" data-num="10" ms-click="changenum(10)">号码10</a></li>
+                        <li id="chkFGX" ms-click="chkFgx"><b ms-class-1="checkbox" ms-class-2="checked:fgxIscheck" ></b><label style="cursor: pointer">分割线</label></li>
+                    </ul>
+                </div>
+                <div class="right">
+                    <ul>
+                        <li class="li01">选择期数：</li>
+                        <li>
+                            <select name="periodCount" class="select" ms-duplex="periodCount">
+                                <option value="40">40期</option>
+                                <option value="90">90期</option>
+                                <option value="0">今日所有</option>
+                            </select>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="dateLineTable">
+                <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                    <tr>
+                        <td rowspan="2" class="blue1" valign="middle">
+                            <span style="font-size: 14px;">统计类型</span>
+                        </td>
+                        <td class="blue" valign="middle" width="580">号码{{ball}}</td>
+                        <td class="blue" valign="middle" width="155">回摆(<font class="redColor">*</font>)</td>
+                        <td class="blue" valign="middle" width="103">前后</td>
+                    </tr>
+                     <tr>
+                        <td class="huise">
+                            <div class="web_tableLayer web_numBallWidth57 fontNormal">
+                                <ul>
+                                    <li>冠</li>
+                                    <li>亚</li>
+                                    <li>三</li>
+                                    <li>四</li>
+                                    <li>五</li>
+                                    <li>六</li>
+                                    <li>七</li>
+                                    <li>八</li>
+                                    <li>九</li>
+                                    <li style="border: none;">十</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="huise">
+                            <div class="web_numTenTable web_numBallWidth51 fontNormal" >
+                                <ul>
+                                    <li>反向</li>
+                                    <li>重号</li>
+                                    <li style="border: none;">正向</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="huise">
+                            <div class="web_numTenTable web_numBallWidth51 fontNormal" >
+                                <ul>
+                                    <li>前</li>
+                                    <li style="border: none;">后</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr ms-repeat="totalDatas" class="data-stat" style="display: none;">
+                        <td class="white" ms-if="!$last">总次数</td>
+                        <td class="white" ms-if="$last">最大遗漏</td>
+                        <td class="white">
+                            <div class="web_numTenTable web_numBallWidth57">
+                                <ul>
+                                    <li ms-repeat-n="el.Nums" ms-css-border-right-width="{{$last?'0':'1'}}">{{n}} </li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="white">
+                            <div class="web_numTenTable web_numBallWidth51" >
+                                <ul>
+                                    <li>{{el.FX}}</li>
+                                    <li>{{el.CH}}</li>
+                                    <li style="border: none;">{{el.ZX}}</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="white">
+                            <div class="web_numTenTable web_numBallWidth51">
+                                <ul>
+                                    <li>{{el.Front}}</li>
+                                    <li style="border: none;">{{el.Back}}</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+               <div class="trendChartloading">正在加载中……</div>
+            </div>
+
+            <div class="web_Prompt01">
+              *回摆：假如本期开出的结果大于上一期开出的结果则为“正向”，假如两期开出的结果相同则为“重号”，反之为“反向”。
+            </div>
+
+            <div class="dateLineTable" style="padding: 0;" id="trendChart">
+                <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                    <tr>
+                        <td rowspan="2" class="blue3"><span>期号</span></td>
+              
+                        <td class="blue4" width="580"><span>号码{{ball}}走势</span></td>
+                        <td class="blue4" width="155">回摆</td>
+                        <td class="blue4" width="103">前后</td>
+                    </tr>
+                    <tr>
+                        <td class="huise2">
+                            <div class="web_tableLayer web_numBallWidth57 fontNormal">
+                                <ul>
+                                    <li>冠</li>
+                                    <li>亚</li>
+                                    <li>三</li>
+                                    <li>四</li>
+                                    <li>五</li>
+                                    <li>六</li>
+                                    <li>七</li>
+                                    <li>八</li>
+                                    <li>九</li>
+                                    <li style="border: none;">十</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="huise2">
+                            <div class="web_numTenl web_numBallWidth51">
+                                <ul>
+                                    <li>反向</li>
+                                    <li>重号</li>
+                                    <li style="border: none;">正向</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="huise2">
+                            <div class="web_numTenl web_numBallWidth51">
+                                <ul>
+                                    <li>前</li>
+                                    <li style="border: none;">后</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                     <tbody id="chart">
+                    <tr ms-repeat="trendDatas" style="display: none" class="data-stat">
+                        <td class="white2" align="center"><span ms-class="redColor:el.isVirtual">{{el.Period}}</span></td>
+              
+                    
+                        <td class="white2" valign="middle">
+                            <div ms-class-1="web_numTenBall:el.isVirtual" ms-class-2="web_numTens:!el.isVirtual" ms-class-3="web_numBallWidth57">
+                                <ul ms-if="!el.isVirtual">
+                                    <li ms-repeat-n="el.Nums"  ms-css-border-right-width="{{$last?'0':'1'}}" ms-class-1="hover2:n==0">{{n==0?getPositionName(el.Result):n}}</li>
+                                </ul>
+                                <ul ms-if="el.isVirtual">
+                                    <li ms-repeat-n="el.Nums"  ms-css-border-right-width="{{$last?'0':'1'}}" ms-class-1="hover2:n==el.Result" ms-hover="hover" ms-click="virtualBall(el.Period,n)">{{getPositionName(n)}}</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="white2">
+                            <div class="web_numTenl web_numBallWidth51">
+                                <ul>
+                                    <li ms-class-1="shenblue:el.FX==0">{{el.FX==0?"反":el.FX}}</li>
+                                    <li ms-class-1="shenblue:el.CH==0">{{el.CH==0?"重":el.CH}}</li>
+                                    <li ms-class-1="shenblue:el.ZX==0" style="border: none;">{{el.ZX==0?"正":el.ZX}}</li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td class="white2">
+                            <div class="web_numTenl web_numBallWidth51">
+                                <ul>
+                                    <li ms-class="greenBg:el.Front==0">{{el.Front==0?"前":el.Front}}</li>
+                                    <li ms-class="greenBg:el.Back==0" style="border: none;">{{el.Back==0?"后":el.Back}}</li>
+                                </ul>
+                            </div>
+                        </td>
+                    </tr>
+                         </tbody>
+                </table>
+                <div class="trendChartloading">正在加载中……</div>
+            </div>
+
+        </div>
+        <input type="hidden"  id="dataopened"  ms-duplex="flagPeriod"/>
+    </div>
+    <script type="text/javascript">
+	    function updateRecord() {
+	        $("#dataopened").val(parseInt( $("#dataopened").val())+1);
+	    }
+	</script>
+	<script type="text/javascript">
+	    $(function () { 
+	        require(['trendChart'], function (trendChart) {
+	            var chartLine = new trendChart({ css: { noyl: "noyl", bline: "bline", lines: [".hover2"] }, lineWidth: 2, lineColor: "#BB8569", ckbSplit: "#chkFGX" });
+	            // ckbDistribute: "#chkYL", ckbSplit: "#chkBZX", chkZX: "#chkZX"
+	            $.get("pk10/numberTrend.do", { ball: 1, count: 40, isToday: false, t: Math.random() }, function (r) {
+		        	var datas = r.list;
+		            var stats = r.stat;
+		            
+		            var viewmodel = avalon.define('chart', function (vm) {
+			            vm.ball = 1;
+			            vm.periodCount = 40;
+			            vm.trendDatas = [];
+			            vm.totalDatas = [];
+			            vm.flagPeriod = -1;
+			            vm.$updown = 1;
+			            vm.fgxIscheck =true;
+			            vm.getPositionName = function (p) {
+			                switch (~~p) {
+			                    case 1: return '冠';
+			                    case 2: return '亚';
+			                    case 3: return '三';
+			                    case 4: return '四';
+			                    case 5: return '五';
+			                    case 6: return '六';
+			                    case 7: return '七';
+			                    case 8: return '八';
+			                    case 9: return '九';
+			                    case 10: return '十';
+			                }
+			            }
+			            vm.chkFgx = function () {
+			                vm.fgxIscheck = !vm.fgxIscheck;
+			                chartLine.splitDisplay();
+			            }
+			            vm.changenum = function (b) {
+			                vm.ball = b;
+			                chartLine.clearLines();
+			                $(".data-stat").hide();
+			                $(".trendChartloading").show();
+			                $.get("pk10/numberTrend.do", { ball: vm.ball, count: vm.periodCount, isToday: vm.periodCount == 0, t: Math.random() }, function (data) {
+			                    var tdatas = data.list;
+			                    var sdatas = data.stat;
+			                    vm.trendDatas = tdatas;
+			                    vm.totalDatas = sdatas;
+			                    if (vm.trendDatas.length > 0) {
+			                        viewmodel.addVirtualBalls();
+			                    }
+			                    viewmodel.drawLine();
+			                    $(".data-stat").show();
+			                    $(".trendChartloading").hide();
+			                }, 'json');
+			            };
+			            vm.sortDatas = function () {
+			                viewmodel.trendDatas.sort(function (a, b) {
+			                    var r = a.Period > b.Period ? -1 : 1;
+			                    return vm.$updown * r;
+			                });
+			            };
+			            vm.removeData = function (p) {
+			                for (var i = vm.trendDatas.length - 1; i > -1; i--) {
+			                    if (vm.trendDatas[i].Period == p) {
+			                        vm.trendDatas.removeAt(i);
+			                        break;
+			                    }
+			                }
+			            };
+			            vm.maxData = {
+			                get: function () {
+			                    if (vm.trendDatas.length > 0) {
+			                        var a = vm.trendDatas[0];
+			                        var b = vm.trendDatas[vm.trendDatas.length - 1];
+			                        if (a.Period > b.Period) return a;
+			                        else return b;
+			                    } else {
+			                        return {};
+			                    }
+			                }
+			            };
+			            vm.getData = function (p) {
+			                for (var i = vm.trendDatas.length - 1; i > -1; i--) {
+			                    if (vm.trendDatas[i].Period == p) {
+			                        return vm.trendDatas[i];
+			                    }
+			                }
+			                return null;
+			            };
+			            vm.drawLine = function () {
+			                chartLine.clearLines();
+			                chartLine.reDraw();
+			            };
+			            vm.pushVirtual = function (p) {
+			                viewmodel.trendDatas.unshift({ "Period": parseInt(p), Result: -1, "Nums": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], isVirtual: true, FX: null, ZX: null, CH: null, Front: null, Back: null});
+			            };
+			            vm.virtualBall = function (p, n) {
+			                var r = vm.getData(p);
+			                if (r.Result == parseInt(n)) {
+			                    r.Result = 0;
+			                } else {
+			                    r.Result = parseInt(n);
+			                }
+			                vm.calculate(r);
+			                vm.checkVirtual(p);
+			                vm.drawLine();
+			            };
+			            vm.checkVirtual = function (p) {
+			                var maxPeripd = vm.maxData.Period;
+			                if (p < maxPeripd) {
+			                    for (var i = p + 1; i <= maxPeripd; i++) {
+			                        var next = vm.getData(i);
+			                        if (next.Result > 0) {
+			                            vm.calculate(next);
+			                        } else {
+			                            break;
+			                        }
+			                    }
+			                }
+			            };
+			            vm.calculate = function (r) {
+                            r.isVirtual = false;
+			                var prev = vm.getData(r.Period - 1);
+			                if ((r && r.Result <= 0) || (prev && prev.Result <= 0)) {
+			                    r.Result = 0;
+			                    r.FX = null;
+			                    r.ZX = null;
+			                    r.CH = null;
+			                    r.Front = null;
+			                    r.Back = null;
+			                }
+			                else if (r && prev && prev.Result > 0) {
+			                    if (!r.isVirtual) {
+			                        for (var i = 0; i < 10; i++) {
+			                            if (r.Nums[i] == r.Result) {
+			                                r.Nums[i] = 0;
+			                            }
+			                            else {
+			                                r.Nums[i] = prev.Nums[i] + 1;
+			                            }
+			                        }
+			                    }
+			                    if (r.Result == prev.Result) {
+			                        r.CH = 0;
+			                        r.FX = prev.FX + 1;
+			                        r.ZX = prev.ZX + 1;
+			                    } else if (r.Result > prev.Result) {
+			                        r.CH = prev.CH + 1;
+			                        r.ZX = 0;
+			                        r.FX = prev.FX + 1;
+			                    } else {
+			                        r.CH = prev.CH + 1;
+			                        r.ZX = prev.ZX + 1;
+			                        r.FX = 0;
+			                    }
+			                    if (r.Result > 5) {
+			                        r.Back = 0;
+			                        r.Front = prev.Front + 1;
+			                    } else {
+			                        r.Front = 0;
+			                        r.Back = prev.Back + 1;
+			                    }
+			                }
+			            };
+			            vm.statTotal = function (d) {
+			                var newArr = viewmodel.totalDatas;
+			
+			                newArr[0].Nums[d.Result - 1] += 1;
+			                for (var i = 0; i < 10; i++) {
+			                    if (d.Nums[i] > newArr[1].Nums[i]) {
+			                        newArr[1].Nums[i] = d.Nums[i];
+			                    }
+			                }
+			                if (d.ZX == 0) {
+			                    newArr[0].ZX += 1;
+			                } else if(d.ZX>newArr[1].ZX){
+			                    newArr[1].ZX = d.ZX;
+			                }
+			                if (d.CH == 0) {
+			                    newArr[0].CH += 1;
+			                } else if (d.CH > newArr[1].CH) {
+			                    newArr[1].CH = d.CH;
+			                }
+			                if (d.FX == 0) {
+			                    newArr[0].FX += 1;
+			                } else if (d.FX > newArr[1].FX) {
+			                    newArr[1].FX = d.FX;
+			                }
+			                if (d.Front == 0) {
+			                    newArr[0].Front += 1;
+			                } else if (d.Front > newArr[1].Front) {
+			                    newArr[1].Front = d.Front;
+			                }
+			                if (d.Back == 0) {
+			                    newArr[0].Back += 1;
+			                } else if (d.Back > newArr[1].Back) {
+			                    newArr[1].Back = d.Back;
+			                }
+			
+			                viewmodel.totalDatas = newArr;
+			            };
+			            vm.addVirtualBalls = function () {
+			                viewmodel.pushVirtual(viewmodel.maxData.Period + 1);
+			                viewmodel.pushVirtual(viewmodel.maxData.Period + 1);
+			                viewmodel.pushVirtual(viewmodel.maxData.Period + 1);
+			            };
+			            vm.$watch("periodCount", function (v) {
+			                vm.changenum(vm.ball);
+			            });
+			            vm.$watch("flagPeriod", function (value, oldvalue) {
+			                if (value == -1) return;
+			                $.get("pk10/getPk10AwardData.do", { t: Math.random() }, function (data) {
+			                    var p = data.current.periodNumber;
+			                    viewmodel.removeData(p);
+			                    var a = { "Period": p, Result: data.current.awardNumbers.split(',').indexOf(viewmodel.ball.toString()) + 1, "Nums": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], isVirtual: false, FX: null, ZX: null, CH: null, Front: null, Back: null };
+			                    viewmodel.calculate(a);
+			                    viewmodel.trendDatas.push(a);
+			                    viewmodel.pushVirtual(viewmodel.maxData.Period + 1);
+			                    viewmodel.sortDatas();
+			                    viewmodel.checkVirtual();
+			                    if (viewmodel.periodCount > 0) {
+			                        viewmodel.trendDatas.removeAt(viewmodel.trendDatas.length - 1);
+			                    }
+			                    viewmodel.drawLine();
+			                    viewmodel.statTotal(a);
+			                }, 'json');
+			            })
+			        });
+			      
+			        viewmodel.trendDatas = datas;
+			        viewmodel.totalDatas = stats;
+			
+			        $(".data-stat").show();
+			        $(".trendChartloading").hide();
+			        if (viewmodel.trendDatas.length > 0) {
+			            viewmodel.addVirtualBalls();
+			        }
+			        avalon.scan();
+			        $(".jsloading").hide();
+			        viewmodel.drawLine();
+			   },"json");
+	      });
+	 });
+	</script>
+	<script src="js/avalon.js"  type="text/javascript"></script>
+  <div class="clear"></div> 
+  </block>

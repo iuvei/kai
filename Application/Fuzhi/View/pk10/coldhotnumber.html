@@ -16,17 +16,33 @@
 		<include file="Public/lottory_op"/>
 
 <input type="hidden" id="callFun" value="reloadData" time="1000"/>
+
 		<div style="margin-bottom: 20px;" id="lot-wrap">
-			<h2 style="margin: 15px;">冷热状态分析</h2>
-		
+			<!--<h2 style="margin: 15px;">冷热状态分析</h2>-->
+			<div class="merge-title-table-title">
+
+				<span class="bbbb">冷热码分析</span>
+
+
+			</div>
 			<div>
 				<div id="times-show"
-					style="float: left; padding-left: 20px; cursor: pointer;">
+					style="float: left; padding-left: 20px; cursor: pointer;margin-top: 6px;">
 					<span style="padding-right: 10px;"><b class="checkbox"></b></span> <span
 						class="ckb-txt"><label>显示热号码出现次数</label></span>
 				</div>
-				<div style="text-align: right;">
-					最近更新数据时间：22:09 <a style="cursor: pointer; color: blue;"
+				<div style="text-align: right;margin-top: 6px;">
+					最近更新数据时间：22:09 <a style="cursor: pointer;     display: inline-block;
+    color: #333;
+    width: 75px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 4px;
+    border-color: #e73f3f;
+    background: #e73f3f;
+    color: #fff;
+    vertical-align: middle;"
 						href="javascript:reloadData();">手动刷新</a>
 				</div>
 			</div>

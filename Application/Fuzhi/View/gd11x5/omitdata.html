@@ -25,16 +25,22 @@
 				     <input type="hidden" time="10000" id="callFun" value="getLmcList" /> 
 				     <div class="lot-search"> 
 				      <div class="car-num"> 
-				       <ul style="margin-bottom: 20px;" class="lot-number-omit"> 
-				        <li style="padding-bottom: 2px;" class="ball"> 
+				       <ul style="margin-bottom: 8px;" class="lot-number-omit">
+				        <li style="padding-bottom: 2px;overflow: hidden;" class="ball">
+							<div class="merge-title-table-title" style="margin-bottom: 10px;">
+
+								<span class="bbbb">遗漏大数据</span>
+
+
+							</div>
 				         <ul style="width: 850px; _width: 840px; float: left; margin-left: 10px;" id="rankUl"> 
-				          <li> <a href="javascript:gotoPage(1)" id="rankLi1" class="cur"> 第一球 </a> | </li> 
-				          <li> <a href="javascript:gotoPage(2)" id="rankLi2"> 第二球 </a> | </li> 
-				          <li> <a href="javascript:gotoPage(3)" id="rankLi3"> 第三球 </a> | </li> 
-				          <li> <a href="javascript:gotoPage(4)" id="rankLi4"> 第四球 </a> | </li> 
+				          <li> <a href="javascript:gotoPage(1)" id="rankLi1" class="cur"> 第一球 </a>  </li>
+				          <li> <a href="javascript:gotoPage(2)" id="rankLi2"> 第二球 </a>  </li>
+				          <li> <a href="javascript:gotoPage(3)" id="rankLi3"> 第三球 </a> </li>
+				          <li> <a href="javascript:gotoPage(4)" id="rankLi4"> 第四球 </a>  </li>
 				          <li> <a href="javascript:gotoPage(5)" id="rankLi5"> 第五球 </a>   </li> 
 				         </ul> 
-				         <ul style="float: right; width: 120px; text-align: right;"> 
+				         <ul style="float: right; width: 90px; text-align: right;">
 				          <li> <select id="dateType" onchange="gotoPage('',this.value)"> <option value="1">最近一个月</option> <option value="3">最近三个月</option> <option value="6">最近半年</option> <option value="12">最近一年</option> </select> </li> 
 				         </ul> </li> 
 				       </ul> 
@@ -171,4 +177,9 @@
 				<!--  内容结束-->
 	    </div>
 	</div>
+	<style>.lot-number-omit {
+
+		 padding-top: 0px;
+		 padding-bottom: 0px;
+	}</style>
 	        </block>

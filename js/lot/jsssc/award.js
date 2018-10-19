@@ -48,7 +48,7 @@ $(function () {
             }
 
             if (timeInterval != 0) {
-                $(".currentAward .period").html(data.current.fullPeriodNumber + " 期");
+                $(".currentAward .period").html(data.current.periodNumber + " 期");
                 var nums = data.current.awardNumbers.split(',');
                 var str = "";
                 for (var i = 0; i < nums.length; i++) {
@@ -69,6 +69,7 @@ $(function () {
                 nextPeriodNumber = data.next.periodNumber;
             }
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
+           // _time = 30000;
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
         }, 'json').error(function () {
@@ -105,18 +106,18 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            var num = data.next.periodNumber;
+            var num = data.next.periodNumberStr;
             var num_2 =num.slice(num.indexOf('-')+1);
             cpNumber =num.slice(num.indexOf('-')+2);
             $(".warnTime #period").html("第" + num_2 + "期");
-            var leavePeriod = 120 - cpNumber;
+            var leavePeriod = 1152 - num_2;
             if (leavePeriod == 0) {
                 var d = new Date();
                 var nd = new Date(data.next.awardTime.split(' ')[0].replace("-", "/", "gi"));
                 if (d.getDate() == nd.getDate()) leavePeriod = 120;
             }
-            $(" .lot-award .currentAward .period-info .period-leave").html(leavePeriod);
-            loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
+            $(" .lot-award .currentAward .period-info .period-leave").html((Number(leavePeriod)+1));
+            loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);

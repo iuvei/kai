@@ -82,10 +82,10 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 .ui-logo-cqssc {background:url("../images/cqssc-logo.png");}
 /*广东快乐十分*/
 .ui-logo-gdkl10 {background:url("../images/gdkl10-logo.png");}
-/*幸运农场*/
-.ui-logo-xync {background:url("../images/xync-logo.png");}
-/*新疆时时彩*/
-.ui-logo-xjssc {background:url("../images/xjssc-logo.png");}
+/*极速赛车*/
+.ui-logo-xync {background:url("../images/jssc-logo.png");}
+/*极速时时彩*/
+.ui-logo-xjssc {background:url("../images/jsssc-logo.png");}
 /*天津时时彩*/
 .ui-logo-tjssc {background:url("../images/tjssc-logo.png");}
 /*广东11选5*/
@@ -93,8 +93,14 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 /*江苏快三*/
 .ui-logo-jsk3 {background:url("../images/jsk3-logo.png");}
 
+.ui-logo-pc28 {background:url("../images/pc28-logo.png");}
 
+.ui-logo-txffc {background:url("../images/txffc-logo.png");}
 
+/*头彩pk10*/
+.ui-logo-tcpk10 {background:url("../images/tcpk10-logo.png");}
+/*头彩时时彩*/
+.ui-logo-tcssc {background:url("../images/tcssc-logo.png");}
 
 .ui-logo {display:inline-block;width:49px; height:49px; background-size:49px; background-repeat:no-repeat;}
 .ui-logo img {width:100%; height:100%;}
@@ -133,12 +139,12 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 .list-arrow {display:inline-block;width:8px;height:13px;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAZCAMAAAAPIl6bAAAAPFBMVEUAAACqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrflK3yAAAAE3RSTlMABfPSnUwxEeTDq4xxXSMa3Ld+czkDMQAAAGBJREFUGNONkUsOgCAMBfkjIAi++9/VrRMSI8sJnbavpgdr8ILKRXLqSCTRuUiSpm6SXFSptkH+j7qTDK9mqV5ameomP1hW5bcfdNS3Y0x0wRyYlLtwW+axJ0bdV+rbXR5fhwQRmUSAmAAAAABJRU5ErkJggg==") no-repeat 0 0;background-size:8px;}
 
 
-#xyft #number i,#pk10 #number i{display:inline-block;margin-right:2px;width:22px;height:22px;line-height:22px;text-align:center;font-size:12px;color:#fff;-webkit-border-radius:2px;border-radius:2px;
+#xyft #number i,#pk10 #number i,#jssc #number i,#bjft #number i{display:inline-block;margin-right:2px;width:22px;height:22px;line-height:22px;text-align:center;font-size:12px;color:#fff;-webkit-border-radius:2px;border-radius:2px;
      text-shadow:#555 1px 0 0,#555 0 1px 0,#555 -1px 0 0,#555 0 -1px 0;
     -webkit-text-shadow:#555 1px 0 0,#555 0 1px 0,#555 -1px 0 0,#555 0 -1px 0;
     -moz-text-shadow:#555 1px 0 0,#555 0 1px 0,#555 -1px 0 0,#555 0 -1px 0;
     *filter: Glow(color=#555, strength=1);
-	font-weight:bolder ; font-style:italic;  font-size:14px
+	font-weight:bolder ;  font-size:14px
 }
 #xyft #number .no1,#pk10 #number .no1 {
 		background: #FFCC00;
@@ -171,7 +177,80 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	background:#28c200;
 }
 
-#jsk3 i{display:inline-block;margin-right:2px;width:21px;height:21px;line-height:21px;text-align:center;font-size:12px;color:#777;-webkit-border-radius:2px;border-radius:2px;font-weight:bolder; font-size:14px; background:#f9f9f9; border:1px solid #e5e5e5}
+#jssc #number .no1,#bjft #number .no1,#pk10 #number .no1 {
+	background: #FFCC00;
+}
+#jssc #number .no2,#bjft #number .no2,#pk10 #number .no2 {
+	background:#0089ff;
+}
+#jssc #number .no3,#bjft #number .no3,#pk10 #number .no3 {
+	background:#4d4d4d;
+}
+#jssc #number .no4,#bjft #number .no4,#pk10 #number .no4 {
+	background:#ff7300;
+}
+#jssc #number .no5,#bjft #number .no5,#pk10 #number .no5 {
+	background: #3399CC;
+}
+#jssc #number .no6,#bjft #number .no6,#pk10 #number .no6 {
+	background:#5200ff;
+}
+#jssc #number .no7,#bjft #number .no7,#pk10 #number .no7 {
+	background: #bbb;
+}
+#jssc #number .no8,#bjft #number .no8,#pk10 #number .no8 {
+	background:#ff0000;
+}
+#jssc #number .no9,#bjft #number .no9,#pk10 #number .no9 {
+	background:#760000;
+}
+#jssc #number .no10,#bjft #number .no10,#pk10 #number .no10 {
+	background:#28c200;
+}
+
+#tcpk10 #number .no1,#bjft #number .no1,#pk10 #number .no1 {
+	background: #FFCC00;
+}
+#tcpk10 #number .no2,#bjft #number .no2,#pk10 #number .no2 {
+	background:#0089ff;
+}
+#tcpk10 #number .no3,#bjft #number .no3,#pk10 #number .no3 {
+	background:#4d4d4d;
+}
+#tcpk10 #number .no4,#bjft #number .no4,#pk10 #number .no4 {
+	background:#ff7300;
+}
+#tcpk10 #number .no5,#bjft #number .no5,#pk10 #number .no5 {
+	background: #3399CC;
+}
+#tcpk10 #number .no6,#bjft #number .no6,#pk10 #number .no6 {
+	background:#5200ff;
+}
+#tcpk10 #number .no7,#bjft #number .no7,#pk10 #number .no7 {
+	background: #bbb;
+}
+#tcpk10 #number .no8,#bjft #number .no8,#pk10 #number .no8 {
+	background:#ff0000;
+}
+#tcpk10 #number .no9,#bjft #number .no9,#pk10 #number .no9 {
+	background:#760000;
+}
+#tcpk10 #number .no10,#bjft #number .no10,#pk10 #number .no10 {
+	background:#28c200;
+}
+
+#jsk3 i{display: inline-block;
+	float: left;
+	margin-right: 5px;
+	width: 36px;
+	height: 40px;
+	line-height: 36px;
+	font-size: 20px;
+	text-align: center;
+	color: #fff;
+	border-radius: 5px;
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;}
 	
 	
 
@@ -181,7 +260,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	background:#fff; height:40px; line-height:40px;
 	width:100%; margin:0 auto;
 	
-	z-index:88888px;
+	z-index:88888;
 	border-bottom:1px solid #d9d9d9;z-index:100;
 	 
 }

@@ -65,7 +65,7 @@ $cid = 39;
 		<?php
 //		$query = mysql_query("select * from ot_document where category_id=$cid order by update_time desc limit 15");
 //		while($row = mysql_fetch_array($query))
-        $mysqli = new mysqli('localhost', 'root', 'root', 'kaijiang');
+        $mysqli = new mysqli('localhost', 'tckai168.com', '0Rs1M3LxCEBp69jF', 'tckai168.com');
         $sql="select * from ot_document where category_id=$cid order by update_time desc limit 15";
         $result = $mysqli->query($sql);
         $row = $result->fetch_assoc();

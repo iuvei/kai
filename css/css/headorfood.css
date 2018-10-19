@@ -63,7 +63,7 @@ a:visited {
 }
 
 .li_checked {
-    background: #eb7100
+    background: #e73f3f
 }
 
 .cpdt_checked {
@@ -142,7 +142,7 @@ body {
     display: inline-block;
     width: auto;
     font-size: 14px;
-    background: url(../../images/images/announce.png) no-repeat;
+    /*background: url(../../images/images/announce.png) no-repeat;*/
     background-position-y: center;
     background-position-x: 10px;
     padding-left: 30px;
@@ -529,7 +529,7 @@ body {
 
 .bodybox .headboxf {
     width: 100%;
-    background: #fff;
+    background: #fafafa;
     height: auto;
     position: relative
 }
@@ -539,7 +539,8 @@ body {
     height: 30px;
     position: relative;
     z-index: 8;
-    background: #ebebeb
+    background: #f5f5f5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .bodybox .headboxf .headboxh .headboxhc {
@@ -640,7 +641,7 @@ body {
     margin: 0 auto;
     position: relative;
     z-index: 8;
-    background: #fff
+    background: #fafafa
 }
 
 .bodybox .headboxf .headbox > div {
@@ -820,7 +821,7 @@ body {
 
 .bodybox .menubannbox .menubox {
     width: 1200px;
-    height: 51px;
+    height: 50px;
     margin: 0 auto
 }
 
@@ -1318,7 +1319,7 @@ body {
     width: 100%;
     display: inline-block;
     height: 50px;
-    background: #ff7b00
+    background: #444444
 }
 
 .bodybox .menubannbox .menubox .menuboxr ul li {
@@ -1364,7 +1365,7 @@ body {
 }
 
 .bodybox .menubannbox .menubox .menuboxr ul li:hover {
-    background: #d57915
+    background: #e73f3f
 }
 
 .bodybox .menubannbox .menubox .menuboxr ul #zhusaHao_li {
@@ -1594,14 +1595,14 @@ body {
 .bodybox .menubannbox .menubox .menuboxr ul .lasli .lasli_div {
     width: 100%;
     height: 50px;
-    background: #ff7b00;
+    background: #444444;
     position: relative
 }
 
 .bodybox .menubannbox .menubox .menuboxr ul .lasli a {
     width: 120px;
     float: right;
-    background: #eb7100;
+    background: #e73f3f;
     padding: 0 10px 0 5px
 }
 
@@ -1682,7 +1683,7 @@ body {
 .bodybox .menubannbox .menubox .menuboxr ul .cphost .cphost_content .content_middle .LineOne .rul {
     display: inline-block;
     width: 1076px;
-    padding: 5px 0
+    padding: 12px 0
 }
 
 .bodybox .menubannbox .menubox .menuboxr ul .cphost .cphost_content .content_middle .LineOne .rul ul {
@@ -1721,7 +1722,7 @@ body {
 }
 
 .bodybox .menubannbox .menubox .menuboxr ul .cphost .cphost_content .content_middle ul li a:hover {
-    background: #fa8e19;
+    background: #e73f3f;
     color: #fff
 }
 
@@ -1739,7 +1740,7 @@ body {
 }
 
 .bodybox .menubannbox .menubox .menuboxr ul .cphost .cphost_content .content_middle .GPC_span {
-    margin-top: 17px;
+    /*margin-top: 17px;*/
     background: url(../../images/images/gpc.png) no-repeat;
     background-position-y: center
 }
@@ -2892,4 +2893,16 @@ body {
 
 #prep {
     cursor: pointer
+}
+
+.headboxh .hoticon {
+    display: inline-block;
+    width: auto;
+    font-size: 14px;
+    background: url(../../images/images/announce.png) no-repeat;
+    background-position-y: center;
+    background-position-x: 10px;
+    padding-left: 30px;
+    font-weight: 700;
+    color: #666
 }

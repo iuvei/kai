@@ -1,24 +1,28 @@
 <ul class="lot-menu addTopLine">
-    <li><a href="pk10/" game="pk10" class="cur">北京赛车pk10</a></li>
-    <li><a href="cqssc/" game="cqssc">重庆时时彩</a></li>
-    <li><a href="gdkl10/" game="gdkl10">广东快乐十分</a></li>
-	<li><a href="xyft/" game="xyft">幸运飞艇</a></li>
-    <li><a href="tjssc/" game="tjssc">天津时时彩</a></li>
-    <li><a href="javascript:void(0)" game="pc28" id="pc28">加拿大28</a></li>
-    <li><a href="jsk3/" game="jsk3">江苏快3</a></li>
-    <li><a href="javascript:void(0)" game="shssl" class="last pc28" >上海时时乐</a></li>
+    <li><a href="/pk10/" game="pk10" class="cur">北京赛车pk10</a></li>
+    <li><a href="/cqssc/" game="cqssc">重庆时时彩</a></li>
+	<li><a href="/xyft/" game="xyft">幸运飞艇</a></li>
+    <li><a  game="bjft" href="/bjft/">北京番摊</a></li>
+    <li><a  game="cqft" href="/cqft">重庆番摊</a></li>
+    <li><a href="/jsssc/" game="jsssc">极速时时彩</a></li>
+    <li><a href="/jssc/" game="jssc">极速赛车</a></li>
+    <li><a href="/jsk3/" game="jsk3">江苏快3</a></li>
+    <li><a href="/gd11x5/" game="gd11x5">广东11选5</a></li>
+    <li><a href="/gdkl10/" game="gdkl10">广东快乐十分</a></li>
+    <li><a href="/pc28/" game="pc28">加拿大28</a></li>
+    <li><a href="/txffc/" game="txffc">腾讯分分彩</a></li>
+    <li><a href="/tcssc/" game="tcssc">头彩时时彩</a></li>
+    <li><a href="/tcpk10/" game="tcpk10">头彩PK10</a></li>
 </ul>
 
-<ul class="lot-menu delBottomLine" style="margin-top: 0px;"> 
-<li><a href="gd11x5/" game="gd11x5">广东11选5</a></li>
-    <li><a href="jsssc/" game="jsssc">极速时时彩</a></li>
-    <li><a href="javascript:void(0)" game="kl8" class="pc28">北京快乐8</a></li>
-    <!--<li><a href="fc3d/" game="fc3d">福彩3d</a></li>-->
-    <li><a href="javascript:void(0)" game="pl3" class="pc28">排列3</a></li>
-    <li><a href="jssc/" game="jssc">极速赛车</a></li>
-    <li><a  game="cqft" id="cqft" onclick="cqft()">重庆番摊</a></li>
-    <li><a  game="bjft" id="bjft" onclick="bjft()">北京番摊</a></li>
-</ul>
+<!--<ul class="lot-menu delBottomLine" style="margin-top: 0px;"> -->
+    <!--<li><a href="/gd11x5/" game="gd11x5">广东11选5</a></li>-->
+    <!--<li><a href="/gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
+    <!--<li><a href="/pc28/" game="pc28">加拿大28</a></li>-->
+    <!--<li><a href="/txffc/" game="txffc">腾讯分分彩</a></li>-->
+    <!--<li><a href="/tcssc/" game="tcssc">头彩时时彩</a></li>-->
+    <!--<li><a href="/tcpk10/" game="tcpk10">头彩PK10</a></li>-->
+<!--</ul>-->
 <script type="text/javascript">
 
     var pathname = window.location.pathname;
@@ -36,10 +40,6 @@
         $('.lot-menu a').removeClass('cur');
         $('[game="'+beforPageJs.gameName+'"]').addClass('cur');
     }
-    $(".pc28").click(function () {
-        alert("敬請期待！");
-        return false;
-    });
     // $("#cqft").click(function () {
         function cqft(){
             alert("敬請期待！");
@@ -64,7 +64,12 @@
         </div>
         <div class="period" style="color: green;"> 期</div>
 		
-        <div class="period-info"><a class="video_btn" href="../{$lottory}/shipin/" style="color:#FFF;">开奖视频</a>每日销售<span>{$totalExpect}</span>期，今日剩余<span class="period-leave">--</span>期</div>
+        <div class="period-info">
+            <!--<a class="video_btn" href="../{$lottory}/shipin/" style="color:#FFF;">开奖视频</a>-->
+            <?php if($totalExpect != 1){ ?>
+            每日销售<span>{$totalExpect}</span>期，今日剩余<span class="period-leave">--</span>期
+        <?php } ?>
+        </div>
         <div class="lot-nums">
             <!-- <span class="no9">9</span>
             <span class="no2">2</span>
@@ -91,6 +96,7 @@
         <div class="sound" id="countdown_sound" title="点击关闭提醒声音"></div>
         <audio src="images/du.mp3"  id="duSound" style="display:none;"></audio>
     </li>
+    <li style="float: right; margin-right: 25px;"><a href="../{$lottory}/shipin/"><img src="picture/lot/{$lottory}.jpg" height="78" width="119" /></a></li>
 <!--
 	 <li class="warnTime" style="width:200px;">
        <a href="/pk10/zhibo" title="pk10开奖直播" target="_blank">视频开奖直播</a>

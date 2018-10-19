@@ -184,7 +184,7 @@ tools.loadloginR = function (t, e) {
 }, publicmethod.fixBox = function () {
     var t = $(".fixedgoBack").find(".fix1200"), e = $(".fixedgoBack").find(".leftright");
     $(t).empty(), $(e).empty();
-    $(t).append('<div class = "wxewmicon"></div><div class = "wechatImg"></div><ul><li><a class="backold" target="_blank" href="http://168kai.com/" target="_blank"></a></li><li><a class="kefuicon" target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzgwMDgyNTM3MF80ODUzNDJfODAwODI1MzcwXzJf"></a></li><li><a class="wxkekufu" target="_blank"></a></li><li>\x3c!--用户反馈模态框--\x3e<span class="fankuicon fankuicon_a" data-toggle="modal" data-target="#myModal"><span class="fankuicons"></span></span></li><li><a class="wxkefuicon" target="_blank"></a></li><li><a class="topicon" id="gotop" href="javascript:"></a></li></ul>'), 0 != e.length && $(t).append('<ul class="ul_pre"><li class="prev_li"></li><li class="next_li"></li></ul>')
+    $(t).append('<div class = "wxewmicon"></div><div class = "wechatImg"></div><ul><li><a class="backold" target="_blank" href="http://c100.pop800.com/web800/c.do?n=307608&type=1&url=http%3A%2F%2Fwj1288.com%2Fw%2F&l=cn&at=0" target="_blank"></a></li><li><a class="kefuicon" target="_blank" href="http://api.pop800.com/chat/+307608"></a></li><li><a class="wxkekufu" target="_blank"></a></li><li>\x3c!--用户反馈模态框--\x3e<span class="fankuicon fankuicon_a" data-toggle="modal" data-target="#myModal"><span class="fankuicons"></span></span></li><li><a class="wxkefuicon" target="_blank"></a></li><li><a class="topicon" id="gotop" href="javascript:"></a></li></ul>'), 0 != e.length && $(t).append('<ul class="ul_pre"><li class="prev_li"></li><li class="next_li"></li></ul>')
 }, publicmethod.insertHeadPk10 = function (t, e) {
     var i = tools.parseObj(t);
     if ("100002" == i.result.businessCode) throw new Error("error");
@@ -656,52 +656,16 @@ tools.initListen = function () {
 }, tools.YM = function () {
     var t = window.location.href;
     return "www" == (t = t.split("//")[1].split("/")[0].split("."))[0] ? t = t[1] : "www" != t[0] && (t = "192" == t[0] ? "1680218" : t[0]), t
-}, tools.advertisement = function () {
-    $.ajax({
-        url: publicUrl + "focusPicture/findPicture.do",
-        type: "GET",
-        dataType: "json",
-        data: {type: "0", position: "1", sourceUrl: tools.YM()},
-        timeout: 6e4,
-        beforeSend: function () {
-            $("#advertisebox").html('<div class="progress" style="display: block;margin-top:30px;width:100%;text-align:center;"><img src="../../images/piaog.gif"></div>')
-        },
-        success: function (t) {
-            "object" == typeof(t = t) || (t = JSON.parse(t)), "0" == t.errorCode && ("0" == t.result.businessCode ? tools.advertisImg(t.result.data) : $("#advertisebox").empty().text("数据加载异常！"))
-        },
-        error: function (t) {
-            setTimeout(tools.advertisement(), 1e3)
-        },
-        complete: function (t, e) {
-            null
-        }
-    })
-}, tools.WWWD = function () {
+},
+
+    tools.WWWD = function () {
     "1681700" == tools.YM() && $("#tryplay").hide()
 }, tools.getCom = function () {
     var t = window.location.hostname.split(".");
     return "192" == t[0] ? ".com" : "." + t[t.length - 1]
-}, tools.advertisement_index = function () {
-    $.ajax({
-        url: publicUrl + "focusPicture/findPicture.do",
-        type: "GET",
-        dataType: "json",
-        data: {type: "0", position: "1", sourceUrl: tools.YM()},
-        timeout: 6e4,
-        beforeSend: function () {
-            $("#advertisebox").html('<div class="progress" style="display: block;margin-top:30px;width:100%;text-align:center;"><img src="../../images/piaog.gif"></div>')
-        },
-        success: function (t) {
-            "object" == typeof(t = t) || (t = JSON.parse(t)), "0" == t.errorCode && ("0" == t.result.businessCode ? tools.advertisImg(t.result.data) : $("#advertisebox").empty().text("数据加载异常！"))
-        },
-        error: function (t) {
-            setTimeout(tools.advertisement_index(), 1e3)
-        },
-        complete: function (t, e) {
-            null
-        }
-    })
-}, tools.showExplain = function () {
+},
+
+    tools.showExplain = function () {
     $("#prep").click(function (t) {
         t.stopPropagation();
         $("#spreadDiv").height();
@@ -1481,7 +1445,7 @@ tools.loadloginR = function (t, e) {
 }, publicmethod.fixBox = function () {
     var t = $(".fixedgoBack").find(".fix1200"), e = $(".fixedgoBack").find(".leftright");
     $(t).empty(), $(e).empty();
-    $(t).append('<div class = "wxewmicon"></div><div class = "wechatImg"></div><ul><li><a class="backold" target="_blank" href="#" target="_blank"></a></li><li><a class="kefuicon" target="_blank" href="http://wpa.b.qq.com/cgi/wpa.php?ln=1&key=XzgwMDgyNTM3MF80ODUzNDJfODAwODI1MzcwXzJf"></a></li><li><a class="wxkekufu" target="_blank"></a></li>' +
+    $(t).append('<div class = "wxewmicon"></div><div class = "wechatImg"></div><ul><li><a class="backold" target="_blank" href="http://c100.pop800.com/web800/c.do?n=307608&type=1&url=http%3A%2F%2Fwj1288.com%2Fw%2F&l=cn&at=0" target="_blank"></a></li><li><a class="kefuicon" target="_blank" href="http://api.pop800.com/chat/+307608"></a></li><li><a class="wxkekufu" target="_blank"></a></li>' +
         /*      '<li>\x3c!--用户反馈模态框--\x3e' +
         '<span class="fankuicon fankuicon_a" data-toggle="modal" data-target="#myModal"><span class="fankuicons"></span></span></li>' +*/
         '<li><a class="wxkefuicon" target="_blank"></a></li><li><a class="topicon" id="gotop" href="javascript:"></a></li></ul>'), 0 != e.length && $(t).append('<ul class="ul_pre"><li class="prev_li"></li><li class="next_li"></li></ul>')
@@ -1956,7 +1920,8 @@ tools.initListen = function () {
 }, tools.YM = function () {
     var t = window.location.href;
     return "www" == (t = t.split("//")[1].split("/")[0].split("."))[0] ? t = t[1] : "www" != t[0] && (t = "192" == t[0] ? "1680218" : t[0]), t
-}, tools.advertisement = function () {
+},
+    tools.advertisement = function () {
     $.ajax({
         url: publicUrl + "focusPicture/findPicture.do",
         type: "GET",
@@ -1981,26 +1946,6 @@ tools.initListen = function () {
 }, tools.getCom = function () {
     var t = window.location.hostname.split(".");
     return "192" == t[0] ? ".com" : "." + t[t.length - 1]
-}, tools.advertisement_index = function () {
-    $.ajax({
-        url: publicUrl + "focusPicture/findPicture.do",
-        type: "GET",
-        dataType: "json",
-        data: {type: "0", position: "1", sourceUrl: tools.YM()},
-        timeout: 6e4,
-        beforeSend: function () {
-            $("#advertisebox").html('<div class="progress" style="display: block;margin-top:30px;width:100%;text-align:center;"><img src="../../images/piaog.gif"></div>')
-        },
-        success: function (t) {
-            "object" == typeof(t = t) || (t = JSON.parse(t)), "0" == t.errorCode && ("0" == t.result.businessCode ? tools.advertisImg(t.result.data) : $("#advertisebox").empty().text("数据加载异常！"))
-        },
-        error: function (t) {
-            setTimeout(tools.advertisement_index(), 1e3)
-        },
-        complete: function (t, e) {
-            null
-        }
-    })
 }, tools.showExplain = function () {
     $("#prep").click(function (t) {
         t.stopPropagation();

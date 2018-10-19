@@ -15,7 +15,30 @@ function CQSSC(){
     $('#cqssc_1').fadeIn(500);
     $('#body_none').show();
 }
-
+function bjft(){
+    $("#img").show();
+    none = 2;
+    localStorage.setItem('host','https://api.dk1288.com/');
+    $('#bjft_1').attr('src','/v/bjft');
+    $('#bjft_1').fadeIn(500);
+    $('#body_none').show();
+}
+function cqft(){
+    $("#img").show();
+    none = 2;
+    localStorage.setItem('host','https://api.dk1288.com/');
+    $('#cqft_1').attr('src','/v/cqft');
+    $('#cqft_1').fadeIn(500);
+    $('#body_none').show();
+}
+function pc28(){
+    $("#img").show();
+    none = 7;
+    localStorage.setItem('host','https://api.dk1288.com/');
+    $('#pc28_1').attr('src','/v/jnd28');
+    $('#pc28_1').fadeIn(500);
+    $('#body_none').show();
+}
 function TJSSC(){
  alert("敬请期待!");
  return ;
@@ -31,10 +54,10 @@ function XYFT(){
 }
 
 function JSSC(){
-    none = 1; none = 4;
+ none = 4;
     $("#img").show();
     localStorage.setItem('host','https://api.dk1288.com/');
-    $('#jssc').attr('src','/v/bjpk10');
+    $('#jssc').attr('src','/v/jssc');
     $("#jssc").fadeIn(500);
     $('#body_none').show();
 }
@@ -43,8 +66,40 @@ function JSSSC(){
     none = 5;
     $("#img").show();
     localStorage.setItem('host','https://api.dk1288.com/');
-    $('#jsssc_1').attr('src','/v/cqssc');
+    $('#jsssc_1').attr('src','/v/jsssc');
     $("#jsssc_1").fadeIn(500);
+    $('#body_none').show();
+}
+function GDKL10(){
+    none = 8;
+    $("#img").show();
+    localStorage.setItem('host','https://api.dk1288.com/');
+    $('#gdkl10_1').attr('src','/v/gdklsf');
+    $("#gdkl10_1").fadeIn(500);
+    $('#body_none').show();
+}
+function GD11X5(){
+    none = 9;
+    $("#img").show();
+    localStorage.setItem('host','https://api.dk1288.com/');
+    $('#gd11x5_1').attr('src','/v/gd11x5');
+    $("#gd11x5_1").fadeIn(500);
+    $('#body_none').show();
+}
+function JSK3(){
+    none = 10;
+    $("#img").show();
+    localStorage.setItem('host','https://api.dk1288.com/');
+    $('#jsk3').attr('src','/v/jsk3');
+    $("#jsk3").fadeIn(500);
+    $('#body_none').show();
+}
+function TXFFC(){
+    none = 11;
+    $("#img").show();
+    localStorage.setItem('host','https://api.dk1288.com/');
+    $('#txffc_1').attr('src','/v/txffc');
+    $("#txffc_1").fadeIn(500);
     $('#body_none').show();
 }
 $("#img").click(function () {
@@ -58,7 +113,20 @@ $("#img").click(function () {
         $("#jssc").hide();
     } if(none = 5){
         $("#jsssc_1").hide();
+    } if(none = 5){
+        $("#bjft_1").hide();
+    }if(none = 7){
+        $("#pc28_1").hide();
+    }if(none = 8){
+        $("#gdkl10_1").hide();
+    }if(none = 9){
+        $("#gd11x5_1").hide();
+    }if(none = 10){
+        $("#jsk3").hide();
+    }if(none = 11){
+        $("#txffc_1").hide();
     }
+
     $("#img").hide();
     $("#body_none").hide();
 });
@@ -66,19 +134,40 @@ $('.video_box .pk10').click(PK10);
 $('.video_box .cqssc').click(CQSSC);
 $('.video_box .xyft_1').click(XYFT);
 $('.video_box .jsssc_1').click(JSSSC);
-$('.video_box .tjssc_111').click(TJSSC);
+$('.video_box .bjft').click(bjft);
 $('.video_box .jssc').click(JSSC);
+$('#pc28 .rowbox3 .video_a').click(pc28);
+$('#gd11x5 .rowbox3 .video_a').click(GD11X5);
+$('#gdkl10 .rowbox3 .video_a').click(GDKL10);
+$('#txffc .rowbox3 .video_a').click(TXFFC);
+$('#kuai3 .rowbox3 .video_a').click(JSK3);
 
-
+// $('#gd11x5 .video_a').click(PK10);
+// $('#gdkl10 .video_a').click(CQSSC);
+// $('#pk10 .video_a').click(PK10);
+// $('#jsssc .video_a').click(CQSSC);
+// $('#cqSsc_hot .video_a').click(CQSSC);
+// $('#jisusc .video_a').click(JSSC);
+// $('#kuai3 .video_a').click(CQSSC);
+// $('#pk10_hot .video_a').click(PK10);
+// $('#xyft .video_a').click(XYFT);
+// $('#cqSsc .video_a').click(CQSSC);
+// // $('#bjft .video_a').click(bjft);
+// $('#cqft .video_a').click(cqft);
 $('#body_none').click(function(){
     $(this).hide();
     $("#img").hide();
-    $("#bjpk10").hide()
-    $("#jsssc_1").hide()
-    $("#jssc").hide()
-    $("#tjssc_1").hide()
-    $("#cqssc_1").hide()
-    $('#xyft_1').hide()
+    $("#bjpk10").hide();
+    $("#jsssc_1").hide();
+    $("#jssc").hide();
+    $("#bjft_1").hide();
+    $("#cqssc_1").hide();
+    $('#xyft_1').hide();
+    $("#txffc_1").hide();
+    $("#pc28_1").hide();
+    $("#jsk3").hide();
+    $("#gd11x5_1").hide();
+    $("#gdkl10_1").hide();
 });
 
 
@@ -648,27 +737,8 @@ indexObj.ajaGxklsf = function (e, t, a) {
             null
         }
     })
-}, indexObj.loadBanner = function () {
-    $.ajax({
-        url: publicUrl + "focusPicture/findPicture.do",
-        type: "GET",
-        dataType: "json",
-        data: {type: "0", position: "0", sourceUrl: tools.YM()},
-        timeout: 6e4,
-        beforeSend: function () {
-            $("#bannerContent").text("努力加载中...")
-        },
-        success: function (e) {
-            "object" == typeof(e = e) || (e = JSON.parse(e)), "0" == e.errorCode && ("0" == e.result.businessCode ? tools.bannerImg(e.result.data) : $("#bannerContent").empty().text("数据加载异常！"))
-        },
-        error: function (e) {
-            $("#bannerContent").empty().text("正在加载..."), setTimeout(indexObj.loadBanner(), 1e3)
-        },
-        complete: function (e, t) {
-            null
-        }
-    })
-}, indexObj.defaultViewigm = function (e) {
+}
+, indexObj.defaultViewigm = function (e) {
     $(e).attr("src", "img/banner/banner01.jpg"), $(e).parent().css({"background-color": "#d70042"})
 }, indextools.repeatAjax = function (e, t) {
     setTimeout(function () {
@@ -1078,27 +1148,6 @@ indextools.videoMove = function (e) {
             })
         },
 
-        indexObj.loadBanner = function () {
-            $.ajax({
-                url: publicUrl + "focusPicture/findPicture.do",
-                type: "GET",
-                dataType: "json",
-                data: {type: "0", position: "0", sourceUrl: tools.YM()},
-                timeout: 6e4,
-                beforeSend: function () {
-                    $("#bannerContent").text("努力加载中...")
-                },
-                success: function (e) {
-                    "object" == typeof(e = e) || (e = JSON.parse(e)), "0" == e.errorCode && ("0" == e.result.businessCode ? tools.bannerImg(e.result.data) : $("#bannerContent").empty().text("数据加载异常！"))
-                },
-                error: function (e) {
-                    $("#bannerContent").empty().text("正在加载..."), setTimeout(indexObj.loadBanner(), 1e3)
-                },
-                complete: function (e, t) {
-                    null
-                }
-            })
-        },
 
         indexObj.defaultViewigm = function (e) {
             $(e).attr("src", "img/banner/banner01.jpg"), $(e).parent().css({"background-color": "#d70042"})
@@ -1134,7 +1183,9 @@ indextools.videoMove = function (e) {
         $(this).siblings(".check").removeClass("check"), $(e).siblings().css("height", 0), $(e).css({
             height: "650px",
             "z-index": 1
-        })
+        });
+        $(".px10sanhao").css('height',335);
+        $(".SSCsanhao").css('height',324);
     }), $(".movedowm").on({
         hover: function () {
             $(".tjlottey").addClass("hover")
@@ -1152,7 +1203,9 @@ indextools.videoMove = function (e) {
         $(this).siblings(".check").removeClass("check"), $(e).siblings().css("height", 0), $(e).css({
             height: "650px",
             "z-index": 1
-        })
+        });
+        $(".px10sanhao").css('height',335);
+        $(".SSCsanhao").css('height',324);
     }),
 
     $(".movedowm").on({
@@ -1181,24 +1234,24 @@ $(function () {
     })
 }),
     indextools.userXahao = function (e, t, a) {
-    $.ajax({
-        type: "get",
-        url: publicUrl + "KillNum/getPksKillPlanList.do?lotCode=" + e,
-        async: !1,
-        data: {lasCount: t, hisCount: a},
-        dataType: "json",
-        success: function (e) {
-            "object" == typeof e || (e = JSON.parse(e));
-            var e = e.result.data, t = $(".px10sanhao>.rank>span.active").attr("data-text");
-            indextools.userXahao_adddom(t, e), $(".px10sanhao>.rank").on("click", "span", function () {
-                var t = $(this).attr("data-text");
-                $(this).addClass("active").siblings(".active").removeClass(), indextools.userXahao_adddom(t, e)
-            })
-        },
-        error: function (e) {
-            console.log(e)
-        }
-    })
+    // $.ajax({
+    //     type: "get",
+    //     url: publicUrl + "KillNum/getPksKillPlanList.do?lotCode=" + e,
+    //     async: !1,
+    //     data: {lasCount: t, hisCount: a},
+    //     dataType: "json",
+    //     success: function (e) {
+    //         "object" == typeof e || (e = JSON.parse(e));
+    //         var e = e.result.data, t = $(".px10sanhao>.rank>span.active").attr("data-text");
+    //         indextools.userXahao_adddom(t, e), $(".px10sanhao>.rank").on("click", "span", function () {
+    //             var t = $(this).attr("data-text");
+    //             $(this).addClass("active").siblings(".active").removeClass(), indextools.userXahao_adddom(t, e)
+    //         })
+    //     },
+    //     error: function (e) {
+    //         console.log(e)
+    //     }
+    // })
 }
 , indextools.userXahao_adddom = function (e, t) {
     for (var a = [], n = 0; n < t[e + "Num"].length; n++) {
@@ -1210,19 +1263,19 @@ $(function () {
         o += "<li><div class='head_div'><a href='/view/zsh/index.html?lottype=pk10_Kill'> <img src='img/head_png/headicon_" + a + ".png' /></a>", o += "<span>" + config.Uname[a] + "</span> </div><div class='result'>", o += "<h3>最新冠军杀号: <span>" + n + "</span></h3><p>近10期成功率： <span class='clo_red'>" + t[e + "Percent"][a] + "</span></p>", o += "<p>历史战绩： <span>" + t[e + "HisPercent"][a] + "</span></p></div></li>"
     }), $(".px10sanhao>.user_score>ul").html(o)
 }, indextools.userXahaoSsc = function (e, t, a) {
-    $.ajax({
-        type: "get",
-        url: publicUrl + "KillNum/getSscKillPlanList.do?lotCode=" + e,
-        async: !1,
-        data: {lasCount: t, hisCount: a},
-        dataType: "json",
-        success: function (e) {
-            console.log(e)
-        },
-        error: function (e) {
-            console.log(e)
-        }
-    })
+    // $.ajax({
+    //     type: "get",
+    //     url: publicUrl + "KillNum/getSscKillPlanListgetSscKillPlanList.do?lotCode=" + e,
+    //     async: !1,
+    //     data: {lasCount: t, hisCount: a},
+    //     dataType: "json",
+    //     success: function (e) {
+    //         console.log(e)
+    //     },
+    //     error: function (e) {
+    //         console.log(e)
+    //     }
+    // })
 }, indextools.userXahaoSsc_adddom = function (e, t) {
     for (var a = [], n = 0; n < t[e + "Num"].length; n++) {
         var i = t[e + "Num"][n];
@@ -1238,24 +1291,24 @@ $(function () {
 }),
 
     indextools.userXahao = function (e, t, a) {
-        $.ajax({
-            type: "get",
-            url: publicUrl + "KillNum/getPksKillPlanList.do?lotCode=" + e,
-            async: !1,
-            data: {lasCount: t, hisCount: a},
-            dataType: "json",
-            success: function (e) {
-                "object" == typeof e || (e = JSON.parse(e));
-                var e = e.result.data, t = $(".px10sanhao>.rank>span.active").attr("data-text");
-                indextools.userXahao_adddom(t, e), $(".px10sanhao>.rank").on("click", "span", function () {
-                    var t = $(this).attr("data-text");
-                    $(this).addClass("active").siblings(".active").removeClass(), indextools.userXahao_adddom(t, e)
-                })
-            },
-            error: function (e) {
-                console.log(e)
-            }
-        })
+        // $.ajax({
+        //     type: "get",
+        //     url: publicUrl + "KillNum/getPksKillPlanList.do?lotCode=" + e,
+        //     async: !1,
+        //     data: {lasCount: t, hisCount: a},
+        //     dataType: "json",
+        //     success: function (e) {
+        //         "object" == typeof e || (e = JSON.parse(e));
+        //         var e = e.result.data, t = $(".px10sanhao>.rank>span.active").attr("data-text");
+        //         indextools.userXahao_adddom(t, e), $(".px10sanhao>.rank").on("click", "span", function () {
+        //             var t = $(this).attr("data-text");
+        //             $(this).addClass("active").siblings(".active").removeClass(), indextools.userXahao_adddom(t, e)
+        //         })
+        //     },
+        //     error: function (e) {
+        //         console.log(e)
+        //     }
+        // })
     },
 
     indextools.userXahao_adddom = function (e, t) {
@@ -1270,19 +1323,19 @@ $(function () {
     },
 
     indextools.userXahaoSsc = function (e, t, a) {
-        $.ajax({
-            type: "get",
-            url: publicUrl + "KillNum/getSscKillPlanList.do?lotCode=" + e,
-            async: !1,
-            data: {lasCount: t, hisCount: a},
-            dataType: "json",
-            success: function (e) {
-                console.log(e)
-            },
-            error: function (e) {
-                console.log(e)
-            }
-        })
+        // $.ajax({
+        //     type: "get",
+        //     url: publicUrl + "KillNum/getSscKillPlanList.do?lotCode=" + e,
+        //     async: !1,
+        //     data: {lasCount: t, hisCount: a},
+        //     dataType: "json",
+        //     success: function (e) {
+        //         console.log(e)
+        //     },
+        //     error: function (e) {
+        //         console.log(e)
+        //     }
+        // })
     },
 
     indextools.userXahaoSsc_adddom = function (e, t) {

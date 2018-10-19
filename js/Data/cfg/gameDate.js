@@ -11,7 +11,8 @@ var gameType = {
 		"北京快乐8":"kl8/"
 	},
 	"four":{
-		"六六六":""
+		"北京番摊":"bjft/index.html",
+        "重庆番摊":"cqft/index.html"
 	}
 };
 
@@ -95,7 +96,7 @@ var webListOP = {
 				{
 					"text":"遗漏大数据",
 					"href":"pk10/omitdata.html",
-					"spanClass":"hoticon"
+					
 				},
 				{
 					"text":"两面数据统计",
@@ -118,6 +119,8 @@ var webListOP = {
 //					"spanClass":"wen_newIcon"
 //				}
 			],
+
+
     "jssc": [
         {
             "text":"极速赛车",
@@ -197,7 +200,7 @@ var webListOP = {
         {
             "text":"遗漏大数据",
             "href":"jssc/omitdata.html",
-            "spanClass":"hoticon"
+            
         },
         {
             "text":"两面数据统计",
@@ -307,7 +310,7 @@ var webListOP = {
 				{
 					"text":"遗漏大数据",
 					"href":"gdkl10/omitdata.html",
-					"spanClass":"hoticon"
+					
 				},
 				{
 					"text":"两面数据统计",
@@ -401,45 +404,10 @@ var webListOP = {
 				{
 					"text":"遗漏大数据",
 					"href":"cqssc/omitdata.html",
-					"spanClass":"hoticon"
+					
 				}
 			],
-		"kl8": [
-					{
-						"text":"快乐8",
-						"href":"kl8/index.html"
-					},
-					{
-						"text":"历史开奖号码",
-						"href":"kl8/kaijiang.html"
-					},
-					{
-						"text":"总和路珠",
-						"href":"kl8/luzhutotal.html"
-					},
-					{
-						"text":"单双和路珠",
-						"href":"kl8/luzhuoddoreven.html"
-					},
-					{
-						"text":"上下盘路珠",
-						"href":"kl8/luzhuupordown.html"
-					},
-					{
-						"text":"快乐8技巧",
-						"href":"jiqiao/kl8/"
-					},
-					{
-						"text":"快乐8开奖直播",
-						"href":"kl8/shipin",
-						"aClass":"redColor"
-					},
-					{
-						"text":"免费参考",
-						"href":"kl8/betgame.html",
-						"spanClass":"wen_newIcon"
-					}
-				],
+
 		"jsk3": [
 				{
 					"text":"江苏骰宝(快3)",
@@ -480,67 +448,167 @@ var webListOP = {
 					"aClass":"redColor"
 				}
 			],
-		"tjssc": [
+		"cqft": [
 					{
-						"text":"天津时时彩",
-						"href":"tjssc/index.html"
+						"text":"重庆番摊",
+						"href":"cqft/index.html"
 					},
 					{
 						"text":"历史开奖号码",
-						"href":"tjssc/kaijiang.html"
+						"href":"cqft/kaijiang.html"
 					},
 					{
-						"text":"号码路珠",
-						"href":"tjssc/luzhunumber.html"
+						"text":"番摊路珠",
+						"href":"cqft/luzhulonghu.html"
 					},
 					{
-						"text":"龙虎路珠",
-						"href":"tjssc/luzhulonghu.html"
-					},
-//					{
-//						"text":"号码规律统计",
-//						"href":"javascript:void(0);"
-//					},
-					{
-						"text":"单双大小路珠",
-						"href":"tjssc/luzhubigorsmall.html"
-					},
-					{
-						"text":"总和路珠",
-						"href":"tjssc/luzhutotal.html"
-					},
-					{
-						"text":"单双大小历史",
-						"href":"tjssc/ballstat.html"
+						"text":"番摊单双大小历史",
+						"href":"cqft/ballstat.html"
 					},
 					{
 						"text":"历史号码统计",
-						"href":"tjssc/numberstat.html"
+						"href":"cqft/numberstat.html"
 					},
 					{
 						"text":"横版走势图",
-						"href":"tjssc/zoushitu.html"
+						"href":"cqft/zoushitu.html"
 					},
 					{
-						"text":"时时彩技巧",
-						"href":"jiqiao/tjssc/"
+						"text":"番摊技巧",
+						"href":"jiqiao/cqft/"
 					},
 					{
 						"text":"开奖视频",
-						"href":"tjssc/shipin",
+						"href":"cqft/shipin",
 						"aClass":"redColor"
 					},
 					{
 						"text":"遗漏大数据",
-						"href":"tjssc/omitdata.html",
-						"spanClass":"hoticon"
-					},
-					{
-						"text":"两面数据统计",
-						"href":"tjssc/twosidedstat.html",
-						"spanClass":"wen_newIcon"
+						"href":"cqft/omitdata.html",
+						
 					}
 				],
+    "bjft": [
+        {
+            "text":"北京番摊",
+            "href":"bjft/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"bjft/kaijiang.html"
+        },
+        {
+            "text":"番摊路珠",
+            "href":"bjft/merge.html"
+        },
+        {
+            "text":"今日号码统计",
+            "href":"bjft/opencodeanalysis.html"
+        },
+        {
+            "text":"番摊单双大小历史",
+            "href":"bjft/ballstat.html"
+        },
+        {
+            "text":"番摊开奖直播",
+            "href":"bjft/shipin/",
+            "title":"在线观看番摊开奖直播",
+            "aClass":"redColor"
+        },
+        {
+            "text":"番摊技巧",
+            "href":"jiqiao/bjft/"
+        },
+        {
+            "text":"遗漏大数据",
+            "href":"bjft/omitdata.html",
+            
+        },
+        {
+            "text":"横版走势图",
+            "href":"bjft/zoushitu.html"
+        }
+    ],
+
+    "pc28": [
+        {
+            "text":"加拿大28",
+            "href":"pc28/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"pc28/kaijiang.html"
+        },
+        {
+            "text":"号码路珠",
+            "href":"pc28/merge.html"
+        },
+        // {
+        //     "text":"单双大小历史",
+        //     "href":"pc28/ballstat.html"
+        // },
+        {
+            "text":"加拿大28开奖直播",
+            "href":"pc28/shipin/",
+            "title":"在线观看番摊开奖直播",
+            "aClass":"redColor"
+        },
+        {
+            "text":"加拿大28技巧",
+            "href":"jiqiao/pc28/"
+        },
+        {
+            "text":"遗漏大数据",
+            "href":"pc28/omitdata.html",
+            
+        },
+        {
+            "text":"横版走势图",
+            "href":"pc28/zoushitu.html"
+        }
+    ],
+    "txffc": [
+        {
+            "text":"腾讯分分彩",
+            "href":"txffc/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"txffc/kaijiang.html"
+        },
+        {
+            "text":"号码路珠",
+            "href":"txffc/merge.html"
+        },
+        {
+            "text":"今日号码统计",
+            "href":"txffc/numberstat.html"
+        },
+        {
+            "text":"单双大小历史",
+            "href":"txffc/ballstat.html"
+        },
+        {
+            "text":"开奖直播",
+            "href":"txffc/shipin/",
+            "title":"在线观看番摊开奖直播",
+            "aClass":"redColor"
+        },
+        {
+            "text":"分分彩技巧",
+            "href":"jiqiao/txffc/"
+        },
+        {
+            "text":"遗漏大数据",
+            "href":"txffc/omitdata.html",
+            
+        },
+        {
+            "text":"横版走势图",
+            "href":"txffc/zoushitu.html"
+        }
+    ],
+
     "jsssc": [
         {
             "text":"极速时时彩",
@@ -594,7 +662,7 @@ var webListOP = {
         {
             "text":"遗漏大数据",
             "href":"jsssc/omitdata.html",
-            "spanClass":"hoticon"
+            
         },
         {
             "text":"两面数据统计",
@@ -602,150 +670,130 @@ var webListOP = {
             "spanClass":"wen_newIcon"
         }
     ],
-		// "xync": [
-		// 			{
-		// 				"text":"幸运农场",
-		// 				"href":"xync/index.html"
-		// 			},
-		// 			{
-		// 				"text":"历史开奖号码",
-		// 				"href":"xync/kaijiang.html"
-		// 			},
-		// 			{
-		// 				"text":"中发白路珠",
-		// 				"href":"xync/luzhuzfb.html"
-		// 			},
-		// 			{
-		// 				"text":"东南西北路珠",
-		// 				"href":"xync/luzhudnxb.html"
-		// 			},
-		// 			{
-		// 				"text":"合数单双路珠",
-		// 				"href":"xync/luzhumerge.html"
-		// 			},
-		// 			{
-		// 				"text":"总和路珠",
-		// 				"href":"xync/luzhutotal.html"
-		// 			},
-		// 			{
-		// 				"text":"尾数大小路珠",
-		// 				"href":"xync/luzhumantissa.html"
-		// 			},
-		// 			{
-		// 				"text":"单双大小路珠",
-		// 				"href":"xync/luzhubigorsmall.html"
-		// 			},
-		// 			{
-		// 				"text":"龙虎路珠",
-		// 				"href":"xync/luzhulonghu.html"
-		// 			},
-		// 			{
-		// 				"text":"号码路珠",
-		// 				"href":"xync/luzhunumber.html"
-		// 			},
-		// 			{
-		// 				"text":"历史号码统计",
-		// 				"href":"xync/numberstat.html"
-		// 			},
-		// 			{
-		// 				"text":"单双大小历史",
-		// 				"href":"xync/ballstat.html"
-		// 			},
-		// 			{
-		// 				"text":"幸运农场技巧",
-		// 				"href":"jiqiao/xync/"
-		// 			},
-		// 			{
-		// 				"text":"幸运农场直播",
-		// 				"href":"xync/shipin/",
-		// 				"aClass":"redColor"
-		// 			},
-		// 			{
-		// 				"text":"横版走势图",
-		// 				"href":"xync/zoushitu.html"
-		// 			},
-		// 			{
-		// 				"text":"遗漏大数据",
-		// 				"href":"xync/omitdata.html",
-		// 				"spanClass":"hoticon"
-		// 			},
-		// 			{
-		// 				"text":"两面数据统计",
-		// 				"href":"xync/twosidedstat.html",
-		// 				"spanClass":"wen_newIcon"
-		// 			},
-		// 			{
-		// 				"text":"免费参考",
-		// 				"href":"xync/betgame.html",
-		// 				"spanClass":"wen_newIcon"
-		// 			}
-		// 		],
-		"fc3d": [
-					{
-						"text":"福彩3D",
-						"href":"fc3d/index.html"
-					},
-					{
-						"text":"历史开奖号码",
-						"href":"fc3d/kaijiang.html"
-					},
-					
-					{
-						"text":"福彩3D技巧",
-						"href":"jiqiao/fc3d/"
-					},
-					
-					{
-						"text":"开奖视频",
-						"href":"fc3d/shipin"
-					},
-					
-				],
-		"shssl": [
-					{
-						"text":"上海时时乐",
-						"href":"shssl/index.html"
-					},
-					{
-						"text":"历史开奖号码",
-						"href":"shssl/kaijiang.html"
-					},
-					{
-						"text":"总和路珠",
-						"href":"shssl/luzhutotal.html"
-					},
-					{
-						"text":"单双大小路珠",
-						"href":"shssl/luzhubigorsmall.html"
-					},
-					{
-						"text":"号码路珠",
-						"href":"shssl/luzhunumber.html"
-					},
-					{
-						"text":"历史号码统计",
-						"href":"shssl/numberstat.html"
-					},
-					{
-						"text":"单双大小历史",
-						"href":"shssl/ballstat.html"
-					},
-					{
-						"text":"开奖视频",
-						"href":"shssl/shipin"
-					},
-					{
-						"text":"时时乐技巧",
-						"href":"jiqiao/shssl/"
-					},
-					{
-						"text":"免费参考",
-						"href":"shssl/betgame.html",
-						"spanClass":"wen_newIcon"
-					},
-					{
-						"text":"横版走势图",
-						"href":"shssl/zoushitu.html"
-					}
-				]
+
+    "tcssc": [
+        {
+            "text":"头彩时时彩",
+            "href":"tcssc/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"tcssc/kaijiang.html"
+        },
+        {
+            "text":"龙虎路珠",
+            "href":"tcssc/luzhulonghu.html"
+        },
+//					{
+//						"text":"号码规律统计",
+//						"href":"javascript:void(0);"
+//					},
+        {
+            "text":"单双大小路珠",
+            "href":"tcssc/luzhubigorsmall.html"
+        },
+        {
+            "text":"总和路珠",
+            "href":"tcssc/luzhutotal.html"
+        },
+        {
+            "text":"历史号码统计",
+            "href":"tcssc/numberstat.html"
+        },
+        {
+            "text":"横版走势图",
+            "href":"tcssc/zoushitu.html"
+        },
+        {
+            "text":"时时彩技巧",
+            "href":"jiqiao/tcssc/"
+        },
+        {
+            "text":"开奖视频",
+            "href":"tcssc/shipin",
+            "aClass":"redColor"
+        },
+        // {
+        //     "text":"遗漏大数据",
+        //     "href":"tcssc/omitdata.html",
+		//
+        // },
+        // {
+        //     "text":"两面数据统计",
+        //     "href":"tcssc/twosidedstat.html",
+        //     "spanClass":"wen_newIcon"
+        // }
+    ],
+
+
+    "tcpk10": [
+        {
+            "text":"头彩pk10",
+            "href":"tcpk10/index.html"
+        },
+        {
+            "text":"头彩pk10开奖",
+            "href":"tcpk10/kaijiang.html"
+        },
+        {
+            "text":"龙虎路珠",
+            "href":"tcpk10/luzhulonghu.html"
+        },
+        {
+            "text":"号码前后路珠",
+            "href":"tcpk10/luzhuleftorright.html"
+        },
+        {
+            "text":"冠、亚和路珠",
+            "href":"tcpk10/guanyahestat.html"
+        },
+        {
+            "text":"单双大小路珠",
+            "href":"tcpk10/luzhubigorsmall.html"
+        },
+        {
+            "text":"号码规律统计",
+            "href":"tcpk10/numberrulestat.html",
+            "spanClass":"wen_lasthostory"
+        },
+        {
+            "text":"今日号码统计",
+            "href":"tcpk10/opencodeanalysis.html"
+        },
+        {
+            "text":"单双大小历史",
+            "href":"tcpk10/ballstat.html"
+        },
+        {
+            "text":"龍虎历史",
+            "href":"tcpk10/numberstat.html"
+        },
+//				{
+//					"text":"淘宝模式",
+//					"href":"pk10/betmode.html"
+//				},
+        {
+            "text":"免费参考",
+            "href":"tcpk10/betgame.html"
+        },
+        {
+            "text":"头彩pk10开奖直播",
+            "href":"tcpk10/shipin/",
+            "title":"在线观看头彩pk10开奖直播",
+            "aClass":"redColor"
+        },
+        {
+            "text":"冷热码分析",
+            "href":"tcpk10/coldhotnumber.html"
+        },
+        {
+            "text":"头彩pk10技巧",
+            "href":"jiqiao/tcpk10/"
+        },
+        {
+            "text":"横版走势图",
+            "href":"tcpk10/zoushitu.html"
+        }
+    ],
+
 };

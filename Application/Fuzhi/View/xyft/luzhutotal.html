@@ -23,27 +23,39 @@
 				<!--  内容开始 -->
 				<input type="hidden" id="callFun" value="getLuzhuTotal"/>
     <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
-				<div style="clear: left; width: 100%; float: left;">
-					<div class="show-bjl">
-				      	 选择日期: 
-				      <input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
-				      <span ><a style="margin: 0px;" href="javascript:Search();">查询</a></span>
-				    </div> 
-				</div>
+	<div class="merge-title-table-title" style="margin-bottom: -10px;">
+
+		<span class="bbbb">总和路珠</span>
+
+		<div style=" float: right;margin-right: 6px;">
+			<div class="show-bjl">
+				选择日期:
+				<input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
+				<span ><a class="a-bottom" style="margin: 0px;" href="javascript:Search();" class="a-bottom">查询</a></span>
+			</div>
+			<!--<div style="float: right;-->
+    <!--/* margin-bottom: 1px; */-->
+    <!--margin-right: 73px;-->
+    <!--margin-top: -3px;">-->
+					<!--<span class="InstructionsForUse"> <span-->
+							<!--class="InstructionsForUse_btn">使用说明 </span> <span class="position"-->
+																			  <!--style="left: -210px; top: 26px;"> <span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br />-->
+								<!--2.当长龙中断时，则另起一列显示结果；<br />-->
+								<!--3.20个号码加总的和值大于810，为和大；20个号码加总的和值小于810，则为和小，等于810则为和。-->
+
+						<!--</span>-->
+					<!--</span>-->
+					<!--</span>-->
+			<!--</div>-->
+		</div>
+
+	</div>
+
+
 				<div id="lot-wrap">
 				<div class="clear"></div>
-				<div style="float: right; margin-bottom: 5px; margin-right: 68px;">
-					<span class="InstructionsForUse"> <span
-						class="InstructionsForUse_btn">使用说明 </span> <span class="position"
-						style="left: -210px; top: 26px;"> <span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br />
-								2.当长龙中断时，则另起一列显示结果；<br />
-								3.20个号码加总的和值大于810，为和大；20个号码加总的和值小于810，则为和小，等于810则为和。
 
-						</span>
-					</span>
-					</span>
-				</div>
-				<div style="height: 35px; width: 100%;"></div>
+				<!--<div style="height: 35px; width: 100%;"></div>-->
 				<table class="roadmap-table-caption">
 					<tr>
 						<td><span>今日累计：<span class="count"> 大（<span id="lzd"></span>） 小（<span id="lzx"></span>）
@@ -51,7 +63,7 @@
 						</span> 总和大小</td>
 					</tr>
 				</table>
-				<div style="width: 980px; overflow-x: auto;" class="luzhu_scroll">
+				<div style="width:1198px; overflow-x: auto;" class="luzhu_scroll">
 				  <div id="lzTotalDx_data-html"></div>
 			      <script id="lzTotalDx_data-tmpl" type="text/template">
 					<table class="roadmap-table ">
@@ -108,7 +120,7 @@
 						</span> 总和单双</td>
 					</tr>
 				</table>
-				<div style="width: 980px; overflow-x: auto;" class="luzhu_scroll">
+				<div style="width:1198px; overflow-x: auto;" class="luzhu_scroll">
 					<div id="lzTotalDs_data-html"></div>
 					<script id="lzTotalDs_data-tmpl" type="text/template">
 					<table class="roadmap-table ">

@@ -69,6 +69,7 @@ $(function () {
                 nextPeriodNumber = data.next.periodNumber;
             }
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
+            _time=30000;
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
         }, 'json').error(function () {
@@ -112,7 +113,7 @@ $(function () {
                 if (d.getDate() == nd.getDate()) leavePeriod = 84;
             }
             $(" .lot-award .currentAward .period-info .period-leave").html(leavePeriod);
-            loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
+            loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);

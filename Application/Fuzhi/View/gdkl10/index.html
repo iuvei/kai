@@ -21,7 +21,7 @@
 				
 			    <div class="index-history"> 
 			     <div class="title mt10"> 
-			      <h2>广东快乐十分开奖记录</h2> 
+			      <h2>开奖记录</h2>
 			      <a href="gdkl10/kaijiang.html" >查看全部&gt;&gt;</a>
 			     </div> 
 			     <div id="history_data-html"></div>
@@ -29,8 +29,9 @@
 					<table class="lot-table" id="history"> 
 				      <tbody>
 					      <tr class="head"> 
-					        <td width="160px"> 时间 </td> 
-					        <td> 开奖号码 </td> 
+					        <td width="120px"> 时间 </td>
+							  <td width="160px"> 期号 </td>
+							  <td width="580px"> 开奖号码 </td>
 					        <td colspan="4"> 总和 </td> 
 					        <td colspan="4">1~4龍虎</td> 
 					       </tr> 
@@ -49,8 +50,9 @@
 										
 							}}
 						       <tr class="{{=(i+1)%2==0?'even':'odd'}}"> 
-						        <td> <p class="p">{{=row.termNum}} </p> <p class="t">{{=lowDate}}</p> </td> 
-						        <td class="nums"> 
+						        <td> <p class="">{{=lowDate}}</p> </td>
+								   <td> <p class="">{{=row.termNum}} </p>  </td>
+								   <td class="nums">
 						        	<span class="no1">{{=row.n1}}</span> 
 						        	<span class="no2">{{=row.n2}}</span> 
 						        	<span class="no3">{{=row.n3}}</span> 

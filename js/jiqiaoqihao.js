@@ -3,6 +3,10 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
  function(data){
  timers(parseInt((data.next.awardTimeInterval)/1000),"bpk10-time");
  });
+$.getJSON("/bjft/getPk10AwardTimes.do",
+    function(data){
+        timers(parseInt((data.next.awardTimeInterval)/1000),"bpk10-time");
+    });
  $.getJSON("/xyft/getPk10AwardTimes.do",
  function(data){
  timers(parseInt((data.next.awardTimeInterval)/1000),"bxyft-time");
@@ -11,6 +15,10 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
  function(data){
  timers(parseInt((data.next.awardTimeInterval)/1000),"bcqssc-time");
  });
+$.getJSON("/cqft/getPk10AwardTimes.do",
+    function(data){
+        timers(parseInt((data.next.awardTimeInterval)/1000),"bcqssc-time");
+    });
  $.getJSON("/gdkl10/getPk10AwardTimes.do",
  function(data){
  timers(parseInt((data.next.awardTimeInterval)/1000),"bgdkl10-time");
@@ -23,10 +31,10 @@ $.getJSON("/pk10/getPk10AwardTimes.do",
  function(data){
  timers(parseInt((data.next.awardTimeInterval)/1000),"bxjssc-time");
  });
- $.getJSON("/tjssc/getPk10AwardTimes.do",
- function(data){
- timers(parseInt((data.next.awardTimeInterval)/1000),"btjssc-time");
- });
+ // $.getJSON("/tjssc/getPk10AwardTimes.do",
+ // function(data){
+ // timers(parseInt((data.next.awardTimeInterval)/1000),"btjssc-time");
+ // });
  $.getJSON("/gd11x5/getPk10AwardTimes.do",
  function(data){
  timers(parseInt((data.next.awardTimeInterval)/1000),"bgd11x5-time");

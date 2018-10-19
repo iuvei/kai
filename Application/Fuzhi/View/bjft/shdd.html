@@ -1,0 +1,222 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+    <link href="css/shdd.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+ 
+  <div class="body-content"> 
+   <!-- 彩票大厅 头部 -->
+  			<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+   <div class="lot-wrap"> 
+    <include file="Public/lottory_op"/>
+<div class="clear"></div>
+       <div style="margin-bottom:20px;">
+           <input type="hidden" time="60000" id="callFun" value="getDataList" />
+           <ul class="lot-number-omit" id="zst-weizhi">
+               <li class="ball">
+                   <ul id="rankUl">
+                       <li> <a href="javascript:gotoPage(1)" id="rankLi1" class="cur">冠军 </a>|</li>
+                       <li> <a href="javascript:gotoPage(2)" id="rankLi2">亚军 </a>|</li>
+                       <li> <a href="javascript:gotoPage(3)" id="rankLi3">第三球 </a>|</li>
+                       <li> <a href="javascript:gotoPage(4)" id="rankLi4">第四球 </a>|</li>
+                       <li> <a href="javascript:gotoPage(5)" id="rankLi5">第五球 </a>|</li>
+                       <li> <a href="javascript:gotoPage(6)" id="rankLi6">第六球 </a>|</li>
+                       <li> <a href="javascript:gotoPage(7)" id="rankLi7">第七球 </a>|</li>
+                       <li> <a href="javascript:gotoPage(8)" id="rankLi8">第八球 </a>|</li>
+                       <li> <a href="javascript:gotoPage(9)" id="rankLi9">第九球 </a>|</li>
+                       <li> <a href="javascript:gotoPage(10)" id="rankLi10">第十球 </a></li>
+                       <li style="color: red">杀号：专家认为当期不可能开出的号码 <select id="rowNumSel" onchange="gotoPage('',this.value)"> <option value="10">近10期</option> <option value="20">近20期</option> <option value="50">近50期</option> <option value="100">近100期</option> </select> </li>
+                   </ul> </li>
+           </ul>
+           <div id="data_list-html" style="float: left;"></div>
+           <script id="data_list-tmpl" type="text/template">
+               <table style="margin-top: 20px;" class="lot-table newstyle">
+                   <tbody>
+                   <tr class="head">
+                       <td style="width: 60px">期号 </td>
+                       <td style="width: 60px">开奖号码 </td>
+                       <td colspan="2">浩宇杀号 </td>
+                       <td colspan="2">擎苍杀号 </td>
+                       <td colspan="2">致远杀号 </td>
+                       <td colspan="2">天佑杀号 </td>
+                       <td colspan="2">俊驰杀号 </td>
+                       <td colspan="2">烨磊杀号 </td>
+                       <td colspan="2">文博杀号 </td>
+                       <td colspan="2">旭尧杀号 </td>
+                       <td colspan="2">睿渊杀号 </td>
+                       <td colspan="2">哲瀚杀号 </td>
+                       <td class="smallcell">统计</td>
+                   </tr>
+                   {{
+                   var rowsLen=it.length;
+                   var numsTotalArray=[]; /*数据统计*/
+                   var precisionNums={};  /*准确率*/
+                   var continuousMaxNums={}; /*连中最大次数*/
+                   var preN=0;/*准确率最后一列累计*/
+                   for(var i=rowsLen-1;i>=1;i--){ /*循环开始A*/
+                   var rd=it[i];
+                   var nowsArray=rd.recBlockNum.split(",");
+                   var lrNum=rd.lotteryRankNum;
+                   var tn=0;
+                   }}
+                   <tr>
+                       <td>{{=rd.recTermNum}} </td>
+                       <td>{{=lrNum==null?"":lrNum}}</td>
+                       {{
+                       for(var n=0;n<nowsArray.length;n++){ /*循环开始B*/
+                       var classStr="bgorange";
+                       var lrNumDesc="√";
+                       if(lrNum!=nowsArray[n]){ /*正确*/
+                       tn+=1;
+                       precisionNums["p_"+i+"_"+n]=tn;
+
+                       var preMax=continuousMaxNums["c_"+(i+1)+"_"+n];/*获取上期的连续中次数*/
+                       if(!preMax){
+                       preMax=1;
+                       }else{
+                       preMax+=1;
+                       }
+                       continuousMaxNums["c_"+i+"_"+n]=preMax;
+                       }else{
+                       continuousMaxNums["c_"+i+"_"+n]=0;/*当前连续中的次数归0*/
+
+                       classStr="fontgreen";
+                       lrNumDesc="&times;";
+                       }
+                       }}
+                       <td class="smallcell fontred">{{=nowsArray[n]}} </td>
+                       <td class="smallcell fontred fontbold {{=classStr}}">{{=lrNumDesc}}</td>
+                       {{
+                       } /*循环结束B*/
+
+                       if(tn==10){ /*计算最后一列准确率统计*/
+                       preN+=1;
+                       precisionNums["p_"+i+"_10"]=preN;
+
+                       var preMax=continuousMaxNums["c_"+(i+1)+"_10"];/*获取上期的连续中次数*/
+                       if(!preMax){
+                       preMax=1;
+                       }else{
+                       preMax+=1;
+                       }
+                       continuousMaxNums["c_"+i+"_10"]=preMax;
+                       }else{
+                       continuousMaxNums["c_"+i+"_10"]=0;/*当前连续中的次数归0*/
+                       }
+                       }}
+                       <td class="{{=tn==10?"correct":""}}">{{=tn==10?"全对":tn}}</td>
+                   </tr>
+                   {{
+                   } /*循环结束A*/
+                   }}
+
+                   {{
+                   var rdNew=it[0]; /*最新一期数据*/
+                   var nowsArrayNew=rdNew.recBlockNum.split(",");
+                   }}
+                   <tr>
+                       <td>{{=rdNew.recTermNum}}</td>
+                       <td class="fontwhite bgred fontbold">当前期</td>
+                       {{
+                       for(var n=0;n<nowsArrayNew.length;n++){ /*循环开始C*/
+                       }}
+                       <td class="smallcell fontred">{{=nowsArrayNew[n]}}</td>
+                       <td class="smallcell bgorange"></td>
+                       {{
+                       } /*循环结束C*/
+                       }}
+                       <td></td>
+                   </tr>
+                   <tr>
+                       <td style="background-color: #f2f2f2" colspan="2">准确率(全对率) </td>
+                       {{
+                       for(var pn=0;pn<11;pn++){
+                       var tp=0;
+                       for(var pi=1; pi<rowsLen; pi++){ /*计算准确率 */
+                       if(eval('precisionNums.p_'+pi+'_'+pn)){
+                       tp+=1;
+                       }
+                       }
+                       }}
+                       <td class="fontbold fontred" colspan="2">{{=(tp/(rowsLen-1)*100).toFixed(2)+"%"}} </td>
+                       {{
+                       }
+                       }}
+                   </tr>
+                   <tr>
+                       <td style="background-color: #f2f2f2" colspan="2">当前连中 </td>
+                       {{
+                       for(var cn=0;cn<11;cn++){
+                       var cNum=eval('continuousMaxNums.c_1_'+cn);
+                       }}
+                       <td class="fontblue fontbold" colspan="2">{{=cNum}} </td>
+                       {{
+                       }
+                       }}
+                   </tr>
+                   <tr>
+                       <td style="background-color: #f2f2f2" colspan="2">最大连中 </td>
+                       {{
+                       for(var cn=0;cn<11;cn++){
+                       var cMaxNum=0;
+                       for(var ci=1;ci<rowsLen;ci++){
+                       var maxNumTemp=eval('continuousMaxNums.c_'+ci+'_'+cn);
+                       if(cMaxNum<maxNumTemp){
+                       cMaxNum=maxNumTemp;
+                       }
+                       }
+                       }}
+                       <td class="fontblue fontbold" colspan="2">{{=cMaxNum}} </td>
+                       {{
+                       }
+                       }}
+                   </tr>
+                   </tbody>
+               </table>
+           </script>
+           <script type="text/javascript">
+               var request =  GetRequest();
+               var rowNum = request['rowNum'];
+               var gameId = request['gameId'];
+               var rank = request['rank'];
+               if(!rowNum){
+                   rowNum=10;
+                   $("#rowNumSel").val(rowNum);
+               }
+               if(!gameId)
+                   gameId=50;
+               if(!rank)
+                   rank=1;
+               function getDataList(){
+                   $.post("lotteryblock/getdataList.do",
+                           {rowNum:rowNum,gameId:gameId,rank:rank},
+                           function(r) {
+                               if (r) {
+                                   doTCompile("data_list", r.t);
+                                   //处理排名样式
+                                   $("#rankUl li a").removeClass("cur")
+                                   $("#rankLi"+rank).addClass("cur")
+                               }
+                           }, "json");
+               }
+               getDataList();
+               function gotoPage(rankNum,rowsVal){
+                   if(rankNum)
+                       rank=rankNum;
+                   if(rowsVal)
+                       rowNum=rowsVal;
+                   window.location.href="pk10/shdd.html#rowNum="+rowNum+"&gameId="+gameId+"&rank="+rank;
+                   getDataList();
+               }
+           </script>
+           <div class="clear"></div>
+       </div>
+   </div>  
+  </div>
+  </block>

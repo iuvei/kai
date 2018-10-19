@@ -7,7 +7,7 @@
 ************************************************************************************************************************************/
 
 .web_dateLineBody{
-	width:1000px;
+	width:1200px;
 	margin:0 auto;
 	font-family:Tahoma;
 	color:#333;
@@ -116,7 +116,7 @@
 }
 .web_changeThree ul{
 	border:1px solid #abadb3;
-	float:left;
+	float:left; margin-left: 10px;
 }
 .web_changeThree li{
 	width:113px;
@@ -1267,24 +1267,24 @@
  * 代码负责人：nickly
 ***********************************************************************************************************************************/
 .web_huiseBackGround{
-	width:980px;
-	margin:10px 0 10px 0;
+	width:1200px;
+	margin:0px 0 10px 0;
 	float:left;
 	clear:left;
  
 
 }
 .web_huiseBackGround_title{
-	width:975px;
+	width:1200px;
 	height:36px;
 	margin:0 auto;
 	background:url("../images/bg_dot.gif") repeat-x bottom;
 	font-size:12px;
 	line-height:36px;
-    text-align:left;
+    text-align:left;text-indent: 12px;
 }
 .web_iconList{
-	width:965px;
+	width:1200px;
 	height:63px;
 	margin:0 auto;
 	margin-top:27px;
@@ -1294,7 +1294,7 @@
 	width:67px;
 	height:63px;
 	float:left;
-	margin:0 14px 0 14px;
+	margin:0 15px;
 	cursor:pointer;
 	font-size:0px;
 	display:block;
@@ -1345,7 +1345,7 @@
 }
 
 .web_startBtn{
-	width:975px;
+	width:1200px;
 	padding:35px 0 20px 0;
 	background:url("../images/bg_dot.gif") repeat-x bottom;
 	margin:0 auto;
@@ -1373,10 +1373,10 @@
 	margin:0 auto;
 }
 .web_analysisResults{
-	width:975px;
+	width:1190px;
 	height:30px;
 	margin:0 auto;
-	padding:20px 0 20px 0;	
+	padding:20px 0 0px 0;
 }
 .web_analysisResults li{
 	float:left;
@@ -1392,7 +1392,7 @@
 }
 .web_analysisResults li.right span{
 	display:block;
-	float:left;
+	float:left;line-height: 35px;
 }
 .web_analysisResults li.right .select{
 	display:block;
@@ -1607,7 +1607,7 @@
 
 }
 .web_noDataDiv {
-    width:973px;
+    width:1193px;
     height:80px;
     border:1px solid #dedede;
     text-align:center;
@@ -1640,7 +1640,7 @@ height:30px;
 }
 
 .web_nineGrid{
-	width:980px;
+	width:1200px;
 	font-family: "微软雅黑";
 	border-collapse: collapse;
     border-spacing:0; 

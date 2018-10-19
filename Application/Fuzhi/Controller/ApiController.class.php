@@ -171,7 +171,7 @@ class ApiController extends Controller{
        // $db_name = 'th_game_queue_'.$_GET['gamekey'];
 
         $module = M();
-        $sql = "select actionNo, actionTime from lot_data_time where type={$info['id']} and actionTime<='%s' order by actionTime desc limit 1";
+        $sql = "select actionNo, actionTime from lot_data_time where type={$info['id']} and actionTime >='%s' order by actionTime asc limit 1";
         $date = date('H:i:s');
         $res = $module->query($sql, $date);
         $res=$res[0];
@@ -179,26 +179,91 @@ class ApiController extends Controller{
             'dat_type'=>$info['id'],
            // 'b.actionNo'=>$res['actionNo']-1,
         );
+
         $game =  M('data')->where($where2)->order('dat_open_time desc')->find();
         $data['errorcode'] = 0;
         $data['errormsg'] = '';
-        $data['present']['now']=date('Y-m-d H:i:s');
-        $data['present']['expect']=$res['actionNo'];
-        $data['present']['start_buytime']=$res['stopTime'];
-        $data['present']['start_remaining']=strtotime($res['stopTime']) - time();
-        $data['present']['start_buytimestamp']=date('Y-m-d ').$res['stopTime'];
-        $data['present']['stop_buytime']=$res['stopTime'];
-        $data['present']['stop_remaining']=strtotime($res['stopTime']) - time();
-        $data['present']['stop_buytimestamp']=date('Y-m-d ').$res['stopTime'];
-        $data['present']['opentime']=$res['actionTime'];
-        $data['present']['opentime_remaining']=strtotime($res['actionTime']) - time();
-        $data['present']['opentimestamp']=date('Y-m-d ').$res['actionTime'];
-        $data['present']['status']=1;//因为暂时没有此字段 $game['status'];
-        $data['last_opencode']['expect']=$game['dat_expect'];
-        $data['last_opencode']['opencode']=$game['dat_codes'];
-        $data['last_opencode']['opentime']=date('Y-m-d H:i:s',$game['dat_open_time']);
-        $data['last_opencode']['opentimestamp']=$game['dat_open_time'];
+
+        if($gamekey == 'pc28'){
+            if(time() >= strtotime(date('Y-m-d').'19:00:00') && time() < strtotime(date('Y-m-d').'21:00:00')){
+                $date = $game['dat_open_time'] + 210;
+                $data['present']['now']=date('Y-m-d H:i:s');
+                $data['present']['expect']=$game['dat_expect']+1;
+                $data['present']['start_buytime']=date('Y-m-d H:i:s',$date);
+                $data['present']['start_remaining']=null;
+                $data['present']['start_buytimestamp']=date('Y-m-d H:i:s',$date);
+                $data['present']['stop_buytime']=date('Y-m-d H:i:s',$date);;
+                $data['present']['stop_remaining']=null;
+                $data['present']['stop_buytimestamp']=date('Y-m-d H:i:s',$date);
+                $data['present']['opentime']=null;
+                $data['present']['opentime_remaining']=null;
+                $data['present']['opentimestamp']=date('Y-m-d ',$date);
+                $data['present']['status']=1;//因为暂时没有此字段 $game['status'];
+                $data['last_opencode']['expect']=$game['dat_expect'];
+                $data['last_opencode']['opencode']=$game['dat_codes'];
+                $data['last_opencode']['opentime']=date('Y-m-d H:i:s',$game['dat_open_time']);
+                $data['last_opencode']['opentimestamp']=$game['dat_open_time'];
+            }else if(time() >= strtotime(date('Y-m-d').'21:00:00')){
+                $date = $game['dat_open_time'] + 210;
+                $data['present']['now']=date('Y-m-d H:i:s');
+                $data['present']['expect']=$game['dat_expect']+1;
+                $data['present']['start_buytime']=date('Y-m-d H:i:s',$date);
+                $data['present']['start_remaining']=strtotime($res['stopTime']) - time();
+                $data['present']['start_buytimestamp']=date('Y-m-d H:i:s',$date);
+                $data['present']['stop_buytime']=date('Y-m-d H:i:s',$date);;
+                $data['present']['stop_remaining']=$date- time();
+                $data['present']['stop_buytimestamp']=date('Y-m-d H:i:s',$date);
+                $data['present']['opentime']=date('Y-m-d H:i:s',$date);;
+                $data['present']['opentime_remaining']=$date - time();
+                $data['present']['opentimestamp']=date('Y-m-d ',$date);
+                $data['present']['status']=1;//因为暂时没有此字段 $game['status'];
+            }else{
+                $date = $game['dat_open_time'] + 210;
+                $data['present']['now']=date('Y-m-d H:i:s');
+                $data['present']['expect']=$game['dat_expect']+1;
+                $data['present']['start_buytime']=date('Y-m-d H:i:s',$date);
+                $data['present']['start_remaining']=strtotime($res['stopTime']) - time();
+                $data['present']['start_buytimestamp']=date('Y-m-d H:i:s',$date);
+                $data['present']['stop_buytime']=date('Y-m-d H:i:s',$date);;
+                $data['present']['stop_remaining']=$date- time();
+                $data['present']['stop_buytimestamp']=date('Y-m-d H:i:s',$date);
+                $data['present']['opentime']=date('Y-m-d H:i:s',$date);;
+                $data['present']['opentime_remaining']=$date - time();
+                $data['present']['opentimestamp']=date('Y-m-d ',$date);
+                $data['present']['status']=1;//因为暂时没有此字段 $game['status'];
+
+            }
+            $dat_codes = explode(',',$game['dat_codes']);
+            $code_a = $dat_codes[1] + $dat_codes[4] + $dat_codes[7] + $dat_codes[10] + $dat_codes[13] +$dat_codes[16];
+            $code_b = $dat_codes[2] + $dat_codes[5] + $dat_codes[8] + $dat_codes[11] + $dat_codes[14] +$dat_codes[17];
+            $code_c = $dat_codes[3] + $dat_codes[6] + $dat_codes[9] + $dat_codes[12] + $dat_codes[15] +$dat_codes[18];
+            $code = ($code_a%10).','.($code_b%10).','.($code_c%10);
+            $data['last_opencode']['expect']=$game['dat_expect'];
+            $data['last_opencode']['opencode']=$code;
+            $data['last_opencode']['opentime']=date('Y-m-d H:i:s',$game['dat_open_time']);
+            $data['last_opencode']['opentimestamp']=$game['dat_open_time'];
+
+        }else{
+            $data['present']['now']=date('Y-m-d H:i:s');
+            $data['present']['expect']=$game['dat_expect']+1;
+            $data['present']['start_buytime']=$res['stopTime'];
+            $data['present']['start_remaining']=strtotime($res['stopTime']) - time();
+            $data['present']['start_buytimestamp']=date('Y-m-d ').$res['stopTime'];
+            $data['present']['stop_buytime']=$res['stopTime'];
+            $data['present']['stop_remaining']=strtotime($res['stopTime']) - time();
+            $data['present']['stop_buytimestamp']=date('Y-m-d ').$res['stopTime'];
+            $data['present']['opentime']=$res['actionTime'];
+            $data['present']['opentime_remaining']=strtotime($res['actionTime']) - time();
+            $data['present']['opentimestamp']=date('Y-m-d ').$res['actionTime'];
+            $data['present']['status']=1;//因为暂时没有此字段 $game['status'];
+            $data['last_opencode']['expect']=$game['dat_expect'];
+            $data['last_opencode']['opencode']=$game['dat_codes'];
+            $data['last_opencode']['opentime']=date('Y-m-d H:i:s',$game['dat_open_time']);
+            $data['last_opencode']['opentimestamp']=$game['dat_open_time'];
+        }
+
        // $res = $this->getAwardTime($info['id']);
+
         echo json_encode($data,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
      //   print_r($data);exit;
 
@@ -231,6 +296,18 @@ class ApiController extends Controller{
                 break;
             case "gd11x5":
                 return "syxw-gd";
+                break;
+            case "pc28":
+                return "pc28";
+                break;
+            case "txffc":
+                return "txffc";
+                break;
+            case "tcssc":
+                return "tcssc";
+                break;
+            case "tcpk10":
+                return "tcpk10";
                 break;
             default:
                 return "404";

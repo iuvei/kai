@@ -27,7 +27,7 @@
 			        
 			        <div class="index-history">
 			            <div class="title mt10">
-			                <h2>幸运飞艇开奖记录</h2>
+			                <h2>开奖记录</h2>
 			                <a href="xyft/kaijiang.html" >查看全部>></a>
 			            </div>       
 			            <div id="history_data-html"></div>
@@ -35,8 +35,9 @@
 			            <table id="history" class="lot-table">
 				            <tbody>
 								<tr class="head">
-						<td width="160">时间</td>
-						<td width="350">开奖号码</td>
+						<td width="120">时间</td>
+									<td width="140">期号</td>
+						<td width="540">开奖号码</td>
 						<td colspan="3">冠亚和</td>
 						<td colspan="5">1~5龍虎</td>
 					</tr>
@@ -93,8 +94,12 @@
 								}}
 										<tr class="{{=(i+1)%2==0?'even':'odd'}}">
 											<td>
-												<p class="p">{{=row.termNum}}</p>
-												<p class="t">{{=lowDate}}</p>
+
+												<p class="">{{=lowDate}}</p>
+											</td>
+											<td>
+												<p class="">{{=row.termNum}}</p>
+
 											</td>
 											<td class="nums">
 											    <i class="pk-no{{=row.n1}}"></i>

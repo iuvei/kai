@@ -7,9 +7,14 @@ $ret['cqssc'] = gettopdata(1);
 $ret['gdkl10'] = gettopdata(21);
 $ret['jssc'] = gettopdata(39);
 $ret['gd11x5'] = gettopdata(6);
-$ret['xjssc'] = gettopdata(35);
+$ret['cqft'] = gettopdata(41);
+$ret['bjft'] = gettopdata(42);
 $ret['jsssc'] = gettopdata(40);
 $ret['jsk3'] = gettopdata(22);
+$ret['pc28'] = gettopdata(43);
+$ret['txffc'] = gettopdata(44);
+$ret['tcpk10'] = gettopdata(46);
+$ret['tcssc'] = gettopdata(45);
 echo json_encode($ret);
 
 function gettopdata($id){
@@ -25,7 +30,7 @@ function gettopdata($id){
 //    }
 //
 //    mysqli_select_db("kaijiang",$con);
-    $mysqli = new mysqli('localhost', 'root', 'root', 'kaijiang');
+    $mysqli = new mysqli('localhost', 'tckai168.com', '0Rs1M3LxCEBp69jF', 'tckai168.com');
     $sql="select dat_expect,dat_codes from lot_data where `dat_type`=$id order by dat_open_time desc limit 1";
     $result = $mysqli->query($sql);
     $row = $result->fetch_assoc();

@@ -21,16 +21,22 @@
 			<div id="lot-wrap">
                 <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
 				<input type="hidden" id="callFun" value="updateHistoryRecord">
-				<div class="lot-search">
-					选择日期： <input type="text" readonly="readonly"
-						onfocus="WdatePicker()"
-						id="dateData" name="dateData"> &nbsp;<a
-						href="javascript:Search();">查询</a>
+				<div class="merge-title-table-title" style="margin-bottom: 10px;">
+
+					<span class="bbbb">历史开奖</span>
+
+					<div class="lot-search" style="float: right">
+						选择日期： <input type="text" readonly="readonly"
+									 onfocus="WdatePicker()"
+									 id="dateData"  class="Wdate" name="dateData"> &nbsp;<a class="a-bottom"
+																							href="javascript:Search();" class="a-bottom">查询</a>
+					</div>
 				</div>
+
 				<table id="history" class="lot-table">
 					<tbody>
 						<tr class="head">
-							<td width="200px">时间</td>
+							<td width="170">时间</td>
 							<td>开奖号码</td>
 							<td colspan="2">总和</td>
 						</tr>
@@ -72,7 +78,7 @@
                              {count:120,date:date}, function(datas) {
 					    	if(datas){
 					    		var data = datas.rows;
-					    		var str = '<tr class="head"><td width="200px">时间</td><td>开奖号码</td><td colspan="2">总和</td></tr>';
+					    		var str = '<tr class="head"><td width="120px">时间</td> <td width="140px">期号</td><td>开奖号码</td><td colspan="2">总和</td></tr>';
 								for(var key in data){
 									var flag = data[key];
 									var num1 = flag.n1;
@@ -91,10 +97,8 @@
 										desc = "小";
 									}
 									str+='<tr class="even">'+
-											'<td>'+
-												'<p class="p">'+flag.termNum+'</p>'+
-												'<p class="t">'+time+'</p>'+
-											'</td>'+
+											'<td><p class="">'+time+'</p>'+
+												'<td><p class="">'+flag.termNum+'</p></td>'+
 											'<td class="nums">'+
 												'<i class="lot-no'+num1+'"></i>'+
 												'<i class="lot-no'+num2+'"></i>'+

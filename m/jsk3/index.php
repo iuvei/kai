@@ -32,7 +32,44 @@ include("../conn.php");
 <?php include("../public/header.php"); ?>
 
 
-   
+   <style>
+       .num1 {
+           background: url(/../images/images/bjpknum.png) no-repeat -424px 0
+       }
+       .num2 {
+           background: url(/../images/images/bjpknum.png) no-repeat -424px -43px
+       }
+
+       .num3 {
+           background: url(/../images/images/bjpknum.png) no-repeat -424px -86px
+       }
+
+       .num4 {
+           background: url(/../images/images/bjpknum.png) no-repeat -424px -129px
+       }
+
+       .num5 {
+           background: url(/../images/images/bjpknum.png) no-repeat -424px -172px
+       }
+
+       .num6 {
+           background: url(/../images/images/bjpknum.png) no-repeat -424px -215px
+       }
+       i{display: inline-block;
+           float: left;
+           margin-right: 30px;
+           width: 36px;
+           height: 40px;
+           line-height: 36px;
+           font-size: 20px;
+           text-align: center;
+           color: #fff;
+           border-radius: 5px;
+           box-sizing: border-box;
+           -webkit-box-sizing: border-box;
+           margin-top: 5px;
+       }
+   </style>
 <script src="award.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
 <div class="daojishi">
@@ -67,7 +104,7 @@ include("../conn.php");
 
 
 <div class="video">
-<a class="sp" href="shipin.php">视频开奖直播</a>
+<a class="sp" href="/v/jsk3">视频开奖直播</a>
 <a class="qq" style="border-left:1px solid #ddd" href="<?=$qqun?>" target="_blank">高手交流QQ群</a>
 </div>
 

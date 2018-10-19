@@ -23,8 +23,8 @@ em,i{ font-style:normal;}
 .s3 p{ bottom:380px; z-index:2; font-size:16px; color:#fff; line-height:36px; text-indent:2em; left:-50%;}
 .s3 p em{ width:540px; padding:0 220px; display:block; color:#fff;}
 .s3 b{ background:url(m6_1.png) no-repeat center; height:350px; z-index:1; bottom:-100%;}
-.s4 h1{ font-size:60px; font-weight:bold; color:#4a7406; text-indent:80px; bottom:220px; display:none;}
-.s4 p{ bottom:100px; z-index:2; font-size:16px; color:#fff; line-height:36px; left:-50%;}
+.s4 h1{ font-size:60px; font-weight:bold; color:#4a7406; text-indent:80px; top: 220px; display:none;}
+.s4 p{ top:360px; z-index:2; font-size:16px; color:#fff; line-height:36px; left:-50%;}
 .s4 p em{ width:340px; padding:0 540px 0 80px; display:block; color:#fff;}
 .s4 b{ z-index:1; bottom:-100%;}
 .s4 b img.im1{ position:relative; left:55px;}

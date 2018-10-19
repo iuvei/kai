@@ -23,16 +23,27 @@
 				<!--  内容开始 -->
     <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
 				<input type="hidden" id="callFun" value="getLuzhuLonghu"/>
-				<div style="clear: left; width: 100%; float: left;">
-					<div class="show-bjl">
-				      	 选择日期: 
-				      <input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
-				      <span ><a style="margin: 0px;" href="javascript:Search();">查询</a></span>
-				    </div> 
-				</div>
+
 				<div id="lot-wrap">
 					<div class="clear"></div>
-					<div style="float: right; margin-bottom: 5px; margin-right: 68px;">
+					<div class="merge-title-table-title" style="margin-bottom: 10px;">
+
+						<span class="bbbb">龙虎路珠</span>
+
+						<div style="float: right; margin-right: 12px;">
+							<div class="show-bjl">
+								选择日期:
+								<input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
+								<span ><a class="a-bottom" style="margin: 0px;" href="javascript:Search();" class="a-bottom">查询</a></span>
+							</div>
+						</div>
+					</div>
+
+					<div style="float: right;
+    margin-bottom: 5px;
+    margin-left: 4px;
+    margin-right: 79px;
+    margin-top: -3px;">
 						<span class="InstructionsForUse">
 					        <span class="InstructionsForUse_btn">使用说明
 					        </span>
@@ -44,6 +55,8 @@
 					        </span>
 					    </span>
 					</div>
+
+
 					<div style="height: 35px; width: 100%;"></div>
 					<div id="lz_data-html"></div>
 				      <script id="lz_data-tmpl" type="text/template">
@@ -67,7 +80,7 @@
 						         </tr> 
 						        </tbody>
 						       </table> 
-						       <div style="width: 980px; overflow-x: auto;" class="luzhu_scroll"> 
+						       <div style="width:1198px; overflow-x: auto;" class="luzhu_scroll">
 						        <table class="roadmap-table mb-15" style="font-family:微软雅黑;"> 
 						         <tbody>
 						          <tr valign="top"> 

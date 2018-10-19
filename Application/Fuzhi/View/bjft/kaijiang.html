@@ -1,0 +1,208 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+<!--body-content-->
+<div class="body-content">
+	<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+		<include file="Public/lottory_op"/>
+
+<div class="clear"></div>
+	<input type="hidden" id="callFun" value="callFun" time="1000"/>
+	<div style="margin-bottom:20px;" id="lot-wrap">
+		<div class="lot-search">
+			<div class="car-num">
+				<ul style="margin-bottom: 10px;" class="lot-number-omit">
+					<li style="padding-bottom: 2px;" class="ball">
+						<ul style="width: 750px; _width: 740px; float: left; margin-left: 10px;">
+
+						</ul>
+						<script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+						<div class="merge-title-table-title" style="margin-bottom: 10px;margin-top: -10px">
+
+							<span class="bbbb">开奖历史</span>
+
+							<ul style="float: right; width: 270px; text-align: right;">
+								<li>
+								<span style="display: block; float: left;">
+									<label style="margin: 0px;">选择日期：</label></span>
+									<span style="display: block; float: left;">
+									<input name="dateData" type="text" id="dateData"  class="Wdate" onClick="WdatePicker();" readonly="readonly" style=""></span>
+									<span style="padding-left: 10px;"><a style="margin: 0px;" href="javascript:Search();" class="a-bottom">查询</a></span>
+								</li>
+							</ul>
+						</div>
+
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<div style="clear: both"></div>
+		<div id="history-table">
+			<table id="history" class="lot-table">
+				<tbody>
+					<tr class="head">
+						<td width="120">时间</td>
+						<td width="140">期号</td>
+						<td width="650">开奖号码</td>
+						<td colspan="3">前三</td>
+						<td colspan="3">中三</td>
+						<td colspan="3">后三</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		</div>
+    <script type="text/javascript">
+        $(function () {
+            callFun();
+        });
+        function callFun(){
+            LoadPk10TipSet();
+            getHistoryData(200);
+            reloadBallStatRemind();
+            reloadChangLong();
+        }
+        function reloadBallStatRemind() {
+            $.get("/pk10/getBallStat.do?today=1",function(r){
+                if (r) {
+                    doTCompile("ball_stat_list", r);
+                }
+            },"json");
+        }
+        function getVal(datas,date,rank,dataType,num){
+            var dayTotalNum="0";
+            for(var i=0;i<datas.length;i++){
+                var d=datas[i];
+                if(d.lotteryDate==date&&d.num==num&&d.dataType==dataType&&d.rank==rank){
+                    dayTotalNum= d.dayTotalNum;
+                    break;
+                }
+            }
+            return dayTotalNum;
+        }
+        var NUM_INDEX = {1:'冠　军',2:'亚　军',3:'季　军',4:'第四名',5:'第五名',
+            6:'第六名',7:'第七名',8:'第八名',9:'第九名',10:'第十名'};
+        var NUM_TYPE = {1:'大',2:'小',3:'单',4:'双',5:'龙', 6:'虎'};
+        function reloadChangLong() {
+            $.post("/pk10/getMergeData.do",
+                    function(r) {
+                        if (r) {
+                            doTCompile("cl_list", r.clList);
+                        }
+                    }, "json");
+        }
+        function Search() {
+            $.get("/pk10/kaijiang.do", { date: $("#dateData").val() }, function (result) {
+                if(result&&result.rows&&result.rows.length>0){
+                    var j = 0;
+                    var html = '';
+                    for(var i in result.rows){
+                        var data = result.rows[i];
+                        var clsName = "even";
+                        if (j%2==0) {
+                            clsName = "odd";
+                        }
+                        html += '<tr class="' + clsName + '"><td><p class="p">' + data.termNum + '</p><p class="t">'
+                        + data.lotteryTime.substring(5, 16);
+                        html += '</p></td><td class="nums">';
+                        html += '<i class="pk-no' + data.n1 + '"></i>';
+                        html += '<i class="pk-no' + data.n2 + '"></i>';
+                        html += '<i class="pk-no' + data.n3 + '"></i>';
+                        html += '<i class="pk-no' + data.n4 + '"></i>';
+                        html += '<i class="pk-no' + data.n5 + '"></i>';
+                        html += '<i class="pk-no' + data.n6 + '"></i>';
+                        html += '<i class="pk-no' + data.n7 + '"></i>';
+                        html += '<i class="pk-no' + data.n8 + '"></i>';
+                        html += '<i class="pk-no' + data.n9 + '"></i>';
+                        html += '<i class="pk-no' + data.n10 + '"></i>';
+                        var guanyahe = data.n1 + data.n2;
+                        html += '</td>';
+                        html += '<td>' + guanyahe + '</td>';
+                        var guanyahedx = '大';
+                        if(guanyahe==11){
+                            guanyahedx = '和';
+                        }else if(guanyahe<11){
+                            var guanyahedx = '小';
+                        }
+                        html += '<td><p ' + (guanyahedx == "大" ? 'class="r"' : '') + '>' + guanyahedx + '</p></td>';
+                        var guanyaheds = '单';
+                        if(guanyahe==11){
+                            guanyaheds = '和';
+                        }else if(guanyahe%2==0){
+                            guanyaheds = '双';
+                        }
+                        html += '<td><p ' + (guanyaheds == "单" ? 'class="r"' : '') + '>' + guanyaheds + '</p></td>';
+                        var longhu = new Array();
+                        longhu[0] = (data.n1>data.n10)?"龍":"虎";
+                        longhu[1] = (data.n2>data.n9)?"龍":"虎";
+                        longhu[2] = (data.n3>data.n8)?"龍":"虎";
+                        longhu[3] = (data.n4>data.n7)?"龍":"虎";
+                        longhu[4] = (data.n5>data.n6)?"龍":"虎";
+                        for (var i = 0; i < longhu.length; i++) {
+                            html += '<td><p ' + (longhu[i] == "龍" ? 'class="r"' : '') + '>' + longhu[i] + '</p></td>';
+                        }
+                        html += '</tr>';
+                        j++;
+                    }
+                    $("#history .head").nextAll().remove();
+                    $("#history .head").after(html);
+                }else{
+                    $("#history tr:gt(0)").remove();
+                }
+            }, "json");
+        }
+        function showCarNum() {
+            var datas = [];
+            var ckbeds = $("#ball-choose li b.checked");
+            for (var i = 0; i < ckbeds.length; i++) {
+                datas.push($(ckbeds[i]).attr("data-c"));
+            }
+
+            $(".nums i").removeClass("noshade");
+            if (datas.length > 0) {
+                $(".nums").addClass("shade");
+            }
+            for (var i = 0; i < datas.length; i++) {
+                var c = ".pk-no" + datas[i];
+                $(c).addClass("noshade");
+            }
+            if (datas.length == 0) {
+                $(".nums").removeClass("shade");
+            }
+        }
+
+        $("#ball-choose li").click(function () {
+
+            var c = $("b", $(this)).attr("data-c");
+
+            if ($("b", $(this)).attr("class") == "checkbox") {
+                $("b", $(this)).addClass("checked");
+            } else {
+                $("b", $(this)).removeClass("checked");
+            }
+            showCarNum();
+        })
+        function SetChk()
+        {
+            $("#ball-choose b").removeClass("checked");
+            $(".nums").removeClass("shade");
+        }
+    </script>
+		<div class="clear"></div>
+    </div>
+</div>
+<div class="clear"></div>
+</block>

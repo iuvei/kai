@@ -19,67 +19,73 @@
        <div style="margin-bottom:20px;">
            <ul class="lot-number-omit">
                <li class="ball">
-                   <ul id="rankUl">
-                       <li>
-                           <a href="javascript:gotoPage('',1)" id="rankLi1" class='cur'>
-                               冠军
-                           </a>
-                           |
-                       </li>
-                       <li>
-                           <a href="javascript:gotoPage('',2)" id="rankLi2" >
-                               亚军
-                           </a>
-                           |
-                       </li>
-                       <li>
-                           <a href="javascript:gotoPage('',3)" id="rankLi3" >
-                               第三名
-                           </a>
-                           |
-                       </li>
-                       <li>
-                           <a href="javascript:gotoPage('',4)" id="rankLi4" >
-                               第四名
-                           </a>
-                           |
-                       </li>
-                       <li>
-                           <a href="javascript:gotoPage('',5)" id="rankLi5" >
-                               第五名
-                           </a>
-                           |
-                       </li>
-                       <li>
-                           <a href="javascript:gotoPage('',6)" id="rankLi6" >
-                               第六名
-                           </a>
-                           |
-                       </li>
-                       <li>
-                           <a href="javascript:gotoPage('',7)" id="rankLi7" >
-                               第七名
-                           </a>
-                           |
-                       </li>
-                       <li>
-                           <a href="javascript:gotoPage('',8)" id="rankLi8" >
-                               第八名
-                           </a>
-                           |
-                       </li>
-                       <li>
-                           <a href="javascript:gotoPage('',9)" id="rankLi9" >
-                               第九名
-                           </a>
-                           |
-                       </li>
-                       <li>
-                           <a href="javascript:gotoPage('',10)" id="rankLi10" >
-                               第十名
-                           </a>
-                       </li>
-                   </ul>
+                   <div class="merge-title-table-title" style="margin-bottom: 10px;">
+
+                       <span class="bbbb">综合版面</span>
+
+                       <ul id="rankUl" style="float: right">
+                           <li>
+                               <a href="javascript:gotoPage('',1)" id="rankLi1" class='cur'>
+                                   冠军
+                               </a>
+
+                           </li>
+                           <li>
+                               <a href="javascript:gotoPage('',2)" id="rankLi2" >
+                                   亚军
+                               </a>
+
+                           </li>
+                           <li>
+                               <a href="javascript:gotoPage('',3)" id="rankLi3" >
+                                   第三名
+                               </a>
+
+                           </li>
+                           <li>
+                               <a href="javascript:gotoPage('',4)" id="rankLi4" >
+                                   第四名
+                               </a>
+
+                           </li>
+                           <li>
+                               <a href="javascript:gotoPage('',5)" id="rankLi5" >
+                                   第五名
+                               </a>
+
+                           </li>
+                           <li>
+                               <a href="javascript:gotoPage('',6)" id="rankLi6" >
+                                   第六名
+                               </a>
+
+                           </li>
+                           <li>
+                               <a href="javascript:gotoPage('',7)" id="rankLi7" >
+                                   第七名
+                               </a>
+
+                           </li>
+                           <li>
+                               <a href="javascript:gotoPage('',8)" id="rankLi8" >
+                                   第八名
+                               </a>
+
+                           </li>
+                           <li>
+                               <a href="javascript:gotoPage('',9)" id="rankLi9" >
+                                   第九名
+                               </a>
+
+                           </li>
+                           <li>
+                               <a href="javascript:gotoPage('',10)" id="rankLi10" >
+                                   第十名
+                               </a>
+                           </li>
+                       </ul>
+                   </div>
+
                </li>
                <li class="type">
                    <ul id="mlist_ul">
@@ -460,7 +466,7 @@
                var NUM_INDEX = {1:'冠军',2:'亚军',3:'第三名',4:'第四名',5:'第五名'};
                function luzhu(rows, n){
                    var j = 0;
-                   var html = '<div style="width:980px; overflow-x:auto;" class="luzhu_scroll">'
+                   var html = '<div style="width:1198px; overflow-x:auto;" class="luzhu_scroll">'
                            +'<table class="roadmap-table "><tr valign="top">';
                    var l1=0;
                    var h1=0;

@@ -29,8 +29,23 @@
    <include file="Public/lottory_op"/>
    <div class="clear"></div>
     <div class="web_dateLineBody"> 
-     <input type="hidden" id="callFun" value="updateRecord" /> 
-     <div class="web_changeThree"> 
+     <input type="hidden" id="callFun" value="updateRecord" />
+     <div class="merge-title-table-title" style="margin-bottom: 10px;">
+
+      <span class="bbbb">免费多选分析</span>
+
+      <div class="web_huiseBackGround_title" style="float: right;width: 170px;
+    height: 36px;
+    margin: 0 auto;
+     background: none;
+    font-size: 12px;
+    line-height: 36px;
+    text-align: left;
+    text-indent: 12px;">
+       *请选择3-9个名次进行统计：
+      </div>
+     </div>
+     <div class="web_changeThree" style="padding-top: 5px;">
       <ul> 
        <li class="hover">位置走势图</li> 
        <li class="list"></li> 
@@ -38,9 +53,7 @@
       </ul> 
      </div> 
      <div class="web_huiseBackGround"> 
-      <div class="web_huiseBackGround_title">
-        *请选择3-9个名次进行统计： 
-      </div> 
+
       <div class="web_iconList" id="web_tjcar"> 
        <ul> 
         <li class="icon1" data-car="1"></li> 
@@ -55,7 +68,7 @@
         <li class="icon10" data-car="10"></li> 
        </ul> 
       </div> 
-      <div class="web_startBtn"> 
+      <div class="web_startBtn" style="width: 200px; float: right;padding: 0; background: none;margin-top: -60px;">
        <ul> 
         <li><input id="analyzeBtn" type="button" value="开始" /> <span id="warn_msg" style="display: none">*请选择3-9个名次/位置进行统计。</span></li> 
        </ul> 
@@ -79,11 +92,11 @@
         <div class="web_noDataDiv">
           暂无数据。。。。。 
         </div> 
-        <table id="chart" width="975" border="0" cellspacing="1" cellpadding="0" style="margin: 0 auto; display: none"> 
+        <table id="chart" width="1200" border="0" cellspacing="1" cellpadding="0" style="margin: 0 auto; display: none">
          <tbody> 
           <tr> 
-           <td class="blue">期号</td> 
-           <td class="blue" width="330"> 
+           <td class="blue" width="180">期号</td>
+           <td class="blue" width="">
             <div class="web_dataGY"> 
              <ul> 
               <li>冠</li> 
@@ -98,9 +111,9 @@
               <li style="border: none;">十</li> 
              </ul> 
             </div> </td> 
-           <td class="huiWhite2" width="208">跨度走势</td> 
-           <td class="pinkWhite" width="183">最小号码走势</td> 
-           <td class="greenWhite" width="175">最大号码走势</td> 
+           <td class="huiWhite2" width="">跨度走势</td>
+           <td class="pinkWhite" width="">最小号码走势</td>
+           <td class="greenWhite" width="">最大号码走势</td>
           </tr> 
           <tr ms-repeat="analyDatas"> 
            <td class="white3">{{el.p}}</td> 

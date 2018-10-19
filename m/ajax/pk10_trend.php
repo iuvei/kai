@@ -5,13 +5,13 @@ $ball = $_GET['ball']-1;
 $count = (int)$_GET['count'];
 //$query = mysql_query("select dat_expect,dat_codes from lot_data where `dat_type`=$typeid order by dat_open_time desc limit $count");
 $array = array();
-$mysqli = new mysqli('localhost', 'root', 'root', 'kaijiang');
+$mysqli = new mysqli('localhost', 'tckai168.com', '0Rs1M3LxCEBp69jF', 'tckai168.com');
 $sql="select dat_expect,dat_codes from lot_data where `dat_type`=$typeid order by dat_open_time desc limit $count";
 $result = $mysqli->query($sql);
 $row = $result->fetch_assoc();
 while( $row = $result->fetch_assoc()){
 	$exp = explode(",",$row['dat_codes']);
-	if($typeid == 1 || $typeid == 40){
+	if($typeid == 1 || $typeid == 40 || $typeid == 44){
         $tarr = array(
             0=>substr($row['dat_expect'],-2),
             1=>$exp[$ball],

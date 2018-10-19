@@ -1,64 +1,301 @@
+<link rel="stylesheet" href="/css/css/headorfood.css"/>
+<link rel="stylesheet" href="/css/css/index.css"/>
+<div class="bodybox">
+    <div class="bgdiv">
 
-<div class="header-plus">
-<div class="head-toptray-logo clearfix">
- <div class="w1030">
-    <div class="logo-box clearfix fl" style="width:220px;">
-        <a title="PK开奖直播" href="{$BaseUrl}">
-            <h1>PK10开奖直播</h1>
-            <img title="PK开奖直播" alt="PK开奖直播" src="/style/images/logo.gif" class="logo-index-hd" /></a>
-       
+    <div class="headboxf">
+        <div class="headboxh">
+            <div class="headboxhc">
+                <div class="headboxhr">
+
+                    <ul>
+                        <!--<li class="logonli liline">
+                    <a href="javascript:void(0)" class="login">登录</a>
+                    <a href="javascript:void(0)" class="register">注册</a>
+                </li>
+                <li class="logonli liline">|</li>-->
+                        <li class="logonli">
+                            <a href="javascript:void(0)" onclick="SetHome2(window.location)">设为首页</a>
+                        </li>
+                        <li class="logonli liline">|</li>
+                        <li class="logonli">
+                            <a href="javascript:void(0)" onclick="javascript:addFavorite2()">收藏本站</a>
+                        </li>
+                        <li class="logonli liline">|</li>
+                        <li class="logonli">
+                            <a href="javascript:void(0)">帮助中心</a>
+                        </li>
+                        <li class="logonli liline">|</li>
+                        <li class="miniIphone">
+                            <a href="/m/">手机版</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="headboxhl" style="display: block">
+                    <div class="hoticon" style="    position: relative;">
+                        最新公告：
+                    </div>
+                    <div class="hotcontent">
+                        <marquee direction="left" behavior="scroll" scrollamount="6" onmouseover=this.stop()
+                                 onmouseout=this.start()>
+                            <?php if(!empty($top_com)) { ?>
+                            <!--<span class="hoticon"></span>--><span class="textspace"
+                                                                      id="noticeContent"><?php echo $top_com; ?></span>
+                            <?php } ?>
+                            <?php if(empty($top_com)) { ?>
+                            <span class="textspace" id="noticeContent">欢迎光临！！！</span>
+                            <?php } ?>
+                        </marquee>
+                    </div>
+                    <!--<ul>
+                <li class="logonli">
+                    <a href="http://old.1680210.com/" target="_blank">回到旧版</a>
+                </li>
+                <li class="logonli liline"><img src="picture/back.png" alt="" /></li>
+                <li class="logonli">
+                    <a href="">注册</a>
+                </li>
+            </ul>-->
+                </div>
+            </div>
+        </div>
+        <div class="headboxh2">
+            <div class="headbox">
+                <div>
+                    <a class="logobox" href="/" style="width: 305px;margin-left: -5px">
+                        <img src="/style/images/logo.gif" height="90px">
+                    </a>
+                </div>
+                <div class="advertisebox" style="width: 700px">
+                    <img src="/style/images/yz.png">
+                </div>
+                <div class="loginbox" style="    display: block;">
+                    <ul>
+                        <!--<li class="kefuicon">
+                </li>-->
+                        <li class="logonli jianyue">
+                            <!--<a href="/view/public/jianyue.html?v=201889947">简约版</a>-->
+                            <div class="new_mobiledetail" style="position: fixed;top: 128px;left: 71%;">
+                                <img src="/style/images/m.jpg">
+                                <p class="sweep" style="margin-top: 10px">扫一扫，下载移动客户端</p>
+                                <p class="remind">（IOS、Android均可扫码下载）</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--<div class="backoldbox">
+    <a href="http://old.1680210.com/" target="_blank"></a>
+</div>-->
     </div>
-	<ul class="fl" style="width:500px; text-align:center">
-<img src="/style/images/yz.png" />
-    </ul>
-    <ul class="fr">
-<img src="/style/images/m.jpg" />
-    </ul>
-	</div>
-</div>
 
+<style>
+    .clearfix a{
+        font-weight: 600
+    }
+</style>
     <script src="/js/jquery.SuperSlide.2.1.1.js"></script>
+        <script src="/js/js/index.js"></script>
 	<script src="/css/nva-plus.css"></script>
-        <div class="header-navbar-plus">
-    <div class="w1030 clearfix">
-        <ul class="nav-plus clearfix">
-            <li><a href="{$BaseUrl}">网站首页</a></li>
-            <li class="dropdown-nav" id="lottery_hall">
-                <a href="javascript://" class="dropdown-desc">彩票大厅<img src="/images/cpdt_white.png"><i class="icon"></i></a>
-                <ul class="dropdown-ul" style="display: none;">
-                    <li><a href="{$BaseUrl}gd11x5/">广东11选5</a></li>
-                    <li><a href="{$BaseUrl}jsk3/">江苏快三</a></li>
-                    <li><a href="{$BaseUrl}gdkl10/">广东快乐10分</a></li>
-                    <li><a href="{$BaseUrl}cqssc/" >重庆时时彩</a></li>
-                    <li><a href="{$BaseUrl}jssc/">极速时时彩</a></li>
-                    <li><a href="{$BaseUrl}jssc/">极速赛车</a></li>
-                    <li><a href="{$BaseUrl}gd11x5/">广东11选5</a></li>
-                    <li><a href="{$BaseUrl}xyft/">幸运飞艇</a></li>
-                    <li><a href="{$BaseUrl}tjssc/">天津时时彩</a></li>
-                    <li><a href="javascript:void(0)" class="changlong">上海时时乐</a></li>
-                    <li><a href="javascript:void(0)" class="changlong">北京番攤</a></li>
-                    <li><a href="#javascript:void(0)" class="changlong">重慶番攤</a></li>
 
+    <div class="menubannbox heightauto orangeBG">
+        <div class="menubox">
+            <div class="menuboxr">
+                <ul>
+                    <li class="li_checked nav_li">
+                        <a href="/">首页</a>
+                    </li>
+                    <li class="cphost nav_li">
+                        <a href="javascript:void(0)">彩票大厅
+                            <img class="cphost_pic1" src="/picture/cpdt_white.png" alt=""/>
+                            <img class="cphost_pic2" src="/picture/cpdt_red.png" alt=""/>
+                        </a>
+                        <div class="cphost_content" style="position: fixed">
+                            <div class="content_middle">
+                                <div class="RMC">
+                                    <div class="LineOne">
+                                        <span class="RMC_span"><span>热门彩</span></span>
+                                        <ul class="RMC_List">
+                                            <!--香港彩 北京PK10 重庆时时彩 极速赛车 极速时时彩 江苏快3 极速飞艇 新疆时时彩 广西快乐十分 天津时时彩 PC蛋蛋幸运28-->
+                                            <li>
+                                                <a href="/pk10/">北京PK10</a>
+                                            </li>
+                                            <li>
+                                                <a  href="/cqssc/">重庆时时彩</a>
+                                            </li>
+                                            <li>
+                                                <a  href="/jsssc/">极速时时彩</a>
+                                            </li>
+                                            <li>
+                                                <a  href="/jsk3/">江苏快3</a>
+                                            </li>
+                                            <li>
+                                                <a  href="/xyft/">幸運飞艇</a>
+                                            </li>
+                                            <li>
+                                                <a  href="/pc28/" >加拿大28</a>
+                                            </li>
+                                            <li>
+                                                <a  href="/bjft/" >北京番摊</a>
+                                            </li>
+                                            <li>
+                                                <a  href="/cqft/">重庆番摊</a>
+                                            </li>
+                                            <li>
+                                                <a  href="/txffc/">腾讯分分彩</a>
+                                            </li>
+                                            <li>
+                                                <a  href="/tcssc/">头彩时时彩</a>
+                                            </li>
+                                            <li>
+                                                <a  href="/tcpk10/">头彩PK10</a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                                <div class="JISUC">
+                                    <div class="LineOne">
+                                        <span class="JISUC_span"><span>极速彩</span></span>
+                                        <ul>
+                                            <!--极速赛车 极速飞艇 极速时时彩 极速快3 极速快乐十分 极速快乐8 极速11选5-->
+                                            <li>
+                                                <a href="/jssc/">极速赛车</a>
+                                            </li>
+                                            <li>
+                                                <a href="/jsssc/">极速时时彩</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="GPC">
+                                    <div class="LineOne">
+                                        <span class="GPC_span"><span>高频彩</span></span>
+                                        <div class="rul">
+                                            <ul>
+                                                <!--江苏快3 吉林快3 河北快3 安徽快3 内蒙古快3 福建快3 湖北快3 北京快3 广西快3 广东11选5 上海11选5 安徽11选5 江西11选5 吉林11选5 广西11选5 湖北11选5 辽宁11选5 江苏11选5 浙江11选5 内蒙古11选5 十一运夺金 重庆幸运农场 广东快乐十分 天津快乐十分 北京快乐8 重庆七星彩 腾讯分分彩-->
+                                                <li>
+                                                    <a  href="/gdkl10/">广东快乐十分</a>
+                                                </li>
+                                                <li>
+                                                    <a  href="javascript:void(0)" class="changlong">北京快乐8</a>
+                                                </li>
+
+                                                <li>
+                                                    <a  href="/jsk3/">江苏快3</a>
+                                                </li>
+
+                                                <li>
+                                                    <a  href="/gd11x5/">广东11选5</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="QGC">
+                                    <div class="LineOne">
+                                        <span class="QGC_span"><span>全国彩</span></span>
+                                        <ul>
+                                            <li>
+                                                <a target="_blank" href="javascript:void(0)"
+                                                   class="changlong">排列3</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li id="new_zhao">
+                        <a href="javascript:void(0)" target="_blank" class="cqft">两面推荐</a>
+                        <img src="picture/news.png" alt="" id="ZSHao_img"/>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" target="_blank" class="changlong">长龙提醒</a>
+                    </li>
+                    <li>
+                        <a class="kaijdy" href="javascript:void(0)" target="_blank" rel="nofollow"
+                           id="kjdy">开奖调用</a>
+                    </li>
+                    <li class="zstb_nav nav_li">
+                        <a href="javascript:void(0)" class="cqft">走势图表 </a>
+                    </li>
+                    <li id="tryplay">
+                        <a href="javascript:void(0)" target="_blank" class="cqft">试玩投注</a>
+                    </li>
+                    <li class="zixun_nav nav_li">
+                        <a href="/jiqiao/pk10/" >资讯</a>
+                    </li>
+                    <li class="zixun_nav nav_li">
+                        <a href="/Common/login.html" >软件下载</a>
+                    </li>
+
+                    <li class="lasli">
+                        <div class="lasli_div">
+                            <!--<a id="msit" href="javascript:toM()" target="_blank" class="phoneicon">手机端</a>-->
+                            <a id="msit" href="/m/" target="_self" class="phoneicon">简约版</a>
+                        </div>
+                    </li>
                 </ul>
-            </li>
-            <li><a href="javascript:void(0)" class="changlong">两面推荐</a></li>
-			<li><a href="javascript:void(0)" class="changlong">长龙提醒</a></li>
-			<li><a href="javascript:void(0)" class="changlong">开奖调用</a></li>
-			<li><a href="javascript:void(0)" class="changlong">走势图表</a></li>
-			<li><a href="javascript:void(0)" class="changlong">试玩投注</a></li>
-			<li><a href="javascript:void(0)" class="changlong">资讯</a></li>
-            <li><a href="javascript:void(0)" id="ps28" class="changlong">软件下载</a></li>
-            <li><a href="javascript:void(0)">简约版</a></li>
+                <script>
+                    $("#kjdy").click(function () {
+                        alert("敬請期待！");
+                        return false;
+                    });
+                    $("#cqft").click(function () {
+                        alert("敬請期待！");
+                        return false;
+                    });
+                    $(".cqft").click(function () {
+                        alert("敬請期待！");
+                        return false;
+                    });
+                    $("#bjft").click(function () {
+                        alert("敬請期待！");
+                        return false;
+                    });
+                    $(".changlong").click(function () {
+                        alert("敬請期待！");
+                        return false;
+                    });
 
-        </ul>
 
+                </script>
+            </div>
+        </div>
     </div>
-</div>
 
 </div>
-
+</div>
 <!--彩票大厅样式变化-->
  <script type="text/javascript">
+
+     function SetHome2(t) {
+         document.all ? (document.body.style.behavior = "url(#default#homepage)", document.body.setHomePage(t)) : alert("您好,您的浏览器不支持自动设置页面为首页功能,请您手动在浏览器里设置该页面为首页!")
+     }
+
+     function addFavorite2() {
+         var t = window.location, e = document.title, i = navigator.userAgent.toLowerCase();
+         if (i.indexOf("360se") > -1) alert("由于360浏览器功能限制，请按 Ctrl+D 手动收藏！"); else if (i.indexOf("msie 8") > -1) window.external.AddToFavoritesBar(t, e); else if (document.all) try {
+             window.external.addFavorite(t, e)
+         } catch (t) {
+             alert("您的浏览器不支持,请按 Ctrl+D 手动收藏!")
+         } else window.sidebar ? window.sidebar.addPanel(e, t, "") : alert("您的浏览器不支持,请按 Ctrl+D 手动收藏!")
+     }
+     //彩票大厅
+     $(".cphost").on("mouseover", function () {
+         $(".cphost_pic1").hide();
+         $(".cphost_pic2").show();
+         $(".cphost_content").show();
+     });
+     $(".cphost").on("mouseout", function () {
+         $(".cphost_pic1").show();
+         $(".cphost_pic2").hide();
+         $(".cphost_content").hide();
+     });
+
      $("#ps28").click(function () {
         alert("敬請期待！");
         return false;
@@ -80,18 +317,25 @@
 var pathname = window.location.pathname;
 if (pathname.indexOf("pk10") >= 0){
 	$(".w1030 ul li:eq(1)").addClass("on");
-}else if (pathname.indexOf("xyft") >= 0){
+   // $(".on a:hover").css('color','#fff');
+}else if (pathname.indexOf("gd11x5") >= 0){
 	$(".w1030 ul li:eq(2)").addClass("on");
-}else if (pathname.indexOf("cqssc") >= 0){
+  //  $(".on a").css('color','#fff');
+}else if (pathname.indexOf("jsk3") >= 0){
 	$(".w1030 ul li:eq(3)").addClass("on");
-}else if (pathname.indexOf("xjssc") >= 0){
-	$(".w1030 ul li:eq(4)").addClass("on");
-}else if (pathname.indexOf("tjssc") >= 0){
-	$(".w1030 ul li:eq(5)").addClass("on");
+  //  $(".on a").css('color','#fff');
 }else if (pathname.indexOf("gdkl10") >= 0){
+	$(".w1030 ul li:eq(4)").addClass("on");
+   // $(".on a").css('color','#fff');
+}else if (pathname.indexOf("cqssc") >= 0){
+	$(".w1030 ul li:eq(5)").addClass("on");
+   // $(".on a").css('color','#fff');
+}else if (pathname.indexOf("jsssc") >= 0){
 	$(".w1030 ul li:eq(6)").addClass("on");
-}else if (pathname.indexOf("xync") >= 0){
+  //  $(".on a").css('color','#fff');
+}else if (pathname.indexOf("jssc") >= 0){
 	$(".w1030 ul li:eq(7)").addClass("on");
+//	$(".on a").css('color','#fff');
 }else{
 	$(".w1030 ul li:eq(0)").addClass("on");
 }

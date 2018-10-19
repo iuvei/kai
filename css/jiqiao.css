@@ -1,11 +1,13 @@
 /*资讯技巧*/
 .method-position
 {
-    border-bottom:solid 1px #CCCCCC;
-    height:30px;
-    line-height:30px;
-    margin-bottom:10px;
-    text-align:left;
+    /*border-bottom: solid 1px #CCCCCC; */
+height: 30px;
+    line-height: 10px;
+    /* margin-bottom: 10px; */
+    text-align: left;
+    margin-top: 10px;
+    padding-left: 12px;
 }
 .method-position a
 {

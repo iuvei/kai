@@ -41,10 +41,10 @@
 	<div class="ck-slide">
         <ul class="ck-slide-wrapper">
 		<li style="opacity: 0;"> <a href="javascript:;"><img src="/style/images/banner/4.png" alt="幸运飞艇" width="470" height="224"></a> </li>
-          <li style="opacity: 0;"> <a href="javascript:;"><img src="/style/images/banner/3.jpg" alt="千禧彩票网" width="470" height="224"></a> </li>
+          <li style="opacity: 0;"> <a href="javascript:;"><img src="/style/images/banner/3.jpg" alt="头彩开奖网" width="470" height="224"></a> </li>
           <li style="opacity: 0.138756;"> <a href="javascript:;"><img src="/style/images/banner/1.jpg" alt="PK10开奖直播" width="470" height="224"></a> </li>
           <li style="opacity: 0.861244;"> <a href="javascript:;"><img src="/style/images/banner/4.jpg" alt="手机PK10开奖直播" width="470" height="224"></a> </li>
-          <li style="opacity: 0;"> <a href="javascript:;"><img src="/style/images/banner/2.jpg" alt="千禧彩票网" width="470" height="224"></a> </li>
+          <li style="opacity: 0;"> <a href="javascript:;"><img src="/style/images/banner/2.jpg" alt="头彩开奖网" width="470" height="224"></a> </li>
     
         </ul>
         <a href="javascript:;" class="ctrl-slide ck-prev" style="opacity: 0.15;">上一张</a> <a href="javascript:;" class="ctrl-slide ck-next" style="opacity: 0.15;">下一张</a>
@@ -358,7 +358,7 @@ $(function(){
 		<!--lot-trend -->
 			<div class="lot-trend mt10">
 	<div class="l-title">
-		<h2>北京赛车pk10号码走势图</h2>
+		<h2>号码走势图</h2>
 		<a href="pk10/positiontrend.html"  target="_blank">查看详细走势>></a>
 	</div>
 	<div class="play-name">
