@@ -49,7 +49,7 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
             if (timeInterval != 0) {
-                $(".currentAward .period").html(data.current.periodNumber + " 期");
+                $(".currentAward .period").html(parseInt(data.current.periodNumber) + " 期");
                 var nums;
                 var str = "";
                 if(data.current.awardNumbers != null)
@@ -115,7 +115,7 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            $(".warnTime #period").html("第" + data.next.periodNumber + "期");
+            $(".warnTime #period").html("第" + (parseInt(data.next.periodNumber)+1) + "期");
             $(" .lot-award .currentAward .period-info .period-leave").html(data.firstPeriod+179-cpNumber);
              
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
