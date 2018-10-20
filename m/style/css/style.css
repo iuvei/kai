@@ -139,7 +139,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 .list-arrow {display:inline-block;width:8px;height:13px;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAZCAMAAAAPIl6bAAAAPFBMVEUAAACqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrflK3yAAAAE3RSTlMABfPSnUwxEeTDq4xxXSMa3Ld+czkDMQAAAGBJREFUGNONkUsOgCAMBfkjIAi++9/VrRMSI8sJnbavpgdr8ILKRXLqSCTRuUiSpm6SXFSptkH+j7qTDK9mqV5ameomP1hW5bcfdNS3Y0x0wRyYlLtwW+axJ0bdV+rbXR5fhwQRmUSAmAAAAABJRU5ErkJggg==") no-repeat 0 0;background-size:8px;}
 
 
-#xyft #number i,#pk10 #number i,#jssc #number i,#bjft #number i{display:inline-block;margin-right:2px;width:22px;height:22px;line-height:22px;text-align:center;font-size:12px;color:#fff;-webkit-border-radius:2px;border-radius:2px;
+#tcpk10 #number i,#xyft #number i,#pk10 #number i,#jssc #number i,#bjft #number i{display:inline-block;margin-right:2px;width:22px;height:22px;line-height:22px;text-align:center;font-size:12px;color:#fff;-webkit-border-radius:2px;border-radius:2px;
      text-shadow:#555 1px 0 0,#555 0 1px 0,#555 -1px 0 0,#555 0 -1px 0;
     -webkit-text-shadow:#555 1px 0 0,#555 0 1px 0,#555 -1px 0 0,#555 0 -1px 0;
     -moz-text-shadow:#555 1px 0 0,#555 0 1px 0,#555 -1px 0 0,#555 0 -1px 0;
@@ -177,67 +177,67 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	background:#28c200;
 }
 
-#jssc #number .no1,#bjft #number .no1,#pk10 #number .no1 {
+#jssc #number .no1,#bjft #number .no1,#pk10 #number .no1,#tcpk10 #number .no1 {
 	background: #FFCC00;
 }
-#jssc #number .no2,#bjft #number .no2,#pk10 #number .no2 {
+#jssc #number .no2,#bjft #number .no2,#pk10 #number .no2,#tcpk10 #number .no2{
 	background:#0089ff;
 }
-#jssc #number .no3,#bjft #number .no3,#pk10 #number .no3 {
+#jssc #number .no3,#bjft #number .no3,#pk10 #number .no3 ,#tcpk10 #number .no3{
 	background:#4d4d4d;
 }
-#jssc #number .no4,#bjft #number .no4,#pk10 #number .no4 {
+#jssc #number .no4,#bjft #number .no4,#pk10 #number .no4 ,#tcpk10 #number .no4{
 	background:#ff7300;
 }
-#jssc #number .no5,#bjft #number .no5,#pk10 #number .no5 {
+#jssc #number .no5,#bjft #number .no5,#pk10 #number .no5 ,#tcpk10 #number .no5{
 	background: #3399CC;
 }
-#jssc #number .no6,#bjft #number .no6,#pk10 #number .no6 {
+#jssc #number .no6,#bjft #number .no6,#pk10 #number .no6 ,#tcpk10 #number .no6{
 	background:#5200ff;
 }
-#jssc #number .no7,#bjft #number .no7,#pk10 #number .no7 {
+#jssc #number .no7,#bjft #number .no7,#pk10 #number .no7 ,#tcpk10 #number .no7{
 	background: #bbb;
 }
-#jssc #number .no8,#bjft #number .no8,#pk10 #number .no8 {
+#jssc #number .no8,#bjft #number .no8,#pk10 #number .no8 ,#tcpk10 #number .no8{
 	background:#ff0000;
 }
-#jssc #number .no9,#bjft #number .no9,#pk10 #number .no9 {
+#jssc #number .no9,#bjft #number .no9,#pk10 #number .no9 ,#tcpk10 #number .no9{
 	background:#760000;
 }
-#jssc #number .no10,#bjft #number .no10,#pk10 #number .no10 {
+#jssc #number .no10,#bjft #number .no10,#pk10 #number .no10 ,#tcpk10 #number .no10{
 	background:#28c200;
 }
 
-#tcpk10 #number .no1,#bjft #number .no1,#pk10 #number .no1 {
-	background: #FFCC00;
-}
-#tcpk10 #number .no2,#bjft #number .no2,#pk10 #number .no2 {
-	background:#0089ff;
-}
-#tcpk10 #number .no3,#bjft #number .no3,#pk10 #number .no3 {
-	background:#4d4d4d;
-}
-#tcpk10 #number .no4,#bjft #number .no4,#pk10 #number .no4 {
-	background:#ff7300;
-}
-#tcpk10 #number .no5,#bjft #number .no5,#pk10 #number .no5 {
-	background: #3399CC;
-}
-#tcpk10 #number .no6,#bjft #number .no6,#pk10 #number .no6 {
-	background:#5200ff;
-}
-#tcpk10 #number .no7,#bjft #number .no7,#pk10 #number .no7 {
-	background: #bbb;
-}
-#tcpk10 #number .no8,#bjft #number .no8,#pk10 #number .no8 {
-	background:#ff0000;
-}
-#tcpk10 #number .no9,#bjft #number .no9,#pk10 #number .no9 {
-	background:#760000;
-}
-#tcpk10 #number .no10,#bjft #number .no10,#pk10 #number .no10 {
-	background:#28c200;
-}
+/*#tcpk10 #number .no1,#bjft #number .no1,#pk10 #number .no1 {*/
+	/*background: #FFCC00;*/
+/*}*/
+/*#tcpk10 #number .no2,#bjft #number .no2,#pk10 #number .no2 {*/
+	/*background:#0089ff;*/
+/*}*/
+/*#tcpk10 #number .no3,#bjft #number .no3,#pk10 #number .no3 {*/
+	/*background:#4d4d4d;*/
+/*}*/
+/*#tcpk10 #number .no4,#bjft #number .no4,#pk10 #number .no4 {*/
+	/*background:#ff7300;*/
+/*}*/
+/*#tcpk10 #number .no5,#bjft #number .no5,#pk10 #number .no5 {*/
+	/*background: #3399CC;*/
+/*}*/
+/*#tcpk10 #number .no6,#bjft #number .no6,#pk10 #number .no6 {*/
+	/*background:#5200ff;*/
+/*}*/
+/*#tcpk10 #number .no7,#bjft #number .no7,#pk10 #number .no7 {*/
+	/*background: #bbb;*/
+/*}*/
+/*#tcpk10 #number .no8,#bjft #number .no8,#pk10 #number .no8 {*/
+	/*background:#ff0000;*/
+/*}*/
+/*#tcpk10 #number .no9,#bjft #number .no9,#pk10 #number .no9 {*/
+	/*background:#760000;*/
+/*}*/
+/*#tcpk10 #number .no10,#bjft #number .no10,#pk10 #number .no10 {*/
+	/*background:#28c200;*/
+/*}*/
 
 #jsk3 i{display: inline-block;
 	float: left;

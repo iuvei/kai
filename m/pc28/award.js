@@ -183,10 +183,10 @@ function getHistoryData(count,date) {
                     dx = '单';
                 }
                 console.log(data);
-        		html += '<li class="' + clsName + '" >';
+        		html += '<li class="' + clsName + '" style="font-size: 10px">';
 				html += '<table width="100%">';
 				html += '<tr>';
-        		html += '<td width="14%">' + data.termNum.substring(4, 7) +'期</td>';
+        		html += '<td width="21%">' + data.termNum +'期</td>';
 				html += '<td width="14%">'+ data.lotteryTime.substring(10, 16)+'</td>';	
                 html += '<td class="">';			
 				html += '<i class="ball-red">' + totalNum_a + '</i>';
@@ -203,11 +203,11 @@ function getHistoryData(count,date) {
                 }else if(sebo == '和'){
                     html += '<i class="ball-red" style="background-color: #fff;color: forestgreen">'+sebo+'</i>';
                 }else {
-                    html += '<i class="ball-red" style="background-color: #fff;color: black">'+sebo+'</i>';
+                    html += '<i class="ball-red" style="background-color: #fff;color: green">'+sebo+'</i>';
                 }
 
                 if(danshaung == '极大' || danshaung == '极小'){
-                    html += '<i class="ball-red" style="width: 40px;background-color: firebrick;color: black">'+danshaung+'</i>';
+                    html += '<i class="ball-red" style="width: 25px;background-color: firebrick;color: black">'+danshaung+'</i>';
                 }else {
                     if(danshaung == '大'){
                         html += '<i class="ball-red" style="background-color: #fff;color: #da2d21">'+danshaung+'</i>';

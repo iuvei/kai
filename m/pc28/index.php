@@ -26,6 +26,9 @@ include("../conn.php");
     .ball-red{
         background-color: #ff7b00;
     }
+    .ball-red, .ball-blue{
+        font-size: 10px;
+    }
 </style>
 
 </head>

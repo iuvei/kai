@@ -153,3 +153,14 @@ function numFromDesc(n1,n2,n3){
 	}
 	return nfd;
 }
+
+
+function numFromDesc3(n1,n3){
+	if(n1 > n3){
+		return '龙';
+	}else if(n1 < n3){
+        return '虎';
+    }else if(n1 == n3){
+        return '和';
+    }
+}

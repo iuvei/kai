@@ -149,7 +149,7 @@ function getHistoryData(count,date) {
         		html += '<li class="' + clsName + '">';
 				html += '<table width="100%">';
 				html += '<tr>';
-        		html += '<td width="14%">' + data.termNum.substring(3, 6) +'期</td>';
+        		html += '<td width="14%">' + data.termNum.substring(8) +'期</td>';
 				html += '<td width="14%">'+ data.lotteryTime.substring(10, 16)+'</td>';	
                 html += '<td class="nums">';			
 				html += '<i class="no' + data.n1 + '">' + data.n1 + '</i>';

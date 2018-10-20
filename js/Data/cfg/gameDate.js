@@ -120,6 +120,104 @@ var webListOP = {
 //				}
 			],
 
+    "xyft": [
+        {
+            "text":"幸运飞艇",
+            "href":"xyft/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"xyft/kaijiang.html"
+        },
+        // {
+        //     "text":"号码遗漏统计",
+        //     "href":"xyft/yilou.html"
+        // },
+        // {
+        //     "text":"龙虎路珠",
+        //     "href":"xyft/luzhulonghu.html"
+        // },
+        // {
+        //     "text":"号码前后路珠",
+        //     "href":"xyft/luzhuleftorright.html"
+        // },
+        {
+            "text":"冠、亚和路珠",
+            "href":"xyft/guanyahestat.html"
+        },
+        {
+            "text":"单双大小路珠",
+            "href":"xyft/luzhubigorsmall.html"
+        },
+        {
+            "text":"总和路珠",
+            "href":"xyft/numberrulestat.html",
+            "spanClass":"wen_lasthostory"
+        },
+        // {
+        //     "text":"今日号码统计",
+        //     "href":"xyft/opencodeanalysis.html"
+        // },
+        {
+            "text":"单双大小历史",
+            "href":"xyft/ballstat.html"
+        },
+        {
+            "text":"历史号码统计",
+            "href":"xyft/numberstat.html"
+        },
+//				{
+//					"text":"淘宝模式",
+//					"href":"pk10/betmode.html"
+//				},
+//         {
+//             "text":"免费参考",
+//             "href":"xyft/betgame.html"
+//         },
+        {
+            "text":"幸运飞艇开奖直播",
+            "href":"xyft/shipin/",
+            "title":"在线观看极速赛车开奖直播",
+            "aClass":"redColor"
+        },
+        // {
+        //     "text":"冷热码分析",
+        //     "href":"xyft/coldhotnumber.html"
+        // },
+        // {
+        //     "text":"杀号定胆",
+        //     "href":"xyft/shdd.html"
+        // },
+        {
+            "text":"幸运飞艇技巧",
+            "href":"jiqiao/xyft/"
+        },
+        {
+            "text":"遗漏大数据",
+            "href":"xyft/omitdata.html",
+
+        },
+        {
+            "text":"两面数据统计",
+            "href":"xyft/twosidedstat.html",
+            "spanClass":"wen_newIcon"
+        },
+        // {
+        //     "text":"免费多选分析",
+        //     "href":"xyft/positionanalyze.html",
+        //     "spanClass":"wen_newIcon"
+        // },
+        {
+            "text":"横版走势图",
+            "href":"xyft/zoushitu.html"
+        }
+//				,
+//				{
+//					"text":"九宫计划",
+//					"href":"pk10/nineplan.html",
+//					"spanClass":"wen_newIcon"
+//				}
+    ],
 
     "jssc": [
         {
