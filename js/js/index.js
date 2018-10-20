@@ -1181,7 +1181,7 @@ indextools.videoMove = function (e) {
     }), $(".lottey_title").on("click", "li", function () {
         var e = $(this).addClass("check").attr("data-text");
         $(this).siblings(".check").removeClass("check"), $(e).siblings().css("height", 0), $(e).css({
-            height: "650px",
+            height: "auto",
             "z-index": 1
         });
         $(".px10sanhao").css('height',335);
@@ -1201,7 +1201,7 @@ indextools.videoMove = function (e) {
     $(".lottey_title").on("click", "li", function () {
         var e = $(this).addClass("check").attr("data-text");
         $(this).siblings(".check").removeClass("check"), $(e).siblings().css("height", 0), $(e).css({
-            height: "650px",
+            height: "auto",
             "z-index": 1
         });
         $(".px10sanhao").css('height',335);

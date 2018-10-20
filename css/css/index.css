@@ -46,7 +46,7 @@
     position: relative;
     width: 100%;
     background: #f0f0f0;
-    height: 1950px
+    height: 1195px
 }
 
 .bodybox .menubannboxc .menubox {
@@ -86,7 +86,7 @@
 
 .bodybox .menubannboxc .menubox .zhezao .kair {
     width: 865px;
-    height: 470px;
+    /*height: 470px;*/
     margin: 0 auto;
     float: left;
     background: #fff
@@ -188,7 +188,7 @@
     padding: 20px 10px 15px 20px;
     position: relative;
     overflow: hidden;
-    width: 865px;
+    width: 1200px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box
 }
@@ -202,7 +202,7 @@
     background: #fff;
     display: inline-block;
     width: 20px;
-    height: 169px;
+    height: 202px;
     position: absolute;
     top: 0;
     z-index: 8
@@ -222,7 +222,7 @@
     height: 35px;
     position: absolute;
     z-index: 1;
-    top: 61px;
+    top: 91px;
     cursor: pointer;
     opacity: 0
 }
@@ -253,11 +253,11 @@
 
 .bodybox .menubannboxc .menubox .zhezao .kair .video_box ul li {
     float: left;
-    margin-right: 10px
+    margin-right: 25px;
 }
 
 .bodybox .menubannboxc .menubox .zhezao .kair .video_box ul li dl dd {
-    line-height: 25px;
+    line-height: 30px;
     text-align: center;
     overflow: hidden
 }
@@ -276,7 +276,7 @@
 }
 
 .bodybox .menubannboxc .menubox .zhezao .kair .video_box ul li dl dd div .bgtime {
-    color: #ff721a
+    color: #f1010a
 }
 
 .bodybox .menubannboxc .menubox .zhezao .kair .video_box ul li dl dd .opentyle {
@@ -293,14 +293,14 @@
 }
 
 .bodybox .menubannboxc .menubox .zhezao .kair .video_box ul li dl dt p {
-    display: none;
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     text-align: center;
-    background: url(../../images/images/blackbg.png) -547px -519px no-repeat
+    /*background: url(../../images/images/blackbg.png) -547px -519px no-repeat*/
 }
 
 .bodybox .menubannboxc .menubox .zhezao .kair .video_box ul li dl dt p span:first-child {
@@ -309,16 +309,19 @@
     background: hsla(0, 0%, 100%, .2) url(../../images/images/v_play.png) 0 0 no-repeat;
     border-radius: 50%;
     display: block;
-    margin: 38px auto;
-    margin-bottom: 21px
+    margin: 72px auto;
+    margin-bottom: 41px
 }
 
 .bodybox .menubannboxc .menubox .zhezao .kair .video_box ul li dl dt p span:last-child {
     display: block;
     width: auto;
-    margin: 0 auto;
+    margin: 0 auto 0;
     color: #fff;
-    font-size: 14px
+    font-size: 16px;
+    height: 35px;
+    line-height: 35px;
+    background: rgba(0, 0, 0, 0.45);
 }
 
 .bodybox .menubannboxc .menubox .zhezao main {
@@ -361,7 +364,7 @@
 }
 
 .bodybox .menubannboxc .menubox .zhezao main .view_box {
-    padding:20px 40px 5px;
+    padding:20px 20px 5px;height: 460px; overflow-y: auto;
     background: #fff
 }
 
@@ -374,7 +377,7 @@
 }
 
 .bodybox .menubannboxc .menubox .zhezao main .view_box #hot_li {
-    height: 650px
+    height: 460px
 }
 
 .bodybox .menubannboxc .menubox .zhezao main .view_box .rowbox1 {
@@ -466,7 +469,7 @@
     height: 36px;
     width: 36px;
     color: #fff;
-    background: #e73f3f
+    background: #e73f3f;font-size: 18px;font-weight: bold;
 }
 
 .bodybox .menubannboxc .menubox .zhezao main .view_box .rowbox1 .nextkai_time span.hour, .bodybox .menubannboxc .menubox .zhezao main .view_box .rowbox1 .nextkai_time span.hourtxt {
@@ -507,7 +510,7 @@
 .bodybox .menubannboxc .menubox .zhezao main .view_box .rowbox3 {
     width: 100%;
     overflow: hidden;
-    margin-bottom: 22px
+    /*margin-bottom: 22px*/
 }
 
 .bodybox .menubannboxc .menubox .zhezao main .view_box .rowbox3 ul {
@@ -658,7 +661,8 @@
     width: 320px;
     float: left;
     margin-left: 15px;
-    margin-top: -470px
+    /*margin-top: -470px*/
+    margin-top:-300px
 }
 
 .bodybox .menubannboxc .menubox .zhezao aside .otherr {
@@ -1617,3 +1621,12 @@
     height: 60px;
     background: #444444 !important
 }
+ .cuttime b{    display: inline-block;
+     height: 22px;
+     line-height: 22px;
+     padding-left: 23px;
+     font-size: 16px;
+     color: #666;
+     font-weight: 400;
+     margin-bottom: -7px;}
+ .cuttime b{background:url(../../images/time_icon.png) no-repeat left center}

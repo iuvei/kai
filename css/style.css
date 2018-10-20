@@ -57,7 +57,7 @@
 
 .lot-award .logo img {
 	width: 82px;
-	height: 82px
+	height: 82px; margin-top: 6px;
 }
 
 .lot-award .currentAward {
@@ -67,21 +67,21 @@
 
 .lot-award .currentAward .title {
 	float: left;
-	line-height: 35px;
-	height: 35px;
-	color: #999
+	line-height: 35px!important;
+	height: 35px !important;
+	color: #333; font-size: 16px;
 }
 
 .lot-award .currentAward .period {
 	text-align: right;
-	line-height: 35px;
+	line-height: 35px!important;
 	float: left;
-	color: #999
+	color: #999;font-size: 16px;
 }
 
 .lot-award .currentAward .period-info {
 	float: right;
-	line-height: 35px
+	line-height: 35px!important;font-size: 16px;
 }
 
 .lot-award .currentAward .period-info span {
@@ -95,9 +95,9 @@
 	-webkit-border-radius: 3px;
 	border-radius: 4px;
 	width: 276px;
-	padding: 7px 3px 8px 8px;
-	height: 48px;
-	margin-top: 10px;
+	padding: 17px 3px 8px 8px;
+	height: 55px;
+	margin-top: 5px;
 	background-color: #fff
 }
 
@@ -118,7 +118,7 @@
 .warnTime #period {
 	width: 120px;
 	color: green;
-	font-weight: bold
+	font-weight: bold;font-size: 16px;
 }
 
 .warnTime .minute, .warnTime .second {
@@ -790,7 +790,7 @@
 	color: red;
 	line-height: 25px;
 	padding-left: 25px;
-	margin-bottom: 10px;
+	margin-top: 10px;
 	clear: both
 }
 
@@ -1965,12 +1965,14 @@ margin-right: 0px;}
 .centerTwo_3_b a{color:#fff;}
 
 .lot-award1 {
-	padding: 6px;overflow: hidden;
-	/*height: 91px;*/
+	padding: 16px 6px;
+	overflow: hidden;
+	/* height: 91px; */
 	text-align: left;
-	background-color:#fafafa;
-	border:1px solid #f5f5f5;
-	/*margin-top:2px;*/
+	background-color: #ffffff;
+	border: 1px solid #f5f5f5;
+	border-top: 8px solid #f0f0f0;
+	border-bottom: 8px solid #f0f0f0;
 }
 .warnTime a{
 text-indent:-9999px;
