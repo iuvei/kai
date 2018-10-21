@@ -131,9 +131,9 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 <body>
 
 <header class="header">
-	<a onClick="javascript:return_prepage();" class="back">上一页</a>
+<!--	<a onClick="javascript:return_prepage();" class="back">上一页</a>-->
 	<a href="./" class="logo"><img src="style/images/logo.png"></a>
-	<a href="./" class="menu">首页</a>
+<!--	<a href="./" class="menu">首页</a>-->
 </header>
 
 
@@ -141,16 +141,20 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 <div class="h50">
 
 </div>
+<div class="barner">
+    <img src="style/images/bjpk10-index.jpg">
+</div>
 
 <ul class="kaij-mylist">
 	     
     <li class="kaij-mylist-li" id="pk10">
-	                <a href="pk10/">
-	                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pk10"></span></div>
+	                <a href="pk10/"> 北京赛车<span class="list-arrow"></span>
+                    </a>
+<!--	                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pk10"></span></div>-->
 	                <div class="kaij-mylist-r">
 	                    <div class="kaij-mylist-hd">
 	                        <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-	                        <div class="itm-tit">北京赛车<span class="itm-qih" id="qihao">载入中</span></div>
+	                        <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
 	                    </div>
 	                    <div class="kaij-mylist-bd">
 	                        <div class="itm-result">
@@ -160,8 +164,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 	                        </div>
 	                    </div>
 	                </div>
-	                <span class="list-arrow"></span>
-	                </a>
+
 	            </li>
 
 
