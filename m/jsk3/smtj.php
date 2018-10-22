@@ -35,30 +35,76 @@ include("../conn.php");
    
 <script src="award.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
-<div class="daojishi">
- <div class="fl"><?=$web_type?></div>
- <div class="fr"><em id="period"></em>期开奖剩余：<span id="time"></span></div>
-</div>
-<div class="h100">
+<div class="daojishi1">
+    <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">
+        <ul class="">
+            <li><a href="../pk10/" game="pk10" class="">北京赛车pk10</a></li>
+            <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
+            <li><a href="../xyft/" game="xyft">幸运飞艇</a></li>
+            <li><a game="bjft" href="../bjft/">北京番摊</a></li>
+            <li><a game="cqft" href="../cqft">重庆番摊</a></li>
+            <li><a href="../jsssc/" game="jsssc">极速时时彩</a></li>
+            <li><a href="../jssc/" game="jssc">极速赛车</a></li>
+            <li><a href="../jsk3/" game="jsk3">江苏快3</a></li>
+            <li><a href="../gd11x5/" game="gd11x5">广东11选5</a></li>
+            <li><a href="../gdkl10/" game="gdkl10">广东快乐十分</a></li>
+            <li><a href="../pc28/" game="pc28">加拿大28</a></li>
+            <li><a href="../txffc/" game="txffc" class="cur">腾讯分分彩</a></li>
+            <li><a href="../tcssc/" game="tcssc">头彩时时彩</a></li>
+            <li><a href="../tcpk10/" game="tcpk10">头彩PK10</a></li>
+        </ul>
+    </div>
+    <div class="fl xia-yx" id="xia-yx1"><?=$web_type?><span class="xialabt" id="xialabt1"></span> </div>
 
+    <div class="fr"><a class="sp" href="shipin.php">开奖直播</a></div>
 </div>
- 
+
+<ul class="kaij-mylist">
+    <li class="kaij-mylist-li" id="jsk3" style="border-bottom: 1px solid #eeeeee;">
+
+        <div class="kaij-mylist-r">
+            <div class="kaij-mylist-hd daojishi " style="padding-top: 0;">
+                <div class="itm-time"><em id="period"></em>期开奖剩余：<span id="time" class="itm-time-time">01:27</span></div>
+                <div class="itm-tit"><span class="itm-qih" id="qihao">第710580期</span></div>
+            </div>
+            <div class="kaij-mylist-bd">
+                <div class="itm-result">
+                    <div class="ball-wrap" id="number"><i class="num3"></i><i class="num4"></i><i class="num6"></i><span class="ball-red">15</span><span class="ball-red">大</span></div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </li>
+
+</ul>
 <div class="gametool">
+    <div class="fl" id="xia-yx2">两面统计<span class="xialabt " id="xialabt2"></span>
 
-     <ul class="fl">
-     <li><a href="./">首页</a></li>
-       <li><a href="smtj.php" class="cur">双面</a></li>
-       
-       
-       
-       <li><a href="jiqiao.php">技巧</a></li>
-       
-     </ul>
- 
+
+        <div class="xia-yxx-list" id="xia-yxx-list2" style="display: none;">
+            <ul class="">
+                <li><a href="./" class="cur">开奖历史</a></li>
+                <li><a href="smtj.php">两面统计</a></li>
+                <li><a href="cltj.php">长龙统计</a></li>
+                <li><a href="hmzs.php">号码走势</a></li>
+                <li><a href="lrtj.php">冷热统计</a></li>
+                <li><a href="jiqiao.php">玩法技巧</a></li>
+                <li><a href="shipin.php">开奖直播</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+
+<!--    <ul class="fr">-->
+<!--        <input type="date" name="dateData" id="dateData" onchange="Search()"/>-->
+<!---->
+<!---->
+<!--    </ul>-->
 
 </div>
-<div style="height:40px;"></div>
-
 <table class="lot-table">
 			
 				<tbody id="smyc">

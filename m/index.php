@@ -148,12 +148,12 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 <ul class="kaij-mylist">
 	     
     <li class="kaij-mylist-li" id="pk10">
-	                <a href="pk10/"> 北京赛车<span class="list-arrow"></span>
+	                <a href="pk10/" class="yx_name"> 北京赛车<span class="list-arrow"></span>
                     </a>
 <!--	                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pk10"></span></div>-->
 	                <div class="kaij-mylist-r">
 	                    <div class="kaij-mylist-hd">
-	                        <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
+	                        <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
 	                        <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
 	                    </div>
 	                    <div class="kaij-mylist-bd">
@@ -164,17 +164,25 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 	                        </div>
 	                    </div>
 	                </div>
+        <div class="bt-jg">冠亚和 <span>18</span> <span>大</span><span>单</span> 1-5龙虎 <span>龙</span><span>虎</span><span>龙</span><span>虎</span><span>龙</span></div>
 
+<div class="bt-aa">
+<a href="pk10/">开奖历史</a>
+    <a href="pk10/smtj.php">两面统计</a>
+    <a href="pk10/cltj.php">长龙统计</a>
+    <a href="pk10/shipin.php">开奖视频</a>
+</div>
 	            </li>
 
 
     <li class="kaij-mylist-li" id="cqssc">
-        <a href="cqssc/">
-            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-cqssc"></span></div>
+        <a href="cqssc/" class="yx_name"> 重庆时时彩<span class="list-arrow"></span>
+        </a>
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-cqssc"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
-                    <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-                    <div class="itm-tit">重庆时时彩<span class="itm-qih" id="qihao">载入中</span></div>
+                    <div class="itm-time">下期开奖：<span id="time"  class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
                 </div>
                 <div class="kaij-mylist-bd">
                     <div class="itm-result">
@@ -184,18 +192,24 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                     </div>
                 </div>
             </div>
-            <span class="list-arrow"></span>
-        </a>
+        <div class="bt-jg">总和 <span>18</span> <span>大</span><span>单</span> 龙虎<span>龙</span >前三<span class="span-2">杂六</span>中三<span class="span-2">散号</span>后三<span class="span-2">杂六</span></div>
+        <div class="bt-aa">
+            <a href="cqssc/">开奖历史</a>
+            <a href="cqssc/smtj.php">两面统计</a>
+            <a href="cqssc/cltj.php">长龙统计</a>
+            <a href="cqssc/shipin.php">开奖视频</a>
+        </div>
     </li>
 
 
     <li class="kaij-mylist-li" id="xyft">
-        <a href="xyft/">
-            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xyft"></span></div>
+        <a href="xyft/" class="yx_name">幸运飞艇 <span class="list-arrow"></span>
+        </a>
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xyft"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
-                    <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-                    <div class="itm-tit">幸运飞艇<span class="itm-qih" id="qihao">载入中</span></div>
+                    <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
                 </div>
                 <div class="kaij-mylist-bd">
                     <div class="itm-result">
@@ -205,18 +219,25 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                     </div>
                 </div>
             </div>
-            <span class="list-arrow"></span>
-        </a>
+
+        <div class="bt-jg">冠亚和 <span>18</span> <span>大</span><span>单</span> 1-5龙虎 <span>龙</span><span>虎</span><span>龙</span><span>虎</span><span>龙</span></div>
+        <div class="bt-aa">
+            <a href="xyft/">开奖历史</a>
+            <a href="xyft/smtj.php">两面统计</a>
+            <a href="xyft/cltj.php">长龙统计</a>
+            <a href="xyft/shipin.php">开奖视频</a>
+        </div>
     </li>
 
 
     <li class="kaij-mylist-li" id="bjft">
-        <a href="bjft/">
-            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pk10"></span></div>
+        <a href="bjft/" class="yx_name"> 北京番摊 <span class="list-arrow"></span>
+        </a>
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pk10"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
-                    <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-                    <div class="itm-tit">北京番摊<span class="itm-qih" id="qihao">载入中</span></div>
+                    <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
                 </div>
                 <div class="kaij-mylist-bd">
                     <div class="itm-result">
@@ -226,18 +247,24 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                     </div>
                 </div>
             </div>
-            <span class="list-arrow"></span>
-        </a>
+
+        <div class="bt-aa">
+            <a href="bjft/">开奖历史</a>
+            <a href="bjft/smtj.php">两面统计</a>
+            <a href="bjft/cltj.php">长龙统计</a>
+            <a href="bjft/shipin.php">开奖视频</a>
+        </div>
     </li>
 
 
     <li class="kaij-mylist-li" id="jsk3">
-        <a href="jsk3/">
-            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-jsk3"></span></div>
+        <a href="jsk3/" class="yx_name">江苏快三 <span class="list-arrow"></span>
+        </a>
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-jsk3"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
-                    <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-                    <div class="itm-tit">江苏快三<span class="itm-qih" id="qihao">载入中</span></div>
+                    <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
                 </div>
                 <div class="kaij-mylist-bd">
                     <div class="itm-result">
@@ -247,18 +274,25 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                     </div>
                 </div>
             </div>
-            <span class="list-arrow"></span>
-        </a>
+
+
+        <div class="bt-aa">
+            <a href="jsk3/">开奖历史</a>
+            <a href="jsk3/smtj.php">两面统计</a>
+            <a href="jsk3/cltj.php">长龙统计</a>
+            <a href="jsk3/shipin.php">开奖视频</a>
+        </div>
     </li>
 
 
     <li class="kaij-mylist-li" id="gd11x5">
-        <a href="gd11x5/">
-            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-gd11x5"></span></div>
+        <a href="gd11x5/" class="yx_name"> 广东11选5<span class="list-arrow"></span>
+        </a>
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-gd11x5"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
-                    <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-                    <div class="itm-tit">广东11选5<span class="itm-qih" id="qihao">载入中</span></div>
+                    <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
                 </div>
                 <div class="kaij-mylist-bd">
                     <div class="itm-result">
@@ -268,18 +302,24 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                     </div>
                 </div>
             </div>
-            <span class="list-arrow"></span>
-        </a>
+        <div class="bt-jg">总和 <span>18</span> <span>大</span><span>单</span> 龙虎<span>龙</span >前三<span class="span-2">杂六</span>中三<span class="span-2">散号</span>后三<span class="span-2">杂六</span></div>
+        <div class="bt-aa">
+            <a href="gd11x5/">开奖历史</a>
+            <a href="gd11x5/smtj.php">两面统计</a>
+            <a href="gd11x5/cltj.php">长龙统计</a>
+            <a href="gd11x5/shipin.php">开奖视频</a>
+        </div>
     </li>
 
 
     <li class="kaij-mylist-li" id="gdkl10">
-        <a href="gdkl10/">
-            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-gdkl10"></span></div>
+        <a href="gdkl10/" class="yx_name">广东快乐十分<span class="list-arrow"></span>
+        </a>
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-gdkl10"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
-                    <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-                    <div class="itm-tit">广东快乐十分<span class="itm-qih" id="qihao">载入中</span></div>
+                    <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
                 </div>
                 <div class="kaij-mylist-bd">
                     <div class="itm-result">
@@ -289,19 +329,25 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                     </div>
                 </div>
             </div>
-            <span class="list-arrow"></span>
-        </a>
+        <div class="bt-jg">总和 <span>18</span> <span>大</span><span>单</span><span class="span-2">尾大</span> 1-4龙虎<span>龙</span ><span>虎</span ><span>龙</span ><span>龙</span ></div>
+        <div class="bt-aa">
+            <a href="gdkl10/">开奖历史</a>
+            <a href="gdkl10/smtj.php">两面统计</a>
+            <a href="gdkl10/cltj.php">长龙统计</a>
+            <a href="gdkl10/shipin.php">开奖视频</a>
+        </div>
     </li>
 
 
 
     <li class="kaij-mylist-li" id="cqft">
-        <a href="cqft/">
-            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-cqssc"></span></div>
+        <a href="cqft/" class="yx_name">重庆番摊 <span class="list-arrow"></span>
+        </a>
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-cqssc"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
-                    <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-                    <div class="itm-tit">重庆番摊<span class="itm-qih" id="qihao">载入中</span></div>
+                    <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
                 </div>
                 <div class="kaij-mylist-bd">
                     <div class="itm-result">
@@ -311,18 +357,23 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                     </div>
                 </div>
             </div>
-            <span class="list-arrow"></span>
-        </a>
+        <div class="bt-aa">
+            <a href="pk10/">开奖历史</a>
+            <a href="pk10/smtj.php">两面统计</a>
+            <a href="pk10/cltj.php">长龙统计</a>
+            <a href="pk10/shipin.php">开奖视频</a>
+        </div>
     </li>
 
 
     <li class="kaij-mylist-li" id="pc28">
-        <a href="pc28/">
-            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pc28"></span></div>
+        <a href="pc28/" class="yx_name"> 加拿大28<span class="list-arrow"></span>
+        </a>
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pc28"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
-                    <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-                    <div class="itm-tit">加拿大28<span class="itm-qih" id="qihao">载入中</span></div>
+                    <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
                 </div>
                 <div class="kaij-mylist-bd">
                     <div class="itm-result">
@@ -332,18 +383,23 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                     </div>
                 </div>
             </div>
-            <span class="list-arrow"></span>
-        </a>
+        <div class="bt-aa">
+            <a href="pc28/">开奖历史</a>
+            <a href="pc28/smtj.php">两面统计</a>
+            <a href="pc28/cltj.php">长龙统计</a>
+            <a href="pc28/shipin.php">开奖视频</a>
+        </div>
     </li>
 
 
     <li class="kaij-mylist-li" id="jssc">
-                <a href="jssc/">
-                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xync"></span></div>
+                <a href="jssc/" class="yx_name">極速賽車<span class="list-arrow"></span>
+                </a>
+<!--                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xync"></span></div>-->
                 <div class="kaij-mylist-r">
                     <div class="kaij-mylist-hd">
-                        <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-	                    <div class="itm-tit">極速賽車<span class="itm-qih" id="qihao">载入中</span></div>
+                        <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+	                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
                     </div>
                     <div class="kaij-mylist-bd">
                         <div class="itm-result">
@@ -353,18 +409,24 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                         </div>
                     </div>
                 </div>
-                <span class="list-arrow"></span>
-                </a>
+        <div class="bt-jg">冠亚和 <span>18</span> <span>大</span><span>单</span> 1-5龙虎 <span>龙</span><span>虎</span><span>龙</span><span>虎</span><span>龙</span></div>
+        <div class="bt-aa">
+            <a href="jssc/">开奖历史</a>
+            <a href="jssc/smtj.php">两面统计</a>
+            <a href="jssc/cltj.php">长龙统计</a>
+            <a href="jssc/shipin.php">开奖视频</a>
+        </div>
             </li>
 
             
     <li class="kaij-mylist-li" id="jsssc">
-                <a href="jsssc/">
-                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xjssc"></span></div>
+                <a href="jsssc/" class="yx_name">極速时时彩<span class="list-arrow"></span>
+                </a>
+<!--                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xjssc"></span></div>-->
                 <div class="kaij-mylist-r">
                     <div class="kaij-mylist-hd">
-                         <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-	                     <div class="itm-tit">極速时时彩<span class="itm-qih" id="qihao">载入中</span></div>
+                         <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+	                     <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
                     </div>
                     <div class="kaij-mylist-bd">
                         <div class="itm-result">
@@ -374,18 +436,24 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                         </div>
                     </div>
                 </div>
-                <span class="list-arrow"></span>
-                </a>
+        <div class="bt-jg">总和 <span>18</span> <span>大</span><span>单</span> 龙虎<span>龙</span >前三<span class="span-2">杂六</span>中三<span class="span-2">散号</span>后三<span class="span-2">杂六</span></div>
+        <div class="bt-aa">
+            <a href="jsssc/">开奖历史</a>
+            <a href="jsssc/smtj.php">两面统计</a>
+            <a href="jsssc/cltj.php">长龙统计</a>
+            <a href="jsssc/shipin.php">开奖视频</a>
+        </div>
             </li>
             
 
     <li class="kaij-mylist-li" id="txffc">
-        <a href="txffc/">
-            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-txffc"></span></div>
+        <a href="txffc/" class="yx_name">腾讯分分彩<span class="list-arrow"></span>
+        </a>
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-txffc"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
-                    <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-                    <div class="itm-tit">腾讯分分彩<span class="itm-qih" id="qihao">载入中</span></div>
+                    <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
                 </div>
                 <div class="kaij-mylist-bd">
                     <div class="itm-result">
@@ -395,18 +463,24 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                     </div>
                 </div>
             </div>
-            <span class="list-arrow"></span>
-        </a>
+        <div class="bt-jg">总和 <span>18</span> <span>大</span><span>单</span> 龙虎<span>龙</span >前三<span class="span-2">杂六</span>中三<span class="span-2">散号</span>后三<span class="span-2">杂六</span></div>
+        <div class="bt-aa">
+            <a href="txffc/">开奖历史</a>
+            <a href="txffc/smtj.php">两面统计</a>
+            <a href="txffc/cltj.php">长龙统计</a>
+            <a href="txffc/shipin.php">开奖视频</a>
+        </div>
     </li>
 
 
     <li class="kaij-mylist-li" id="tcpk10">
-        <a href="tcpk10/">
-            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-tcpk10"></span></div>
+        <a href="tcpk10/" class="yx_name">头彩PK10 <span class="list-arrow"></span>
+        </a>
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-tcpk10"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
-                    <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-                    <div class="itm-tit">头彩PK10<span class="itm-qih" id="qihao">载入中</span></div>
+                    <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
                 </div>
                 <div class="kaij-mylist-bd">
                     <div class="itm-result">
@@ -416,18 +490,24 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                     </div>
                 </div>
             </div>
-            <span class="list-arrow"></span>
-        </a>
+        <div class="bt-jg">冠亚和 <span>18</span> <span>大</span><span>单</span> 1-5龙虎 <span>龙</span><span>虎</span><span>龙</span><span>虎</span><span>龙</span></div>
+        <div class="bt-aa">
+            <a href="tcpk10/">开奖历史</a>
+            <a href="tcpk10/smtj.php">两面统计</a>
+            <a href="tcpk10/cltj.php">长龙统计</a>
+            <a href="tcpk10/shipin.php">开奖视频</a>
+        </div>
     </li>
 
 
     <li class="kaij-mylist-li" id="tcssc">
-        <a href="tcssc/">
-            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-tcssc"></span></div>
+        <a href="tcssc/" class="yx_name"> 头彩时时彩<span class="list-arrow"></span>
+        </a>
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-tcssc"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
-                    <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-                    <div class="itm-tit">头彩时时彩<span class="itm-qih" id="qihao">载入中</span></div>
+                    <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
                 </div>
                 <div class="kaij-mylist-bd">
                     <div class="itm-result">
@@ -437,8 +517,13 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                     </div>
                 </div>
             </div>
-            <span class="list-arrow"></span>
-        </a>
+        <div class="bt-jg">总和 <span>18</span> <span>大</span><span>单</span> 龙虎<span>龙</span >前三<span class="span-2">杂六</span>中三<span class="span-2">散号</span>后三<span class="span-2">杂六</span></div>
+        <div class="bt-aa">
+            <a href="tcssc/">开奖历史</a>
+            <a href="tcssc/smtj.php">两面统计</a>
+            <a href="tcssc/cltj.php">长龙统计</a>
+            <a href="tcssc/shipin.php">开奖视频</a>
+        </div>
     </li>
             
 </ul>
@@ -665,16 +750,16 @@ function IndexOpen() {
         }else {
             ds = '大';
         }
-        str += "<i class='ball-red' style='background-color: #fff;color: #FFCC00;width: 30px;font-weight: bolder;font-size: 14px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;'>"+ tan_2 +"摊</i>" ;
+        str += "<span class='ball-red span-2' >"+ tan_2 +"摊</span>" ;
         if(ds == '大'){
-            str += "<i class='ball-red' style='background-color: #fff;color: #da2d21;width: 20px;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;'>"+ ds +"</i>";
+            str += "<span class='ball-red' >"+ ds +"</span>";
         }else {
-            str += "<i class='ball-red' style='background-color: #fff;color: #4185ff;width: 20px;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;'>"+ ds +"</i>"
+            str += "<span class='ball-red' >"+ ds +"</span>"
         }
         if(dx == '单'){
-            str +=  "<i class='ball-red' style='background-color: #fff;color: #da2d21;width: 20px;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;'>"+ dx +"</i>";
+            str +=  "<span class='ball-red' >"+ dx +"</span>";
         }else {
-            str +=  "<i class='ball-red' style='background-color: #fff;color: #4185ff;width: 20px;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;'>"+ dx +"</i>";
+            str +=  "<span class='ball-red'>"+ dx +"</span>";
         }
 
         $("#cqft #number").html(str);
@@ -760,47 +845,44 @@ function IndexOpen() {
             "<i class='no" + nums[7].replace(/\b(0+)/gi,"") + "'>" + nums[7] + "</i>" +
             "<i class='no" + nums[8].replace(/\b(0+)/gi,"") + "'>" + nums[8] + "</i>" +
             "<i class='no" + nums[9].replace(/\b(0+)/gi,"") + "'>" + nums[9] + "</i>" +
-            "<i class='ball-red' style='background-color: #fff;width: 5px'></i>"+
-        "<br/><i class='ball-red' style='background-color: #fff;color: #FFCC00;width: 25px'>"+ tan_2 +"摊</i>" ;
+        "<br/>前三<span class='ball-red span-2'>"+ tan_2 +"摊</span>" ;
 
         if(ds == "大"){
-            str +="<i class='ball-red' style='background-color: #fff;color: #da2d21;width: 20px'>"+ ds +"</i>" ;
+            str +="<span class='ball-red' >"+ ds +"</span>" ;
         }else {
-            str +="<i class='ball-red' style='background-color: #fff;color: #4185ff;width: 20px'>"+ ds +"</i>" ;
+            str +="<span class='ball-red'>"+ ds +"</span>" ;
         }
         if(dx == '单'){
-            str += "<i class='ball-red' style='background-color: #fff;color: #da2d21;width: 20px'>"+ dx +"</i>" ;
+            str += "<span class='ball-red' >"+ dx +"</span>" ;
         }else {
-            str += "<i class='ball-red' style='background-color: #fff;color: #4185ff;width: 20px'>"+ dx +"</i>" ;
+            str += "<span class='ball-red' >"+ dx +"</span>" ;
         }
 
 
-        str +=  "<i class='ball-red' style='background-color: #fff;width: 30px'></i>" +
-            "<i class='ball-red' style='background-color: #fff;width: 5px'></i>"+
-            "<i class='ball-red' style='background-color: #fff;color: #FFCC00;width: 25px'>"+ tan_3 +"摊</i>" ;
+        str +=  "<i class='ball-red' style='background-color: #fff;width: 1vw'></i>" +
+                  "中三<span class='ball-red span-2' >"+ tan_3 +"摊</span>" ;
         if(ds2 == "大"){
-            str +="<i class='ball-red' style='background-color: #fff;color: #da2d21;width: 20px'>"+ ds2 +"</i>" ;
+            str +="<span class='ball-red'>"+ ds2 +"</span>" ;
         }else {
-            str +="<i class='ball-red' style='background-color: #fff;color: #4185ff;width: 20px'>"+ ds2 +"</i>" ;
+            str +="<span class='ball-red' >"+ ds2 +"</span>" ;
         }
         if(dx2 == '单'){
-            str += "<i class='ball-red' style='background-color: #fff;color: #da2d21;width: 20px'>"+ dx2 +"</i>" ;
+            str += "<span class='ball-red' >"+ dx2 +"</span>" ;
         }else {
-            str += "<i class='ball-red' style='background-color: #fff;color: #4185ff;width: 20px'>"+ dx2 +"</i>" ;
+            str += "<span class='ball-red' >"+ dx2 +"</span>" ;
         }
 
-        str +=  "<i class='ball-red' style='background-color: #fff;width: 5px'></i>" +
-            "<i class='ball-red' style='background-color: #fff;width: 5px'></i>"+
-            "<i class='ball-red' style='background-color: #fff;color: #FFCC00;width: 25px'>"+ tan_4 +"摊</i>" ;
+        str +=  "<i class='ball-red' style='background-color: #fff;width: 1vw'></i>" +
+            "后三<span class='ball-red span-2' >"+ tan_4 +"摊</span>" ;
         if(ds3 == "大"){
-            str +="<i class='ball-red' style='background-color: #fff;color: #da2d21;width: 20px'>"+ ds3 +"</i>" ;
+            str +="<span class='ball-red' >"+ ds3 +"</span>" ;
         }else {
-            str +="<i class='ball-red' style='background-color: #fff;color: #4185ff;width: 20px'>"+ ds3 +"</i>" ;
+            str +="<span class='ball-red' >"+ ds3 +"</span>" ;
         }
         if(dx3 == '单'){
-            str += "<i class='ball-red' style='background-color: #fff;color: #da2d21;width: 20px'>"+ dx3 +"</i>" ;
+            str += "<span class='ball-red' >"+ dx3 +"</span>" ;
         }else {
-            str += "<i class='ball-red' style='background-color: #fff;color: #4185ff;width: 20px'>"+ dx3 +"</i>" ;
+            str += "<span class='ball-red' >"+ dx3 +"</span>" ;
         }
         $("#bjft #number").html(str);
 
@@ -845,35 +927,35 @@ function IndexOpen() {
         var str = "";
 
         str = str + "<i class='ball-red' style='background-color: #ff7b00;color: #fff;'>" +totalNum_a+ "</i>" +
-            "<i class='ball-red' style='width: 10px;background-color: #fff;color: #FFFF00' >+</i>" +
+            "<i class='ball-red' style='background-color: #fff;color: #5a5a5a' >+</i>" +
             "<i class='ball-red' style='background-color: #ff7b00;color: #fff;'>" +totalNum_b+ "</i>" +
-            "<i class='ball-red' style='width: 10px;background-color: #fff;color: #FFFF00' >+</i>" +
+            "<i class='ball-red' style='background-color: #fff;color: #5a5a5a' >+</i>" +
             "<i class='ball-red' style='background-color: #ff7b00;color: #fff;'>" +totalNum_c+ "</i>" +
-            "<i class='ball-red' style='width: 10px;background-color: #fff;color: #FFFF00' >=</i>" +
+            "<i class='ball-red' style='background-color: #fff;color: #5a5a5a' >=</i>" +
             "<i class='ball-red' style='background-color: #4d4d4d;color: #fff;'>" +totalNum+ "</i>";
                 if(sebo == '红'){
-                    str = str +   "<i class='ball-red' style='background-color: #fff;color: red;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;'>" +sebo+ "</i>" ;
+                    str = str +   "<span class='ball-red' >" +sebo+ "</span>" ;
                 }else if(sebo == '蓝'){
-                    str = str +   "<i class='ball-red' style='background-color: #fff;color: #003bb3;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;'>" +sebo+ "</i>" ;
+                    str = str +   "<span class='ball-red' >" +sebo+ "</span>" ;
                 }else if(sebo == '绿'){
-                    str = str +   "<i class='ball-red' style='background-color: #fff;color: forestgreen;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;'>" +sebo+ "</i>" ;
+                    str = str +   "<span class='ball-red' >" +sebo+ "</span>" ;
                 }else {
-                    str = str +   "<i class='ball-red' style='background-color: #fff;color: black;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;'>" +sebo+ "</i>";
+                    str = str +   "<span class='ball-red' >" +sebo+ "</span>";
                 }
         if( danshaung == '极大' ||  danshaung == '极小'){
-            str += "<i class='ball-red' style='background-color: #fff;color: #cb405d;width: 40px;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;'>" +danshaung+ "</i>";
+            str += "<span class='ball-red' >" +danshaung+ "</span>";
         }else {
             if(danshaung == '大'){
-                str += "<i class='ball-red' style='background-color: #fff;color: #da2d21;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;'>" +danshaung+ "</i>";
+                str += "<span class='ball-red'>" +danshaung+ "</span>";
             }else {
-                str += "<i class='ball-red' style='background-color: #fff;color: #4185ff;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;'>" +danshaung+ "</i>";
+                str += "<span class='ball-red' >" +danshaung+ "</span>";
             }
 
         }
         if(ds == '单'){
-            str = str + "<i class='ball-red' style='background-color: #fff;color: #da2d21;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;'>" +ds+ "</i>";
+            str = str + "<span class='ball-red' >" +ds+ "</span>";
         }else {
-            str = str + "<i class='ball-red' style='background-color: #fff;color: #4185ff;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;'>" +ds+ "</i>";
+            str = str + "<span class='ball-red' >" +ds+ "</span>";
         }
 
         $("#pc28 #number").html(str);

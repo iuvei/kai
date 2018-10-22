@@ -186,40 +186,40 @@ function getHistoryData(count,date) {
         		html += '<li class="' + clsName + '" style="font-size: 10px">';
 				html += '<table width="100%">';
 				html += '<tr>';
-        		html += '<td width="21%">' + data.termNum +'期</td>';
+        		html += '<td width="14%">' + data.termNum +'期</td>';
 				html += '<td width="14%">'+ data.lotteryTime.substring(10, 16)+'</td>';	
                 html += '<td class="">';			
 				html += '<i class="ball-red">' + totalNum_a + '</i>';
-				html += '<i class="ball-red" style="width: 10px;background-color: #fff;color: black">+</i>';
+				html += '+ ';
 				html += '<i class="ball-red">' + totalNum_b + '</i>';
-				html += '<i class="ball-red" style="width: 10px;background-color: #fff;color: black">+</i>';
+				html += '+ ';
 				html += '<i class="ball-red">' + totalNum_c + '</i>';
-				html += '<i class="ball-red" style="width: 10px;background-color: #fff;color: black">=</i>';
+				html += '= ';
 				html += '<i class="ball-red" style="background-color: #4d4d4d;">' + totalNum + '</i>';
                 if(sebo == '蓝'){
-                    html += '<i class="ball-red" style="background-color: #fff;color: #003bb3">'+sebo+'</i>';
+                    html += '<span class="ball-red" >'+sebo+'</span>';
                 }else if(sebo == '红'){
-                    html += '<i class="ball-red" style="background-color: #fff;color: red">'+sebo+'</i>';
+                    html += '<span class="ball-red" >'+sebo+'</span>';
                 }else if(sebo == '和'){
-                    html += '<i class="ball-red" style="background-color: #fff;color: forestgreen">'+sebo+'</i>';
+                    html += '<span class="ball-red" >'+sebo+'</span>';
                 }else {
-                    html += '<i class="ball-red" style="background-color: #fff;color: green">'+sebo+'</i>';
+                    html += '<span class="ball-red" s>'+sebo+'</span>';
                 }
 
                 if(danshaung == '极大' || danshaung == '极小'){
-                    html += '<i class="ball-red" style="width: 25px;background-color: firebrick;color: black">'+danshaung+'</i>';
+                    html += '<span class="ball-red" >'+danshaung+'</span>';
                 }else {
                     if(danshaung == '大'){
-                        html += '<i class="ball-red" style="background-color: #fff;color: #da2d21">'+danshaung+'</i>';
+                        html += '<span class="ball-red" >'+danshaung+'</span>';
                     }else {
-                        html += '<i class="ball-red" style="background-color: #fff;color: #4185ff">'+danshaung+'</i>';
+                        html += '<span class="ball-red" >'+danshaung+'</span>';
                     }
 
                 }
                 if(dx == '单'){
-                    html += '<i class="ball-red" style="background-color: #fff;color: #da2d21">'+dx+'</i>';
+                    html += '<span class="ball-red" >'+dx+'</span>';
                 }else {
-                    html += '<i class="ball-red" style="background-color: #fff;color: #4185ff">'+dx+'</i>';
+                    html += '<span class="ball-red" >'+dx+'</span>';
                 }
 
                 var guanyahe = data.n1 + data.n2;

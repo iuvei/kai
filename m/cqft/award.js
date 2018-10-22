@@ -150,8 +150,8 @@ function getHistoryData(count,date) {
         		html += '<li class="' + clsName + '">';
 				html += '<table width="100%">';
 				html += '<tr>';
-        		html += '<td width="14%">' + data.termNum.substring(8, 16) +'期</td>';
-				html += '<td width="14%">'+ data.lotteryTime.substring(10, 16)+'</td>';	
+        		html += '<td width="20%">' + data.termNum.substring(8, 16) +'期</br>';
+				html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
                 html += '<td class="">';			
 				html += '<i class="ball-red">' + data.n1 + '</i>';
 				html += '<i class="ball-red">' + data.n2 + '</i>';
@@ -175,16 +175,16 @@ function getHistoryData(count,date) {
                 }else {
                     ds = '大';
                 }
-                html += '<i style="background-color:#fff;color: #FFCC00;width: 25px;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;">'+tan_2+'摊</i>';
+                html += '<span >'+tan_2+'摊</span>';
                 if(ds == '大') {
-                    html += '<i style="background-color:#fff;color: #da2d21;width: 20px;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;">'+ds+'</i>';
+                    html += '<span >'+ds+'</span>';
                 }else {
-                    html += '<i style="background-color:#fff;color: #4185ff;width: 20px;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;">'+ds+'</i>';
+                    html += '<span >'+ds+'</span>';
                 }
                 if(dx == '单') {
-                    html += '<i style="background-color:#fff;color: #da2d21;width: 20px;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;">'+dx+'</i>';
+                    html += '<span>'+dx+'</span>';
                 }else {
-                    html += '<i style="background-color:#fff;color: #4185ff;width: 20px;font-weight: bolder;font-size: 15px;text-shadow: #555 1px 0 0, #555 0 1px 0, #555 -1px 0 0, #555 0 -1px 0;">'+dx+'</i>';
+                    html += '<span>'+dx+'</span>';
                 }
 
 

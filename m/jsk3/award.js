@@ -147,17 +147,17 @@ function getHistoryData(count,date) {
                     clsName = "odd";
                 }
         		html += '<li class="' + clsName + '">';
-				html += '<table width="100%">';
+				html += '<table width="100%" id="jsk3">';
 				html += '<tr>';
-        		html += '<td width="14%">' + data.termNum.substring(8, 16) +'期</td>';
-				html += '<td width="14%">'+ data.lotteryTime.substring(10, 16)+'</td>';	
+        		html += '<td width="14%">' + data.termNum.substring(8, 16) +'期</br>';
+				html += '<td width="14%">'+ data.lotteryTime.substring(10, 16)+'</td>';
                 html += '<td class="">';			
-				html += '<i class="ball-red">' + data.n1 + '</i>';
-				html += '<i class="ball-red">' + data.n2 + '</i>';
-				html += '<i class="ball-red">' + data.n3 + '</i>';
+				html += '<i class="num'+data.n1+ '">'+ '</i>';
+				html += '<i  class="num'+data.n2+ '">' + '</i>';
+				html += '<i  class="num'+data.n3+ '">'  + '</i>';
 
                 var guanyahe = data.n1 + data.n2;
-                html += '</td>';
+                html += '<span class="span1">总和</span><span>13</span><span>大</span></td>';
             
               
                 html += '</tr>';
