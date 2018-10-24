@@ -39,19 +39,19 @@ include("../conn.php");
     <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">
         <ul class="">
             <li><a href="../pk10/" game="pk10" class="">北京赛车pk10</a></li>
-            <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
+            <li><a href="../jssc/" game="jssc">极速赛车</a></li>
+            <li><a href="../tcpk10/" game="tcpk10">头彩PK10</a></li>
             <li><a href="../xyft/" game="xyft">幸运飞艇</a></li>
+            <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
+            <li><a href="../tcssc/" game="tcssc">头彩时时彩</a></li>
+            <li><a href="../jsssc/" game="jsssc">极速时时彩</a></li>
             <li><a game="bjft" href="../bjft/">北京番摊</a></li>
             <li><a game="cqft" href="../cqft">重庆番摊</a></li>
-            <li><a href="../jsssc/" game="jsssc">极速时时彩</a></li>
-            <li><a href="../jssc/" game="jssc">极速赛车</a></li>
             <li><a href="../jsk3/" game="jsk3">江苏快3</a></li>
             <li><a href="../gd11x5/" game="gd11x5">广东11选5</a></li>
             <li><a href="../gdkl10/" game="gdkl10">广东快乐十分</a></li>
             <li><a href="../pc28/" game="pc28">加拿大28</a></li>
             <li><a href="../txffc/" game="txffc" class="cur">腾讯分分彩</a></li>
-            <li><a href="../tcssc/" game="tcssc">头彩时时彩</a></li>
-            <li><a href="../tcpk10/" game="tcpk10">头彩PK10</a></li>
         </ul>
     </div>
     <div class="fl xia-yx" id="xia-yx1"><?=$web_type?><span class="xialabt" id="xialabt1"></span> </div>
@@ -72,7 +72,7 @@ include("../conn.php");
                 </div>
             </div>
         </div>
-        <div class="bt-jg">总和 <span>18</span> <span>大</span><span>单</span> 龙虎<span>龙</span></div>
+        <div class="bt-jg"><span>龙</span><span>|</span>总和： <span>18</span> <span>大</span><span>单</span> </div>
 
 
     </li>

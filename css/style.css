@@ -118,7 +118,7 @@
 .warnTime #period {
 	width: 120px;
 	color: green;
-	font-weight: bold;font-size: 16px;
+	font-weight: bold;font-size: 12px;
 }
 
 .warnTime .minute, .warnTime .second {

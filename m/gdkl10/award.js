@@ -194,7 +194,7 @@ function getHistoryData(count,date) {
 				}	
 
                 var guanyahe = data.n1 + data.n2;
-                html += '<div class="bt-jg">总和 <span>18</span> <span>大</span><span>单</span><span class="span-2">尾大</span> 1-4龙虎<span>龙</span><span>虎</span><span>龙</span><span>龙</span></div></td>';
+                html += ' <div class="bt-jg"><span>龙</span><span>虎</span><span>龙</span><span>龙</span><span>|</span>总和： <span>18</span> <span>大</span><span>单</span><span>|</span>尾大尾小： <span>尾大</span> </div></td>';
             
               
                 html += '</tr>';

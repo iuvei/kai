@@ -218,7 +218,7 @@ function getHistoryData(count,date) {
                 }else {
                     ds3 = '大';
                 }
-                html += '<span class="span1">前三</span><span >'+tan_2+'摊</span>';
+                html += '<span class="span1">前三：</span><span >'+tan_2+'摊</span>';
                 if(ds == '大') {
                     html += '<span >' + ds + '</span>';
                 }else {
@@ -233,7 +233,7 @@ function getHistoryData(count,date) {
 
 
 
-                html += '<span class="span1">中三</span><span  >'+tan_3+'摊</span>';
+                html += '<span> | </span<span class="span1">中三：</span><span  >'+tan_3+'摊</span>';
                 if(ds2 == '大') {
                     html += '<span >' + ds2 + '</span>';
                 }else {
@@ -250,7 +250,7 @@ function getHistoryData(count,date) {
 
 
 
-                html += '<span class="span1">后三</span><span  >'+tan_4+'摊</span>';
+                html += '<span> | </span<span class="span1">后三：</span><span  >'+tan_4+'摊</span>';
                 if(ds3 == '大') {
                     html += '<span >' + ds3 + '</span>';
                 }else {

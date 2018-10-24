@@ -39,19 +39,19 @@ include("../conn.php");
     <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">
         <ul class="">
             <li><a href="../pk10/" game="pk10" class="">北京赛车pk10</a></li>
-            <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
+            <li><a href="../jssc/" game="jssc">极速赛车</a></li>
+            <li><a href="../tcpk10/" game="tcpk10">头彩PK10</a></li>
             <li><a href="../xyft/" game="xyft">幸运飞艇</a></li>
+            <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
+            <li><a href="../tcssc/" game="tcssc">头彩时时彩</a></li>
+            <li><a href="../jsssc/" game="jsssc">极速时时彩</a></li>
             <li><a game="bjft" href="../bjft/">北京番摊</a></li>
             <li><a game="cqft" href="../cqft">重庆番摊</a></li>
-            <li><a href="../jsssc/" game="jsssc">极速时时彩</a></li>
-            <li><a href="../jssc/" game="jssc">极速赛车</a></li>
             <li><a href="../jsk3/" game="jsk3">江苏快3</a></li>
             <li><a href="../gd11x5/" game="gd11x5">广东11选5</a></li>
             <li><a href="../gdkl10/" game="gdkl10">广东快乐十分</a></li>
             <li><a href="../pc28/" game="pc28">加拿大28</a></li>
             <li><a href="../txffc/" game="txffc" class="cur">腾讯分分彩</a></li>
-            <li><a href="../tcssc/" game="tcssc">头彩时时彩</a></li>
-            <li><a href="../tcpk10/" game="tcpk10">头彩PK10</a></li>
         </ul>
     </div>
     <div class="fl xia-yx" id="xia-yx1"><?=$web_type?><span class="xialabt" id="xialabt1"></span> </div>
@@ -68,11 +68,11 @@ include("../conn.php");
             </div>
             <div class="kaij-mylist-bd">
                 <div class="itm-result">
-                    <div class="ball-wrap" id="number"><i class="no9">09</i><i class="no10">10</i><i class="no4">04</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no8">06</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no6">06</i><i class="no3">03</i><i class="no7">07</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no1">01</i><i class="no5">05</i><i class="no2">02</i><br>前三<span class="ball-red span-2">3摊</span><span class="ball-red">大</span><span class="ball-red">单</span><i class="ball-red" style="background-color: #fff;width: 1vw"></i>中三<span class="ball-red span-2">4摊</span><span class="ball-red">大</span><span class="ball-red">双</span><i class="ball-red" style="background-color: #fff;width: 1vw"></i>后三<span class="ball-red span-2">4摊</span><span class="ball-red">大</span><span class="ball-red">双</span></div>
+                    <div class="ball-wrap" id="number"><i class="no9">09</i><i class="no10">10</i><i class="no4">04</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no8">06</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no6">06</i><i class="no3">03</i><i class="no7">07</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no1">01</i><i class="no5">05</i><i class="no2">02</i></div>
                 </div>
             </div>
         </div>
-
+        <div class="bt-jg">前三：<span>3摊</span> <span>大</span><span>单</span><span>|</span>中三：<span>3摊</span> <span>大</span><span>单</span><span>|</span>后三：<span>3摊</span> <span>大</span><span>单</span></div>
 
 
     </li>

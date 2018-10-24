@@ -197,29 +197,29 @@ function getHistoryData(count,date) {
 				html += '= ';
 				html += '<i class="ball-red" style="background-color: #4d4d4d;">' + totalNum + '</i>';
                 if(sebo == '蓝'){
-                    html += '<span class="ball-red" >'+sebo+'</span>';
+                    html += '<span " >'+sebo+'</span>';
                 }else if(sebo == '红'){
-                    html += '<span class="ball-red" >'+sebo+'</span>';
+                    html += '<span  >'+sebo+'</span>';
                 }else if(sebo == '和'){
-                    html += '<span class="ball-red" >'+sebo+'</span>';
+                    html += '<span >'+sebo+'</span>';
                 }else {
-                    html += '<span class="ball-red" s>'+sebo+'</span>';
+                    html += '<span >'+sebo+'</span>';
                 }
 
                 if(danshaung == '极大' || danshaung == '极小'){
-                    html += '<span class="ball-red" >'+danshaung+'</span>';
+                    html += '<span  >'+danshaung+'</span>';
                 }else {
                     if(danshaung == '大'){
-                        html += '<span class="ball-red" >'+danshaung+'</span>';
+                        html += '<span  >'+danshaung+'</span>';
                     }else {
-                        html += '<span class="ball-red" >'+danshaung+'</span>';
+                        html += '<span  >'+danshaung+'</span>';
                     }
 
                 }
                 if(dx == '单'){
-                    html += '<span class="ball-red" >'+dx+'</span>';
+                    html += '<span  >'+dx+'</span>';
                 }else {
-                    html += '<span class="ball-red" >'+dx+'</span>';
+                    html += '<span  >'+dx+'</span>';
                 }
 
                 var guanyahe = data.n1 + data.n2;
