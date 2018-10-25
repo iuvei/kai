@@ -72,7 +72,7 @@ include("../conn.php");
                 </div>
             </div>
         </div>
-        <div class="bt-jg">前三：<span>3摊</span> <span>大</span><span>单</span><span>|</span>中三：<span>3摊</span> <span>大</span><span>单</span><span>|</span>后三：<span>3摊</span> <span>大</span><span>单</span></div>
+        <div class="bt-jg">前三：<span>3摊</span><span>单</span><span style="color: #bbbbbb">|</span>中三：<span>3摊</span><span>单</span><span style="color: #bbbbbb">|</span>后三：<span>3摊</span><span>单</span></div>
 
 
     </li>

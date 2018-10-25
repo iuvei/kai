@@ -152,7 +152,7 @@ function getHistoryData(count,date) {
 				html += '<tr>';
         		html += '<td width="20%">' + data.termNum +'期</br>';
 				html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
-                html += '<td class="nums">';
+                html += '<td class="nums"><div class="nums-div">';
 				html += '<i class="no' + data.n1 + '">' + data.n1 + '</i>';
 				html += '<i class="no' + data.n2 + '">' + data.n2 + '</i>';
 				html += '<i class="no' + data.n3 + '">' + data.n3 + '</i>';
@@ -218,7 +218,7 @@ function getHistoryData(count,date) {
                 }else {
                     ds3 = '大';
                 }
-                html += '<span class="span1">前三：</span><span >'+tan_2+'摊</span>';
+                html += '<span >'+tan_2+'摊</span>';
                 if(ds == '大') {
                     html += '<span >' + ds + '</span>';
                 }else {
@@ -233,7 +233,7 @@ function getHistoryData(count,date) {
 
 
 
-                html += '<span> | </span<span class="span1">中三：</span><span  >'+tan_3+'摊</span>';
+                html += '<span style="color: #bbbbbb"> | </span><span >'+tan_3+'摊</span>';
                 if(ds2 == '大') {
                     html += '<span >' + ds2 + '</span>';
                 }else {
@@ -250,7 +250,7 @@ function getHistoryData(count,date) {
 
 
 
-                html += '<span> | </span<span class="span1">后三：</span><span  >'+tan_4+'摊</span>';
+                html += '<span style="color: #bbbbbb"> | </span><span  >'+tan_4+'摊</span>';
                 if(ds3 == '大') {
                     html += '<span >' + ds3 + '</span>';
                 }else {
@@ -262,7 +262,7 @@ function getHistoryData(count,date) {
                     html += '<span >' + dx3 + '</span>';
                 }
                 var guanyahe = data.n1 + data.n2;
-                html +='</td>'
+                html +='</div></td>'
                 html += '</tr>';
 				html += '</table>';
 				html += '</li>';

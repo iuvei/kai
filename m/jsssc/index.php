@@ -72,7 +72,7 @@ include("../conn.php");
                 </div>
             </div>
         </div>
-        <div class="bt-jg"><span>龙</span><span>|</span>总和： <span>18</span> <span>大</span><span>单</span> </div>
+        <div class="bt-jg"><span>龙</span><span style="color: #bbbbbb">|</span>总和： <span>18</span> <span>大</span><span>单</span> </div>
 
 
     </li>

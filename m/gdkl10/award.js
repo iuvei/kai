@@ -151,7 +151,7 @@ function getHistoryData(count,date) {
 				html += '<tr>';
         		html += '<td width="18%">' + data.termNum.substring(8, 16) +'期</br>';
 				html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
-                html += '<td class="">';
+                html += '<td class=""><div class="nums-div">';
                 if(data.n1>18){
 					html += '<i class="ball-blue">' + data.n1 + '</i>';
 				}else{
@@ -194,7 +194,7 @@ function getHistoryData(count,date) {
 				}	
 
                 var guanyahe = data.n1 + data.n2;
-                html += ' <div class="bt-jg"><span>龙</span><span>虎</span><span>龙</span><span>龙</span><span>|</span>总和： <span>18</span> <span>大</span><span>单</span><span>|</span>尾大尾小： <span>尾大</span> </div></td>';
+                html += ' <div class="bt-jg"><span>龙</span><span>虎</span><span>龙</span><span>龙</span><span style="color: #bbbbbb">|</span><span>18</span> <span>大</span><span>单</span><span>尾大</span> </div></div></td>';
             
               
                 html += '</tr>';

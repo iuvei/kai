@@ -166,11 +166,11 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	position: relative; overflow:hidden;    font-size: 3.2vw;}
 .ball-red,.ball-blue {display:inline-block;
 	margin-right: 1vw;
-	width: 5.5vw;
-	height: 5.5vw;
-	line-height: 5.5vw;
+	width: 5vw;
+	height: 5vw;
+	line-height: 5vw;
 
-	text-align:center;font-size:3.8vw;color:#fff;-webkit-border-radius:24px;border-radius:24px;}
+	text-align:center;font-size:3.4vw;color:#fff;-webkit-border-radius:24px;border-radius:24px;text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);}
 .ball-red {background:#EF5E5E;}
 .ball-blue {background:#0d76c6;}
 /*
@@ -193,7 +193,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	border-radius: 0.5vw;}
  .bt-jg { overflow: hidden;text-align: left; padding: 0 1vw;font-size: 3.2vw;color: #666}
 .bt-jg span{     display: inline-block;
-	min-width: 5.5vw;
+	min-width: 5vw;
 	height: 5vw;
 	line-height: 5vw;
 	font-size: 3.2vw;
@@ -209,9 +209,9 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 #tcpk10 #number i,#xyft #number i,#pk10 #number i,#jssc #number i,#bjft #number i{
 	display:inline-block;
 	margin-right:1vw;
-	width:5.5vw;
-	height:5.5vw;
-	line-height:5.5vw;
+	width:5vw;
+	height:5vw;
+	line-height:5vw;
 	text-align:center;color:#fff;-webkit-border-radius:0.5vw;border-radius:0.5vw;
      /*text-shadow:#555 1px 0 0,#555 0 1px 0,#555 -1px 0 0,#555 0 -1px 0;*/
     /*-webkit-text-shadow:#555 1px 0 0,#555 0 1px 0,#555 -1px 0 0,#555 0 -1px 0;*/
@@ -219,6 +219,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
     *filter: Glow(color=#555, strength=1);
 	font-weight:bolder ;  font-size:3.5vw;    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 }
+.nums i{ text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);}
 #xyft #number .no1,#pk10 #number .no1 {
 		background: #FFCC00;
 }
@@ -448,7 +449,7 @@ overflow:hidden;
 .openlist ul li { border-bottom:1px solid #ebebeb;font-size:3.5vw; padding: 1vw 0}
 .openlist ul li span {
 	display: inline-block;
-	min-width: 4vw !important;
+	min-width: 5vw ;
 	height: 5vw;
 	line-height: 5vw;
 	font-size: 3vw;
@@ -585,15 +586,18 @@ overflow:hidden;
 	background-size: 30%;    vertical-align: middle;
 }
 
-#historyList .bt-jg{ font-size: 3vw!important; text-align: center}
+#historyList .bt-jg{ font-size: 3vw!important; text-align: left;    padding-left: 0;}
 #historyList .bt-jg span {
 	display: inline-block;
-	/*min-width: 3vw;*/
+	 margin-top: 1vw;
+	margin-left: 0;
+	margin-right: 1vw;
+	min-width: 5vw;
 	height: 3vw;
 	line-height: 3vw;
 	font-size: 3vw;
 	text-align: center;
-	margin: 1vw 0.1vw 0;
+
 	padding: 1vw 0;
 	/*background: #fcfcfc;*/
 	/*border: 1px solid #dbdbdb;*/
@@ -625,3 +629,6 @@ overflow:hidden;
 	margin-top: 1vw;
 	width: 23vw;
 }
+.nums-div{text-align: left;
+	margin: 0 auto;
+	display: inline-block;vertical-align: middle;}

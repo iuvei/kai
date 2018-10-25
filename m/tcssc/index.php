@@ -70,12 +70,12 @@ include("../conn.php");
             </div>
             <div class="kaij-mylist-bd">
                 <div class="itm-result">
-                    <div class="ball-wrap" id="number"><i class="ball-red">7</i><i class="ball-red">0</i><i class="ball-red">5</i><i class="ball-red">6</i><i class="ball-red">4</i>总和 <span>18</span> <span>大</span><span>单</span> 龙虎<span>龙</span></div>
+                    <div class="ball-wrap" id="number"><i class="ball-red">7</i><i class="ball-red">0</i><i class="ball-red">5</i><i class="ball-red">6</i><i class="ball-red">4</i></div>
                 </div>
             </div>
         </div>
 
-        <div class="bt-jg"><span>龙</span><span>|</span>总和： <span>18</span> <span>大</span><span>单</span> </div>
+        <div class="bt-jg"><span>龙</span><span style="color: #bbbbbb">|</span>总和： <span>18</span> <span>大</span><span>单</span> </div>
 
     </li>
 

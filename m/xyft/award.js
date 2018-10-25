@@ -154,7 +154,7 @@ function getHistoryData(count,date) {
 				html += '<tr>';
         		html += '<td width="20%">' + data.termNum.substring(8, 16) +'期</br>';
 				html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
-                html += '<td class="nums">';			
+                html += '<td class="nums"><div class="nums-div">';
 				html += '<i class="no' + data.n1 + '">' + data.n1 + '</i>';
 				html += '<i class="no' + data.n2 + '">' + data.n2 + '</i>';
 				html += '<i class="no' + data.n3 + '">' + data.n3 + '</i>';
@@ -166,7 +166,7 @@ function getHistoryData(count,date) {
 				html += '<i class="no' + data.n9 + '">' + data.n9 + '</i>';
 				html += '<i class="no' + data.n10 + '">' + data.n10 + '</i>';
                 var guanyahe = data.n1 + data.n2;
-                html += ' <div class="bt-jg"><span>龙</span><span>虎</span><span>龙</span><span>虎</span><span>龙</span><span>|</span> 冠亚和： <span>18</span> <span>大</span><span>单</span>  </div></td>';
+                html += ' <div class="bt-jg"><span>龙</span><span>虎</span><span>龙</span><span>虎</span><span>龙</span><span style="color: #bbbbbb">|</span><span>18</span><span>大</span><span>单</span>  </div></div></td>';
             
               
                 html += '</tr>';

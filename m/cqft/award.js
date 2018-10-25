@@ -152,7 +152,7 @@ function getHistoryData(count,date) {
 				html += '<tr>';
         		html += '<td width="20%">' + data.termNum.substring(8, 16) +'期</br>';
 				html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
-                html += '<td class="">';			
+                html += '<td class=""><div class="nums-div">';
 				html += '<i class="ball-red">' + data.n1 + '</i>';
 				html += '<i class="ball-red">' + data.n2 + '</i>';
 				html += '<i class="ball-red">' + data.n3 + '</i>';
@@ -175,7 +175,7 @@ function getHistoryData(count,date) {
                 }else {
                     ds = '大';
                 }
-                html += '<span >'+tan_2+'摊</span>';
+                html += '</br><span >'+tan_2+'摊</span>';
                 if(ds == '大') {
                     html += '<span >'+ds+'</span>';
                 }else {
@@ -189,7 +189,7 @@ function getHistoryData(count,date) {
 
 
                 var guanyahe = data.n1 + data.n2;
-                html += '</td>';
+                html += '</div></td>';
             
               
                 html += '</tr>';

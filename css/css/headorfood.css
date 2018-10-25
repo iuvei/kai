@@ -529,7 +529,7 @@ body {
 
 .bodybox .headboxf {
     width: 100%;
-    background: #fafafa;
+    background: #ffffff;
     height: auto;
     position: relative
 }
@@ -641,7 +641,7 @@ body {
     margin: 0 auto;
     position: relative;
     z-index: 8;
-    background: #fafafa
+    background: #ffffff
 }
 
 .bodybox .headboxf .headbox > div {
