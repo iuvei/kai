@@ -82,6 +82,21 @@ $(function () {
 		
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
+
+            var num = data.current.awardNumbers.split(',');
+            $("#cqft #number").html('');
+
+            html = '<i class="ball-red">'+ num[0] +'</i>' +
+                '<i class="ball-red">'+ num[1] +'</i>' +
+                '<i class="ball-red">'+ num[2] +'</i>' +
+                '<i class="ball-red">'+ num[3] +'</i>' +
+                '<i class="ball-red">'+ num[4] +'</i>' ;
+
+
+            var qs = tan(num);
+            html += '</br><span>'+ qs[0] +'</span><span>'+ qs[1] +'</span><span>'+ qs[2] +'</span>';
+
+            $("#cqft #number").html(html);
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(awardTick, 1000 + Math.random() * 10000);
@@ -158,34 +173,12 @@ function getHistoryData(count,date) {
 				html += '<i class="ball-red">' + data.n3 + '</i>';
 				html += '<i class="ball-red">' + data.n4 + '</i>';
 				html += '<i class="ball-red">' + data.n5 + '</i>';
-                var tan = Number(data.n1) + Number(data.n2) +  Number(data.n4) + Number(data.n5);
-                var tan_2 = tan%4;
-                if(tan_2 == 0){
-                    tan_2 = 4;
-                }
-                var dx='';
-                if(tan_2%2 ==0){
-                    dx = '双';
-                }else {
-                    dx = '单';
-                }
-                var ds='';
-                if(tan_2 <=2){
-                    ds = '小';
-                }else {
-                    ds = '大';
-                }
-                html += '</br><span >'+tan_2+'摊</span>';
-                if(ds == '大') {
-                    html += '<span >'+ds+'</span>';
-                }else {
-                    html += '<span >'+ds+'</span>';
-                }
-                if(dx == '单') {
-                    html += '<span>'+dx+'</span>';
-                }else {
-                    html += '<span>'+dx+'</span>';
-                }
+                var tan_num = [data.n1,data.n2,data.n3,data.n4,data.n5];
+                tan_num = tan(tan_num);
+                console.log(tan_num);
+                html += '</br><span >'+tan_num[0]+'</span>';
+                    html += '<span >'+tan_num[1]+'</span>';
+                    html += '<span>'+tan_num[2]+'</span>';
 
 
                 var guanyahe = data.n1 + data.n2;
@@ -207,6 +200,28 @@ function getHistoryData(count,date) {
 
 
 
+function tan(num) {
+    var sum = eval(num.join("+"));
+    sum = sum%4;
+    if(sum == 0){
+        sum = 4;
+    }
+    var ds;
+    var dx;
+    var tan;
+    tan = sum+'摊';
+    if(sum%2 ==0){
+        ds =  '双';
+    }else {
+        ds =  '单';
+    }
+    if(sum >2 ){
+        dx =  '大';
+    }else {
+        dx =  '小';
+    }
+    return [tan,dx,ds];
+}
 
 
 

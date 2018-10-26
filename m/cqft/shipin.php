@@ -69,7 +69,8 @@ $cid = 43;
             </div>
             <div class="kaij-mylist-bd">
                 <div class="itm-result">
-                    <div class="ball-wrap" id="number"><i class="ball-red">1</i><i class="ball-red">6</i><i class="ball-red">7</i><i class="ball-red">5</i><i class="ball-red">9</i><span class="ball-red span-2">4摊</span><span class="ball-red">大</span><span class="ball-red">单</span></div>
+                    <div class="ball-wrap" id="number"><i class="ball-red">1</i><i class="ball-red">6</i><i class="ball-red">7</i><i class="ball-red">5</i><i class="ball-red">9</i>
+                        <span class="ball-red span-2">4摊</span><span class="ball-red">大</span><span class="ball-red">单</span></div>
                 </div>
             </div>
         </div>

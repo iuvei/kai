@@ -82,6 +82,22 @@ $(function () {
 		
             window.setTimeout(awardTick, (data.next.awardTimeInterval*1000) < 10 ? 1000 : _time);
             timeInterval = 0;
+            var num = data.current.awardNumbers.split(',');
+            console.log(num);
+            var  dat =  shuju(num);
+            $("#pc28 #number").html('');
+            var  html =  '<i class="ball-red" style="background-color: #ff7b00;color: #fff;">'+ dat[0] +'</i>' +
+                '<i class="ball-red" style="background-color: #fff;color: #5a5a5a">+</i>' +
+                '<i class="ball-red" style="background-color: #ff7b00;color: #fff;">'+ dat[1] +'</i>' +
+                '<i class="ball-red" style="background-color: #fff;color: #5a5a5a">+</i>' +
+                '<i class="ball-red" style="background-color: #ff7b00;color: #fff;">'+ dat[2] +'</i>' +
+                '<i class="ball-red" style="background-color: #fff;color: #5a5a5a">=</i>' +
+                '<i class="ball-red" style="background-color: #4d4d4d;color: #fff;">'+ dat[3] +'</i>' +
+                '<span class="ball-red">'+ dat[4] +'</span>' +
+                '<span class="ball-red">'+ dat[5] +'</span>' +
+                '<span class="ball-red">'+ dat[6] +'</span>';
+            $("#pc28 #number").html(html);
+
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(awardTick, 1000 + Math.random() * 10000);
@@ -117,6 +133,7 @@ $(function () {
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
             }
+            console.log(data.next.periodNumber);
             $(".daojishi #period").html(data.next.periodNumber);
              
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, (data.next.awardTimeInterval*1000) < 10 ? 10000 : (data.next.awardTimeInterval*1000) + 1000);
@@ -182,7 +199,6 @@ function getHistoryData(count,date) {
                 }else{
                     dx = '单';
                 }
-                console.log(data);
         		html += '<li class="' + clsName + '" style="font-size: 10px">';
 				html += '<table width="100%">';
 				html += '<tr>';
@@ -239,7 +255,44 @@ function getHistoryData(count,date) {
     }, "json");
 }
 
-
+function shuju(num) {
+    var totalNum_a = parseInt(num[1]) +parseInt( num[4]) + parseInt(num[7]) + parseInt(num[10]) + parseInt(num[13]) + parseInt(num[16]);
+    var totalNum_b = parseInt(num[2]) + parseInt(num[5]) + parseInt(num[8]) + parseInt(num[11]) + parseInt(num[14]) + parseInt(num[17]);
+    var totalNum_c = parseInt(num[3]) + parseInt(num[6]) + parseInt(num[9]) + parseInt(num[12]) + parseInt(num[15]) + parseInt(num[18]) ;
+    totalNum_a = totalNum_a%10;
+    totalNum_b = totalNum_b % 10;
+    totalNum_c = totalNum_c % 10;
+    var totalNum=totalNum_a+totalNum_b+totalNum_c;
+    var sebo="";
+    var danshaung="";
+    if(totalNum == 1 || totalNum == 4 || totalNum == 7 || totalNum == 10 || totalNum == 16 || totalNum == 19 || totalNum == 22 || totalNum == 25){
+        sebo = '绿';
+    }else if(totalNum == 2 || totalNum == 5 || totalNum == 8 || totalNum == 11 || totalNum == 17 || totalNum == 20 || totalNum == 23 || totalNum == 26){
+        sebo = '蓝';
+    }else if(totalNum == 3 || totalNum == 6 || totalNum == 9 || totalNum == 12 || totalNum == 15 || totalNum == 18 || totalNum == 21 || totalNum == 24){
+        sebo = '红';
+    }else if(totalNum == 0 || totalNum == 13 || totalNum == 14 || totalNum == 27 ){
+        sebo = '和';
+    }
+    if(totalNum  == 13 || totalNum == 14 ){
+        danshaung = '和';
+    }else if(totalNum < 13 && totalNum > 5){
+        danshaung = '小';
+    }else if(totalNum < 22 && totalNum > 14){
+        danshaung = '大';
+    }else if(totalNum <= 5 && totalNum >= 0){
+        danshaung = '极小';
+    }else if(totalNum <= 27 && totalNum >= 22){
+        danshaung = '极大';
+    }
+    var dx;
+    if(totalNum%2 == 0){
+        dx = '双';
+    }else{
+        dx = '单';
+    }
+    return [totalNum_a,totalNum_b,totalNum_c,totalNum,sebo,danshaung,dx]
+}
 
 
 

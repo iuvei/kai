@@ -83,6 +83,53 @@ $(function () {
 		
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
+
+            var nums = data.current.awardNumbers.split(',');
+            var html = '';
+            $("#pk10 #number").html('');
+            for(var i=0;i<nums.length;i++){
+                html += '<i class="no' + nums[i] + '">' + nums[i] + '</i>';
+            }
+            console.log(html);
+            $("#pk10 #number").html(html);
+            $("#pk10 .bt-jg").html('');
+            var srt;
+            console.log(nums);
+            srt = lh(nums);
+            if(srt == undefined || srt == null){
+
+                var srt = '';
+                var sum = parseInt(nums[0])+parseInt(nums[1]);
+                var dx = '';
+                var ds = '';
+                if(sum > 11){
+                    dx = '大';
+                }else if(sum < 11){
+                    dx = '小';
+                }else {
+                    dx = '和';
+                }
+                if(sum%2 == 0){
+                    ds = '双';
+                }else {
+                    ds = '单';
+                }
+                if(sum == 11){
+                    ds = '和';
+                }
+                srt +="<span>"+long(nums[0],nums[9])+"</span>";
+                srt +="<span>"+long(nums[1],nums[8])+"</span>";
+                srt +="<span>"+long(nums[2],nums[7])+"</span>";
+                srt +="<span>"+long(nums[3],nums[6])+"</span>";
+                srt +="<span>"+long(nums[4],nums[5])+"</span>";
+                srt +="<span style='color: #bbbbbb'>|</span> 冠亚和: ";
+                srt +="<span>"+sum+"</span>";
+                srt +="<span>"+dx+"</span>";
+                srt +="<span>"+ds+"</span>";
+            }
+            $("#pk10 .bt-jg").html(srt);
+
+
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(awardTick, 1000 + Math.random() * 10000);
@@ -165,10 +212,16 @@ function getHistoryData(count,date) {
 				html += '<i class="no' + data.n8 + '">' + data.n8 + '</i>';
 				html += '<i class="no' + data.n9 + '">' + data.n9 + '</i>';
 				html += '<i class="no' + data.n10 + '">' + data.n10 + '</i>';
-                var guanyahe = data.n1 + data.n2;
-                html += ' <div class="bt-jg"><span>龙</span><span>虎</span><span>龙</span><span>虎</span><span>龙</span><span style="color: #bbbbbb">|</span><span>18</span><span>大</span><span>单</span>  </div></div></td>';
-            
-              
+                var sum = parseInt(data.n1)+parseInt(data.n2);
+                html += '<div class="bt-jg">' +
+                    '<span>'+long(data.n1,data.n10)+'</span>' +
+                    '<span>'+long(data.n2,data.n9)+'</span>' +
+                    '<span>'+long(data.n3,data.n8)+'</span>' +
+                    '<span>'+long(data.n4,data.n7)+'</span>' +
+                    '<span>'+long(data.n5,data.n6)+'</span>' +
+                    '<span style="color: #bbbbbb">|</span><span>'+ sum +'</span><span>'+ dx(sum)+'</span><span>'+ds(sum)+'</span></div></div></td>';
+
+
                 html += '</tr>';
 				html += '</table>';
 				html += '</li>';
@@ -182,9 +235,68 @@ function getHistoryData(count,date) {
     }, "json");
 }
 
+function long(nums_1,nums_2) {
+    if(parseInt(nums_1) > parseInt(nums_2)){
+        return '龙'
+    }else if(parseInt(nums_1) < parseInt(nums_2)){
+        return '虎'
+    }else {
+        return '和'
+    }
+}
+function dx(nums) {
+    if(nums < 11){
+        return '小';
+    }else if(nums > 11) {
+        return '大';
+    }else {
+        return '和';
+    }
+}
+function ds(nums) {
+    if(nums == 11){
+        return '和';
+    }
+    if(nums%2 == 0){
+        return  '双';
+    }else {
+        return  '单';
+    }
+}
 
 
 
 
-
+function lh(nums) {
+    var srt = '';
+    var sum = parseInt(nums[0])+parseInt(nums[1]);
+    var dx = '';
+    var ds = '';
+    if(sum > 11){
+        dx = '大';
+    }else if(sum < 11){
+        dx = '小';
+    }else {
+        dx = '和';
+    }
+    if(sum%2 == 0){
+        ds = '双';
+    }else {
+        ds = '单';
+    }
+    if(sum == 11){
+        ds = '和';
+    }
+    srt +="<span>"+long(nums[0],nums[9])+"</span>";
+    srt +="<span>"+long(nums[1],nums[8])+"</span>";
+    srt +="<span>"+long(nums[2],nums[7])+"</span>";
+    srt +="<span>"+long(nums[3],nums[6])+"</span>";
+    srt +="<span>"+long(nums[4],nums[5])+"</span>";
+    srt +="<span style='color: #bbbbbb'>|</span> 冠亚和: ";
+    srt +="<span>"+sum+"</span>";
+    srt +="<span>"+dx+"</span>";
+    srt +="<span>"+ds+"</span>";
+    console.log(srt);
+    return srt;
+}
 

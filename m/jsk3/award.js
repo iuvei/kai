@@ -81,6 +81,31 @@ $(function () {
 		
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
+
+            var nums = data.current.awardNumbers.split(',');
+            var html = '';
+            $("#jsk3 #number").html('');
+            for(var i=0;i<nums.length;i++){
+                html += '<i class="num'+ nums[i] +'"></i>';
+            }
+                var sum = eval(nums.join("+"));
+                var dx = '';
+                var ds = '';
+                if(sum > 10){
+                    dx = '大';
+                }else {
+                    dx = '小';
+                }
+                if(sum%2 == 0){
+                    ds = '双';
+                }else {
+                    ds = '单';
+                }
+            html +="<span>"+sum+"</span>";
+            html +="<span>"+dx+"</span>";
+            html +="<span>"+ds+"</span>";
+            $("#jsk3 #number").html(html);
+
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(awardTick, 1000 + Math.random() * 10000);
@@ -156,10 +181,9 @@ function getHistoryData(count,date) {
 				html += '<i  class="num'+data.n2+ '">' + '</i>';
 				html += '<i  class="num'+data.n3+ '">'  + '</i>';
 
-                var guanyahe = data.n1 + data.n2;
-                html += '<span class="span1">总和</span><span>13</span><span>大</span></td>';
-            
-              
+                var guanyahe = arr_num(data.lotteryNum);
+                var sum = eval(guanyahe.join("+"));
+                html += '<div class="span1">总和<span style="color: #bbbbbb">|</span><span>'+ sum +'</span><span>'+ dx(sum)+'</span><span>'+ds(sum)+'</span>';
                 html += '</tr>';
 				html += '</table>';
 				html += '</li>';
@@ -173,6 +197,37 @@ function getHistoryData(count,date) {
     }, "json");
 }
 
+function arr_num(nums) {
+    var arr=[];
+    arr[0] = nums.substring(0,1);
+    arr[1] = nums.substring(1,2);
+    arr[2] = nums.substring(2,3);
+    return arr;
+}
+
+function long(nums_1,nums_2) {
+    if(parseInt(nums_1) > parseInt(nums_2)){
+        return '龙'
+    }else if(parseInt(nums_1) < parseInt(nums_2)){
+        return '虎'
+    }else {
+        return '和'
+    }
+}
+function dx(nums) {
+    if(nums <= 10){
+        return '小';
+    }else {
+        return '大';
+    }
+}
+function ds(nums) {
+    if(nums%2 == 0){
+        return  '双';
+    }else {
+        return  '单';
+    }
+}
 
 
 

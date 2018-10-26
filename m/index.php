@@ -662,22 +662,38 @@ function IndexOpen() {
 
             str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i] + "</i>"
         }
+        $("#pk10 .bt-jg").html('');
+        var long;
+        long = lh(nums);
         $("#pk10 #number").html(str);
+        $("#pk10 .bt-jg").html(long);
+
+
         $("#xyft #qihao").text('第' + data.xyft.dat_expect + '期');
         var nums = data.xyft.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i] + "</i>"
         }
+        $("#xyft .bt-jg").html('');
+        var long;
+        long = lh(nums);
         $("#xyft #number").html(str);
+        $("#xyft .bt-jg").html(long);
+
+
         $("#cqssc #qihao").text('第' + data.cqssc.dat_expect + '期');
         var nums = data.cqssc.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='ball-red'>" + nums[i] + "</i>"
         }
-
+        $("#cqssc .bt-jg").html('');
+        var long;
+        long = ssclh(nums,1);
         $("#cqssc #number").html(str);
+        $("#cqssc .bt-jg").html(long);
+
 
         $("#txffc #qihao").text('第' + data.txffc.dat_expect + '期');
         var nums = data.txffc.dat_codes.split(',');
@@ -685,7 +701,11 @@ function IndexOpen() {
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='ball-red'>" + nums[i] + "</i>"
         }
+        $("#txffc .bt-jg").html('');
+        var long;
+        long = ssclh(nums,1);
         $("#txffc #number").html(str);
+        $("#txffc .bt-jg").html(long);
 
         $("#gdkl10 #qihao").text('第' + pad(data.gdkl10.dat_expect, 3) + '期');
         var nums = data.gdkl10.dat_codes.split(',');
@@ -697,29 +717,52 @@ function IndexOpen() {
                 str = str + "<i class='ball-red'>" + nums[i] + "</i>"
             }
         }
+        $("#gdkl10 .bt-jg").html('');
+        var long;
+        long = ssclh(nums,2);
         $("#gdkl10 #number").html(str);
+        $("#gdkl10 .bt-jg").html(long);
+
+
         $("#jssc #qihao").text('第' + pad(data.jssc.dat_expect, 3) + '期');
         var nums = data.jssc.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i] + "</i>";
         }
+        $("#jssc .bt-jg").html('');
+        var long;
+        long = lh(nums);
         $("#jssc #number").html(str);
+        $("#jssc .bt-jg").html(long);
+
+
+
+
         $("#gd11x5 #qihao").text('第' + pad(data.gd11x5.dat_expect, 3) + '期');
         var nums = data.gd11x5.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='ball-red'>" + nums[i] + "</i>"
         }
+        $("#gd11x5 .bt-jg").html('');
+        var long;
+        long = ssclh(nums,4);
         $("#gd11x5 #number").html(str);
+        $("#gd11x5 .bt-jg").html(long);
+
+
         $("#jsssc #qihao").text('第' + pad(data.jsssc.dat_expect, 3) + '期');
         var nums = data.jsssc.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='ball-red'>" + nums[i] + "</i>"
         }
-
+        $("#jsssc .bt-jg").html('');
+        var long;
+        long = ssclh(nums,1);
         $("#jsssc #number").html(str);
+        $("#jsssc .bt-jg").html(long);
 
 
         $("#jsk3 #qihao").text('第' + data.jsk3.dat_expect + '期');
@@ -728,7 +771,11 @@ function IndexOpen() {
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='num" + nums[i]+ "'></i>"
         }
+        $("#jsk3 .bt-jg").html('');
+        var long;
+        long = ssclh(nums,3);
         $("#jsk3 #number").html(str);
+        $("#jsk3 .bt-jg").html(long);
 
 
         $("#cqft #qihao").text('第' + data.cqssc.dat_expect + '期');
@@ -970,7 +1017,11 @@ function IndexOpen() {
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='ball-red'>" + nums[i] + "</i>"
         }
+        $("#tcssc .bt-jg").html('');
+        var long;
+        long = ssclh(nums,1);
         $("#tcssc #number").html(str);
+        $("#tcssc .bt-jg").html(long);
         
         $("#tcpk10 #qihao").text('第' + data.xyft.dat_expect + '期');
         var nums = data.xyft.dat_codes.split(',');
@@ -978,7 +1029,12 @@ function IndexOpen() {
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i] + "</i>"
         }
+        $("#tcpk10 .bt-jg").html('');
+        var long;
+         long = lh(nums);
+        console.log(long);
         $("#tcpk10 #number").html(str);
+        $("#tcpk10 .bt-jg").html(long);
 
     },
 
@@ -992,7 +1048,106 @@ function pad(num, n) {
     if ((num + "").length >= n) return num;
     return pad("0" + num, n)
 }
-		</script>		
+
+function lh(nums) {
+    var srt = '';
+    var sum = (Number(nums[0])+Number(nums[1]));
+    var dx = '';
+    var ds = '';
+    if(sum > 11){
+        dx = '大';
+    }else if(sum < 11){
+        dx = '小';
+    }else {
+        dx = '和';
+    }
+    if(sum%2 == 0){
+        ds = '双';
+    }else {
+        ds = '单';
+    }
+    if(sum == 11){
+        ds = '和';
+    }
+    srt +="<span>"+long(nums[0],nums[9])+"</span>";
+    srt +="<span>"+long(nums[1],nums[8])+"</span>";
+    srt +="<span>"+long(nums[2],nums[7])+"</span>";
+    srt +="<span>"+long(nums[3],nums[6])+"</span>";
+    srt +="<span>"+long(nums[4],nums[5])+"</span>";
+    srt +="<span style='color: #bbbbbb'>|</span> 冠亚和: ";
+    srt +="<span>"+sum+"</span>";
+    srt +="<span>"+dx+"</span>";
+    srt +="<span>"+ds+"</span>";
+    return srt;
+}
+function long(nums_1,nums_2) {
+    if(nums_1 > nums_2){
+        return '龙'
+    }else if(nums_1 < nums_2){
+        return '虎'
+    }else {
+        return '和'
+    }
+}
+ function ssclh(nums,num) {
+     var srt = '';
+     var sum =  eval(nums.join("+"));
+     var dx = '';
+     var ds = '';
+     if(sum%2 == 0){
+         ds = '双';
+     }else {
+         ds = '单';
+     }
+    if(num == 3){
+        if(sum <= 10){
+            dx = '小';
+        }else {
+            dx = '大';
+        }
+    }else if(num  == 2) {
+        if(sum < 84){
+            dx = '小';
+        }else if(sum > 84) {
+            dx = '大';
+        }else {
+            dx = '和';
+        }
+        srt +="<span>"+long(nums[0],nums[7])+"</span>";
+        srt +="<span>"+long(nums[1],nums[6])+"</span>";
+        srt +="<span>"+long(nums[2],nums[5])+"</span>";
+        srt +="<span>"+long(nums[3],nums[4])+"</span>";
+    }else {
+        if(num == 4){
+            if(sum < 30){
+                dx = '小';
+            }else if(sum > 30) {
+                dx = '大';
+            }else {
+                dx = '和';
+            }
+        }else {
+            if(sum <= 22){
+                dx = '小';
+            }else {
+                dx = '大';
+            }
+        }
+
+
+        srt +="<span>"+long(nums[0],nums[4])+"</span>";
+    }
+
+
+     srt +="<span style='color: #bbbbbb'>|</span> 总和: ";
+     srt +="<span>"+sum+"</span>";
+     srt +="<span>"+dx+"</span>";
+     srt +="<span>"+ds+"</span>";
+     return srt;
+ }
+
+
+</script>		
 			
 </body>
 </html>

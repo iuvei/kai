@@ -275,6 +275,10 @@ include("../conn.php");
 	 layer.open({type: 2,time: 1});
      $.get("/Fuzhi/Api/changlong", {id:id}, function (result) {
          var data = eval(result);
+         // for(){
+         //
+         // }
+         console.log(data.ds);
      	if(data) {
             console.log(data['dx'][0].length);
             var dx = data['dx'][0];

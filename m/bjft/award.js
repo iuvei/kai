@@ -78,9 +78,36 @@ $(function () {
                 
             }
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-		
+
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
+            var num = data.current.awardNumbers.split(',');
+            var html;
+            $("#pk10 #number").html('');
+            html = '<i class="no'+ num[0] +'">'+  num[0] +'</i>' +
+            '<i class="no'+ num[1] +'">'+  num[1] +'</i>' +
+            '<i class="no'+ num[2] +'">'+  num[2] +'</i>' +
+            '<i class="ball-red" style="background-color: #fff;width: 5px"></i>' +
+            '<i class="no'+ num[3] +'">'+  num[3] +'</i>' +
+            '<i class="ball-red" style="background-color: #fff;width: 5px"></i>' +
+            '<i class="no'+ num[4] +'">'+  num[4] +'</i>' +
+            '<i class="no'+ num[5] +'">'+  num[5] +'</i>' +
+            '<i class="no'+ num[6] +'">'+  num[6] +'</i>' +
+            '<i class="ball-red" style="background-color: #fff;width: 5px"></i>' +
+            '<i class="no'+ num[7] +'">'+  num[7] +'</i>' +
+            '<i class="no'+ num[8] +'">'+  num[8] +'</i>' +
+            '<i class="no'+ num[9] +'">'+  num[9] +'</i>';
+            $("#pk10 #number").html(html);
+
+            var qs = tan(num[0],num[1],num[2]);
+            var zs = tan(num[4],num[5],num[6]);
+            var hs = tan(num[7],num[8],num[9]);
+            $("#pk10 .bt-jg").html('');
+            str = '<span>'+ qs[0] +'</span><span>'+ qs[1] +'</span><span>'+ qs[2] +'</span><span style="color: #bbbbbb">|</span>';
+            str += '<span>'+ zs[0] +'</span><span>'+ zs[1] +'</span><span>'+ zs[2] +'</span><span style="color: #bbbbbb">|</span>';
+            str += '<span>'+ hs[0] +'</span><span>'+ hs[1] +'</span><span>'+ hs[2] +'</span>';
+            $("#pk10 .bt-jg").html(str);
+
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(awardTick, 1000 + Math.random() * 10000);
@@ -230,9 +257,6 @@ function getHistoryData(count,date) {
                     html += '<span >' + dx + '</span>';
                 }
 
-
-
-
                 html += '<span style="color: #bbbbbb"> | </span><span >'+tan_3+'摊</span>';
                 if(ds2 == '大') {
                     html += '<span >' + ds2 + '</span>';
@@ -244,10 +268,6 @@ function getHistoryData(count,date) {
                 }else {
                     html += '<span >' + dx2 + '</span>';
                 }
-
-
-
-
 
 
                 html += '<span style="color: #bbbbbb"> | </span><span  >'+tan_4+'摊</span>';
@@ -292,6 +312,29 @@ function getHistoryData(count,date) {
 			 $("#historyList").html("<li>对不起，今天暂无数据，请按日期检索！</li>");
 			}
     }, "json");
+}
+
+function tan(num,num_1,num_2) {
+    var sum = parseInt(num)+parseInt(num_1)+parseInt(num_2);
+    sum = sum%4;
+    if(sum == 0){
+        sum = 4;
+    }
+    var ds;
+    var dx;
+    var tan;
+    tan = sum+'摊';
+    if(sum%2 ==0){
+        ds =  '双';
+    }else {
+        ds =  '单';
+    }
+    if(sum >2 ){
+        dx =  '大';
+    }else {
+        dx =  '小';
+    }
+    return [tan,dx,ds];
 }
 
 

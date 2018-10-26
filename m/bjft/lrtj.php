@@ -62,15 +62,7 @@ include("../conn.php");
     <li class="kaij-mylist-li" id="pk10" style="border-bottom: 1px solid #eeeeee;">
 
         <div class="kaij-mylist-r">
-            <div class="kaij-mylist-hd daojishi " style="padding-top: 0;">
-                <div class="itm-time"><em id="period"></em>期开奖剩余：<span id="time" class="itm-time-time">01:27</span></div>
-                <div class="itm-tit"><span class="itm-qih" id="qihao">第710580期</span></div>
-            </div>
-            <div class="kaij-mylist-bd">
-                <div class="itm-result">
-                    <div class="ball-wrap" id="number"><i class="no9">09</i><i class="no10">10</i><i class="no4">04</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no8">06</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no6">06</i><i class="no3">03</i><i class="no7">07</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no1">01</i><i class="no5">05</i><i class="no2">02</i><br>前三<span class="ball-red span-2">3摊</span><span class="ball-red">大</span><span class="ball-red">单</span><i class="ball-red" style="background-color: #fff;width: 1vw"></i>中三<span class="ball-red span-2">4摊</span><span class="ball-red">大</span><span class="ball-red">双</span><i class="ball-red" style="background-color: #fff;width: 1vw"></i>后三<span class="ball-red span-2">4摊</span><span class="ball-red">大</span><span class="ball-red">双</span></div>
-                </div>
-            </div>
+            <?php include("public.php"); ?>
         </div>
 
 
