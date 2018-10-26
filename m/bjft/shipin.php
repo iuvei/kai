@@ -69,9 +69,11 @@ $cid = 42;
             </div>
             <div class="kaij-mylist-bd">
                 <div class="itm-result">
-                    <div class="ball-wrap" id="number"><i class="no9">09</i><i class="no10">10</i><i class="no4">04</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no8">06</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no6">06</i><i class="no3">03</i><i class="no7">07</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no1">01</i><i class="no5">05</i><i class="no2">02</i><br>前三<span class="ball-red span-2">3摊</span><span class="ball-red">大</span><span class="ball-red">单</span><i class="ball-red" style="background-color: #fff;width: 1vw"></i>中三<span class="ball-red span-2">4摊</span><span class="ball-red">大</span><span class="ball-red">双</span><i class="ball-red" style="background-color: #fff;width: 1vw"></i>后三<span class="ball-red span-2">4摊</span><span class="ball-red">大</span><span class="ball-red">双</span></div>
+                    <div class="ball-wrap" id="number"><i class="no9">09</i><i class="no10">10</i><i class="no4">04</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no8">06</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no6">06</i><i class="no3">03</i><i class="no7">07</i><i class="ball-red" style="background-color: #fff;width: 5px"></i><i class="no1">01</i><i class="no5">05</i><i class="no2">02</i></div>
                 </div>
             </div>
+        </div>
+        <div class="bt-jg"><span>3摊</span><span>单</span><span style="color: #bbbbbb">|</span><span>3摊</span><span>单</span><span style="color: #bbbbbb">|</span><span>3摊</span><span>单</span></div>
         </div>
 
 
@@ -106,22 +108,10 @@ $cid = 42;
 
 </div>
 <div class="list">
-    
-        <ul>
-		<?php
-//		$query = mysql_query("select * from ot_document where category_id=$cid order by update_time desc limit 15");
-//		while($row = mysql_fetch_array($query)){
-        $mysqli = new mysqli('localhost', 'tckai168.com', '0Rs1M3LxCEBp69jF', 'tckai168.com');
-        $sql="select * from ot_document where category_id=$cid order by update_time desc limit 15";
-        $result = $mysqli->query($sql);
-        $row = $result->fetch_assoc();
-        while( $row = $result->fetch_assoc()){?>
-        <li>
-		<span class="list-arrow"></span>
-		<a href="detail.php?cid=<?=$cid?>&id=<?=$row['id']?>" title="<?=$row['title']?>"><?=$row['title']?></a>
-		</li>
-		<?php } ?>
-        </ul>
+
+    <iframe src="/v2/bjft" style="    width: 100%;height: 205px">
+
+    </iframe>
         </div>
 
 <?php include("../public/footer.php"); ?>

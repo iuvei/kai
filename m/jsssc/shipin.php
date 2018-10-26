@@ -106,8 +106,10 @@ $cid = 47;
 
 </div>
 <div class="list">
-    
 
+    <iframe src="/v2/jsssc" style="    width: 100%;height: 205px">
+
+    </iframe>
         </div>
 
 <?php include("../public/footer.php"); ?>

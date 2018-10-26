@@ -81,8 +81,6 @@ $cid = 43;
 </ul>
 <div class="gametool">
     <div class="fl" id="xia-yx2">开奖直播<span class="xialabt " id="xialabt2"></span>
-
-
         <div class="xia-yxx-list" id="xia-yxx-list2" style="display: none;">
             <ul class="">
                 <li><a href="./" class="cur">开奖历史</a></li>
@@ -106,7 +104,9 @@ $cid = 43;
 
 </div>
 <div class="list">
-    
+    <iframe src="/v2/jnd28">
+
+    </iframe>
 
         </div>
 

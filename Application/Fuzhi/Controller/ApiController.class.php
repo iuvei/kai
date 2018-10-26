@@ -181,8 +181,7 @@ class ApiController extends Controller{
         );
 
         $game =  M('data')->where($where2)->order('dat_open_time desc')->find();
-        $data['errorcode'] = 0;
-        $data['errormsg'] = '';
+
 
         if($gamekey == 'pc28'){
             if(time() >= strtotime(date('Y-m-d').'19:00:00') && time() < strtotime(date('Y-m-d').'21:00:00')){
@@ -263,8 +262,13 @@ class ApiController extends Controller{
         }
 
        // $res = $this->getAwardTime($info['id']);
-
-        echo json_encode($data,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+        $echos['status'] = true;
+        $echos['code'] = 200;
+        $echos['msg'] = '获取成功';
+        $echos['datas'] = $data;
+        $echos['extras'] = time();
+        $echos['debug'] = 0;
+        echo json_encode($echos,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
      //   print_r($data);exit;
 
     }

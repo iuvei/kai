@@ -109,8 +109,10 @@ $cid = 42;
 
 
 <div class="list">
-    <frameset rows="100%" border="0" frameborder="0" framespacing="0" framecolor="#000000"><frame height="500px" src="http://m.450kj.com/shipin.html"  scrolling="auto"></frameset>
+<!--    <frameset rows="100%" border="0" frameborder="0" framespacing="0" framecolor="#000000"><frame height="500px" src="/v2/bjpk10"  scrolling="auto"></frameset>-->
+    <iframe src="/v2/bjpk10" style="    width: 100%;height: 205px">
 
+    </iframe>
 </div>
 
 <?php include("../public/footer.php"); ?>

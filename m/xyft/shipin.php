@@ -106,8 +106,10 @@ $cid = 49;
 
 </div>
 <div class="list">
-    
 
+    <iframe src="/v2/xyft" style="    width: 100%;height: 205px">
+
+    </iframe>
 
 
         </div>
