@@ -3,7 +3,7 @@ function PK10(){
     $("#img").show();
     none = 1;
     localStorage.setItem('host','https://api.dk1288.com/');
-    $('#bjpk10').attr('src','/v/bjpk10')
+    $('#bjpk10').attr('src','/v2/bjpk10');
      $("#bjpk10").fadeIn(500)
      $('#body_none').show();
  }
@@ -11,7 +11,7 @@ function CQSSC(){
     $("#img").show();
     none = 2;
     localStorage.setItem('host','https://api.dk1288.com/');
-    $('#cqssc_1').attr('src','/v/cqssc')
+    $('#cqssc_1').attr('src','/v2/cqssc');
     $('#cqssc_1').fadeIn(500);
     $('#body_none').show();
 }
@@ -19,7 +19,7 @@ function bjft(){
     $("#img").show();
     none = 2;
     localStorage.setItem('host','https://api.dk1288.com/');
-    $('#bjft_1').attr('src','/v/bjft');
+    $('#bjft_1').attr('src','/v2/bjft');
     $('#bjft_1').fadeIn(500);
     $('#body_none').show();
 }
@@ -27,7 +27,7 @@ function cqft(){
     $("#img").show();
     none = 2;
     localStorage.setItem('host','https://api.dk1288.com/');
-    $('#cqft_1').attr('src','/v/cqft');
+    $('#cqft_1').attr('src','/v2/cqft');
     $('#cqft_1').fadeIn(500);
     $('#body_none').show();
 }
@@ -40,7 +40,7 @@ function XYFT(){
     none = 3;
     $("#img").show();
     localStorage.setItem('host','https://api.dk1288.com/');
-    $('#xyft_1').attr('src','/v/xyft');
+    $('#xyft_1').attr('src','/v2/xyft');
     $('#xyft_1').fadeIn(500);
     $('#body_none').show();
 }
@@ -49,7 +49,7 @@ function JSSC(){
     none = 1; none = 4;
     $("#img").show();
     localStorage.setItem('host','https://api.dk1288.com/');
-    $('#jssc').attr('src','/v/jssc');
+    $('#jssc').attr('src','/v2/jkpk10');
     $("#jssc").fadeIn(500);
     $('#body_none').show();
 }
@@ -58,7 +58,7 @@ function JSSSC(){
     none = 5;
     $("#img").show();
     localStorage.setItem('host','https://api.dk1288.com/');
-    $('#jsssc_1').attr('src','/v/jsssc');
+    $('#jsssc_1').attr('src','/v2/jkssc');
     $("#jsssc_1").fadeIn(500);
     $('#body_none').show();
 }
@@ -226,7 +226,7 @@ function openVdio(e) {
 }
 // function iframe(e) {
 //     var t = {
-//         pk10: "PK10/video.html?10001",
+//         pk10: "PK10/v2ideo.html?10001",
 //         cqssc: "SSC/index.html?10002",
 //         tjssc: "SSC/index.html?10003",
 //         xjssc: "SSC/index.html?10004",
@@ -235,7 +235,7 @@ function openVdio(e) {
 //         sdsyydj: "11x5_video/index.html?10008",
 //         gdsyxw: "11x5_video/index.html?10006",
 //         jsksan: "kuai3_video/Kuai3.html?10007",
-//         jisusc: "PK10/video.html?10037",
+//         jisusc: "PK10/v2ideo.html?10037",
 //         xingyft: "jisuft_video/index.html?10035",
 //         tjklsf: "GDklsf/index.html?10034",
 //         aozxy8: "GDklsf/index.html?10011",
@@ -270,7 +270,7 @@ function openVdio(e) {
 //         fcsd: "福彩3D",
 //         gxklsf: "广西快乐十分"
 //     };
-//   //  $("#videobox").find("#vtitle").text(a[e]), $("#videoIframe").find("iframe").attr("src", "//kj.kai861.com/view/video/" + t[e])
+//   //  $("#videobox").find("#vtitle").text(a[e]), $("#videoIframe").find("iframe").attr("src", "//kj.kai861.com/view/v2ideo/" + t[e])
 // }
 
 
