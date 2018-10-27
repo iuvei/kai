@@ -181,7 +181,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 .list-arrow {display:inline-block;width:8px;height:13px;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAZCAMAAAAPIl6bAAAAPFBMVEUAAACqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqrflK3yAAAAE3RSTlMABfPSnUwxEeTDq4xxXSMa3Ld+czkDMQAAAGBJREFUGNONkUsOgCAMBfkjIAi++9/VrRMSI8sJnbavpgdr8ILKRXLqSCTRuUiSpm6SXFSptkH+j7qTDK9mqV5ameomP1hW5bcfdNS3Y0x0wRyYlLtwW+axJ0bdV+rbXR5fhwQRmUSAmAAAAABJRU5ErkJggg==") no-repeat 0 0;background-size:8px;}
 .bt-aa { overflow: hidden;text-align: center;}
 .bt-aa a{     display: inline-block;
-	width: 21vw;
+	width: 20vw;
 	height: 6vw;
 	line-height: 6vw;
 	font-size: 3.2vw;

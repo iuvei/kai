@@ -559,27 +559,26 @@ class LottoryDataMgr
             //echo $module->getLastSql();
             $time = $kjHao[0]['dat_open_time'];
             $currentNo = $this->getGameCurrentNo($lotType, $module, $time);
-          //  var_dump($kjHao);die;
             $nextNo = $this->getGameNextNo($lotType, $module, time());
         } else {
             $currentNo = $this->getGameCurrentNo($lotType, $module, $time);
             //dump($lotType);die;
             $nextNo = $this->getGameNextNo($lotType, $module, $time);
             //$newqihao = str_replace("-","",$currentNo['actionNo']);
-            if($lotType == 43){
-                $kjHao = $module->query("select dat_codes,replace(dat_expect,'-','') dat_expect, dat_open_time from {$this->prename}data where dat_type={$lotType} order by dat_expect desc limit 1");
-            }else{
-                $kjHao = $module->query("select dat_codes from {$this->prename}data where dat_type={$lotType} and dat_expect='{$currentNo['actionNo']}'");
-            }
-
-
+//            if($lotType == 43){
+//                $kjHao = $module->query("select dat_codes,replace(dat_expect,'-','') dat_expect, dat_open_time from {$this->prename}data where dat_type={$lotType} order by dat_expect desc limit 1");
+//            }else{
+//                $kjHao = $module->query("select dat_codes from {$this->prename}data where dat_type={$lotType} and dat_expect='{$currentNo['actionNo']}'");
+//            }
+            $kjHao = $module->query("select dat_codes from {$this->prename}data where dat_type={$lotType} and dat_expect='{$currentNo['actionNo']}'");
+           // print_r("select dat_codes from {$this->prename}data where dat_type={$lotType} and dat_expect='{$currentNo['actionNo']}");exit;
             if (!is_array($kjHao) || !$kjHao['dat_codes']) {
-                if($lotType == 43){
-                    $kjHao = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} order by dat_id desc limit 1");
-                }else{
-                    $kjHao = $module->query("select dat_codes,dat_expect from {$this->prename}data where dat_type={$lotType} order by dat_id desc limit 1");
-                }
-
+//                if($lotType == 43){
+//                    $kjHao = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} order by dat_id desc limit 1");
+//                }else{
+//                    $kjHao = $module->query("select dat_codes,dat_expect from {$this->prename}data where dat_type={$lotType} order by dat_id desc limit 1");
+//                }
+                $kjHao = $module->query("select dat_codes,dat_expect from {$this->prename}data where dat_type={$lotType} order by dat_id desc limit 1");
             }
 
         }
@@ -614,18 +613,18 @@ class LottoryDataMgr
         $retData["time"] = $MillisecondTime;
         //
         //$retData["firstPeriod"] = $currentNo["actionNo"] - $currentNo["actionNoIndex"];
-        if($lotType == 43){
-            $retData["firstPeriod"] = $dat_expect; //测试数据是否正常
-        }else{
+//        if($lotType == 43){
+//            $retData["firstPeriod"] = $dat_expect; //测试数据是否正常
+//        }else{
             $retData["firstPeriod"] = $dat_expect - $currentNo["actionNoIndex"]; //测试数据是否正常
-        }
+       // }
 
         $retData["apiVersion"] = 1;
-        if($lotType == 43){
-            $retData["current"]["awardTime"] = $awrdtime;
-        }else{
+//        if($lotType == 43){
+//            $retData["current"]["awardTime"] = $awrdtime;
+//        }else{
             $retData["current"]["awardTime"] = $currentNo["actionTime"];
-        }
+   //     }
 
         if ($lotType == 1 || $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lotType == 24 || $lotType == 35 || $lotType == 6 || $lotType == 34 || $lotType == 40) {
             $retData["current"]["periodNumber"] = $currentNo["actionNoIndex"];
@@ -642,11 +641,11 @@ class LottoryDataMgr
         $retData["current"]["pan"] = $pan;
         $retData["current"]["isEnd"] = null;
         $retData["current"]["nextMinuteInterval"] = null;
-        if($lotType == 43){
-            $retData["next"]["awardTime"] = $awrdtime2;
-            $retData["next"]["awardTimeInterval"] = $awrdtime3*1000;
-            $retData["next"]["periodNumber"] =$dat_expect+1;//测试数据是否正常
-        }else{
+//        if($lotType == 43){
+//            $retData["next"]["awardTime"] = $awrdtime2;
+//            $retData["next"]["awardTimeInterval"] = $awrdtime3*1000;
+//            $retData["next"]["periodNumber"] =$dat_expect+1;//测试数据是否正常
+//        }else{
             $retData["next"]["awardTime"] = $nextNo["actionTime"];
             if ($lotType == 1 || $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lotType == 24 || $lotType == 35 || $lotType == 6 || $lotType == 34) {
                 $retData["next"]["periodNumber"] = $nextNo["actionNoIndex"];
@@ -654,8 +653,13 @@ class LottoryDataMgr
                 // $retData["next"]["periodNumber"] = $nextNo["actionNo"];
                 $retData["next"]["periodNumber"] =$dat_expect;//测试数据是否正常
             }
-            $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
-        }
+            if($lotType == 43){
+                $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"])  - time();
+            }else{
+                $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
+            }
+
+    //    }
 
 
         $retData["next"]["fullPeriodNumber"] = 0;

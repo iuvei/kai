@@ -87,7 +87,7 @@ include("../conn.php");
             <ul class="">
                 <li><a href="./" class="cur">开奖历史</a></li>
                 <li><a href="smtj.php">两面统计</a></li>
-                <li><a href="cltj.php">长龙统计</a></li>
+    <!--                <li><a href="cltj.php">长龙统计</a></li>-->
                 <li><a href="hmzs.php">号码走势</a></li>
                 <li><a href="lrtj.php">冷热统计</a></li>
                 <li><a href="jiqiao.php">玩法技巧</a></li>

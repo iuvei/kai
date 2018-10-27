@@ -113,7 +113,7 @@ include("../conn.php");
     </div>
 </div>
 
-<div class="balllist">
+<div class="balllist" style="display: none">
     <ul class="ball">
         <li><a href="javascript:void(0);" class='cur' ball="1" id="num_1">冠军</a></li>
         <li><a class="no" href="javascript:void(0);" ball="2" id="num_2">亚军</a></li>
@@ -137,7 +137,7 @@ include("../conn.php");
 
 				  </tr>
 				  </thead>
-    <table border="1">
+    <table border="1" style="display: none">
         <tr>
             <th></th>
             <th>2期</th>
@@ -194,7 +194,7 @@ include("../conn.php");
         </tr>
     </table>
 
-    <table border="1">
+    <table border="1" style="display: none">
         <tr>
             <th style="color: red">冠亚和 </th>
             <th>2期</th>
@@ -230,8 +230,60 @@ include("../conn.php");
 
    
 <?php include("../public/footer.php"); ?>
+<style>
+    .num_5{
+        color:#f11821;
+    }.num_6{
+         color:#f11821;
+     }.num_7{
+          color:#f11821;
+      }.num_8{
+           color:#f11821;
+       }.num_9{
+            color:#f11821;
+        }.num_10{
+             color:#f11821;
+         }.num_11{
+              color:#f11821;
+          }.num_12{
+               color:#f11821;
+           }.num_13{
+                color:#f11821;
+            }
 
+</style>
 <script type="text/javascript">
+    chang();
+    function chang() {
+        var id = "<?= $name?>";
+        layer.open({type: 2,time: 1});
+        $.get("/Fuzhi/Api/cllz", {id:id}, function (result) {
+            var data = eval(result);
+            console.log(data.length);
+            dataLen = data.length;
+            var name;
+            name = ['冠军','亚军','季军','第四名','第五名','第六名','第七名','第八名','第九名','第十名'];
+            var html = '';
+            for(var i=0;i<dataLen;i++){
+                $("#longDrag").html('');
+                console.log(data[i]['dx']);
+                if(data[i]['ds'] && data[i]['ds']['times'] != 1){
+                    html += '<li><span>'+name[i]+'</span>：<span>'+data[i]['ds']['type']+'</span><span class="num_'+data[i]['ds']['times']+'">'+data[i]['ds']['times']+'</span>期</li>';
+                }
+                if(data[i]['dx'] && data[i]['dx']['num'] != 1){
+
+                    html += '<li><span>'+name[i]+'</span>：<span>'+data[i]['dx']['name']+'</span><span class="num_'+data[i]['dx']['num']+'">'+data[i]['dx']['num']+'</span>期</li>';
+
+                }
+                if(data[i]['lh'] && data[i]['lh']['times'] != 1){
+                    html += '<li><span>'+name[i]+'</span>：<span>'+data[i]['lh']['type']+'</span><span class="num_'+data[i]['lh']['times']+'" >'+data[i]['lh']['times']+'</span>期</li>';
+                }
+            }
+            $("#longDrag").html(html);
+
+        },"json");
+    }
+
     $(function () {
         changLong();
     });

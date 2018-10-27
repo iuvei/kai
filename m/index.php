@@ -1105,6 +1105,7 @@ function long(nums_1,nums_2) {
         }else {
             dx = '大';
         }
+        srt +="  总和: ";
     }else if(num  == 2) {
         if(sum < 84){
             dx = '小';
@@ -1117,6 +1118,7 @@ function long(nums_1,nums_2) {
         srt +="<span>"+long(nums[1],nums[6])+"</span>";
         srt +="<span>"+long(nums[2],nums[5])+"</span>";
         srt +="<span>"+long(nums[3],nums[4])+"</span>";
+        srt +="<span style='color: #bbbbbb'>|</span> 总和: ";
     }else {
         if(num == 4){
             if(sum < 30){
@@ -1136,10 +1138,11 @@ function long(nums_1,nums_2) {
 
 
         srt +="<span>"+long(nums[0],nums[4])+"</span>";
+        srt +="<span style='color: #bbbbbb'>|</span> 总和: ";
     }
 
 
-     srt +="<span style='color: #bbbbbb'>|</span> 总和: ";
+
      srt +="<span>"+sum+"</span>";
      srt +="<span>"+dx+"</span>";
      srt +="<span>"+ds+"</span>";

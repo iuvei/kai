@@ -802,7 +802,6 @@ class ApiController extends Controller{
 
            }
        }
-       // print_r($lh_2);exit;
         $data['dx'][0] = $this->sdsd($lh_2[0]);
         $data['ds'][0] = $this->sdsd($lh_2[1]);
 
@@ -944,6 +943,130 @@ class ApiController extends Controller{
             }
         }
         return $arr;
+    }
+
+    public function cllz(){
+        if(empty($_GET)){
+            $arr = array(
+                'code'=>false,
+                'msg'=>'参数为空',
+            );
+            echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+        }
+        $data = $_GET;
+        if(empty($data['id'])){
+            $arr = array(
+                'code'=>false,
+                'msg'=>'参数为空',
+            );
+            echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+        }
+        C('DB_PREFIX','lot_');
+        $res = M('data')->where(array('dat_type'=>$data['id']))->order('dat_open_time desc')->limit(20)->select();
+
+        //开奖结果
+        $code = [];
+        foreach ($res as $k=>$v){
+            $code[]=$v['dat_codes'];
+        }
+
+        if(empty($code)){
+            return [];
+        }
+
+        //$result=array_keys(explode(',',$code[0]));
+        //print_r($result);
+
+        //开奖号码
+        $nos=[];
+        foreach ($code as $k=>$v){
+            $arr = explode(',',$v);
+            foreach ($arr as $kk=>$vv){
+                $num= preg_replace('/^0+/', '', $vv);
+                $nos[$kk][$k]=$num;
+                //array_push($no[$arrKey],$arr);
+            }
+        }
+
+        $result=[];
+        $count = count($nos)-1;
+        foreach ($nos as $k=>$no){
+            $result[$k]['dx'] = $this->dx($no);
+            $result[$k]['ds'] = $this->ds($no);
+            if($data['id'] == 21){
+                if($k<4){
+                    $result[$k]['lh'] = $this->lh($no,$nos[$count-$k]);
+                }
+            }else if($data['id'] == 20 || $data['id'] == 34 || $data['id'] == 39 || $data['id'] == 46){
+                if($k<5){
+                    $result[$k]['lh'] = $this->lh($no,$nos[$count-$k]);
+                }
+            }else if($data['id'] == 1 || $data['id'] == 6 || $data['id'] == 40 || $data['id'] == 44 || $data['id'] == 45){
+                if($k<1){
+                    $result[$k]['lh'] = $this->lh($no,$nos[4]);
+                }
+            }
+        }
+
+        echo json_encode($result,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+
+    }
+
+    /**
+     * @param $code
+     * @return string
+     *
+     */
+    public function cldx($code){
+        if($code >5 ){
+            return '大';
+        }else{
+            return '小';
+        }
+    }
+    public function clds($code){
+        if($code%2 == 0 ){
+            return '双';
+        }else{
+            return '单';
+        }
+    }
+    public function cllh($code,$code2){
+        if($code> $code2 ){
+            return '龙';
+        }else if($code < $code2 ){
+            return '虎';
+        }else{
+            return '和';
+        }
+    }
+    public function dx($no1){
+        $dx=[];
+        for($i=0;$i<20;$i++){
+            $dx[]=$this->cldx($no1[$i]);
+        }
+        $dx = $this->sdsd($dx);
+        $dx =$this-> cl($dx);
+        return $dx[0];
+    }
+    public function ds($no1){
+        $dx=[];
+        for($i=0;$i<20;$i++){
+            $dx[]=$this->clds($no1[$i]);
+        }
+        $dx = $this->sdsd($dx);
+       // $dx =$this-> cl($dx);
+        return $dx[0];
+    }
+
+    public function lh($no1,$no10){
+        $dx=[];
+        for($i=0;$i<20;$i++){
+            $dx[]=$this->cllh($no1[$i],$no10[$i]);
+        }
+        $dx = $this->sdsd($dx);
+       // $dx =$this-> cl($dx);
+        return $dx[0];
     }
 
 }
