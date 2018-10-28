@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3631bfa7-9644-4afb-9ca6-5ec2baa935b7" name="Default" comment="修改手机版视频">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="3631bfa7-9644-4afb-9ca6-5ec2baa935b7" name="Default" comment="修改长龙">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m/cqssc/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/cltj.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m/gd11x5/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m/jsk3/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/smtj.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m/jssc/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/cltj.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m/jsssc/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pc28/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pc28/cltj.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m/pk10/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/style/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/m/style/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcpk10/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcpk10/cltj.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m/tcssc/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcssc/cltj.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m/txffc/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/txffc/cltj.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m/xyft/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/cltj.php" afterDir="false" />
@@ -57,7 +44,7 @@
           <entry key="html" value="40" />
           <entry key="js" value="81" />
           <entry key="js___jb_tmp___" value="1" />
-          <entry key="php" value="92" />
+          <entry key="php" value="96" />
           <entry key="php___jb_tmp___" value="1" />
           <entry key="project" value="1" />
         </counts>
@@ -67,7 +54,7 @@
           <entry key="CSS" value="3" />
           <entry key="HTML" value="40" />
           <entry key="JavaScript" value="81" />
-          <entry key="PHP" value="92" />
+          <entry key="PHP" value="96" />
           <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
@@ -76,8 +63,8 @@
           <entry key="css" value="19" />
           <entry key="html" value="71" />
           <entry key="js" value="1869" />
-          <entry key="php" value="3360" />
-          <entry key="txt" value="19" />
+          <entry key="php" value="3362" />
+          <entry key="txt" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -85,8 +72,8 @@
           <entry key="CSS" value="19" />
           <entry key="HTML" value="97" />
           <entry key="JavaScript" value="1843" />
-          <entry key="PHP" value="3359" />
-          <entry key="PLAIN_TEXT" value="19" />
+          <entry key="PHP" value="3361" />
+          <entry key="PLAIN_TEXT" value="21" />
           <entry key="RegExp" value="1" />
         </counts>
       </usages-collector>
@@ -102,96 +89,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/cqssc/cltj.php">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="120" column="43" selection-start-line="120" selection-start-column="43" selection-end-line="120" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="477">
+              <caret line="1058" column="22" lean-forward="true" selection-start-line="1058" selection-start-column="22" selection-end-line="1058" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/gd11x5/cltj.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="129" column="25" lean-forward="true" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
-              <folding>
-                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/gdkl10/cltj.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="120" column="43" selection-start-line="120" selection-start-column="43" selection-end-line="120" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/jsk3/cltj.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="128" column="8" lean-forward="true" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/jssc/cltj.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="120" column="43" selection-start-line="120" selection-start-column="43" selection-end-line="120" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/m/pk10/cltj.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="208" column="43" selection-start-line="208" selection-start-column="43" selection-end-line="208" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="437">
+              <caret line="308" column="53" selection-start-line="308" selection-start-column="53" selection-end-line="308" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/tcpk10/cltj.php">
+        <entry file="file://$PROJECT_DIR$/m/jsssc/cltj.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="119" column="43" selection-start-line="119" selection-start-column="43" selection-end-line="119" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="661">
+              <caret line="272" column="66" selection-start-line="272" selection-start-column="66" selection-end-line="272" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -200,40 +119,7 @@
         <entry file="file://$PROJECT_DIR$/m/tcssc/cltj.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
-              <caret line="119" column="43" selection-start-line="119" selection-start-column="43" selection-end-line="119" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/txffc/cltj.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="119" column="43" selection-start-line="119" selection-start-column="43" selection-end-line="119" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/m/xyft/cltj.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+              <caret line="272" column="85" selection-start-line="272" selection-start-column="85" selection-end-line="272" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -242,8 +128,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pk10</find>
-      <find>span-2</find>
       <find>txffc</find>
       <find>lot-table</find>
       <find>changlong</find>
@@ -272,6 +156,8 @@
       <find>0</find>
       <find>$arr=</find>
       <find>getPk10AwardTimes</find>
+      <find>data[i]['dx']['type']</find>
+      <find>data[i]['dx']['name']</find>
     </findStrings>
     <replaceStrings>
       <replace>1200px</replace>
@@ -293,13 +179,13 @@
       <dir>F:\www\tckai168.com\Application\Fuzhi</dir>
       <dir>F:\www\tckai168.com</dir>
       <dir>D:\kai</dir>
-      <dir>D:\kai\m</dir>
       <dir>D:\kai\v</dir>
       <dir>D:\kai\v2\bjpk10</dir>
       <dir>D:\kai\v2</dir>
       <dir>D:\kai\v2\jspk10</dir>
       <dir>D:\kai\js</dir>
       <dir>D:\kai\Application\Fuzhi\View</dir>
+      <dir>D:\kai\m</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -339,7 +225,6 @@
         <option value="$PROJECT_DIR$/m/index.php" />
         <option value="$PROJECT_DIR$/test.php" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php" />
         <option value="$PROJECT_DIR$/m/pk10/cltj2.php" />
         <option value="$PROJECT_DIR$/m/jsk3/cltj.php" />
         <option value="$PROJECT_DIR$/m/pc28/cltj.php" />
@@ -354,11 +239,12 @@
         <option value="$PROJECT_DIR$/m/gd11x5/cltj.php" />
         <option value="$PROJECT_DIR$/m/gdkl10/cltj.php" />
         <option value="$PROJECT_DIR$/m/jssc/cltj.php" />
-        <option value="$PROJECT_DIR$/m/pk10/cltj.php" />
         <option value="$PROJECT_DIR$/m/tcpk10/cltj.php" />
-        <option value="$PROJECT_DIR$/m/tcssc/cltj.php" />
         <option value="$PROJECT_DIR$/m/txffc/cltj.php" />
         <option value="$PROJECT_DIR$/m/xyft/cltj.php" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php" />
+        <option value="$PROJECT_DIR$/m/tcssc/cltj.php" />
+        <option value="$PROJECT_DIR$/m/pk10/cltj.php" />
       </list>
     </option>
   </component>
@@ -444,7 +330,7 @@
               <item name="kai" type="b2602c69:ProjectViewProjectNode" />
               <item name="kai" type="462c0819:PsiDirectoryNode" />
               <item name="m" type="462c0819:PsiDirectoryNode" />
-              <item name="xyft" type="462c0819:PsiDirectoryNode" />
+              <item name="pk10" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -548,7 +434,7 @@
       <workItem from="1540586527429" duration="1193000" />
       <workItem from="1540588005323" duration="55000" />
       <workItem from="1540590065831" duration="502000" />
-      <workItem from="1540592010014" duration="26192000" />
+      <workItem from="1540592010014" duration="27086000" />
     </task>
     <task id="LOCAL-00001" summary="修改bug">
       <created>1540059770146</created>
@@ -585,11 +471,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540586629478</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="修改长龙">
+      <created>1540675021950</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1540675021950</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212180000" />
+    <option name="totallyTimeSpent" value="213074000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -664,7 +557,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改bug" />
     <MESSAGE value="修改手机版视频" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改手机版视频" />
+    <MESSAGE value="修改长龙" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改长龙" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/m/xyft/shipin.php">
@@ -922,13 +816,6 @@
         <state relative-caret-position="-342" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-150">
-          <caret line="974" column="9" lean-forward="true" selection-start-line="974" selection-start-column="9" selection-end-line="974" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/pk10/cltj2.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -987,19 +874,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/jsssc/cltj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="121" column="62" selection-start-line="121" selection-start-column="62" selection-end-line="121" selection-end-column="62" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#tr#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/jsk3/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
@@ -1007,23 +881,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/cqssc/cltj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="120" column="43" selection-start-line="120" selection-start-column="43" selection-end-line="120" selection-end-column="43" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/gd11x5/cltj.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
-          <caret line="129" column="25" lean-forward="true" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
+          <caret line="129" column="25" selection-start-line="129" selection-start-column="25" selection-end-line="129" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1048,7 +909,7 @@
     <entry file="file://$PROJECT_DIR$/m/jsk3/cltj.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
-          <caret line="128" column="8" lean-forward="true" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
+          <caret line="128" column="8" selection-start-line="128" selection-start-column="8" selection-end-line="128" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1064,33 +925,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/pk10/cltj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="208" column="43" selection-start-line="208" selection-start-column="43" selection-end-line="208" selection-end-column="43" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/tcpk10/cltj.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
-          <caret line="119" column="43" selection-start-line="119" selection-start-column="43" selection-end-line="119" selection-end-column="43" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/tcssc/cltj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
           <caret line="119" column="43" selection-start-line="119" selection-start-column="43" selection-end-line="119" selection-end-column="43" />
           <folding>
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1114,13 +951,54 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/m/xyft/cltj.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
+        <state relative-caret-position="551">
+          <caret line="125" column="45" selection-start-line="125" selection-start-column="45" selection-end-line="125" selection-end-column="45" />
           <folding>
             <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/cqssc/cltj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="120" column="43" selection-start-line="120" selection-start-column="43" selection-end-line="120" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#table#1;n#table#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="1058" column="22" lean-forward="true" selection-start-line="1058" selection-start-column="22" selection-end-line="1058" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/jsssc/cltj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="661">
+          <caret line="272" column="66" selection-start-line="272" selection-start-column="66" selection-end-line="272" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/tcssc/cltj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="272" column="85" selection-start-line="272" selection-start-column="85" selection-end-line="272" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/pk10/cltj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="308" column="53" selection-start-line="308" selection-start-column="53" selection-end-line="308" selection-end-column="53" />
         </state>
       </provider>
     </entry>

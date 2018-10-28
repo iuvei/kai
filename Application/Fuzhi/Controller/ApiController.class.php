@@ -1046,7 +1046,7 @@ class ApiController extends Controller{
             $dx[]=$this->cldx($no1[$i]);
         }
         $dx = $this->sdsd($dx);
-        $dx =$this-> cl($dx);
+       // $dx =$this-> cl($dx);
         return $dx[0];
     }
     public function ds($no1){

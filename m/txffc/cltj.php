@@ -269,9 +269,9 @@ include("../conn.php");
                 if(data[i]['ds'] && data[i]['ds']['times'] != 1){
                     html += '<li><span>'+name[i]+'</span>：<span>'+data[i]['ds']['type']+'</span><span class="num_'+data[i]['ds']['times']+'">'+data[i]['ds']['times']+'</span>期</li>';
                 }
-                if(data[i]['dx'] && data[i]['dx']['num'] != 1){
+                if(data[i]['dx'] && data[i]['dx']['times'] != 1){
 
-                    html += '<li><span>'+name[i]+'</span>：<span>'+data[i]['dx']['name']+'</span><span class="num_'+data[i]['dx']['num']+'">'+data[i]['dx']['num']+'</span>期</li>';
+                    html += '<li><span>'+name[i]+'</span>：<span>'+data[i]['dx']['type']+'</span><span class="num_'+data[i]['dx']['times']+'">'+data[i]['dx']['times']+'</span>期</li>';
 
                 }
                 if(data[i]['lh'] && data[i]['lh']['times'] != 1){
