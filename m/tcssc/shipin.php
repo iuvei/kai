@@ -32,7 +32,7 @@ $cid = 47;
 
 <?php include("../public/header.php"); ?>
 
-
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
    
 <script src="award.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">

@@ -12,7 +12,7 @@ $cid = 2;
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 <meta name="format-detection"content="telephone=no"/>
 <title><?=$web_type?>开奖直播</title>
 <script src="../style/js/jquery.js"></script>
