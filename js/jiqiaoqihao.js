@@ -25,7 +25,7 @@ $.getJSON("/cqft/getPk10AwardTimes.do",
  });
  $.getJSON("/jssc/getPk10AwardTimes.do",
  function(data){
- timers(parseInt((data.next.awardTimeInterval)/1000),"bxync-time");
+ timers(parseInt((data.next.awardTimeInterval)/1000),"jssc-time");
  });
  $.getJSON("/jsssc/getPk10AwardTimes.do",
  function(data){
