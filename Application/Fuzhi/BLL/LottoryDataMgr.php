@@ -2413,7 +2413,7 @@ class LottoryDataMgr
 
            if(empty($name)){
                for ($i = 0; $i < 1; $i++) {
-                   $this->addcqsscLonghuLuzhuDataHeader($values[0][$i], $cnt[0][$i], count($openedCaiList) - $cnt[0][$i] - $cntEqual, $cntEqual, "龍", "虎", "和", "龍虎");
+                   $this->addcqsscLonghuLuzhuDataHeader($values[0][$i], $cnt[0][$i], count($openedCaiList) - $cnt[0][$i] - $cntEqual, $cntEqual, "龙", "虎", "和", "龙虎");
                    $ZstData = $ZstData . $values[0][$i] . "</td></tr></tbody></table></div>";
                }
                $ret = $ZstData;
@@ -3051,7 +3051,7 @@ class LottoryDataMgr
                         break;
                     }
                 }
-                $this->addPk10LzHeader($values[0][$i], $i + 1, $cnt[0][$i], count($openedCaiList), "龍", "虎", $desc);
+                $this->addPk10LzHeader($values[0][$i], $i + 1, $cnt[0][$i], count($openedCaiList), "龙", "虎", $desc);
                 $ZstData = $ZstData . $values[0][$i] . "</td></tr></tbody></table></div>";
             }
             $ret = $ZstData;
@@ -3113,7 +3113,7 @@ class LottoryDataMgr
                         $cntEqual[$i]++;
                     }
                     if ($value == "龙") {
-                        $value = "龍";
+                        $value = "龙";
                     }
                     $k = $i + 1;
                     if ($bFirstZero) {

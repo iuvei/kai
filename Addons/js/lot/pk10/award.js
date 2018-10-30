@@ -172,13 +172,13 @@ function getHistoryData(count) {
                 }
                 html += '<td><p ' + (guanyaheds == "单" ? 'class="r"' : '') + '>' + guanyaheds + '</p></td>';
                 var longhu = new Array();
-                longhu[0] = (data.n1>data.n10)?"龍":"虎";
-                longhu[1] = (data.n2>data.n9)?"龍":"虎";
-                longhu[2] = (data.n3>data.n8)?"龍":"虎";
-                longhu[3] = (data.n4>data.n7)?"龍":"虎";
-                longhu[4] = (data.n5>data.n6)?"龍":"虎";
+                longhu[0] = (data.n1>data.n10)?"龙":"虎";
+                longhu[1] = (data.n2>data.n9)?"龙":"虎";
+                longhu[2] = (data.n3>data.n8)?"龙":"虎";
+                longhu[3] = (data.n4>data.n7)?"龙":"虎";
+                longhu[4] = (data.n5>data.n6)?"龙":"虎";
                 for (var i = 0; i < longhu.length; i++) {
-                    html += '<td><p ' + (longhu[i] == "龍" ? 'class="r"' : '') + '>' + longhu[i] + '</p></td>';
+                    html += '<td><p ' + (longhu[i] == "龙" ? 'class="r"' : '') + '>' + longhu[i] + '</p></td>';
                 }
                 html += '</tr>';
                 j++;
@@ -206,7 +206,7 @@ function updateHistoryRecord() {
         html += '<td><p ' + (data.guanyahedx == "大" ? 'class="r"' : '') + '>' + data.guanyahedx + '</p></td>';
         html += '<td><p ' + (data.guanyaheds == "单" ? 'class="r"' : '') + '>' + data.guanyaheds + '</p></td>';
         for (var i = 0; i < longhu.length; i++) {
-            html += '<td><p ' + (longhu[i] == "龍" ? 'class="r"' : '') + '>' + longhu[i] + '</p></td>';
+            html += '<td><p ' + (longhu[i] == "龙" ? 'class="r"' : '') + '>' + longhu[i] + '</p></td>';
         }
         html += '</tr>';
 

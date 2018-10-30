@@ -159,7 +159,7 @@ function updateHistoryRecord() {
         html += '<td><p ' + (data.totalBigOrSmall == "大" ? 'class="r"' : '') + '>' + data.totalBigOrSmall + '</p></td>';
         html += '<td><p ' + (data.totalMantissa == "大" ? 'class="r"' : '') + '>尾' + data.totalMantissa + '</p></td>';
         for (var i = 0; i < longhu.length; i++) {
-            html += '<td><p ' + (longhu[i] == "龍" ? 'class="r"' : '') + '>' + longhu[i] + '</p></td>';
+            html += '<td><p ' + (longhu[i] == "龙" ? 'class="r"' : '') + '>' + longhu[i] + '</p></td>';
         }
         html += '</tr>';
 

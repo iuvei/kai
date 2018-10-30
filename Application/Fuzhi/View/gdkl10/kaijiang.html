@@ -93,7 +93,7 @@
 										  if(tNum%2==0){
 											  tType="虎";
 										  }else{
-											  tType="龍";
+											  tType="龙";
 										  }
 									  }else if(rd.dataType==5){
 										  if(tNum==1){
@@ -144,7 +144,7 @@
 								<td width="160px"> 期号 </td>
 					         <td  width="680px"> 开奖号码 </td>
 					         <td colspan="4"> 总和 </td> 
-					         <td colspan="4">1~4龍虎</td> 
+					         <td colspan="4">1~4龙虎</td>
 					        </tr>
 					        {{
 								for (var i = 0; i <it.length; i++) { 
@@ -176,10 +176,10 @@
 						         <td class="wd-50"> <p class="{{=totalNum%2!=0?'r':''}}"> {{=totalNum%2==0?"双":"单"}}</p> </td> 
 							     <td class="wd-50"> <p class="{{=totalNum>84?'r':''}}"> {{=totalBigOrSmallStr}}</p> </td>
 							     <td class="wd-50"> <p class="{{=totalNum % 10 > 5?'r':''}}"> {{=totalNum % 10 < 5 ? "尾小" : "尾大"}}</p> </td> 
-							     <td class="wd-50"> <p class="{{=row.n1 > row.n8?'r':''}}"> {{=row.n1 > row.n8?'龍':'虎'}}</p> </td> 
-						         <td class="wd-50"> <p class="{{=row.n2 > row.n7?'r':''}}"> {{=row.n2 > row.n7?'龍':'虎'}}</p> </td> 
-						         <td class="wd-50"> <p class="{{=row.n3 > row.n6?'r':''}}"> {{=row.n3 > row.n6?'龍':'虎'}}</p> </td> 
-						         <td class="wd-50"> <p class="{{=row.n4 > row.n5?'r':''}}"> {{=row.n4 > row.n5?'龍':'虎'}}</p> </td> 
+							     <td class="wd-50"> <p class="{{=row.n1 > row.n8?'r':''}}"> {{=row.n1 > row.n8?'龙':'虎'}}</p> </td>
+						         <td class="wd-50"> <p class="{{=row.n2 > row.n7?'r':''}}"> {{=row.n2 > row.n7?'龙':'虎'}}</p> </td>
+						         <td class="wd-50"> <p class="{{=row.n3 > row.n6?'r':''}}"> {{=row.n3 > row.n6?'龙':'虎'}}</p> </td>
+						         <td class="wd-50"> <p class="{{=row.n4 > row.n5?'r':''}}"> {{=row.n4 > row.n5?'龙':'虎'}}</p> </td>
 						        </tr> 
 					        {{
 								}

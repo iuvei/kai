@@ -168,7 +168,7 @@
 					  var tType="";
 					  if(rd.dataType==2){
 						  if(tNum==1){
-							  tType="龍";
+							  tType="龙";
 						  }else if(tNum==2){
 							  tType="虎";
 						  }else if(tNum==3){
@@ -220,7 +220,7 @@
 							var totalNum=row.n1+row.n2+row.n3+row.n4+row.n5;
 							var lhStr="";
 							if(row.n1>row.n5){
-								lhStr="龍";
+								lhStr="龙";
 							}else if(row.n1<row.n5){
 								lhStr="虎";
 							}else if(row.n1==row.n5){
@@ -247,7 +247,7 @@
 								<td  width="50px">{{=totalNum}}</td>
 								<td class="{{=totalNum%2!=0?'r':''}}"  width="50px"><p>{{=totalNum%2==0?"双":"单"}}</p></td>
 								<td class="{{=totalNum> 22?'r':''}}"  width="50px"><p>{{=totalNum<= 22?"小":"大"}}</p></td>
-								<td><p class="{{=lhStr=='龍'?'r':''}}">{{=lhStr}}</p></td>
+								<td><p class="{{=lhStr=='龙'?'r':''}}">{{=lhStr}}</p></td>
 								<td>{{=numFromDesc(row.n1,row.n2,row.n3)}}</td>
 								<td>{{=numFromDesc(row.n2,row.n3,row.n4)}}</td>
 								<td>{{=numFromDesc(row.n3,row.n4,row.n5)}}</td>

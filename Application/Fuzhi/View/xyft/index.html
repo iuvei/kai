@@ -39,7 +39,7 @@
 									<td width="140">期号</td>
 						<td width="540">开奖号码</td>
 						<td colspan="3">冠亚和</td>
-						<td colspan="5">1~5龍虎</td>
+						<td colspan="5">1~5龙虎</td>
 					</tr>
 								{{
 									for (var i = 0; i <it.length; i++) { 
@@ -48,7 +48,7 @@
 										var totalNum=row.n1+row.n2+row.n3+row.n4+row.n5;
 										var lhStr="";
 										if(row.n1>row.n10){
-											lhStr="龍";
+											lhStr="龙";
 										}else if(row.n1<row.n10){
 											lhStr="虎";
 										}else if(row.n1==row.n10){
@@ -57,7 +57,7 @@
 										
 										var lhStr2="";
 										if(row.n2>row.n9){
-											lhStr2="龍";
+											lhStr2="龙";
 										}else if(row.n2<row.n9){
 											lhStr2="虎";
 										}else if(row.n2==row.n9){
@@ -66,7 +66,7 @@
 										
 										var lhStr3="";
 										if(row.n3>row.n8){
-											lhStr3="龍";
+											lhStr3="龙";
 										}else if(row.n3<row.n8){
 											lhStr3="虎";
 										}else if(row.n3==row.n8){
@@ -75,7 +75,7 @@
 										
 										var lhStr4="";
 										if(row.n4>row.n7){
-											lhStr4="龍";
+											lhStr4="龙";
 										}else if(row.n4<row.n7){
 											lhStr4="虎";
 										}else if(row.n4==row.n7){
@@ -84,7 +84,7 @@
 										
 										var lhStr5="";
 										if(row.n5>row.n6){
-											lhStr5="龍";
+											lhStr5="龙";
 										}else if(row.n5<row.n6){
 											lhStr5="虎";
 										}else if(row.n5==row.n6){
@@ -117,11 +117,11 @@
 											<td class="{{=(row.n1+row.n2)> 10?'r':''}}"><p>{{=(row.n1+row.n2)<= 10?"小":"大"}}</p></td>
 											<td class="{{=(row.n1+row.n2)%2!=0?'r':''}}"><p>{{=(row.n1+row.n2)%2==0?"双":"单"}}</p></td>
 											
-											<td><p class="{{=lhStr=='龍'?'r':''}}">{{=lhStr}}</p></td>
-											<td><p class="{{=lhStr2=='龍'?'r':''}}">{{=lhStr2}}</p></td>
-											<td><p class="{{=lhStr3=='龍'?'r':''}}">{{=lhStr3}}</p></td>
-											<td><p class="{{=lhStr4=='龍'?'r':''}}">{{=lhStr4}}</p></td>
-											<td><p class="{{=lhStr5=='龍'?'r':''}}">{{=lhStr5}}</p></td>
+											<td><p class="{{=lhStr=='龙'?'r':''}}">{{=lhStr}}</p></td>
+											<td><p class="{{=lhStr2=='龙'?'r':''}}">{{=lhStr2}}</p></td>
+											<td><p class="{{=lhStr3=='龙'?'r':''}}">{{=lhStr3}}</p></td>
+											<td><p class="{{=lhStr4=='龙'?'r':''}}">{{=lhStr4}}</p></td>
+											<td><p class="{{=lhStr5=='龙'?'r':''}}">{{=lhStr5}}</p></td>
 										</tr>
 								{{
 									}

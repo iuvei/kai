@@ -173,31 +173,31 @@ $.cookie('home_cookiea', '1', { expires: 7 });
     <a href="pk10/shipin.php">开奖视频</a>
 </div>
 	            </li>
-    <li class="kaij-mylist-li" id="jssc">
-        <a href="jssc/" class="yx_name">極速賽車<span class="list-arrow"></span>
-        </a>
-        <!--                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xync"></span></div>-->
-        <div class="kaij-mylist-r">
-            <div class="kaij-mylist-hd">
-                <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
-                <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
-            </div>
-            <div class="kaij-mylist-bd">
-                <div class="itm-result">
-                    <div class="ball-wrap" id="number">
-                        <img src="style/images/loading2.gif" alt="载入中">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bt-jg"><span>龙</span><span>虎</span><span>龙</span><span>虎</span><span>龙</span><span style="color: #bbbbbb">|</span> 冠亚和: <span>18</span> <span>大</span><span>单</span>  </div>
-        <div class="bt-aa">
-            <a href="jssc/">开奖历史</a>
-            <a href="jssc/smtj.php">两面统计</a>
-            <a href="jssc/cltj.php">长龙统计</a>
-            <a href="jssc/shipin.php">开奖视频</a>
-        </div>
-    </li>
+<!--    <li class="kaij-mylist-li" id="jssc">-->
+<!--        <a href="jssc/" class="yx_name">極速賽車<span class="list-arrow"></span>-->
+<!--        </a>-->
+<!--        <!--                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xync"></span></div>-->
+<!--        <div class="kaij-mylist-r">-->
+<!--            <div class="kaij-mylist-hd">-->
+<!--                <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>-->
+<!--                <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>-->
+<!--            </div>-->
+<!--            <div class="kaij-mylist-bd">-->
+<!--                <div class="itm-result">-->
+<!--                    <div class="ball-wrap" id="number">-->
+<!--                        <img src="style/images/loading2.gif" alt="载入中">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="bt-jg"><span>龙</span><span>虎</span><span>龙</span><span>虎</span><span>龙</span><span style="color: #bbbbbb">|</span> 冠亚和: <span>18</span> <span>大</span><span>单</span>  </div>-->
+<!--        <div class="bt-aa">-->
+<!--            <a href="jssc/">开奖历史</a>-->
+<!--            <a href="jssc/smtj.php">两面统计</a>-->
+<!--            <a href="jssc/cltj.php">长龙统计</a>-->
+<!--            <a href="jssc/shipin.php">开奖视频</a>-->
+<!--        </div>-->
+<!--    </li>-->
     <li class="kaij-mylist-li" id="tcpk10">
         <a href="tcpk10/" class="yx_name">头彩赛车 <span class="list-arrow"></span>
         </a>
@@ -275,31 +275,31 @@ $.cookie('home_cookiea', '1', { expires: 7 });
         </div>
     </li>
 
-    <li class="kaij-mylist-li" id="jsssc">
-        <a href="jsssc/" class="yx_name">極速时时彩<span class="list-arrow"></span>
-        </a>
-        <!--                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xjssc"></span></div>-->
-        <div class="kaij-mylist-r">
-            <div class="kaij-mylist-hd">
-                <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
-                <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
-            </div>
-            <div class="kaij-mylist-bd">
-                <div class="itm-result">
-                    <div class="ball-wrap" id="number">
-                        <img src="style/images/loading2.gif" alt="载入中">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="bt-jg"><span>龙</span><span style="color: #bbbbbb">|</span> 总和: <span>18</span> <span>大</span><span>单</span>  </div>
-        <div class="bt-aa">
-            <a href="jsssc/">开奖历史</a>
-            <a href="jsssc/smtj.php">两面统计</a>
-            <a href="jsssc/cltj.php">长龙统计</a>
-            <a href="jsssc/shipin.php">开奖视频</a>
-        </div>
-    </li>
+<!--    <li class="kaij-mylist-li" id="jsssc">-->
+<!--        <a href="jsssc/" class="yx_name">極速时时彩<span class="list-arrow"></span>-->
+<!--        </a>-->
+<!--        <!--                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xjssc"></span></div>-->
+<!--        <div class="kaij-mylist-r">-->
+<!--            <div class="kaij-mylist-hd">-->
+<!--                <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>-->
+<!--                <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>-->
+<!--            </div>-->
+<!--            <div class="kaij-mylist-bd">-->
+<!--                <div class="itm-result">-->
+<!--                    <div class="ball-wrap" id="number">-->
+<!--                        <img src="style/images/loading2.gif" alt="载入中">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="bt-jg"><span>龙</span><span style="color: #bbbbbb">|</span> 总和: <span>18</span> <span>大</span><span>单</span>  </div>-->
+<!--        <div class="bt-aa">-->
+<!--            <a href="jsssc/">开奖历史</a>-->
+<!--            <a href="jsssc/smtj.php">两面统计</a>-->
+<!--            <a href="jsssc/cltj.php">长龙统计</a>-->
+<!--            <a href="jsssc/shipin.php">开奖视频</a>-->
+<!--        </div>-->
+<!--    </li>-->
     <li class="kaij-mylist-li" id="tcssc">
         <a href="tcssc/" class="yx_name"> 头彩时时彩<span class="list-arrow"></span>
         </a>

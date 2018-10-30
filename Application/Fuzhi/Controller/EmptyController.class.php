@@ -47,7 +47,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
 			 $title_c = "单双大小历史-";
 			 break;
 			 case 'numberstat':
-			 $title_c = "龍虎历史-";
+			 $title_c = "龙虎历史-";
 			 break;
 			 case 'betgame':
 			 $title_c = "免费参考-";

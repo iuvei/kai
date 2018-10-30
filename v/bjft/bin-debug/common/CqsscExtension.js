@@ -22,7 +22,7 @@ var __reflect = this && this.__reflect || function (n, t, r) {
             return t.GetQZHSanResult(n, 2)
         }, t.LongHu = function (n) {
             var t = flash.checkInt(n[0]), r = flash.checkInt(n[4]);
-            return t > r ? "龍" : t < r ? "虎" : "和"
+            return t > r ? "龙" : t < r ? "虎" : "和"
         }, t.total = function (n) {
             for (var t = 0, r = 0; r < n.length; r++) t += n[r];
             return t

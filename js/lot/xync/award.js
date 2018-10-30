@@ -148,7 +148,7 @@ function updateHistoryRecord() {
         html += '<td><p ' + (data.totalOddorEven == "单" ? 'class="r"' : '') + '>' + data.totalOddorEven + '</p></td>';
         html += '<td><p ' + (data.totalBigOrSmall == "大" ? 'class="r"' : '') + '>' + data.totalBigOrSmall + '</p></td>';
         html += '<td><p ' + (data.totalmantissa == "大" ? 'class="r"' : '') + '>尾 ' + data.totalmantissa + '</p></td>';
-        html += '<td><p ' + (data.longhu == "龍" ? 'class="r"' : (data.longhu == "和" ? 'class="g"' : '')) + '>' + data.longhu + '</p></td>';
+        html += '<td><p ' + (data.longhu == "龙" ? 'class="r"' : (data.longhu == "和" ? 'class="g"' : '')) + '>' + data.longhu + '</p></td>';
         html += '</tr>';
 
         $("#history .head").after(html);

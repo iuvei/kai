@@ -157,7 +157,7 @@
                            if(tNum%2==0){
                            tType="虎";
                            }else{
-                           tType="龍";
+                           tType="龙";
                            }
                            }else if(rd.dataType==5){
                            if(tNum==1){
@@ -408,7 +408,7 @@
                    orderCloumn=1;
                if(!orderType)
                    orderType=2;
-               //长龍
+               //长龙
                function getMergeData(){
                    $.post("/pk10/getMergeData.do",
                            {rank:rank},
@@ -462,7 +462,7 @@
                        luzhuShow();
                    });
                }
-               //龍虎路珠
+               //龙虎路珠
                var NUM_INDEX = {1:'冠军',2:'亚军',3:'第三名',4:'第四名',5:'第五名'};
                function luzhu(rows, n){
                    var j = 0;
@@ -494,7 +494,7 @@
                        var tag = '';
                        if(a1>a2){
                            cl = 'odd';
-                           tag = '龍';
+                           tag = '龙';
                            l1++;
                        }else{
                            cl = 'even';
@@ -518,7 +518,7 @@
                    }
                    html += '</tr> </table></div>';
                    var tmp = '<table class="roadmap-table-caption"><tr><td>'+
-                           '<span>今日号码累计：<span class="count"> 龍（'+l1+'） 虎（'+h1+'）</span>'+NUM_INDEX[n]+'龍虎</span>'
+                           '<span>今日号码累计：<span class="count"> 龙（'+l1+'） 虎（'+h1+'）</span>'+NUM_INDEX[n]+'龙虎</span>'
                            +'</td></tr></table>';
                    return tmp + html;
                }
@@ -540,7 +540,7 @@
                        luzhuShow();
                    }, "json");
                }
-               //龍虎结束
+               //龙虎结束
 
                //冠亚和路珠
                function getGuanyaLuzhubseo(){

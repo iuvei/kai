@@ -203,45 +203,45 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                 </a>
             </li>
             
-			<li class="kaij-mylist-li" id="jssc">
-                <a href="jssc/">
-                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xync"></span></div>
-                <div class="kaij-mylist-r">
-                    <div class="kaij-mylist-hd">
-                        <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-	                    <div class="itm-tit">極速賽車<span class="itm-qih" id="qihao">载入中</span></div>
-                    </div>
-                    <div class="kaij-mylist-bd">
-                        <div class="itm-result">
-                            <div class="ball-wrap" id="number">
-	                            <img src="style/images/loading2.gif" alt="载入中">
-	                            </div>
-                        </div>
-                    </div>
-                </div>
-                <span class="list-arrow"></span>
-                </a>
-            </li>
+<!--			<li class="kaij-mylist-li" id="jssc">-->
+<!--                <a href="jssc/">-->
+<!--                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xync"></span></div>-->
+<!--                <div class="kaij-mylist-r">-->
+<!--                    <div class="kaij-mylist-hd">-->
+<!--                        <div class="itm-time">下期开奖：<span id="time">载入中</span></div>-->
+<!--	                    <div class="itm-tit">極速賽車<span class="itm-qih" id="qihao">载入中</span></div>-->
+<!--                    </div>-->
+<!--                    <div class="kaij-mylist-bd">-->
+<!--                        <div class="itm-result">-->
+<!--                            <div class="ball-wrap" id="number">-->
+<!--	                            <img src="style/images/loading2.gif" alt="载入中">-->
+<!--	                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <span class="list-arrow"></span>-->
+<!--                </a>-->
+<!--            </li>-->
             
-				<li class="kaij-mylist-li" id="jsssc">
-                <a href="jsssc/">
-                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xjssc"></span></div>
-                <div class="kaij-mylist-r">
-                    <div class="kaij-mylist-hd">
-                         <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-	                     <div class="itm-tit">極速时时彩<span class="itm-qih" id="qihao">载入中</span></div>
-                    </div>
-                    <div class="kaij-mylist-bd">
-                        <div class="itm-result">
-                            <div class="ball-wrap" id="number">
-	                            <img src="style/images/loading2.gif" alt="载入中">
-	                            </div>
-                        </div>
-                    </div>
-                </div>
-                <span class="list-arrow"></span>
-                </a>
-            </li>
+<!--				<li class="kaij-mylist-li" id="jsssc">-->
+<!--                <a href="jsssc/">-->
+<!--                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xjssc"></span></div>-->
+<!--                <div class="kaij-mylist-r">-->
+<!--                    <div class="kaij-mylist-hd">-->
+<!--                         <div class="itm-time">下期开奖：<span id="time">载入中</span></div>-->
+<!--	                     <div class="itm-tit">極速时时彩<span class="itm-qih" id="qihao">载入中</span></div>-->
+<!--                    </div>-->
+<!--                    <div class="kaij-mylist-bd">-->
+<!--                        <div class="itm-result">-->
+<!--                            <div class="ball-wrap" id="number">-->
+<!--	                            <img src="style/images/loading2.gif" alt="载入中">-->
+<!--	                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <span class="list-arrow"></span>-->
+<!--                </a>-->
+<!--            </li>-->
             
 <!--				<li class="kaij-mylist-li" id="tjssc">-->
 <!--                <a href="tjssc/">-->

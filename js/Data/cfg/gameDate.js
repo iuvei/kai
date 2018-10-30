@@ -64,7 +64,7 @@ var webListOP = {
 					"href":"pk10/ballstat.html"
 				},
 				{
-					"text":"龍虎历史",
+					"text":"龙虎历史",
 					"href":"pk10/numberstat.html"
 				},
 //				{
@@ -266,7 +266,7 @@ var webListOP = {
             "href":"jssc/ballstat.html"
         },
         {
-            "text":"龍虎历史",
+            "text":"龙虎历史",
             "href":"jssc/numberstat.html"
         },
 //				{
@@ -863,7 +863,7 @@ var webListOP = {
             "href":"tcpk10/ballstat.html"
         },
         {
-            "text":"龍虎历史",
+            "text":"龙虎历史",
             "href":"tcpk10/numberstat.html"
         },
 //				{

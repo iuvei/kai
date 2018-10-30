@@ -129,7 +129,7 @@
                                 var tType="";
                                 if(rd.dataType==2){
                                 if(tNum==1){
-                                tType="龍";
+                                tType="龙";
                                 }else if(tNum==2){
                                 tType="虎";
                                 }else if(tNum==3){
@@ -382,7 +382,7 @@
                 orderCloumn=1;
             if(!orderType)
                 orderType=2;
-            //长龍
+            //长龙
             function getMergeData(){
                 $.post("/txffc/getMergeData.do",
                         {rank:rank},
@@ -437,7 +437,7 @@
                     luzhuShow();
                 });
             }
-            //龍虎路珠
+            //龙虎路珠
             function searchLuzhu() {
                 $.get("/txffc/getLonghuLuzhuData.do", {
                     t : Math.random()
@@ -446,7 +446,7 @@
                     luzhuShow();
                 });
             }
-            //龍虎结束
+            //龙虎结束
 
             //总和路珠
             function getGuanyaLuzhubseo(){

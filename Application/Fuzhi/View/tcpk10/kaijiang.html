@@ -377,7 +377,7 @@
 						<td width="140">期号</td>
 						<td width="650">开奖号码</td>
 						<td colspan="3">冠亚军和</td>
-						<td colspan="5">1~5龍虎</td>
+						<td colspan="5">1~5龙虎</td>
 					</tr>
 				</tbody>
 			</table>
@@ -464,13 +464,13 @@
                         }
                         html += '<td><p ' + (guanyaheds == "单" ? 'class="r"' : '') + '>' + guanyaheds + '</p></td>';
                         var longhu = new Array();
-                        longhu[0] = (data.n1>data.n10)?"龍":"虎";
-                        longhu[1] = (data.n2>data.n9)?"龍":"虎";
-                        longhu[2] = (data.n3>data.n8)?"龍":"虎";
-                        longhu[3] = (data.n4>data.n7)?"龍":"虎";
-                        longhu[4] = (data.n5>data.n6)?"龍":"虎";
+                        longhu[0] = (data.n1>data.n10)?"龙":"虎";
+                        longhu[1] = (data.n2>data.n9)?"龙":"虎";
+                        longhu[2] = (data.n3>data.n8)?"龙":"虎";
+                        longhu[3] = (data.n4>data.n7)?"龙":"虎";
+                        longhu[4] = (data.n5>data.n6)?"龙":"虎";
                         for (var i = 0; i < longhu.length; i++) {
-                            html += '<td><p ' + (longhu[i] == "龍" ? 'class="r"' : '') + '>' + longhu[i] + '</p></td>';
+                            html += '<td><p ' + (longhu[i] == "龙" ? 'class="r"' : '') + '>' + longhu[i] + '</p></td>';
                         }
                         html += '</tr>';
                         j++;
