@@ -37,11 +37,17 @@ if(strpos($self,"xyft")){
     $name = 44;
     $web_type = "腾讯分分彩";
 }elseif(strpos($self,"tcpk10")){
-    $web_type = "头彩PK10";
+    $web_type = "极速赛车";
     $name = 46;
 }elseif(strpos($self,"tcssc")){
-    $web_type = "头彩时时彩";
+    $web_type = "极速时时彩";
     $name = 45;
+}elseif(strpos($self,"tcpk10")){
+    $web_type = "三分赛车";
+    $name = 47;
+}elseif(strpos($self,"tcssc")){
+    $web_type = "三分时时彩";
+    $name = 48;
 }else{
     $name = 20;
 	$web_type = "北京赛车PK10";

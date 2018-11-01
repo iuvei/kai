@@ -194,17 +194,17 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                 $totalExpect = 1440;
                                                             }else{
                                                                 if ($ctrlName == 'tcpk10') {
-                                                                    $this->title = $title_c.'头彩PK10开奖视频_头彩PK10开奖号码_头彩PK10开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                    $this->title = $title_c.'极速赛车开奖视频_极速赛车开奖号码_极速赛车开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                     $this->keyword = C("WEB_SITE_tcpk10_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                     $this->description = C("WEB_SITE_tcpk10_DESCR");
-                                                                    $lottoryName = "头彩PK10";
+                                                                    $lottoryName = "极速赛车";
                                                                     $totalExpect = 1440;
                                                                 }else{
                                                                     if ($ctrlName == 'tcssc') {
-                                                                        $this->title = $title_c.'头彩时时彩开奖视频_头彩时时彩开奖号码_头彩时时彩开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                        $this->title = $title_c.'极速时时彩开奖视频_极速时时彩开奖号码_极速时时彩开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                         $this->keyword = C("WEB_SITE_tcssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                         $this->description = C("WEB_SITE_tcssc_DESCR");
-                                                                        $lottoryName = "头彩时时彩";
+                                                                        $lottoryName = "极速时时彩";
                                                                         $totalExpect = 1440;
                                                                     }
                                                                 }
@@ -476,11 +476,11 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                             $id = 54;
                             break;
                         case 'tcssc':
-                            $JiQiaotitle = '头彩时时彩技巧';
+                            $JiQiaotitle = '极速时时彩技巧';
                             $id = 55;
                             break;
                         case 'tcpk10':
-                            $JiQiaotitle = '头彩pk10技巧';
+                            $JiQiaotitle = '极速赛车技巧';
                             $id = 56;
                             break;
                         default:
