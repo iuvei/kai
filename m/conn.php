@@ -42,10 +42,10 @@ if(strpos($self,"xyft")){
 }elseif(strpos($self,"tcssc")){
     $web_type = "极速时时彩";
     $name = 45;
-}elseif(strpos($self,"tcpk10")){
+}elseif(strpos($self,"sfpk10")){
     $web_type = "三分赛车";
     $name = 47;
-}elseif(strpos($self,"tcssc")){
+}elseif(strpos($self,"sfssc")){
     $web_type = "三分时时彩";
     $name = 48;
 }else{

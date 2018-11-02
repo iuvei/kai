@@ -85,7 +85,8 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
 			 
 		}
         $this->assign('lottory', $ctrlName);
-        if ($ctrlName == 'tcpk10' || $ctrlName == 'tcssc' || $ctrlName == 'pk10' || $ctrlName == 'cqssc' || $ctrlName == 'gdkl10' || $ctrlName == 'jssc' || $ctrlName == 'jsk3' || $ctrlName == 'kl8' || $ctrlName == 'bjft' || $ctrlName == 'jsssc'  || $ctrlName == 'xyft'  || $ctrlName == 'fc3d' || $ctrlName == 'pl3' || $ctrlName == 'pl3' || $ctrlName == 'gd11x5' || $ctrlName == 'cqft' || $ctrlName == 'pc28' || $ctrlName == 'txffc') {
+        if ($ctrlName == 'tcpk10' || $ctrlName == 'tcssc' || $ctrlName == 'pk10' || $ctrlName == 'cqssc' || $ctrlName == 'gdkl10' || $ctrlName == 'jssc' || $ctrlName == 'jsk3' || $ctrlName == 'kl8' || $ctrlName == 'bjft' || $ctrlName == 'jsssc'  || $ctrlName == 'xyft'  || $ctrlName == 'fc3d' || $ctrlName == 'pl3'
+            || $ctrlName == 'pl3' || $ctrlName == 'gd11x5' || $ctrlName == 'cqft' || $ctrlName == 'pc28' || $ctrlName == 'txffc' || $ctrlName == 'sfssc' || $ctrlName == 'sfpk10') {
             $lottoryName = '';
             $totalExpect = 0;
             if ($ctrlName == 'pk10') {
@@ -197,15 +198,31 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                     $this->title = $title_c.'极速赛车开奖视频_极速赛车开奖号码_极速赛车开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                     $this->keyword = C("WEB_SITE_tcpk10_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                     $this->description = C("WEB_SITE_tcpk10_DESCR");
-                                                                    $lottoryName = "极速赛车";
+                                                                    $lottoryName = "极速赛车";//头彩
                                                                     $totalExpect = 1440;
                                                                 }else{
                                                                     if ($ctrlName == 'tcssc') {
                                                                         $this->title = $title_c.'极速时时彩开奖视频_极速时时彩开奖号码_极速时时彩开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                         $this->keyword = C("WEB_SITE_tcssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                         $this->description = C("WEB_SITE_tcssc_DESCR");
-                                                                        $lottoryName = "极速时时彩";
+                                                                        $lottoryName = "极速时时彩";//头彩
                                                                         $totalExpect = 1440;
+                                                                    }else{
+                                                                        if ($ctrlName == 'sfssc') {
+                                                                            $this->title = $title_c.'三分赛车开奖视频_三分赛车开奖号码_三分赛车开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                            $this->keyword = C("WEB_SITE_tcssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                            $this->description = C("WEB_SITE_tcssc_DESCR");
+                                                                            $lottoryName = "三分时时彩";//头彩
+                                                                            $totalExpect = 1440;
+                                                                        }else{
+                                                                            if ($ctrlName == 'sfpk10') {
+                                                                                $this->title = $title_c.'三分时时彩开奖视频_三分时时彩开奖号码_三分时时彩开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                                $this->keyword = C("WEB_SITE_tcssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                $this->description = C("WEB_SITE_tcssc_DESCR");
+                                                                                $lottoryName = "三分赛车";//头彩
+                                                                                $totalExpect = 1440;
+                                                                            }
+                                                                        }
                                                                     }
                                                                 }
                                                             }
@@ -304,6 +321,14 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                         $swfurl = "http://f.907794.com/tcssc/Preloader.swf";
                         $id = 46;
                         break;
+                    case 'sfpk10':
+                        $swfurl = "http://f.907794.com/tcssc/Preloader.swf";
+                        $id = 47;
+                        break;
+                    case 'sfssc':
+                        $swfurl = "http://f.907794.com/tcssc/Preloader.swf";
+                        $id = 48;
+                        break;
                     default:
 					    $swfurl = "http://f.907794.com/pk10/Preloader.swf";
                         $id = 43;
@@ -377,6 +402,12 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                          break;
                      case 'tcssc':
                          $swfurl = "v2/tcssc";
+                         break;
+                     case 'sfpk10':
+                     $swfurl = "v2/sfpk10";
+                         break;
+                     case 'sfssc':
+                     $swfurl = "v2/sfssc";
                          break;
                     default:
 					    $swfurl = "v2/bjpk10";
@@ -483,6 +514,14 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                             $JiQiaotitle = '极速赛车技巧';
                             $id = 56;
                             break;
+                        case 'sfpk10':
+                            $JiQiaotitle = '三分赛车技巧';
+                            $id = 57;
+                            break;
+                        case 'sfssc':
+                            $JiQiaotitle = '三分赛车技巧';
+                            $id = 58;
+                            break;
                         default:
                             $JiQiaotitle = '重庆时时彩技巧';
                             $id = 43;
@@ -548,11 +587,17 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                         $list_txffc = $module->query("SELECT * FROM lot_data where dat_type=44 order by dat_open_time desc limit 4");
                         $this->assign('list_txffc', $list_txffc);
 
-                        $list_tcpk10 = $module->query("SELECT * FROM lot_data where dat_type=44 order by dat_open_time desc limit 4");
+                        $list_tcpk10 = $module->query("SELECT * FROM lot_data where dat_type=46 order by dat_open_time desc limit 4");
                         $this->assign('list_tcpk10', $list_tcpk10);
 
-                        $list_tcssc = $module->query("SELECT * FROM lot_data where dat_type=44 order by dat_open_time desc limit 4");
+                        $list_tcssc = $module->query("SELECT * FROM lot_data where dat_type=45 order by dat_open_time desc limit 4");
                         $this->assign('list_tcssc', $list_tcssc);
+
+                        $list_sfpk10 = $module->query("SELECT * FROM lot_data where dat_type=47 order by dat_open_time desc limit 4");
+                        $this->assign('list_sfpk10', $list_sfpk10);
+
+                        $list_sfssc = $module->query("SELECT * FROM lot_data where dat_type=48 order by dat_open_time desc limit 4");
+                        $this->assign('list_sfssc', $list_sfssc);
 
                         $lists = D('Document')->page(!empty($_GET["p"]) ? $_GET["p"] : 1, $perPage)->lists($id);
                         $page = new \Think\Page(get_list_count($id), $perPage);
@@ -610,6 +655,12 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
 
                         $list_tcssc = $module->query("SELECT * FROM lot_data where dat_type=45 order by dat_open_time desc limit 4");
                         $this->assign('list_tcssc', $list_tcssc);
+
+                        $list_sfpk10 = $module->query("SELECT * FROM lot_data where dat_type=47 order by dat_open_time desc limit 4");
+                        $this->assign('list_sfpk10', $list_sfpk10);
+
+                        $list_sfssc = $module->query("SELECT * FROM lot_data where dat_type=48 order by dat_open_time desc limit 4");
+                        $this->assign('list_sfssc', $list_sfssc);
 
                         $this->display("jiqiao/index");
 

@@ -21,7 +21,9 @@ var beforPageJs = {
 				|| pathname.indexOf("/pc28") >= 0
 				|| pathname.indexOf("/txffc") >= 0
 				|| pathname.indexOf("/tcssc") >= 0
-				|| pathname.indexOf("/tcpk10") >= 0) {
+				|| pathname.indexOf("/tcpk10") >= 0
+				|| pathname.indexOf("/sfssc") >= 0
+				|| pathname.indexOf("/sfpk10") >= 0) {
             var i = 0;
             if(pathname.split("/")[1] == 'fuzhi')
                 i = 1;
