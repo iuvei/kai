@@ -441,7 +441,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 
 
 	margin: 0 auto;
-	border-bottom: 1px solid #d9d9d9;
+	border-bottom: 4px solid #d9d9d9;
 	z-index: 100;position: relative;z-index: 1;
 	
 }
