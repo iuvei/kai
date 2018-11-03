@@ -124,7 +124,8 @@ $(function () {
                 srt +="<span>"+shun(sum)+"</span>";
             }
             $("#gdkl10 .bt-jg").html(srt);
-
+            var qishu = parseInt(data.current.periodNumber);
+            $("#gdkl10 .itm-tit #qihao").html('第'+qishu+'期结果');
 
         }, 'json').error(function () {
             if (errorCount < 20) {

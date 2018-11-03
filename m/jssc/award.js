@@ -126,6 +126,8 @@ $(function () {
                 srt +="<span>"+ds+"</span>";
             }
             $("#pk10 .bt-jg").html(srt);
+            var qishu = parseInt(data.current.periodNumber);
+            $("#pk10 .itm-tit #qihao").html('第'+qishu+'期结果');
 
 
         }, 'json').error(function () {

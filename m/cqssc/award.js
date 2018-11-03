@@ -40,6 +40,7 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../cqssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
+            // console.log(data);
             //计数请求次数
             requireCount += 1;
 
@@ -89,11 +90,11 @@ $(function () {
             for(var i=0;i<nums.length;i++){
                 html += '<i class="ball-red">' + nums[i] + '</i>';
             }
-            console.log(html);
+            // console.log(html);
             $("#cqssc #number").html(html);
             $("#cqssc .bt-jg").html('');
             var srt;
-            console.log(nums);
+            // console.log(nums);
             srt = lh(nums);
             if(srt == undefined || srt == null){
 
@@ -122,6 +123,9 @@ $(function () {
                 srt +="<span>"+ds+"</span>";
             }
             $("#cqssc .bt-jg").html(srt);
+            var qishu = parseInt(data.current.periodNumber);
+            //console.log(qishu)
+            $("#cqssc .itm-tit #qihao").html('第'+qishu+'期结果');
 
 
         }, 'json').error(function () {
@@ -140,9 +144,9 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../cqssc/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
+            console.log(data);
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
-
             //期数不同，则开始封盘倒计时
             if (data.current.periodNumber != cpNumber) {
                 cpNextAwardTimeInterval = data.next.awardTimeInterval;
@@ -180,6 +184,7 @@ $(function () {
 function getHistoryData(count,date) {
 	layer.open({type: 2,time: 1});
     $.get("../../cqssc/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
+        // console.log(result);
         if(result&&result.rows){
         	var j = 0;
         	var html = '';
@@ -339,7 +344,7 @@ function douniu(nums){
                     num5++;
                 }
             }
-            console.log(num4);
+            //console.log(num4);
             if(num4 == 0 || num4 == null || num4 == ''){
                 niu ='牛牛';
             }else {
@@ -370,7 +375,7 @@ function douniu(nums){
         return niu;
     }
 
-    console.log(niu);
+    //console.log(niu);
     return niu;
 
 }
@@ -403,7 +408,7 @@ function lh(nums) {
     srt +="<span>"+sum+"</span>";
     srt +="<span>"+dx+"</span>";
     srt +="<span>"+ds+"</span>";
-    console.log(srt);
+   // console.log(srt);
     return srt;
 }
 

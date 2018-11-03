@@ -1,4 +1,4 @@
-	
+
 $(function () {
     var currentPeriodNumber = -1;
     var nextPeriodNumber = -1;
@@ -89,11 +89,11 @@ $(function () {
             for(var i=0;i<nums.length;i++){
                 html += '<i class="ball-red">' + nums[i] + '</i>';
             }
-            console.log(html);
+           // console.log(html);
             $("#cqssc #number").html(html);
             $("#cqssc .bt-jg").html('');
             var srt;
-            console.log(nums);
+            // console.log(nums);
             srt = lh(nums);
             if(srt == undefined || srt == null){
 
@@ -122,6 +122,9 @@ $(function () {
                 srt +="<span>"+ds+"</span>";
             }
             $("#cqssc .bt-jg").html(srt);
+            var qishu = parseInt(data.current.periodNumber);
+            $("#cqssc .itm-tit #qihao").html('第'+qishu+'期');
+
 
 
         }, 'json').error(function () {
@@ -159,7 +162,9 @@ $(function () {
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
             }
-            $(".daojishi #period").html(data.next.periodNumber);
+            var xiaqi = parseInt(data.next.periodNumber)+1;
+
+            $(".daojishi #period").html(xiaqi);
              
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
         }, 'json').error(function () {
@@ -200,8 +205,8 @@ function getHistoryData(count,date) {
 				html += '<i class="ball-red">' + data.n3 + '</i>';
 				html += '<i class="ball-red">' + data.n4 + '</i>';
 				html += '<i class="ball-red">' + data.n5 + '</i>';
-				console.log(data.lotteryNum.length);
-				console.log(data.lotteryNum.substring(0,1));
+				// console.log(data.lotteryNum.length);
+				// console.log(data.lotteryNum.substring(0,1));
                 var guanyahe = arr_num(data.lotteryNum);
                 var sum = eval(guanyahe.join("+"));
                 html += '<div class="bt-jg"><span>'+long(data.n1,data.n5)+'</span><span style="color: #bbbbbb">|</span><span>'+ sum +'</span><span>'+ dx(sum)+'</span><span>'+ds(sum)+'</span>'+
@@ -306,7 +311,7 @@ function douniu(nums){
                 for(k = j + 1; k < nums.length; ++ k)
                 {
                     nSum = Number(nums[i]) + Number(nums[j]) + Number(nums[k]);
-                    //  console.log(nSum);
+                     // console.log(nSum);
                     nSum = Number(nSum)%10;
                     // console.log(nSum);
                     // alert(nSum);
@@ -338,7 +343,7 @@ function douniu(nums){
                     num5++;
                 }
             }
-            console.log(num4);
+            // console.log(num4);
             if(num4 == 0 || num4 == null || num4 == ''){
                 niu ='牛牛';
             }else {
@@ -369,7 +374,7 @@ function douniu(nums){
         return niu;
     }
 
-    console.log(niu);
+    // console.log(niu);
     return niu;
 
 }
@@ -401,7 +406,7 @@ function lh(nums) {
     srt +="<span>"+sum+"</span>";
     srt +="<span>"+dx+"</span>";
     srt +="<span>"+ds+"</span>";
-    console.log(srt);
+    // console.log(srt);
     return srt;
 }
 

@@ -97,6 +97,7 @@ $(function () {
             '<i class="no'+ num[7] +'">'+  num[7] +'</i>' +
             '<i class="no'+ num[8] +'">'+  num[8] +'</i>' +
             '<i class="no'+ num[9] +'">'+  num[9] +'</i>';
+           // console.log(html)
             $("#pk10 #number").html(html);
 
             var qs = tan(num[0],num[1],num[2]);
@@ -107,6 +108,8 @@ $(function () {
             str += '<span>'+ zs[0] +'</span><span>'+ zs[1] +'</span><span>'+ zs[2] +'</span><span style="color: #bbbbbb">|</span>';
             str += '<span>'+ hs[0] +'</span><span>'+ hs[1] +'</span><span>'+ hs[2] +'</span>';
             $("#pk10 .bt-jg").html(str);
+            var qishu = parseInt(data.current.periodNumber);
+            $("#pk10 .itm-tit #qihao").html('第'+qishu+'期结果');
 
         }, 'json').error(function () {
             if (errorCount < 20) {
@@ -143,7 +146,10 @@ $(function () {
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
             }
-            $(".daojishi #period").html(data.next.periodNumber);
+
+            var xiaqi = parseInt(data.next.periodNumber)+1;
+
+            $(".daojishi #period").html("距"+xiaqi);
              
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
         }, 'json').error(function () {
@@ -177,7 +183,7 @@ function getHistoryData(count,date) {
         		html += '<li class="' + clsName + '" style="height: 70px">';
 				html += '<table width="100%">';
 				html += '<tr>';
-        		html += '<td width="20%">' + data.termNum +'期</br>';
+        		html += '<td width="20%">' + data.termNum+'期</br>';
 				html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
                 html += '<td class="nums"><div class="nums-div">';
 				html += '<i class="no' + data.n1 + '">' + data.n1 + '</i>';

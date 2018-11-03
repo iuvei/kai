@@ -88,11 +88,11 @@ $(function () {
             for(var i=0;i<nums.length;i++){
                 html += '<i class="ball-red">' + nums[i] + '</i>';
             }
-            console.log(html);
+           // console.log(html);
             $("#cqssc #number").html(html);
             $("#cqssc .bt-jg").html('');
             var srt;
-            console.log(nums);
+            // console.log(nums);
             srt = lh(nums);
             if(srt == undefined || srt == null){
 
@@ -122,7 +122,8 @@ $(function () {
             }
             $("#cqssc .bt-jg").html(srt);
 
-
+            var qishu = parseInt(data.current.periodNumber);
+            $("#cqssc .itm-tit #qihao").html('第'+qishu+'期结果');
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(awardTick, 1000 + Math.random() * 10000);
@@ -221,7 +222,7 @@ function getHistoryData(count,date) {
 
 
 function arr_num(nums) {
-    console.log(nums);
+    // console.log(nums);
     var arr=[];
     arr[0] = nums.substring(0,2);
     arr[1] = nums.substring(2,4);
@@ -318,7 +319,7 @@ function lh(nums) {
     srt +="<span>"+sum+"</span>";
     srt +="<span>"+dx+"</span>";
     srt +="<span>"+ds+"</span>";
-    console.log(srt);
+    // console.log(srt);
     return srt;
 }
 

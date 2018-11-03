@@ -126,6 +126,8 @@ $(function () {
                 srt +="<span>"+ds+"</span>";
             }
             $("#pk10 .bt-jg").html(srt);
+            var qishu = parseInt(data.current.periodNumber);
+            $("#pk10 .itm-tit #qihao").html('第'+qishu+'期');
 
 
 
@@ -164,7 +166,10 @@ $(function () {
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
             }
-            $(".daojishi #period").html(data.next.periodNumber);
+
+            var xiaqi = parseInt(data.next.periodNumber)+1;
+
+            $(".daojishi #period").html(xiaqi);
              
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
         }, 'json').error(function () {
@@ -290,9 +295,9 @@ function lh(nums) {
     srt +="<span>"+long(nums[3],nums[6])+"</span>";
     srt +="<span>"+long(nums[4],nums[5])+"</span>";
     srt +="<span style='color: #bbbbbb'>|</span> 冠亚和: ";
-    srt +="<span>"+sum+"</span>";
-    srt +="<span>"+dx+"</span>";
-    srt +="<span>"+ds+"</span>";
+    srt +="<samp>"+sum+"</samp>";
+    srt +="<samp>"+dx+"</samp>";
+    srt +="<samp>"+ds+"</samp>";
     console.log(srt);
     return srt;
 }
