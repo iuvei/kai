@@ -165,7 +165,7 @@ $(function () {
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
             }
-            $(".daojishi #period").html(data.next.periodNumber);
+
              
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
         }, 'json').error(function () {

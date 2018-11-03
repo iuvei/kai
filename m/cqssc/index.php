@@ -64,7 +64,7 @@ include("../conn.php");
 
         <div class="kaij-mylist-r">
             <div class="kaij-mylist-hd daojishi " style="padding-top: 0;">
-                <div class="itm-time"><em id="period"></em>期开奖剩余：<span id="time" class="itm-time-time">01:27</span></div>
+                <div class="itm-time">下期开奖剩余：<span id="time" class="itm-time-time">01:27</span></div>
                 <div class="itm-tit"><span class="itm-qih" id="qihao">第710580期</span></div>
             </div>
             <div class="kaij-mylist-bd">
