@@ -37,7 +37,7 @@ include("../conn.php");
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
 <div class="daojishi">
  <div class="fl"><?=$web_type?></div>
- <div class="fr"><em id="period"></em>期开奖剩余：<span id="time"></span></div>
+ <div class="fr">下期开奖剩余：<span id="time"></span></div>
 </div>
 <div class="h100">
 

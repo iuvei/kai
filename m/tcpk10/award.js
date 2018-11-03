@@ -169,7 +169,7 @@ $(function () {
 
             var xiaqi = parseInt(data.next.periodNumber)+1;
 
-            $(".daojishi #period").html(xiaqi);
+
              
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
         }, 'json').error(function () {
