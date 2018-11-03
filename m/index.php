@@ -1144,8 +1144,9 @@ function IndexOpen() {
          long = lh(nums);
         $("#tcpk10 #number").html(str);
         $("#tcpk10 .bt-jg").html(long);
+        console.log( data.sfssc);
+        $("#sfssc #qihao").text('第' + pad(data.sfssc.dat_expect, 3) + '期');
 
-        $("#sfssc #qihao").text('第' + pad(data.tcssc.dat_expect, 3) + '期');
         var nums = data.sfssc.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
@@ -1157,7 +1158,7 @@ function IndexOpen() {
         $("#sfssc #number").html(str);
         $("#sfssc .bt-jg").html(long);
 
-        $("#sfpk10 #qihao").text('第' + data.xyft.dat_expect + '期');
+        $("#sfpk10 #qihao").text('第' + data.sfpk10.dat_expect + '期');
         var nums = data.sfpk10.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {

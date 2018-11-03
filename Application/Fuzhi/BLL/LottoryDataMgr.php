@@ -562,7 +562,6 @@ class LottoryDataMgr
         } else {
 
             $currentNo = $this->getGameCurrentNo($lotType, $module, $time);
-            print_r($lotType);exit;
             $nextNo = $this->getGameNextNo($lotType, $module, $time);
 
             //$newqihao = str_replace("-","",$currentNo['actionNo']);
@@ -5358,7 +5357,6 @@ class LottoryDataMgr
 
         $return = $module->query($sql, $atime);
        // echo
-        var_dump($sql);die;
         if (!$return) {
             $sql = "select actionNo, actionTime from {$this->prename}data_time where type={$type} order by actionTime desc limit 1";
             $return = $module->query($sql);

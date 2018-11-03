@@ -213,14 +213,14 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                             $this->keyword = C("WEB_SITE_tcssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                             $this->description = C("WEB_SITE_tcssc_DESCR");
                                                                             $lottoryName = "三分时时彩";//头彩
-                                                                            $totalExpect = 1150;
+                                                                            $totalExpect = 441;
                                                                         }else{
                                                                             if ($ctrlName == 'sfpk10') {
                                                                                 $this->title = $title_c.'三分时时彩开奖视频_三分时时彩开奖号码_三分时时彩开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                                 $this->keyword = C("WEB_SITE_tcssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                                 $this->description = C("WEB_SITE_tcssc_DESCR");
                                                                                 $lottoryName = "三分赛车";//头彩
-                                                                                $totalExpect = 1150;
+                                                                                $totalExpect = 441;
                                                                             }
                                                                         }
                                                                     }
