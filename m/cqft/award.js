@@ -97,6 +97,8 @@ $(function () {
             html += '</br><span>'+ qs[0] +'</span><span>'+ qs[1] +'</span><span>'+ qs[2] +'</span>';
 
             $("#cqft #number").html(html);
+            var qishu = parseInt(data.current.periodNumber);
+            $("#cqft .itm-tit #qihao").html('第'+qishu+'期结果');
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(awardTick, 1000 + Math.random() * 10000);

@@ -83,7 +83,7 @@ $(function () {
             window.setTimeout(awardTick, (data.next.awardTimeInterval*1000) < 10 ? 1000 : _time);
             timeInterval = 0;
             var num = data.current.awardNumbers.split(',');
-            console.log(num);
+            // console.log(num);
             var  dat =  shuju(num);
             $("#pc28 #number").html('');
             var  html =  '<i class="ball-red" style="background-color: #ff7b00;color: #fff;">'+ dat[0] +'</i>' +
@@ -97,6 +97,8 @@ $(function () {
                 '<span class="ball-red">'+ dat[5] +'</span>' +
                 '<span class="ball-red">'+ dat[6] +'</span>';
             $("#pc28 #number").html(html);
+            var qishu = parseInt(data.current.periodNumber);
+            $("#pc28 .itm-tit #qihao").html('第'+qishu+'期结果');
 
         }, 'json').error(function () {
             if (errorCount < 20) {
@@ -133,8 +135,11 @@ $(function () {
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
             }
-            console.log(data.next.periodNumber);
-            $(".daojishi #period").html(data.next.periodNumber);
+           // console.log(data.next.periodNumber);
+
+            var xiaqi = parseInt(data.next.periodNumber)+ 1;
+
+            $(".daojishi #period").html(xiaqi);
              
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, (data.next.awardTimeInterval*1000) < 10 ? 10000 : (data.next.awardTimeInterval*1000) + 1000);
         }, 'json').error(function () {

@@ -1,24 +1,24 @@
-<?php 
+<?php
 include("../conn.php");
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8">
-	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
-    
-    <meta name="HandheldFriendly" content="true" />
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
 
-    
-<meta name="format-detection"content="telephone=no"/>
-<title><?=$web_type?>开奖直播_<?=$web_type?>开奖历史记录_<?=$webtitle?>手机版</title>
-<script src="../style/js/jquery.js"></script>
-<script src="../style/js/layer.js"></script>
-<script src="../style/js/lotcommon.js" type="text/javascript"></script>
-<script src="../style/js/warntime.js" type="text/javascript"></script>
-<link type="text/css" href="../style/css/style.css" rel="stylesheet">
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+    <meta name="format-detection"content="telephone=no"/>
+    <title><?=$web_type?>开奖直播_<?=$web_type?>开奖历史记录_<?=$webtitle?>手机版</title>
+    <script src="../style/js/jquery.js"></script>
+    <script src="../style/js/layer.js"></script>
+    <script src="../style/js/lotcommon.js" type="text/javascript"></script>
+    <script src="../style/js/warntime.js" type="text/javascript"></script>
+    <link type="text/css" href="../style/css/style.css" rel="stylesheet">
 
 
 
@@ -32,7 +32,7 @@ include("../conn.php");
 <?php include("../public/header.php"); ?>
 
 
-   
+
 <script src="award.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
 <div class="daojishi1">
@@ -112,67 +112,63 @@ include("../conn.php");
 
 
 
- <div class="tabletop-sp">
- <table width="100%">
-<tr>
-<td width="16%">期号/时间</td>
-<td>开奖号码</td>
-</tr>
+<div class="tabletop-sp">
+    <table width="100%">
+        <tr>
+            <td width="16%">期号/时间</td>
+            <td>开奖号码</td>
+        </tr>
 
-</table>
- </div>
-
-
+    </table>
+</div>
 
 
- <div class="openlist">
-  <ul id="historyList">
-  </ul>
- </div>
-   
+
+
+<div class="openlist">
+    <ul id="historyList">
+    </ul>
+</div>
+
 <?php include("../public/footer.php"); ?>
 
 
-      <script type="text/javascript">
-      
-  
-  	
-$(function () {
-
-	
-	//显示默认日期
-	var now = new Date();
+<script type="text/javascript">
 
 
 
-  
-    $("#dateData").val(now.getFullYear()+"-"+((now.getMonth()+1)<10?"0":"")+(now.getMonth()+1)+"-"+(now.getDate()<10?"0":"")+now.getDate());
+    $(function () {
+
+
+        //显示默认日期
+        var now = new Date();
 
 
 
 
-	//提取记录
-
-    getHistoryData('200','');
+        $("#dateData").val(now.getFullYear()+"-"+((now.getMonth()+1)<10?"0":"")+(now.getMonth()+1)+"-"+(now.getDate()<10?"0":"")+now.getDate());
 
 
-});
-//搜索
+        //提取记录
+
+        getHistoryData('200','');
+    });
+    //搜索
 
 
-function Search() {
-	
-	getHistoryData('200', $("#dateData").val());
-	return false;
-}
-//刷新
-function refresh(){
+    function Search() {
 
-	getHistoryData('200','');
+        getHistoryData('200', $("#dateData").val());
+        return false;
+    }
+    //刷新
+    function refresh(){
 
-}
+        getHistoryData('200','');
 
-</script> 	
+    }
+
+</script>
 
 </body>
 </html>

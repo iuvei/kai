@@ -107,7 +107,9 @@ $(function () {
 
             $("#jsk3 #number").html(html);
             var qishu = parseInt(data.current.periodNumber);
-            $("#jsk3 .itm-tit #qihao").html('第'+qishu+'期');
+
+            $("#jsk3 .itm-tit #qihao").html('第'+qishu+'期结果');
+
 
         }, 'json').error(function () {
             if (errorCount < 20) {
