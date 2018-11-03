@@ -123,7 +123,7 @@ $(function () {
                 srt +="<span>"+ds+"</span>";
             }
             $("#cqssc .bt-jg").html(srt);
-            var qishu = parseInt(data.current.periodNumber);
+            var qishu = parseInt(data.current.periodNumber1);
             //console.log(qishu)
             $("#cqssc .itm-tit #qihao").html('第'+qishu+'期结果');
 
