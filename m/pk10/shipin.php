@@ -65,16 +65,16 @@ $cid = 42;
 
         <div class="kaij-mylist-r">
             <div class="kaij-mylist-hd daojishi " style="padding-top: 0;">
-                <div class="itm-time"><em id="period"></em>期开奖剩余：<span id="time" class="itm-time-time">01:27</span></div>
-                <div class="itm-tit"><span class="itm-qih" id="qihao">第710580期</span></div>
+                <div class="itm-time">距<em id="period"></em>期开奖：<span id="time" class="itm-time-time">01:27</span></div>
+                <div class="itm-tit"><span class="itm-qih" id="qihao">第710580期结果</span></div>
             </div>
             <div class="kaij-mylist-bd">
                 <div class="itm-result">
-                    <div class="ball-wrap" id="number"><i class="no10">10</i><i class="no3">03</i><i class="no6">06</i><i class="no9">09</i><i class="no4">04</i><i class="no2">02</i><i class="no8">08</i><i class="no7">07</i><i class="no5">05</i><i class="no1">01</i></div>
+                    <div class="ball-wrap" id="number"></div>
                 </div>
             </div>
         </div>
-        <div class="bt-jg">冠亚和 <span>18</span> <span>大</span><span>单</span> 1-5龙虎 <span>龙</span><span>虎</span><span>龙</span><span>虎</span><span>龙</span></div>
+        <div class="bt-jg">  </div>
 
 
     </li>

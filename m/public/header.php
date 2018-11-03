@@ -2,32 +2,32 @@
 <meta name="description" content="<?=$webdes?>" />
 <header class="header">
 	<a onClick="history.go(-1);" class="back">上一页</a>
-	<a href="../" class="logo">头彩世界</a>
+	<a href="../" class="logo">头彩开奖网</a>
 	<a href="../" class="menu">首页</a>
 </header>
 
 <style>
     .num1 {
-        background: url(/../images/images/bjpknum.png) no-repeat -424px 0
+        background: url(/images/images/bjpknum.png) no-repeat -424px 0
     }
     .num2 {
-        background: url(/../images/images/bjpknum.png) no-repeat -424px -43px
+        background: url(/images/images/bjpknum.png) no-repeat -424px -43px
     }
 
     .num3 {
-        background: url(/../images/images/bjpknum.png) no-repeat -424px -86px
+        background: url(/images/images/bjpknum.png) no-repeat -424px -86px
     }
 
     .num4 {
-        background: url(/../images/images/bjpknum.png) no-repeat -424px -129px
+        background: url(/images/images/bjpknum.png) no-repeat -424px -129px
     }
 
     .num5 {
-        background: url(/../images/images/bjpknum.png) no-repeat -424px -172px
+        background: url(/images/images/bjpknum.png) no-repeat -424px -172px
     }
 
     .num6 {
-        background: url(/../images/images/bjpknum.png) no-repeat -424px -215px
+        background: url(/images/images/bjpknum.png) no-repeat -424px -215px
     }
     i{display: inline-block;
         float: none!important;
@@ -46,9 +46,12 @@
 
 
     .kaij-mylist {
-        border-top: 5px solid #ECECEC;
+        /*border-top: 8px solid #ECECEC;*/
         background: #fff;
-        border-bottom: 5px solid #ECECEC; padding-top: 1vw;
+        /*border-bottom: 8px solid #ECECEC; padding-top: 1vw*/
+
+        margin: 2vw;
+        border-radius: 10px;
     }
     .kaij-mylist-li{padding-bottom: 1vw}
 </style>

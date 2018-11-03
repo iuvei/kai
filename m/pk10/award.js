@@ -119,11 +119,13 @@ $(function () {
                 srt +="<span>"+long(nums[3],nums[6])+"</span>";
                 srt +="<span>"+long(nums[4],nums[5])+"</span>";
                 srt +="<span style='color: #bbbbbb'>|</span> 冠亚和: ";
-                srt +="<span>"+sum+"</span>";
-                srt +="<span>"+dx+"</span>";
-                srt +="<span>"+ds+"</span>";
+                srt +="<samp>"+sum+"</samp>";
+                srt +="<samp>"+dx+"</samp>";
+                srt +="<samp>"+ds+"</samp>";
             }
             $("#pk10 .bt-jg").html(srt);
+            var qishu = parseInt(data.current.periodNumber)-1;
+            $("#pk10 .itm-tit #qihao").html('第'+qishu+'期');
 
 
         }, 'json').error(function () {
@@ -214,7 +216,7 @@ function getHistoryData(count,date) {
                     '<span>'+long(data.n3,data.n8)+'</span>' +
                     '<span>'+long(data.n4,data.n7)+'</span>' +
                     '<span>'+long(data.n5,data.n6)+'</span>' +
-                    '<span style="color: #bbbbbb">|</span><span>'+ sum +'</span><span>'+ dx(sum)+'</span><span>'+ds(sum)+'</span></div></div></td>';
+                    '<span style="color: #bbbbbb">|</span><samp>'+ sum +'</><samp>'+ dx(sum)+'</samp><samp>'+ds(sum)+'</samp></div></div></td>';
 
 
                 html += '</tr>';
@@ -269,9 +271,9 @@ function lh(nums) {
     srt +="<span>"+long(nums[3],nums[6])+"</span>";
     srt +="<span>"+long(nums[4],nums[5])+"</span>";
     srt +="<span style='color: #bbbbbb'>|</span> 冠亚和: ";
-    srt +="<span>"+sum+"</span>";
-    srt +="<span>"+dx+"</span>";
-    srt +="<span>"+ds+"</span>";
+    srt +="<samp>"+sum+"</samp>";
+    srt +="<samp>"+dx+"</samp>";
+    srt +="<samp>"+ds+"</samp>";
     console.log(srt);
     return srt;
 }
