@@ -394,9 +394,9 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                 </div>
             </div>
             <div class='bjftjg'>
-                <div class='q3box'>前三：<samp class='ball-red-span'></samp><samp class='ball-red-span'></samp><samp class='ball-red-span'></samp><samp class='ball-red-span'></samp></div>
-                <div class='z3box'>中三：<samp class='ball-red-span'></samp><samp class='ball-red-span'></samp><samp class='ball-red-span'></samp><samp class='ball-red-span'></samp></div>
-                <div class='h3box'>后三：<samp class='ball-red-span'></samp><samp class='ball-red-span'></samp><samp class='ball-red-span'></samp><samp class='ball-red-span'></samp></div>
+                <div class='q3box'></div>
+                <div class='z3box'></div>
+                <div class='h3box'><!--后三：<samp class='ball-red-span'></samp><samp class='ball-red-span'></samp><samp class='ball-red-span'></samp><samp class='ball-red-span'></samp>--></div>
             </div>
 <!--        <div class="bt-aa">-->
 <!--            <a href="bjft/">开奖历史</a>-->
@@ -698,19 +698,15 @@ function showTime(page, timeSpan, time, qihao) {
 
         IndexOpen();
     } else {
-       // console.log(time);
-        //console.log(timeSpan);
         $("#" + timeSpan + " #time").text(pad(Math.floor(time / 60), 2) + ":" + pad(time % 60, 2))
     }
 }
 function CheckAward(page, method, downTimer, number, timeSpan) {
-    console.log(page);
     window.clearInterval(downTimer);
     $.post("../"+page+"/getPk10AwardTimes.do", {
         ajaxhandler: method
     },
     function(data,page) {
-        console.log(data);
         if (data.current.periodNumber != number) {
 
             if(timeSpan == 'pc28'){
@@ -737,7 +733,6 @@ function CheckAward(page, method, downTimer, number, timeSpan) {
 function IndexOpen() {
     $.post("ajax/getindex.php", {},
     function(data) {
-      //  console.log(data);
         $("#pk10 #qihao").text('第' + data.pk10.dat_expect + '期');
         var nums = data.pk10.dat_codes.split(',');
         var str = "";
@@ -903,7 +898,7 @@ function IndexOpen() {
         var nums = data.pk10.dat_codes.split(',');
         var str = "";
         var tan2 = Number(nums[4]) + Number(nums[5]) + Number(nums[6]);
-
+        console.log(nums)
         var tan3 = Number(nums[7]) + Number(nums[8]) + Number(nums[9]);
         var tan = Number(nums[0]) + Number(nums[1]) + Number(nums[2]);
         var tan_2 = tan%4;
@@ -1020,6 +1015,30 @@ function IndexOpen() {
             str += "<span class='ball-red' >"+ dx3 +"</span>" ;
         }
         $("#bjft #number").html(str);
+        /*q3box*/
+        /*ball-red-span*/
+        console.log(tan_2)
+        var tanshu='';
+        for (var i=0 ;i<tan_2 ;i++){
+            tanshu += '<samp class="ball-red-span">'+'</samp>'
+        }
+        var tanshu='前三'+tanshu;
+        $('.q3box').html(tanshu)
+
+        var tanshu='';
+        for (var i=0 ;i<tan_3 ;i++){
+            tanshu += '<samp class="ball-red-span">'+'</samp>'
+        }
+        var tanshu='中三'+tanshu;
+        $('.z3box').html(tanshu)
+
+        var tanshu='';
+        for (var i=0 ;i<tan_4 ;i++){
+            tanshu += '<samp class="ball-red-span">'+'</samp>'
+        }
+        var tanshu='后三'+tanshu;
+        $('.h3box').html(tanshu)
+
 
 
         $("#pc28 #qihao").text('第' + data.pc28.dat_expect + '期');
@@ -1116,7 +1135,6 @@ function IndexOpen() {
         $("#tcpk10 .bt-jg").html('');
         var long;
          long = lh(nums);
-        console.log(long);
         $("#tcpk10 #number").html(str);
         $("#tcpk10 .bt-jg").html(long);
 
@@ -1141,7 +1159,6 @@ function IndexOpen() {
         $("#sfpk10 .bt-jg").html('');
         var long;
         long = lh(nums);
-        console.log(long);
         $("#sfpk10 #number").html(str);
         $("#sfpk10 .bt-jg").html(long);
 
