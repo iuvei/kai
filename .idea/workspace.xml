@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3631bfa7-9644-4afb-9ca6-5ec2baa935b7" name="Default" comment="增加">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jsk3/award.js" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/award.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jsk3/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/m/style/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/m/style/css/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -104,27 +105,30 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
-          <entry key="js" value="1" />
-          <entry key="php" value="8" />
+          <entry key="js" value="8" />
+          <entry key="php" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="1" />
-          <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="8" />
+          <entry key="JavaScript" value="8" />
+          <entry key="PHP" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="10" />
-          <entry key="php" value="176" />
+          <entry key="css" value="12" />
+          <entry key="js" value="6" />
+          <entry key="php" value="320" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="10" />
-          <entry key="PHP" value="176" />
+          <entry key="CSS" value="12" />
+          <entry key="HTML" value="1" />
+          <entry key="JavaScript" value="6" />
+          <entry key="PHP" value="319" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class" />
@@ -141,17 +145,118 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/m/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="397" column="41" selection-start-line="397" selection-start-column="41" selection-end-line="397" selection-end-column="41" />
+            <state relative-caret-position="219">
+              <caret line="987" selection-start-line="987" selection-end-line="987" />
+              <folding>
+                <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#5;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#6;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/m/jsk3/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="66" column="60" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
+              <folding>
+                <element signature="n#style#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/gdkl10/award.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-540" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/pk10/award.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="126" column="12" selection-start-line="126" selection-start-column="12" selection-end-line="127" selection-end-column="59" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#5;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/pk10/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="582">
+              <caret line="80" column="68" selection-start-line="80" selection-start-column="63" selection-end-line="80" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/style/js/warntime.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/style/js/lotcommon.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/jsk3/hmzs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/jsk3/award.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="146" column="14" selection-start-line="146" selection-start-column="14" selection-end-line="146" selection-end-column="14" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/m/style/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
-              <caret line="98" column="66" selection-start-line="98" selection-start-column="66" selection-end-line="98" selection-end-column="66" />
+            <state relative-caret-position="369">
+              <caret line="97" column="1" selection-start-line="97" selection-start-column="1" selection-end-line="97" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -160,16 +265,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bpk10-time</find>
-      <find>&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;upgrade-insecure-requests&quot; /&gt;</find>
-      <find>http://hao123.com</find>
-      <find>软件下载</find>
-      <find>龍</find>
-      <find>极速时时彩`</find>
-      <find>极速时时彩</find>
-      <find>jsssc/</find>
-      <find>尾大</find>
-      <find>tcpk10</find>
       <find>pk10</find>
       <find>&lt;li&gt;&lt;a href=&quot;../jssc/&quot; game=&quot;jssc&quot;&gt;极速赛车&lt;/a&gt;&lt;/li&gt;</find>
       <find>$name</find>
@@ -186,10 +281,20 @@
       <find>ball-red-span</find>
       <find>kaij-mylist-bd</find>
       <find>number</find>
+      <find>q3box</find>
+      <find>重庆番摊</find>
+      <find>cqft</find>
       <find>console</find>
+      <find>gametool</find>
+      <find>jsk3</find>
+      <find>period</find>
+      <find>itm-time</find>
+      <find>id=&quot;jsk3&quot;</find>
+      <find>border-bottom: 1px solid #eeeeee;</find>
       <find>bjftjg</find>
       <find>bjft</find>
-      <find>q3box</find>
+      <find>time</find>
+      <find>qihao</find>
     </findStrings>
     <replaceStrings>
       <replace>1200px</replace>
@@ -222,6 +327,7 @@
       <dir>D:\kai\m\sfssc</dir>
       <dir>D:\kai\m\sfpk10</dir>
       <dir>D:\kai\m\xyft</dir>
+      <dir>D:\kia\kai\m\pk10</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -230,10 +336,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/numberrulestat.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/numbertooutput.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/numbertrend.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/omitdata.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/opencodeanalysis.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/positionanalyze.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/positiontrend.html" />
@@ -281,6 +383,10 @@
         <option value="$PROJECT_DIR$/Application/Admin/Controller/PublicController.class.php" />
         <option value="$PROJECT_DIR$/m/index.php" />
         <option value="$PROJECT_DIR$/m/style/css/style.css" />
+        <option value="$PROJECT_DIR$/m/jsk3/lrtj.php" />
+        <option value="$PROJECT_DIR$/m/style/js/warntime.js" />
+        <option value="$PROJECT_DIR$/m/jsk3/award.js" />
+        <option value="$PROJECT_DIR$/m/jsk3/index.php" />
       </list>
     </option>
   </component>
@@ -349,14 +455,7 @@
               <item name="kai" type="b2602c69:ProjectViewProjectNode" />
               <item name="kai" type="462c0819:PsiDirectoryNode" />
               <item name="m" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kai" type="462c0819:PsiDirectoryNode" />
-              <item name="m" type="462c0819:PsiDirectoryNode" />
-              <item name="style" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="pk10" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -471,7 +570,7 @@
       <workItem from="1541078308825" duration="7773000" />
       <workItem from="1541148825515" duration="426000" />
       <workItem from="1541259537666" duration="513000" />
-      <workItem from="1541260724640" duration="4274000" />
+      <workItem from="1541260724640" duration="9748000" />
     </task>
     <task id="LOCAL-00001" summary="修改bug">
       <created>1540059770146</created>
@@ -561,7 +660,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253008000" />
+    <option name="totallyTimeSpent" value="258482000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -575,7 +674,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -642,15 +741,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="增加" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/ballstat.html" />
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/coldhotnumber.html" />
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/kaijiang.html" />
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/luzhubigorsmall.html" />
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/luzhulonghu.html" />
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/index.html" />
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/luzhunumber.html" />
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/luzhutotal.html" />
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/merge.html" />
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/numberstat.html" />
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/numbertooutput.html" />
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/omitdata.html" />
@@ -818,9 +908,6 @@
     <entry file="file://$PROJECT_DIR$/m/jsk3/ajax_changlong.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/jsk3/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -833,15 +920,115 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/m/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="397" column="41" selection-start-line="397" selection-start-column="41" selection-end-line="397" selection-end-column="41" />
+        <state relative-caret-position="219">
+          <caret line="987" selection-start-line="987" selection-end-line="987" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#6;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/jsk3/lrtj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/m/style/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="98" column="66" selection-start-line="98" selection-start-column="66" selection-end-line="98" selection-end-column="66" />
+        <state relative-caret-position="369">
+          <caret line="97" column="1" selection-start-line="97" selection-start-column="1" selection-end-line="97" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/jsk3/hmzs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/public/footer.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/style/js/lotcommon.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/style/js/warntime.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="37" column="7" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/pk10/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="80" column="68" selection-start-line="80" selection-start-column="63" selection-end-line="80" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/pk10/award.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="126" column="12" selection-start-line="126" selection-start-column="12" selection-end-line="127" selection-end-column="59" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#5;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gdkl10/award.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-540" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/jsk3/award.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="146" column="14" selection-start-line="146" selection-start-column="14" selection-end-line="146" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/jsk3/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="66" column="60" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

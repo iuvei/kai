@@ -847,7 +847,10 @@ function IndexOpen() {
         var nums = data.jsk3.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
-            str = str + "<i class='num" + nums[i]+ "'></i><i class='num-yxx" + nums[i]+ "'></i>"
+            str = str + "<i class='num" + nums[i]+ "'></i>"
+        }
+        for (var i = 0; i < nums.length; i++) {
+            str = str + "<i class='num-yxx" + nums[i]+ "'></i>"
         }
         $("#jsk3 .bt-jg").html('');
         var long;
@@ -879,18 +882,25 @@ function IndexOpen() {
         }else {
             ds = '大';
         }
-        str += " 番摊结果：<samp class='ball-red-span'></samp><samp class='ball-red-span'></samp><samp class='ball-red-span'></samp><samp class='ball-red-span'></samp>" +
-            "<span class='ball-red span-2' >"+ tan_2 +"摊</span>" ;
-        if(ds == '大'){
-            str += "<span class='ball-red' >"+ ds +"</span>";
-        }else {
-            str += "<span class='ball-red' >"+ ds +"</span>"
+        var tanshu =''
+        for(var i =0; i<tan_2;i++){
+            tanshu +='<samp class="ball-red-span">'+'</samp>'
         }
-        if(dx == '单'){
-            str +=  "<span class='ball-red' >"+ dx +"</span>";
-        }else {
-            str +=  "<span class='ball-red'>"+ dx +"</span>";
-        }
+        tanshu='番摊结果：'+tanshu
+        // str += " 番摊结果：<samp class='ball-red-span'></samp><samp class='ball-red-span'></samp><samp class='ball-red-span'></samp>" +
+        //     "<span class='ball-red span-2' >"+ tan_2 +"摊</span>" ;
+
+        str+=tanshu;
+        // if(ds == '大'){
+        //     str += "<span class='ball-red' >"+ ds +"</span>";
+        // }else {
+        //     str += "<span class='ball-red' >"+ ds +"</span>"
+        // }
+        // if(dx == '单'){
+        //     str +=  "<span class='ball-red' >"+ dx +"</span>";
+        // }else {
+        //     str +=  "<span class='ball-red'>"+ dx +"</span>";
+        // }
 
         $("#cqft #number").html(str);
 
@@ -898,7 +908,6 @@ function IndexOpen() {
         var nums = data.pk10.dat_codes.split(',');
         var str = "";
         var tan2 = Number(nums[4]) + Number(nums[5]) + Number(nums[6]);
-        console.log(nums)
         var tan3 = Number(nums[7]) + Number(nums[8]) + Number(nums[9]);
         var tan = Number(nums[0]) + Number(nums[1]) + Number(nums[2]);
         var tan_2 = tan%4;
@@ -975,68 +984,65 @@ function IndexOpen() {
             "<i class='no" + nums[7].replace(/\b(0+)/gi,"") + "'>" + nums[7] + "</i>" +
             "<i class='no" + nums[8].replace(/\b(0+)/gi,"") + "'>" + nums[8] + "</i>" +
             "<i class='no" + nums[9].replace(/\b(0+)/gi,"") + "'>" + nums[9] + "</i>" +
-        "<br/>前三：<span class='ball-red span-2'>"+ tan_2 +"摊</span>" ;
+        "<br/>";
 
-        if(ds == "大"){
-            str +="<span class='ball-red' >"+ ds +"</span>" ;
-        }else {
-            str +="<span class='ball-red'>"+ ds +"</span>" ;
-        }
-        if(dx == '单'){
-            str += "<span class='ball-red' >"+ dx +"</span>" ;
-        }else {
-            str += "<span class='ball-red' >"+ dx +"</span>" ;
-        }
+        //
+        // if(ds == "大"){
+        //     str +="<span class='ball-red' >"+ ds +"</span>" ;
+        // }else {
+        //     str +="<span class='ball-red'>"+ ds +"</span>" ;
+        // }
+        // if(dx == '单'){
+        //     str += "<span class='ball-red' >"+ dx +"</span>" ;
+        // }else {
+        //     str += "<span class='ball-red' >"+ dx +"</span>" ;
+        // }
 
 
-        str +=  "<i class='ball-red' style='background-color: #fff;width: 1vw'></i>" +
-                  "中三：<span class='ball-red span-2' >"+ tan_3 +"摊</span>" ;
-        if(ds2 == "大"){
-            str +="<span class='ball-red'>"+ ds2 +"</span>" ;
-        }else {
-            str +="<span class='ball-red' >"+ ds2 +"</span>" ;
-        }
-        if(dx2 == '单'){
-            str += "<span class='ball-red' >"+ dx2 +"</span>" ;
-        }else {
-            str += "<span class='ball-red' >"+ dx2 +"</span>" ;
-        }
-
-        str +=  "<i class='ball-red' style='background-color: #fff;width: 1vw'></i>" +
-            "后三：<span class='ball-red span-2' >"+ tan_4 +"摊</span>" ;
-        if(ds3 == "大"){
-            str +="<span class='ball-red' >"+ ds3 +"</span>" ;
-        }else {
-            str +="<span class='ball-red' >"+ ds3 +"</span>" ;
-        }
-        if(dx3 == '单'){
-            str += "<span class='ball-red' >"+ dx3 +"</span>" ;
-        }else {
-            str += "<span class='ball-red' >"+ dx3 +"</span>" ;
-        }
+        // str +=  "<i class='ball-red' style='background-color: #fff;width: 1vw'></i>" +
+        //           "中三：<span class='ball-red span-2' >"+ tan_3 +"摊</span>" ;
+        // if(ds2 == "大"){
+        //     str +="<span class='ball-red'>"+ ds2 +"</span>" ;
+        // }else {
+        //     str +="<span class='ball-red' >"+ ds2 +"</span>" ;
+        // }
+        // if(dx2 == '单'){
+        //     str += "<span class='ball-red' >"+ dx2 +"</span>" ;
+        // }else {
+        //     str += "<span class='ball-red' >"+ dx2 +"</span>" ;
+        // }
+        // str +=  "<i class='ball-red' style='background-color: #fff;width: 1vw'></i>" +
+        //     "后三：<span class='ball-red span-2' >"+ tan_4 +"摊</span>" ;
+        // if(ds3 == "大"){
+        //     str +="<span class='ball-red' >"+ ds3 +"</span>" ;
+        // }else {
+        //     str +="<span class='ball-red' >"+ ds3 +"</span>" ;
+        // }
+        // if(dx3 == '单'){
+        //     str += "<span class='ball-red' >"+ dx3 +"</span>" ;
+        // }else {
+        //     str += "<span class='ball-red' >"+ dx3 +"</span>" ;
+        // }
         $("#bjft #number").html(str);
-        /*q3box*/
-        /*ball-red-span*/
-        console.log(tan_2)
         var tanshu='';
         for (var i=0 ;i<tan_2 ;i++){
             tanshu += '<samp class="ball-red-span">'+'</samp>'
         }
-        var tanshu='前三'+tanshu;
+        var tanshu='前三：'+tanshu;
         $('.q3box').html(tanshu)
 
         var tanshu='';
         for (var i=0 ;i<tan_3 ;i++){
             tanshu += '<samp class="ball-red-span">'+'</samp>'
         }
-        var tanshu='中三'+tanshu;
+        var tanshu='中三：'+tanshu;
         $('.z3box').html(tanshu)
 
         var tanshu='';
         for (var i=0 ;i<tan_4 ;i++){
             tanshu += '<samp class="ball-red-span">'+'</samp>'
         }
-        var tanshu='后三'+tanshu;
+        var tanshu='后三：'+tanshu;
         $('.h3box').html(tanshu)
 
 
