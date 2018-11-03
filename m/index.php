@@ -774,6 +774,7 @@ function IndexOpen() {
 
 
         $("#txffc #qihao").text('第' + data.txffc.dat_expect + '期');
+
         var nums = data.txffc.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {

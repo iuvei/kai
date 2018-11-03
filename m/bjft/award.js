@@ -87,13 +87,13 @@ $(function () {
             html = '<i class="no'+ num[0] +'">'+  num[0] +'</i>' +
             '<i class="no'+ num[1] +'">'+  num[1] +'</i>' +
             '<i class="no'+ num[2] +'">'+  num[2] +'</i>' +
-            '<i class="ball-red" style="background-color: #fff;width: 5px"></i>' +
+           // '<i class="ball-red" style="background-color: #fff;width: 2px"></i>' +
             '<i class="no'+ num[3] +'">'+  num[3] +'</i>' +
-            '<i class="ball-red" style="background-color: #fff;width: 5px"></i>' +
+          //  '<i class="ball-red" style="background-color: #fff;width: 2px"></i>' +
             '<i class="no'+ num[4] +'">'+  num[4] +'</i>' +
             '<i class="no'+ num[5] +'">'+  num[5] +'</i>' +
             '<i class="no'+ num[6] +'">'+  num[6] +'</i>' +
-            '<i class="ball-red" style="background-color: #fff;width: 5px"></i>' +
+            //'<i class="ball-red" style="background-color: #fff;width: 2px"></i>' +
             '<i class="no'+ num[7] +'">'+  num[7] +'</i>' +
             '<i class="no'+ num[8] +'">'+  num[8] +'</i>' +
             '<i class="no'+ num[9] +'">'+  num[9] +'</i>';
