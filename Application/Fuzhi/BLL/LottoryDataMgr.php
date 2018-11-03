@@ -633,6 +633,7 @@ class LottoryDataMgr
            // $retData["current"]["periodNumber"] = $currentNo["actionNo"];
         }
         //print_r($currentNo["actionNo"]);exit;
+        $retData["current"]["periodNumber1"] = $dat_expect;
         $retData["current"]["fullPeriodNumber"] = $currentNo["actionNo"];
         $retData["current"]["periodNumberStr"] = null;
         $retData["current"]["awardTimeInterval"] = 0;
