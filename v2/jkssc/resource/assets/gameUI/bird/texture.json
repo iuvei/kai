@@ -1,0 +1,387 @@
+{
+  "name": "DaZuiNiao",
+  "imagePath": "texture.png",
+  "SubTexture": [
+    {
+      "width": 0,
+      "y": 141,
+      "height": 0,
+      "name": "bird_weiba_1",
+      "x": 59
+    },
+    {
+      "width": 0,
+      "y": 165,
+      "height": 0,
+      "name": "bird_L_ci3_1",
+      "x": 217
+    },
+    {
+      "width": 0,
+      "y": 218,
+      "height": 0,
+      "name": "bird_L_ci1_1",
+      "x": 211
+    },
+    {
+      "width": 0,
+      "y": 158,
+      "height": 0,
+      "name": "bird_L_xiaotui_1",
+      "x": 162
+    },
+    {
+      "width": 0,
+      "y": 194,
+      "height": 0,
+      "name": "bird_L_datui_1",
+      "x": 37
+    },
+    {
+      "width": 0,
+      "y": 203,
+      "height": 0,
+      "name": "bird_L_jiao_1",
+      "x": 240
+    },
+    {
+      "width": 0,
+      "y": 200,
+      "height": 0,
+      "name": "bird_R_xiaotui_1",
+      "x": 56
+    },
+    {
+      "width": 0,
+      "y": 194,
+      "height": 0,
+      "name": "bird_R_datui_1",
+      "x": 27
+    },
+    {
+      "width": 0,
+      "y": 58,
+      "height": 0,
+      "name": "bird_R_jiao_1",
+      "x": 209
+    },
+    {
+      "width": 0,
+      "y": 1,
+      "height": 0,
+      "name": "bird_shenti_1",
+      "x": 209
+    },
+    {
+      "width": 0,
+      "y": 141,
+      "height": 0,
+      "name": "bird_R_ci1_1",
+      "x": 1
+    },
+    {
+      "width": 0,
+      "y": 135,
+      "height": 0,
+      "name": "bird_R_ci3_1",
+      "x": 105
+    },
+    {
+      "width": 0,
+      "y": 292,
+      "height": 0,
+      "name": "bird_guan_1",
+      "x": 206
+    },
+    {
+      "width": 0,
+      "y": 135,
+      "height": 0,
+      "name": "bird_zhenchanyan_1",
+      "x": 162
+    },
+    {
+      "width": 0,
+      "y": 180,
+      "height": 0,
+      "name": "bird_haipayan_1",
+      "x": 240
+    },
+    {
+      "width": 0,
+      "y": 265,
+      "height": 0,
+      "name": "bird_xiaoyan_1",
+      "x": 242
+    },
+    {
+      "width": 0,
+      "y": 311,
+      "height": 0,
+      "name": "bird_jindaiyan_1",
+      "x": 237
+    },
+    {
+      "width": 0,
+      "y": 132,
+      "height": 0,
+      "name": "bird_D_zui1_1",
+      "x": 181
+    },
+    {
+      "width": 0,
+      "y": 168,
+      "height": 0,
+      "name": "bird_D_zui_1",
+      "x": 1
+    },
+    {
+      "width": 0,
+      "y": 71,
+      "height": 0,
+      "name": "bird_U_zui_1",
+      "x": 105
+    },
+    {
+      "frameWidth": 41,
+      "y": 165,
+      "frameX": 0,
+      "frameHeight": 19,
+      "frameY": -1,
+      "width": 0,
+      "height": 0,
+      "name": "bird_weiba",
+      "x": 60
+    },
+    {
+      "width": 0,
+      "y": 243,
+      "height": 0,
+      "name": "bird_L_ci1",
+      "x": 154
+    },
+    {
+      "width": 0,
+      "y": 242,
+      "height": 0,
+      "name": "bird_L_ci3",
+      "x": 211
+    },
+    {
+      "width": 0,
+      "y": 65,
+      "height": 0,
+      "name": "bird_L_xiaotui",
+      "x": 242
+    },
+    {
+      "width": 0,
+      "y": 195,
+      "height": 0,
+      "name": "bird_L_datui",
+      "x": 211
+    },
+    {
+      "width": 0,
+      "y": 58,
+      "height": 0,
+      "name": "bird_L_jiao",
+      "x": 222
+    },
+    {
+      "width": 0,
+      "y": 203,
+      "height": 0,
+      "name": "bird_R_xiaotui",
+      "x": 46
+    },
+    {
+      "width": 0,
+      "y": 58,
+      "height": 0,
+      "name": "bird_R_datui",
+      "x": 235
+    },
+    {
+      "width": 0,
+      "y": 194,
+      "height": 0,
+      "name": "bird_R_jiao",
+      "x": 46
+    },
+    {
+      "width": 0,
+      "y": 135,
+      "height": 0,
+      "name": "bird_shenti",
+      "x": 131
+    },
+    {
+      "width": 0,
+      "y": 189,
+      "height": 0,
+      "name": "bird_R_ci3",
+      "x": 131
+    },
+    {
+      "width": 0,
+      "y": 219,
+      "height": 0,
+      "name": "bird_R_ci1",
+      "x": 154
+    },
+    {
+      "width": 0,
+      "y": 185,
+      "height": 0,
+      "name": "bird_guan",
+      "x": 60
+    },
+    {
+      "frameWidth": 11,
+      "y": 201,
+      "frameX": 0,
+      "frameHeight": 20,
+      "frameY": -1,
+      "width": 0,
+      "height": 0,
+      "name": "bird_zhenchanyan",
+      "x": 102
+    },
+    {
+      "frameWidth": 11,
+      "y": 194,
+      "frameX": 0,
+      "frameHeight": 20,
+      "frameY": -1,
+      "width": 0,
+      "height": 0,
+      "name": "bird_jindaiyan",
+      "x": 1
+    },
+    {
+      "frameWidth": 11,
+      "y": 194,
+      "frameX": 0,
+      "frameHeight": 20,
+      "frameY": -1,
+      "width": 0,
+      "height": 0,
+      "name": "bird_haipayan",
+      "x": 14
+    },
+    {
+      "frameWidth": 11,
+      "y": 222,
+      "frameX": 0,
+      "frameHeight": 20,
+      "frameY": -1,
+      "width": 0,
+      "height": 0,
+      "name": "bird_xiaoyan",
+      "x": 115
+    },
+    {
+      "width": 0,
+      "y": 165,
+      "height": 0,
+      "name": "bird_D_zui1",
+      "x": 162
+    },
+    {
+      "width": 0,
+      "y": 195,
+      "height": 0,
+      "name": "bird_D_zui",
+      "x": 154
+    },
+    {
+      "width": 102,
+      "y": 1,
+      "height": 68,
+      "name": "pai3",
+      "x": 1
+    },
+    {
+      "width": 102,
+      "y": 1,
+      "height": 68,
+      "name": "pai2",
+      "x": 105
+    },
+    {
+      "width": 102,
+      "y": 71,
+      "height": 68,
+      "name": "pai1",
+      "x": 1
+    },
+    {
+      "width": 0,
+      "y": 71,
+      "height": 0,
+      "name": "bird_U_zui",
+      "x": 181
+    },
+    {
+      "width": 0,
+      "y": 243,
+      "height": 0,
+      "name": "bird_R_ci2",
+      "x": 195
+    },
+    {
+      "width": 0,
+      "y": 185,
+      "height": 0,
+      "name": "bird_biyan",
+      "x": 89
+    },
+    {
+      "width": 0,
+      "y": 288,
+      "height": 0,
+      "name": "bird_biyan_1",
+      "x": 237
+    },
+    {
+      "width": 0,
+      "y": 201,
+      "height": 0,
+      "name": "bird_banzheyan",
+      "x": 115
+    },
+    {
+      "width": 0,
+      "y": 132,
+      "height": 0,
+      "name": "bird_L_ci2_1",
+      "x": 240
+    },
+    {
+      "width": 0,
+      "y": 242,
+      "height": 0,
+      "name": "bird_banzheyan_1",
+      "x": 242
+    },
+    {
+      "frameWidth": 10,
+      "y": 242,
+      "frameX": 0,
+      "frameHeight": 43,
+      "frameY": -1,
+      "width": 0,
+      "height": 0,
+      "name": "bird_L_ci2",
+      "x": 231
+    },
+    {
+      "width": 0,
+      "y": 1,
+      "height": 0,
+      "name": "bird_R_ci2_1",
+      "x": 243
+    }
+  ]
+}

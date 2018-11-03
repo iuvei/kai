@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "微软雅黑";
+}
+.content {
+    width: 100vw;
+    height: 69.33333vw;
+   /* transform: scale(.872,.735);
+    -webkit-transform: scale(.872,.735);
+	transform-origin: left top*/
+}
+.content .cqncAnimate {
+    position: relative;
+    width: 100vw;
+    height: 69.33333vw;
+}
+.content .cqncAnimate .bodybg {
+    width: 100vw;
+    height: auto;
+}
+.content .cqncAnimate .bodybg img {
+    vertical-align: top;
+    width: 100vw;
+    height: 67vw;
+}
+.content .cqncAnimate .zhezao {
+    position: absolute;
+    top: 0px;
+    left: 8.8vw;
+    width: 82.4vw;
+    height: 16vw;
+}
+.content .cqncAnimate .position {
+    position: absolute;
+    width: 79.9111vw;
+    height: 7.1111vw;
+    top: 0px;
+    width: 100vw;
+    font-size: 2.6666vw;
+}
+.content .cqncAnimate .position ul {
+    width: 95.5555vw;
+    height: inherit;
+    line-height: 7.1111vw;
+    margin: 0 2.2222vw;
+}
+.content .cqncAnimate .position ul li {
+    float: left;
+    width: auto;
+    height: inherit;
+    color: #03DCED;
+    font-size: 2.4888vw;
+    text-align: center;
+    white-space: nowrap;
+}
+.content .cqncAnimate .position ul .logo,
+.content .cqncAnimate .position ul .tcpl3_logo {
+    width: 15.2222vw;
+    background-size: 100vw;
+}
+.content .cqncAnimate .position ul .logo {
+	 width: 12vw;
+    height: 7vw;
+    background: url("../img/fc3D_logo.png") no-repeat;
+    background-position: center;
+    background-size: 100%;
+   
+}
+.content .cqncAnimate .position ul .tcpl3_logo {
+    background: url("../img/tcpl3.png") no-repeat;
+    background-position: center;
+}
+.content .cqncAnimate .position ul .issue {
+    width: 24.3333vw;
+}
+.content .cqncAnimate .position ul .issue span {
+    color: #FFCC00;
+}
+.content .cqncAnimate .position ul .kaiTime {
+    width: 24.8888vw;
+}
+.content .cqncAnimate .position ul .kaiTime span {
+    color: #fff;
+    padding-left: 0px;
+    padding-right: 1.5111vw;
+}
+.content .cqncAnimate .position ul .headCode {
+    width: 23.1111vw;
+}
+.content .cqncAnimate .position ul .headCode ul {
+    width: 18.7777vw;
+    margin: 0 auto;
+}
+.content .cqncAnimate .position ul .headCode ul li {
+    margin-top: 0.4444vw;
+    width: 6.2vw;
+    height: 6.2vw;
+}
+.content .cqncAnimate .position ul .headCode ul li span {
+    display: block;
+    width: 5.8666vw;
+    height: 5.8666vw;
+    line-height: 5.8669vw;
+    color: black;
+    font-family: "微软雅黑";
+    font-size: 3.0222vw;
+    font-weight: 800;
+    text-align: center;
+}
+/*.content .cqncAnimate .position ul .headCode ul #oneCode,
+.content .cqncAnimate .position ul .headCode ul #twoCode,
+.content .cqncAnimate .position ul .headCode ul #threeCode {
+    -webkit-transform: scale(0.782);
+}*/
+.content .cqncAnimate .position ul .headCode ul #oneCode {
+    background: url("../img/ball1s.png") no-repeat;
+    width: 6vw;
+    height: 6vw;
+    background-size: 6vw;
+}
+.content .cqncAnimate .position ul .headCode ul #twoCode {
+    background: url("../img/ball2s.png") no-repeat;
+    width: 6vw;
+    height: 6vw;
+    background-size: 6vw;
+}
+.content .cqncAnimate .position ul .headCode ul #threeCode {
+    background: url("../img/ball3s.png") no-repeat;
+    width: 6vw;
+    height: 6vw;
+    background-size: 6vw;
+}
+.content .cqncAnimate .position ul #soundBth {
+    margin-top: 0.5vw;
+    float: right;
+}
+.content .cqncAnimate .position ul .soundsOn {
+     width: 6vw;
+    height: 6vw;
+    background: url("../img/soundon.png") no-repeat;
+    background-size: 100%;
+}
+.content .cqncAnimate .position ul .soundsOff {
+    width: 6vw;
+    height: 6vw;
+    background: url("../img/soundoff.png") no-repeat;
+    background-size: 100%;
+}
+.content .cqncAnimate .cutTime {
+    position: absolute;
+    width: 100vw;
+    height: 100px;
+    top: 16.8888vw;
+}
+.content .cqncAnimate .cutTime div {
+    width: 32vw;
+    height: inherit;
+    margin: 0 auto;
+    line-height: 8.8888vw;
+    text-align: center;
+}
+.content .cqncAnimate .cutTime #hourtxt {
+    font-family: "DS-Digital";
+    padding: 0px;
+    font-size: 5.3333vw;
+    color: #D6AB00;
+}
+.content .cqncAnimate .cutTime #opening {
+    display: none;
+    width: 16vw;
+    height: 3.5555vw;
+    margin-top: 4.4444vw;
+    margin-left: 8.8888vw;
+    line-height: 3.5555vw;
+    text-align: center;
+    border-radius: 0.3555vw;
+    font-size: 2.6666vw;
+    font-weight: 800;
+    color: #D6AB00;
+}
+.content .cqncAnimate .runCode {
+    position: absolute;
+    width: 100vw;
+    height: 10.2222vw;
+    top: 27.4666vw;
+}
+.content .cqncAnimate .runCode ul {
+    width: 27.6666vw;
+    height: 4vw;
+    margin: 0 auto;
+}
+.content .cqncAnimate .runCode #curNumUl li {
+    float: left;
+    width: 6.1vw;
+    height: 6.1vw;
+    margin-top: -2.6666vw;
+}
+.content .cqncAnimate .runCode #curNumUl span {
+    font-family: "微软雅黑";
+    display: block;
+    width: 6.2vw;
+    height: 6.2vw;
+    line-height: 5.8669vw;
+    text-align: center;
+    font-size: 3.0222vw;
+    font-weight: 600;
+}
+.content .cqncAnimate .runCode #curNumUl .firstBall {
+    margin-left: 1.2vw;
+    background: url("../img/ball1b.png") no-repeat;
+    width: 6vw;
+    height: 6vw;
+    background-size: 6vw;
+}
+.content .cqncAnimate .runCode #curNumUl .secondBall {
+    margin-left: 3.7vw;
+    background: url("../img/ball2b.png") no-repeat;
+    width: 6vw;
+    height: 6vw;
+    background-size: 6vw;
+}
+.content .cqncAnimate .runCode #curNumUl .thirdBall {
+    margin-left: 4.2vw;
+    background: url("../img/ball3b.png") no-repeat;
+    width: 6vw;
+    height: 6vw;
+    background-size: 6vw;
+}
+.content .cqncAnimate .runCode #runNumUl {
+    height: 6.2222vw;
+    position: relative;
+}
+.content .cqncAnimate .runCode #runNumUl .parLi {
+    float: left;
+    width: 2.8444vw;
+    height: 100vw;
+    margin-left: 7.2888vw;
+}
+.content .cqncAnimate .runCode #runNumUl .firstBallPip ul,
+.content .cqncAnimate .runCode #runNumUl .secondBallPip ul,
+.content .cqncAnimate .runCode #runNumUl .thirdBallPip ul {
+    width: auto;
+    height: inherit;
+    float: left;
+    position: relative;
+}
+.content .cqncAnimate .runCode #runNumUl .firstBallPip ul li,
+.content .cqncAnimate .runCode #runNumUl .secondBallPip ul li,
+.content .cqncAnimate .runCode #runNumUl .thirdBallPip ul li {
+    position: absolute;
+    width: 1.1555vw;
+    height: 1.1555vw;
+    margin-bottom: 1px;
+}
+.content .cqncAnimate .runCode #runNumUl .firstBallPip ul li:last-child,
+.content .cqncAnimate .runCode #runNumUl .secondBallPip ul li:last-child,
+.content .cqncAnimate .runCode #runNumUl .thirdBallPip ul li:last-child {
+    margin-bottom: 0px;
+}
+.content .cqncAnimate .runCode #runNumUl .firstBallPip ul li:nth-child(1),
+.content .cqncAnimate .runCode #runNumUl .secondBallPip ul li:nth-child(1),
+.content .cqncAnimate .runCode #runNumUl .thirdBallPip ul li:nth-child(1) {
+    top: 0;
+}
+.content .cqncAnimate .runCode #runNumUl .firstBallPip ul li:nth-child(2),
+.content .cqncAnimate .runCode #runNumUl .secondBallPip ul li:nth-child(2),
+.content .cqncAnimate .runCode #runNumUl .thirdBallPip ul li:nth-child(2) {
+    top: 1.2444vw;
+}
+.content .cqncAnimate .runCode #runNumUl .firstBallPip ul li:nth-child(3),
+.content .cqncAnimate .runCode #runNumUl .secondBallPip ul li:nth-child(3),
+.content .cqncAnimate .runCode #runNumUl .thirdBallPip ul li:nth-child(3) {
+    top: 2.4888vw;
+}
+.content .cqncAnimate .runCode #runNumUl .firstBallPip ul li:nth-child(4),
+.content .cqncAnimate .runCode #runNumUl .secondBallPip ul li:nth-child(4),
+.content .cqncAnimate .runCode #runNumUl .thirdBallPip ul li:nth-child(4) {
+    top: 3.7333vw;
+}
+.content .cqncAnimate .runCode #runNumUl .firstBallPip ul li:nth-child(5),
+.content .cqncAnimate .runCode #runNumUl .secondBallPip ul li:nth-child(5),
+.content .cqncAnimate .runCode #runNumUl .thirdBallPip ul li:nth-child(5) {
+    top: 4.9777vw;
+}
+.content .cqncAnimate .runCode #runNumUl .firstBallPip .rightUl,
+.content .cqncAnimate .runCode #runNumUl .secondBallPip .rightUl,
+.content .cqncAnimate .runCode #runNumUl .thirdBallPip .rightUl {
+    margin-left: 1.3333vw;
+}
+.content .cqncAnimate .runCode #runNumUl .firstBallPip {
+    margin-left: 2.8111vw;
+}
+.content .cqncAnimate .runCode #runNumUl .firstBallPip li {
+    background: url("../img/ball1z.png")  no-repeat;
+    background-size: 100%;
+}
+.content .cqncAnimate .runCode #runNumUl .secondBallPip {
+    margin-left: 7.2vw;
+}
+.content .cqncAnimate .runCode #runNumUl .secondBallPip li {
+    background: url("../img/ball2z.png") no-repeat;
+    background-size: 100%;
+}
+.content .cqncAnimate .runCode #runNumUl .thirdBallPip {
+    margin-left: 7.0222vw;
+}
+.content .cqncAnimate .runCode #runNumUl .thirdBallPip li {
+    background: url("../img/ball3z.png") no-repeat;
+    background-size: 100%;
+}
+.content .cqncAnimate .tryKai {
+    position: absolute;
+    width: 100vw;
+    height: 4.444vw;
+    top: 47.1111vw;
+}
+.content .cqncAnimate .tryKai .jzCheck {
+    position: absolute;
+    display: inline-block;
+    top: -2.6666vw;
+    width: 11.2888vw;
+    height: 2.6666vw;
+    line-height: 2.6666vw;
+    font-size: 1.2444vw;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.7);
+    color: rgba(250, 250, 250, 0.8);
+    margin-left: 44.4444vw;
+}
+.content .cqncAnimate .tryKai #tryBtn {
+    display: block;
+    width: 14.3333vw;
+    height: 5.4444vw;
+    margin: 0 auto;
+    background: url("../img/mnkj.png") no-repeat;
+    background-size: 100%;
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="fonts/fonts.css" />
+		<link rel="stylesheet" href="css/cqnc_video.css" />
+
+	</head>
+
+	<body>
+			<div class="content" >
+					<div class="cqncAnimate">
+						<div class="bodybg"><img src="img/background.png" /></div>
+						<div class="position">
+							<div class="logo"><img src="img/logo.png" alt="" /></div>
+							<div class="kaiDiv">
+								<ul id="kaiNum" class="numShow">
+									<li>-</li>
+									<li>-</li>
+									<li>-</li>
+									<li>-</li>
+									<li>-</li>
+								</ul>
+							</div>
+							<div class="defDiv">
+								<div class="drawTimeDiv">
+									<p class="next">下期：<span id="nextIssue">-</span></p>
+									<p class="draw">本期：<span id="drawTime">-</span></p>
+								</div>
+								<span id="soundBth" class="soundsOff"></span>
+								<audio src="sound/gxklsf_bj.mp3" id="audioidBg" loop="loop"></audio>
+								<audio src="sound/gxklsf_kj.mp3" id="audioidKai" loop="loop"></audio>
+								<!--	<audio src="" id="audioidBg" loop="loop"></audio>
+                            <audio src="" id="audioidKai" loop="loop"></audio>-->
+							</div>
+							<!--开奖号码区-->
+							<div class="kaiArea">
+								<div class="oneKaiBox kaiBox">
+									<ul class="KaiUl oneUl">
+										<li class='comNum'>1</li>
+										<li class='comNum'>2</li>
+										<li class='comNum'>3</li>
+										<li class='comNum'>4</li>
+										<li class='comNum'>5</li>
+										<li class='comNum'>6</li>
+										<li class='comNum'>1</li>
+										<li class='comNum'>2</li>
+										<li class='comNum'>3</li>
+										<li class='comNum'>4</li>
+										<li class='comNum'>5</li>
+										<li class='comNum'>6</li>
+										<li class='actNum'>-</li>
+									</ul>
+								</div>
+								<div class="twoKaiBox kaiBox">
+									<ul class="KaiUl twoUl">
+										<li class='comNum'>1</li>
+										<li class='comNum'>2</li>
+										<li class='comNum'>3</li>
+										<li class='comNum'>4</li>
+										<li class='comNum'>5</li>
+										<li class='comNum'>6</li>
+										<li class='comNum'>1</li>
+										<li class='comNum'>2</li>
+										<li class='comNum'>3</li>
+										<li class='comNum'>4</li>
+										<li class='comNum'>5</li>
+										<li class='comNum'>6</li>
+										<li class='actNum'>-</li>
+									</ul>
+								</div>
+								<div class="threeKaiBox kaiBox">
+									<ul class="KaiUl threeUl">
+										<li class='comNum'>1</li>
+										<li class='comNum'>2</li>
+										<li class='comNum'>3</li>
+										<li class='comNum'>4</li>
+										<li class='comNum'>5</li>
+										<li class='comNum'>6</li>
+										<li class='comNum'>1</li>
+										<li class='comNum'>2</li>
+										<li class='comNum'>3</li>
+										<li class='comNum'>4</li>
+										<li class='comNum'>5</li>
+										<li class='comNum'>6</li>
+										<li class='actNum'>-</li>
+									</ul>
+								</div>
+								<div class="fourKaiBox kaiBox">
+									<ul class="KaiUl fourUl">
+										<li class='comNum'>1</li>
+										<li class='comNum'>2</li>
+										<li class='comNum'>3</li>
+										<li class='comNum'>4</li>
+										<li class='comNum'>5</li>
+										<li class='comNum'>6</li>
+										<li class='comNum'>1</li>
+										<li class='comNum'>2</li>
+										<li class='comNum'>3</li>
+										<li class='comNum'>4</li>
+										<li class='comNum'>5</li>
+										<li class='comNum'>6</li>
+										<li class='actNum'>-</li>
+									</ul>
+								</div>
+								<div class="fiveKaiBox kaiBox">
+									<ul class="KaiUl fiveUl">
+										<li class='comNum'>1</li>
+										<li class='comNum'>2</li>
+										<li class='comNum'>3</li>
+										<li class='comNum'>4</li>
+										<li class='comNum'>5</li>
+										<li class='comNum'>6</li>
+										<li class='comNum'>1</li>
+										<li class='comNum'>2</li>
+										<li class='comNum'>3</li>
+										<li class='comNum'>4</li>
+										<li class='comNum'>5</li>
+										<li class='comNum'>6</li>
+										<li class='actNum'>-</li>
+									</ul>
+								</div>
+							</div>
+							<ul id="newKaiList" >
+								<li>1</li>
+								<li>2</li>
+								<li>3</li>
+								<li>4</li>
+								<li>5</li>
+							</ul>
+						</div>
+
+						<div class="cutTime">
+							<div>
+								<span id="hourtxt">00:00:00</span>
+								<span id="opening">开奖中...</span>
+							</div>
+						</div>
+						<div class="tryKai">
+							<span class="jzCheck" style="display: none;">开奖中，禁止模拟！</span>
+							<span id="tryBtn">开奖模拟</span>
+						</div>
+					</div>
+			</div>
+		<script src="../js/common.js"></script>
+		<script src="js/jquery-2.1.0.js"></script>
+		<script src="js/index.js"></script>
+	</body>
+
+</html>

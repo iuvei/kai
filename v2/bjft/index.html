@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>北京赛车H5</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+
+    <meta name="full-screen" content="true" />
+    <meta name="screen-orientation" content="true" />
+
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="360-fullscreen" content="true" />
+    <style>
+        html,
+        body {
+            -ms-touch-action: none;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        #preloading {
+            z-index: 1000;
+            position: absolute;
+            text-align: center;
+            top: 40%;
+            left: 40%;
+            width: 20%;
+            height: 20%;
+        }
+
+    </style>
+
+    <script src="../js/common.js"></script>
+    <script egret="lib" src="libs/modules/egret/egret.js" src-release="libs/modules/egret/egret.min.js"></script>
+    <script egret="lib" src="libs/modules/egret/egret.web.js" src-release="libs/modules/egret/egret.web.min.js"></script>
+    <script egret="lib" src="libs/modules/game/game.js" src-release="libs/modules/game/game.min.js"></script>
+    <script egret="lib" src="libs/modules/res/res.js" src-release="libs/modules/res/res.min.js"></script>
+    <script egret="lib" src="libs/modules/eui/eui.js" src-release="libs/modules/eui/eui.min.js"></script>
+    <script egret="lib" src="libs/modules/tween/tween.js" src-release="libs/modules/tween/tween.min.js"></script>
+    <script egret="lib" src="libs/modules/dragonBones/dragonBones.js" src-release="libs/modules/dragonBones/dragonBones.min.js"></script>
+
+
+
+    <script egret="lib" src="polyfill/promise.js" src-release="polyfill/promise.min.js"></script>
+
+
+
+    <script egret="game" src="bin-debug/eng/scene/unit/SceneUnit.js"></script>
+    <script egret="game" src="bin-debug/core/utils/RESVersionController.js"></script>
+    <script egret="game" src="bin-debug/common/DataManager.js"></script>
+    <script egret="game" src="bin-debug/common/enum/Status.js"></script>
+    <script egret="game" src="bin-debug/common/GameConst.js?v=3"></script>
+    <script egret="game" src="bin-debug/common/GameEventType.js"></script>
+    <script egret="game" src="bin-debug/common/GameGlobal.js"></script>
+    <script egret="game" src="bin-debug/common/Resource.js"></script>
+    <script egret="game" src="bin-debug/components/MultySkinButton.js"></script>
+    <script egret="game" src="bin-debug/core/events/BaseEvent.js"></script>
+    <script egret="game" src="bin-debug/core/events/DataEventDispatcher.js"></script>
+    <script egret="game" src="bin-debug/core/Manager/LayerManager.js"></script>
+    <script egret="game" src="bin-debug/core/Manager/LoopManager.js"></script>
+    <script egret="game" src="bin-debug/core/Manager/PopUpManager.js"></script>
+    <script egret="game" src="bin-debug/core/Manager/SoundManager.js"></script>
+    <script egret="game" src="bin-debug/core/Manager/TweenAnimManager.js"></script>
+    <script egret="game" src="bin-debug/core/pool/iPoolObject.js"></script>
+    <script egret="game" src="bin-debug/core/pool/ObjectPool.js"></script>
+    <script egret="game" src="bin-debug/core/utils/ADLoader.js"></script>
+    <script egret="game" src="bin-debug/core/utils/AttacherUtil.js"></script>
+    <script egret="game" src="bin-debug/core/utils/FilterUtil.js"></script>
+    <script egret="game" src="bin-debug/core/utils/FlashUtil.js"></script>
+    <script egret="game" src="bin-debug/core/utils/MiniCheckUtil.js"></script>
+    <script egret="game" src="bin-debug/common/CqsscExtension.js"></script>
+    <script egret="game" src="bin-debug/core/utils/WebUtil.js"></script>
+    <script egret="game" src="bin-debug/eng/data/SceneData.js"></script>
+    <script egret="game" src="bin-debug/eng/enum/UnitStatus.js"></script>
+    <script egret="game" src="bin-debug/eng/map/Map.js"></script>
+    <script egret="game" src="bin-debug/eng/map/TileConst.js"></script>
+    <script egret="game" src="bin-debug/eng/scene/ai/AI.js"></script>
+    <script egret="game" src="bin-debug/eng/scene/ai/IAIObject.js"></script>
+    <script egret="game" src="bin-debug/eng/scene/Camera.js"></script>
+    <script egret="game" src="bin-debug/eng/scene/GameScene.js"></script>
+    <script egret="game" src="bin-debug/eng/scene/unit/SceneAnimate.js"></script>
+    <script egret="game" src="bin-debug/AssetAdapter.js"></script>
+    <script egret="game" src="bin-debug/LoadingUI.js"></script>
+    <script egret="game" src="bin-debug/logic/GameLogic.js"></script>
+    <script egret="game" src="bin-debug/logic/SceneLogic.js"></script>
+    <script egret="game" src="bin-debug/logic/SoundLogic.js"></script>
+    <script egret="game" src="bin-debug/Main.js?v=1"></script>
+    <script egret="game" src="bin-debug/module/BottomView.js"></script>
+    <script egret="game" src="bin-debug/module/chart/CarChart.js"></script>
+    <script egret="game" src="bin-debug/module/chart/Chart.js"></script>
+    <script egret="game" src="bin-debug/module/chart/ChartLogic.js"></script>
+    <script egret="game" src="bin-debug/module/MiddleView.js"></script>
+    <script egret="game" src="bin-debug/module/TopView.js?v=1"></script>
+    <script egret="game" src="bin-debug/ThemeAdapter.js"></script>
+
+</head>
+<body>
+<div id="preloading">
+    <img id="preImage" src="resource/preloading.gif" />
+</div>
+<div style="margin: auto;width: 100%;height: 100%;" class="egret-player" data-entry-class="Main" data-orientation="auto" data-scale-mode="showAll" data-frame-rate="30" data-content-width="980" data-content-height="630" data-show-paint-rect="false" data-multi-fingered="2" data-show-fps="false" data-show-log="false" data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+</div>
+<script id="paramters" data-showver="false" data-host="../../../../.." data-reshost="." data-dataindex="1" data-sounddefault="0" data-noshowbtn="0">
+    /**
+     * {
+     * "renderMode":, //引擎渲染模式，"canvas" 或者 "webgl"
+     * "audioType": "" //使用的音频类型，0:默认，1:qq audio，2:web audio，3:audio
+     * "antialias": //WebGL模式下是否开启抗锯齿，true:开启，false:关闭，默认为false
+     * }
+     **/
+    /*function videoStat(category, action, label) {
+        console.log("vs:", category, action, label)
+    }*/
+    var type = egret.Capabilities.os == "Android" ? 3 : 0;
+    egret.runEgret({
+        renderMode: "canvas",
+        audioType: type
+    });
+
+</script>
+</body>
+</html>

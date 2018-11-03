@@ -2,6 +2,7 @@
 namespace Fuzhi\Controller;
 
 use Think\Controller;
+use Think\Exception;
 use Think\Page;
 
 class ApiController extends Controller{
@@ -183,6 +184,7 @@ class ApiController extends Controller{
         $game =  M('data')->where($where2)->order('dat_open_time desc')->find();
 
 
+    try{
         if($gamekey == 'pc28'){
             if(time() >= strtotime(date('Y-m-d').'19:00:00') && time() < strtotime(date('Y-m-d').'21:00:00')){
                 $date = $game['dat_open_time'] + 210;
@@ -261,7 +263,7 @@ class ApiController extends Controller{
             $data['last_opencode']['opentimestamp']=$game['dat_open_time'];
         }
 
-       // $res = $this->getAwardTime($info['id']);
+        // $res = $this->getAwardTime($info['id']);
         $echos['status'] = true;
         $echos['code'] = 200;
         $echos['msg'] = '获取成功';
@@ -269,6 +271,12 @@ class ApiController extends Controller{
         $echos['extras'] = time();
         $echos['debug'] = 0;
         echo json_encode($echos,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+    }catch (\Exception $e){
+        $echos['msg'] = '数据异常';
+        $echos['code'] = 500;
+        $echos['debug'] = 2;
+        echo json_encode($echos,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+    }
      //   print_r($data);exit;
 
     }
@@ -312,6 +320,12 @@ class ApiController extends Controller{
                 break;
             case "tcpk10":
                 return "tcpk10";
+                break;
+            case "sfpk10":
+                return "sfpk10";
+                break;
+            case "sfssc":
+                return "sfssc";
                 break;
             default:
                 return "404";

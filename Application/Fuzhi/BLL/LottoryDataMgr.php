@@ -556,14 +556,15 @@ class LottoryDataMgr
         $kjHao = null;
         if (substr($page, -7) == "Data.do") {
             $kjHao = $module->query("select dat_codes,replace(dat_expect,'-','') dat_expect, dat_open_time from {$this->prename}data where dat_type={$lotType} order by dat_expect desc limit 1");
-            //echo $module->getLastSql();
             $time = $kjHao[0]['dat_open_time'];
             $currentNo = $this->getGameCurrentNo($lotType, $module, $time);
             $nextNo = $this->getGameNextNo($lotType, $module, time());
         } else {
+
             $currentNo = $this->getGameCurrentNo($lotType, $module, $time);
-            //dump($lotType);die;
+            print_r($lotType);exit;
             $nextNo = $this->getGameNextNo($lotType, $module, $time);
+
             //$newqihao = str_replace("-","",$currentNo['actionNo']);
 //            if($lotType == 43){
 //                $kjHao = $module->query("select dat_codes,replace(dat_expect,'-','') dat_expect, dat_open_time from {$this->prename}data where dat_type={$lotType} order by dat_expect desc limit 1");
@@ -5068,6 +5069,10 @@ class LottoryDataMgr
                         return 45;
                     case 'tcpk10':
                         return 46;
+                    case 'sfpk10':
+                        return 47;
+                    case 'sfssc':
+                        return 48;
                 }
             }
         }
@@ -5344,9 +5349,7 @@ class LottoryDataMgr
     public function getGameCurrentNo($type, $module, $time)
     {
         $type = intval($type);
-
         $types = $this->getTypes($module);
-
         $kjTime = $types[$type]["data_ftime"];
 
         $atime = date('H:i:s', $time + $kjTime);
@@ -5355,8 +5358,7 @@ class LottoryDataMgr
 
         $return = $module->query($sql, $atime);
        // echo
-        //print_r($atime);exit;
-       // var_dump($return);die;
+        var_dump($sql);die;
         if (!$return) {
             $sql = "select actionNo, actionTime from {$this->prename}data_time where type={$type} order by actionTime desc limit 1";
             $return = $module->query($sql);
