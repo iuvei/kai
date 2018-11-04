@@ -40,6 +40,16 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../pk10/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
+
+            console.log(data);
+            var nextOpenIssue = data.next.periodNumber+1;
+            var nextOpenTime =data.next.awardTime.substr(11,5);
+            $('.nextOpenIssue').html(nextOpenIssue);
+            $('.nextOpenTime').html(nextOpenTime);
+            var nextOpenTime =new Date(data.next.awardTime).getTime()-data.time;
+
+
+
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -86,11 +96,9 @@ $(function () {
             for(var i=0;i<nums.length;i++){
                 html += '<i class="no' + nums[i] + '">' + nums[i] + '</i>';
             }
-            console.log(html);
             $("#pk10 #number").html(html);
             $("#pk10 .bt-jg").html('');
             var srt;
-            console.log(nums);
             srt = lh(nums);
             if(srt == undefined || srt == null){
 
@@ -193,49 +201,64 @@ function getHistoryData(count,date) {
                 if (j%2==0) {
                     clsName = "odd";
                 }
-        		html += '<li class="' + clsName + '">';
-				html += '<table width="100%">';
-				html += '<tr>';
-        		html += '<td style="width: 20%">' + data.termNum +'期</br>';
-				html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
-                html += '<td class="nums"><div class="nums-div">';
-				html += '<i class="no' + data.n1 + '">' + data.n1 + '</i>';
-				html += '<i class="no' + data.n2 + '">' + data.n2 + '</i>';
-				html += '<i class="no' + data.n3 + '">' + data.n3 + '</i>';
-				html += '<i class="no' + data.n4 + '">' + data.n4 + '</i>';
-				html += '<i class="no' + data.n5 + '">' + data.n5 + '</i>';
-				html += '<i class="no' + data.n6 + '">' + data.n6 + '</i>';
-				html += '<i class="no' + data.n7 + '">' + data.n7 + '</i>';
-				html += '<i class="no' + data.n8 + '">' + data.n8 + '</i>';
-				html += '<i class="no' + data.n9 + '">' + data.n9 + '</i>';
-				html += '<i class="no' + data.n10 + '">' + data.n10 + '</i>';
-                var sum = parseInt(data.n1)+parseInt(data.n2);
-                html += '<div class="bt-jg">' +
-                    '<span>'+long(data.n1,data.n10)+'</span>' +
-                    '<span>'+long(data.n2,data.n9)+'</span>' +
-                    '<span>'+long(data.n3,data.n8)+'</span>' +
-                    '<span>'+long(data.n4,data.n7)+'</span>' +
-                    '<span>'+long(data.n5,data.n6)+'</span>' +
-                    '<span style="color: #bbbbbb">|</span><samp>'+ sum +'</><samp>'+ dx(sum)+'</samp><samp>'+ds(sum)+'</samp></div></div></td>';
+
+                html += '<div class="openCode">';
+                html += '<div class="qihao">'+'<div>'+data.termNum +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n1 + '">' + data.n1 + '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n2 + '">' + data.n2 + '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n3 + '">' + data.n3 + '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n4 + '">' + data.n4 + '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n5 + '">' + data.n5 + '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n6 + '">' + data.n6 + '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n7 + '">' + data.n7 + '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n8 + '">' + data.n8 + '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n9 + '">' + data.n9 + '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n10 + '">' + data.n10 + '</a>'+'</div>';
+                html += '</div>';
 
 
-                html += '</tr>';
-				html += '</table>';
-				html += '</li>';
+        		// html += '<li class="' + clsName + '">';
+				// html += '<table width="100%">';
+				// html += '<tr>';
+        		// html += '<td style="width: 20%">' + data.termNum +'期</br>';
+				// html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
+                // html += '<td class="nums"><div class="nums-div">';
+				// html += '<i class="no' + data.n1 + '">' + data.n1 + '</i>';
+				// html += '<i class="no' + data.n2 + '">' + data.n2 + '</i>';
+				// html += '<i class="no' + data.n3 + '">' + data.n3 + '</i>';
+				// html += '<i class="no' + data.n4 + '">' + data.n4 + '</i>';
+				// html += '<i class="no' + data.n5 + '">' + data.n5 + '</i>';
+				// html += '<i class="no' + data.n6 + '">' + data.n6 + '</i>';
+				// html += '<i class="no' + data.n7 + '">' + data.n7 + '</i>';
+				// html += '<i class="no' + data.n8 + '">' + data.n8 + '</i>';
+				// html += '<i class="no' + data.n9 + '">' + data.n9 + '</i>';
+				// html += '<i class="no' + data.n10 + '">' + data.n10 + '</i>';
+                // var sum = parseInt(data.n1)+parseInt(data.n2);
+                // html += '<div class="bt-jg">' +
+                //     '<span>'+long(data.n1,data.n10)+'</span>' +
+                //     '<span>'+long(data.n2,data.n9)+'</span>' +
+                //     '<span>'+long(data.n3,data.n8)+'</span>' +
+                //     '<span>'+long(data.n4,data.n7)+'</span>' +
+                //     '<span>'+long(data.n5,data.n6)+'</span>' +
+                //     '<span style="color: #bbbbbb">|</span><samp>'+ sum +'</><samp>'+ dx(sum)+'</samp><samp>'+ds(sum)+'</samp></div></div></td>';
+                //
+                //
+                // html += '</tr>';
+				// html += '</table>';
+				// html += '</li>';
                 j++;
         	}
 			
         	$("#historyList").html(html);
 
         }else {
-			 $("#historyList").html("<li>对不起，今天暂无数据，请按日期检索！</li>");
+			 $("#historyList").html("<p>对不起，今天暂无数据，请按日期检索！</p>");
 			}
     }, "json");
 }
 
 
 function arr_num(nums) {
-    console.log(nums);
     var arr=[];
     arr[0] = nums.substring(0,2);
     arr[1] = nums.substring(2,4);
@@ -274,7 +297,6 @@ function lh(nums) {
     srt +="<samp>"+sum+"</samp>";
     srt +="<samp>"+dx+"</samp>";
     srt +="<samp>"+ds+"</samp>";
-   // console.log(srt);
     return srt;
 }
 
