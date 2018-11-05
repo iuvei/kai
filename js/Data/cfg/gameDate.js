@@ -916,7 +916,7 @@ var webListOP = {
         },
         {
             "text":"号码前后路珠",
-            "href":"jssc/luzhuleftorright.html"
+            "href":"sfpk10/luzhuleftorright.html"
         },
         {
             "text":"冠、亚和路珠",
@@ -961,10 +961,10 @@ var webListOP = {
             "text":"冷热码分析",
             "href":"sfpk10/coldhotnumber.html"
         },
-        {
-            "text":"杀号定胆",
-            "href":"sfpk10/shdd.html"
-        },
+        // {
+        //     "text":"杀号定胆",
+        //     "href":"sfpk10/shdd.html"
+        // },
         {
             "text":"三分赛车技巧",
             "href":"jiqiao/sfpk10/"

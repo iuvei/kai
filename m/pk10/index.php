@@ -84,7 +84,7 @@ include("../conn.php");
             <a class="headOpenTimeS"></a>
             <span>秒</span>
         </div>
-        <div>开奖时间<a class="nextOpenTime"></a></div>
+        <div class="itm-time">开奖时间<a class="nextOpenTime" id="time"></a></div>
     </div>
 </div>
 <div class="choose">

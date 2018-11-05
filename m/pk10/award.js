@@ -41,12 +41,12 @@ $(function () {
     var awardTick = function () {
         $.post('../../pk10/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
 
-            console.log(data);
+
             var nextOpenIssue = data.next.periodNumber+1;
             var nextOpenTime =data.next.awardTime.substr(11,5);
             $('.nextOpenIssue').html(nextOpenIssue);
             $('.nextOpenTime').html(nextOpenTime);
-            var nextOpenTime =new Date(data.next.awardTime).getTime()-data.time;
+
 
 
 
@@ -197,10 +197,10 @@ function getHistoryData(count,date) {
         	var html = '';
         	for(var i in result.rows){
         		var data = result.rows[i];
-        		var clsName = "even";
-                if (j%2==0) {
-                    clsName = "odd";
-                }
+        		// var clsName = "even";
+                // if (j%2==0) {
+                //     clsName = "odd";
+                // }
 
                 html += '<div class="openCode">';
                 html += '<div class="qihao">'+'<div>'+data.termNum +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';

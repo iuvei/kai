@@ -41,7 +41,7 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../cqssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
-            // console.log(data);
+
             //计数请求次数
             requireCount += 1;
 
@@ -52,6 +52,11 @@ $(function () {
                 requireCount = errorCount = 0;
                 hideLotPeriodNumWarn();
             }
+            var nextOpenIssue = Number(data.current.periodNumber1)+1;
+            var nextOpenIssue = nextOpenIssue.toString().substr(4);
+            var nextOpenTime =data.next.awardTime.substr(11,5);
+            $('.nextOpenIssue').html(nextOpenIssue);
+            $('.nextOpenTime').html(nextOpenTime);
             if (timeInterval != 0) {
                  if (currentPeriodNumber != -1 ) {    //判断第一次加载
               
@@ -91,11 +96,11 @@ $(function () {
             for(var i=0;i<nums.length;i++){
                 html += '<i class="ball-red">' + nums[i] + '</i>';
             }
-            // console.log(html);
+
             $("#cqssc #number").html(html);
             $("#cqssc .bt-jg").html('');
             var srt;
-            // console.log(nums);
+
             srt = lh(nums);
             if(srt == undefined || srt == null){
 
@@ -125,7 +130,7 @@ $(function () {
             }
             $("#cqssc .bt-jg").html(srt);
             var qishu = parseInt(data.current.periodNumber1);
-            //console.log(qishu)
+
             $("#cqssc .itm-tit #qihao").html('第'+qishu+'期结果');
 
 
@@ -145,7 +150,7 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../cqssc/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
-            console.log(data);
+
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
             //期数不同，则开始封盘倒计时
@@ -194,26 +199,57 @@ function getHistoryData(count,date) {
                 if (j%2==0) {
                     clsName = "odd";
                 }
-        		html += '<li class="' + clsName + '">';
-				html += '<table width="100%">';
-				html += '<tr>';
-        		html += '<td width="20%">' + data.termNum.substring(8, 16) +'期</br>';
-				html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
-                html += '<td class=""><div class="nums-div">';
-				html += '<i class="ball-red">' + data.n1 + '</i>';
-				html += '<i class="ball-red">' + data.n2 + '</i>';
-				html += '<i class="ball-red">' + data.n3 + '</i>';
-				html += '<i class="ball-red">' + data.n4 + '</i>';
-				html += '<i class="ball-red">' + data.n5 + '</i>';
+                html += '<div class="openCode">';
+                html += '<div class="qihao">'+'<div>'+data.termNum.substr(4) +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+                /*数字*/
+                html += '<div>'+'<a class="sscBall">' + data.n1 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n1)+'"  style="display: none">' + DX(data.n1)+ '</a>'+
+                    '<a class="ssc'+DSClass(data.n1)+'"  style="display: none">' + ds(data.n1)+ '</a>'
+                    +'</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n2 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n2)+'"  style="display: none">' + DX(data.n2)+ '</a>'
+                    +'<a class="ssc'+DSClass(data.n2)+'"  style="display: none">' + ds(data.n2)+ '</a>'
+                    +'</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n3 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n3)+'"  style="display: none">' + DX(data.n3)+ '</a>'
+                    +'<a class="ssc'+DSClass(data.n3)+'"  style="display: none">' + ds(data.n3)+ '</a>'
+                    +'</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n4 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n4)+'"  style="display: none">' + DX(data.n4)+ '</a>'
+                    +'<a class="ssc'+DSClass(data.n4)+'"  style="display: none">' + ds(data.n4)+ '</a>'
+                    +'</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n5 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n5)+'"  style="display: none">' + DX(data.n5)+ '</a>'
+                    +'<a class="ssc'+DSClass(data.n5)+'"  style="display: none">' + ds(data.n5)+ '</a>'
+                    +'</div>';
+
                 var guanyahe = arr_num(data.lotteryNum);
                 var sum = eval(guanyahe.join("+"));
-                html += '<div class="bt-jg"><span>'+long(data.n1,data.n5)+'</span><span style="color: #bbbbbb">|</span><span>'+ sum +'</span><span>'+ dx(sum)+'</span><span>'+ds(sum)+'</span>'+
-                    '</br><span class="span-2">'+shun(data.n1,data.n2,data.n3)+'</span><span class="span-2">'+shun(data.n2,data.n3,data.n4)+'</span>' +
-                    '<span class="span-2">'+shun(data.n3,data.n4,data.n5)+'</span><span class="span-2">'+douniu(guanyahe)+'</span></div></div></td>';
-              
-                html += '</tr>';
-				html += '</table>';
-				html += '</li>';
+                html += '<div>'+'<a>'+ sum + '</a>'+'</div>';
+                html += '<div>'+'<a>'+ dx(sum) + '</a>'+'</div>';
+                html += '<div>'+'<a>'+ ds(sum) + '</a>'+'</div>';
+                html += '<div>'+'<a>'+ long(data.n1,data.n5) + '</a>'+'</div>';
+
+                html += '</div>';
+        		// html += '<li class="' + clsName + '">';
+				// html += '<table width="100%">';
+				// html += '<tr>';
+        		// html += '<td width="20%">' + data.termNum.substring(8, 16) +'期</br>';
+				// html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
+                // html += '<td class=""><div class="nums-div">';
+				// html += '<i class="ball-red">' + data.n1 + '</i>';
+				// html += '<i class="ball-red">' + data.n2 + '</i>';
+				// html += '<i class="ball-red">' + data.n3 + '</i>';
+				// html += '<i class="ball-red">' + data.n4 + '</i>';
+				// html += '<i class="ball-red">' + data.n5 + '</i>';
+
+                // html += '<div class="bt-jg"><span>'+long(data.n1,data.n5)+'</span><span style="color: #bbbbbb">|</span><span>'+ sum +'</span><span>'+ dx(sum)+'</span><span>'+ds(sum)+'</span>'+
+                //     '</br><span class="span-2">'+shun(data.n1,data.n2,data.n3)+'</span><span class="span-2">'+shun(data.n2,data.n3,data.n4)+'</span>' +
+                //     '<span class="span-2">'+shun(data.n3,data.n4,data.n5)+'</span><span class="span-2">'+douniu(guanyahe)+'</span></div></div></td>';
+
+                // html += '</tr>';
+				// html += '</table>';
+				// html += '</li>';
                 j++;
         	}
 			
@@ -223,7 +259,27 @@ function getHistoryData(count,date) {
 			}
     }, "json");
 }
-
+function DXClass(num) {
+    if(num<=4){
+        return 'Xiao';
+    }else {
+        return 'Da';
+    }
+}
+function DSClass(nums) {
+    if(nums%2 == 0){
+        return  'Shuang';
+    }else {
+        return  'Dan';
+    }
+}
+function DX(num) {
+    if(num<=4){
+        return '小';
+    }else {
+        return '大';
+    }
+}
 
 
 function arr_num(nums) {

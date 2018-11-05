@@ -53,23 +53,23 @@
                   changeBall($(this).attr("ball"));
               });
           })
-          function changeBall(ball) {
-              //var _container = $("#callFun").attr("container");
-              //_container = _container ? _container : "lot-wrap";
-              var _container = "pk10twosidedstat";
-              //$('#'+_container).css("position", "relative").append("&lt;div style='margin:0 auto; width:100%; color:#FFF; position:absolute; top:220px; z-index:11;left:0px;'&gt;数据正在加载中...&lt;/div&gt;&lt;div class='loaddingBg'&gt;&lt;/div&gt;");
-              $.get('/pk10/findTwosideCount.do', {
-                  type : ball
-              }, function(text) {
-                  $('#' + _container).html(text);
-              });
-          }
           function twosidedstat() {
               changeBall($("#choose_ball li a.currball").attr("ball"));
           }
-		  $.get('/pk10/twoSidedStat.do', {
+		  $.get('/pk10/twoSidedStat.do', {"id":10
               }, function(text) {
-                  return false;
+              text = $.parseJSON(text);
+              var test = '';
+              test = '<tr class="head"><td><b>日期</b></td><td width="18%"><b>单</b></td><td width="18%"><b>双</b></td><td width="18%"><b>大</b></td><td width="18%"><b>小</b></td></tr>';
+              var _container = "pk10twosidedstat";
+              for(var i=0;i<text.length;i++){
+            test +=  "<tr class='odd'><td class='align'><table cellspacing='0' cellpadding='0' class='ptable'>"+
+                 "<tbody><tr><td class='td1'>"+text[i].lDate+"</td><tdclass='td2'><span>"+text[i].endIndex+"-"+text[i].startIndex+"</span></td>" +
+                 "</tr></tbody></table></td>" +
+                 "<td>"+text[i].even+"</td><td>"+text[i].odd+"</td><td>"+text[i].big+"</td><td>"+text[i].small+"</td></tr>";
+
+              }
+              $('#' + _container).html(test);
               });
       </script>
   </div>

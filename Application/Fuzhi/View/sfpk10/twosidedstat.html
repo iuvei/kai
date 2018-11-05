@@ -66,9 +66,8 @@
           function twosidedstat() {
               changeBall($("#choose_ball li a.currball").attr("ball"));
           }
-		  $.get('/sfpk10/twoSidedStat.do', {
-              }, function(text) {
-                  return false;
+		  $.get('/sfpk10/twoSidedStat.do', {'id':10}, function(text) {
+                  console.log(text);
               });
       </script>
   </div>
