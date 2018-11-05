@@ -40,106 +40,113 @@ $(function () {
         }
     }
     var awardTick = function () {
-        $.post('../../cqssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
 
-            //计数请求次数
-            requireCount += 1;
+        $.ajax({
+            url:'../../cqssc/getCqsscAwardTimes.do',
+            date: { t: Math.random() },
+            method:'post',
+            type: 'json',
+            success:function (data) {
+                requireCount += 1;
+                if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
+                    timeInterval = 16000;
+                    window.setTimeout(afterAwarded, 1000);
+                    $(".currentAward .period").css("color", "green");
+                    requireCount = errorCount = 0;
+                    hideLotPeriodNumWarn();
+                }
 
-            if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
-                timeInterval = 16000;
-                window.setTimeout(afterAwarded, 1000);
-                $(".currentAward .period").css("color", "green");
-                requireCount = errorCount = 0;
-                hideLotPeriodNumWarn();
-            }
-            var nextOpenIssue = Number(data.current.periodNumber1)+1;
-            var nextOpenIssue = nextOpenIssue.toString().substr(4);
-            var nextOpenTime =data.next.awardTime.substr(11,5);
-            $('.nextOpenIssue').html(nextOpenIssue);
-            $('.nextOpenTime').html(nextOpenTime);
-            if (timeInterval != 0) {
-                 if (currentPeriodNumber != -1 ) {    //判断第一次加载
-              
-			          var nums = data.current.awardNumbers.split(',');
-			  var str = "";
-                for (var i = 0; i < nums.length; i++) {
-                    
-                        str = str + '<i class="no' + nums[i] + '">' + nums[i] + '</i>';
-                   
-                }
-				
-					layer.open({
-		title: [
-		        ''+data.current.awardTime.substring(10, 16)+' 最新第'+data.current.periodNumber+'期开奖号码：',
-		        'background-color:#f9f9f9; color:#444;'
-		    ],			
-		    content:'<div class="nums">'+str+'</div>',
-	    time: 2
-	});
-                }
-                if (currentPeriodNumber == -1) {    //判断第一次加载
+                var nextOpenIssue = Number(data.current.periodNumber1)+1;
+                var nextOpenIssue = nextOpenIssue.toString().substr(4);
+                var nextOpenTime =data.next.awardTime.substr(11,5);
+                $('.nextOpenIssue').html(nextOpenIssue);
+                $('.nextOpenTime').html(nextOpenTime);
+
+
+
+                if (timeInterval != 0) {
+                    if (currentPeriodNumber != -1 ) {    //判断第一次加载
+
+                        var nums = data.current.awardNumbers.split(',');
+                        var str = "";
+                        for (var i = 0; i < nums.length; i++) {
+
+                            str = str + '<i class="no' + nums[i] + '">' + nums[i] + '</i>';
+
+                        }
+
+                        layer.open({
+                            title: [
+                                ''+data.current.awardTime.substring(10, 16)+' 最新第'+data.current.periodNumber+'期开奖号码：',
+                                'background-color:#f9f9f9; color:#444;'
+                            ],
+                            content:'<div class="nums">'+str+'</div>',
+                            time: 2
+                        });
+                    }
+                    if (currentPeriodNumber == -1) {    //判断第一次加载
+                        currentPeriodNumber = data.current.periodNumber;
+                    }
                     currentPeriodNumber = data.current.periodNumber;
+                    nextPeriodNumber = data.next.periodNumber;
+
+
                 }
-                currentPeriodNumber = data.current.periodNumber;
-                nextPeriodNumber = data.next.periodNumber;
-				
-                
-            }
-            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-		
-            window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
-            timeInterval = 0;
+                var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
 
-            var nums = data.current.awardNumbers.split(',');
-            var html = '';
-            $("#cqssc #number").html('');
-            for(var i=0;i<nums.length;i++){
-                html += '<i class="ball-red">' + nums[i] + '</i>';
-            }
+                window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
+                timeInterval = 0;
 
-            $("#cqssc #number").html(html);
-            $("#cqssc .bt-jg").html('');
-            var srt;
-
-            srt = lh(nums);
-            if(srt == undefined || srt == null){
-
-                var srt = '';
-                var sum = eval(nums.join("+"));
-                var dx = '';
-                var ds = '';
-                if(sum > 22){
-                    dx = '大';
-                }else {
-                    dx = '小';
+                var nums = data.current.awardNumbers.split(',');
+                var html = '';
+                $("#cqssc #number").html('');
+                for(var i=0;i<nums.length;i++){
+                    html += '<i class="ball-red">' + nums[i] + '</i>';
                 }
-                if(sum%2 == 0){
-                    ds = '双';
-                }else {
-                    ds = '单';
+
+                $("#cqssc #number").html(html);
+                $("#cqssc .bt-jg").html('');
+                var srt;
+
+                srt = lh(nums);
+                if(srt == undefined || srt == null){
+
+                    var srt = '';
+                    var sum = eval(nums.join("+"));
+                    var dx = '';
+                    var ds = '';
+                    if(sum > 22){
+                        dx = '大';
+                    }else {
+                        dx = '小';
+                    }
+                    if(sum%2 == 0){
+                        ds = '双';
+                    }else {
+                        ds = '单';
+                    }
+                    srt +="<span>"+long(nums[0],nums[4])+"</span>";
+                    // srt +="<span>"+long(nums[1],nums[8])+"</span>";
+                    // srt +="<span>"+long(nums[2],nums[7])+"</span>";
+                    // srt +="<span>"+long(nums[3],nums[6])+"</span>";
+                    // srt +="<span>"+long(nums[4],nums[5])+"</span>";
+                    srt +="<span style='color: #bbbbbb'>|</span> 冠亚和: ";
+                    srt +="<span>"+sum+"</span>";
+                    srt +="<span>"+dx+"</span>";
+                    srt +="<span>"+ds+"</span>";
                 }
-                srt +="<span>"+long(nums[0],nums[4])+"</span>";
-                // srt +="<span>"+long(nums[1],nums[8])+"</span>";
-                // srt +="<span>"+long(nums[2],nums[7])+"</span>";
-                // srt +="<span>"+long(nums[3],nums[6])+"</span>";
-                // srt +="<span>"+long(nums[4],nums[5])+"</span>";
-                srt +="<span style='color: #bbbbbb'>|</span> 冠亚和: ";
-                srt +="<span>"+sum+"</span>";
-                srt +="<span>"+dx+"</span>";
-                srt +="<span>"+ds+"</span>";
+                $("#cqssc .bt-jg").html(srt);
+                var qishu = parseInt(data.current.periodNumber1);
+                $("#cqssc .itm-tit #qihao").html('第'+qishu+'期结果');
+            },
+            error:function (err) {
+                if (errorCount < 20) {
+                    window.setTimeout(awardTick, 1000 + Math.random() * 10000);
+                    errorCount++;
+                }
             }
-            $("#cqssc .bt-jg").html(srt);
-            var qishu = parseInt(data.current.periodNumber1);
 
-            $("#cqssc .itm-tit #qihao").html('第'+qishu+'期结果');
-
-
-        }, 'json').error(function () {
-            if (errorCount < 20) {
-                window.setTimeout(awardTick, 1000 + Math.random() * 10000);
-                errorCount++;
-            }
-        });
+        })
         if (errorCount >= 5 || requireCount > 90) {
             showLotPeriodNumWarn(nextPeriodNumber);
         }
@@ -151,6 +158,7 @@ $(function () {
     function loadAwardTimes() {
         $.post('../../cqssc/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
 
+
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
             //期数不同，则开始封盘倒计时
@@ -161,7 +169,7 @@ $(function () {
                 }
                 countDownTimer = window.setInterval(function () {
                     cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval - 1000);
-					
+
                     showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
                 }, 1000);
             }

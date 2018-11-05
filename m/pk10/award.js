@@ -41,7 +41,7 @@ $(function () {
     var awardTick = function () {
         $.post('../../pk10/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
 
-
+            alert(514)
             var nextOpenIssue = data.next.periodNumber+1;
             var nextOpenTime =data.next.awardTime.substr(11,5);
             $('.nextOpenIssue').html(nextOpenIssue);
