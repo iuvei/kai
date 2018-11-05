@@ -4,7 +4,7 @@ $(function () {
 
 function LoadPk10Bscount() {
 	$.get('sfpk10/findLonghulishi.do', {
-		gameId : 50,
+		gameId : 47,
 		type : 2,
 		rows : 16
 	}, function(data) {
