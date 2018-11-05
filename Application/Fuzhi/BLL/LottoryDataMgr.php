@@ -649,7 +649,7 @@ class LottoryDataMgr
 //        }else{
             $retData["current"]["awardTime"] = $currentNo["actionTime"];
    //     }
-        echo $lotType;
+
         if ($lotType == 1 || $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lotType == 24 || $lotType == 35 || $lotType == 34 || $lotType == 40||$lotType==20 || $lotType == 46 ||$lotType == 48) {
             $retData["current"]["periodNumber"] = $currentNo["actionNoIndex"];
         } else if($lotType == 44 ||$lotType == 43 ||$lotType == 6 ||$lotType == 45){
@@ -2773,7 +2773,7 @@ class LottoryDataMgr
                         $code = array_sum($OpenCodes);
                         $code_num = 22;
                     }
-
+                    
                     if ($code > $code_num) {
                         $shows[$m]["big"]++;
                     } else {
