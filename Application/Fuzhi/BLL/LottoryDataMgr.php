@@ -250,7 +250,12 @@ class LottoryDataMgr
             } if($type == 'tcpk10'){
                 $ret = $this->getPk10Data($type, $page, $param);
             }
+            if ($type == 'sfpk10') {
+              //  dump($type);die;
+                $ret = $this->getPk10Data($type, $page, $param);
+            }
             if ($type == 'pk10') {
+               // dump($type);die;
                 $ret = $this->getPk10Data($type, $page, $param);
             } else {
                 if ($type == 'cqssc') {
@@ -625,14 +630,25 @@ class LottoryDataMgr
 //        }else{
             $retData["current"]["awardTime"] = $currentNo["actionTime"];
    //     }
-
-        if ($lotType == 1 || $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lotType == 24 || $lotType == 35 || $lotType == 6 || $lotType == 34 || $lotType == 40) {
+        if ($lotType == 1 || $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lotType == 24 || $lotType == 35 || $lotType == 34 || $lotType == 40||$lotType==20 || $lotType == 46 ||$lotType == 48) {
             $retData["current"]["periodNumber"] = $currentNo["actionNoIndex"];
-        } else {
-            $retData["current"]["periodNumber"] =$dat_expect;//测试数据是否正常
-           // $retData["current"]["periodNumber"] = $currentNo["actionNo"];
+        } else if($lotType == 44 ||$lotType == 43 ||$lotType == 6 ||$lotType == 45){
+            //$retData["current"]["periodNumber"] =$dat_expect;//测试数据是否正常
+            $retData["current"]["periodNumber"] = substr($currentNo["actionNo"],9);;
+        }else
+        {
+            $retData["current"]["periodNumber"] =$dat_expect;
         }
-        //print_r($currentNo["actionNo"]);exit;
+       // print_r($lotType);exit;
+            $current_num = $module->query("select count(*) as count from lot_data_time where type =".$lotType);
+            $retData["current"]["current_num"] =  $current_num[0]['count'];
+            if($lotType == 47 || $lotType == 48 ){
+                $retData["current"]["surplus_num"] = $current_num[0]['count'] - $currentNo["actionNo"];
+            }else if($lotType == 43 || $lotType == 22 || $lotType == 6 ||$lotType == 21 ||$lotType == 44|| $lotType == 1){
+                $retData["current"]["surplus_num"] = $current_num[0]['count'] - substr($currentNo["actionNo"],9);
+            }else if($lotType == 20 || $lotType == 34 ||$lotType == 46 || $lotType == 45){
+                $retData["current"]["surplus_num"] = $current_num[0]['count'] - $currentNo["actionNoIndex"];
+            }
         $retData["current"]["periodNumber1"] = $dat_expect;
         $retData["current"]["fullPeriodNumber"] = $currentNo["actionNo"];
         $retData["current"]["periodNumberStr"] = null;
@@ -2711,20 +2727,38 @@ class LottoryDataMgr
                         $shows[$m]["odd"] = 0;
                     }
                     $shows[$m]["lDate"] = date('Y-m-d', $openedCai["dat_open_time"]);
-                    $shows[$m]["endIndex"] = (int)substr($openedCai['dat_expect'], -3);
+                    $shows[$m]["endIndex"] = substr($openedCai['dat_expect'],6);
                     if ($shows[$m]["startIndex"] == 0) {
-                        $shows[$m]["startIndex"] = (int)substr($openedCai['dat_expect'], -3);
+                        $shows[$m]["startIndex"] = substr($openedCai['dat_expect'],6);
                     }
-                    if ($OpenCodes[$id - 1] > $iOpenCodeCnt / 2) {
+                    if($lotType == 20 || $lotType == 34 || $lotType == 46 || $lotType  == 47){
+                        $code = $OpenCodes[0]+$OpenCodes[1];
+                        $code_num = 11;
+                    }else if($lotType == 1 || $lotType == 45 || $lotType == 48 || $lotType == 44 ){
+                        $code = array_sum($OpenCodes);
+                        $code_num = 22;
+                    }
+
+                    if ($code > $code_num) {
                         $shows[$m]["big"]++;
                     } else {
                         $shows[$m]["small"]++;
                     }
-                    if ($OpenCodes[$id - 1] % 2 != 0) {
+                    if ($code % 2 != 0) {
                         $shows[$m]["even"]++;
                     } else {
                         $shows[$m]["odd"]++;
                     }
+//                    if ($OpenCodes[$id - 1] > $iOpenCodeCnt / 2) {
+//                        $shows[$m]["big"]++;
+//                    } else {
+//                        $shows[$m]["small"]++;
+//                    }
+//                    if ($OpenCodes[$id - 1] % 2 != 0) {
+//                        $shows[$m]["even"]++;
+//                    } else {
+//                        $shows[$m]["odd"]++;
+//                    }
                     $iIndex++;
                 }
             }
@@ -5014,6 +5048,15 @@ class LottoryDataMgr
                                                 }else{
                                                     if($gameId == 46){
                                                         return 46;
+                                                    }else {
+                                                        if($gameId == 47){
+                                                            return 47;
+                                                        }else{
+                                                            if($gameId == 48)
+                                                            {
+                                                                return 48;
+                                                            }
+                                                        }
                                                     }
                                                 }
                                             }
@@ -5132,10 +5175,12 @@ class LottoryDataMgr
 
     function getOpenCodeCntByLotType($lotType)
     {
-        if ($lotType == 20 || $lotType == 34) {
+
+        if ($lotType == 20 || $lotType == 34 || $lotType == 44 || $lotType == 46 || $lotType == 47) {
+
             return 10;
         } else {
-            if ($lotType == 1) {
+            if ($lotType == 1 || $lotType == 43 || $lotType == 45 ||$lotType == 48) {
                 return 5;
             } else {
                 if ($lotType == 21) {
@@ -5156,21 +5201,7 @@ class LottoryDataMgr
                                     if ($lotType == 18) {
                                         return 8;
                                     }else{
-                                        if ($lotType == 43) {
-                                            return 43;
-                                        }else{
-                                            if ($lotType == 44) {
-                                                return 44;
-                                            }else{
-                                                if ($lotType == 45) {
-                                                    return 45;
-                                                }else{
-                                                    if ($lotType == 46) {
-                                                        return 46;
-                                                    }
-                                                }
-                                            }
-                                        }
+                                       return 10;
                                     }
                                 }
                             }
@@ -5219,6 +5250,16 @@ class LottoryDataMgr
                                                 }else{
                                                     if ($lotType == 46) {
                                                         return 46;
+                                                    }else
+                                                    {
+                                                        if ($lotType == 47) {
+                                                            return 10;
+                                                        }else
+                                                        {
+                                                            if ($lotType == 48) {
+                                                                return 10;
+                                                            }
+                                                        }
                                                     }
                                                 }
                                             }
@@ -5271,6 +5312,14 @@ class LottoryDataMgr
                                                 }else{
                                                     if ($lotType == 46) {
                                                         return true;
+                                                    }else{
+                                                        if ($lotType == 47) {
+                                                            return true;
+                                                        }else{
+                                                            if ($lotType == 48) {
+                                                                return true;
+                                                            }
+                                                        }
                                                     }
                                                 }
                                             }
