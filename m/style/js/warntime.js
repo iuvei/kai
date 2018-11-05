@@ -65,3 +65,25 @@ warnCount = 6,
 tempCount = 0,
 cpNumber = -1,
 countDownTimer = null;
+
+
+function getWeed(date) {
+    var str = "";
+    var week = new Date(date).getDay();
+    if (week == 0) {
+        str = "星期天";
+    } else if (week == 1) {
+        str = "星期一";
+    } else if (week == 2) {
+        str = "星期二";
+    } else if (week == 3) {
+        str = "星期三";
+    } else if (week == 4) {
+        str = "星期四";
+    } else if (week == 5) {
+        str = "星期五";
+    } else if (week == 6) {
+        str = "星期六";
+    }
+    return str
+}

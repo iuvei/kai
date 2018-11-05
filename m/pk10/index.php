@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("../conn.php");
 ?>
 <!DOCTYPE HTML>
@@ -6,12 +6,12 @@ include("../conn.php");
 <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
-    
+
     <meta name="HandheldFriendly" content="true" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    
+
 <meta name="format-detection"content="telephone=no"/>
 <title><?=$web_type?>开奖直播_<?=$web_type?>开奖历史记录_<?=$webtitle?>手机版</title>
 <script src="../style/js/jquery.js"></script>
@@ -21,9 +21,11 @@ include("../conn.php");
 <link type="text/css" href="../style/css/style.css" rel="stylesheet">
 
 
-<!--    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">-->
-<!--    <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>-->
-<!--    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>-->
+<style type="text/css">
+
+
+
+</style>
 
 
 </head>
@@ -33,8 +35,6 @@ include("../conn.php");
 
 <?php include("../public/header.php"); ?>
 
-
-   
 <script src="award.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
 
@@ -63,138 +63,159 @@ include("../conn.php");
  <div class="fr"><a class="sp" href="shipin.php">开奖直播</a></div>
 </div>
 
-
-<!--<div class="h100">-->
-<!---->
-<!--</div>-->
-<!--<div class="">-->
-
-<!--    <div class="fr"><em id="period"></em>期开奖剩余：<span id="time"></span></div>-->
-<!--</div>-->
-
-<ul class="kaij-mylist">
-    <li class="kaij-mylist-li" id="pk10" style="border-bottom: 1px solid #eeeeee;">
-
-        <div class="kaij-mylist-r">
-            <div class="kaij-mylist-hd daojishi " style="padding-top: 0;">
-                <div class="itm-time">距下期开奖：<span id="time" class="itm-time-time">01:27</span></div>
-                <div class="itm-tit"><span class="itm-qih" id="qihao">第710580期结果</span></div>
-            </div>
-            <div class="kaij-mylist-bd">
-                <div class="itm-result">
-                    <div class="ball-wrap" id="number"></div>
-                </div>
-            </div>
-        </div>
-        <div class="bt-jg">  </div>
-
-
-    </li>
-
-</ul>
-<div class="gametool">
-    <div class="fl" id="xia-yx2">开奖历史<span class="xialabt " id="xialabt2"></span>
-
-
-        <div class="xia-yxx-list" id="xia-yxx-list2" style="display: none;">
-            <ul class="">
-                     <li><a href="./" class="cur">开奖历史</a></li>
-                       <li><a href="smtj.php">两面统计</a></li>
-                       <li><a href="cltj.php">长龙统计</a></li>
-                       <li><a href="hmzs.php">号码走势</a></li>
-                       <li><a href="lrtj.php">冷热统计</a></li>
-                       <li><a href="jiqiao.php">玩法技巧</a></li>
-                <li><a href="shipin.php">开奖直播</a></li>
-            </ul>
-        </div>
-
-
+<div class="head">
+    <div class="headRow1">
+        <input type="date" id="dateTime" onchange="Search()">
+        <div><a class="dataYMD"></a><a class="dataWeed"></a></div>
+        <select>
+            <option>选择期数</option>
+        </select>
     </div>
-<!--     <ul class="fl">-->
-<!--     <li><a href="./" class="cur">首页</a></li>-->
-<!--       <li><a href="smtj.php">双面</a></li>-->
-<!--       <li><a href="cltj.php">长龙</a></li>-->
-<!--       <li><a href="hmzs.php">走势</a></li>-->
-<!--       <li><a href="lrtj.php">冷热</a></li>-->
-<!--       <li><a href="jiqiao.php">技巧</a></li>-->
-<!--       -->
-<!--     </ul>-->
-     <ul class="fr">
-     <input type="date" name="dateData" id="dateData" onchange="Search()"/>  
-
-
-     </ul>
-
+    <div class="headRow2">
+        <div>今日已开<a></a>期</div>
+        <div>剩余<a></a>期</div>
+        <div>总期数<a></a>期</div>
+    </div>
+    <div class="headRow3">
+        <div><a class="nextOpenIssue"></a>期剩</div>
+        <div class="headOpenTime">
+            <a class="headOpenTimeM" style="margin-left: 3.2vm"></a>
+            <span>分</span>
+            <a class="headOpenTimeS"></a>
+            <span>秒</span>
+        </div>
+        <div>开奖时间<a class="nextOpenTime"></a></div>
+    </div>
 </div>
-
-
-<input type="hidden" id="callFun" value="refresh" time="2000"/>
-
-
- <div class="tabletop-sp">
- <table width="100%">
-<tr>
-<td style="width: 20%">期号/时间</td>
-<td>开奖号码</td>
-</tr>
-
-</table>
- </div>
-
-
-<!--<div style="height:103px;">-->
-
+<div class="choose">
+    <div class="chooseRow1">
+        <a>1</a>
+        <a>2</a>
+        <a>3</a>
+        <a>4</a>
+        <a>5</a>
+        <a>6</a>
+        <a>7</a>
+        <a>8</a>
+        <a>9</a>
+        <a>10</a>
+    </div>
+    <div class="chooseRow1">
+        <a>大</a>
+        <a>小</a>
+        <a>单</a>
+        <a>双</a>
+        <a>龙</a>
+        <a>虎</a>
+        <a>还原</a>
+    </div>
 </div>
+<div class="choose2">
+    <a>号码</a>
+    <a>大小</a>
+    <a>单双</a>
+    <a>组合</a>
+    <a>筛选</a>
+</div>
+<div class="BallNum">
+    <div class="BallNumHead">
+        <a class="issue">期号</a>
+        <a>冠</a>
+        <a>亚</a>
+        <a>三</a>
+        <a>四</a>
+        <a>五</a>
+        <a>六</a>
+        <a>七</a>
+        <a>八</a>
+        <a>九</a>
+        <a>十</a>
+    </div>
+</div>
+<div id="historyList"></div>
+<!--<div class="openCode">
+    <div class="qihao">
+        <div>23:15</div>
+        <div>12345678</div>
+    </div>
+    <div>
+        <a class="no1">2</a>
+    </div>
+    <div>
+        <a class="no1">3</a>
+    </div>
+    <div>
+        <a class="no1">4</a>
+    </div>
+    <div>
+        <a class="no1">5</a>
+    </div>
+    <div>
+        <a class="no1">6</a>
+    </div>
+    <div>
+        <a class="no1">7</a>
+    </div>
+    <div>
+        <a class="no1">8</a>
+    </div>
+    <div>
+        <a class="no1">9</a>
+    </div>
+    <div>
+        <a class="no1">10</a>
+    </div>
+    <div>
+        <a class="no1">10</a>
+    </div>
+</div>-->
 
-
- <div class="openlist">
-  <ul id="historyList">
-  </ul>
- </div>
-   
 <?php include("../public/footer.php"); ?>
 
 
-      <script type="text/javascript">
-      
-  
-  	
-$(function () {
-
-	
-	//显示默认日期
-	var now = new Date();
+<script type="text/javascript">
 
 
 
-  
-    $("#dateData").val(now.getFullYear()+"-"+((now.getMonth()+1)<10?"0":"")+(now.getMonth()+1)+"-"+(now.getDate()<10?"0":"")+now.getDate());
+    $(function () {
+
+
+        //显示默认日期
+        var now = new Date();
 
 
 
 
-	//提取记录
-
-    getHistoryData('200','');
-
-
-});
-//搜索
+        $("#dateTime").val(now.getFullYear()+"-"+((now.getMonth()+1)<10?"0":"")+(now.getMonth()+1)+"-"+(now.getDate()<10?"0":"")+now.getDate());
+        $(".dataYMD").html( $("#dateTime").val());
+        $('.dataWeed').html(getWeed($("#dateTime").val()))
 
 
-function Search() {
-	
-	getHistoryData('200', $("#dateData").val());
-	return false;
-}
-//刷新
-function refresh(){
 
-	getHistoryData('200','');
 
-}
+        //提取记录
 
-</script> 	
+        getHistoryData('200','');
 
+
+    });
+    //搜索
+
+
+    function Search() {
+
+        getHistoryData('200', $("#dateTime").val());
+        $(".dataYMD").html( $("#dateTime").val());
+        $('.dataWeed').html(getWeed($("#dateTime").val()))
+        return false;
+    }
+    //刷新
+    function refresh(){
+
+        getHistoryData('200','');
+
+    }
+
+</script>
 </body>
 </html>
