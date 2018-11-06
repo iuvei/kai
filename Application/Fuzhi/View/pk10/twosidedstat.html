@@ -41,37 +41,79 @@
                   </ul> </li>
           </ul>
 
-          <table class="lot-table" id="pk10twosidedstat">
-          </table>
-      </div>
-      <script type="text/javascript">
-          $(function() {
-              changeBall(1);
-              $("#choose_ball ul li a").bind("click", function() {
-                  $("#choose_ball li a.currball").removeClass("currball");
-                  $(this).addClass("currball");
-                  changeBall($(this).attr("ball"));
-              });
-          })
-          function twosidedstat() {
-              changeBall($("#choose_ball li a.currball").attr("ball"));
-          }
-		  $.get('/pk10/twoSidedStat.do', {"id":10
-              }, function(text) {
-              text = $.parseJSON(text);
-              var test = '';
-              test = '<tr class="head"><td><b>日期</b></td><td width="18%"><b>单</b></td><td width="18%"><b>双</b></td><td width="18%"><b>大</b></td><td width="18%"><b>小</b></td></tr>';
-              var _container = "pk10twosidedstat";
-              for(var i=0;i<text.length;i++){
-            test +=  "<tr class='odd'><td class='align'><table cellspacing='0' cellpadding='0' class='ptable'>"+
-                 "<tbody><tr><td class='td1'>"+text[i].lDate+"</td><tdclass='td2'><span>"+text[i].endIndex+"-"+text[i].startIndex+"</span></td>" +
-                 "</tr></tbody></table></td>" +
-                 "<td>"+text[i].even+"</td><td>"+text[i].odd+"</td><td>"+text[i].big+"</td><td>"+text[i].small+"</td></tr>";
+          <div id='cqssctwosidedstat'>
+              <div id="twoSidedStat_data-html"></div>
+              <script id="twoSidedStat_data-tmpl" type="text/template">
+                  <table class="lot-table">
+                      <caption>
+                      </caption>
+                      <tr class="head">
+                          <td><b>日期</b></td>
+                          <td width="18%"><b>单</b></td>
+                          <td width="18%"><b>双</b></td>
+                          <td width="18%"><b>大</b></td>
+                          <td width="18%"><b>小</b></td>
+                      </tr>
+                      {{
+                      for(var i=0;i<it.length;i++){
+                      var rowData=it[i];
+                      console.log(rowData);
+                      var odd_even="even";
+                      if(i%2!=0){
+                      odd_even="odd";
+                      }
+                      }}
+                      <tr class='{{=odd_even}}'>
+                          <td class="align">
+                              <table class="ptable" cellpadding="0" cellspacing="0">
+                                  <tr>
+                                      <td class="td1">{{=rowData.lDate}}</td>
+                                      <td class="td2"><span>{{=rowData.endIndex}}-{{=rowData.startIndex}}期</span></td>
+                                  </tr>
+                              </table>
+                          </td>
+                          <td>
+                              {{=rowData.even}}
+                          </td>
+                          <td>
+                              {{=rowData.odd}}
+                          </td>
+                          <td>
+                              {{=rowData.big}}
+                          </td>
+                          <td>
+                              {{=rowData.small}}
+                          </td>
+                      </tr>
+                      {{
+                      }
+                      }}
+                  </table>
+              </script>
 
-              }
-              $('#' + _container).html(test);
-              });
-      </script>
+              <script type="text/javascript">
+                  $(function () {
+                      $("#choose_ball ul li a").bind("click", function () {
+                          $("#choose_ball li a.currball").removeClass("currball");
+                          $(this).addClass("currball");
+                          changeBall($(this).attr("ball"));
+                      });
+                  })
+                  function changeBall(ball) {
+                      var _container = $("#callFun").attr("container");
+                      _container = _container ? _container : "lot-wrap";
+                      $.get("pk10/twoSidedStat.do", { t: Math.random(), id: ball }, function (r) {
+                          doTCompile("twoSidedStat_data", r);
+                      },"json");
+                  }
+                  changeBall(1);
+                  function twosidedstat()
+                  {
+                      changeBall($("#choose_ball li a.currball").attr("ball"));
+                  }
+              </script>
+          </div>
+      </div>
   </div>
     <div class="clear"></div>
   </block>

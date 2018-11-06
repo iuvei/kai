@@ -156,7 +156,6 @@ class LottoryDataMgr
         $expire = 2;
 
         if ($page == 'getHistoryData.do') {
-
             $ret = $this->getHistoryData($type, $page, $lotType, $expire);
         } else {
             if ($page == "numbertrendData.do") {
@@ -520,13 +519,17 @@ class LottoryDataMgr
 
     private function getHistoryData($type, $page, $lotType, $expire)
     {
+
         if (IS_POST) {
             $count = (int)wjStrFilter(I('post.count'));
             $date = wjStrFilter(I('post.date'));
+           // $pages = (int)wjStrFilter(I('post.page'));
         } else {
             $count = (int)wjStrFilter(I('get.count'));
             $date = wjStrFilter(I('get.date'));
+           // $pages = (int)wjStrFilter(I('get.page'));
         }
+//dump($count);die;
         $cacheName = $type . '_' . $page . '_' . $count . '_' . $date;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
@@ -536,6 +539,7 @@ class LottoryDataMgr
             $retData["code"] = null;
             $retData["msg"] = null;
             $retData["rows"] = array();
+           // dump($lotType);die;
             if (isset($_GET['adate'])) $date = date("Y-m-d", time());
             if ($date == '' || $date == 'null') {
                 $openedCaiList = $this->getLottoryByCnt($module, $lotType, $count);
@@ -2762,18 +2766,29 @@ class LottoryDataMgr
                         $shows[$m]["odd"] = 0;
                     }
                     $shows[$m]["lDate"] = date('Y-m-d', $openedCai["dat_open_time"]);
-                    $shows[$m]["endIndex"] = substr($openedCai['dat_expect'],6);
-                    if ($shows[$m]["startIndex"] == 0) {
-                        $shows[$m]["startIndex"] = substr($openedCai['dat_expect'],6);
+
+                    if($lotType == 1 ||$lotType ==34  || $lotType == 47 || $lotType == 48 ||$lotType == 6 ||$lotType== 21 |$lotType ==45 )
+                    {
+                        $shows[$m]["endIndex"] = substr($openedCai['dat_expect'],6);
+                        if ($shows[$m]["startIndex"] == 0) {
+                            $shows[$m]["startIndex"] = substr($openedCai['dat_expect'],6);
+                        }
+                    }else
+                    {
+                        $shows[$m]["endIndex"] = $openedCai['dat_expect'];
+                        if ($shows[$m]["startIndex"] == 0) {
+                            $shows[$m]["startIndex"] = $openedCai['dat_expect'];
+                        }
                     }
-                    if($lotType == 20 || $lotType == 34 || $lotType == 46 || $lotType  == 47){
+
+                    if($lotType == 20 || $lotType == 34 || $lotType == 46 || $lotType  == 47  ){
                         $code = $OpenCodes[0]+$OpenCodes[1];
                         $code_num = 11;
-                    }else if($lotType == 1 || $lotType == 45 || $lotType == 48 || $lotType == 44 ){
+                    }else if($lotType == 1 || $lotType == 45 || $lotType == 48 || $lotType == 44  ||$lotType == 6 ){
                         $code = array_sum($OpenCodes);
                         $code_num = 22;
                     }
-                    
+
                     if ($code > $code_num) {
                         $shows[$m]["big"]++;
                     } else {
