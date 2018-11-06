@@ -109,14 +109,14 @@ $(function () {
             var num = data.next.periodNumberStr;
             var num_2 =num.slice(num.indexOf('-')+1);
             cpNumber =num.slice(num.indexOf('-')+2);
-            $(".warnTime #period").html("第" + (parseInt(num_2)+1) + "期");
+            $(".warnTime #period").html("第" + (parseInt(num_2)) + "期");
             var leavePeriod = 1152 - num_2;
             if (leavePeriod == 0) {
                 var d = new Date();
                 var nd = new Date(data.next.awardTime.split(' ')[0].replace("-", "/", "gi"));
                 if (d.getDate() == nd.getDate()) leavePeriod = 120;
             }
-            $(" .lot-award .currentAward .period-info .period-leave").html((Number(leavePeriod)+1));
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.current_num-data.current.fullPeriodNumber);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
         }, 'json').error(function () {
             if (errorCount < 20) {
