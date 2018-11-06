@@ -127,7 +127,7 @@ class LottoryDataMgr
         return $ret;
     }
 
-    private function getLottoryByDate($module, $lotType, $date)
+    private function getLottoryByDate($module, $lotType, $date,$count=null)
     {
         $lotType = (int)$lotType;
         $date = date('Y-m-d', strtotime($date));
@@ -140,7 +140,7 @@ class LottoryDataMgr
             $endTime = strtotime($date . ' 23:59:59');
         }
 
-        $ret = $module->query("select replace(dat_expect,'-','') dat_expect,dat_codes,dat_open_time from {$this->prename}data where dat_type=%d and dat_open_time between %d and %d order by dat_expect desc", $lotType, $startTime, $endTime);
+        $ret = $module->query("select replace(dat_expect,'-','') dat_expect,dat_codes,dat_open_time from {$this->prename}data where dat_type=%d and dat_open_time between %d and %d order by dat_expect desc limit %d", $lotType, $startTime, $endTime,$count);
 
         if ($ret === false) {
             $ret = array();
@@ -532,6 +532,7 @@ class LottoryDataMgr
 //dump($count);die;
         $cacheName = $type . '_' . $page . '_' . $count . '_' . $date;
         $ret = S($cacheName);
+
         if ($ret === false || $ret == '') {
             $module = M();
             $retData = array();
@@ -544,7 +545,7 @@ class LottoryDataMgr
             if ($date == '' || $date == 'null') {
                 $openedCaiList = $this->getLottoryByCnt($module, $lotType, $count);
             } else {
-                $openedCaiList = $this->getLottoryByDate($module, $lotType, $date);
+                $openedCaiList = $this->getLottoryByDate($module, $lotType, $date,$count);
             }
             for ($i = 0; $i < count($openedCaiList); $i++) {
                 if ($date == '' && $count > 0 && $i >= $count) {
