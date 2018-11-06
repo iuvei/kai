@@ -5,19 +5,18 @@ setApiurl();
 
 //检查是否提交请求
 function setApiurl() {
-	
 
-
-    if (checkStorage('token') && checkStorage('host')) {
-        var host = getStorage('host'),
-            tk = getStorage('token');
-        // apiurl = host + '/game/event/present_expect?gamekey=' + gamekey + '&tk=' + tk;
-        apiurl = '/Fuzhi/Api/vodie?gamekey=' + gamekey ;
-    } else {
-        objCount.innerHTML = '登陆错误';
-        console.log(objCount);
-        return false;
-    }
+    apiurl = '/Fuzhi/Api/vodie?gamekey=' + gamekey ;
+    // if (checkStorage('token') && checkStorage('host')) {
+    //     var host = getStorage('host'),
+    //         tk = getStorage('token');
+    //     // apiurl = host + '/game/event/present_expect?gamekey=' + gamekey + '&tk=' + tk;
+    //     apiurl = '/Fuzhi/Api/vodie?gamekey=' + gamekey ;
+    // } else {
+    //     objCount.innerHTML = '登陆错误';
+    //     console.log(objCount);
+    //     return false;
+    // }
 }
 
 var __reflect = this && this.__reflect || function (t, n, a) {

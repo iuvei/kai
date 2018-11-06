@@ -5,10 +5,10 @@ setApiurl();
 
 //检查是否提交请求
 function setApiurl() {
-	
 
 
-    if (checkStorage('token') && checkStorage('host')) {
+    apiurl = '/Fuzhi/Api/vodie?gamekey=' + gamekey ;
+    /*if (checkStorage('token') && checkStorage('host')) {
         var host = getStorage('host'),
             tk = getStorage('token');
         apiurl = '/Fuzhi/Api/vodie?gamekey=' + gamekey ;
@@ -17,7 +17,7 @@ function setApiurl() {
         objCount.innerHTML = '登陆错误';
         console.log(objCount);
         return false;
-    }
+    }*/
 }
 
 var __reflect = this && this.__reflect || function (t, n, a) {
