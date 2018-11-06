@@ -40,12 +40,13 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../pk10/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
-
-            alert(514)
-            var nextOpenIssue = data.next.periodNumber+1;
+            var nextOpenIssue = Number(data.next.periodNumber)+1;
             var nextOpenTime =data.next.awardTime.substr(11,5);
             $('.nextOpenIssue').html(nextOpenIssue);
             $('.nextOpenTime').html(nextOpenTime);
+            $('.openIssue').html(data.current.periodNumber);
+            $('.residueIssue').html(data.current.surplus_num);
+            $('.totalIssue').html(data.current.current_num);
 
 
 
@@ -201,19 +202,42 @@ function getHistoryData(count,date) {
                 // if (j%2==0) {
                 //     clsName = "odd";
                 // }
-
+                $('.chooseIssue').append('<option value="'+data.termNum+'">'+data.termNum+'</option>');
                 html += '<div class="openCode">';
-                html += '<div class="qihao">'+'<div>'+data.termNum +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
-                html += '<div>'+'<a class="no' + data.n1 + '">' + data.n1 + '</a>'+'</div>';
-                html += '<div>'+'<a class="no' + data.n2 + '">' + data.n2 + '</a>'+'</div>';
-                html += '<div>'+'<a class="no' + data.n3 + '">' + data.n3 + '</a>'+'</div>';
-                html += '<div>'+'<a class="no' + data.n4 + '">' + data.n4 + '</a>'+'</div>';
-                html += '<div>'+'<a class="no' + data.n5 + '">' + data.n5 + '</a>'+'</div>';
-                html += '<div>'+'<a class="no' + data.n6 + '">' + data.n6 + '</a>'+'</div>';
-                html += '<div>'+'<a class="no' + data.n7 + '">' + data.n7 + '</a>'+'</div>';
-                html += '<div>'+'<a class="no' + data.n8 + '">' + data.n8 + '</a>'+'</div>';
-                html += '<div>'+'<a class="no' + data.n9 + '">' + data.n9 + '</a>'+'</div>';
-                html += '<div>'+'<a class="no' + data.n10 + '">' + data.n10 + '</a>'+'</div>';
+                html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum +'</span>'+'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n1 + '"'+'name'+'='+'"'+long(data.n1,data.n10 )+'"'+'>' + data.n1 + '</a>'
+                +'<a class="pk10'+DXClass(data.n1)+'"  style="display: none">' + DX(data.n1)+ '</a>'
+                +'<a class="pk10'+DSClass(data.n1)+'"  style="display: none">' + ds(data.n1)+ '</a>'
+                +'</div>';
+
+                html += '<div>'+'<a class="no' + data.n2 + '"'+'name'+'='+'"'+long(data.n2,data.n9 )+'"'+'>' + data.n2 + '</a>'
+                    +'<a class="pk10'+DXClass(data.n2)+'"  style="display: none">' + DX(data.n2)+ '</a>'
+                    +'<a class="pk10'+DSClass(data.n2)+'"  style="display: none">' + ds(data.n2)+ '</a>'
+                    +'</div>';
+                html += '<div>'+'<a class="no' + data.n3 + '"'+'name'+'='+'"'+long(data.n3,data.n8 )+'"'+'>' + data.n3 + '</a>'
+                    +'<a class="pk10'+DXClass(data.n3)+'"  style="display: none">' + DX(data.n3)+ '</a>'
+                    +'<a class="pk10'+DSClass(data.n3)+'"  style="display: none">' + ds(data.n3)+ '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n4 + '"'+'name'+'='+'"'+long(data.n4,data.n7 )+'"'+'>' + data.n4 + '</a>'
+                    +'<a class="pk10'+DXClass(data.n4)+'"  style="display: none">' + DX(data.n4)+ '</a>'
+                    +'<a class="pk10'+DSClass(data.n4)+'"  style="display: none">' + ds(data.n4)+ '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n5 + '"'+'name'+'='+'"'+long(data.n5,data.n6 )+'"'+'>' + data.n5 + '</a>'
+                    +'<a class="pk10'+DXClass(data.n5)+'"  style="display: none">' + DX(data.n5)+ '</a>'
+                    +'<a class="pk10'+DSClass(data.n5)+'"  style="display: none">' + ds(data.n5)+ '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n6 + '">' + data.n6 + '</a>'
+                    +'<a class="pk10'+DXClass(data.n6)+'"  style="display: none">' + DX(data.n6)+ '</a>'
+                    +'<a class="pk10'+DSClass(data.n6)+'"  style="display: none">' + ds(data.n6)+ '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n7 + '">' + data.n7 + '</a>'
+                    +'<a class="pk10'+DXClass(data.n7)+'"  style="display: none">' + DX(data.n7)+ '</a>'
+                    +'<a class="pk10'+DSClass(data.n7)+'"  style="display: none">' + ds(data.n7)+ '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n8 + '">' + data.n8 + '</a>'
+                    +'<a class="pk10'+DXClass(data.n8)+'"  style="display: none">' + DX(data.n8)+ '</a>'
+                    +'<a class="pk10'+DSClass(data.n8)+'"  style="display: none">' + ds(data.n8)+ '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n9 + '">' + data.n9 + '</a>'
+                    +'<a class="pk10'+DXClass(data.n9)+'"  style="display: none">' + DX(data.n9)+ '</a>'
+                    +'<a class="pk10'+DSClass(data.n9)+'"  style="display: none">' + ds(data.n9)+ '</a>'+'</div>';
+                html += '<div>'+'<a class="no' + data.n10 + '">' + data.n10 + '</a>'
+                    +'<a class="pk10'+DXClass(data.n10)+'"  style="display: none">' + DX(data.n10)+ '</a>'
+                    +'<a class="pk10'+DSClass(data.n10)+'"  style="display: none">' + ds(data.n10)+ '</a>'+'</div>';
                 html += '</div>';
 
 
@@ -257,7 +281,27 @@ function getHistoryData(count,date) {
     }, "json");
 }
 
-
+function DXClass(num) {
+    if(num<=5){
+        return 'Xiao';
+    }else {
+        return 'Da';
+    }
+}
+function DSClass(nums) {
+    if(nums%2 == 0){
+        return  'Shuang';
+    }else {
+        return  'Dan';
+    }
+}
+function DX(num) {
+    if(num<=4){
+        return '小';
+    }else {
+        return '大';
+    }
+}
 function arr_num(nums) {
     var arr=[];
     arr[0] = nums.substring(0,2);
@@ -331,7 +375,163 @@ function ds(nums) {
 }
 
 
+$(function () {
 
+    /*期数*/
+    var issueStr = '';
+
+    $('.chooseIssue').change(function () {
+        issueStr=$(this).val();
+
+        if(issueStr==''){//全部期数
+            $('.openCode').show();
+            return
+        }
+        for (var i=0;i<$('.Issue').length;i++){
+            if( $('.Issue').eq(i).text() == issueStr){
+                $('.Issue').eq(i).parent().parent().parent().show();
+            }else {
+                $('.Issue').eq(i).parent().parent().parent().hide();
+            }
+        }
+    });
+
+    /*期数*/
+    var issueStr = '';
+
+    $('.chooseIssue').change(function () {
+        issueStr=$(this).val();
+
+        if(issueStr==''){//全部期数
+            $('.openCode').show();
+            return
+        }
+        for (var i=0;i<$('.Issue').length;i++){
+            if( $('.Issue').eq(i).text() == issueStr){
+                $('.Issue').eq(i).parent().parent().parent().show();
+            }else {
+                $('.Issue').eq(i).parent().parent().parent().hide();
+            }
+        }
+    });
+
+    /*筛选类型*/
+    $('#chooseType a').click(function () {
+        arr=[];
+        $('#chooseNum a').removeClass('chooseTypeColor')
+        $('.openCode a').removeClass('pk10BallNoColor');
+        $('.choose').hide();
+
+        $('#chooseType a').removeClass('chooseTypeColor');
+        $('#chooseType2 a').removeClass('chooseTypeColor');
+        $(this).addClass('chooseTypeColor');
+        if( $(this).text()=='筛选'){
+            $('.openCode a').show();
+            $('.pk10Da').hide();
+            $('.pk10Xiao').hide();
+            $('.pk10Dan').hide();
+            $('.pk10Shuang').hide();
+            $('.choose').show();
+        }else if($(this).text()=='大小'){
+            $('.openCode a').hide();
+            $('.pk10Dan').hide();
+            $('.pk10Shuang').hide();
+            $('.pk10Da').show();
+            $('.pk10Xiao').show();
+        }else if($(this).text()=='单双'){
+            $('.openCode a').hide();
+            $('.pk10Da').hide();
+            $('.pk10Xiao').hide();
+            $('.pk10Dan').show();
+            $('.pk10Shuang').show();
+        }else if($(this).text()=='号码'){
+            $('.openCode a').show();
+            $('.pk10Da').hide();
+            $('.pk10Xiao').hide();
+            $('.pk10Dan').hide();
+            $('.pk10Shuang').hide();
+        }
+
+    });
+    /*筛选数字*/
+    var arr=[]
+    $('#chooseNum a').click(function () {
+
+        $('.openCode a').addClass('pk10BallNoColor');
+        $('#chooseType2 a').removeClass('chooseTypeColor');
+        if(arr.toString().indexOf($(this).text())!= -1){
+            $(this).removeClass('chooseTypeColor');
+            arr.splice($.inArray($(this).text(), arr), 1)
+        }else {
+            $(this).addClass('chooseTypeColor');
+            arr.push($(this).text());
+        }
+        for (var i=0;i< $('.openCode a').text().length;i++){
+
+            if($.inArray( $('.openCode a').eq([i]).text(),arr)!=-1){
+                $('.openCode a').eq([i]).removeClass('pk10BallNoColor')
+            }
+        }
+    });
+
+
+    /*筛选类型*/
+    $('#chooseType2 a').click(function () {
+        $('#chooseNum a').removeClass('chooseTypeColor');
+        $('#chooseType2 a').removeClass('chooseTypeColor');
+        $(this).addClass('chooseTypeColor');
+        if( $(this).text()=='还原'){
+            arr=[];
+            $('#chooseNum a').removeClass('chooseTypeColor')
+            $('.openCode a').removeClass('pk10BallNoColor');
+            $('.choose').hide();
+        }else if($(this).text()=='大'){
+            $('.openCode a').addClass('pk10BallNoColor');
+            for (var i=0;i<$('.openCode a').text().length;i++){
+                if($('.openCode a').eq([i]).text()>=5){
+                    $('.openCode a').eq([i]).removeClass('pk10BallNoColor')
+                }
+            }
+        }else if($(this).text()=='小'){
+            $('.openCode a').addClass('pk10BallNoColor');
+            for (var i=0;i<$('.openCode a').text().length;i++){
+                if($('.openCode a').eq([i]).text()<5){
+                    $('.openCode a').eq([i]).removeClass('pk10BallNoColor')
+                }
+            }
+        }else if($(this).text()=='单'){
+            $('.openCode a').addClass('pk10BallNoColor');
+            for (var i=0;i<$('.openCode a').text().length;i++){
+                if($('.openCode a').eq([i]).text()%2!=0){
+                    $('.openCode a').eq([i]).removeClass('pk10BallNoColor')
+                }
+            }
+        }else if($(this).text()=='双'){
+            $('.openCode a').addClass('pk10BallNoColor');
+            for (var i=0;i<$('.openCode a').text().length;i++){
+                if($('.openCode a').eq([i]).text()%2==0){
+                    $('.openCode a').eq([i]).removeClass('pk10BallNoColor')
+                }
+            }
+        }else if($(this).text()=='龙'){
+            $('.openCode a').addClass('pk10BallNoColor');
+            for (var i=0;i<$('.openCode a').text().length;i++){
+                if($('.openCode a').eq(i).attr('name')=='龙'){
+                    $('.openCode a').eq([i]).removeClass('pk10BallNoColor')
+                }
+            }
+        }else if($(this).text()=='虎'){
+            $('.openCode a').addClass('pk10BallNoColor');
+            for (var i=0;i<$('.openCode a').text().length;i++){
+                if($('.openCode a').eq(i).attr('name')=='虎'){
+                    $('.openCode a').eq([i]).removeClass('pk10BallNoColor')
+                }
+            }
+        }
+
+    })
+
+});
 
 
 
