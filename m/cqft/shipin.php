@@ -98,7 +98,7 @@ $cid = 43;
 
 </div>
 <div class="list">
-    <iframe src="/v2/cqft" style="    width: 100%;height: 205px">
+    <iframe src="/v2/cqft" style="    width: 100%;height: 220px">
 
     </iframe>
 

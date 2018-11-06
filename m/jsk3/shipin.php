@@ -7,7 +7,7 @@ $cid = 39;
 <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
-    
+
     <meta name="HandheldFriendly" content="true" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -107,7 +107,7 @@ $cid = 39;
 
 </div>
 <div class="list">
-    <iframe src="/v2/jsk3" style="    width: 100%;height: 205px">
+    <iframe src="/v2/jsk3" style="    width: 100%;height: 220px">
 
     </iframe>
         </div>
