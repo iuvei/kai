@@ -23,7 +23,7 @@
     <div class="w1030 clearfix">
         <ul class="nav-plus clearfix">
             <li><a href="{$BaseUrl}">网站首页</a></li>
-            <li><a href="{$BaseUrl}pk10/">北京赛车pk10</a></li>
+            <li><a href="{$BaseUrl}pk10/">北京pk10</a></li>
 			<li><a href="{$BaseUrl}xyft/">幸运飞艇</a></li>
 			<li><a href="{$BaseUrl}cqssc/">重庆时时彩</a></li>
 			<li><a href="{$BaseUrl}xjssc/">新疆时时彩</a></li>

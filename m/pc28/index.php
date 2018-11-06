@@ -44,9 +44,9 @@ include("../conn.php");
 <div class="daojishi1">
     <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">
         <ul class="">
-            <li><a href="../pk10/" game="pk10" class="">北京赛车pk10</a></li>
-            <li><a href="../sfpk10/" game="jssc">三分赛车</a></li>
-            <li><a href="../tcpk10/" game="tcpk10">极速赛车</a></li>
+            <li><a href="../pk10/" game="pk10" class="">北京pk10</a></li>
+            <li><a href="../sfpk10/" game="jssc">三分pk10</a></li>
+            <li><a href="../tcpk10/" game="tcpk10">极速pk10</a></li>
             <li><a href="../xyft/" game="xyft">幸运飞艇</a></li>
             <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
             <li><a href="../tcssc/" game="tcssc">极速时时彩</a></li>
@@ -55,7 +55,7 @@ include("../conn.php");
             <li><a game="cqft" href="../cqft">重庆番摊</a></li>
             <li><a href="../jsk3/" game="jsk3">江苏快3</a></li>
             <li><a href="../gd11x5/" game="gd11x5">广东11选5</a></li>
-            <li><a href="../gdkl10/" game="gdkl10">广东快乐十分</a></li>
+<!--            <li><a href="../gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
             <li><a href="../pc28/" game="pc28">加拿大28</a></li>
             <li><a href="../txffc/" game="txffc" class="cur">腾讯分分彩</a></li>
         </ul>

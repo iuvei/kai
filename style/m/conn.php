@@ -26,7 +26,7 @@ if(strpos($self,"xyft")){
 	$web_type = "江苏快三";
 }else{
     $name = 20;
-	$web_type = "北京赛车PK10";
+	$web_type = "北京pk10";
 }
 $dbcon = include(APP_PATH."/Application/Common/Conf/config.php");
 $con = mysqli_connect($dbcon['DB_HOST'],$dbcon['DB_USER'],$dbcon['DB_PWD']);

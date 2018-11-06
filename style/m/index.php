@@ -127,7 +127,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 	                <div class="kaij-mylist-r">
 	                    <div class="kaij-mylist-hd">
 	                        <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-	                        <div class="itm-tit">北京赛车<span class="itm-qih" id="qihao">载入中</span></div>
+	                        <div class="itm-tit">北京pk10<span class="itm-qih" id="qihao">载入中</span></div>
 	                    </div>
 	                    <div class="kaij-mylist-bd">
 	                        <div class="itm-result">
@@ -183,7 +183,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                 </a>
             </li>
             
-			<li class="kaij-mylist-li" id="gdkl10">
+			<!--<li class="kaij-mylist-li" id="gdkl10">
                 <a href="gdkl10/">
                 <div class="kaij-mylist-l"><span class="ui-logo ui-logo-gdkl10"></span></div>
                 <div class="kaij-mylist-r">
@@ -201,7 +201,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                 </div>
                 <span class="list-arrow"></span>
                 </a>
-            </li>
+            </li>-->
             
 <!--			<li class="kaij-mylist-li" id="jssc">-->
 <!--                <a href="jssc/">-->

@@ -93,7 +93,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                 $this->title = $title_c.C("WEB_SITE_PK10_TITLE") . ' - ' . C('WEB_SITE_TITLE');
                 $this->keyword = C("WEB_SITE_PK10_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                 $this->description = C("WEB_SITE_PK10_DESCR");
-                $lottoryName = "北京赛车pk10";
+                $lottoryName = "北京pk10";
                 $totalExpect = 179;
             } else {
                 if ($ctrlName == 'cqssc') {
@@ -135,7 +135,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                     $this->title = $title_c.C("WEB_SITE_JSSC_TITLE") . ' - ' . C('WEB_SITE_TITLE');
                                     $this->keyword = C("WEB_SITE_JSSC_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                     $this->description = C("WEB_SITE_JSSC_DESCR");
-                                    $lottoryName = "极速赛车";
+                                    $lottoryName = "极速pk10";
                                     $totalExpect = 1152;
                                 } else {
                                     if ($ctrlName == 'jsk3') {
@@ -195,10 +195,10 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                 $totalExpect = 1140;
                                                             }else{
                                                                 if ($ctrlName == 'tcpk10') {
-                                                                    $this->title = $title_c.'极速赛车开奖视频_极速赛车开奖号码_极速赛车开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                    $this->title = $title_c.'极速pk10开奖视频_极速pk10开奖号码_极速pk10开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                     $this->keyword = C("WEB_SITE_tcpk10_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                     $this->description = C("WEB_SITE_tcpk10_DESCR");
-                                                                    $lottoryName = "极速赛车";//头彩
+                                                                    $lottoryName = "极速pk10";//头彩
                                                                     $totalExpect = 1440;
                                                                 }else{
                                                                     if ($ctrlName == 'tcssc') {
@@ -209,7 +209,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                         $totalExpect = 1440;
                                                                     }else{
                                                                         if ($ctrlName == 'sfssc') {
-                                                                            $this->title = $title_c.'三分赛车开奖视频_三分赛车开奖号码_三分赛车开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                            $this->title = $title_c.'三分pk10开奖视频_三分pk10开奖号码_三分pk10开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                             $this->keyword = C("WEB_SITE_tcssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                             $this->description = C("WEB_SITE_tcssc_DESCR");
                                                                             $lottoryName = "三分时时彩";//头彩
@@ -219,7 +219,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                                 $this->title = $title_c.'三分时时彩开奖视频_三分时时彩开奖号码_三分时时彩开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                                 $this->keyword = C("WEB_SITE_tcssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                                 $this->description = C("WEB_SITE_tcssc_DESCR");
-                                                                                $lottoryName = "三分赛车";//头彩
+                                                                                $lottoryName = "三分pk10";//头彩
                                                                                 $totalExpect = 441;
                                                                             }
                                                                         }
@@ -443,7 +443,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                     $id = 0;
                     switch ($name) {
                         case 'pk10':
-                            $JiQiaotitle = '北京赛车pk10技巧';
+                            $JiQiaotitle = '北京pk10技巧';
                             $id = 42;
                             break;
                         case 'cqssc':
@@ -511,15 +511,15 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                             $id = 55;
                             break;
                         case 'tcpk10':
-                            $JiQiaotitle = '极速赛车技巧';
+                            $JiQiaotitle = '极速pk10技巧';
                             $id = 56;
                             break;
                         case 'sfpk10':
-                            $JiQiaotitle = '三分赛车技巧';
+                            $JiQiaotitle = '三分pk10技巧';
                             $id = 57;
                             break;
                         case 'sfssc':
-                            $JiQiaotitle = '三分赛车技巧';
+                            $JiQiaotitle = '三分pk10技巧';
                             $id = 58;
                             break;
                         default:
