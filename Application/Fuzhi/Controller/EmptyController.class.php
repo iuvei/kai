@@ -398,7 +398,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                          $swfurl = "v2/txffc";
                          break;
                      case 'tcpk10':
-                         $swfurl = "v2/tcpk10";
+                         $swfurl = "v2/jspk10";
                          break;
                      case 'tcssc':
                          $swfurl = "v2/tcssc";
