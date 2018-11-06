@@ -58,26 +58,14 @@ include("../conn.php");
 
     <div class="fr"><a class="sp" href="shipin.php">开奖直播</a></div>
 </div>
-<ul class="kaij-mylist">
-    <li class="kaij-mylist-li" id="cqssc" style="border-bottom: 1px solid #eeeeee;">
 
-        <div class="kaij-mylist-r">
+
+
             <div class="kaij-mylist-hd daojishi " style="padding-top: 0;">
-                <div class="itm-time">下期开奖剩余：<span id="time" class="itm-time-time">01:27</span></div>
-                <div class="itm-tit"><span class="itm-qih" id="qihao">第710580期</span></div>
+              <span id="time" class="itm-time-time">01:27</span></div>
             </div>
-            <div class="kaij-mylist-bd">
-                <div class="itm-result">
-                    <div class="ball-wrap" id="number"><i class="ball-red">7</i><i class="ball-red">0</i><i class="ball-red">5</i><i class="ball-red">6</i><i class="ball-red">4</i></div>
-                </div>
-            </div>
-        </div>
 
-        <div class="bt-jg"><span>龙</span><span style="color: #bbbbbb">|</span>总和： <span>18</span> <span>大</span><span>单</span> </div>
 
-    </li>
-
-</ul>
 <div class="gametool">
     <div class="fl" id="xia-yx2">开奖历史<span class="xialabt " id="xialabt2"></span>
 
