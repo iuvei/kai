@@ -139,7 +139,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 
 
 
-            <li><a href="pk10/" game="pk10" class="">北京赛车pk10</a></li>
+            <li><a href="pk10/" game="pk10" class="">北京pk10</a></li>
             <li><a href="sfpk10/" game="jssc">三分赛车</a></li>
             <li><a href="tcpk10/" game="tcpk10">极速赛车</a></li>
             <li><a href="xyft/" game="xyft">幸运飞艇</a></li>

@@ -16,10 +16,8 @@ include("../conn.php");
     <title><?=$web_type?>开奖直播_<?=$web_type?>开奖历史记录_<?=$webtitle?>手机版</title>
     <script src="../style/js/jquery.js"></script>
     <script src="../style/js/layer.js"></script>
-    <script src="../style/js/history.js"></script>
     <script src="../style/js/lotcommon.js" type="text/javascript"></script>
     <script src="../style/js/warntime.js" type="text/javascript"></script>
-    <script src="../style/js/history.js" type="text/javascript"></script>
     <link type="text/css" href="../style/css/style.css" rel="stylesheet">
     <link type="text/css" href="../style/css/histoly.css" rel="stylesheet">
 
@@ -88,16 +86,7 @@ include("../conn.php");
         <div class="itm-time">开奖时间<a class="nextOpenTime" id="time"></a></div>
     </div>
 </div>
-<div class="choose" style="display: none">
 
-   <!-- <div class="chooseRow1" id="chooseType2">
-        <a>大</a>
-        <a>小</a>
-        <a>单</a>
-        <a>双</a>
-        <a>还原</a>
-    </div>-->
-</div>
 <div class="choose2" id="chooseType">
     <a class="chooseType">号码</a>
     <a>摊1</a>
@@ -108,7 +97,7 @@ include("../conn.php");
 <div class="BallNum">
     <div class="BallNumHead">
         <a class="issue">期号</a>
-        <a style="min-width:20vw">开奖结果</a>
+        <a class="KJJG">开奖结果</a>
         <a>总和</a>
         <a>番摊</a>
         <a>大小</a>
