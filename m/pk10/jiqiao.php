@@ -50,7 +50,9 @@ $cid = 42;
             <li><a game="cqft" href="../cqft">重庆番摊</a></li>
             <li><a href="../jsk3/" game="jsk3">江苏快3</a></li>
             <li><a href="../gd11x5/" game="gd11x5">广东11选5</a></li>
+
 <!--            <li><a href="../gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
+
             <li><a href="../pc28/" game="pc28">加拿大28</a></li>
             <li><a href="../txffc/" game="txffc" class="cur">腾讯分分彩</a></li>
         </ul>
