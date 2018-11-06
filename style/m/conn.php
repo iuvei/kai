@@ -9,10 +9,10 @@ if(strpos($self,"xyft")){
 }elseif(strpos($self,"cqssc")){
     $name = 1;
 	$web_type = "重庆时时彩";
-}elseif(strpos($self,"gdkl10")){
+}/*elseif(strpos($self,"gdkl10")){
     $name = 21;
 	$web_type = "广东快乐十分";
-}elseif(strpos($self,"jssc")){
+}*/elseif(strpos($self,"jssc")){
 	$web_type = "極速賽車";
     $name = 39;
 }elseif(strpos($self,"jsssc")){
