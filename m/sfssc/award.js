@@ -51,7 +51,7 @@ $(function () {
 
             var nextOpenIssue = Number(data.current.periodNumber1)+1;
             var nextOpenIssue = nextOpenIssue.toString().substr(4);
-            var nextOpenTime =data.next.awardTime.substr(11,5);
+            var nextOpenTime =data.next.awardTime.substr(0,5);
             $('.nextOpenIssue').html(nextOpenIssue);
             $('.nextOpenTime').html(nextOpenTime);
             $('.openIssue').html(data.current.periodNumber);
