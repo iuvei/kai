@@ -190,6 +190,7 @@ $(function () {
     window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
+
 });
 function getHistoryData(count,date) {
 	layer.open({type: 2,time: 1});

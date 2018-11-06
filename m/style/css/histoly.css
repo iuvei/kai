@@ -353,7 +353,7 @@ body{color: #333;background-color: #fff;}
 }
 .BallNumHead .issue{
     margin-right: 0px;
-    min-width: 17.33333vw;
+    min-width: 19vw;
 }
 .openCode{
     display: flex;
@@ -365,7 +365,8 @@ body{color: #333;background-color: #fff;}
 }
 .openCode>div:first-child{
     margin-right: 0px;
-    min-width: 17.33333vw;
+    min-width: 19vw;
+    font-size: 2vw;
 }
 .openCode>div:last-child{
     margin-right: 1.33333vw;

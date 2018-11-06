@@ -40,7 +40,7 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../xyft/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
-            var nextOpenIssue = Number(data.next.periodNumber)+1;
+            var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(4);
             var nextOpenTime =data.next.awardTime.substr(11,5);
             $('.nextOpenIssue').html(nextOpenIssue);
             $('.nextOpenTime').html(nextOpenTime);
@@ -477,6 +477,7 @@ $(function () {
 
     /*筛选类型*/
     $('#chooseType2 a').click(function () {
+        arr=[]
         $('#chooseNum a').removeClass('chooseTypeColor');
         $('#chooseType2 a').removeClass('chooseTypeColor');
         $(this).addClass('chooseTypeColor');

@@ -479,6 +479,7 @@ $(function () {
 
     /*筛选类型*/
     $('#chooseType2 a').click(function () {
+        arr=[]
         $('#chooseNum a').removeClass('chooseTypeColor');
         $('#chooseType2 a').removeClass('chooseTypeColor');
         $(this).addClass('chooseTypeColor');
