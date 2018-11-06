@@ -256,7 +256,7 @@ function openVdio(e) {
 //         sdsyydj: "十一运夺金",
 //         gdsyxw: "广东11选5",
 //         jsksan: "江苏快3",
-//         jisusc: "极速赛车",
+//         jisusc: "极速pk10",
 //         xingyft: "极速飞艇",
 //         tjklsf: "天津快乐十分",
 //         aozxy8: "澳洲幸运8",

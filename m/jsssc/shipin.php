@@ -7,7 +7,7 @@ $cid = 47;
 <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
-    
+
     <meta name="HandheldFriendly" content="true" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -39,8 +39,8 @@ $cid = 47;
 <div class="daojishi1">
     <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">
         <ul class="">
-            <li><a href="../pk10/" game="pk10" class="">北京赛车pk10</a></li>
-<!--            <li><a href="../jssc/" game="jssc">极速赛车</a></li>-->
+            <li><a href="../pk10/" game="pk10" class="">北京pk10</a></li>
+<!--            <li><a href="../jssc/" game="jssc">极速pk10</a></li>-->
             <li><a href="../tcpk10/" game="tcpk10">头彩PK10</a></li>
             <li><a href="../xyft/" game="xyft">幸运飞艇</a></li>
             <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
