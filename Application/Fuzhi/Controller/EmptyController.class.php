@@ -192,7 +192,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                 $this->keyword = C("WEB_SITE_xjssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                 $this->description = C("WEB_SITE_xjssc_DESCR");
                                                                 $lottoryName = "腾讯分分彩";
-                                                                $totalExpect = 1440;
+                                                                $totalExpect = 1140;
                                                             }else{
                                                                 if ($ctrlName == 'tcpk10') {
                                                                     $this->title = $title_c.'极速赛车开奖视频_极速赛车开奖号码_极速赛车开奖记录 - ' . C('WEB_SITE_TITLE');
@@ -401,7 +401,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                          $swfurl = "v2/jspk10";
                          break;
                      case 'tcssc':
-                         $swfurl = "v2/tcssc";
+                         $swfurl = "v2/jsssc";
                          break;
                      case 'sfpk10':
                      $swfurl = "v2/sfpk10";
