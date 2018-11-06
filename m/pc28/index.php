@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("../conn.php");
 ?>
 <!DOCTYPE HTML>
@@ -19,6 +19,7 @@ include("../conn.php");
 <script src="../style/js/lotcommon.js" type="text/javascript"></script>
 <script src="../style/js/warntime.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/style.css" rel="stylesheet">
+<link type="text/css" href="../style/css/histoly.css" rel="stylesheet">
 
 
 
@@ -63,76 +64,51 @@ include("../conn.php");
 
     <div class="fr"><a class="sp" href="shipin.php">开奖直播</a></div>
 </div>
-<ul class="kaij-mylist">
-    <li class="kaij-mylist-li" id="pc28" style="border-bottom: 1px solid #eeeeee;">
-
-        <div class="kaij-mylist-r">
-            <div class="kaij-mylist-hd daojishi">
-                <div class="itm-time">下期开奖剩余：<span id="time" class="itm-time-time">01:27</span></div>
-                <div class="itm-tit"><span class="itm-qih" id="qihao">第2346149期</span></div>
-            </div>
-            <div class="kaij-mylist-bd">
-                <div class="itm-result">
-                    <div class="ball-wrap" id="number"><i class="ball-red" style="background-color: #ff7b00;color: #fff;">0</i><i class="ball-red" style="background-color: #fff;color: #5a5a5a">+</i><i class="ball-red" style="background-color: #ff7b00;color: #fff;">2</i><i class="ball-red" style="background-color: #fff;color: #5a5a5a">+</i><i class="ball-red" style="background-color: #ff7b00;color: #fff;">5</i><i class="ball-red" style="background-color: #fff;color: #5a5a5a">=</i><i class="ball-red" style="background-color: #4d4d4d;color: #fff;">7</i><span class="ball-red">绿</span><span class="ball-red">小</span><span class="ball-red">单</span></div>
-                </div>
-            </div>
-        </div>
-
-
-
-    </li>
-
-</ul>
-<div class="gametool">
-    <div class="fl" id="xia-yx2">开奖历史<span class="xialabt " id="xialabt2"></span>
-
-
-        <div class="xia-yxx-list" id="xia-yxx-list2" style="display: none;">
-            <ul class="">
-                <li><a href="./" class="cur">开奖历史</a></li>
-<!--                <li><a href="smtj.php">两面统计</a></li>-->
-<!--                <li><a href="cltj.php">长龙统计</a></li>-->
-<!--                <li><a href="hmzs.php">号码走势</a></li>-->
-<!--                <li><a href="lrtj.php">冷热统计</a></li>-->
-                <li><a href="jiqiao.php">玩法技巧</a></li>
-                <li><a href="shipin.php">开奖直播</a></li>
-            </ul>
-        </div>
-
-
+<div class="head">
+    <div class="headRow1">
+        <input type="date" id="dateTime" onchange="Search()">
+        <div><a class="dataYMD"></a><a class="dataWeed"></a></div>
+        <select class="chooseIssue" onchange="chooseIssue()">
+            <option value="">全部期数</option>
+        </select>
     </div>
-
-    <ul class="fr">
-        <input type="date" name="dateData" id="dateData" onchange="Search()"/>
-
-
-    </ul>
-
+    <div class="headRow2">
+        <div>今日已开<a class="openIssue"></a>期</div>
+        <div>剩余<a class="residueIssue"></a>期</div>
+        <div>总期数<a class="totalIssue"></a>期</div>
+    </div>
+    <div class="headRow3">
+        <div><a class="nextOpenIssue"></a>期剩</div>
+        <div class="headOpenTime">
+            <a class="headOpenTimeM" id="headOpenTimeM"></a>
+            <span>分</span>
+            <a class="headOpenTimeS" id="headOpenTimeS"></a>
+            <span>秒</span>
+        </div>
+        <div class="itm-time">开奖时间<a class="nextOpenTime" id="time"></a></div>
+    </div>
 </div>
+<!---->
+<!--<div class="choose2" id="chooseType">-->
+<!--    <a class="chooseType">号码</a>-->
+<!--    <a>大</a>-->
+<!--    <a>小</a>-->
+<!--    <a>单</a>-->
+<!--    <a>双</a>-->
+<!--</div>-->
+<div class="BallNum">
+    <div class="BallNumHead">
+        <a class="issue">期号</a>
+        <a>一</a>
+        <a>二</a>
+        <a>三</a>
+        <a>总和</a>
+        <a>大小</a>
+        <a>单双</a>
+    </div>
+</div>
+<div id="historyList"></div>
 
-
-<input type="hidden" id="callFun" value="refresh" time="2000"/>
-
-
-
- <div class="tabletop-sp">
- <table width="100%">
-<tr>
-<td width="14%">期号</td>
-<td width="14%">时间</td>
-<td>开奖号码</td>
-</tr>
-
-</table>
- </div>
-
-
-
-
- <div class="openlist">
-  <ul id="historyList">
-  </ul>
- </div>
    
 <?php include("../public/footer.php"); ?>
 
@@ -147,30 +123,51 @@ $(function () {
 
 
 
-  
-    $("#dateData").val(now.getFullYear()+"-"+((now.getMonth()+1)<10?"0":"")+(now.getMonth()+1)+"-"+(now.getDate()<10?"0":"")+now.getDate());
+    $("#dateTime").val(now.getFullYear()+"-"+((now.getMonth()+1)<10?"0":"")+(now.getMonth()+1)+"-"+(now.getDate()<10?"0":"")+now.getDate());
+    $(".dataYMD").html( $("#dateTime").val());
+    $('.dataWeed').html(getWeed($("#dateTime").val()))
 
 
 
 
 	//提取记录
 
-    getHistoryData('200','');
+    getHistoryData('50','');
 
 
 });
+
+var issueStr = '';
+function chooseIssue() {
+    issueStr=$('.chooseIssue').val();
+
+    if(issueStr==''){//全部期数
+        $('.openCode').show();
+        return
+    }
+    for (var i=0;i<$('.Issue').length;i++){
+        if( $('.Issue').eq(i).text() == issueStr){
+            $('.Issue').eq(i).parent().parent().parent().show();
+        }else {
+            $('.Issue').eq(i).parent().parent().parent().hide();
+        }
+    }
+}
+
 //搜索
 
 
 function Search() {
 	
-	getHistoryData('200', $("#dateData").val());
+	getHistoryData('50', $("#dateData").val());
+    $(".dataYMD").html( $("#dateTime").val());
+    $('.dataWeed').html(getWeed($("#dateTime").val()))
 	return false;
 }
 //刷新
 function refresh(){
 
-	getHistoryData('200','');
+	getHistoryData('50','');
 
 }
 

@@ -50,6 +50,18 @@ $(function () {
                 requireCount = errorCount = 0;
                 hideLotPeriodNumWarn();
             }
+
+            var nextOpenIssue = Number(data.current.periodNumber1)+1;
+            var nextOpenIssue = nextOpenIssue.toString();
+            var nextOpenTime =data.next.awardTime.substr(11,5);
+            $('.nextOpenIssue').html(nextOpenIssue);
+            $('.nextOpenTime').html(nextOpenTime);
+
+            $('.openIssue').html(data.current.periodNumber);
+            $('.residueIssue').html(data.current.surplus_num);
+            $('.totalIssue').html(data.current.current_num);
+
+
             if (timeInterval != 0) {
                  if (currentPeriodNumber != -1 ) {    //判断第一次加载
               
@@ -203,52 +215,86 @@ function getHistoryData(count,date) {
                 }else{
                     dx = '单';
                 }
-        		html += '<li class="' + clsName + '" style="font-size: 10px">';
-				html += '<table width="100%">';
-				html += '<tr>';
-        		html += '<td width="14%">' + data.termNum +'期</td>';
-				html += '<td width="14%">'+ data.lotteryTime.substring(10, 16)+'</td>';	
-                html += '<td class="">';			
-				html += '<i class="ball-red">' + totalNum_a + '</i>';
-				html += '+ ';
-				html += '<i class="ball-red">' + totalNum_b + '</i>';
-				html += '+ ';
-				html += '<i class="ball-red">' + totalNum_c + '</i>';
-				html += '= ';
-				html += '<i class="ball-red" style="background-color: #4d4d4d;">' + totalNum + '</i>';
-                if(sebo == '蓝'){
-                    html += '<span " >'+sebo+'</span>';
-                }else if(sebo == '红'){
-                    html += '<span  >'+sebo+'</span>';
-                }else if(sebo == '和'){
-                    html += '<span >'+sebo+'</span>';
-                }else {
-                    html += '<span >'+sebo+'</span>';
-                }
-
+                $('.chooseIssue').append('<option value="'+data.termNum+'">'+data.termNum+'</option>');
+                html += '<div class="openCode">';
+                html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum+'</span>' +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+                html += '<div>'+'<a class="ball-red">' + totalNum_a + '</a>'+'</div>';
+                html += '<div>'+'<a class="ball-red">' + totalNum_b + '</a>'+'</div>';
+                html += '<div>'+'<a class="ball-red">' + totalNum_c + '</a>'+'</div>';
+                html += '<div>'+'<a >' + totalNum + '</a>'+'</div>';
                 if(danshaung == '极大' || danshaung == '极小'){
-                    html += '<span  >'+danshaung+'</span>';
-                }else {
-                    if(danshaung == '大'){
-                        html += '<span  >'+danshaung+'</span>';
+                    html += '<div>'+'<a >' + danshaung + '</a>'+'</div>';
                     }else {
-                        html += '<span  >'+danshaung+'</span>';
+                        if(danshaung == '大'){
+                            html += '<div>'+'<a >' + danshaung + '</a>'+'</div>';
+                        }else {
+                            html += '<div>'+'<a >' + danshaung + '</a>'+'</div>';
+                        }
+                    }
+                if(dx == '单'){
+                    html += '<div>'+'<a >' + dx + '</a>'+'</div>';
+                   }else {
+                    html += '<div>'+'<a >' + dx + '</a>'+'</div>';
                     }
 
-                }
-                if(dx == '单'){
-                    html += '<span  >'+dx+'</span>';
-                }else {
-                    html += '<span  >'+dx+'</span>';
-                }
 
-                var guanyahe = data.n1 + data.n2;
-                html += '</td>';
-            
-              
-                html += '</tr>';
-				html += '</table>';
-				html += '</li>';
+
+
+
+
+
+
+
+                html += '</div>';
+
+
+
+        		// html += '<li class="' + clsName + '" style="font-size: 10px">';
+				// html += '<table width="100%">';
+				// html += '<tr>';
+        		// html += '<td width="14%">' + data.termNum +'期</td>';
+				// html += '<td width="14%">'+ data.lotteryTime.substring(10, 16)+'</td>';
+                // html += '<td class="">';
+				// html += '<i class="ball-red">' + totalNum_a + '</i>';
+				// html += '+ ';
+				// html += '<i class="ball-red">' + totalNum_b + '</i>';
+				// html += '+ ';
+				// html += '<i class="ball-red">' + totalNum_c + '</i>';
+				// html += '= ';
+				// html += '<i class="ball-red" style="background-color: #4d4d4d;">' + totalNum + '</i>';
+                // if(sebo == '蓝'){
+                //     html += '<span " >'+sebo+'</span>';
+                // }else if(sebo == '红'){
+                //     html += '<span  >'+sebo+'</span>';
+                // }else if(sebo == '和'){
+                //     html += '<span >'+sebo+'</span>';
+                // }else {
+                //     html += '<span >'+sebo+'</span>';
+                // }
+                //
+                // if(danshaung == '极大' || danshaung == '极小'){
+                //     html += '<span  >'+danshaung+'</span>';
+                // }else {
+                //     if(danshaung == '大'){
+                //         html += '<span  >'+danshaung+'</span>';
+                //     }else {
+                //         html += '<span  >'+danshaung+'</span>';
+                //     }
+                //
+                // }
+                // if(dx == '单'){
+                //     html += '<span  >'+dx+'</span>';
+                // }else {
+                //     html += '<span  >'+dx+'</span>';
+                // }
+                //
+                // var guanyahe = data.n1 + data.n2;
+                // html += '</td>';
+                //
+                //
+                // html += '</tr>';
+				// html += '</table>';
+				// html += '</li>';
                 j++;
         	}
 			
@@ -258,6 +304,9 @@ function getHistoryData(count,date) {
 			}
     }, "json");
 }
+
+
+
 
 function shuju(num) {
     var totalNum_a = parseInt(num[1]) +parseInt( num[4]) + parseInt(num[7]) + parseInt(num[10]) + parseInt(num[13]) + parseInt(num[16]);
