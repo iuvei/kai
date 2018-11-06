@@ -85,10 +85,10 @@ var webListOP = {
 					"text":"冷热码分析",
 					"href":"pk10/coldhotnumber.html"
 				},
-				{
-					"text":"杀号定胆",
-					"href":"pk10/shdd.html"
-				},
+				// {
+				// 	"text":"杀号定胆",
+				// 	"href":"pk10/shdd.html"
+				// },
 				{
 					"text":"pk10技巧",
 					"href":"jiqiao/pk10/"
@@ -287,10 +287,10 @@ var webListOP = {
             "text":"冷热码分析",
             "href":"jssc/coldhotnumber.html"
         },
-        {
+        /*{
             "text":"杀号定胆",
             "href":"jssc/shdd.html"
-        },
+        },*/
         {
             "text":"极速pk10技巧",
             "href":"jiqiao/jssc/"
