@@ -19,6 +19,7 @@ include("../conn.php");
 <script src="../style/js/lotcommon.js" type="text/javascript"></script>
 <script src="../style/js/warntime.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/style.css" rel="stylesheet">
+<link type="text/css" href="../style/css/histoly.css" rel="stylesheet">
 
 
 <style type="text/css">
@@ -36,7 +37,7 @@ include("../conn.php");
 <?php include("../public/header.php"); ?>
 
 <script src="award.js" type="text/javascript"></script>
-<link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
+<!--<link type="text/css" href="../style/css/pk10.css" rel="stylesheet">-->
 
 <div class="daojishi1">
 
@@ -67,27 +68,27 @@ include("../conn.php");
     <div class="headRow1">
         <input type="date" id="dateTime" onchange="Search()">
         <div><a class="dataYMD"></a><a class="dataWeed"></a></div>
-        <select>
-            <option>选择期数</option>
+        <select class="chooseIssue">
+            <option value="">全部期数</option>
         </select>
     </div>
     <div class="headRow2">
-        <div>今日已开<a></a>期</div>
-        <div>剩余<a></a>期</div>
-        <div>总期数<a></a>期</div>
+        <div>今日已开<a class="openIssue"></a>期</div>
+        <div>剩余<a class="residueIssue"></a>期</div>
+        <div>总期数<a class="totalIssue"></a>期</div>
     </div>
     <div class="headRow3">
         <div><a class="nextOpenIssue"></a>期剩</div>
         <div class="headOpenTime">
-            <a class="headOpenTimeM" style="margin-left: 3.2vm"></a>
+            <a class="headOpenTimeM" id="headOpenTimeM"></a>
             <span>分</span>
-            <a class="headOpenTimeS"></a>
+            <a class="headOpenTimeS" id="headOpenTimeS"></a>
             <span>秒</span>
         </div>
         <div class="itm-time">开奖时间<a class="nextOpenTime" id="time"></a></div>
     </div>
 </div>
-<div class="choose">
+<div class="choose" id="chooseNum">
     <div class="chooseRow1">
         <a>1</a>
         <a>2</a>
@@ -100,7 +101,7 @@ include("../conn.php");
         <a>9</a>
         <a>10</a>
     </div>
-    <div class="chooseRow1">
+    <div class="chooseRow1" id="chooseType2">
         <a>大</a>
         <a>小</a>
         <a>单</a>
@@ -110,11 +111,11 @@ include("../conn.php");
         <a>还原</a>
     </div>
 </div>
-<div class="choose2">
+<div class="choose2" id="chooseType">
     <a>号码</a>
     <a>大小</a>
     <a>单双</a>
-    <a>组合</a>
+   <!-- <a>组合</a>-->
     <a>筛选</a>
 </div>
 <div class="BallNum">
@@ -195,7 +196,7 @@ include("../conn.php");
 
         //提取记录
 
-        getHistoryData('200','');
+        getHistoryData('20','');
 
 
     });
@@ -204,7 +205,7 @@ include("../conn.php");
 
     function Search() {
 
-        getHistoryData('200', $("#dateTime").val());
+        getHistoryData('20', $("#dateTime").val());
         $(".dataYMD").html( $("#dateTime").val());
         $('.dataWeed').html(getWeed($("#dateTime").val()))
         return false;
@@ -212,7 +213,7 @@ include("../conn.php");
     //刷新
     function refresh(){
 
-        getHistoryData('200','');
+        getHistoryData('20','');
 
     }
 

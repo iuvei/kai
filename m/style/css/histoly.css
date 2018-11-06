@@ -1,3 +1,153 @@
+
+
+.pk10Da,.pk10Shuang{
+    background: #0089ff;
+    margin: auto;
+    width: 6.66667vw;
+    height: 6.66667vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    display: block;
+    line-height: 6.66667vw;
+    border-radius: 3px;
+    color: #fff;
+}
+.pk10Xiao,.pk10Dan{
+    margin: auto;
+    width: 6.66667vw;
+    height: 6.66667vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    display: block;
+    line-height: 6.66667vw;
+    border-radius: 3px;
+    background-color: #ff7300;
+    color: #fff;
+}
+
+.no1 {
+    background: #FFCC00;
+    margin: auto;
+    width: 6.66667vw;
+    height: 6.66667vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    display: block;
+    line-height: 6.66667vw;
+    border-radius: 3px;
+    color: #ffffff;
+}
+.no2 {
+    background:#0089ff;
+    margin: auto;
+    width: 6.66667vw;
+    height: 6.66667vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    display: block;
+    line-height: 6.66667vw;
+    border-radius: 3px;
+    color: #ffffff;
+}
+.no3 {
+    background:#4d4d4d;
+    margin: auto;
+    width: 6.66667vw;
+    height: 6.66667vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    display: block;
+    line-height: 6.66667vw;
+    border-radius: 3px;
+    color: #ffffff;
+}
+.no4 {
+    margin: auto;
+    width: 6.66667vw;
+    height: 6.66667vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    display: block;
+    line-height: 6.66667vw;
+    border-radius: 3px;
+    color: #ffffff;
+    background:#ff7300;
+}
+.no5 {
+    margin: auto;
+    width: 6.66667vw;
+    height: 6.66667vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    display: block;
+    line-height: 6.66667vw;
+    border-radius: 3px;
+    color: #ffffff;
+    background: #3399CC;
+}
+.no6 {
+    margin: auto;
+    width: 6.66667vw;
+    height: 6.66667vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    display: block;
+    line-height: 6.66667vw;
+    border-radius: 3px;
+    color: #ffffff;
+    background:#5200ff;
+}
+.no7 {
+    margin: auto;
+    width: 6.66667vw;
+    height: 6.66667vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    display: block;
+    line-height: 6.66667vw;
+    border-radius: 3px;
+    color: #ffffff;
+    background: #bbb;
+}
+.no8 {
+    margin: auto;
+    width: 6.66667vw;
+    height: 6.66667vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    display: block;
+    line-height: 6.66667vw;
+    border-radius: 3px;
+    color: #ffffff;
+    background:#ff0000;
+}
+.no9 {
+    margin: auto;
+    width: 6.66667vw;
+    height: 6.66667vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    display: block;
+    line-height: 6.66667vw;
+    border-radius: 3px;
+    color: #ffffff;
+    background:#760000;
+}
+.no10 {
+    margin: auto;
+    width: 6.66667vw;
+    height: 6.66667vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    display: block;
+    line-height: 6.66667vw;
+    border-radius: 3px;
+    color: #ffffff;
+    background:#28c200;
+}
+
+
+
 body{color: #333;background-color: #fff;}
 .head{border-bottom: 1px #ccc solid;}
 .headRow1,.headRow2,.headRow3{width: 100%;display: flex;  font-size: 2.93333vw; color: #333}
@@ -37,6 +187,7 @@ body{color: #333;background-color: #fff;}
     margin-top: 2.4vw;
     border: #ccc 1px solid;
     border-radius: 0.8vw;
+    background-color: #fff;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     text-align: center;
@@ -280,7 +431,7 @@ body{color: #333;background-color: #fff;}
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
     background-color: #4185ff;
 }
-.sscBallNoColor{
+.sscBallNoColor,.pk10BallNoColor{
     background: #e5e5e5 !important;
 }
 .chooseTypeColor{

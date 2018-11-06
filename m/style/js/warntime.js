@@ -1,4 +1,5 @@
 ﻿function showCountDown(afterTime, period) {
+
     timeold = afterTime;
 
     sectimeold = timeold / 1000;
@@ -25,9 +26,7 @@
         $(".roadmap-table tr").find("td[class]:last").find("p:last,label:last,span:last").css("font-weight", "normal");
         window.clearInterval(countDownTimer);
     }
-
- 
-  
+    
         var hh = parseInt(minsold) + parseInt(hrsold * 60);
         if (hh < 10) {
             hh = "0" + hh;
@@ -35,11 +34,8 @@
         if (seconds < 10) {
             seconds = "0" + seconds;
         }
-
-        $()
         $("#headOpenTimeM").html(hh);
         $("#headOpenTimeS").html(seconds);
-
 
     if (cpNumber == -1 && cpNumber != period) {
         cpNumber = period;

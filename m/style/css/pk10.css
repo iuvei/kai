@@ -8,6 +8,30 @@
 	/*font-style:italic; */
 }
 
+.pk10Da{
+	background: #0089ff;
+	margin: auto;
+	width: 6.66667vw;
+	height: 6.66667vw;
+	font-size: 3.2vw;
+	font-weight: 700;
+	display: block;
+	line-height: 6.66667vw;
+	border-radius: 3px;
+}
+.pk10Xiao{
+	margin: auto;
+	width: 6.66667vw;
+	height: 6.66667vw;
+	font-size: 3.2vw;
+	font-weight: 700;
+	display: block;
+	line-height: 6.66667vw;
+	border-radius: 3px;
+	background-color: #ff7300;
+}
+
+
 .no1 {
 	background: #FFCC00;
 }

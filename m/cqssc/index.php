@@ -19,6 +19,7 @@ include("../conn.php");
 <script src="../style/js/history.js"></script>
 <script src="../style/js/lotcommon.js" type="text/javascript"></script>
 <script src="../style/js/warntime.js" type="text/javascript"></script>
+<script src="../style/js/history.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/style.css" rel="stylesheet">
 <link type="text/css" href="../style/css/histoly.css" rel="stylesheet">
 
