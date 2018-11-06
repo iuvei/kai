@@ -185,8 +185,6 @@ include("../conn.php");
         var now = new Date();
 
 
-
-
         $("#dateTime").val(now.getFullYear()+"-"+((now.getMonth()+1)<10?"0":"")+(now.getMonth()+1)+"-"+(now.getDate()<10?"0":"")+now.getDate());
         $(".dataYMD").html( $("#dateTime").val());
         $('.dataWeed').html(getWeed($("#dateTime").val()))
@@ -196,7 +194,7 @@ include("../conn.php");
 
         //提取记录
 
-        getHistoryData('20','');
+        getHistoryData('15','');
 
 
     });
@@ -205,7 +203,7 @@ include("../conn.php");
 
     function Search() {
 
-        getHistoryData('20', $("#dateTime").val());
+        getHistoryData('15', $("#dateTime").val());
         $(".dataYMD").html( $("#dateTime").val());
         $('.dataWeed').html(getWeed($("#dateTime").val()))
         return false;
@@ -213,7 +211,7 @@ include("../conn.php");
     //刷新
     function refresh(){
 
-        getHistoryData('20','');
+        getHistoryData('15','');
 
     }
 

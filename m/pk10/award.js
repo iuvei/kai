@@ -440,7 +440,7 @@ $(function () {
 
         $('.openCode a').addClass('pk10BallNoColor');
         $('#chooseType2 a').removeClass('chooseTypeColor');
-        if(arr.toString().indexOf($(this).text())!= -1){
+        if($.inArray($(this).text(),arr)!= -1){
             $(this).removeClass('chooseTypeColor');
             arr.splice($.inArray($(this).text(), arr), 1)
         }else {
