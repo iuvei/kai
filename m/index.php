@@ -150,7 +150,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
             <li><a game="cqft" href="cqft">重庆番摊</a></li>
             <li><a href="jsk3/" game="jsk3">江苏快3</a></li>
             <li><a href="gd11x5/" game="gd11x5">广东11选5</a></li>
-            <li><a href="gdkl10/" game="gdkl10">广东快乐十分</a></li>
+        <!--    <li><a href="gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
             <li><a href="pc28/" game="pc28">加拿大28</a></li>
             <li><a href="txffc/" game="txffc" class="cur">腾讯分分彩</a></li>
 
@@ -301,13 +301,14 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                 </div>
                 <div class="kaij-mylist-bd">
                     <div class="itm-result">
-                        <div class="ball-wrap" id="number">
+                        <div class="ball-wrap fl" id="number">
                             <img src="style/images/loading2.gif" alt="载入中">
                         </div>
+                        <div class="bt-jg"> </div>
                     </div>
                 </div>
             </div>
-        <div class="bt-jg"> </div>
+
 <!--        <div class="bt-aa">-->
 <!--            <a href="cqssc/">开奖历史</a>-->
 <!--            <a href="cqssc/smtj.php">两面统计</a>-->
@@ -330,7 +331,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
             </div>
             <div class="kaij-mylist-bd">
                 <div class="itm-result">
-                    <div class="ball-wrap" id="number">
+                    <div class="ball-wrap fl" id="number">
                         <img src="style/images/loading2.gif" alt="载入中">
                     </div>
                 </div>
@@ -359,7 +360,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
             </div>
             <div class="kaij-mylist-bd">
                 <div class="itm-result">
-                    <div class="ball-wrap" id="number">
+                    <div class="ball-wrap fl" id="number">
                         <img src="style/images/loading2.gif" alt="载入中">
                     </div>
                 </div>
@@ -505,7 +506,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                 </div>
                 <div class="kaij-mylist-bd">
                     <div class="itm-result">
-                        <div class="ball-wrap" id="number">
+                        <div class="ball-wrap fl" id="number">
                             <img src="style/images/loading2.gif" alt="载入中">
                         </div>
                     </div>
@@ -521,10 +522,9 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 
         </a>
     </li>
-    <li class="kaij-mylist-li cq-box" id="gdkl10">
+<!--    <li class="kaij-mylist-li cq-box" id="gdkl10">
         <a href="gdkl10/" class="yx_a">
 
-<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-gdkl10"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
                     <div class="yx_name">广东快乐十分
@@ -541,16 +541,9 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                 </div>
             </div>
         <div class="bt-jg"></div>
-<!--        <div class="bt-aa">-->
-<!--            <a href="gdkl10/">开奖历史</a>-->
-<!--            <a href="gdkl10/smtj.php">两面统计</a>-->
-<!--            <a href="gdkl10/cltj.php">长龙统计</a>-->
-<!--            <a href="gdkl10/shipin.php">开奖视频</a>-->
-<!--        </div>-->
-
-
         </a>
     </li>
+    -->
     <li class="kaij-mylist-li cq-box" id="txffc">
         <a href="txffc/" class="yx_a">
 
@@ -564,7 +557,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                 </div>
                 <div class="kaij-mylist-bd">
                     <div class="itm-result">
-                        <div class="ball-wrap" id="number">
+                        <div class="ball-wrap fl" id="number">
                             <img src="style/images/loading2.gif" alt="载入中">
                         </div>
                     </div>
