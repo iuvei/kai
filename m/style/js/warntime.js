@@ -35,8 +35,11 @@
         if (seconds < 10) {
             seconds = "0" + seconds;
         }
-        $(".daojishi #time").html(hh+'分'+seconds+'秒');
-      
+
+        $()
+        $("#headOpenTimeM").html(hh);
+        $("#headOpenTimeS").html(seconds);
+
 
     if (cpNumber == -1 && cpNumber != period) {
         cpNumber = period;

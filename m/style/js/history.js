@@ -1,4 +1,27 @@
 $(function () {
+
+    /*期数*/
+    var issueStr = '';
+
+    $('.chooseIssue').change(function () {
+        issueStr=$(this).val();
+
+        if(issueStr==''){//全部期数
+            $('.openCode').show();
+            return
+        }
+        for (var i=0;i<$('.Issue').length;i++){
+            if( $('.Issue').eq(i).text() == issueStr){
+                $('.Issue').eq(i).parent().parent().parent().show();
+            }else {
+                $('.Issue').eq(i).parent().parent().parent().hide();
+            }
+        }
+    });
+
+
+
+
     /*筛选类型*/
     $('#chooseType a').click(function () {
         arr=[];
