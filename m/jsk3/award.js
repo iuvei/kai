@@ -49,6 +49,17 @@ $(function () {
                 requireCount = errorCount = 0;
                 hideLotPeriodNumWarn();
             }
+
+            var nextOpenIssue = Number(data.current.periodNumber1)+1;
+            var nextOpenIssue = nextOpenIssue.toString().substr(4);
+            var nextOpenTime =data.next.awardTime.substr(11,5);
+            $('.nextOpenIssue').html(nextOpenIssue);
+            $('.nextOpenTime').html(nextOpenTime);
+            $('.openIssue').html(data.current.periodNumber);
+            $('.residueIssue').html(data.current.surplus_num);
+            $('.totalIssue').html(data.current.current_num);
+
+
             if (timeInterval != 0) {
                  if (currentPeriodNumber != -1 ) {    //判断第一次加载
               
@@ -172,26 +183,19 @@ function getHistoryData(count,date) {
         	var html = '';
         	for(var i in result.rows){
         		var data = result.rows[i];
-        		var clsName = "even";
-                if (j%2==0) {
-                    clsName = "odd";
-                }
-        		html += '<li class="' + clsName + '">';
-				html += '<table width="100%" id="jsk3">';
-				html += '<tr>';
-        		html += '<td width="14%">' + data.termNum.substring(8, 16) +'期</br>';
-				html += '<td width="14%">'+ data.lotteryTime.substring(10, 16)+'</td>';
-                html += '<td class="">';			
-				html += '<i class="num'+data.n1+ '">'+ '</i>';
-				html += '<i  class="num'+data.n2+ '">' + '</i>';
-				html += '<i  class="num'+data.n3+ '">'  + '</i>';
 
-                var guanyahe = arr_num(data.lotteryNum);
-                var sum = eval(guanyahe.join("+"));
-                html += '<div class="span1">总和<span style="color: #bbbbbb">|</span><span>'+ sum +'</span><span>'+ dx(sum)+'</span><span>'+ds(sum)+'</span>';
-                html += '</tr>';
-				html += '</table>';
-				html += '</li>';
+        		 $('.chooseIssue').append('<option value="'+data.termNum.substr(4)+'">'+data.termNum.substr(4)+'</option>');
+                 html += '<div class="openCode">';
+                 html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(4)+'</span>' +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+
+                 html += '<div>'+'<img src="/images/images/dice'+data.n1+'.png">'+'</div>';
+                 html += '<div>'+'<img src="/images/images/dice'+data.n2+'.png">'+'</div>';
+                 html += '<div>'+'<img src="/images/images/dice'+data.n3+'.png">'+'</div>';
+                 var guanyahe = arr_num(data.lotteryNum);
+                 var sum = eval(guanyahe.join("+"));
+                 html += '<div>'+sum+'</div>';
+
+                 html += '</div>';
                 j++;
         	}
 			
@@ -201,6 +205,25 @@ function getHistoryData(count,date) {
 			}
     }, "json");
 }
+/*期数*/
+var issueStr = '';
+
+$('.chooseIssue').change(function () {
+    alert(5145)
+    issueStr=$(this).val();
+    //
+    // if(issueStr==''){//全部期数
+    //     $('.openCode').show();
+    //     return
+    // }
+    // for (var i=0;i<$('.Issue').length;i++){
+    //     if( $('.Issue').eq(i).text() == issueStr){
+    //         $('.Issue').eq(i).parent().parent().parent().show();
+    //     }else {
+    //         $('.Issue').eq(i).parent().parent().parent().hide();
+    //     }
+    // }
+})
 
 function arr_num(nums) {
     var arr=[];
@@ -209,7 +232,6 @@ function arr_num(nums) {
     arr[2] = nums.substring(2,3);
     return arr;
 }
-
 function long(nums_1,nums_2) {
     if(parseInt(nums_1) > parseInt(nums_2)){
         return '龙'

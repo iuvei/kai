@@ -1,5 +1,63 @@
 	
 $(function () {
+
+    /*筛选类型*/
+    $('#chooseType a').click(function () {
+
+
+        $('#chooseType a').removeClass('chooseTypeColor');
+        $(this).addClass('chooseTypeColor');
+        if( $(this).text()=='开奖') {
+            $('.openCode a').show();
+            $('.tanLu').hide();
+            $('.tanLuDs').hide();
+        }else if($(this).text()=='摊路'){
+            $('.openCode a').hide();
+            $('.tanLuDs').hide();
+            $('.tanLu').show();
+        }else if($(this).text()=='单双'){
+            $('.openCode a').hide();
+            $('.tanLu').hide();
+            $('.tanLuDs').show();
+        }
+
+    });
+    /*期数*/
+    var issueStr = '';
+
+    $('.chooseIssue').change(function () {
+        issueStr=$(this).val();
+
+        if(issueStr==''){//全部期数
+            $('.openCode').show();
+            return
+        }
+        for (var i=0;i<$('.Issue').length;i++){
+            if( $('.Issue').eq(i).text() == issueStr){
+                $('.Issue').eq(i).parent().parent().parent().show();
+            }else {
+                $('.Issue').eq(i).parent().parent().parent().hide();
+            }
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     var currentPeriodNumber = -1;
     var nextPeriodNumber = -1;
     var timeInterval = 5000;
@@ -49,6 +107,13 @@ $(function () {
                 requireCount = errorCount = 0;
                 hideLotPeriodNumWarn();
             }
+            var nextOpenIssue = Number(data.next.periodNumber)+1;
+            var nextOpenTime =data.next.awardTime.substr(11,5);
+            $('.nextOpenIssue').html(nextOpenIssue);
+            $('.nextOpenTime').html(nextOpenTime);
+            $('.openIssue').html(data.current.periodNumber);
+            $('.residueIssue').html(data.current.surplus_num);
+            $('.totalIssue').html(data.current.current_num);
             if (timeInterval != 0) {
                  if (currentPeriodNumber != -1 ) {    //判断第一次加载
               
@@ -60,14 +125,14 @@ $(function () {
                    
                 }
 				
-					layer.open({
-		title: [
-		        ''+data.current.awardTime.substring(10, 16)+' 最新第'+data.current.periodNumber+'期开奖号码：',
-		        'background-color:#f9f9f9; color:#444;'
-		    ],			
-		    content:'<div class="nums">'+str+'</div>',
-	    time: 2
-	});
+	// 				layer.open({
+	// 	title: [
+	// 	        ''+data.current.awardTime.substring(10, 16)+' 最新第'+data.current.periodNumber+'期开奖号码：',
+	// 	        'background-color:#f9f9f9; color:#444;'
+	// 	    ],
+	// 	    content:'<div class="nums">'+str+'</div>',
+	//     time: 2
+	// });
                 }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
                     currentPeriodNumber = data.current.periodNumber;
@@ -174,29 +239,8 @@ function getHistoryData(count,date) {
             var str = '';
             for(var i in result.rows){
         		var data = result.rows[i];
-        		var clsName = "even";
-                if (j%2==0) {
-                    clsName = "odd";
-                }
-        		html += '<li class="' + clsName + '" style="height: 70px">';
-				html += '<table width="100%">';
-				html += '<tr>';
-        		html += '<td width="20%">' + data.termNum+'期</br>';
-				html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
-                html += '<td class="nums"><div class="nums-div">';
-				html += '<i class="no' + data.n1 + '">' + data.n1 + '</i>';
-				html += '<i class="no' + data.n2 + '">' + data.n2 + '</i>';
-				html += '<i class="no' + data.n3 + '">' + data.n3 + '</i>';
-                html += '<i style="width: 6px;"> </i>';
-				html += '<i class="no' + data.n4 + '">' + data.n4 + '</i>';
-                html += '<i style="width: 6px;"></i>';
-				html += '<i class="no' + data.n5 + '">' + data.n5 + '</i>';
-				html += '<i class="no' + data.n6 + '">' + data.n6 + '</i>';
-				html += '<i class="no' + data.n7 + '">' + data.n7 + '</i>';
-                html += '<i style="width: 6px;"></i>';
-				html += '<i class="no' + data.n8 + '">' + data.n8 + '</i>';
-				html += '<i class="no' + data.n9 + '">' + data.n9 + '</i>';
-				html += '<i class="no' + data.n10 + '">' + data.n10 + '</i></br>';
+
+
 
                 var tan = Number(data.n1) + Number(data.n2) + Number(data.n3);
                 var tan2 = Number(data.n5) + Number(data.n6) + Number(data.n7);
@@ -206,10 +250,14 @@ function getHistoryData(count,date) {
                     tan_2 = 4;
                 }
                 var dx='';
+                var ftds =''
                 if(tan_2%2 ==0){
                     dx = '双';
+                    ftds='Shuang'
+
                 }else {
                     dx = '单';
+                    ftds='Dan'
                 }
                 var ds='';
                 if(tan_2 <=2){
@@ -222,10 +270,13 @@ function getHistoryData(count,date) {
                     tan_3 = 4;
                 }
                 var dx2='';
+                var ftds2 ='';
                 if(tan_3%2 ==0){
                     dx2 = '双';
+                    ftds2='Shuang'
                 }else {
                     dx2 = '单';
+                    ftds2='Dan'
                 }
                 var ds2='';
                 if(tan_3 <=2){
@@ -238,10 +289,13 @@ function getHistoryData(count,date) {
                     tan_4 = 4;
                 }
                 var dx3='';
+                var ftds3 ='';
                 if(tan_4%2 ==0){
+                    ftds3 ='Shuang';
                     dx3 = '双';
                 }else {
                     dx3 = '单';
+                    ftds3 ='Dan';
                 }
                 var ds3='';
                 if(tan_4 <=2){
@@ -249,48 +303,31 @@ function getHistoryData(count,date) {
                 }else {
                     ds3 = '大';
                 }
-                html += '<span >'+tan_2+'摊</span>';
-                if(ds == '大') {
-                    html += '<span >' + ds + '</span>';
-                }else {
-                    html += '<span >' + ds + '</span>';
-                }
-                if(dx == '单') {
-                    html += '<span >' + dx + '</span>';
-                }else {
-                    html += '<span >' + dx + '</span>';
-                }
-
-                html += '<span style="color: #bbbbbb"> | </span><span >'+tan_3+'摊</span>';
-                if(ds2 == '大') {
-                    html += '<span >' + ds2 + '</span>';
-                }else {
-                    html += '<span >' + ds2 + '</span>';
-                }
-                if(dx2 == '单') {
-                    html += '<span >' + dx2 + '</span>';
-                }else {
-                    html += '<span >' + dx2 + '</span>';
-                }
-
-
-                html += '<span style="color: #bbbbbb"> | </span><span  >'+tan_4+'摊</span>';
-                if(ds3 == '大') {
-                    html += '<span >' + ds3 + '</span>';
-                }else {
-                    html += '<span >' + ds3 + '</span>';
-                }
-                if(dx3 == '单') {
-                    html += '<span >' + dx3 + '</span>';
-                }else {
-                    html += '<span >' + dx3 + '</span>';
-                }
-                var guanyahe = data.n1 + data.n2;
-                html +='</div></td>'
-                html += '</tr>';
-				html += '</table>';
-				html += '</li>';
-
+                $('.chooseIssue').append('<option value="'+data.termNum+'">'+data.termNum+'</option>');
+                html += '<div class="openCode">';
+                html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum +'</span>'+'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+                html += '<div>'
+                    +'<a class="no' + data.n1 +' '+'flm' +'"'+'>' + data.n1 + '</a>'
+                    +'<a class="no' + data.n2 +' '+'flm' +'"'+'>' + data.n2 + '</a>'
+                    +'<a class="no' + data.n3 +' '+'flm' +'"'+'>' + data.n3 + '</a>'
+                    +'<div class="tanLu" style="display: none">'+'<span>番摊 : </span>'+'<span class="no4">'+tan_2+'</span>' + '</div>'
+                    +'<div class="tanLuDs" style="display: none">'+'<span>单双 : </span>'+'<span class="'+'pk10'+ftds+'">'+dx+'</span>' + '</div>'
+                    +'</div>';
+                html += '<div>'
+                    +'<a class="no' + data.n5 +' '+'flm' +'"'+'>' + data.n5 + '</a>'
+                    +'<a class="no' + data.n6 +' '+'flm' +'"'+'>' + data.n6 + '</a>'
+                    +'<a class="no' + data.n7 +' '+'flm' +'"'+'>' + data.n7 + '</a>'
+                    +'<div class="tanLu" style="display: none">'+'<span>番摊 : </span>'+'<span class="no4">'+tan_3+'</span>' + '</div>'
+                    +'<div class="tanLuDs" style="display: none">'+'<span>单双 : </span>'+'<span class="'+'pk10'+ftds2+'">'+dx2+'</span>' + '</div>'
+                    +'</div>';
+                html += '<div>'
+                    +'<a class="no' + data.n8 +' '+'flm' +'"'+'>' + data.n8 + '</a>'
+                    +'<a class="no' + data.n9 +' '+'flm' +'"'+'>' + data.n9 + '</a>'
+                    +'<a class="no' + data.n10 +' '+'flm' +'"'+'>' + data.n10 + '</a>'
+                    +'<div class="tanLu" style="display: none">'+'<span>番摊 : </span>'+'<span class="no4">'+tan_4+'</span>' + '</div>'
+                    +'<div class="tanLuDs" style="display: none">'+'<span>单双 : </span>'+'<span class="'+'pk10'+ftds3+'">'+dx3+'</span>' + '</div>'
+                    +'</div>';
+                html += '</div>';
                 //
                 // str += '<li class="' + clsName + '">';
                 // str += '<table width="100%">';
@@ -317,6 +354,7 @@ function getHistoryData(count,date) {
 			}
     }, "json");
 }
+
 
 function tan(num,num_1,num_2) {
     var sum = parseInt(num)+parseInt(num_1)+parseInt(num_2);
