@@ -470,7 +470,7 @@ function douniu(nums){
 
 
 function lh(nums) {
-    var sum = eval(num.join("+"));
+    var sum = eval(nums.join("+"));
     sum = sum%4;
     if(sum == 0){
         sum = 4;
