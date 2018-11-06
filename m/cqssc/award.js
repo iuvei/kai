@@ -1,5 +1,3 @@
-	
-
 $(function () {
     var currentPeriodNumber = -1;
     var nextPeriodNumber = -1;
@@ -128,7 +126,7 @@ $(function () {
                 // srt +="<span>"+long(nums[2],nums[7])+"</span>";
                 // srt +="<span>"+long(nums[3],nums[6])+"</span>";
                 // srt +="<span>"+long(nums[4],nums[5])+"</span>";
-                srt +="<span style='color: #bbbbbb'>|</span> 冠亚和: ";
+                srt +="<span style='color: #bbbbbb'>|</span> 总和: ";
                 srt +="<span>"+sum+"</span>";
                 srt +="<span>"+dx+"</span>";
                 srt +="<span>"+ds+"</span>";

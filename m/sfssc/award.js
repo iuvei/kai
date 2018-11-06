@@ -1,4 +1,3 @@
-	
 $(function () {
     var currentPeriodNumber = -1;
     var nextPeriodNumber = -1;
@@ -39,7 +38,7 @@ $(function () {
         }
     }
     var awardTick = function () {
-        $.post('../../sfssc/getxjsscAwardTimes.do', { t: Math.random() }, function (data) {
+        $.post('../../sfssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -49,39 +48,50 @@ $(function () {
                 requireCount = errorCount = 0;
                 hideLotPeriodNumWarn();
             }
+
+            var nextOpenIssue = Number(data.current.periodNumber1)+1;
+            var nextOpenIssue = nextOpenIssue.toString().substr(4);
+            var nextOpenTime =data.next.awardTime.substr(11,5);
+            $('.nextOpenIssue').html(nextOpenIssue);
+            $('.nextOpenTime').html(nextOpenTime);
+            $('.openIssue').html(data.current.periodNumber);
+            $('.residueIssue').html(data.current.surplus_num);
+            $('.totalIssue').html(data.current.current_num);
+
+
             if (timeInterval != 0) {
                  if (currentPeriodNumber != -1 ) {    //判断第一次加载
-              
+
 			          var nums = data.current.awardNumbers.split(',');
 			  var str = "";
                 for (var i = 0; i < nums.length; i++) {
-                    
+
                         str = str + '<i class="no' + nums[i] + '">' + nums[i] + '</i>';
-                   
+
                 }
-				
-					layer.open({
-		title: [
-		        ''+data.current.awardTime.substring(10, 16)+' 最新第'+data.current.periodNumber+'期开奖号码：',
-		        'background-color:#f9f9f9; color:#444;'
-		    ],			
-		    content:'<div class="nums">'+str+'</div>',
-	    time: 2
-	});
+    //
+	// 				layer.open({
+	// 	title: [
+	// 	        ''+data.current.awardTime.substring(10, 16)+' 最新第'+data.current.periodNumber+'期开奖号码：',
+	// 	        'background-color:#f9f9f9; color:#444;'
+	// 	    ],
+	// 	    content:'<div class="nums">'+str+'</div>',
+	//     time: 2
+	// });
                 }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
                     currentPeriodNumber = data.current.periodNumber;
                 }
                 currentPeriodNumber = data.current.periodNumber;
                 nextPeriodNumber = data.next.periodNumber;
-				
-                
+
+
             }
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-		
+
+
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
-
 
             var nums = data.current.awardNumbers.split(',');
             var html = '';
@@ -89,11 +99,11 @@ $(function () {
             for(var i=0;i<nums.length;i++){
                 html += '<i class="ball-red">' + nums[i] + '</i>';
             }
-            console.log(html);
+
             $("#cqssc #number").html(html);
             $("#cqssc .bt-jg").html('');
             var srt;
-            console.log(nums);
+
             srt = lh(nums);
             if(srt == undefined || srt == null){
 
@@ -122,6 +132,9 @@ $(function () {
                 srt +="<span>"+ds+"</span>";
             }
             $("#cqssc .bt-jg").html(srt);
+            var qishu = parseInt(data.current.periodNumber1);
+            $("#cqssc .itm-tit #qihao").html('第'+qishu+'期结果');
+
 
 
         }, 'json').error(function () {
@@ -139,10 +152,11 @@ $(function () {
     var cpCurrAwardData = null;
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
-        $.post('../../sfssc/getxjsscAwardTimes.do', {t: Math.random() }, function (data) {
+        $.post('../../sfssc/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
+
+
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
-
             //期数不同，则开始封盘倒计时
             if (data.current.periodNumber != cpNumber) {
                 cpNextAwardTimeInterval = data.next.awardTimeInterval;
@@ -151,16 +165,16 @@ $(function () {
                 }
                 countDownTimer = window.setInterval(function () {
                     cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval - 1000);
-					
+
                     showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
                 }, 1000);
             }
+
             cpNumber = data.current.periodNumber;
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
             }
-            $(".daojishi #period").html(data.next.periodNumber);
-             
+           // $(".headOpenTime .headOpenTimeM").html(data.next.periodNumber);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
         }, 'json').error(function () {
             if (errorCount < 20) {
@@ -180,43 +194,94 @@ $(function () {
 function getHistoryData(count,date) {
 	layer.open({type: 2,time: 1});
     $.get("../../sfssc/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
+
         if(result&&result.rows){
         	var j = 0;
         	var html = '';
         	for(var i in result.rows){
         		var data = result.rows[i];
-        		var clsName = "even";
-                if (j%2==0) {
-                    clsName = "odd";
-                }
-        		html += '<li class="' + clsName + '">';
-				html += '<table width="100%">';
-				html += '<tr>';
-        		html += '<td width="20%">' + data.termNum+'期</br>';
-				html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
-                html += '<td class=""><div class="nums-div">';
-				html += '<i class="ball-red">' + data.n1 + '</i>';
-				html += '<i class="ball-red">' + data.n2 + '</i>';
-				html += '<i class="ball-red">' + data.n3 + '</i>';
-				html += '<i class="ball-red">' + data.n4 + '</i>';
-				html += '<i class="ball-red">' + data.n5 + '</i>';
+                $('.chooseIssue').append('<option value="'+data.termNum.substr(4)+'">'+data.termNum.substr(4)+'</option>');
+                html += '<div class="openCode">';
+                html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(4)+'</span>' +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+                /*数字*/
+                html += '<div>'+'<a class="sscBall">' + data.n1 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n1)+'"  style="display: none">' + DX(data.n1)+ '</a>'+
+                    '<a class="ssc'+DSClass(data.n1)+'"  style="display: none">' + ds(data.n1)+ '</a>'
+                    +'</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n2 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n2)+'"  style="display: none">' + DX(data.n2)+ '</a>'
+                    +'<a class="ssc'+DSClass(data.n2)+'"  style="display: none">' + ds(data.n2)+ '</a>'
+                    +'</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n3 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n3)+'"  style="display: none">' + DX(data.n3)+ '</a>'
+                    +'<a class="ssc'+DSClass(data.n3)+'"  style="display: none">' + ds(data.n3)+ '</a>'
+                    +'</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n4 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n4)+'"  style="display: none">' + DX(data.n4)+ '</a>'
+                    +'<a class="ssc'+DSClass(data.n4)+'"  style="display: none">' + ds(data.n4)+ '</a>'
+                    +'</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n5 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n5)+'"  style="display: none">' + DX(data.n5)+ '</a>'
+                    +'<a class="ssc'+DSClass(data.n5)+'"  style="display: none">' + ds(data.n5)+ '</a>'
+                    +'</div>';
+
                 var guanyahe = arr_num(data.lotteryNum);
                 var sum = eval(guanyahe.join("+"));
-                html += '<div class="bt-jg"><span>'+long(data.n1,data.n5)+'</span><span style="color: #bbbbbb">|</span><span>'+ sum +'</span><span>'+ dx(sum)+'</span><span>'+ds(sum)+'</span>'+
-                    '</br><span class="span-2">'+shun(data.n1,data.n2,data.n3)+'</span><span class="span-2">'+shun(data.n2,data.n3,data.n4)+'</span>' +
-                    '<span class="span-2">'+shun(data.n3,data.n4,data.n5)+'</span><span class="span-2">'+douniu(guanyahe)+'</span></div></div></td>';
-                html += '</tr>';
-				html += '</table>';
-				html += '</li>';
+                html += '<div>'+'<a>'+ sum + '</a>'+'</div>';
+                html += '<div>'+'<a>'+ dx(sum) + '</a>'+'</div>';
+                html += '<div>'+'<a>'+ ds(sum) + '</a>'+'</div>';
+                html += '<div>'+'<a>'+ long(data.n1,data.n5) + '</a>'+'</div>';
+
+                html += '</div>';
+        		// html += '<li class="' + clsName + '">';
+				// html += '<table width="100%">';
+				// html += '<tr>';
+        		// html += '<td width="20%">' + data.termNum.substring(8, 16) +'期</br>';
+				// html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
+                // html += '<td class=""><div class="nums-div">';
+				// html += '<i class="ball-red">' + data.n1 + '</i>';
+				// html += '<i class="ball-red">' + data.n2 + '</i>';
+				// html += '<i class="ball-red">' + data.n3 + '</i>';
+				// html += '<i class="ball-red">' + data.n4 + '</i>';
+				// html += '<i class="ball-red">' + data.n5 + '</i>';
+
+                // html += '<div class="bt-jg"><span>'+long(data.n1,data.n5)+'</span><span style="color: #bbbbbb">|</span><span>'+ sum +'</span><span>'+ dx(sum)+'</span><span>'+ds(sum)+'</span>'+
+                //     '</br><span class="span-2">'+shun(data.n1,data.n2,data.n3)+'</span><span class="span-2">'+shun(data.n2,data.n3,data.n4)+'</span>' +
+                //     '<span class="span-2">'+shun(data.n3,data.n4,data.n5)+'</span><span class="span-2">'+douniu(guanyahe)+'</span></div></div></td>';
+
+                // html += '</tr>';
+				// html += '</table>';
+				// html += '</li>';
                 j++;
         	}
-			
         	$("#historyList").html(html);
         }else {
 			 $("#historyList").html("<li>对不起，今天暂无数据，请按日期检索！</li>");
 			}
     }, "json");
 }
+function DXClass(num) {
+    if(num<=4){
+        return 'Xiao';
+    }else {
+        return 'Da';
+    }
+}
+function DSClass(nums) {
+    if(nums%2 == 0){
+        return  'Shuang';
+    }else {
+        return  'Dan';
+    }
+}
+function DX(num) {
+    if(num<=4){
+        return '小';
+    }else {
+        return '大';
+    }
+}
+
 
 function arr_num(nums) {
     var arr=[];
@@ -227,7 +292,6 @@ function arr_num(nums) {
     arr[4] = nums.substring(4,5);
     return arr;
 }
-
 
 function long(nums_1,nums_2) {
     if(parseInt(nums_1) > parseInt(nums_2)){
@@ -337,7 +401,7 @@ function douniu(nums){
                     num5++;
                 }
             }
-            console.log(num4);
+            //console.log(num4);
             if(num4 == 0 || num4 == null || num4 == ''){
                 niu ='牛牛';
             }else {
@@ -368,7 +432,7 @@ function douniu(nums){
         return niu;
     }
 
-    console.log(niu);
+    //console.log(niu);
     return niu;
 
 }
@@ -401,9 +465,11 @@ function lh(nums) {
     srt +="<span>"+sum+"</span>";
     srt +="<span>"+dx+"</span>";
     srt +="<span>"+ds+"</span>";
-    console.log(srt);
+   // console.log(srt);
     return srt;
 }
+
+
 
 
 
