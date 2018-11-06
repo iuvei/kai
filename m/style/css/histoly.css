@@ -461,7 +461,9 @@ body{color: #333;background-color: #fff;}
     -ms-flex-pack: center;
     justify-content: center;
 }
-
+.BallNumHead .KJJG{
+    flex: 5;
+}
 
 
 

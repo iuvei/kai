@@ -1,232 +1,66 @@
-//
-// $(function () {
-//     var currentPeriodNumber = -1;
-//     var nextPeriodNumber = -1;
-//     var timeInterval = 5000;
-//     //请求出错次数
-//     var errorCount = 0;
-//     //请求次数
-//     var requireCount = 0;
-//     function afterAwarded() {
-//         var _page = $("#pageName").val();
-//         if (_page) {
-//             var _container = $("#pageName").attr("container");
-//             var _time = $("#pageName").attr("time");
-//             var unload = $("#pageName").attr("unload");
-//             if (unload && unload == "1") return;
-//             _time = ~ ~_time;
-//             _container = _container ? _container : "lot-wrap";
-//
-//             setTimeout(function () {
-//                 $.get('http://m.qx66.com/cqssc/' + _page, { t: Math.random() }, function (text) {
-//                     $('#' + _container).html(text);
-//                     //文字闪烁
-//                     Glitter();
-//                 });
-//             }, _time);
-//         }
-//         else {
-//             var fun = $("#callFun").val();
-//             var _time = $("#callFun").attr("time");
-//             if (fun) {
-//                 var funs = fun.split('|');
-//                 setTimeout(function () {
-//                     for (var i = 0; i < funs.length; i++) {
-//                         window[funs[i]]();
-//                     }
-//                 }, _time);
-//             }
-//         }
-//     }
-//     var awardTick = function () {
-//         $.post('../../cqssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
-//             //计数请求次数
-//             requireCount += 1;
-//
-//             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
-//                 timeInterval = 16000;
-//                 window.setTimeout(afterAwarded, 1000);
-//                 $(".currentAward .period").css("color", "green");
-//                 requireCount = errorCount = 0;
-//                 hideLotPeriodNumWarn();
-//             }
-//             if (timeInterval != 0) {
-//                  if (currentPeriodNumber != -1 ) {    //判断第一次加载
-//
-// 			          var nums = data.current.awardNumbers.split(',');
-// 			  var str = "";
-//                 for (var i = 0; i < nums.length; i++) {
-//
-//                         str = str + '<i class="no' + nums[i] + '">' + nums[i] + '</i>';
-//
-//                 }
-//
-// 					layer.open({
-// 		title: [
-// 		        ''+data.current.awardTime.substring(10, 16)+' 最新第'+data.current.periodNumber+'期开奖号码：',
-// 		        'background-color:#f9f9f9; color:#444;'
-// 		    ],
-// 		    content:'<div class="nums">'+str+'</div>',
-// 	    time: 2
-// 	});
-//                 }
-//                 if (currentPeriodNumber == -1) {    //判断第一次加载
-//                     currentPeriodNumber = data.current.periodNumber;
-//                 }
-//                 currentPeriodNumber = data.current.periodNumber;
-//                 nextPeriodNumber = data.next.periodNumber;
-//
-//
-//             }
-//             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-//
-//             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
-//             timeInterval = 0;
-//
-//             var num = data.current.awardNumbers.split(',');
-//             $("#cqft #number").html('');
-//
-//             html = '<i class="ball-red">'+ num[0] +'</i>' +
-//                 '<i class="ball-red">'+ num[1] +'</i>' +
-//                 '<i class="ball-red">'+ num[2] +'</i>' +
-//                 '<i class="ball-red">'+ num[3] +'</i>' +
-//                 '<i class="ball-red">'+ num[4] +'</i>' ;
-//
-//
-//             var qs = tan(num);
-//             html += '</br><span>'+ qs[0] +'</span><span>'+ qs[1] +'</span><span>'+ qs[2] +'</span>';
-//
-//             $("#cqft #number").html(html);
-//             var qishu = parseInt(data.current.periodNumber1);
-//             $("#cqft .itm-tit #qihao").html('第'+qishu+'期结果');
-//         }, 'json').error(function () {
-//             if (errorCount < 20) {
-//                 window.setTimeout(awardTick, 1000 + Math.random() * 10000);
-//                 errorCount++;
-//             }
-//         });
-//         if (errorCount >= 5 || requireCount > 90) {
-//             showLotPeriodNumWarn(nextPeriodNumber);
-//         }
-//     };
-//
-//     var loadAwardTimesTimer, ctimeOfPeriod = -1;
-//     var cpCurrAwardData = null;
-//     var cpNextAwardTimeInterval = -1;
-//     function loadAwardTimes() {
-//         $.post('../../cqssc/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
-//             //请求到数据后需要做的事情
-//             cpCurrAwardData = data;
-//
-//             //期数不同，则开始封盘倒计时
-//             if (data.current.periodNumber != cpNumber) {
-//                 cpNextAwardTimeInterval = data.next.awardTimeInterval;
-//                 if (countDownTimer) {
-//                     window.clearInterval(countDownTimer);
-//                 }
-//                 countDownTimer = window.setInterval(function () {
-//                     cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval - 1000);
-//
-//                     showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
-//                 }, 1000);
-//             }
-//             cpNumber = data.current.periodNumber;
-//             if (ctimeOfPeriod == -1) {//判断第一次加载
-//                 ctimeOfPeriod = data.current.periodNumber;
-//             }
-//
-//
-//             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
-//         }, 'json').error(function () {
-//             if (errorCount < 20) {
-//                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);
-//                 errorCount++;
-//             }
-//         });
-//         if (errorCount >= 5) {
-//             showLotPeriodNumWarn(nextPeriodNumber);
-//         }
-//     }
-//
-//     window.setTimeout(awardTick, 1000);
-//     //每10秒刷新开奖时间数据
-//     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
-// });
-// function getHistoryData(count,date) {
-// 	layer.open({type: 2,time: 1});
-//     $.get("../../cqssc/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
-//         if(result&&result.rows){
-//         	var j = 0;
-//         	var html = '';
-//         	for(var i in result.rows){
-//         		var data = result.rows[i];
-//         		var clsName = "even";
-//                 if (j%2==0) {
-//                     clsName = "odd";
-//                 }
-//         		html += '<li class="' + clsName + '">';
-// 				html += '<table width="100%">';
-// 				html += '<tr>';
-//         		html += '<td width="20%">' + data.termNum.substring(8, 16) +'期</br>';
-// 				html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
-//                 html += '<td class=""><div class="nums-div">';
-// 				html += '<i class="ball-red">' + data.n1 + '</i>';
-// 				html += '<i class="ball-red">' + data.n2 + '</i>';
-// 				html += '<i class="ball-red">' + data.n3 + '</i>';
-// 				html += '<i class="ball-red">' + data.n4 + '</i>';
-// 				html += '<i class="ball-red">' + data.n5 + '</i>';
-//                 var tan_num = [data.n1,data.n2,data.n3,data.n4,data.n5];
-//                 tan_num = tan(tan_num);
-//                 console.log(tan_num);
-//                 html += '</br><span >'+tan_num[0]+'</span>';
-//                     html += '<span >'+tan_num[1]+'</span>';
-//                     html += '<span>'+tan_num[2]+'</span>';
-//
-//
-//                 var guanyahe = data.n1 + data.n2;
-//                 html += '</div></td>';
-//
-//
-//                 html += '</tr>';
-// 				html += '</table>';
-// 				html += '</li>';
-//                 j++;
-//         	}
-//
-//         	$("#historyList").html(html);
-//         }else {
-// 			 $("#historyList").html("<li>对不起，今天暂无数据，请按日期检索！</li>");
-// 			}
-//     }, "json");
-// }
-//
-//
-//
-// function tan(num) {
-//     var sum = eval(num.join("+"));
-//     sum = sum%4;
-//     if(sum == 0){
-//         sum = 4;
-//     }
-//     var ds;
-//     var dx;
-//     var tan;
-//     tan = sum+'摊';
-//     if(sum%2 ==0){
-//         ds =  '双';
-//     }else {
-//         ds =  '单';
-//     }
-//     if(sum >2 ){
-//         dx =  '大';
-//     }else {
-//         dx =  '小';
-//     }
-//     return [tan,dx,ds];
-// }
+
 
 
 $(function () {
+
+    /*期数*/
+    var issueStr = '';
+
+    $('.chooseIssue').change(function () {
+        issueStr=$(this).val();
+
+        if(issueStr==''){//全部期数
+            $('.openCode').show();
+            return
+        }
+        for (var i=0;i<$('.Issue').length;i++){
+            if( $('.Issue').eq(i).text() == issueStr){
+                $('.Issue').eq(i).parent().parent().parent().show();
+            }else {
+                $('.Issue').eq(i).parent().parent().parent().hide();
+            }
+        }
+    });
+    /*筛选类型*/
+    $('#chooseType a').click(function () {
+
+        $('.sscBall').addClass('sscBallNoColor');
+        $('#chooseType a').removeClass('chooseTypeColor');
+        $(this).addClass('chooseTypeColor');
+
+        if( $(this).text()=='摊1'){
+            for (var i=0;i<$('.sscBall').text().length;i++){
+                if($('.cqft').eq(i).text()== 1){
+
+                    $('.cqft').eq(i).parent().parent().children('div').children('a').removeClass('sscBallNoColor');
+                }
+            }
+        } else if( $(this).text()=='摊2'){
+            for (var i=0;i<$('.sscBall').text().length;i++){
+                if($('.cqft').eq(i).text()== 2){
+                    $('.cqft').eq(i).parent().parent().children('div').children('a').removeClass('sscBallNoColor');
+                }
+            }
+        }else if( $(this).text()=='摊3'){
+            for (var i=0;i<$('.sscBall').text().length;i++){
+                if($('.cqft').eq(i).text()== 3){
+                    $('.cqft').eq(i).parent().parent().children('div').children('a').removeClass('sscBallNoColor');
+                }
+            }
+        }else if( $(this).text()=='摊4'){
+            for (var i=0;i<$('.sscBall').text().length;i++){
+                if($('.cqft').eq(i).text()== 4){
+                    $('.cqft').eq(i).parent().parent().children('div').children('a').removeClass('sscBallNoColor');
+                }
+            }
+        } else if($(this).text()=='号码'){
+            $('.sscBall').removeClass('sscBallNoColor');
+        }
+
+    });
+
+
+
     var currentPeriodNumber = -1;
     var nextPeriodNumber = -1;
     var timeInterval = 5000;
@@ -431,54 +265,24 @@ function getHistoryData(count,date) {
                 html += '<div class="openCode">';
                 html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(4)+'</span>' +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
                 /*数字*/
-                html += '<div>'+'<a class="sscBall">' + data.n1 + '</a>'+
-                    '<a class="ssc'+DXClass(data.n1)+'"  style="display: none">' + DX(data.n1)+ '</a>'+
-                    '<a class="ssc'+DSClass(data.n1)+'"  style="display: none">' + ds(data.n1)+ '</a>'
-                    +'</div>';
-                html += '<div>'+'<a class="sscBall">' + data.n2 + '</a>'+
-                    '<a class="ssc'+DXClass(data.n2)+'"  style="display: none">' + DX(data.n2)+ '</a>'
-                    +'<a class="ssc'+DSClass(data.n2)+'"  style="display: none">' + ds(data.n2)+ '</a>'
-                    +'</div>';
-                html += '<div>'+'<a class="sscBall">' + data.n3 + '</a>'+
-                    '<a class="ssc'+DXClass(data.n3)+'"  style="display: none">' + DX(data.n3)+ '</a>'
-                    +'<a class="ssc'+DSClass(data.n3)+'"  style="display: none">' + ds(data.n3)+ '</a>'
-                    +'</div>';
-                html += '<div>'+'<a class="sscBall">' + data.n4 + '</a>'+
-                    '<a class="ssc'+DXClass(data.n4)+'"  style="display: none">' + DX(data.n4)+ '</a>'
-                    +'<a class="ssc'+DSClass(data.n4)+'"  style="display: none">' + ds(data.n4)+ '</a>'
-                    +'</div>';
-                html += '<div>'+'<a class="sscBall">' + data.n5 + '</a>'+
-                    '<a class="ssc'+DXClass(data.n5)+'"  style="display: none">' + DX(data.n5)+ '</a>'
-                    +'<a class="ssc'+DSClass(data.n5)+'"  style="display: none">' + ds(data.n5)+ '</a>'
-                    +'</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n1 + '</a>'+ '</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n2 + '</a>'+ '</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n3 + '</a>'+ '</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n4 + '</a>'+ '</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n5 + '</a>'+ '</div>';
 
+                var tan_num = [data.n1,data.n2,data.n3,data.n4,data.n5];
+                tan_num = tan(tan_num);
                 var guanyahe = arr_num(data.lotteryNum);
                 var sum = eval(guanyahe.join("+"));
                 html += '<div>'+'<a>'+ sum + '</a>'+'</div>';
+                html += '<div>'+'<a class="sscBall cqft">'+ tan_num + '</a>'+'</div>';
                 html += '<div>'+'<a>'+ dx(sum) + '</a>'+'</div>';
                 html += '<div>'+'<a>'+ ds(sum) + '</a>'+'</div>';
-                html += '<div>'+'<a>'+ long(data.n1,data.n5) + '</a>'+'</div>';
+
 
                 html += '</div>';
-                // html += '<li class="' + clsName + '">';
-                // html += '<table width="100%">';
-                // html += '<tr>';
-                // html += '<td width="20%">' + data.termNum.substring(8, 16) +'期</br>';
-                // html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
-                // html += '<td class=""><div class="nums-div">';
-                // html += '<i class="ball-red">' + data.n1 + '</i>';
-                // html += '<i class="ball-red">' + data.n2 + '</i>';
-                // html += '<i class="ball-red">' + data.n3 + '</i>';
-                // html += '<i class="ball-red">' + data.n4 + '</i>';
-                // html += '<i class="ball-red">' + data.n5 + '</i>';
 
-                // html += '<div class="bt-jg"><span>'+long(data.n1,data.n5)+'</span><span style="color: #bbbbbb">|</span><span>'+ sum +'</span><span>'+ dx(sum)+'</span><span>'+ds(sum)+'</span>'+
-                //     '</br><span class="span-2">'+shun(data.n1,data.n2,data.n3)+'</span><span class="span-2">'+shun(data.n2,data.n3,data.n4)+'</span>' +
-                //     '<span class="span-2">'+shun(data.n3,data.n4,data.n5)+'</span><span class="span-2">'+douniu(guanyahe)+'</span></div></div></td>';
-
-                // html += '</tr>';
-                // html += '</table>';
-                // html += '</li>';
                 j++;
             }
             $("#historyList").html(html);
@@ -706,28 +510,15 @@ function lh(nums) {
 }
 
 
-// function tan(num) {
-//     var sum = eval(num.join("+"));
-//     sum = sum%4;
-//     if(sum == 0){
-//         sum = 4;
-//     }
-//     var ds;
-//     var dx;
-//     var tan;
-//     tan = sum+'摊';
-//     if(sum%2 ==0){
-//         ds =  '双';
-//     }else {
-//         ds =  '单';
-//     }
-//     if(sum >2 ){
-//         dx =  '大';
-//     }else {
-//         dx =  '小';
-//     }
-//     return [tan,dx,ds];
-// }
+function tan(num) {
+    var sum = eval(num.join("+"));
+    sum = sum%4;
+    if(sum == 0){
+        sum = 4;
+    }
+    return sum
+
+}
 
 
 

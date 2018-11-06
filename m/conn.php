@@ -50,7 +50,7 @@ if(strpos($self,"xyft")){
     $name = 48;
 }else{
     $name = 20;
-	$web_type = "北京赛车PK10";
+	$web_type = "北京pk10";
 }
 $dbcon = include(APP_PATH."/Application/Common/Conf/config.php");
 $con = mysqli_connect($dbcon['DB_HOST'],$dbcon['DB_USER'],$dbcon['DB_PWD']);
