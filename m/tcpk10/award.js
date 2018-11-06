@@ -203,7 +203,7 @@ function getHistoryData(count,date) {
                 // if (j%2==0) {
                 //     clsName = "odd";
                 // }
-                $('.chooseIssue').append('<option value="'+data.termNum+'">'+data.termNum+'</option>');
+                $('.chooseIssue').append('<option value="'+data.termNum.substr(4)+'">'+data.termNum.substr(4)+'</option>');
                 html += '<div class="openCode">';
                 html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(4) +'</span>'+'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
                 html += '<div>'+'<a class="no' + data.n1 + '"'+'name'+'='+'"'+long(data.n1,data.n10 )+'"'+'>' + data.n1 + '</a>'

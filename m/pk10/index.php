@@ -199,8 +199,6 @@ include("../conn.php");
 
     });
 
-
-
     /*期数*/
     var issueStr = '';
     var arr=[];
@@ -260,10 +258,10 @@ include("../conn.php");
     });
     /*筛选数字*/
     $('#chooseNum a').click(function () {
-
         $('.openCode a').addClass('pk10BallNoColor');
         $('#chooseType2 a').removeClass('chooseTypeColor');
         if($.inArray($(this).text(),arr)!= -1){
+
             $(this).removeClass('chooseTypeColor');
             arr.splice($.inArray($(this).text(), arr), 1)
         }else {
@@ -335,18 +333,15 @@ include("../conn.php");
     })
     //搜索
     function Search() {
-        issueStr = '';
         arr=[];
+        issueStr = '';
         $('#chooseNum a').removeClass('chooseTypeColor');
-        $('.openCode a').removeClass('pk10BallNoColor');
-        $('.choose').hide();
+        $('#chooseType2 a').removeClass('chooseTypeColor');
         $('.openCode a').show();
         $('.pk10Da').hide();
         $('.pk10Xiao').hide();
         $('.pk10Dan').hide();
         $('.pk10Shuang').hide();
-
-
         getHistoryData('15', $("#dateTime").val());
         $(".dataYMD").html( $("#dateTime").val());
         $('.dataWeed').html(getWeed($("#dateTime").val()))
