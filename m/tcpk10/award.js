@@ -42,7 +42,8 @@ $(function () {
         $.post('../../tcpk10/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
             var nextOpenIssue = Number(data.next.periodNumber)+1;
             var nextOpenTime =data.next.awardTime.substr(11,5);
-            $('.nextOpenIssue').html(nextOpenIssue);
+            var nextOpenIssues = nextOpenIssue.toString().substr(4);
+            $('.nextOpenIssue').html(nextOpenIssues);
             $('.nextOpenTime').html(nextOpenTime);
             $('.openIssue').html(data.current.periodNumber);
             $('.residueIssue').html(data.current.surplus_num);
@@ -204,7 +205,7 @@ function getHistoryData(count,date) {
                 // }
                 $('.chooseIssue').append('<option value="'+data.termNum+'">'+data.termNum+'</option>');
                 html += '<div class="openCode">';
-                html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum +'</span>'+'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+                html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(4) +'</span>'+'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
                 html += '<div>'+'<a class="no' + data.n1 + '"'+'name'+'='+'"'+long(data.n1,data.n10 )+'"'+'>' + data.n1 + '</a>'
                 +'<a class="pk10'+DXClass(data.n1)+'"  style="display: none">' + DX(data.n1)+ '</a>'
                 +'<a class="pk10'+DSClass(data.n1)+'"  style="display: none">' + ds(data.n1)+ '</a>'

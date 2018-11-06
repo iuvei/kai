@@ -204,7 +204,7 @@ function getHistoryData(count,date) {
                 // }
                 $('.chooseIssue').append('<option value="'+data.termNum+'">'+data.termNum+'</option>');
                 html += '<div class="openCode">';
-                html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum +'</span>'+'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+                html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(4) +'</span>'+'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
                 html += '<div>'+'<a class="no' + data.n1 + '"'+'name'+'='+'"'+long(data.n1,data.n10 )+'"'+'>' + data.n1 + '</a>'
                 +'<a class="pk10'+DXClass(data.n1)+'"  style="display: none">' + DX(data.n1)+ '</a>'
                 +'<a class="pk10'+DSClass(data.n1)+'"  style="display: none">' + ds(data.n1)+ '</a>'
