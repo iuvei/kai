@@ -22,9 +22,6 @@ $cid = 42;
     <link type="text/css" href="../style/css/style.css" rel="stylesheet">
 
 
-
-
-
 </head>
 <body>
 
@@ -107,7 +104,7 @@ $cid = 42;
 
 </div>
 <div class="list">
-    <iframe src="/v2/jspk10" style="    width: 100%;height: 205px">
+    <iframe src="/v2/sfpk10" style="    width: 100%;height: 220px">
 
     </iframe>
 
