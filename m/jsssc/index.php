@@ -65,7 +65,7 @@ include("../conn.php");
 
 <div class="head">
     <div class="headRow1">
-        <input type="date" id="dateTime" onchange="Search()">
+        <input type="date" id="dateTime" >
         <div><a class="dataYMD"></a><a class="dataWeed"></a></div>
         <select class="chooseIssue">
             <option value="">全部期数</option>
@@ -202,16 +202,7 @@ $(function () {
 
 
 });
-//搜索
 
-
-function Search() {
-	
-	getHistoryData('50', $("#dateTime").val());
-    $(".dataYMD").html( $("#dateTime").val());
-    $('.dataWeed').html(getWeed($("#dateTime").val()))
-	return false;
-}
 //刷新
 function refresh(){
 

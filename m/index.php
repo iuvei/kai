@@ -139,9 +139,9 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 
 
 
-            <li><a href="pk10/" game="pk10" class="">北京pk10</a></li>
-            <li><a href="sfpk10/" game="jssc">三分pk10</a></li>
-            <li><a href="tcpk10/" game="tcpk10">极速pk10</a></li>
+            <li><a href="pk10/" game="pk10" class="">北京PK10</a></li>
+            <li><a href="sfpk10/" game="jssc">三分PK10</a></li>
+            <li><a href="tcpk10/" game="tcpk10">极速PK10</a></li>
             <li><a href="xyft/" game="xyft">幸运飞艇</a></li>
             <li><a href="cqssc/" game="cqssc">重庆时时彩</a></li>
             <li><a href="tcssc/" game="tcssc">极速时时彩</a></li>
@@ -177,7 +177,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 <!--	                <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pk10"></span></div>-->
 	                <div class="kaij-mylist-r">
 	                    <div class="kaij-mylist-hd">
-                            <div class="yx_name"> 北京pk10</div>
+                            <div class="yx_name"> 北京PK10</div>
 	                        <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
 	                        <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
 	                    </div>
@@ -207,7 +207,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 <!--                     <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xync"></span></div>-->
         <div class="kaij-mylist-r">
             <div class="kaij-mylist-hd">
-                <div  class="yx_name">三分pk10
+                <div  class="yx_name">三分PK10
                 </div>
                 <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
                 <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
@@ -236,7 +236,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
         <!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-tcpk10"></span></div>-->
         <div class="kaij-mylist-r">
             <div class="kaij-mylist-hd">
-                <div class="yx_name">极速pk10
+                <div class="yx_name">极速PK10
                 </div>
                 <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
                 <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
@@ -437,7 +437,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
         </a>
     </li>
     <li class="kaij-mylist-li" id="pc28">
-        <a  class="yx_a">
+        <a href="pc28/" class="yx_a">
 
         <!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pc28"></span></div>-->
         <div class="kaij-mylist-r">

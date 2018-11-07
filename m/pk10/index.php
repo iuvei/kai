@@ -88,7 +88,7 @@ include("../conn.php");
         <div class="itm-time">开奖时间<a class="nextOpenTime" id="time"></a></div>
     </div>
 </div>
-<div class="choose" id="chooseNum">
+<div class="choose" id="chooseNum" style="display: none">
     <div class="chooseRow1">
         <a>1</a>
         <a>2</a>
@@ -115,7 +115,7 @@ include("../conn.php");
     <a>号码</a>
     <a>大小</a>
     <a>单双</a>
-   <!-- <a>组合</a>-->
+  <!--  <a>组合</a>-->
     <a>筛选</a>
 </div>
 <div class="BallNum">
@@ -133,43 +133,20 @@ include("../conn.php");
         <a>十</a>
     </div>
 </div>
+<div class="BallNum zuhe" style="display: none">
+    <div class="BallNumHead">
+        <a class="issue">期号</a>
+        <a>组合</a>
+        <a>组合</a>
+        <a>组合</a>
+        <a>冠军</a>
+        <a>亚军</a>
+        <a>季军</a>
+        <a>第四</a>
+        <a>第五</a>
+    </div>
+</div>
 <div id="historyList"></div>
-<!--<div class="openCode">
-    <div class="qihao">
-        <div>23:15</div>
-        <div>12345678</div>
-    </div>
-    <div>
-        <a class="no1">2</a>
-    </div>
-    <div>
-        <a class="no1">3</a>
-    </div>
-    <div>
-        <a class="no1">4</a>
-    </div>
-    <div>
-        <a class="no1">5</a>
-    </div>
-    <div>
-        <a class="no1">6</a>
-    </div>
-    <div>
-        <a class="no1">7</a>
-    </div>
-    <div>
-        <a class="no1">8</a>
-    </div>
-    <div>
-        <a class="no1">9</a>
-    </div>
-    <div>
-        <a class="no1">10</a>
-    </div>
-    <div>
-        <a class="no1">10</a>
-    </div>
-</div>-->
 
 <?php include("../public/footer.php"); ?>
 
@@ -230,6 +207,8 @@ include("../conn.php");
         $(this).addClass('chooseTypeColor');
         if( $(this).text()=='筛选'){
             $('.openCode a').show();
+            $('.BallNum').show();
+            $('.zuhe').hide();
             $('.pk10Da').hide();
             $('.pk10Xiao').hide();
             $('.pk10Dan').hide();
@@ -237,22 +216,33 @@ include("../conn.php");
             $('.choose').show();
         }else if($(this).text()=='大小'){
             $('.openCode a').hide();
+            $('.BallNum').show();
+            $('.zuhe').hide();
             $('.pk10Dan').hide();
             $('.pk10Shuang').hide();
             $('.pk10Da').show();
             $('.pk10Xiao').show();
         }else if($(this).text()=='单双'){
             $('.openCode a').hide();
+            $('.BallNum').show();
+            $('.zuhe').hide();
             $('.pk10Da').hide();
             $('.pk10Xiao').hide();
             $('.pk10Dan').show();
             $('.pk10Shuang').show();
         }else if($(this).text()=='号码'){
             $('.openCode a').show();
+            $('.BallNum').show();
+            $('.zuhe').hide();
             $('.pk10Da').hide();
             $('.pk10Xiao').hide();
             $('.pk10Dan').hide();
             $('.pk10Shuang').hide();
+        } else if($(this).text()=='组合'){
+            $('.openCode a').hide();
+            $('.BallNum').hide();
+            $('.zuhe').show();
+
         }
 
     });
@@ -329,14 +319,14 @@ include("../conn.php");
                 }
             }
         }
-
-    })
+    });
     //搜索
     function Search() {
         arr=[];
         issueStr = '';
         $('#chooseNum a').removeClass('chooseTypeColor');
         $('#chooseType2 a').removeClass('chooseTypeColor');
+        $('#chooseType a').removeClass('chooseTypeColor');
         $('.openCode a').show();
         $('.pk10Da').hide();
         $('.pk10Xiao').hide();

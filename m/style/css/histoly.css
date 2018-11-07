@@ -470,6 +470,9 @@ body{color: #333;background-color: #fff;}
 .BallNumHead .KJJG{
     flex: 5;
 }
+.openIssue,.residueIssue,.totalIssue{
+    color: #db4a58;
+}
 
 
 

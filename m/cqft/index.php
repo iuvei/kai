@@ -183,7 +183,7 @@ include("../conn.php");
 
 
     function Search() {
-
+        $('.choose2 a').removeClass('chooseTypeColor');
         getHistoryData('50', $("#dateTime").val());
         $(".dataYMD").html( $("#dateTime").val());
         $('.dataWeed').html(getWeed($("#dateTime").val()))

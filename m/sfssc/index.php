@@ -205,13 +205,7 @@ $(function () {
 //搜索
 
 
-function Search() {
-	
-	getHistoryData('50', $("#dateTime").val());
-    $(".dataYMD").html( $("#dateTime").val());
-    $('.dataWeed').html(getWeed($("#dateTime").val()))
-	return false;
-}
+
 //刷新
 function refresh(){
 

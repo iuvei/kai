@@ -40,7 +40,14 @@ $(function () {
             }
         }
     });
+    $('#dateTime').change(function () {
+        $('.choose2 a').removeClass('chooseTypeColor')
+        getHistoryData('50', $("#dateData").val());
+        $(".dataYMD").html( $("#dateTime").val());
+        $('.dataWeed').html(getWeed($("#dateTime").val()))
+        return false;
 
+    });
 
 
 

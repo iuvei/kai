@@ -123,16 +123,9 @@ $(function () {
     getHistoryData('50','');
 
 });
-//搜索
 
 
-function Search() {
-	
-	getHistoryData('50', $("#dateData").val());
-    $(".dataYMD").html( $("#dateTime").val());
-    $('.dataWeed').html(getWeed($("#dateTime").val()))
-	return false;
-}
+
 //刷新
 function refresh(){
 
