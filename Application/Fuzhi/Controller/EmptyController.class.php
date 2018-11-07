@@ -362,55 +362,55 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                 if ($name == "shipin") {
 				 switch ($ctrlName) {
                     case 'pk10':
-					    $swfurl = "v2/bjpk10";
+					    $swfurl = "/v2/bjpk10?t=20181107";
                         break;
                     case 'cqssc':
-					    $swfurl = "v2/cqssc";
+					    $swfurl = "/v2/cqssc";
                         break;
 						case 'gd11x5':
-						$swfurl = "v2/gd11x5";
+						$swfurl = "/v2/gd11x5";
                         break;
 						case 'xyft':
-						$swfurl = "v2/xyft";
+						$swfurl = "/v2/xyft";
                         break;
 						case 'bjft':
-						$swfurl = "v2/bjft";
+						$swfurl = "/v2/bjft";
                         break;
 						case 'cqft':
-						$swfurl = "v2/cqft";
+						$swfurl = "/v2/cqft";
                         break;
                     case 'gdkl10':
-					    $swfurl = "v2/gdklsf";
+					    $swfurl = "/v2/gdklsf";
                         break;
                     case 'jsk3':
-						$swfurl = "v2/jsk3";
+						$swfurl = "/v2/jsk3";
                         break;
                      case 'jsssc':
-                         $swfurl = "v2/jkssc";
+                         $swfurl = "/v2/jkssc";
                          break;
                      case 'jssc':
-                         $swfurl = "v2/jkpk10";
+                         $swfurl = "/v2/jkpk10";
                          break;
                      case 'pc28':
-                         $swfurl = "v2/jnd28";
+                         $swfurl = "/v2/jnd28";
                          break;
                      case 'txffc':
-                         $swfurl = "v2/txffc";
+                         $swfurl = "/v2/txffc";
                          break;
                      case 'tcpk10':
-                         $swfurl = "v2/jspk10";
+                         $swfurl = "/v2/jspk10";
                          break;
                      case 'tcssc':
-                         $swfurl = "v2/jsssc";
+                         $swfurl = "/v2/jsssc";
                          break;
                      case 'sfpk10':
-                     $swfurl = "v2/sfpk10";
+                     $swfurl = "/v2/sfpk10";
                          break;
                      case 'sfssc':
-                     $swfurl = "v2/sfssc";
+                     $swfurl = "/v2/sfssc";
                          break;
                     default:
-					    $swfurl = "v2/bjpk10";
+					    $swfurl = "/v2/bjpk10";
                         break;
                 }
 					$this->assign('swfurl', $swfurl);
