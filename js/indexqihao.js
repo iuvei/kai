@@ -116,10 +116,13 @@ function indexdata() {
             cpNumber = data.current.periodNumber;
             var _time = data.current.awardTime.substring(11, 16);
             //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
+
             $("#pk10_hot .drawCount").html(cpNumber);
+            $("#pk10_hot .sdrawCountnext").html(179-Number(cpNumber));
+            $("#pk10_hot .preDrawIssue").html(Number(data.firstPeriod) + 179 - cpNumber);
             $("#pk10 .drawCount").html(cpNumber);
-            $("#pk10_hot .sdrawCountnext").html(Number(data.firstPeriod) + 179 - cpNumber);
-            $("#pk10 .sdrawCountnext").html(Number(data.firstPeriod) + 179 - cpNumber);
+            $("#pk10 .sdrawCountnext").html(179-Number(cpNumber));
+            $("#pk10 .preDrawIssue").html(Number(data.firstPeriod) + 179 - cpNumber);
         });
 }
     function f12() {
@@ -198,6 +201,8 @@ function indexdata() {
                 var _time = data.current.awardTime.substring(11, 16);
                 //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
                 //      var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-3);
+
+                $("#xyft .preDrawIssue").html((Number(data.firstPeriod) + 180 - cpNumber).toString().substr(4));
                 $("#xyft .drawCount").html(cpNumber);
                 $("#xyft .sdrawCountnext").html(180 - cpNumber);
 
@@ -311,10 +316,14 @@ function indexdata() {
                 $("#cqSsc .longhu2").find(".suoha").text(suo);
                 cpNumber = data.current.periodNumber;
                 var _time = data.current.awardTime.substring(11, 16);
-                $("#cqSsc .num_ul .drawCount").html(cpNumber);
-                $("#cqSsc_hot .num_ul .drawCount").html(cpNumber);
-                $("#cqSsc .num_ul .sdrawCountnext").html(120 - cpNumber);
-                $("#cqSsc_hot .num_ul .sdrawCountnext").html(120 - cpNumber);
+
+
+                $("#cqSsc .num_ul .preDrawIssue").html((Number(data.firstPeriod) + 120 - cpNumber).toString().substr(4));
+                $("#cqSsc_hot .num_ul .preDrawIssue").html((Number(data.firstPeriod) + 120 - cpNumber).toString().substr(4));
+                 $("#cqSsc .num_ul .drawCount").html(cpNumber);
+                 $("#cqSsc_hot .num_ul .drawCount").html(cpNumber);
+                 $("#cqSsc .num_ul .sdrawCountnext").html(120 - cpNumber);
+                 $("#cqSsc_hot .num_ul .sdrawCountnext").html(120 - cpNumber);
             });
     }
 
@@ -591,9 +600,14 @@ function indexdata() {
                 }
                 cpNumber = data.current.periodNumber;
                 var _time = data.current.awardTime.substring(11, 16);
-                $("#cqft .preDrawIssue").html(120);
+
+
+                $("#cqft .preDrawIssue").html(data.current.periodNumber1.toString().substr(4));
                 $("#cqft .drawCount").html(cpNumber);
                 $("#cqft .sdrawCountnext").html(120 - cpNumber);
+                /*$("#cqft .preDrawIssue").html(120);
+                $("#cqft .drawCount").html(cpNumber);
+                $("#cqft .sdrawCountnext").html(120 - cpNumber);*/
 
             });
     }
@@ -658,8 +672,13 @@ function indexdata() {
                 var _time = data.current.awardTime.substring(11, 16);
                 //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
                 //      var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-3);
+               /* $("#bjft .drawCount").html(cpNumber);
+                $("#bjft .sdrawCountnext ").html(Number(data.firstPeriod) + 179 - cpNumber);*/
+
+                $("#bjft .preDrawIssue").html(data.current.periodNumber1);
                 $("#bjft .drawCount").html(cpNumber);
-                $("#bjft .sdrawCountnext ").html(Number(data.firstPeriod) + 179 - cpNumber);
+                $("#bjft .sdrawCountnext").html(179 - cpNumber);
+
             });
     }
 
@@ -732,7 +751,7 @@ function indexdata() {
 
                 var cpNumber = data.current.periodNumber;
                 var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length - 3);
-                //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
+                $("#gd11x5 .preDrawIssue").html(data.current.periodNumber1.toString().substr(4));
                 $("#gd11x5 .drawCount").html(number);
                 $("#gd11x5 .sdrawCountnext").html(85 - number);
 
@@ -796,10 +815,10 @@ function indexdata() {
                 var cpNumber = data.current.periodNumber;
                 // var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-2);
 
-                //  $("#kuai3 .preDrawIssue").html(cpNumber);
+                $("#kuai3 .preDrawIssue").html(data.current.periodNumber1.toString().substr(4));
                 $("#kuai3 .drawCount").html(cpNumber);
                 $("#kuai3 .sdrawCountnext").html(82 - cpNumber);
-
+                //  $("#kuai3 .preDrawIssue").html(cpNumber);
             });
     }
     function f3() {
@@ -855,9 +874,9 @@ function indexdata() {
                 // var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-2);
 
                 //  $("#kuai3 .preDrawIssue").html(cpNumber);
+                $("#pc28 .preDrawIssue").html(data.current.periodNumber1+"期");
                 $("#pc28 .drawCount").html(cpNumber);
                 // $("#pc28 .sdrawCountnext").html(82 - cpNumber);
-
             });
     }
     function f2() {
@@ -946,8 +965,9 @@ function indexdata() {
                 var _time = data.current.awardTime.substring(11, 16);
                 //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
                 var number = data.current.periodNumber;
+                $("#txffc .preDrawIssue").html(data.current.periodNumber1.toString().substr(4))
                 $("#txffc .drawCount").html(number);
-                $("#txffc .sdrawCountnext").html(1440 - cpNumber);
+                $("#txffc .sdrawCountnext").html(data.current.surplus_num);
             });
     }
 

@@ -49,7 +49,7 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
             if (timeInterval != 0) {
-                $(".currentAward .period").html(parseInt(data.current.periodNumber) + " 期");
+                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
                 var nums;
                 var str = "";
                 if(data.current.awardNumbers != null)
