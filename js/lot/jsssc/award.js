@@ -116,7 +116,7 @@ $(function () {
                 var nd = new Date(data.next.awardTime.split(' ')[0].replace("-", "/", "gi"));
                 if (d.getDate() == nd.getDate()) leavePeriod = 120;
             }
-            $(" .lot-award .currentAward .period-info .period-leave").html((Number(leavePeriod)+1));
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
         }, 'json').error(function () {
             if (errorCount < 20) {

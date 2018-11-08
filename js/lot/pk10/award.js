@@ -116,7 +116,7 @@ $(function () {
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
             $(".warnTime #period").html("第" + (parseInt(data.next.periodNumber)+1) + "期");
-            $(" .lot-award .currentAward .period-info .period-leave").html(data.firstPeriod+179-cpNumber);
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
              
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
         }, 'json').error(function () {
