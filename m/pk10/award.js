@@ -142,6 +142,7 @@ $(function () {
             var qishu = parseInt(data.current.periodNumber);
             $("#pk10 .itm-tit #qihao").html('第'+qishu+'期结果');
 
+
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(awardTick, 1000 + Math.random() * 10000);
