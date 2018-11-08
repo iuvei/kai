@@ -61,9 +61,10 @@
         <div class="list">
     
         <ul>
-		<volist name="lists" id="data">
+			<p style="text-align: center">敬请期待！</p>
+	<!--	<volist name="lists" id="data">
                                     <li><span>{$data.create_time|date="Y-m-d",###}</span><a target="_blank" href="jiqiao/{$lottory}/{$data['id']}.html" >{$data.title}</a> </li>
-                            </volist>
+                            </volist>-->
 	
         </ul>
         </div>
@@ -71,14 +72,14 @@
         <div class="pages">{$_page}</div>
 	</div>
 	<div class="article_right">
-	
+
 	<div class="sideMenu" style="margin:0 auto">
 			<h3 style="background:#f9f9f9;" class="on"><em></em>北京pk10开奖号码</h3>
 			<ul style="display: block;">
 			 <volist name="list_pk10" id="data">
 			 <li>
                     <div class="openinfo"><span class="fl">第{$data.dat_expect}期</span> <span class="fr">
-					<?php 
+					<?php
 					echo date("H:i",$data["dat_open_time"]);
                     $numarr = explode(",",$data["dat_codes"]);
 					?></span></div>
@@ -95,7 +96,7 @@
                     	<span><?=$numarr[9]?></span>
                     </div>
                 </li>
-            </volist> 
+            </volist>
 
 			</ul>
 
@@ -105,7 +106,7 @@
 			<volist name="list_cqssc" id="data">
 				<li>
                     <div class="openinfo"><span class="fl">第{$data.dat_expect}期</span> <span class="fr">
-					<?php 
+					<?php
 					echo date("H:i",$data["dat_open_time"]);
                     $numarr = explode(",",$data["dat_codes"]);
 					?>
@@ -116,10 +117,10 @@
                     	<span><?=$numarr[2]?></span>
                     	<span><?=$numarr[3]?></span>
                     	<span><?=$numarr[4]?></span>
-                 
+
                     </div>
-                </li>	
- </volist> 
+                </li>
+ </volist>
  </ul>
 
 
@@ -128,7 +129,7 @@
 			<volist name="list_gdkl10" id="data">
 				<li>
                     <div class="openinfo"><span class="fl">第{$data.dat_expect}期</span> <span class="fr">
-					<?php 
+					<?php
 					echo date("H:i",$data["dat_open_time"]);
                     $numarr = explode(",",$data["dat_codes"]);
 					?>
@@ -142,10 +143,10 @@
 						<span><?=$numarr[5]?></span>
                     	<span><?=$numarr[6]?></span>
                     	<span><?=$numarr[7]?></span>
-                 
+
                     </div>
-                </li>	
- </volist> 
+                </li>
+ </volist>
  </ul>
 
  <h3><em></em>广东11选5开奖号码</h3>
@@ -153,7 +154,7 @@
 			<volist name="list_gd11x5" id="data">
 				<li>
                     <div class="openinfo"><span class="fl">第{$data.dat_expect}期</span> <span class="fr">
-					<?php 
+					<?php
 					echo date("H:i",$data["dat_open_time"]);
                     $numarr = explode(",",$data["dat_codes"]);
 					?>
@@ -165,15 +166,15 @@
                     	<span><?=$numarr[3]?></span>
                     	<span><?=$numarr[4]?></span>
                     </div>
-                </li>	
- </volist> 
+                </li>
+ </volist>
  </ul>
 			<h3 style="border-bottom:none"><em></em>江苏快三开奖号码</h3>
 			<ul>
 			<volist name="list_jsk3" id="data">
 				<li>
                     <div class="openinfo"><span class="fl">第{$data.dat_expect}期</span> <span class="fr">
-					<?php 
+					<?php
 					echo date("H:i",$data["dat_open_time"]);
                     $numarr = explode(",",$data["dat_codes"]);
 					?>
@@ -182,58 +183,58 @@
                     	<span><?=$numarr[0]?></span>
                     	<span><?=$numarr[1]?></span>
                     	<span><?=$numarr[2]?></span>
-                 
+
                     </div>
-                </li>	
- </volist> 
+                </li>
+ </volist>
  </ul>
 
 		</div>
-		
+
 		<script type="text/javascript">
 			var ary = location.href.split("&");
 			jQuery(".sideMenu").slide({titCell:"h3", targetCell:"ul",defaultIndex:2,effect:"slideDown",delayTime:300,returnDefault:true});
 		</script>
-		
-		
+
+
     <div class="video_list">
-    
+
      <h3>视频开奖直播</h3>
         <ul class="picList">
           <li>
             <div class="pic"><a href="/pk10/shipin" target="_blank"> <img src="/style/images/pk10v.jpg"></a></div>
-            
+
             <div class="title"><b id="bpk10-time"></b>秒后直播</div>
           </li>
 
           <li>
-            <div class="pic"><a href="/cqssc/shipin" target="_blank"><img src="/style/images/cqsscv.jpg"></a> 
+            <div class="pic"><a href="/cqssc/shipin" target="_blank"><img src="/style/images/cqsscv.jpg"></a>
             </div>
-            
+
             <div class="title"><b id="bcqssc-time"></b>秒后直播</div>
           </li>
           <li>
             <div class="pic"><a href="/gdkl10/shipin" target="_blank"><img src="/style/images/gdkl10v.jpg"></a>
             </div>
-            
+
             <div class="title"><b id="bgdkl10-time"></b>秒后直播</div>
           </li>
           <li>
             <div class="pic"><a href="/gd11x5/shipin" target="_blank"><img src="/style/images/gd11x5v.jpg"></a>
             </div>
-            
+
             <div class="title"><b id="bgd11x5-time"></b>秒后直播</div>
           </li>
           <li>
             <div class="pic"><a href="/jsk3/shipin" target="_blank"><img src="/style/images/jsk3v.jpg"></a>
             </div>
-            
+
             <div class="title"><b id="bjsk3-time"></b>秒后直播</div>
           </li>
         </ul>
-  
+
     </div>
-	
+
 	</div>
 </div>
 

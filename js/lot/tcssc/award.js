@@ -104,7 +104,9 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
+            $xiayiqi = parseInt(data.current.periodNumber1)+1;
+
+            $(".warnTime #period").html("第" + $xiayiqi + "期");
             console.log(cpNumber)
             /*var leavePeriod = 1152 - (cpNumber.cpNumber.length-4);
 
