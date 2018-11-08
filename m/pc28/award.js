@@ -51,36 +51,34 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
 
-            var nextOpenIssue = Number(data.current.periodNumber1)+1;
-            var nextOpenIssue = nextOpenIssue.toString();
-            var nextOpenTime =data.next.awardTime.substr(11,5);
-            $('.nextOpenIssue').html(nextOpenIssue);
-            $('.nextOpenTime').html(nextOpenTime);
 
-            $('.openIssue').html(data.current.periodNumber);
-            $('.residueIssue').html(data.current.surplus_num);
-            $('.totalIssue').html(data.current.current_num);
+            var nextOpenIssue = (Number(data.next.periodNumber)+1);
+            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
+            $('.newIssue span').html(data.current.periodNumber1);
+            $('.nextIssue span').html(nextOpenIssue);
+            $('.periodNumber').html(data.current.periodNumber);
+            $('.surplus_num').html(data.current.surplus_num);
+
+            var nums = data.current.awardNumbers.split(',');
+            var  dat =  shuju(nums);
+            var str=''
+            str = str + '<a class="ball-red">' + dat[0] + '</a>';
+            str = str + '<a class="ball-red">' + dat[1] + '</a>';
+            str = str + '<a class="ball-red">' + dat[2] + '</a>';
+            str = str + '<div class="sscLH">';
+            str = str + '<a>' + dat[3] + '</a>';
+            str = str + '<a>' + dat[4] + '</a>';
+            str = str + '<a>' + dat[5] + '</a>';
+            str = str + '<a>' + dat[6] + '</a>';
+            str = str + '</div>';
+
+            $('.openCodeList').html(str)
 
 
             if (timeInterval != 0) {
                  if (currentPeriodNumber != -1 ) {    //判断第一次加载
-              
-			          var nums = data.current.awardNumbers.split(',');
-			  var str = "";
-                for (var i = 0; i < nums.length; i++) {
-                    
-                        str = str + '<i class="no' + nums[i] + '">' + nums[i] + '</i>';
-                   
-                }
-				
-					layer.open({
-		title: [
-		        ''+data.current.awardTime.substring(10, 16)+' 最新第'+data.current.periodNumber+'期开奖号码：',
-		        'background-color:#f9f9f9; color:#444;'
-		    ],			
-		    content:'<div class="nums">'+str+'</div>',
-	    time: 2
-	});
+
+                     window.setTimeout(getHistoryData('50'), (data.next.awardTimeInterval*1000) < 10 ? 1000 : _time);
                 }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
                     currentPeriodNumber = data.current.periodNumber;
@@ -90,27 +88,10 @@ $(function () {
 				
                 
             }
-            var _time = parseInt(parseInt(data.next.awardTimeInterval*1000) + timeInterval + parseInt(Math.random() * 3000));
+
 		
             window.setTimeout(awardTick, (data.next.awardTimeInterval*1000) < 10 ? 1000 : _time);
             timeInterval = 0;
-            var num = data.current.awardNumbers.split(',');
-            // console.log(num);
-            var  dat =  shuju(num);
-            $("#pc28 #number").html('');
-            var  html =  '<i class="ball-red" style="background-color: #ff7b00;color: #fff;">'+ dat[0] +'</i>' +
-                '<i class="ball-red" style="background-color: #fff;color: #5a5a5a">+</i>' +
-                '<i class="ball-red" style="background-color: #ff7b00;color: #fff;">'+ dat[1] +'</i>' +
-                '<i class="ball-red" style="background-color: #fff;color: #5a5a5a">+</i>' +
-                '<i class="ball-red" style="background-color: #ff7b00;color: #fff;">'+ dat[2] +'</i>' +
-                '<i class="ball-red" style="background-color: #fff;color: #5a5a5a">=</i>' +
-                '<i class="ball-red" style="background-color: #4d4d4d;color: #fff;">'+ dat[3] +'</i>' +
-                '<span class="ball-red">'+ dat[4] +'</span>' +
-                '<span class="ball-red">'+ dat[5] +'</span>' +
-                '<span class="ball-red">'+ dat[6] +'</span>';
-            $("#pc28 #number").html(html);
-            var qishu = parseInt(data.current.periodNumber);
-            $("#pc28 .itm-tit #qihao").html('第'+qishu+'期结果');
 
         }, 'json').error(function () {
             if (errorCount < 20) {

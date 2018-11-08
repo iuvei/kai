@@ -39,17 +39,27 @@ $(function () {
         }
     }
     var awardTick = function () {
+
         $.post('../../pk10/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
             var nextOpenIssue = Number(data.next.periodNumber)+1;
-            var nextOpenTime =data.next.awardTime.substr(11,5);
-            $('.nextOpenIssue').html(nextOpenIssue);
-            $('.nextOpenTime').html(nextOpenTime);
-            $('.openIssue').html(data.current.periodNumber);
-            $('.residueIssue').html(data.current.surplus_num);
-            $('.totalIssue').html(data.current.current_num);
+            // var nextOpenTime =data.next.awardTime.substr(11,5);
+            // $('.nextOpenIssue').html(nextOpenIssue);
+            // $('.nextOpenTime').html(nextOpenTime);
+            // $('.openIssue').html(data.current.periodNumber);
+            // $('.residueIssue').html(data.current.surplus_num);
+            // $('.totalIssue').html(data.current.current_num);
 
 
-
+            $('.newIssue span').html(data.current.periodNumber1);
+            $('.nextIssue span').html(nextOpenIssue);
+            $('.periodNumber').html(data.current.periodNumber);
+            $('.surplus_num').html(data.current.surplus_num);
+            var nums = data.current.awardNumbers.split(',');
+            var str = "";
+            for (var i = 0; i < nums.length; i++) {
+                str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
+            }
+            $('.openCodeList').html(str)
 
             //计数请求次数
             requireCount += 1;
@@ -63,28 +73,8 @@ $(function () {
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
             if (timeInterval != 0) {
                  if (currentPeriodNumber != -1 ) {    //判断第一次加载
+                     window.setTimeout(getHistoryData('15'), data.next.awardTimeInterval < 10 ? 1000 : _time);
 
-
-
-
-
-              
-	// 		          var nums = data.current.awardNumbers.split(',');
-	// 		  var str = "";
-    //             for (var i = 0; i < nums.length; i++) {
-    //
-    //                     str = str + '<i class="no' + nums[i] + '">' + nums[i] + '</i>';
-    //
-    //             }
-	//
-	// 				layer.open({
-	// 	title: [
-	// 	        ''+data.current.awardTime.substring(10, 16)+' 最新第'+data.current.periodNumber+'期开奖号码：',
-	// 	        'background-color:#f9f9f9; color:#444;'
-	// 	    ],
-	// 	    content:'<div class="nums">'+str+'</div>',
-	//     time: 2
-	// });
              }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
                     currentPeriodNumber = data.current.periodNumber;
@@ -98,50 +88,33 @@ $(function () {
             timeInterval = 0;
 
             var nums = data.current.awardNumbers.split(',');
-            var html = '';
-            $("#pk10 #number").html('');
-            for(var i=0;i<nums.length;i++){
-                html += '<i class="no' + nums[i] + '">' + nums[i] + '</i>';
-            }
-            $("#pk10 #number").html(html);
-            $("#pk10 .bt-jg").html('');
-            var srt;
-            srt = lh(nums);
-            if(srt == undefined || srt == null){
+            $('.lhResult a').eq(0).html(long(nums[0],nums[9]));
+            $('.lhResult a').eq(1).html(long(nums[1],nums[8]));
+            $('.lhResult a').eq(2).html(long(nums[2],nums[7]));
+            $('.lhResult a').eq(3).html(long(nums[3],nums[6]));
+            $('.lhResult a').eq(4).html(long(nums[4],nums[5]));
 
-                var srt = '';
-                var sum = parseInt(nums[0])+parseInt(nums[1]);
-                var dx = '';
-                var ds = '';
-                if(sum > 11){
-                    dx = '大';
-                }else if(sum < 11){
-                    dx = '小';
-                }else {
-                    dx = '和';
-                }
-                if(sum%2 == 0){
-                    ds = '双';
-                }else {
-                    ds = '单';
-                }
-                if(sum == 11){
-                    ds = '和';
-                }
-                srt +="<span>"+long(nums[0],nums[9])+"</span>";
-                srt +="<span>"+long(nums[1],nums[8])+"</span>";
-                srt +="<span>"+long(nums[2],nums[7])+"</span>";
-                srt +="<span>"+long(nums[3],nums[6])+"</span>";
-                srt +="<span>"+long(nums[4],nums[5])+"</span>";
-                srt +="<span style='color: #bbbbbb'>|</span> 冠亚和: ";
-                srt +="<samp>"+sum+"</samp>";
-                srt +="<samp>"+dx+"</samp>";
-                srt +="<samp>"+ds+"</samp>";
+            var sum = parseInt(nums[0])+parseInt(nums[1]);
+            var dx = '';
+            var ds = '';
+            if(sum > 11){
+                dx = '大';
+            }else if(sum < 11){
+                dx = '小';
+            }else {
+                dx = '和';
             }
-            $("#pk10 .bt-jg").html(srt);
-            var qishu = parseInt(data.current.periodNumber);
-            $("#pk10 .itm-tit #qihao").html('第'+qishu+'期结果');
-
+            if(sum%2 == 0){
+                ds = '双';
+            }else {
+                ds = '单';
+            }
+            if(sum == 11){
+                ds = '和';
+            }
+            $('.lhResult a').eq(7).html(sum);
+            $('.lhResult a').eq(8).html(dx);
+            $('.lhResult a').eq(9).html(ds);
 
         }, 'json').error(function () {
             if (errorCount < 20) {

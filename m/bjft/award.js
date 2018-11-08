@@ -105,6 +105,26 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../pk10/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
+            var nextOpenIssue = Number(data.next.periodNumber)+1;
+            // var nextOpenTime =data.next.awardTime.substr(11,5);
+            // $('.nextOpenIssue').html(nextOpenIssue);
+            // $('.nextOpenTime').html(nextOpenTime);
+            // $('.openIssue').html(data.current.periodNumber);
+            // $('.residueIssue').html(data.current.surplus_num);
+            // $('.totalIssue').html(data.current.current_num);
+
+
+            $('.newIssue span').html(data.current.periodNumber1);
+            $('.nextIssue span').html(nextOpenIssue);
+            $('.periodNumber').html(data.current.periodNumber);
+            $('.surplus_num').html(data.current.surplus_num);
+            var nums = data.current.awardNumbers.split(',');
+            var str = "";
+            for (var i = 0; i < nums.length; i++) {
+                str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
+            }
+            $('.openCodeList').html(str)
+
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -114,74 +134,51 @@ $(function () {
                 requireCount = errorCount = 0;
                 hideLotPeriodNumWarn();
             }
-            var nextOpenIssue = Number(data.next.periodNumber)+1;
-            var nextOpenTime =data.next.awardTime.substr(11,5);
-            $('.nextOpenIssue').html(nextOpenIssue);
-            $('.nextOpenTime').html(nextOpenTime);
-            $('.openIssue').html(data.current.periodNumber);
-            $('.residueIssue').html(data.current.surplus_num);
-            $('.totalIssue').html(data.current.current_num);
+            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
             if (timeInterval != 0) {
-                 if (currentPeriodNumber != -1 ) {    //判断第一次加载
-              
-			          var nums = data.current.awardNumbers.split(',');
-			  var str = "";
-                for (var i = 0; i < nums.length; i++) {
-                    
-                        str = str + '<i class="no' + nums[i] + '">' + nums[i] + '</i>';
-                   
-                }
-				
-	// 				layer.open({
-	// 	title: [
-	// 	        ''+data.current.awardTime.substring(10, 16)+' 最新第'+data.current.periodNumber+'期开奖号码：',
-	// 	        'background-color:#f9f9f9; color:#444;'
-	// 	    ],
-	// 	    content:'<div class="nums">'+str+'</div>',
-	//     time: 2
-	// });
+                if (currentPeriodNumber != -1 ) {    //判断第一次加载
+                    window.setTimeout(getHistoryData('15'), data.next.awardTimeInterval < 10 ? 1000 : _time);
+
                 }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
                     currentPeriodNumber = data.current.periodNumber;
                 }
                 currentPeriodNumber = data.current.periodNumber;
                 nextPeriodNumber = data.next.periodNumber;
-				
-                
             }
-            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
+
 
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
-            var num = data.current.awardNumbers.split(',');
-            var html;
-            $("#pk10 #number").html('');
-            html = '<i class="no'+ num[0] +'">'+  num[0] +'</i>' +
-            '<i class="no'+ num[1] +'">'+  num[1] +'</i>' +
-            '<i class="no'+ num[2] +'">'+  num[2] +'</i>' +
-           // '<i class="ball-red" style="background-color: #fff;width: 2px"></i>' +
-            '<i class="no'+ num[3] +'">'+  num[3] +'</i>' +
-          //  '<i class="ball-red" style="background-color: #fff;width: 2px"></i>' +
-            '<i class="no'+ num[4] +'">'+  num[4] +'</i>' +
-            '<i class="no'+ num[5] +'">'+  num[5] +'</i>' +
-            '<i class="no'+ num[6] +'">'+  num[6] +'</i>' +
-            //'<i class="ball-red" style="background-color: #fff;width: 2px"></i>' +
-            '<i class="no'+ num[7] +'">'+  num[7] +'</i>' +
-            '<i class="no'+ num[8] +'">'+  num[8] +'</i>' +
-            '<i class="no'+ num[9] +'">'+  num[9] +'</i>';
-           // console.log(html)
-            $("#pk10 #number").html(html);
 
-            var qs = tan(num[0],num[1],num[2]);
-            var zs = tan(num[4],num[5],num[6]);
-            var hs = tan(num[7],num[8],num[9]);
-            $("#pk10 .bt-jg").html('');
-            str = '<span>'+ qs[0] +'</span><span>'+ qs[1] +'</span><span>'+ qs[2] +'</span><span style="color: #bbbbbb">|</span>';
-            str += '<span>'+ zs[0] +'</span><span>'+ zs[1] +'</span><span>'+ zs[2] +'</span><span style="color: #bbbbbb">|</span>';
-            str += '<span>'+ hs[0] +'</span><span>'+ hs[1] +'</span><span>'+ hs[2] +'</span>';
-            $("#pk10 .bt-jg").html(str);
-            var qishu = parseInt(data.current.periodNumber);
-            $("#pk10 .itm-tit #qihao").html('第'+qishu+'期结果');
+            var nums = data.current.awardNumbers.split(',');
+            $('.lhResult a').eq(0).html(long(nums[0],nums[9]));
+            $('.lhResult a').eq(1).html(long(nums[1],nums[8]));
+            $('.lhResult a').eq(2).html(long(nums[2],nums[7]));
+            $('.lhResult a').eq(3).html(long(nums[3],nums[6]));
+            $('.lhResult a').eq(4).html(long(nums[4],nums[5]));
+
+            var sum = parseInt(nums[0])+parseInt(nums[1]);
+            var dx = '';
+            var ds = '';
+            if(sum > 11){
+                dx = '大';
+            }else if(sum < 11){
+                dx = '小';
+            }else {
+                dx = '和';
+            }
+            if(sum%2 == 0){
+                ds = '双';
+            }else {
+                ds = '单';
+            }
+            if(sum == 11){
+                ds = '和';
+            }
+            $('.lhResult a').eq(7).html(sum);
+            $('.lhResult a').eq(8).html(dx);
+            $('.lhResult a').eq(9).html(ds);
 
         }, 'json').error(function () {
             if (errorCount < 20) {

@@ -56,36 +56,44 @@ include("../conn.php");
     </div>
     <div class="fl xia-yx" id="xia-yx1"><?=$web_type?><span class="xialabt" id="xialabt1"></span> </div>
 
-    <div class="fr"><a class="sp" href="shipin.php">开奖直播</a></div>
+
+    <select class="chooseIssue">
+        <option value="">全部期数</option>
+    </select>
 </div>
-
-
-
-
-<div class="head">
-    <div class="headRow1">
-        <input type="date" id="dateTime" onchange="Search()">
-        <div><a class="dataYMD"></a><a class="dataWeed"></a></div>
-        <select class="chooseIssue">
-            <option value="">全部期数</option>
-        </select>
-    </div>
-    <div class="headRow2">
-        <div>今日已开<a class="openIssue"></a>期</div>
-        <div>剩余<a class="residueIssue"></a>期</div>
-        <div>总期数<a class="totalIssue"></a>期</div>
-    </div>
-    <div class="headRow3">
-        <div><a class="nextOpenIssue"></a>期剩</div>
-        <div class="headOpenTime">
-            <a class="headOpenTimeM" id="headOpenTimeM"></a>
-            <span>分</span>
-            <a class="headOpenTimeS" id="headOpenTimeS"></a>
-            <span>秒</span>
+<div class="openResult">
+    <div class="openIssueList">
+        <div class="newIssue">
+            第<span></span>期结果
         </div>
-        <div class="itm-time">开奖时间<a class="nextOpenTime" id="time"></a></div>
+        <div class="issueList">
+            已开<span class="periodNumber"></span>期，剩<span class="surplus_num"></span>期
+        </div>
+    </div>
+    <div class="openCodeList">
+        <img src="/m/style/images/loading2.gif">
+    </div>
+
+    <div class="nextOpenList">
+        <div class="nextIssue">距<span></span>期开奖</div>
+
+        <div id="Bar">
+            <div class="Bar">
+                <div id="takeout_bar">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="nextTime">
+            <span id="headOpenTimeM"></span>:<span id="headOpenTimeS"></span>
+        </div>
+        <a class="video2" href="shipin.php">
+            <img src="/m/style/images/ico_sp.png"><span>开奖直播</span>
+        </a>
+
     </div>
 </div>
+
 
 <div class="choose2" id="chooseType">
     <a class="chooseType">号码</a>

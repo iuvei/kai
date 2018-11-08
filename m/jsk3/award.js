@@ -49,79 +49,59 @@ $(function () {
                 requireCount = errorCount = 0;
                 hideLotPeriodNumWarn();
             }
+            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
+            var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(4);
 
-            var nextOpenIssue = Number(data.current.periodNumber1)+1;
-            var nextOpenIssue = nextOpenIssue.toString().substr(4);
-            var nextOpenTime =data.next.awardTime.substr(11,5);
-            $('.nextOpenIssue').html(nextOpenIssue);
-            $('.nextOpenTime').html(nextOpenTime);
-            $('.openIssue').html(data.current.periodNumber);
-            $('.residueIssue').html(data.current.surplus_num);
-            $('.totalIssue').html(data.current.current_num);
+            $('.newIssue span').html(data.current.periodNumber1.substr(4));
+            $('.nextIssue span').html(nextOpenIssue);
+            $('.periodNumber').html(data.current.periodNumber);
+            $('.surplus_num').html(data.current.surplus_num);
+
+            var str = "";
+            var nums = data.current.awardNumbers.split(',');
+
+            for (var i = 0; i < nums.length; i++) {
+                str += '<img src="/images/images/dice'+nums[i]+'.png">';
+            }
+
+            var sum = eval(nums.join("+"));
+            var dx = '';
+            var ds = '';
+            if(sum > 10){
+                dx = '大';
+            }else {
+                dx = '小';
+            }
+            if(sum%2 == 0){
+                ds = '双';
+            }else {
+                ds = '单';
+            }
+
+            str = str + '<div class="sscLH">';
+            str +="<a>"+'总和'+"</a>";
+            str +="<a>"+sum+"</a>";
+            str +="<a>"+dx+"</a>";
+            str +="<a>"+ds+"</a>";
+            str = str + '</div>';
+            $('.openCodeList').html(str)
 
 
             if (timeInterval != 0) {
                  if (currentPeriodNumber != -1 ) {    //判断第一次加载
-              
-			          var nums = data.current.awardNumbers.split(',');
-			  var str = "";
-                for (var i = 0; i < nums.length; i++) {
-                    
-                        str = str + '<i class="no' + nums[i] + '">' + nums[i] + '</i>';
-                   
-                }
-				
-					layer.open({
-		title: [
-		        ''+data.current.awardTime.substring(10, 16)+' 最新第'+data.current.periodNumber+'期开奖号码：',
-		        'background-color:#f9f9f9; color:#444;'
-		    ],			
-		    content:'<div class="nums">'+str+'</div>',
-	    time: 2
-	});
+                     window.setTimeout(getHistoryData('30'), data.next.awardTimeInterval < 10 ? 1000 : _time);
                 }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
                     currentPeriodNumber = data.current.periodNumber;
                 }
                 currentPeriodNumber = data.current.periodNumber;
                 nextPeriodNumber = data.next.periodNumber;
-				
-                
             }
-            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-		
+
+
+
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
-
-            var nums = data.current.awardNumbers.split(',');
-            var html = '';
-            $("#jsk3 #number").html('');
-            for(var i=0;i<nums.length;i++){
-                html += '<i class="num'+ nums[i] +'"></i>';
-            }
-                var sum = eval(nums.join("+"));
-                var dx = '';
-                var ds = '';
-                if(sum > 10){
-                    dx = '大';
-                }else {
-                    dx = '小';
-                }
-                if(sum%2 == 0){
-                    ds = '双';
-                }else {
-                    ds = '单';
-                }
-            html +="<span>"+sum+"</span>";
-            html +="<span>"+dx+"</span>";
-            html +="<span>"+ds+"</span>";
-
-            $("#jsk3 #number").html(html);
-            var qishu = parseInt(data.current.periodNumber);
-
-            $("#jsk3 .itm-tit #qihao").html('第'+qishu+'期结果');
-
-
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(awardTick, 1000 + Math.random() * 10000);

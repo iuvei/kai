@@ -49,35 +49,54 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
 
-            var nextOpenIssue = Number(data.current.periodNumber1)+1;
-            var nextOpenIssue = nextOpenIssue.toString().substr(4);
-            var nextOpenTime =data.next.awardTime.substr(0,5);
-            $('.nextOpenIssue').html(nextOpenIssue);
-            $('.nextOpenTime').html(nextOpenTime);
-            $('.openIssue').html(data.current.periodNumber);
-            $('.residueIssue').html(data.current.surplus_num);
-            $('.totalIssue').html(data.current.current_num);
+            var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(4);
 
+            $('.newIssue span').html(data.current.periodNumber1.substr(4));
+            $('.nextIssue span').html(nextOpenIssue);
+            $('.periodNumber').html(data.current.periodNumber);
+            $('.surplus_num').html(data.current.surplus_num);
+
+            var nums = data.current.awardNumbers.split(',');
+            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
+
+
+
+            var srt = '';
+            var sum = eval(nums.join("+"));
+            var dx = '';
+            var ds = '';
+            if(sum > 22){
+                dx = '大';
+            }else {
+                dx = '小';
+            }
+            if(sum%2 == 0){
+                ds = '双';
+            }else {
+                ds = '单';
+            }
+
+            for (var i = 0; i < nums.length; i++) {
+
+                srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
+
+            }
+            srt = srt + '<dic class="sscLH">';
+            srt = srt + '<a>' + long(nums[0],nums[4]) + '</a>';
+            srt = srt + '<a>' + '<span></span>' + '</a>';
+            srt = srt + '<a>' + '总和' + '</a>';
+            srt = srt + '<a>' + sum + '</a>';
+            srt = srt + '<a>' + dx  + '</a>';
+            srt = srt + '<a>' + ds  + '</a>';
+            srt = srt + '</dic>';
+
+
+            $('.openCodeList').html(srt)
 
             if (timeInterval != 0) {
-                 if (currentPeriodNumber != -1 ) {    //判断第一次加载
+                if (currentPeriodNumber != -1 ) {    //判断第一次加载
 
-			          var nums = data.current.awardNumbers.split(',');
-			  var str = "";
-                for (var i = 0; i < nums.length; i++) {
-
-                        str = str + '<i class="no' + nums[i] + '">' + nums[i] + '</i>';
-
-                }
-    //
-	// 				layer.open({
-	// 	title: [
-	// 	        ''+data.current.awardTime.substring(10, 16)+' 最新第'+data.current.periodNumber+'期开奖号码：',
-	// 	        'background-color:#f9f9f9; color:#444;'
-	// 	    ],
-	// 	    content:'<div class="nums">'+str+'</div>',
-	//     time: 2
-	// });
+                    window.setTimeout(getHistoryData('50'), data.next.awardTimeInterval < 10 ? 1000 : _time);
                 }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
                     currentPeriodNumber = data.current.periodNumber;
@@ -87,54 +106,11 @@ $(function () {
 
 
             }
-            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
+
 
 
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
-
-            var nums = data.current.awardNumbers.split(',');
-            var html = '';
-            $("#cqssc #number").html('');
-            for(var i=0;i<nums.length;i++){
-                html += '<i class="ball-red">' + nums[i] + '</i>';
-            }
-
-            $("#cqssc #number").html(html);
-            $("#cqssc .bt-jg").html('');
-            var srt;
-
-            srt = lh(nums);
-            if(srt == undefined || srt == null){
-
-                var srt = '';
-                var sum = eval(nums.join("+"));
-                var dx = '';
-                var ds = '';
-                if(sum > 22){
-                    dx = '大';
-                }else {
-                    dx = '小';
-                }
-                if(sum%2 == 0){
-                    ds = '双';
-                }else {
-                    ds = '单';
-                }
-                srt +="<span>"+long(nums[0],nums[4])+"</span>";
-                // srt +="<span>"+long(nums[1],nums[8])+"</span>";
-                // srt +="<span>"+long(nums[2],nums[7])+"</span>";
-                // srt +="<span>"+long(nums[3],nums[6])+"</span>";
-                // srt +="<span>"+long(nums[4],nums[5])+"</span>";
-                srt +="<span style='color: #bbbbbb'>|</span> 总和: ";
-                srt +="<span>"+sum+"</span>";
-                srt +="<span>"+dx+"</span>";
-                srt +="<span>"+ds+"</span>";
-            }
-            $("#cqssc .bt-jg").html(srt);
-            var qishu = parseInt(data.current.periodNumber1);
-            $("#cqssc .itm-tit #qihao").html('第'+qishu+'期结果');
-
 
 
         }, 'json').error(function () {

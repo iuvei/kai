@@ -1,10 +1,14 @@
-﻿function showCountDown(afterTime, period) {
+﻿
+
+var onlyEvent = false;
+var aa=0;
+var bb=0;
+
+function showCountDown(afterTime, period) {
 
     timeold = afterTime;
-
     sectimeold = timeold / 1000;
     secondsold = Math.floor(sectimeold);
-
     msPerDay = 24 * 60 * 60 * 1000
     e_daysold = timeold / msPerDay
     daysold = Math.floor(e_daysold);
@@ -26,7 +30,9 @@
         $(".roadmap-table tr").find("td[class]:last").find("p:last,label:last,span:last").css("font-weight", "normal");
         window.clearInterval(countDownTimer);
     }
-    
+
+        $('#takeout_bar').css('width','10%');
+
         var hh = parseInt(minsold) + parseInt(hrsold * 60);
         if (hh < 10) {
             hh = "0" + hh;
@@ -36,6 +42,18 @@
         }
         $("#headOpenTimeM").html(hh);
         $("#headOpenTimeS").html(seconds);
+
+        if(hh=='00'){
+            if(!onlyEvent){
+                aa =100/seconds;
+                onlyEvent = true;
+            }
+            bb+=aa
+            $('#takeout_bar').css('width',bb+'%');
+        }else {
+            onlyEvent =false;
+            bb=0
+        }
 
     if (cpNumber == -1 && cpNumber != period) {
         cpNumber = period;
