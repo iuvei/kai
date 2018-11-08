@@ -40,8 +40,8 @@ Core::noCacheHeader();
 <head>
 <meta charset="utf-8" />
 <title>phpMyAdmin setup</title>
-<link href="../favicon.ico" rel="icon" type="image/x-icon" />
-<link href="../favicon.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="../favicon.ico?t=2018" rel="icon" type="image/x-icon" />
+<link href="../favicon.ico?t=2018" rel="shortcut icon" type="image/x-icon" />
 <link href="styles.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="../js/vendor/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="../js/vendor/jquery/jquery-ui.min.js">

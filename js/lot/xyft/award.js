@@ -106,14 +106,15 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            $(".warnTime #period").html("第" + data.next.periodNumber + "期");
+            $xiayiqi = parseInt(data.current.periodNumber1)+1
+            $(".warnTime #period").html("第" + $xiayiqi + "期");
             var leavePeriod = 180 - cpNumber;
             if (leavePeriod == 0) {
                 var d = new Date();
                 var nd = new Date(data.next.awardTime.split(' ')[0].replace("-", "/", "gi"));
                 if (d.getDate() == nd.getDate()) leavePeriod = 180;
             }
-            $(" .lot-award .currentAward .period-info .period-leave").html(leavePeriod);
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
         }, 'json').error(function () {
             if (errorCount < 20) {

@@ -11,15 +11,14 @@ include("../conn.php");
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    
 <meta name="format-detection"content="telephone=no"/>
 <title><?=$web_type?>开奖直播_<?=$web_type?>开奖历史记录_<?=$webtitle?>手机版</title>
-<script src="../style/js/jquery.js"></script>
-<script src="../style/js/layer.js"></script>
-<script src="../style/js/lotcommon.js" type="text/javascript"></script>
+<script src="../style/js/jquery.js?t=2018"></script>
+<script src="../style/js/layer.js?t=2018"></script>
+<script src="../style/js/lotcommon.js?t=2018" type="text/javascript"></script>
 <script src="../style/js/warntime.js" type="text/javascript"></script>
-<link type="text/css" href="../style/css/style.css" rel="stylesheet">
-<link type="text/css" href="../style/css/histoly.css" rel="stylesheet">
+<link type="text/css" href="../style/css/style.css?t=2018" rel="stylesheet">
+<link type="text/css" href="../style/css/histoly.css?t=2018" rel="stylesheet">
 
 
 
@@ -34,7 +33,7 @@ include("../conn.php");
 
 
    
-<script src="award.js" type="text/javascript"></script>
+<script src="award.js?t=2018" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
 <div class="daojishi1">
     <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">

@@ -109,7 +109,8 @@ $(function () {
             var num = data.next.periodNumberStr;
             var num_2 =num.slice(num.indexOf('-')+1);
             cpNumber =num.slice(num.indexOf('-')+2);
-            $(".warnTime #period").html("第" + (parseInt(num_2)) + "期");
+            $xiayiqi = parseInt(data.current.periodNumber1)+1
+            $(".warnTime #period").html("第" + $xiayiqi + "期");
             var leavePeriod = 1152 - num_2;
             if (leavePeriod == 0) {
                 var d = new Date();
