@@ -1,6 +1,6 @@
-	
+var currentPeriodNumber = -1;
+var nextOpenTimeS = 0;
 $(function () {
-    var currentPeriodNumber = -1;
     var nextPeriodNumber = -1;
     var timeInterval = 5000;
     //请求出错次数
@@ -88,7 +88,7 @@ $(function () {
                 nextPeriodNumber = data.next.periodNumber;
             }
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-		
+            nextOpenTime =data.next.awardTimeInterval;
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
 
@@ -164,7 +164,6 @@ $(function () {
                 }
                 countDownTimer = window.setInterval(function () {
                     cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval - 1000);
-					
                     showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
                 }, 1000);
             }

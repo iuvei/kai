@@ -199,7 +199,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 
 .ball-wrap {
 	/*font-size:0; padding-top:5px;*/
-	position: relative; overflow:hidden;    font-size: 3.2vw;}
+	position: relative; overflow:hidden;    font-size: 3.2vw; padding-bottom: 3vw}
 .ball-red,.ball-blue {display:inline-block;
 	margin-right: 1vw;
 	width: 6.5vw;
