@@ -60,25 +60,27 @@ $(function () {
                 requireCount = errorCount = 0;
                 hideLotPeriodNumWarn();
             }
+            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
             if (timeInterval != 0) {
                  if (currentPeriodNumber != -1 ) {    //判断第一次加载
+                     window.setTimeout(getHistoryData('15'), data.next.awardTimeInterval < 10 ? 1000 : _time);
               
-			          var nums = data.current.awardNumbers.split(',');
-			  var str = "";
-                for (var i = 0; i < nums.length; i++) {
-                    
-                        str = str + '<i class="no' + nums[i] + '">' + nums[i] + '</i>';
-                   
-                }
-				
-					layer.open({
-		title: [
-		        ''+data.current.awardTime.substring(10, 16)+' 最新第'+data.current.periodNumber+'期开奖号码：',
-		        'background-color:#f9f9f9; color:#444;'
-		    ],			
-		    content:'<div class="nums">'+str+'</div>',
-	    time: 2
-	});
+	// 		          var nums = data.current.awardNumbers.split(',');
+	// 		  var str = "";
+    //             for (var i = 0; i < nums.length; i++) {
+    //
+    //                     str = str + '<i class="no' + nums[i] + '">' + nums[i] + '</i>';
+    //
+    //             }
+	//
+	// 				layer.open({
+	// 	title: [
+	// 	        ''+data.current.awardTime.substring(10, 16)+' 最新第'+data.current.periodNumber+'期开奖号码：',
+	// 	        'background-color:#f9f9f9; color:#444;'
+	// 	    ],
+	// 	    content:'<div class="nums">'+str+'</div>',
+	//     time: 2
+	// });
                 }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
                     currentPeriodNumber = data.current.periodNumber;
@@ -86,8 +88,6 @@ $(function () {
                 currentPeriodNumber = data.current.periodNumber;
                 nextPeriodNumber = data.next.periodNumber;
             }
-            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-		
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
 
