@@ -199,7 +199,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 
 .ball-wrap {
 	/*font-size:0; padding-top:5px;*/
-	position: relative; overflow:hidden;    font-size: 3.2vw; padding-bottom: 3vw}
+	position: relative; overflow:hidden;    font-size: 3.2vw;}
 .ball-red,.ball-blue {display:inline-block;
 	margin-right: 1vw;
 	width: 6.5vw;
@@ -252,10 +252,10 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	}
 #tcpk10 #number i,#xyft #number i,#pk10 #number i,#jssc #number i,#bjft #number i,#sfpk10 #number i{
 	display:inline-block;
-	margin-right:1vw;
-	width: 8vw;
-	height: 6vw;
-	line-height: 6vw;
+	margin-right:2.08vw;
+	width: 7vw;
+	height: 7vw;
+	line-height: 7vw;
 	font-size:3.5vw;
 	text-align:center;color:#fff;-webkit-border-radius:0.5vw;border-radius:0.5vw;
      /*text-shadow:#555 1px 0 0,#555 0 1px 0,#555 -1px 0 0,#555 0 -1px 0;*/
