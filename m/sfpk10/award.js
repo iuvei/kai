@@ -42,7 +42,7 @@ $(function () {
         $.post('../../sfpk10/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
             var nextOpenIssue = (Number(data.next.periodNumber)+1).toString().substr(4);
 
-            $('.newIssue span').html(data.current.periodNumber1.substr(4));
+            $('.newIssue span').html(data.current.periodNumber1.substr(6));
             $('.nextIssue span').html(nextOpenIssue);
             $('.periodNumber').html(data.current.periodNumber);
             $('.surplus_num').html(data.current.surplus_num);
@@ -171,9 +171,9 @@ function getHistoryData(count,date) {
         	var html = '';
         	for(var i in result.rows){
         		var data = result.rows[i];
-                $('.chooseIssue').append('<option value="'+data.termNum.substr(4)+'">'+data.termNum.substr(4)+'</option>');
+                $('.chooseIssue').append('<option value="'+data.termNum.substr(6)+'">'+data.termNum.substr(6)+'</option>');
                 html += '<div class="openCode">';
-                html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum .substr(4)+'</span>'+'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+                html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum .substr(6)+'</span>'+'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
 
                 html += '<div>'+'<a class="no' + data.n1 + '"'+'name'+'='+'"'+long(data.n1,data.n10 )+'"'+'>' + data.n1 + '</a>'
                     +'<a class="pk10'+DXClass(data.n1)+'"  style="display: none">' + DX(data.n1)+ '</a>'
