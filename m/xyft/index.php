@@ -16,10 +16,10 @@ include("../conn.php");
 <title><?=$web_type?>开奖直播_<?=$web_type?>开奖历史记录_<?=$webtitle?>手机版</title>
 <script src="../style/js/jquery.js"></script>
 <script src="../style/js/layer.js"></script>
-<script src="../style/js/lotcommon.js" type="text/javascript"></script>
-<script src="../style/js/warntime.js" type="text/javascript"></script>
-<link type="text/css" href="../style/css/style.css" rel="stylesheet">
-<link type="text/css" href="../style/css/histoly.css" rel="stylesheet">
+<script src="../style/js/lotcommon.js?v= <?php echo date("Y/m/d")?>" type="text/javascript"></script>
+<script src="../style/js/warntime.js?v= <?php echo date("Y/m/d")?>" type="text/javascript"></script>
+<link type="text/css" href="../style/css/style.css?v=<?php echo date("Y/m/d")?>"  rel="stylesheet">
+<link type="text/css" href="../style/css/histoly.css?v=<?php echo date("Y/m/d")?>" rel="stylesheet">
 
 
 <style type="text/css">
@@ -36,16 +36,16 @@ include("../conn.php");
 
 <?php include("../public/header.php"); ?>
 
-<script src="award.js" type="text/javascript"></script>
+<script src="award.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
 <!--<link type="text/css" href="../style/css/pk10.css" rel="stylesheet">-->
 
 <div class="daojishi1">
 
     <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">
         <ul class="">
-            <li><a href="../pk10/" game="pk10" class="">北京pk10</a></li>
-            <li><a href="../sfpk10/" game="jssc">三分pk10</a></li>
-            <li><a href="../tcpk10/" game="tcpk10">极速pk10</a></li>
+            <li><a href="../pk10/" game="pk10" class="">北京PK10</a></li>
+            <li><a href="../sfpk10/" game="jssc">三分PK10</a></li>
+            <li><a href="../tcpk10/" game="tcpk10">极速PK10</a></li>
             <li><a href="../xyft/" game="xyft">幸运飞艇</a></li>
             <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
             <li><a href="../tcssc/" game="tcssc">极速时时彩</a></li>

@@ -15,7 +15,7 @@ include("../conn.php");
 <meta name="format-detection"content="telephone=no"/>
 <title><?=$web_type?>开奖直播_<?=$web_type?>开奖历史记录_<?=$webtitle?>手机版</title>
 <script src="../style/js/jquery.js"></script>
-<script src="../style/js/layer.js"></script>
+<script src="../style/js/layer.js?v=141"></script>
 <script src="../style/js/lotcommon.js" type="text/javascript"></script>
 <script src="../style/js/warntime.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/style.css" rel="stylesheet">
@@ -36,7 +36,7 @@ include("../conn.php");
 
 <?php include("../public/header.php"); ?>
 
-<script src="award.js" type="text/javascript"></script>
+<script src="award.js?v=415" type="text/javascript"></script>
 <!--<link type="text/css" href="../style/css/pk10.css" rel="stylesheet">-->
 
 <div class="daojishi1">

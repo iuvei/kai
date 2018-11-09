@@ -110,7 +110,7 @@ $(function () {
                 if (countDownTimer) window.clearInterval(countDownTimer);
                 countDownTimer = window.setInterval(function () {
                     cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval-1000);
-  
+                    console.log(cpNextAwardTimeInterval)
                   showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
 //alert(showCountDown(cpNextAwardTimeInterval, data.next.periodNumber));
                 }, 1000);

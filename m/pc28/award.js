@@ -85,8 +85,7 @@ $(function () {
                 }
                 currentPeriodNumber = data.current.periodNumber;
                 nextPeriodNumber = data.next.periodNumber;
-				
-                
+
             }
 
 		

@@ -37,20 +37,20 @@ if(strpos($self,"xyft")){
     $name = 44;
     $web_type = "腾讯分分彩";
 }elseif(strpos($self,"tcpk10")){
-    $web_type = "极速pk10";
+    $web_type = "极速PK10";
     $name = 46;
 }elseif(strpos($self,"tcssc")){
     $web_type = "极速时时彩";
     $name = 45;
 }elseif(strpos($self,"sfpk10")){
-    $web_type = "三分pk10";
+    $web_type = "三分PK10";
     $name = 47;
 }elseif(strpos($self,"sfssc")){
     $web_type = "三分时时彩";
     $name = 48;
 }else{
     $name = 20;
-	$web_type = "北京pk10";
+	$web_type = "北京PK10";
 }
 $dbcon = include(APP_PATH."/Application/Common/Conf/config.php");
 $con = mysqli_connect($dbcon['DB_HOST'],$dbcon['DB_USER'],$dbcon['DB_PWD']);
