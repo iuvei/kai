@@ -31,7 +31,7 @@ function showCountDown(afterTime, period) {
         window.clearInterval(countDownTimer);
     }
 
-        $('#takeout_bar').css('width','10%');
+        $('#takeout_bar').css('width','0%');
 
         var hh = parseInt(minsold) + parseInt(hrsold * 60);
         if (hh < 10) {
@@ -48,8 +48,12 @@ function showCountDown(afterTime, period) {
                 aa =100/seconds;
                 onlyEvent = true;
             }
-            bb+=aa
             $('#takeout_bar').css('width',bb+'%');
+            bb+=aa
+            if(bb>=100){
+                aa =100/seconds;
+                bb = 0;
+            }
         }else {
             onlyEvent =false;
             bb=0

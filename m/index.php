@@ -482,8 +482,8 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                     </div>
                 </div>
             </div>
+            <div class="bt-jg">  </div>
 
-        <div class="bt-jg">  </div>
 <!--        <div class="bt-aa">-->
 <!--            <a href="jsk3/">开奖历史</a>-->
 <!--            <a href="jsk3/smtj.php">两面统计</a>-->
@@ -741,7 +741,7 @@ function IndexOpen() {
         $("#pk10 .bt-jg").html(long);
 
 
-        $("#xyft #qihao").text('第' + data.xyft.dat_expect + '期');
+        $("#xyft #qihao").text('第' + data.xyft.dat_expect.substr(4) + '期');
         var nums = data.xyft.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
@@ -754,7 +754,7 @@ function IndexOpen() {
         $("#xyft .bt-jg").html(long);
 
 
-        $("#cqssc #qihao").text('第' + data.cqssc.dat_expect + '期');
+        $("#cqssc #qihao").text('第' + data.cqssc.dat_expect.substr(4) + '期');
         var nums = data.cqssc.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
@@ -767,7 +767,7 @@ function IndexOpen() {
         $("#cqssc .bt-jg").html(long);
 
 
-        $("#txffc #qihao").text('第' + data.txffc.dat_expect + '期');
+        $("#txffc #qihao").text('第' + data.txffc.dat_expect.substr(6) + '期');
 
         var nums = data.txffc.dat_codes.split(',');
         var str = "";
@@ -812,7 +812,7 @@ function IndexOpen() {
 
 
 
-        $("#gd11x5 #qihao").text('第' + pad(data.gd11x5.dat_expect, 3) + '期');
+        $("#gd11x5 #qihao").text('第' + pad(data.gd11x5.dat_expect, 3).substr(4) + '期');
         var nums = data.gd11x5.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
@@ -838,23 +838,25 @@ function IndexOpen() {
         $("#jsssc .bt-jg").html(long);
 
 
-        $("#jsk3 #qihao").text('第' + data.jsk3.dat_expect + '期');
+        $("#jsk3 #qihao").text('第' + data.jsk3.dat_expect.substr(4) + '期');
         var nums = data.jsk3.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='num" + nums[i]+ "'></i>"
         }
+        var long;
+        long = ssclh(nums,3);
+        str = str + '<a class="k3zh">'+long+'</a>'
+        str+='<div class="yxx">'
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='num-yxx" + nums[i]+ "'></i>"
         }
-        $("#jsk3 .bt-jg").html('');
-        var long;
-        long = ssclh(nums,3);
+        str+='</div>'
         $("#jsk3 #number").html(str);
-        $("#jsk3 .bt-jg").html(long);
 
 
-        $("#cqft #qihao").text('第' + data.cqssc.dat_expect + '期');
+
+        $("#cqft #qihao").text('第' + data.cqssc.dat_expect.substr(4) + '期');
         var nums = data.cqssc.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
@@ -966,19 +968,19 @@ function IndexOpen() {
             ds3 = '大';
             css='#da2d21';
         }
-        str = str + "<i class='no" + nums[0].replace(/\b(0+)/gi,"") + "'>" + nums[0] + "</i>" +
-            "<i class='no" + nums[1].replace(/\b(0+)/gi,"") + "'>" + nums[1] + "</i>" +
-            "<i class='no" + nums[2].replace(/\b(0+)/gi,"") + "'>" + nums[2] + "</i>" +
+        str = str + "<i class='no" + nums[0].replace(/\b(0+)/gi,"") + "'>" + nums[0].replace(/\b(0+)/gi,"") + "</i>" +
+            "<i class='no" + nums[1].replace(/\b(0+)/gi,"") + "'>" + nums[1].replace(/\b(0+)/gi,"") + "</i>" +
+            "<i class='no" + nums[2].replace(/\b(0+)/gi,"") + "'>" + nums[2].replace(/\b(0+)/gi,"") + "</i>" +
 
-            "<i class='no" + nums[3].replace(/\b(0+)/gi,"") + "'>" + nums[4] + "</i>" +
+            "<i class='no" + nums[3].replace(/\b(0+)/gi,"") + "'>" + nums[4].replace(/\b(0+)/gi,"") + "</i>" +
 
-            "<i class='no" + nums[4].replace(/\b(0+)/gi,"") + "'>" + nums[4] + "</i>" +
-            "<i class='no" + nums[5].replace(/\b(0+)/gi,"") + "'>" + nums[5] + "</i>" +
-            "<i class='no" + nums[6].replace(/\b(0+)/gi,"") + "'>" + nums[6] + "</i>" +
+            "<i class='no" + nums[4].replace(/\b(0+)/gi,"") + "'>" + nums[4].replace(/\b(0+)/gi,"") + "</i>" +
+            "<i class='no" + nums[5].replace(/\b(0+)/gi,"") + "'>" + nums[5].replace(/\b(0+)/gi,"") + "</i>" +
+            "<i class='no" + nums[6].replace(/\b(0+)/gi,"") + "'>" + nums[6].replace(/\b(0+)/gi,"") + "</i>" +
 
-            "<i class='no" + nums[7].replace(/\b(0+)/gi,"") + "'>" + nums[7] + "</i>" +
-            "<i class='no" + nums[8].replace(/\b(0+)/gi,"") + "'>" + nums[8] + "</i>" +
-            "<i class='no" + nums[9].replace(/\b(0+)/gi,"") + "'>" + nums[9] + "</i>" +
+            "<i class='no" + nums[7].replace(/\b(0+)/gi,"") + "'>" + nums[7].replace(/\b(0+)/gi,"") + "</i>" +
+            "<i class='no" + nums[8].replace(/\b(0+)/gi,"") + "'>" + nums[8].replace(/\b(0+)/gi,"") + "</i>" +
+            "<i class='no" + nums[9].replace(/\b(0+)/gi,"") + "'>" + nums[9].replace(/\b(0+)/gi,"") + "</i>" +
         "<br/>";
 
         //
@@ -1115,7 +1117,7 @@ function IndexOpen() {
 
         $("#pc28 #number").html(str);
 
-        $("#tcssc #qihao").text('第' + pad(data.tcssc.dat_expect, 3) + '期');
+        $("#tcssc #qihao").text('第' + pad(data.tcssc.dat_expect, 3).substr(6) + '期');
         var nums = data.tcssc.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
@@ -1127,7 +1129,7 @@ function IndexOpen() {
         $("#tcssc #number").html(str);
         $("#tcssc .bt-jg").html(long);
         
-        $("#tcpk10 #qihao").text('第' + data.xyft.dat_expect + '期');
+        $("#tcpk10 #qihao").text('第' + data.xyft.dat_expect.substr(6) + '期');
         var nums = data.tcpk10.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
@@ -1139,7 +1141,7 @@ function IndexOpen() {
         $("#tcpk10 #number").html(str);
         $("#tcpk10 .bt-jg").html(long);
         console.log( data.sfssc);
-        $("#sfssc #qihao").text('第' + pad(data.sfssc.dat_expect, 3) + '期');
+        $("#sfssc #qihao").text('第' + pad(data.sfssc.dat_expect, 3).substr(6) + '期');
 
         var nums = data.sfssc.dat_codes.split(',');
         var str = "";
@@ -1152,7 +1154,7 @@ function IndexOpen() {
         $("#sfssc #number").html(str);
         $("#sfssc .bt-jg").html(long);
 
-        $("#sfpk10 #qihao").text('第' + data.sfpk10.dat_expect + '期');
+        $("#sfpk10 #qihao").text('第' + data.sfpk10.dat_expect.substr(6) + '期');
         var nums = data.sfpk10.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {

@@ -48,9 +48,9 @@ $(function () {
                 requireCount = errorCount = 0;
                 hideLotPeriodNumWarn();
             }
-            var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(4);
+            var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(6);
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-            $('.newIssue span').html(data.current.periodNumber1.substr(4));
+            $('.newIssue span').html(data.current.periodNumber1.substr(6));
             $('.nextIssue span').html(nextOpenIssue);
             $('.periodNumber').html(data.current.periodNumber);
             $('.surplus_num').html(data.current.surplus_num);
@@ -138,7 +138,6 @@ $(function () {
                 }
                 countDownTimer = window.setInterval(function () {
                     cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval - 1000);
-
                     showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
                 }, 1000);
             }
@@ -173,9 +172,9 @@ function getHistoryData(count,date) {
         	var html = '';
         	for(var i in result.rows){
         		var data = result.rows[i];
-                $('.chooseIssue').append('<option value="'+data.termNum.substr(4)+'">'+data.termNum.substr(4)+'</option>');
+                $('.chooseIssue').append('<option value="'+data.termNum.substr(6)+'">'+data.termNum.substr(6)+'</option>');
                 html += '<div class="openCode">';
-                html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(4)+'</span>' +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+                html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(6)+'</span>' +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
                 /*数字*/
                 html += '<div>'+'<a class="sscBall">' + data.n1 + '</a>'+
                     '<a class="ssc'+DXClass(data.n1)+'"  style="display: none">' + DX(data.n1)+ '</a>'+
