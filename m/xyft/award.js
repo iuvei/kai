@@ -124,7 +124,7 @@ $(function () {
     var cpCurrAwardData = null;
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
-        $.post('../../sfpk10/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
+        $.post('../../xyft/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 

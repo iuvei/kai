@@ -58,10 +58,10 @@ include("../conn.php");
         </ul>
     </div>
     <div class="fl xia-yx" id="xia-yx1"><?=$web_type?><span class="xialabt" id="xialabt1"></span> </div>
-
-    <select class="chooseIssue">
-        <option value="">全部期数</option>
-    </select>
+    <input type="date" id="dateTime">
+<!--    <select class="chooseIssue">-->
+<!--        <option value="">全部期数</option>-->
+<!--    </select>-->
 </div>
 
 <style type="text/css">

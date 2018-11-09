@@ -58,10 +58,10 @@ include("../conn.php");
         </ul>
     </div>
     <div class="fl xia-yx" id="xia-yx1"><?=$web_type?><span class="xialabt" id="xialabt1"></span> </div>
-
-    <select class="chooseIssue" onchange="chooseIssue()">
-        <option value="">全部期数</option>
-    </select>
+    <input type="date" id="dateTime" onchange="Search()">
+<!--    <select class="chooseIssue" onchange="chooseIssue()">-->
+<!--        <option value="">全部期数</option>-->
+<!--    </select>-->
 </div>
 <div class="openResult">
     <div class="openIssueList">
@@ -168,7 +168,7 @@ function chooseIssue() {
 
 function Search() {
 	
-	getHistoryData('50', $("#dateData").val());
+	getHistoryData('50', $("#dateTime").val());
     $(".dataYMD").html( $("#dateTime").val());
     $('.dataWeed').html(getWeed($("#dateTime").val()))
 	return false;

@@ -58,10 +58,10 @@ include("../conn.php");
     </div>
     <div class="fl xia-yx" id="xia-yx1"><?=$web_type?><span class="xialabt" id="xialabt1"></span> </div>
 
-
-    <select class="chooseIssue">
-        <option value="">全部期数</option>
-    </select>
+    <input type="date" id="dateTime" onchange="Search()">
+<!--    <select class="chooseIssue">-->
+<!--        <option value="">全部期数</option>-->
+<!--    </select>-->
 </div>
 <div class="openResult">
     <div class="openIssueList">
@@ -190,7 +190,6 @@ include("../conn.php");
 
     });
     //搜索
-
 
     function Search() {
         $('.choose2 a').removeClass('chooseTypeColor');

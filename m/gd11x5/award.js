@@ -38,7 +38,7 @@ $(function () {
         }
     }
     var awardTick = function () {
-        $.post('../../gd11x5/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
+        $.post('../../gd11x5/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
