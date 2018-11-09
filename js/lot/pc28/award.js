@@ -112,6 +112,8 @@ $(function () {
                     cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval-1000);
 
                     showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
+
+
 //alert(showCountDown(cpNextAwardTimeInterval, data.next.periodNumber));
                 }, 1000);
             }

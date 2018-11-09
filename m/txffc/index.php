@@ -16,14 +16,18 @@ include("../conn.php");
 <title><?=$web_type?>开奖直播_<?=$web_type?>开奖历史记录_<?=$webtitle?>手机版</title>
 <script src="../style/js/jquery.js"></script>
 <script src="../style/js/layer.js"></script>
-<script src="../style/js/history.js"></script>
-<script src="../style/js/lotcommon.js" type="text/javascript"></script>
-<script src="../style/js/warntime.js" type="text/javascript"></script>
-<link type="text/css" href="../style/css/style.css" rel="stylesheet">
-<link type="text/css" href="../style/css/histoly.css" rel="stylesheet">
+    <script src="../style/js/history.js?v=<?php echo date("Y/m/d")?>"></script>
+    <script src="../style/js/lotcommon.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
+    <script src="../style/js/warntime.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
+    <link type="text/css" href="../style/css/style.css?v=<?php echo date("Y/m/d")?>"  rel="stylesheet">
+    <link type="text/css" href="../style/css/histoly.css?v=<?php echo date("Y/m/d")?>" rel="stylesheet">
+
+
+    <style type="text/css">
 
 
 
+    </style>
 
 
 </head>
@@ -33,9 +37,8 @@ include("../conn.php");
 
 <?php include("../public/header.php"); ?>
 
+<script src="award.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
 
-   
-<script src="award.js" type="text/javascript"></script>
 <div class="daojishi1">
     <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">
         <ul class="">
@@ -56,10 +59,10 @@ include("../conn.php");
         </ul>
     </div>
     <div class="fl xia-yx" id="xia-yx1"><?=$web_type?><span class="xialabt" id="xialabt1"></span> </div>
-
-    <select class="chooseIssue">
-        <option value="">全部期数</option>
-    </select>
+    <input type="date" id="dateTime">
+<!--    <select class="chooseIssue">-->
+<!--        <option value="">全部期数</option>-->
+<!--    </select>-->
 </div>
 <div class="openResult">
     <div class="openIssueList">

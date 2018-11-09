@@ -739,14 +739,11 @@ class LottoryDataMgr
             }
             /*if($lotType == 43){
                 $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"])  - time();
-            }else if($lotType == 46){
-               // $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
+            }else {
 
-            }else
-            {
                 $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
-            }*/
 
+            }*/
 
     //    }
 

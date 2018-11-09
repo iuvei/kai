@@ -38,7 +38,7 @@ $(function () {
         }
     }
     var awardTick = function () {
-        $.post('../../sfssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
+        $.post('../../sfssc/getxjsscAwardTimes.do', { t: Math.random() }, function (data) {
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -81,14 +81,14 @@ $(function () {
                 srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
 
             }
-            srt = srt + '<dic class="sscLH">';
+            srt = srt + '<div class="sscLH">';
             srt = srt + '<a>' + long(nums[0],nums[4]) + '</a>';
             srt = srt + '<a>' + '<span></span>' + '</a>';
             srt = srt + '<a>' + '总和' + '</a>';
             srt = srt + '<a>' + sum + '</a>';
             srt = srt + '<a>' + dx  + '</a>';
             srt = srt + '<a>' + ds  + '</a>';
-            srt = srt + '</dic>';
+            srt = srt + '</div>';
 
 
             $('.openCodeList').html(srt)
@@ -128,7 +128,7 @@ $(function () {
     var cpCurrAwardData = null;
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
-        $.post('../../sfssc/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
+        $.post('../../sfssc/getxjsscAwardTimes.do', {t: Math.random() }, function (data) {
 
 
             //请求到数据后需要做的事情

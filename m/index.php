@@ -729,9 +729,10 @@ function IndexOpen() {
         $("#pk10 #qihao").text('第' + data.pk10.dat_expect + '期');
         var nums = data.pk10.dat_codes.split(',');
         var str = "";
+        console.log(nums)
         for (var i = 0; i < nums.length; i++) {
 
-            str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i] + "</i>"
+            str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i].replace(/\b(0+)/gi,'') + "</i>"
         }
         $("#pk10 .bt-jg").html('');
         var long;
@@ -744,7 +745,7 @@ function IndexOpen() {
         var nums = data.xyft.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
-            str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i] + "</i>"
+            str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i].replace(/\b(0+)/gi,"") + "</i>"
         }
         $("#xyft .bt-jg").html('');
         var long;
@@ -1130,7 +1131,7 @@ function IndexOpen() {
         var nums = data.tcpk10.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
-            str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i] + "</i>"
+            str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i].replace(/\b(0+)/gi,"") + "</i>"
         }
         $("#tcpk10 .bt-jg").html('');
         var long;
@@ -1155,7 +1156,7 @@ function IndexOpen() {
         var nums = data.sfpk10.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
-            str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i] + "</i>"
+            str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i].replace(/\b(0+)/gi,"") + "</i>"
         }
         $("#sfpk10 .bt-jg").html('');
         var long;
