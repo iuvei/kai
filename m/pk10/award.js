@@ -41,6 +41,7 @@ $(function () {
     var awardTick = function () {
 
         $.post('../../pk10/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
+
             var nextOpenIssue = Number(data.next.periodNumber)+1;
             // var nextOpenTime =data.next.awardTime.substr(11,5);
             // $('.nextOpenIssue').html(nextOpenIssue);
@@ -132,6 +133,8 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../pk10/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
+
+            console.log(data);
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 

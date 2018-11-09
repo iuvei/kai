@@ -47,41 +47,41 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
             //if (timeInterval != 0) {
-                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
-                var nums = data.current.awardNumbers.split(',');
+            $(".currentAward .period").html(data.current.periodNumber + " 期");
+            var nums = data.current.awardNumbers.split(',');
 
-                var totalNum_a = Number(nums[1]) + Number(nums[4]) + Number(nums[7]) +Number(nums[10]) + Number(nums[13]) + Number(nums[16]);
-                var totalNum_b = Number(nums[2]) + Number(nums[5]) + Number(nums[8]) +Number(nums[11]) + Number(nums[14]) + Number(nums[17]);
-                var totalNum_c = Number(nums[3]) + Number(nums[6]) + Number(nums[9]) +Number(nums[12]) + Number(nums[15]) + Number(nums[18]) ;
+            var totalNum_a = Number(nums[1]) + Number(nums[4]) + Number(nums[7]) +Number(nums[10]) + Number(nums[13]) + Number(nums[16]);
+            var totalNum_b = Number(nums[2]) + Number(nums[5]) + Number(nums[8]) +Number(nums[11]) + Number(nums[14]) + Number(nums[17]);
+            var totalNum_c = Number(nums[3]) + Number(nums[6]) + Number(nums[9]) +Number(nums[12]) + Number(nums[15]) + Number(nums[18]) ;
 
-                totalNum_a = Number(totalNum_a)%10;
-                totalNum_b = Number(totalNum_b) % 10;
-                totalNum_c = Number(totalNum_c) % 10;
-                // nums=totalNum_a+totalNum_b+totalNum_c;
-                // alert(totalNum_a);
-                // alert(totalNum_b);
-                // alert(totalNum_c);
-                // alert(nums);
-                var str = "";
+            totalNum_a = Number(totalNum_a)%10;
+            totalNum_b = Number(totalNum_b) % 10;
+            totalNum_c = Number(totalNum_c) % 10;
+            // nums=totalNum_a+totalNum_b+totalNum_c;
+            // alert(totalNum_a);
+            // alert(totalNum_b);
+            // alert(totalNum_c);
+            // alert(nums);
+            var str = "";
 
-                    str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
+            str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
 
-                $(".lot-nums").html(str);
-                if (currentPeriodNumber == -1) {
-                    $(".currentAward .period").css("color", "green");
-                }
-                if (currentPeriodNumber != -1 && $('.close').length == 0) {    //判断第一次加载
-                	$('.sound').html('<object type="application/x-shockwave-flash" width="0" height="0" data="js/clarion.swf-path=movie.swf" /></object>');
-                }
-                if (currentPeriodNumber == -1) {    //判断第一次加载
-                    currentPeriodNumber = data.current.periodNumber;
-                    luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
-                }
+            $(".lot-nums").html(str);
+            if (currentPeriodNumber == -1) {
+                $(".currentAward .period").css("color", "green");
+            }
+            if (currentPeriodNumber != -1 && $('.close').length == 0) {    //判断第一次加载
+                $('.sound').html('<object type="application/x-shockwave-flash" width="0" height="0" data="js/clarion.swf-path=movie.swf" /></object>');
+            }
+            if (currentPeriodNumber == -1) {    //判断第一次加载
                 currentPeriodNumber = data.current.periodNumber;
-                nextPeriodNumber = data.next.periodNumber;
+                luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
+            }
+            currentPeriodNumber = data.current.periodNumber;
+            nextPeriodNumber = data.next.periodNumber;
             //}
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-                window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
+            window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
         }, 'json').error(function () {
             if (errorCount < 20) {
@@ -106,12 +106,14 @@ $(function () {
             if (data.current.periodNumber != cpNumber) {
                 cpNextAwardTimeInterval = data.next.awardTimeInterval;
 //alert(cpNextAwardTimeInterval);
-               // alert(cpNextAwardTimeInterval - 1000);
+                // alert(cpNextAwardTimeInterval - 1000);
                 if (countDownTimer) window.clearInterval(countDownTimer);
                 countDownTimer = window.setInterval(function () {
                     cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval-1000);
-                    console.log(cpNextAwardTimeInterval)
-                  showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
+
+                    showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
+
+
 //alert(showCountDown(cpNextAwardTimeInterval, data.next.periodNumber));
                 }, 1000);
             }
@@ -120,9 +122,7 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            // $(".warnTime #period").html("第" + (Number(data.next.periodNumber)) + "期");
-            $xiayiqi = parseInt(data.current.periodNumber1)+1
-            $(".warnTime #period").html("第" + $xiayiqi + "期");
+            $(".warnTime #period").html("第" + (Number(data.next.periodNumber)) + "期");
             var leavePeriod = 120 - cpNumber;
             if (leavePeriod == 0) {
                 var d = new Date();
@@ -131,7 +131,7 @@ $(function () {
             }
             //$(" .lot-award .currentAward .period-info .period-leave").html(cpNumber);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
-          //  alert(loadAwardTimesTimer);
+            //  alert(loadAwardTimesTimer);
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);
@@ -181,7 +181,7 @@ function updateHistoryRecord() {
         html += '</tr>';
 
         $("#history .head").after(html);
-       // drawColor();
+        // drawColor();
     }, 'json');
     if (typeof reloadChangLong != 'undefined' && reloadChangLong instanceof Function) {
         reloadChangLong();
