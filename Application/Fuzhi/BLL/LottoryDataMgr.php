@@ -689,12 +689,12 @@ class LottoryDataMgr
             $retData["current"]["awardTime"] = $currentNo["actionTime"];
    //     }
 
-        if ($lotType == 1 || $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lotType == 24 || $lotType == 35 || $lotType == 34 || $lotType == 40||$lotType==20  ||$lotType == 48 ||$lotType == 44 ) {
+        if ($lotType == 1 || $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lotType == 24 || $lotType == 35 || $lotType == 34 || $lotType == 40||$lotType==20   ||$lotType == 44 ) {
             $retData["current"]["periodNumber"] = $currentNo["actionNoIndex"];
         } else if($lotType == 43 ||$lotType == 6 ){
             //$retData["current"]["periodNumber"] =$dat_expect;//测试数据是否正常
             $retData["current"]["periodNumber"] = substr($currentNo["actionNo"],9);
-        }else if($lotType == 45 || $lotType == 46 || $lotType == 47 )
+        }else if($lotType == 45 || $lotType == 46 || $lotType == 47  ||$lotType == 48)
         {
             $retData["current"]["periodNumber"] = intval(substr($dat_expect,8));
         }else
@@ -712,7 +712,7 @@ class LottoryDataMgr
                 $retData["current"]["surplus_num"] = $current_num[0]['count'] - substr($currentNo["actionNo"],9);
             }else if($lotType == 20 || $lotType == 34 ||$lotType == 44 ){
                 $retData["current"]["surplus_num"] = $current_num[0]['count'] - $currentNo["actionNoIndex"];
-            }else if ($lotType == 45 || $lotType == 46 || $lotType == 47||$lotType == 48)
+            }else if ($lotType == 45 || $lotType == 46 || $lotType == 47 || $lotType == 48)
             {
                 $retData["current"]["surplus_num"] = $current_num[0]['count'] - $retData["current"]["periodNumber"];
             }
