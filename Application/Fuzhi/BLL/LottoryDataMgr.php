@@ -706,13 +706,13 @@ class LottoryDataMgr
 
        // dump($lotType);
             $retData["current"]["current_num"] =  $current_num[0]['count'];
-            if(/*$lotType == 47 ||*/ $lotType == 48 ){
-                $retData["current"]["surplus_num"] = $current_num[0]['count'] - $currentNo["actionNo"];
-            }else if($lotType == 43 || $lotType == 22 || $lotType == 6 ||$lotType == 21 || $lotType == 1){
+
+                /*$retData["current"]["surplus_num"] = $current_num[0]['count'] - $currentNo["actionNo"];*/
+            if($lotType == 43 || $lotType == 22 || $lotType == 6 ||$lotType == 21 || $lotType == 1){
                 $retData["current"]["surplus_num"] = $current_num[0]['count'] - substr($currentNo["actionNo"],9);
             }else if($lotType == 20 || $lotType == 34 ||$lotType == 44 ){
                 $retData["current"]["surplus_num"] = $current_num[0]['count'] - $currentNo["actionNoIndex"];
-            }else if ($lotType == 45 || $lotType == 46 || $lotType == 47)
+            }else if ($lotType == 45 || $lotType == 46 || $lotType == 47||$lotType == 48)
             {
                 $retData["current"]["surplus_num"] = $current_num[0]['count'] - $retData["current"]["periodNumber"];
             }
