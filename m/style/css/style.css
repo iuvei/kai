@@ -41,6 +41,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 
 
 }
+
 .barner{ width: 100%; overflow: hidden;}
 .barner img{width: 100%; }
 .header .logo img{display:block;height: 8vw}
@@ -97,7 +98,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	padding-left: 3vw; padding-right: 3vw;
 }
 .q3box,.z3box,.h3box{ float: left;display: block;width: 28vw;height: 4vw;line-height: 4vw}
-.ball-red-span{width: 3vw;height: 3vw;background: #d83547; border-radius: 50%; margin-right:0.8vw;display: inline-block;margin-top: 0.5vw}
+.ball-red-span{width: 3vw;height: 3vw;background: #d83547; border-radius: 50%; margin-right:0.8vw;display: inline-block;margin-top: 0.5vw;}
 
 .header .close {
 	
@@ -210,7 +211,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 
 .ball-wrap {
 	/*font-size:0; padding-top:5px;*/
-	position: relative; overflow:hidden;    font-size: 3.2vw;}
+	position: relative; overflow:hidden;    font-size: 3.2vw;padding-bottom: 2vw}
 .ball-red,.ball-blue {display:inline-block;
 	margin-right: 1vw;
 	width: 6.5vw;
