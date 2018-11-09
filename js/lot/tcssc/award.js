@@ -47,7 +47,7 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
             if (timeInterval != 0) {
-                $(".currentAward .period").html(data.current.periodNumber1+ " 期");
+                $(".currentAward .period").html(data.current.periodNumber1.substr(6)+ " 期");
                 var nums = data.current.awardNumbers.split(',');
                 var str = "";
                 for (var i = 0; i < nums.length; i++) {
@@ -106,7 +106,7 @@ $(function () {
             }
             $xiayiqi = parseInt(data.current.periodNumber1)+1;
 
-            $(".warnTime #period").html("第" + $xiayiqi + "期");
+            $(".warnTime #period").html("第" + $xiayiqi.toString().substr(6) + "期");
             console.log(cpNumber)
             /*var leavePeriod = 1152 - (cpNumber.cpNumber.length-4);
 

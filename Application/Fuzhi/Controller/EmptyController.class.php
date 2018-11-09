@@ -192,7 +192,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                 $this->keyword = C("WEB_SITE_xjssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                 $this->description = C("WEB_SITE_xjssc_DESCR");
                                                                 $lottoryName = "腾讯分分彩";
-                                                                $totalExpect = 1140;
+                                                                $totalExpect = 1440;
                                                             }else{
                                                                 if ($ctrlName == 'tcpk10') {
                                                                     $this->title = $title_c.'极速pk10开奖视频_极速pk10开奖号码_极速pk10开奖记录 - ' . C('WEB_SITE_TITLE');

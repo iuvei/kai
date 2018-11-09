@@ -47,7 +47,7 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
             if (timeInterval != 0) {
-                $(".currentAward .period").html(data.current.periodNumber + " 期");
+                $(".currentAward .period").html(data.current.periodNumber1.substr(6) + " 期");
                 var nums = data.current.awardNumbers.split(',');
                 var str = "";
                 for (var i = 0; i < nums.length; i++) {
@@ -103,14 +103,14 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            $(".warnTime #period").html("第" + (parseInt(data.next.periodNumber)+1) + "期");
+            $(".warnTime #period").html("第" + (parseInt(data.next.periodNumber)+1).toString().substr(6) + "期");
             var leavePeriod = 120 - cpNumber;
             if (leavePeriod == 0) {
                 var d = new Date();
                 var nd = new Date(data.next.awardTime.split(' ')[0].replace("-", "/", "gi"));
                 if (d.getDate() == nd.getDate()) leavePeriod = 120;
             }
-            $(" .lot-award .currentAward .period-info .period-leave").html(((Number(data.firstPeriod)+1)+1440)-data.next.periodNumber);
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
 
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
 
