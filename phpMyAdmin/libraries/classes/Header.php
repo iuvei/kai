@@ -665,9 +665,9 @@ class Header
      */
     private function _getLinkTags()
     {
-        $retval = '<link rel="icon" href="favicon.ico" '
+        $retval = '<link rel="icon" href="/favicon.ico?t=2018" '
             . 'type="image/x-icon" />'
-            . '<link rel="shortcut icon" href="favicon.ico" '
+            . '<link rel="shortcut icon" href="/favicon.ico?t=2018" '
             . 'type="image/x-icon" />';
         // stylesheets
         $basedir    = defined('PMA_PATH_TO_BASEDIR') ? PMA_PATH_TO_BASEDIR : '';

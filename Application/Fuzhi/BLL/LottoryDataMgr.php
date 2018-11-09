@@ -706,16 +706,17 @@ class LottoryDataMgr
                 // $retData["next"]["periodNumber"] = $nextNo["actionNo"];
                 $retData["next"]["periodNumber"] =$dat_expect;//测试数据是否正常
             }
-            if($lotType == 43){
+            /*if($lotType == 43){
                 $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"])  - time();
             }else if($lotType == 46){
                // $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
-                $shijian = strtotime($nextNo["actionTime"]) -30;
-                $retData["next"]["awardTimeInterval"] = $shijian * 1000 - $MillisecondTime;
+
             }else
             {
                 $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
-            }
+            }*/
+        $shijian = strtotime($nextNo["actionTime"]) -30;
+        $retData["next"]["awardTimeInterval"] = $shijian * 1000 - $MillisecondTime;
 
     //    }
 

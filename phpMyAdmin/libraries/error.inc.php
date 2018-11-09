@@ -19,8 +19,8 @@ if (! defined('TESTSUITE')) {
 <!DOCTYPE HTML>
 <html lang="<?php echo $lang; ?>" dir="<?php echo $dir; ?>">
 <head>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="../favicon.ico?t=2018" type="image/x-icon" />
+    <link rel="shortcut icon" href="../favicon.ico?t=2018" type="image/x-icon" />
     <title>phpMyAdmin</title>
     <meta charset="utf-8" />
     <style type="text/css">
