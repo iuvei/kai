@@ -38,7 +38,7 @@ $(function () {
         }
     }
     var awardTick = function () {
-        $.get('jssc/getPk10AwardData.do', { ajaxhandler: 'GetPk10AwardData', t: Math.random() }, function (data) {
+        $.get('gd11x5/getxjsscAwardData.do', { ajaxhandler: 'GetPk10AwardData', t: Math.random() }, function (data) {
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -95,7 +95,7 @@ $(function () {
     var cpCurrAwardData = null;
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
-        $.get('jssc/getPk10AwardTimes.do', { ajaxhandler: 'GetPk10AwardTimes', t: Math.random() }, function (data) {
+        $.get('gd11x5/getxjsscAwardTimes.do', { ajaxhandler: 'GetPk10AwardTimes', t: Math.random() }, function (data) {
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 
@@ -135,7 +135,7 @@ $(function () {
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
 });
 function getHistoryData(count) {
-    $.get("jssc/getHistoryData.do", { count:typeof(count)=="undefined"?16:count,t: Math.random() }, function (result) {
+    $.get("gd11x5/getNewestRecord.do", { count:typeof(count)=="undefined"?16:count,t: Math.random() }, function (result) {
         if(result&&result.rows){
             var j = 0;
             var html = '';

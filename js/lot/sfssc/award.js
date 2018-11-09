@@ -48,7 +48,7 @@ $(function () {
             }
 
             if (timeInterval != 0) {
-                $(".currentAward .period").html(data.current.periodNumber + " 期");
+                $(".currentAward .period").html(data.current.periodNumber1.substr(6) + " 期");
                 var nums = data.current.awardNumbers.split(',');
                 var str = "";
                 for (var i = 0; i < nums.length; i++) {
@@ -109,14 +109,14 @@ $(function () {
             var num = data.next.periodNumberStr;
             var num_2 =num.slice(num.indexOf('-')+1);
             cpNumber =num.slice(num.indexOf('-')+2);
-            $(".warnTime #period").html("第" + (parseInt(num_2)+1) + "期");
+            $(".warnTime #period").html("第" + (parseInt(data.current.periodNumber1)+1).toString().substr(6) + "期");
             var leavePeriod = 1152 - num_2;
             if (leavePeriod == 0) {
                 var d = new Date();
                 var nd = new Date(data.next.awardTime.split(' ')[0].replace("-", "/", "gi"));
                 if (d.getDate() == nd.getDate()) leavePeriod = 120;
             }
-            $(" .lot-award .currentAward .period-info .period-leave").html((Number(leavePeriod)+1));
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
         }, 'json').error(function () {
             if (errorCount < 20) {

@@ -49,7 +49,7 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
             if (timeInterval != 0) {
-                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                $(".currentAward .period").html(data.current.periodNumber1.substr(6) + " 期");
                 var nums;
                 var str = "";
                 if(data.current.awardNumbers != null)
@@ -115,8 +115,8 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            $(".warnTime #period").html("第" + (parseInt(data.next.periodNumber)+1) + "期");
-            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.current_num-data.current.fullPeriodNumber);
+            $(".warnTime #period").html("第" + (parseInt(data.next.periodNumber)+1).toString().substr(6) + "期");
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
              
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
         }, 'json').error(function () {
@@ -146,7 +146,7 @@ function getHistoryData(count) {
                     clsName = "odd";
                 }
         		html += '<tr class="' + clsName + '"><td><p class="">' + data.lotteryTime.substring(5, 16)+ '</p></td><td><p class="">'
-        				+ data.termNum ;
+        				+ data.termNum.substr(6) ;
                 html += '</p></td><td class="nums">';
                 html += '<i class="pk-no' + data.n1 + '"></i>';
                 html += '<i class="pk-no' + data.n2 + '"></i>';

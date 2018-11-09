@@ -48,7 +48,7 @@ $(function () {
             }
             if (timeInterval != 0) {
 
-                var qihao2 = data.current.periodNumber1.substr(6);
+                var qihao2 = data.current.periodNumber1.substr(4);
                 $(".currentAward .period").html(qihao2 + " 期");
                 var nums = data.current.awardNumbers.split(',');
                 var str = "";
@@ -103,20 +103,21 @@ $(function () {
                 }, 1000);
             }
             cpNumber = data.current.periodNumber;
-
+            console.log(cpNumber)
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
             var qihao1 = data.current.periodNumber1.substr(6,2)+data.next.periodNumber;
-            $(".warnTime #period").html("第" + qihao1 + "期");
+
+            $(".warnTime #period").html("第" +(Number(data.current.periodNumber1)+1).toString().substr(4) + "期");
             var leavePeriod = 180 - cpNumber;
             if (leavePeriod == 0) {
                 var d = new Date();
                 var nd = new Date(data.next.awardTime.split(' ')[0].replace("-", "/", "gi"));
                 if (d.getDate() == nd.getDate()) leavePeriod = 180;
             }
-            $(" .lot-award .currentAward .period-info .period-leave").html(leavePeriod);
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
         }, 'json').error(function () {
             if (errorCount < 20) {
