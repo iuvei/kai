@@ -47,7 +47,9 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
             if (timeInterval != 0) {
-                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+
+                var qihao2 = data.current.periodNumber1.substr(6);
+                $(".currentAward .period").html(qihao2 + " 期");
                 var nums = data.current.awardNumbers.split(',');
                 var str = "";
                 for (var i = 0; i < nums.length; i++) {
@@ -58,13 +60,13 @@ $(function () {
                     $(".currentAward .period").css("color", "green");
                 }
                 if (currentPeriodNumber != -1 && $('.close').length == 0) {    //判断第一次加载
-                	$('.sound').html('<object type="application/x-shockwave-flash" width="0" height="0"  data="js/clarion.swf-path=movie.swf" /></object>');
+                    $('.sound').html('<object type="application/x-shockwave-flash" width="0" height="0"  data="js/clarion.swf-path=movie.swf" /></object>');
                 }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
                     currentPeriodNumber = data.current.periodNumber;
                     luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
                 }
-                
+
                 currentPeriodNumber = data.current.periodNumber;
                 nextPeriodNumber = data.next.periodNumber;
             }
@@ -101,20 +103,20 @@ $(function () {
                 }, 1000);
             }
             cpNumber = data.current.periodNumber;
-			
+
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            $xiayiqi = parseInt(data.current.periodNumber1)+1
-            $(".warnTime #period").html("第" + $xiayiqi + "期");
+            var qihao1 = data.current.periodNumber1.substr(6,2)+data.next.periodNumber;
+            $(".warnTime #period").html("第" + qihao1 + "期");
             var leavePeriod = 180 - cpNumber;
             if (leavePeriod == 0) {
                 var d = new Date();
                 var nd = new Date(data.next.awardTime.split(' ')[0].replace("-", "/", "gi"));
                 if (d.getDate() == nd.getDate()) leavePeriod = 180;
             }
-            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
+            $(" .lot-award .currentAward .period-info .period-leave").html(leavePeriod);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
         }, 'json').error(function () {
             if (errorCount < 20) {

@@ -49,7 +49,7 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
             if (timeInterval != 0) {
-                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                $(".currentAward .period").html(parseInt(data.current.periodNumber) + " 期");
                 var nums;
                 var str = "";
                 if(data.current.awardNumbers != null)
@@ -67,7 +67,7 @@ $(function () {
                     $(".currentAward .period").css("color", "green");
                 }
                 if (currentPeriodNumber != -1 && $('.close').length == 0) {    //判断第一次加载
-                	$('.sound').html('<object  width="0" height="0" type="application/x-shockwave-flash" data="js/clarion.swf-path=movie.swf" /></object>');
+                    $('.sound').html('<object  width="0" height="0" type="application/x-shockwave-flash" data="js/clarion.swf-path=movie.swf" /></object>');
                 }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
                     currentPeriodNumber = data.current.periodNumber;
@@ -75,7 +75,7 @@ $(function () {
                 }
                 currentPeriodNumber = data.current.periodNumber;
                 nextPeriodNumber = data.next.periodNumber;
-                
+
             }
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
@@ -116,8 +116,8 @@ $(function () {
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
             $(".warnTime #period").html("第" + (parseInt(data.next.periodNumber)+1) + "期");
-            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
-             
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.firstPeriod+179-cpNumber);
+
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
         }, 'json').error(function () {
             if (errorCount < 20) {
@@ -137,16 +137,16 @@ $(function () {
 function getHistoryData(count) {
     $.get("pk10/getHistoryData.do", { count:typeof(count)=="undefined"?16:count,t: Math.random() }, function (result) {
         if(result&&result.rows){
-        	var j = 0;
-        	var html = '';
-        	for(var i in result.rows){
-        		var data = result.rows[i];
-        		var clsName = "even";
+            var j = 0;
+            var html = '';
+            for(var i in result.rows){
+                var data = result.rows[i];
+                var clsName = "even";
                 if (j%2==0) {
                     clsName = "odd";
                 }
-        		html += '<tr class="' + clsName + '"><td><p class="">' + data.lotteryTime.substring(5, 16)+ '</p></td><td><p class="">'
-        				+  data.termNum ;
+                html += '<tr class="' + clsName + '"><td><p class="">' + data.lotteryTime.substring(5, 16)+ '</p></td><td><p class="">'
+                    +  data.termNum ;
                 html += '</p></td><td class="nums">';
                 html += '<i class="pk-no' + data.n1 + '"></i>';
                 html += '<i class="pk-no' + data.n2 + '"></i>';
@@ -163,12 +163,12 @@ function getHistoryData(count) {
                 html += '<td>' + guanyahe + '</td>';
                 var guanyahedx = '大';
                 if(guanyahe<=11){
-                	var guanyahedx = '小';
+                    var guanyahedx = '小';
                 }
                 html += '<td><p ' + (guanyahedx == "大" ? 'class="r"' : '') + '>' + guanyahedx + '</p></td>';
                 var guanyaheds = '单';
                 if(guanyahe%2==0){
-                	guanyaheds = '双';
+                    guanyaheds = '双';
                 }
                 html += '<td><p ' + (guanyaheds == "单" ? 'class="r"' : '') + '>' + guanyaheds + '</p></td>';
                 var longhu = new Array();
@@ -182,14 +182,14 @@ function getHistoryData(count) {
                 }
                 html += '</tr>';
                 j++;
-        	}
-        	$("#history .head").after(html);
+            }
+            $("#history .head").after(html);
         }
     }, "json");
 }
 function updateHistoryRecord() {
     $.get('pk10/getNewestRecord.do', { ajaxhandler: 'GetNewestRecord', t: Math.random() }, function (data) {
-    	var numbers = data.numbers.split(',');
+        var numbers = data.numbers.split(',');
         var longhu = data.longhu;
         var tr1 = $("#history tr").eq(1);
         var clsName = "odd";

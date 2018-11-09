@@ -92,6 +92,8 @@ $(function () {
 
             $('.openCodeList').html(srt)
 
+            //console.log(timeInterval);
+
             if (timeInterval != 0) {
                 if (currentPeriodNumber != -1 ) {    //判断第一次加载
                     window.setTimeout(getHistoryData('50'), data.next.awardTimeInterval < 10 ? 1000 : _time);
@@ -167,6 +169,8 @@ $(function () {
 function getHistoryData(count,date) {
 	layer.open({type: 2,time: 1});
     $.get("../../txffc/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
+
+        console.log(result);
 
         if(result&&result.rows){
         	var j = 0;

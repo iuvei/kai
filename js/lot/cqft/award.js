@@ -53,7 +53,9 @@ $(function () {
             }
 
             if (timeInterval != 0) {
-                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                var qihao2 = data.current.periodNumber1.substr(6);
+                $(".currentAward .period").html(qihao2 + " 期");
+                // $(".currentAward .period").html(data.current.fullPeriodNumber + " 期");
                 var nums = data.current.awardNumbers.split(',');
                 var str = "";
                 for (var i = 0; i < nums.length; i++) {
@@ -64,7 +66,7 @@ $(function () {
                     $(".currentAward .period").css("color", "green");
                 }
                 if (currentPeriodNumber != -1 && $('.close').length == 0) {    //判断第一次加载
-                	$('.sound').html('<object type="application/x-shockwave-flash" width="0" height="0" data="js/clarion.swf-path=movie.swf" /></object>');
+                    $('.sound').html('<object type="application/x-shockwave-flash" width="0" height="0" data="js/clarion.swf-path=movie.swf" /></object>');
                 }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
                     currentPeriodNumber = data.current.periodNumber;
@@ -74,7 +76,7 @@ $(function () {
                 nextPeriodNumber = data.next.periodNumber;
             }
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-          //  _time=30000;
+            //  _time=30000;
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
         }, 'json').error(function () {
@@ -110,10 +112,8 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-
-
-            $xiayiqi = parseInt(data.current.periodNumber1)+1
-            $(".warnTime #period").html("第" + $xiayiqi + "期");
+            var qihao1 = parseInt(data.current.periodNumber1.substr(6))+1;
+            $(".warnTime #period").html("第" + qihao1 + "期");
             var leavePeriod = 120 - cpNumber;
             if (leavePeriod == 0) {
                 var d = new Date();

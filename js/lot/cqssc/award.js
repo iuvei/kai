@@ -47,7 +47,7 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
             if (timeInterval != 0) {
-                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                $(".currentAward .period").html(data.current.fullPeriodNumber + " 期");
                 var nums = data.current.awardNumbers.split(',');
                 var str = "";
                 for (var i = 0; i < nums.length; i++) {
@@ -58,7 +58,7 @@ $(function () {
                     $(".currentAward .period").css("color", "green");
                 }
                 if (currentPeriodNumber != -1 && $('.close').length == 0) {    //判断第一次加载
-                	$('.sound').html('<object type="application/x-shockwave-flash" width="0" height="0" data="js/clarion.swf-path=movie.swf" /></object>');
+                    $('.sound').html('<object type="application/x-shockwave-flash" width="0" height="0" data="js/clarion.swf-path=movie.swf" /></object>');
                 }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
                     currentPeriodNumber = data.current.periodNumber;
@@ -104,8 +104,7 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            $xiayiqi = parseInt(data.current.periodNumber1)+1
-            $(".warnTime #period").html("第" + $xiayiqi + "期");
+            $(".warnTime #period").html("第" + data.next.periodNumber + "期");
             var leavePeriod = 120 - cpNumber;
             if (leavePeriod == 0) {
                 var d = new Date();

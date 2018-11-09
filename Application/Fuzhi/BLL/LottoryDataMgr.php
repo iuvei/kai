@@ -159,6 +159,7 @@ class LottoryDataMgr
         $expire = 2;
 
         if ($page == 'getHistoryData.do') {
+
             $ret = $this->getHistoryData($type, $page, $lotType, $expire);
         } else {
             if ($page == "numbertrendData.do") {
@@ -532,7 +533,7 @@ class LottoryDataMgr
             $date = wjStrFilter(I('get.date'));
            // $pages = (int)wjStrFilter(I('get.page'));
         }
-//dump($count);die;
+
         $cacheName = $type . '_' . $page . '_' . $count . '_' . $date;
         $ret = S($cacheName);
 
@@ -550,6 +551,36 @@ class LottoryDataMgr
             } else {
                 $openedCaiList = $this->getLottoryByDate($module, $lotType, $date,$count);
             }
+            if( $lotType == 44 ) {
+                for ($i = 0; $i < count($openedCaiList); $i++) {
+                    if ($date == '' && $count > 0 && $i >= $count) {
+                        break;
+                    }
+                    $lingdian =  strtotime(date('Y-m-d',time()));
+                    $opentime =  substr($openedCaiList[$i]["dat_expect"],8);
+                    $opentime = $opentime * 60 + $lingdian;
+                    /*dump($opentime);die;*/
+                    $retData["rows"][$i] = array();
+                    $OpenCodes = ZstAnalyser::getCodeArr($openedCaiList[$i]["dat_codes"]);
+                    $retData["rows"][$i]["id"] = $i;
+                    $retData["rows"][$i]["betEndTime"] = null;
+                    $retData["rows"][$i]["termNum"] = $openedCaiList[$i]["dat_expect"];
+                    $retData["rows"][$i]["lotteryNum"] = implode('', $OpenCodes);
+                    $retData["rows"][$i]["lotteryTime"] = date('Y-m-d H:i:s', $opentime);;
+                    $retData["rows"][$i]["gameId"] = $this->getGameIdByLotType($lotType);
+                    for ($j = 0; $j < 21; $j++) {
+                        if ($j < count($OpenCodes)) {
+                            $retData["rows"][$i]["n" . ($j + 1)] = (int)$OpenCodes[$j];
+                        } else {
+                            $retData["rows"][$i]["n" . ($j + 1)] = null;
+                        }
+                    }
+                    $retData["rows"][$i]["lotteryDate"] = date('Y-m-d 00:00:00', $openedCaiList[$i]["dat_open_time"]);
+                    $retData["rows"][$i]["lotteryDateStr"] = date('Y-m-d', $openedCaiList[$i]["dat_open_time"]);
+                    $retData["rows"][$i]["termNumStr"] = "";
+                }
+            }else{
+
             for ($i = 0; $i < count($openedCaiList); $i++) {
                 if ($date == '' && $count > 0 && $i >= $count) {
                     break;
@@ -572,7 +603,7 @@ class LottoryDataMgr
                 $retData["rows"][$i]["lotteryDate"] = date('Y-m-d 00:00:00', $openedCaiList[$i]["dat_open_time"]);
                 $retData["rows"][$i]["lotteryDateStr"] = date('Y-m-d', $openedCaiList[$i]["dat_open_time"]);
                 $retData["rows"][$i]["termNumStr"] = "";
-            }
+            }}
             $ret = json_encode($retData);
             S($cacheName, $ret, array('type' => 'file', 'expire' => $expire));
         }
@@ -715,10 +746,11 @@ class LottoryDataMgr
             {
                 $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
             }*/
-        $shijian = strtotime($nextNo["actionTime"]) -30;
-        $retData["next"]["awardTimeInterval"] = $shijian * 1000 - $MillisecondTime;
+
 
     //    }
+
+        $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
 
 
         $retData["next"]["fullPeriodNumber"] = 0;
