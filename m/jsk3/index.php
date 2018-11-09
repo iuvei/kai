@@ -16,13 +16,17 @@ include("../conn.php");
 <title><?=$web_type?>开奖直播_<?=$web_type?>开奖历史记录_<?=$webtitle?>手机版</title>
 <script src="../style/js/jquery.js"></script>
 <script src="../style/js/layer.js"></script>
-<script src="../style/js/lotcommon.js" type="text/javascript"></script>
-<script src="../style/js/warntime.js?v=155" type="text/javascript"></script>
-<link type="text/css" href="../style/css/style.css" rel="stylesheet">
-<link type="text/css" href="../style/css/histoly.css" rel="stylesheet">
+    <script src="../style/js/lotcommon.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
+    <script src="../style/js/warntime.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
+    <link type="text/css" href="../style/css/style.css?v=<?php echo date("Y/m/d")?>"  rel="stylesheet">
+    <link type="text/css" href="../style/css/histoly.css?v=<?php echo date("Y/m/d")?>" rel="stylesheet">
+
+
+    <style type="text/css">
 
 
 
+    </style>
 
 
 </head>
@@ -32,9 +36,7 @@ include("../conn.php");
 
 <?php include("../public/header.php"); ?>
 
-
-
-<script src="award.js?v=212" type="text/javascript"></script>
+<script src="award.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
 <div class="daojishi1">
     <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">

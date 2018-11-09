@@ -81,14 +81,14 @@ $(function () {
                 srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
 
             }
-            srt = srt + '<dic class="sscLH">';
+            srt = srt + '<div class="sscLH">';
             srt = srt + '<a>' + long(nums[0],nums[4]) + '</a>';
             srt = srt + '<a>' + '<span></span>' + '</a>';
             srt = srt + '<a>' + '总和' + '</a>';
             srt = srt + '<a>' + sum + '</a>';
             srt = srt + '<a>' + dx  + '</a>';
             srt = srt + '<a>' + ds  + '</a>';
-            srt = srt + '</dic>';
+            srt = srt + '</div>';
 
 
             $('.openCodeList').html(srt)

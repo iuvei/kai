@@ -111,10 +111,21 @@
     width: 100%;
 }
 
+.pk10He{
+    background-color: #3da12f;
+    margin: auto;
+    width: 6.66667vw;
+    height: 6.66667vw;
+    font-size: 3.2vw;
+    font-weight: 700;
+    display: block;
+    line-height: 6.66667vw;
+    border-radius: 3px;
+    color: #fff;
+}
 
 
-
-.pk10Da,.pk10Shuang{
+.pk10Da,.pk10Shuang,.pk10Hu,.pk10HeDa,.pk10HeShuang {
     background: #0089ff;
     margin: auto;
     width: 6.66667vw;
@@ -126,7 +137,7 @@
     border-radius: 3px;
     color: #fff;
 }
-.pk10Xiao,.pk10Dan{
+.pk10Xiao,.pk10Dan,.pk10Long,.pk10HeXiao,.pk10HeDan {
     margin: auto;
     width: 6.66667vw;
     height: 6.66667vw;

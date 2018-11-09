@@ -57,7 +57,7 @@ $(function () {
             $('.surplus_num').html(data.current.surplus_num);
 
             var nums = data.current.awardNumbers.split(',');
-
+            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
 
 
 
@@ -81,22 +81,22 @@ $(function () {
                 srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
 
             }
-            srt = srt + '<dic class="sscLH">';
+            srt = srt + '<div class="sscLH">';
             srt = srt + '<a>' + long(nums[0],nums[4]) + '</a>';
             srt = srt + '<a>' + '<span></span>' + '</a>';
             srt = srt + '<a>' + '总和' + '</a>';
             srt = srt + '<a>' + sum + '</a>';
             srt = srt + '<a>' + dx  + '</a>';
             srt = srt + '<a>' + ds  + '</a>';
-            srt = srt + '</dic>';
+            srt = srt + '</div>';
 
 
             $('.openCodeList').html(srt)
-            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
+
             if (timeInterval != 0) {
                 if (currentPeriodNumber != -1 ) {    //判断第一次加载
-                    window.setTimeout(getHistoryData('50'), data.next.awardTimeInterval < 10 ? 1000 : _time);
 
+                    window.setTimeout(getHistoryData('50'), data.next.awardTimeInterval < 10 ? 1000 : _time);
                 }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
                     currentPeriodNumber = data.current.periodNumber;
@@ -110,8 +110,8 @@ $(function () {
 
 
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
+            console.log( data.next.awardTimeInterval < 10 ? 1000 : _time)
             timeInterval = 0;
-
 
 
         }, 'json').error(function () {
@@ -142,7 +142,6 @@ $(function () {
                 }
                 countDownTimer = window.setInterval(function () {
                     cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval - 1000);
-
                     showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
                 }, 1000);
             }
@@ -151,7 +150,7 @@ $(function () {
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
             }
-           // $(".headOpenTime .headOpenTimeM").html(data.next.periodNumber);
+            // $(".headOpenTime .headOpenTimeM").html(data.next.periodNumber);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
         }, 'json').error(function () {
             if (errorCount < 20) {
@@ -169,14 +168,14 @@ $(function () {
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
 });
 function getHistoryData(count,date) {
-	layer.open({type: 2,time: 1});
+    layer.open({type: 2,time: 1});
     $.get("../../tcssc/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
 
         if(result&&result.rows){
-        	var j = 0;
-        	var html = '';
-        	for(var i in result.rows){
-        		var data = result.rows[i];
+            var j = 0;
+            var html = '';
+            for(var i in result.rows){
+                var data = result.rows[i];
                 $('.chooseIssue').append('<option value="'+data.termNum.substr(4)+'">'+data.termNum.substr(4)+'</option>');
                 html += '<div class="openCode">';
                 html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(4)+'</span>' +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
@@ -210,31 +209,31 @@ function getHistoryData(count,date) {
                 html += '<div>'+'<a>'+ long(data.n1,data.n5) + '</a>'+'</div>';
 
                 html += '</div>';
-        		// html += '<li class="' + clsName + '">';
-				// html += '<table width="100%">';
-				// html += '<tr>';
-        		// html += '<td width="20%">' + data.termNum.substring(8, 16) +'期</br>';
-				// html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
+                // html += '<li class="' + clsName + '">';
+                // html += '<table width="100%">';
+                // html += '<tr>';
+                // html += '<td width="20%">' + data.termNum.substring(8, 16) +'期</br>';
+                // html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
                 // html += '<td class=""><div class="nums-div">';
-				// html += '<i class="ball-red">' + data.n1 + '</i>';
-				// html += '<i class="ball-red">' + data.n2 + '</i>';
-				// html += '<i class="ball-red">' + data.n3 + '</i>';
-				// html += '<i class="ball-red">' + data.n4 + '</i>';
-				// html += '<i class="ball-red">' + data.n5 + '</i>';
+                // html += '<i class="ball-red">' + data.n1 + '</i>';
+                // html += '<i class="ball-red">' + data.n2 + '</i>';
+                // html += '<i class="ball-red">' + data.n3 + '</i>';
+                // html += '<i class="ball-red">' + data.n4 + '</i>';
+                // html += '<i class="ball-red">' + data.n5 + '</i>';
 
                 // html += '<div class="bt-jg"><span>'+long(data.n1,data.n5)+'</span><span style="color: #bbbbbb">|</span><span>'+ sum +'</span><span>'+ dx(sum)+'</span><span>'+ds(sum)+'</span>'+
                 //     '</br><span class="span-2">'+shun(data.n1,data.n2,data.n3)+'</span><span class="span-2">'+shun(data.n2,data.n3,data.n4)+'</span>' +
                 //     '<span class="span-2">'+shun(data.n3,data.n4,data.n5)+'</span><span class="span-2">'+douniu(guanyahe)+'</span></div></div></td>';
 
                 // html += '</tr>';
-				// html += '</table>';
-				// html += '</li>';
+                // html += '</table>';
+                // html += '</li>';
                 j++;
-        	}
-        	$("#historyList").html(html);
+            }
+            $("#historyList").html(html);
         }else {
-			 $("#historyList").html("<li>对不起，今天暂无数据，请按日期检索！</li>");
-			}
+            $("#historyList").html("<li>对不起，今天暂无数据，请按日期检索！</li>");
+        }
     }, "json");
 }
 function DXClass(num) {
@@ -442,7 +441,7 @@ function lh(nums) {
     srt +="<span>"+sum+"</span>";
     srt +="<span>"+dx+"</span>";
     srt +="<span>"+ds+"</span>";
-   // console.log(srt);
+    // console.log(srt);
     return srt;
 }
 

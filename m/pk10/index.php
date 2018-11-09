@@ -105,20 +105,6 @@ include("../conn.php");
 
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!--<div class="head">-->
 <!--    <div class="headRow1">-->
 <!--        <input type="date" id="dateTime" onchange="Search()">-->
@@ -170,7 +156,7 @@ include("../conn.php");
     <a>号码</a>
     <a>大小</a>
     <a>单双</a>
-  <!--  <a>组合</a>-->
+    <a>组合</a>
     <a>筛选</a>
 </div>
 <div class="BallNum">
@@ -230,7 +216,6 @@ include("../conn.php");
 
 
     });
-
     /*期数*/
     var issueStr = '';
     var arr=[];
@@ -296,6 +281,7 @@ include("../conn.php");
         } else if($(this).text()=='组合'){
             $('.openCode a').hide();
             $('.BallNum').hide();
+            $('.lastDiv').hide();
             $('.zuhe').show();
 
         }

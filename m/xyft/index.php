@@ -16,17 +16,17 @@ include("../conn.php");
 <title><?=$web_type?>开奖直播_<?=$web_type?>开奖历史记录_<?=$webtitle?>手机版</title>
 <script src="../style/js/jquery.js"></script>
 <script src="../style/js/layer.js"></script>
-<script src="../style/js/lotcommon.js?v= <?php echo date("Y/m/d")?>" type="text/javascript"></script>
-<script src="../style/js/warntime.js?v= <?php echo date("Y/m/d")?>" type="text/javascript"></script>
-<link type="text/css" href="../style/css/style.css?v=<?php echo date("Y/m/d")?>"  rel="stylesheet">
-<link type="text/css" href="../style/css/histoly.css?v=<?php echo date("Y/m/d")?>" rel="stylesheet">
+    <script src="../style/js/lotcommon.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
+    <script src="../style/js/warntime.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
+    <link type="text/css" href="../style/css/style.css?v=<?php echo date("Y/m/d")?>"  rel="stylesheet">
+    <link type="text/css" href="../style/css/histoly.css?v=<?php echo date("Y/m/d")?>" rel="stylesheet">
 
 
-<style type="text/css">
+    <style type="text/css">
 
 
 
-</style>
+    </style>
 
 
 </head>
@@ -134,7 +134,7 @@ include("../conn.php");
     <a>号码</a>
     <a>大小</a>
     <a>单双</a>
-   <!-- <a>组合</a>-->
+    <a>组合</a>
     <a>筛选</a>
 </div>
 <div class="BallNum">
@@ -150,6 +150,19 @@ include("../conn.php");
         <a>八</a>
         <a>九</a>
         <a>十</a>
+    </div>
+</div>
+<div class="BallNum zuhe" style="display: none">
+    <div class="BallNumHead">
+        <a class="issue">期号</a>
+        <a>组合</a>
+        <a>组合</a>
+        <a>组合</a>
+        <a>冠军</a>
+        <a>亚军</a>
+        <a>季军</a>
+        <a>第四</a>
+        <a>第五</a>
     </div>
 </div>
 <div id="historyList"></div>
@@ -283,8 +296,8 @@ include("../conn.php");
         } else if($(this).text()=='组合'){
             $('.openCode a').hide();
             $('.BallNum').hide();
+            $('.lastDiv').hide();
             $('.zuhe').show();
-
         }
 
     });
