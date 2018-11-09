@@ -116,13 +116,12 @@ function indexdata() {
             cpNumber = data.current.periodNumber;
             var _time = data.current.awardTime.substring(11, 16);
             //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
-
             $("#pk10_hot .drawCount").html(cpNumber);
-            $("#pk10_hot .sdrawCountnext").html(179-Number(cpNumber));
-            $("#pk10_hot .preDrawIssue").html(Number(data.firstPeriod) + 179 - cpNumber);
+            $("#pk10_hot .sdrawCountnext").html(data.current.surplus_num);
+            $("#pk10_hot .preDrawIssue").html(data.current.periodNumber1);
             $("#pk10 .drawCount").html(cpNumber);
-            $("#pk10 .sdrawCountnext").html(179-Number(cpNumber));
-            $("#pk10 .preDrawIssue").html(Number(data.firstPeriod) + 179 - cpNumber);
+            $("#pk10 .sdrawCountnext").html(data.current.surplus_num);
+            $("#pk10 .preDrawIssue").html(data.current.periodNumber1);
         });
 }
     function f12() {
@@ -202,10 +201,13 @@ function indexdata() {
                 //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
                 //      var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-3);
 
-                $("#xyft .preDrawIssue").html((Number(data.firstPeriod) + 180 - cpNumber).toString().substr(4));
-                $("#xyft .drawCount").html(cpNumber);
-                $("#xyft .sdrawCountnext").html(180 - cpNumber);
+                // $("#xyft .preDrawIssue").html((Number(data.firstPeriod) + 180 - cpNumber).toString().substr(4));
+                // $("#xyft .drawCount").html(cpNumber);
+                // $("#xyft .sdrawCountnext").html(180 - cpNumber);
 
+                $("#xyft .drawCount").html(cpNumber);
+                $("#xyft .sdrawCountnext").html(data.current.surplus_num);
+                $("#xyft .preDrawIssue").html(data.current.periodNumber1.toString().substr(4));
             });
     }
     function f11() {
@@ -318,12 +320,19 @@ function indexdata() {
                 var _time = data.current.awardTime.substring(11, 16);
 
 
-                $("#cqSsc .num_ul .preDrawIssue").html((Number(data.firstPeriod) + 120 - cpNumber).toString().substr(4));
-                $("#cqSsc_hot .num_ul .preDrawIssue").html((Number(data.firstPeriod) + 120 - cpNumber).toString().substr(4));
-                 $("#cqSsc .num_ul .drawCount").html(cpNumber);
-                 $("#cqSsc_hot .num_ul .drawCount").html(cpNumber);
-                 $("#cqSsc .num_ul .sdrawCountnext").html(120 - cpNumber);
-                 $("#cqSsc_hot .num_ul .sdrawCountnext").html(120 - cpNumber);
+                // $("#cqSsc .num_ul .preDrawIssue").html((Number(data.firstPeriod) + 120 - cpNumber).toString().substr(4));
+                // $("#cqSsc_hot .num_ul .preDrawIssue").html((Number(data.firstPeriod) + 120 - cpNumber).toString().substr(4));
+                //  $("#cqSsc .num_ul .drawCount").html(cpNumber);
+                //  $("#cqSsc_hot .num_ul .drawCount").html(cpNumber);
+                //  $("#cqSsc .num_ul .sdrawCountnext").html(120 - cpNumber);
+                //  $("#cqSsc_hot .num_ul .sdrawCountnext").html(120 - cpNumber);
+
+                $("#cqSsc .drawCount").html(cpNumber);
+                $("#cqSsc .sdrawCountnext").html(data.current.surplus_num);
+                $("#cqSsc .preDrawIssue").html(data.current.periodNumber1.toString().substr(4));
+                $("#cqSsc_hot .drawCount").html(cpNumber);
+                $("#cqSsc_hot .sdrawCountnext").html(data.current.surplus_num);
+                $("#cqSsc_hot .preDrawIssue").html(data.current.periodNumber1.toString().substr(4));
             });
     }
 
