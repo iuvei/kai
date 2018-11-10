@@ -137,11 +137,11 @@ $(function () {
             cpNumber = data.current.periodNumber;
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
-                window.setTimeout(getHistoryData('50'),data.next.awardTimeInterval < 10 ? 1000 : _time);
+
             }
             // $(".headOpenTime .headOpenTimeM").html(data.next.periodNumber);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
-
+            getHistoryData('50')
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);
