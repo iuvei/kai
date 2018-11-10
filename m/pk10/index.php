@@ -32,35 +32,25 @@ include("../conn.php");
 <!--<link type="text/css" href="../style/css/pk10.css" rel="stylesheet">-->
 
 <div class="daojishi1">
-
-    <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">
-        <ul class="">
-            <li><a href="../pk10/" game="pk10" class="">北京PK10</a></li>
-            <li><a href="../sfpk10/" game="jssc">三分PK10</a></li>
-            <li><a href="../tcpk10/" game="tcpk10">极速PK10</a></li>
-            <li><a href="../xyft/" game="xyft">幸运飞艇</a></li>
-            <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
-            <li><a href="../tcssc/" game="tcssc">极速时时彩</a></li>
-            <li><a href="../sfssc/" game="jsssc">三分时时彩</a></li>
-            <li><a game="bjft" href="../bjft/">北京番摊</a></li>
-            <li><a game="cqft" href="../cqft">重庆番摊</a></li>
-            <li><a href="../jsk3/" game="jsk3">江苏快3</a></li>
-            <li><a href="../gd11x5/" game="gd11x5">广东11选5</a></li>
-<!--            <li><a href="../gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
-            <li><a href="../pc28/" game="pc28">加拿大28</a></li>
-            <li><a href="../txffc/" game="txffc" class="cur">腾讯分分彩</a></li>
-        </ul>
+    <div class="fl" id="xia-yx2">开奖历史<span class="xialabt " id="xialabt2"></span>
+        <div class="xia-yxx-list" id="xia-yxx-list2" style="display: none;">
+            <ul class="">
+                <li><a href="./" class="cur">开奖历史</a></li>
+                <li><a href="smtj.php">两面统计</a></li>
+                <li><a href="cltj.php">长龙统计</a></li>
+                <li><a href="hmzs.php">号码走势</a></li>
+                <li><a href="lrtj.php">冷热统计</a></li>
+                <li><a href="jiqiao.php">玩法技巧</a></li>
+                <li><a href="shipin.php">开奖直播</a></li>
+            </ul>
+        </div>
     </div>
- <div class="fl xia-yx" id="xia-yx1"><?=$web_type?><span class="xialabt" id="xialabt1"></span> </div>
+
  <input type="date" id="dateTime" onchange="Search()">
 <!--    <select class="chooseIssue">-->
 <!--        <option value="">全部期数</option>-->
 <!--    </select>-->
 </div>
-
-<style type="text/css">
-
-</style>
 
 <div class="openResult">
     <div class="openIssueList">
