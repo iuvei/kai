@@ -51,17 +51,6 @@ $(function () {
             // $('.totalIssue').html(data.current.current_num);
 
 
-            $('.newIssue span').html(data.current.periodNumber1);
-            $('.nextIssue span').html(nextOpenIssue);
-            $('.periodNumber').html(data.current.periodNumber);
-            $('.surplus_num').html(data.current.surplus_num);
-            var nums = data.current.awardNumbers.split(',');
-            var str = "";
-            for (var i = 0; i < nums.length; i++) {
-                str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
-            }
-            $('.openCodeList').html(str)
-
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -74,7 +63,7 @@ $(function () {
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
             if (timeInterval != 0) {
                  if (currentPeriodNumber != -1 ) {    //判断第一次加载
-                     window.setTimeout(getHistoryData('15'), data.next.awardTimeInterval < 10 ? 1000 : _time);
+
 
              }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
@@ -87,35 +76,6 @@ $(function () {
 		
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
-
-            var nums = data.current.awardNumbers.split(',');
-            $('.lhResult a').eq(0).html(long(nums[0],nums[9]));
-            $('.lhResult a').eq(1).html(long(nums[1],nums[8]));
-            $('.lhResult a').eq(2).html(long(nums[2],nums[7]));
-            $('.lhResult a').eq(3).html(long(nums[3],nums[6]));
-            $('.lhResult a').eq(4).html(long(nums[4],nums[5]));
-
-            var sum = parseInt(nums[0])+parseInt(nums[1]);
-            var dx = '';
-            var ds = '';
-            if(sum > 11){
-                dx = '大';
-            }else if(sum < 11){
-                dx = '小';
-            }else {
-                dx = '和';
-            }
-            if(sum%2 == 0){
-                ds = '双';
-            }else {
-                ds = '单';
-            }
-            if(sum == 11){
-                ds = '和';
-            }
-            $('.lhResult a').eq(7).html(sum);
-            $('.lhResult a').eq(8).html(dx);
-            $('.lhResult a').eq(9).html(ds);
 
         }, 'json').error(function () {
             if (errorCount < 20) {
@@ -148,9 +108,52 @@ $(function () {
                     showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
                 }, 1000);
             }
+            var nextOpenIssue = Number(data.next.periodNumber)+1;
+            $('.newIssue span').html(data.current.periodNumber1);
+            $('.nextIssue span').html(nextOpenIssue);
+            $('.periodNumber').html(data.current.periodNumber);
+            $('.surplus_num').html(data.current.surplus_num);
+            var nums = data.current.awardNumbers.split(',');
+            var str = "";
+            for (var i = 0; i < nums.length; i++) {
+                str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
+            }
+            $('.openCodeList').html(str)
+
+            var nums = data.current.awardNumbers.split(',');
+            $('.lhResult a').eq(0).html(long(nums[0],nums[9]));
+            $('.lhResult a').eq(1).html(long(nums[1],nums[8]));
+            $('.lhResult a').eq(2).html(long(nums[2],nums[7]));
+            $('.lhResult a').eq(3).html(long(nums[3],nums[6]));
+            $('.lhResult a').eq(4).html(long(nums[4],nums[5]));
+
+            var sum = parseInt(nums[0])+parseInt(nums[1]);
+            var dx = '';
+            var ds = '';
+            if(sum > 11){
+                dx = '大';
+            }else if(sum < 11){
+                dx = '小';
+            }else {
+                dx = '和';
+            }
+            if(sum%2 == 0){
+                ds = '双';
+            }else {
+                ds = '单';
+            }
+            if(sum == 11){
+                ds = '和';
+            }
+            $('.lhResult a').eq(7).html(sum);
+            $('.lhResult a').eq(8).html(dx);
+            $('.lhResult a').eq(9).html(ds);
+
+            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
             cpNumber = data.current.periodNumber;
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
+                window.setTimeout(getHistoryData('15'), data.next.awardTimeInterval < 10 ? 1000 : _time);
             }
             var xiaqi = parseInt(data.next.periodNumber)+1;
 

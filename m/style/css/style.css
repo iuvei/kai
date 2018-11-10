@@ -393,7 +393,6 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	border-radius: 5px;
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;}
-
 .num-yxx1 {
 	background: url(/images/images/bjpknum-yxx.png) no-repeat -424px 0
 }
@@ -825,7 +824,7 @@ overflow:hidden;
 	text-align: right;
 	width: 60%; float: right;
 }
-.openCodeList img{width: 30px;height: 30px;margin-right: 10px}
+.openCodeList img{width: 30px;height: 30px;margin-right: 4px}
 .openCodeList1 img{width: 30px;height: 30px;margin-right: 10px}
 .openCodeList,.openCodeList1,.lhResult,.nextOpenList{
 	width: 100%;
@@ -1233,6 +1232,12 @@ body{color: #666;background-color: #f0f0f0;}
 }
 .choose2 a:last-child{
 	margin-right: 1.33333vw;
+}
+.BallNumHead .dianshu{
+	flex: 3;
+}
+.BallNumHead .yxx{
+	flex: 3;
 }
 .BallNumHead{
 	display: flex;

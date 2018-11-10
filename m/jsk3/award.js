@@ -63,6 +63,9 @@ $(function () {
             for (var i = 0; i < nums.length; i++) {
                 str += '<img src="/images/images/dice'+nums[i]+'.png">';
             }
+            for (var i = 0; i < nums.length; i++) {
+                str += '<img src="/images/images/yxx'+nums[i]+'.png">';
+            }
 
             var sum = eval(nums.join("+"));
             var dx = '';
@@ -171,6 +174,9 @@ function getHistoryData(count,date) {
                  html += '<div>'+'<img src="/images/images/dice'+data.n1+'.png">'+'</div>';
                  html += '<div>'+'<img src="/images/images/dice'+data.n2+'.png">'+'</div>';
                  html += '<div>'+'<img src="/images/images/dice'+data.n3+'.png">'+'</div>';
+                 html += '<div>'+'<img src="/images/images/yxx'+data.n1+'.png">'+'</div>';
+                 html += '<div>'+'<img src="/images/images/yxx'+data.n2+'.png">'+'</div>';
+                 html += '<div>'+'<img src="/images/images/yxx'+data.n3+'.png">'+'</div>';
                  var guanyahe = arr_num(data.lotteryNum);
                  var sum = eval(guanyahe.join("+"));
                  html += '<div>'+sum+'</div>';

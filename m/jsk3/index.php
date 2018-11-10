@@ -76,9 +76,8 @@ include("../conn.php");
 <div class="BallNum">
     <div class="BallNumHead">
         <a class="issue">期号</a>
-        <a>一</a>
-        <a>二</a>
-        <a>三</a>
+        <a class="dianshu">江苏快3</a>
+        <a class="yxx">鱼虾蟹</a>
         <a>点数</a>
     </div>
 </div>

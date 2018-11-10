@@ -847,11 +847,15 @@ function IndexOpen() {
         var long;
         long = ssclh(nums,3);
         str = str + '<a class="k3zh">'+long+'</a>'
+
         str+='<div class="yxx">'
         for (var i = 0; i < nums.length; i++) {
             str = str + "<i class='num-yxx" + nums[i]+ "'></i>"
         }
-        str+='</div>'
+        str = str + '<a class="k3zh">'+yxx(nums[0])+'</a>';
+        str = str + '<a class="k3zh">'+yxx(nums[1])+'</a>';
+        str = str + '<a class="k3zh">'+yxx(nums[2])+'</a>';
+        str+='</div>';
         $("#jsk3 #number").html(str);
 
 
@@ -1219,6 +1223,30 @@ function long(nums_1,nums_2) {
         return '和'
     }
 }
+function yxx(num) {
+    switch (num) {
+        case '1':
+            return '鱼';
+        break;
+            case '2':
+            return '虾';
+        break;
+            case '3':
+            return '蟹';
+        break;
+            case '4':
+            return '金钱';
+        break;
+            case '5':
+            return '葫芦';
+        break;
+            case '6':
+            return '鸡';
+        break;
+    }
+}
+
+
  function ssclh(nums,num) {
      var srt = '';
      var sum =  eval(nums.join("+"));
