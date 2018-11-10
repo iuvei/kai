@@ -48,13 +48,13 @@ $(function () {
                 requireCount = errorCount = 0;
                 hideLotPeriodNumWarn();
             }
-
-            var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(4);
-            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-            $('.newIssue span').html(data.current.periodNumber1.substr(4));
-            $('.nextIssue span').html(nextOpenIssue);
-            $('.periodNumber').html(data.current.periodNumber);
-            $('.surplus_num').html(data.current.surplus_num);
+            //
+            // var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(4);
+            // var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
+            // $('.newIssue span').html(data.current.periodNumber1.substr(4));
+            // $('.nextIssue span').html(nextOpenIssue);
+            // $('.periodNumber').html(data.current.periodNumber);
+            // $('.surplus_num').html(data.current.surplus_num);
 
             var nums = data.current.awardNumbers.split(',');
 
@@ -127,7 +127,12 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../gd11x5/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
-
+            var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(4);
+            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
+            $('.newIssue span').html(data.current.periodNumber1.substr(4));
+            $('.nextIssue span').html(nextOpenIssue);
+            $('.periodNumber').html(data.current.periodNumber);
+            $('.surplus_num').html(data.current.surplus_num);
 
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
