@@ -658,8 +658,8 @@ overflow:hidden;
 	overflow: hidden; display: inline-block;
 	cursor: pointer;
 	outline: none;
-	background:  url(../images/icon-back2.png) no-repeat center center;
-	background-size: 30%;    vertical-align: middle;
+	background:  url(../images/icon-back2-w.png) no-repeat center center;
+	background-size: 40%;    vertical-align: middle;
 }
 
 .xialabt-on{
@@ -671,8 +671,33 @@ overflow:hidden;
 
 	cursor: pointer;
 	outline: none;
+	background:  url(../images/icon-back-up-w.png) no-repeat center center;
+	background-size: 40%;    vertical-align: middle;
+}
+
+.xialabt2 {
+	border: none;
+	width: 6vw;
+	height: 6vw;
+	text-indent: -900em;
+	overflow: hidden; display: inline-block;
+	cursor: pointer;
+	outline: none;
+	background:  url(../images/icon-back2.png) no-repeat center center;
+	background-size: 40%;    vertical-align: middle;
+}
+
+.xialabt2-on{
+	border: none;
+	width: 6vw;
+	height: 6vw;
+	text-indent: -900em;
+	overflow: hidden; display: inline-block;
+
+	cursor: pointer;
+	outline: none;
 	background:  url(../images/icon-back-up.png) no-repeat center center;
-	background-size: 30%;    vertical-align: middle;
+	background-size: 40%;    vertical-align: middle;
 }
 
 #historyList .bt-jg{ font-size: 3vw!important; text-align: left;    padding-left: 0;}

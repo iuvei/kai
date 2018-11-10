@@ -7,10 +7,9 @@
                 $("#xia-yxx-list1").toggle();
             });
             $("#xia-yx2").click(function(){
-                $("#xialabt2").toggleClass("xialabt-on");
+                $("#xialabt2").toggleClass("xialabt2-on");
                 $("#xia-yxx-list2").toggle();
             });
-
         });
     </script>
 <div class="footer_nav">
