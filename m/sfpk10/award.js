@@ -40,7 +40,7 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../sfpk10/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
-            var nextOpenIssue = (Number(data.next.periodNumber)+1).toString().substr(4);
+            var nextOpenIssue = (Number(data.next.periodNumber)+1).toString().substr(6);
 
             $('.newIssue span').html(data.current.periodNumber1.substr(6));
             $('.nextIssue span').html(nextOpenIssue);
