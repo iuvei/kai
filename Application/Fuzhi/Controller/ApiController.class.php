@@ -573,6 +573,12 @@ class ApiController extends Controller{
             case 40:
                 $num = 10;
                 break;
+            case 46:
+                $num = 10;
+                break;
+            case 47:
+                $num = 10;
+                break;
 
         }
 
