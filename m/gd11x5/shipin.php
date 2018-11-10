@@ -36,7 +36,7 @@ $cid = 48;
    
 <script src="award.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
-<?php include("../public/pk10Head.php"); ?>
+<?php include("../public/sscHead.php"); ?>
 <?php include("../public/head3.php"); ?>
 <div class="list">
     <iframe src="/v2/gd11x5" style="    width: 100%;height: 220px">
