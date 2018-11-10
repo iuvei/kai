@@ -429,7 +429,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	-webkit-box-shadow: 3px 3px 4px #C4C0C0;
 	 
 }
-.xia-yxx-list{position: absolute;left: 0vw; top: 17vw; width: 100%; display: none; z-index: 999}
+.xia-yxx-list{position: absolute;left: 0vw; top: 8vw; width: 100%; display: none; z-index: 999}
 .xia-yxx-list{ background: #ffffff; overflow: hidden;border-bottom: 1px solid #aeaeae; padding-left: 0.7vw; padding-bottom: 1.5vw}
 
 .xia-yxx-list li{     float: left;
