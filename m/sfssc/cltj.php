@@ -43,7 +43,7 @@ include("../conn.php");
 
 <script src="award.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
-<?php include("../public/pk10Head.php"); ?>
+<?php include("../public/sscHead.php"); ?>
 <?php include("../public/head3.php"); ?>
 <div class="changlongtj " style="left: 0rem; display: block;">
     <div class="line2box">
