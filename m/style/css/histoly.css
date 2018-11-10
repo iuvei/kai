@@ -38,6 +38,7 @@
     box-shadow: 3px 3px 4px #C4C0C0;
     -moz-box-shadow: 3px 3px 4px #C4C0C0;
     -webkit-box-shadow: 3px 3px 4px #C4C0C0;
+    margin-bottom: 1.5vw;
 }
 .sscLH a span{
     display: block;
@@ -449,7 +450,7 @@ body{color: #666;background-color: #f0f0f0;}
     justify-items: center;
     align-items: center;
     width: 100%;
-    background-color: #f0f0f0; margin-top: 1.5vw;
+    background-color: #f0f0f0;
 }
 .choose2 a{
     background-color: #fff;
