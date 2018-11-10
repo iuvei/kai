@@ -133,8 +133,6 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../pk10/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
-
-            console.log(data);
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 

@@ -140,7 +140,7 @@ $(function () {
 
             for (var i = 0; i < nums.length; i++) {
 
-                srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
+                srt = srt + '<a class="sscBall2 mg">' + nums[i] + '</a>';
 
             }
             srt = srt + '<dic class="sscLH">';
@@ -153,7 +153,7 @@ $(function () {
             srt = srt + '</dic>';
 
 
-            $('.openCodeList').html(srt)
+            $('.openCodeList1').html(srt)
 
             if (timeInterval != 0) {
                 if (currentPeriodNumber != -1 ) {    //判断第一次加载

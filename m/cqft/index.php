@@ -72,7 +72,7 @@ include("../conn.php");
             已开<span class="periodNumber"></span>期，剩<span class="surplus_num"></span>期
         </div>
     </div>
-    <div class="openCodeList">
+    <div class="openCodeList1">
         <img src="/m/style/images/loading2.gif">
     </div>
 

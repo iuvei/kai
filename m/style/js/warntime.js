@@ -5,7 +5,6 @@ var aa=0;
 var bb=0;
 
 function showCountDown(afterTime, period) {
-
     timeold = afterTime;
     sectimeold = timeold / 1000;
     secondsold = Math.floor(sectimeold);

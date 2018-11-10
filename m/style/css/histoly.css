@@ -16,7 +16,7 @@
     color: #666;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-
+    text-indent:4px;
     font-family: "Microsoft YaHei",Arial;
 }
 
@@ -64,7 +64,8 @@
     width: 60%; float: right;
 }
 .openCodeList img{width: 30px;height: 30px;margin-right: 10px}
-.openCodeList,.lhResult,.nextOpenList{
+.openCodeList1 img{width: 30px;height: 30px;margin-right: 10px}
+.openCodeList,.openCodeList1,.lhResult,.nextOpenList{
     width: 100%;
     text-align: center;
     height: 6.66667vw;
@@ -538,7 +539,7 @@ body{color: #666;background-color: #f0f0f0;}
 .openCode .qihao{
     font-size: 2.93333vw;
 }
-.sscBall{
+.sscBall,.sscBall2{
     display: inline-block;
     width: 6.5vw;
     height: 6.5vw;
