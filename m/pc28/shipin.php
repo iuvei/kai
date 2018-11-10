@@ -31,73 +31,40 @@ $cid = 43;
    
 <script src="award.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
-<div class="daojishi1">
-    <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">
-        <ul class="">
-            <li><a href="../pk10/" game="pk10" class="">北京PK10</a></li>
-            <li><a href="../sfpk10/" game="jssc">三分PK10</a></li>
-            <li><a href="../tcpk10/" game="tcpk10">极速PK10</a></li>
-            <li><a href="../xyft/" game="xyft">幸运飞艇</a></li>
-            <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
-            <li><a href="../tcssc/" game="tcssc">极速时时彩</a></li>
-            <li><a href="../sfssc/" game="jsssc">三分时时彩</a></li>
-            <li><a game="bjft" href="../bjft/">北京番摊</a></li>
-            <li><a game="cqft" href="../cqft">重庆番摊</a></li>
-            <li><a href="../jsk3/" game="jsk3">江苏快3</a></li>
-            <li><a href="../gd11x5/" game="gd11x5">广东11选5</a></li>
-<!--            <li><a href="../gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
-            <li><a href="../pc28/" game="pc28">加拿大28</a></li>
-            <li><a href="../txffc/" game="txffc" class="cur">腾讯分分彩</a></li>
-        </ul>
+<div class="openResult" style="margin-top: 8vw">
+    <div class="openIssueList">
+        <div class="newIssue">
+            第<span></span>期结果
+        </div>
+        <div class="issueList">
+            已开<span class="periodNumber"></span>期，剩<span class="surplus_num"></span>期
+        </div>
     </div>
-    <div class="fl xia-yx" id="xia-yx1"><?=$web_type?><span class="xialabt" id="xialabt1"></span> </div>
+    <div class="openCodeList">
+        <img src="/m/style/images/loading2.gif">
+    </div>
 
-    <div class="fr"><a class="sp" href="shipin.php">开奖直播</a></div>
-</div>
-<ul class="kaij-mylist">
-    <li class="kaij-mylist-li" id="pc28" style="border-bottom: 1px solid #eeeeee;">
+    <div class="nextOpenList">
+        <div class="nextIssue">距<span></span>期开奖</div>
 
-        <div class="kaij-mylist-r">
-            <div class="kaij-mylist-hd">
-                <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
-                <div class="itm-tit"><span class="itm-qih" id="qihao">第2346149期</span></div>
-            </div>
-            <div class="kaij-mylist-bd">
-                <div class="itm-result">
-                    <div class="ball-wrap" id="number"><i class="ball-red" style="background-color: #ff7b00;color: #fff;">0</i><i class="ball-red" style="background-color: #fff;color: #5a5a5a">+</i><i class="ball-red" style="background-color: #ff7b00;color: #fff;">2</i><i class="ball-red" style="background-color: #fff;color: #5a5a5a">+</i><i class="ball-red" style="background-color: #ff7b00;color: #fff;">5</i><i class="ball-red" style="background-color: #fff;color: #5a5a5a">=</i><i class="ball-red" style="background-color: #4d4d4d;color: #fff;">7</i><span class="ball-red">绿</span><span class="ball-red">小</span><span class="ball-red">单</span></div>
+        <div id="Bar">
+            <div class="Bar">
+                <div id="takeout_bar">
+                    <span></span>
                 </div>
             </div>
         </div>
-
-
-
-    </li>
-
-</ul>
-<div class="gametool">
-    <div class="fl" id="xia-yx2">开奖直播<span class="xialabt " id="xialabt2"></span>
-        <div class="xia-yxx-list" id="xia-yxx-list2" style="display: none;">
-            <ul class="">
-                <li><a href="./" class="cur">开奖历史</a></li>
-                <!--                <li><a href="smtj.php">两面统计</a></li>-->
-                <!--                <li><a href="cltj.php">长龙统计</a></li>-->
-                <!--                <li><a href="hmzs.php">号码走势</a></li>-->
-                <!--                <li><a href="lrtj.php">冷热统计</a></li>-->
-                <li><a href="jiqiao.php">玩法技巧</a></li>
-                <li><a href="shipin.php">开奖直播</a></li>
-            </ul>
+        <div class="nextTime">
+            <span id="headOpenTimeM"></span>:<span id="headOpenTimeS"></span>
         </div>
-
+        <a class="video2" href="shipin.php">
+            <img src="/m/style/images/ico_sp.png"><span>开奖直播</span>
+        </a>
 
     </div>
-
-<!--    <ul class="fr">-->
-<!--        <input type="date" name="dateData" id="dateData" onchange="Search()"/>-->
-<!---->
-<!---->
-<!--    </ul>-->
-
 </div>
+<?php include("../public/head3.php"); ?>
+
 <div class="list">
     <iframe src="/v2/jnd28">
 

@@ -43,67 +43,8 @@ include("../conn.php");
    
 <script src="award.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
-<div class="daojishi1">
-    <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">
-        <ul class="">
-            <li><a href="../pk10/" game="pk10" class="">北京PK10</a></li>
-            <li><a href="../sfpk10/" game="jssc">三分PK10</a></li>
-            <li><a href="../tcpk10/" game="tcpk10">极速PK10</a></li>
-            <li><a href="../xyft/" game="xyft">幸运飞艇</a></li>
-            <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
-            <li><a href="../tcssc/" game="tcssc">极速时时彩</a></li>
-            <li><a href="../sfssc/" game="jsssc">三分时时彩</a></li>
-            <li><a game="bjft" href="../bjft/">北京番摊</a></li>
-            <li><a game="cqft" href="../cqft">重庆番摊</a></li>
-            <li><a href="../jsk3/" game="jsk3">江苏快3</a></li>
-            <li><a href="../gd11x5/" game="gd11x5">广东11选5</a></li>
-<!--            <li><a href="../gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
-            <li><a href="../pc28/" game="pc28">加拿大28</a></li>
-            <li><a href="../txffc/" game="txffc" class="cur">腾讯分分彩</a></li>
-        </ul>
-    </div>
-    <div class="fl xia-yx" id="xia-yx1"><?=$web_type?><span class="xialabt" id="xialabt1"></span> </div>
-
-    <div class="fr"><a class="sp" href="shipin.php">开奖直播</a></div>
-</div>
-<ul class="kaij-mylist">
-    <li class="kaij-mylist-li" id="cqft" style="border-bottom: 1px solid #eeeeee;">
-
-        <div class="kaij-mylist-r">
-            <?php include("public.php"); ?>
-        </div>
-
-
-
-    </li>
-
-</ul>
-<div class="gametool">
-    <div class="fl" id="xia-yx2">长龙统计<span class="xialabt " id="xialabt2"></span>
-
-
-        <div class="xia-yxx-list" id="xia-yxx-list2" style="display: none;">
-            <ul class="">
-                <li><a href="./" class="cur">开奖历史</a></li>
-                <li><a href="smtj.php">两面统计</a></li>
-                <li><a href="cltj.php">长龙统计</a></li>
-                <li><a href="hmzs.php">号码走势</a></li>
-                <li><a href="lrtj.php">冷热统计</a></li>
-                <li><a href="jiqiao.php">玩法技巧</a></li>
-                <li><a href="shipin.php">开奖直播</a></li>
-            </ul>
-        </div>
-
-
-    </div>
-
-    <!--    <ul class="fr">-->
-    <!--        <input type="date" name="dateData" id="dateData" onchange="Search()"/>-->
-    <!---->
-    <!---->
-    <!--    </ul>-->
-
-</div>
+<?php include("../public/pk10Head.php"); ?>
+<?php include("../public/head3.php"); ?>
 <div class="changlongtj " style="left: 0rem; display: block;">
     <div class="line2box">
         <ul id="longDrag"><li><span>冠军</span>：<span>双</span><span style="color:#f11821">7</span>期</li><li><span>第三名</span>：<span>龙</span><span style="color:#f11821">6</span>期</li><li><span>第五名</span>：<span>大</span><span style="color:#f11821">5</span>期</li><li><span>第八名</span>：<span>小</span><span style="color:#f11821">5</span>期</li><li><span>第八名</span>：<span>单</span><span>4</span>期</li><li><span>第五名</span>：<span>双</span><span>3</span>期</li><li><span>冠军</span>：<span>小</span><span>2</span>期</li><li><span>第三名</span>：<span>单</span><span>2</span>期</li><li><span>第四名</span>：<span>大</span><span>2</span>期</li><li><span>第四名</span>：<span>龙</span><span>2</span>期</li></ul>
@@ -128,92 +69,92 @@ include("../conn.php");
     </tr>
 
     </thead>
-    <table border="1">
-        <tr>
-            <th></th>
-            <th>2期</th>
-            <th>3期</th>
-            <th>4期</th>
-            <th>5期</th>
-            <th>6期</th>
-            <th>7期</th>
-            <th>8期</th>
-            <th>9期</th>
-            <th>10期</th>
-            <th>11期</th>
-            <th>12期</th>
-            <th>13期</th>
-            <th>14期</th>
-        </tr>
-        <tr class="n1">
-        </tr>
-        <tr class="n2">
-
-        </tr>
-        <tr class="n3">
-
-        </tr>
-        <tr class="n4">
-
-        </tr>
-        <tr class="n5">
-
-        </tr>
-        <tr class="n6">
-
-        </tr>
-        <tr class="n7">
-
-        </tr>
-        <tr class="n8">
-
-        </tr>
-        <tr class="n9">
-
-        </tr>
-        <tr class="n10">
-
-        </tr>
-
-    </table>
-
-    <table border="1">
-        <tr>
-            <th style="color: red">总和 </th>
-            <th>2期</th>
-            <th>3期</th>
-            <th>4期</th>
-            <th>5期</th>
-            <th>6期</th>
-            <th>7期</th>
-            <th>8期</th>
-            <th>9期</th>
-            <th>10期</th>
-            <th>11期</th>
-            <th>12期</th>
-            <th>13期</th>
-            <th>14期</th>
-        </tr>
-        <tr class="dx">
-
-        </tr>
-        <tr class="x">
-        </tr>
-        <tr class="d">
-
-        </tr>
-        <tr class="s">
-
-        </tr>
-
-        <tr class="long">
-
-        </tr>
-        <tr class="hu">
-
-        </tr>
-        <tr class="he">
-        </tr>
+<!--    <table border="1">-->
+<!--        <tr>-->
+<!--            <th></th>-->
+<!--            <th>2期</th>-->
+<!--            <th>3期</th>-->
+<!--            <th>4期</th>-->
+<!--            <th>5期</th>-->
+<!--            <th>6期</th>-->
+<!--            <th>7期</th>-->
+<!--            <th>8期</th>-->
+<!--            <th>9期</th>-->
+<!--            <th>10期</th>-->
+<!--            <th>11期</th>-->
+<!--            <th>12期</th>-->
+<!--            <th>13期</th>-->
+<!--            <th>14期</th>-->
+<!--        </tr>-->
+<!--        <tr class="n1">-->
+<!--        </tr>-->
+<!--        <tr class="n2">-->
+<!---->
+<!--        </tr>-->
+<!--        <tr class="n3">-->
+<!---->
+<!--        </tr>-->
+<!--        <tr class="n4">-->
+<!---->
+<!--        </tr>-->
+<!--        <tr class="n5">-->
+<!---->
+<!--        </tr>-->
+<!--        <tr class="n6">-->
+<!---->
+<!--        </tr>-->
+<!--        <tr class="n7">-->
+<!---->
+<!--        </tr>-->
+<!--        <tr class="n8">-->
+<!---->
+<!--        </tr>-->
+<!--        <tr class="n9">-->
+<!---->
+<!--        </tr>-->
+<!--        <tr class="n10">-->
+<!---->
+<!--        </tr>-->
+<!---->
+<!--    </table>-->
+<!---->
+<!--    <table border="1">-->
+<!--        <tr>-->
+<!--            <th style="color: red">总和 </th>-->
+<!--            <th>2期</th>-->
+<!--            <th>3期</th>-->
+<!--            <th>4期</th>-->
+<!--            <th>5期</th>-->
+<!--            <th>6期</th>-->
+<!--            <th>7期</th>-->
+<!--            <th>8期</th>-->
+<!--            <th>9期</th>-->
+<!--            <th>10期</th>-->
+<!--            <th>11期</th>-->
+<!--            <th>12期</th>-->
+<!--            <th>13期</th>-->
+<!--            <th>14期</th>-->
+<!--        </tr>-->
+<!--        <tr class="dx">-->
+<!---->
+<!--        </tr>-->
+<!--        <tr class="x">-->
+<!--        </tr>-->
+<!--        <tr class="d">-->
+<!---->
+<!--        </tr>-->
+<!--        <tr class="s">-->
+<!---->
+<!--        </tr>-->
+<!---->
+<!--        <tr class="long">-->
+<!---->
+<!--        </tr>-->
+<!--        <tr class="hu">-->
+<!---->
+<!--        </tr>-->
+<!--        <tr class="he">-->
+<!--        </tr>-->
     </table>
 </table>
 

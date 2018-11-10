@@ -35,76 +35,40 @@ include("../conn.php");
    
 <script src="award.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
-<div class="daojishi1">
-    <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">
-        <ul class="">
-            <li><a href="../pk10/" game="pk10" class="">北京PK10</a></li>
-            <li><a href="../sfpk10/" game="jssc">三分PK10</a></li>
-            <li><a href="../tcpk10/" game="tcpk10">极速PK10</a></li>
-            <li><a href="../xyft/" game="xyft">幸运飞艇</a></li>
-            <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
-            <li><a href="../tcssc/" game="tcssc">极速时时彩</a></li>
-            <li><a href="../sfssc/" game="jsssc">三分时时彩</a></li>
-            <li><a game="bjft" href="../bjft/">北京番摊</a></li>
-            <li><a game="cqft" href="../cqft">重庆番摊</a></li>
-            <li><a href="../jsk3/" game="jsk3">江苏快3</a></li>
-            <li><a href="../gd11x5/" game="gd11x5">广东11选5</a></li>
-<!--            <li><a href="../gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
-            <li><a href="../pc28/" game="pc28">加拿大28</a></li>
-            <li><a href="../txffc/" game="txffc" class="cur">腾讯分分彩</a></li>
-        </ul>
+<div class="openResult" style="margin-top: 8vw">
+    <div class="openIssueList">
+        <div class="newIssue">
+            第<span></span>期结果
+        </div>
+        <div class="issueList">
+            已开<span class="periodNumber"></span>期，剩<span class="surplus_num"></span>期
+        </div>
     </div>
-    <div class="fl xia-yx" id="xia-yx1"><?=$web_type?><span class="xialabt" id="xialabt1"></span> </div>
+    <div class="openCodeList">
+        <img src="/m/style/images/loading2.gif">
+    </div>
 
-    <div class="fr"><a class="sp" href="shipin.php">开奖直播</a></div>
-</div>
+    <div class="nextOpenList">
+        <div class="nextIssue">距<span></span>期开奖</div>
 
-<ul class="kaij-mylist">
-    <li class="kaij-mylist-li" id="jsk3" style="border-bottom: 1px solid #eeeeee;">
-
-        <div class="kaij-mylist-r">
-            <div class="kaij-mylist-hd daojishi " style="padding-top: 0;">
-                <div class="itm-time"><em id="period"></em>期开奖剩余：<span id="time" class="itm-time-time">01:27</span></div>
-                <div class="itm-tit"><span class="itm-qih" id="qihao">第710580期</span></div>
-            </div>
-            <div class="kaij-mylist-bd">
-                <div class="itm-result">
-                    <div class="ball-wrap" id="number"><i class="num3"></i><i class="num4"></i><i class="num6"></i><span class="ball-red">15</span><span class="ball-red">大</span></div>
+        <div id="Bar">
+            <div class="Bar">
+                <div id="takeout_bar">
+                    <span></span>
                 </div>
             </div>
         </div>
-
-
-
-    </li>
-
-</ul>
-<div class="gametool">
-    <div class="fl" id="xia-yx2">两面统计<span class="xialabt " id="xialabt2"></span>
-
-
-        <div class="xia-yxx-list" id="xia-yxx-list2" style="display: none;">
-            <ul class="">
-                <li><a href="./" class="cur">开奖历史</a></li>
-                <li><a href="smtj.php">两面统计</a></li>
-<!--                <li><a href="cltj.php">长龙统计</a></li>-->
-                <li><a href="hmzs.php">号码走势</a></li>
-                <li><a href="lrtj.php">冷热统计</a></li>
-                <li><a href="jiqiao.php">玩法技巧</a></li>
-                <li><a href="shipin.php">开奖直播</a></li>
-            </ul>
+        <div class="nextTime">
+            <span id="headOpenTimeM"></span>:<span id="headOpenTimeS"></span>
         </div>
-
+        <a class="video2" href="shipin.php">
+            <img src="/m/style/images/ico_sp.png"><span>开奖直播</span>
+        </a>
 
     </div>
-
-<!--    <ul class="fr">-->
-<!--        <input type="date" name="dateData" id="dateData" onchange="Search()"/>-->
-<!---->
-<!---->
-<!--    </ul>-->
-
 </div>
+<?php include("../public/head3.php"); ?>
+
 <table class="lot-table">
 			
 				<tbody id="smyc">
@@ -118,218 +82,96 @@ include("../conn.php");
    
 <?php include("../public/footer.php"); ?>
 
-
 <script type="text/javascript">
-			    $(function () {
-			        shuangmiantongji();
-			    });
-			    function sm(rows,type){
-			   alert
-			    
-	            	var html = '<tr>';
-           			
-		        	var d1=0;
-		        	var d2=0;
-		        	var d3=0;
-		        	var d4=0;
-		        	var d5=0;
-		        	var d6=0;
-		        	var d7=0;
-		        	var d8=0;
-		        	var d9=0;
-		        	var d10=0;
-		        	var x1=0;
-		        	var x2=0;
-		        	var x3=0;
-		        	var x4=0;
-		        	var x5=0;
-		        	var x6=0;
-		        	var x7=0;
-		        	var x8=0;
-		        	var x9=0;
-		        	var x10=0;
-		        	var s1=0;
-		        	var s2=0;
-		        	var s3=0;
-		        	var s4=0;
-		        	var s5=0;
-		        	var s6=0;
-		        	var s7=0;
-		        	var s8=0;
-		        	var s9=0;
-		        	var s10=0;
-		        	var da1=0;
-		        	var da2=0;
-		        	var da3=0;
-		        	var da4=0;
-		        	var da5=0;
-		        	var da6=0;
-		        	var da7=0;
-		        	var da8=0;
-		        	var da9=0;
-		        	var da10=0;
-		        	
-	            	for(var i=rows.length-1;i >= 0; i--){
-	            		var data = rows[i];
-	            		
-			                    if(data.n1 % 2 !=0){
-			                    	d1++;
-			                    }
-			                    if(data.n2 % 2 !=0){
-			                    	d2++;
-			                    }
-			                    if(data.n3 % 2 !=0){
-			                    	d3++;
-			                    }
-			                    if(data.n4 % 2 !=0){
-			                    	d4++;
-			                    }
-			                    if(data.n5 % 2 !=0){
-			                    	d5++;
-			                    }
-			                    if(data.n6 % 2 !=0){
-			                    	d6++;
-			                    }
-			                    if(data.n7 % 2 !=0){
-			                    	d7++;
-			                    }
-			                    if(data.n8 % 2 !=0){
-			                    	d8++;
-			                    }
-			                    if(data.n9 % 2 !=0){
-			                    	d9++;
-			                    }
-			                    if(data.n10 % 2 !=0){
-			                    	d10++;
-			                    }	
-	            		
-			                    if(data.n1 % 2 ==0){
-			                    	s1++;
-			                    }
-			                    if(data.n2 % 2 ==0){
-			                    	s2++;
-			                    }
-			                    if(data.n3 % 2 ==0){
-			                    	s3++;
-			                    }
-			                    if(data.n4 % 2 ==0){
-			                    	s4++;
-			                    }
-			                    if(data.n5 % 2 ==0){
-			                    	s5++;
-			                    }
-			                    if(data.n6 % 2 ==0){
-			                    	s6++;
-			                    }
-			                    if(data.n7 % 2 ==0){
-			                    	s7++;
-			                    }
-			                    if(data.n8 % 2 ==0){
-			                    	s8++;
-			                    }
-			                    if(data.n9 % 2 ==0){
-			                    	s9++;
-			                    }
-			                    if(data.n10 % 2 ==0){
-			                    	s10++;
-			                    }	
-	                
-			                    if(data.n1<=5){
-			                    	x1++;
-			                    }
-			                    if(data.n2<=5){
-			                    	x2++;
-			                    }
-			                    if(data.n3<=5){
-			                    	x3++;
-			                    }
-			                    if(data.n4<=5){
-			                    	x4++;
-			                    }
-			                    if(data.n5<=5){
-			                    	x5++;
-			                    }
-			                    if(data.n6<=5){
-			                    	x6++;
-			                    }
-			                    if(data.n7<=5){
-			                    	x7++;
-			                    }
-			                    if(data.n8<=5){
-			                    	x8++;
-			                    }
-			                    if(data.n9<=5){
-			                    	x9++;
-			                    }
-			                    if(data.n10<=5){
-			                    	x10++;
-			                    }	
-                 		
-			                    if(data.n1>5){
-			                    	da1++;
-			                    }
-			                    if(data.n2>5){
-			                    	da2++;
-			                    }
-			                    if(data.n3>5){
-			                    	da3++;
-			                    }
-			                    if(data.n4>5){
-			                    	da4++;
-			                    }
-			                    if(data.n5>5){
-			                    	da5++;
-			                    }
-			                    if(data.n6>5){
-			                    	da6++;
-			                    }
-			                    if(data.n7>5){
-			                    	da7++;
-			                    }
-			                    if(data.n8>5){
-			                    	da8++;
-			                    }
-			                    if(data.n9>5){
-			                    	da9++;
-			                    }
-			                    if(data.n10>5){
-			                    	da10++;
-			                    }	
-	                 				
-	            	}
-	            	
-	            	
+    $(function () {
+        shuangmiantongji();
+    });
+    function sm(rows,type){
+        alert
 
-	            	html += '<tr class="head"><td colspan="6">冠军</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da1+'</td><td>'+x1+'</td><td>'+d1+'</td><td>'+s1+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">亚军</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da2+'</td><td>'+x2+'</td><td>'+d2+'</td><td>'+s2+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第三名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da3+'</td><td>'+x3+'</td><td>'+d3+'</td><td>'+s3+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第四名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da4+'</td><td>'+x4+'</td><td>'+d4+'</td><td>'+s4+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第五名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da5+'</td><td>'+x5+'</td><td>'+d5+'</td><td>'+s5+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第六名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da6+'</td><td>'+x6+'</td><td>'+d6+'</td><td>'+s6+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第七名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da7+'</td><td>'+x7+'</td><td>'+d7+'</td><td>'+s7+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第八名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da8+'</td><td>'+x8+'</td><td>'+d8+'</td><td>'+s8+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第九名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da9+'</td><td>'+x9+'</td><td>'+d9+'</td><td>'+s9+'</td></tr>';
-	            	html += '<tr class="head"><td colspan="6">第十名</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da10+'</td><td>'+x10+'</td><td>'+d10+'</td><td>'+s10+'</td></tr>';
+        var html = '<tr>';
 
-	            	html += '</tr>';
-	   
-	            	return html;
-			    }
-			    function shuangmiantongji() {
-			    	layer.open({type: 2,time: 1});
-					$.get("../../jsk3/getHistoryData.do?adate",
- function(result){
-var dan='';
-			            if(result&&result.rows){
-			            	dan = sm(result.rows);
-			            }else {
-			            	 $('#error').html("<font color=red>对不起，今天还没开奖所以没有数据哦！您可以将您的意见 <a href='/feedback' target='_blank' style='color:#333'>反馈</a> 给我们</font>");
-						}
-			            $('#smyc').html(dan);
+        var d1=0;
+        var d2=0;
+        var d3=0;
+        var x1=0;
+        var x2=0;
+        var x3=0;
+        var s1=0;
+        var s2=0;
+        var s3=0;
+        var da1=0;
+        var da2=0;
+        var da3=0;
+        for(var i=rows.length-1;i >= 0; i--){
+            var data = rows[i];
 
- }, "json");
-			    	
-			    }
-			</script>   
+            if(data.n1 % 2 !=0){
+                d1++;
+            }
+            if(data.n2 % 2 !=0){
+                d2++;
+            }
+            if(data.n3 % 2 !=0){
+                d3++;
+            }
+
+
+            if(data.n1 % 2 ==0){
+                s1++;
+            }
+            if(data.n2 % 2 ==0){
+                s2++;
+            }
+            if(data.n3 % 2 ==0){
+                s3++;
+            }
+            if(data.n1<=3){
+                x1++;
+            }
+            if(data.n2<=3){
+                x2++;
+            }
+            if(data.n3<=3){
+                x3++;
+            }
+            if(data.n1>3){
+                da1++;
+            }
+            if(data.n2>3){
+                da2++;
+            }
+            if(data.n3>3){
+                da3++;
+            }
+
+        }
+
+
+
+        html += '<tr class="head"><td colspan="6">一</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da1+'</td><td>'+x1+'</td><td>'+d1+'</td><td>'+s1+'</td></tr>';
+        html += '<tr class="head"><td colspan="6">二</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da2+'</td><td>'+x2+'</td><td>'+d2+'</td><td>'+s2+'</td></tr>';
+        html += '<tr class="head"><td colspan="6">三</td></tr><tr><td height="20">大</td><td height="20">小</td><td height="20">单</td><td height="20">双</td></tr><tr><td>'+da3+'</td><td>'+x3+'</td><td>'+d3+'</td><td>'+s3+'</td></tr>';
+
+        html += '</tr>';
+
+        return html;
+    }
+    function shuangmiantongji() {
+        layer.open({type: 2,time: 1});
+        $.get("../../jsk3/getHistoryData.do?count=200",
+            function(result){
+                var dan='';
+                if(result&&result.rows){
+                    dan = sm(result.rows);
+                }else {
+                    $('#error').html("<font color=red>对不起，今天还没开奖所以没有数据哦！您可以将您的意见 <a href='/feedback' target='_blank' style='color:#333'>反馈</a> 给我们</font>");
+                }
+                $('#smyc').html(dan);
+
+            }, "json");
+
+    }
+</script>
 </body>
 </html>

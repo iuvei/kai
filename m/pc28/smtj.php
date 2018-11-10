@@ -35,28 +35,40 @@ include("../conn.php");
    
 <script src="award.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
-<div class="daojishi">
- <div class="fl"><?=$web_type?></div>
- <div class="fr"><em id="period"></em>期开奖剩余：<span id="time"></span></div>
-</div>
-<div class="h100">
+<div class="openResult" style="margin-top: 8vw">
+    <div class="openIssueList">
+        <div class="newIssue">
+            第<span></span>期结果
+        </div>
+        <div class="issueList">
+            已开<span class="periodNumber"></span>期，剩<span class="surplus_num"></span>期
+        </div>
+    </div>
+    <div class="openCodeList">
+        <img src="/m/style/images/loading2.gif">
+    </div>
 
-</div>
- 
-<div class="gametool">
+    <div class="nextOpenList">
+        <div class="nextIssue">距<span></span>期开奖</div>
 
-     <ul class="fl">
-     <li><a href="./">首页</a></li>
-       <li><a href="smtj.php" class="cur">双面</a></li>
-       <li><a href="cltj.php">长龙</a></li>
-       <li><a href="hmzs.php">走势</a></li>
-       <li><a href="lrtj.php">冷热</a></li>
-       <li><a href="jiqiao.php">技巧</a></li>
-       
-     </ul>
- 
+        <div id="Bar">
+            <div class="Bar">
+                <div id="takeout_bar">
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="nextTime">
+            <span id="headOpenTimeM"></span>:<span id="headOpenTimeS"></span>
+        </div>
+        <a class="video2" href="shipin.php">
+            <img src="/m/style/images/ico_sp.png"><span>开奖直播</span>
+        </a>
 
+    </div>
 </div>
+<?php include("../public/head3.php"); ?>
+
 <div style="height:40px;"></div>
 
 <table class="lot-table">
