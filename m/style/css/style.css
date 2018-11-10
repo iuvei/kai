@@ -423,7 +423,10 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	width:100%; margin:0 auto;
 	
 	z-index:88888;
-	border-bottom:1px solid #d9d9d9;z-index:100;
+	z-index:100;
+	box-shadow: 3px 3px 4px #C4C0C0;
+	-moz-box-shadow: 3px 3px 4px #C4C0C0;
+	-webkit-box-shadow: 3px 3px 4px #C4C0C0;
 	 
 }
 .xia-yxx-list{position: absolute;left: 0vw; top: 17vw; width: 100%; display: none; z-index: 999}
