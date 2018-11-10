@@ -52,18 +52,6 @@ include("../conn.php");
     <div class="openCodeList">
         <img src="/m/style/images/loading2.gif">
     </div>
-    <div class="lhResult">
-        <a>龙</a>
-        <a>龙</a>
-        <a>龙</a>
-        <a>龙</a>
-        <a>龙</a>
-        <a><span></span></a>
-        <a id="zh">总和：</a>
-        <a></a>
-        <a></a>
-        <a></a>
-    </div>
     <div class="nextOpenList">
         <div class="nextIssue">距<span></span>期开奖</div>
 

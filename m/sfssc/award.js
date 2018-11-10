@@ -49,18 +49,47 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
 
-            var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(6);
 
+
+            if (timeInterval != 0) {
+                if (currentPeriodNumber != -1 ) {    //判断第一次加载
+
+                }
+                if (currentPeriodNumber == -1) {    //判断第一次加载
+                    currentPeriodNumber = data.current.periodNumber;
+                }
+                currentPeriodNumber = data.current.periodNumber;
+                nextPeriodNumber = data.next.periodNumber;
+
+
+            }
+            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
+            window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
+            timeInterval = 0;
+
+
+        }, 'json').error(function () {
+            if (errorCount < 20) {
+                window.setTimeout(awardTick, 1000 + Math.random() * 10000);
+                errorCount++;
+            }
+        });
+        if (errorCount >= 5 || requireCount > 90) {
+            showLotPeriodNumWarn(nextPeriodNumber);
+        }
+    };
+
+    var loadAwardTimesTimer, ctimeOfPeriod = -1;
+    var cpCurrAwardData = null;
+    var cpNextAwardTimeInterval = -1;
+    function loadAwardTimes() {
+        $.post('../../sfssc/getxjsscAwardTimes.do', {t: Math.random() }, function (data) {
+            var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(6);
             $('.newIssue span').html(data.current.periodNumber1.substr(6));
             $('.nextIssue span').html(nextOpenIssue);
             $('.periodNumber').html(data.current.periodNumber);
             $('.surplus_num').html(data.current.surplus_num);
-
             var nums = data.current.awardNumbers.split(',');
-            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-
-
-
             var srt = '';
             var sum = eval(nums.join("+"));
             var dx = '';
@@ -89,47 +118,8 @@ $(function () {
             srt = srt + '<a>' + dx  + '</a>';
             srt = srt + '<a>' + ds  + '</a>';
             srt = srt + '</div>';
-
-
             $('.openCodeList').html(srt)
-
-            if (timeInterval != 0) {
-                if (currentPeriodNumber != -1 ) {    //判断第一次加载
-
-                    window.setTimeout(getHistoryData('50'), data.next.awardTimeInterval < 10 ? 1000 : _time);
-                }
-                if (currentPeriodNumber == -1) {    //判断第一次加载
-                    currentPeriodNumber = data.current.periodNumber;
-                }
-                currentPeriodNumber = data.current.periodNumber;
-                nextPeriodNumber = data.next.periodNumber;
-
-
-            }
-
-
-
-            window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
-            timeInterval = 0;
-
-
-        }, 'json').error(function () {
-            if (errorCount < 20) {
-                window.setTimeout(awardTick, 1000 + Math.random() * 10000);
-                errorCount++;
-            }
-        });
-        if (errorCount >= 5 || requireCount > 90) {
-            showLotPeriodNumWarn(nextPeriodNumber);
-        }
-    };
-
-    var loadAwardTimesTimer, ctimeOfPeriod = -1;
-    var cpCurrAwardData = null;
-    var cpNextAwardTimeInterval = -1;
-    function loadAwardTimes() {
-        $.post('../../sfssc/getxjsscAwardTimes.do', {t: Math.random() }, function (data) {
-
+            getHistoryData('50')
 
             //请求到数据后需要做的事情
             cpCurrAwardData = data;

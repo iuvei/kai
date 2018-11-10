@@ -60,7 +60,7 @@ $(function () {
                 nextPeriodNumber = data.next.periodNumber;
 
             }
-
+            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
 
@@ -86,9 +86,6 @@ $(function () {
             $('.periodNumber').html(data.current.periodNumber);
             $('.surplus_num').html(data.current.surplus_num);
             var nums = data.current.awardNumbers.split(',');
-
-            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-
             var srt = '';
             var sum = eval(nums.join("+"));
             var dx = '';
@@ -117,9 +114,8 @@ $(function () {
             srt = srt + '<a>' + dx  + '</a>';
             srt = srt + '<a>' + ds  + '</a>';
             srt = srt + '</div>';
-
-
             $('.openCodeList').html(srt)
+            getHistoryData('50')
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
             //期数不同，则开始封盘倒计时
@@ -141,7 +137,7 @@ $(function () {
             }
             // $(".headOpenTime .headOpenTimeM").html(data.next.periodNumber);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
-            getHistoryData('50')
+
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);
@@ -158,6 +154,7 @@ $(function () {
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
 });
 function getHistoryData(count,date) {
+    layer.open({type: 2,time: 1});
     $.get("../../tcssc/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
 
         if(result&&result.rows){

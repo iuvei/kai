@@ -50,6 +50,39 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
+
+
+            if (timeInterval != 0) {
+                 if (currentPeriodNumber != -1 ) {    //判断第一次加载
+
+                }
+                if (currentPeriodNumber == -1) {    //判断第一次加载
+                    currentPeriodNumber = data.current.periodNumber;
+                }
+                currentPeriodNumber = data.current.periodNumber;
+                nextPeriodNumber = data.next.periodNumber;
+            }
+
+
+
+            window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
+            timeInterval = 0;
+        }, 'json').error(function () {
+            if (errorCount < 20) {
+                window.setTimeout(awardTick, 1000 + Math.random() * 10000);
+                errorCount++;
+            }
+        });
+        if (errorCount >= 5 || requireCount > 90) {
+            showLotPeriodNumWarn(nextPeriodNumber);
+        }
+    };
+
+    var loadAwardTimesTimer, ctimeOfPeriod = -1;
+    var cpCurrAwardData = null;
+    var cpNextAwardTimeInterval = -1;
+    function loadAwardTimes() {
+        $.post('../../jsk3/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
             var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(4);
 
             $('.newIssue span').html(data.current.periodNumber1.substr(4));
@@ -87,40 +120,8 @@ $(function () {
             str +="<a>"+dx+"</a>";
             str +="<a>"+ds+"</a>";
             str = str + '</div>';
-            $('.openCodeList').html(str)
-
-
-            if (timeInterval != 0) {
-                 if (currentPeriodNumber != -1 ) {    //判断第一次加载
-                     window.setTimeout(getHistoryData('30'), data.next.awardTimeInterval < 10 ? 1000 : _time);
-                }
-                if (currentPeriodNumber == -1) {    //判断第一次加载
-                    currentPeriodNumber = data.current.periodNumber;
-                }
-                currentPeriodNumber = data.current.periodNumber;
-                nextPeriodNumber = data.next.periodNumber;
-            }
-
-
-
-            window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
-            timeInterval = 0;
-        }, 'json').error(function () {
-            if (errorCount < 20) {
-                window.setTimeout(awardTick, 1000 + Math.random() * 10000);
-                errorCount++;
-            }
-        });
-        if (errorCount >= 5 || requireCount > 90) {
-            showLotPeriodNumWarn(nextPeriodNumber);
-        }
-    };
-
-    var loadAwardTimesTimer, ctimeOfPeriod = -1;
-    var cpCurrAwardData = null;
-    var cpNextAwardTimeInterval = -1;
-    function loadAwardTimes() {
-        $.post('../../jsk3/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
+            $('.openCodeList').html(str);
+            getHistoryData('30');
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 

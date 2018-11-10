@@ -40,19 +40,6 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../sfpk10/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
-            var nextOpenIssue = (Number(data.next.periodNumber)+1).toString().substr(6);
-
-            $('.newIssue span').html(data.current.periodNumber1.substr(6));
-            $('.nextIssue span').html(nextOpenIssue);
-            $('.periodNumber').html(data.current.periodNumber);
-            $('.surplus_num').html(data.current.surplus_num);
-            var nums = data.current.awardNumbers.split(',');
-            var str = "";
-            for (var i = 0; i < nums.length; i++) {
-                str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
-            }
-            $('.openCodeList').html(str)
-
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -65,7 +52,7 @@ $(function () {
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
             if (timeInterval != 0) {
                 if (currentPeriodNumber != -1 ) {    //判断第一次加载
-                    window.setTimeout(getHistoryData('15'), data.next.awardTimeInterval < 10 ? 1000 : _time);
+
 
                 }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
@@ -79,6 +66,34 @@ $(function () {
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
 
+
+        }, 'json').error(function () {
+            if (errorCount < 20) {
+                window.setTimeout(awardTick, 1000 + Math.random() * 10000);
+                errorCount++;
+            }
+        });
+        if (errorCount >= 5 || requireCount > 90) {
+            showLotPeriodNumWarn(nextPeriodNumber);
+        }
+    };
+
+    var loadAwardTimesTimer, ctimeOfPeriod = -1;
+    var cpCurrAwardData = null;
+    var cpNextAwardTimeInterval = -1;
+    function loadAwardTimes() {
+        $.post('../../sfpk10/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
+            var nextOpenIssue = (Number(data.next.periodNumber)+1).toString().substr(6);
+            $('.newIssue span').html(data.current.periodNumber1.substr(6));
+            $('.nextIssue span').html(nextOpenIssue);
+            $('.periodNumber').html(data.current.periodNumber);
+            $('.surplus_num').html(data.current.surplus_num);
+            var nums = data.current.awardNumbers.split(',');
+            var str = "";
+            for (var i = 0; i < nums.length; i++) {
+                str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
+            }
+            $('.openCodeList').html(str);
             var nums = data.current.awardNumbers.split(',');
             $('.lhResult a').eq(0).html(long(nums[0],nums[9]));
             $('.lhResult a').eq(1).html(long(nums[1],nums[8]));
@@ -107,24 +122,8 @@ $(function () {
             $('.lhResult a').eq(7).html(sum);
             $('.lhResult a').eq(8).html(dx);
             $('.lhResult a').eq(9).html(ds);
+            getHistoryData('15')
 
-
-        }, 'json').error(function () {
-            if (errorCount < 20) {
-                window.setTimeout(awardTick, 1000 + Math.random() * 10000);
-                errorCount++;
-            }
-        });
-        if (errorCount >= 5 || requireCount > 90) {
-            showLotPeriodNumWarn(nextPeriodNumber);
-        }
-    };
-
-    var loadAwardTimesTimer, ctimeOfPeriod = -1;
-    var cpCurrAwardData = null;
-    var cpNextAwardTimeInterval = -1;
-    function loadAwardTimes() {
-        $.post('../../sfpk10/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 

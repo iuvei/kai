@@ -50,35 +50,14 @@ $(function () {
                 requireCount = errorCount = 0;
                 hideLotPeriodNumWarn();
             }
-
-
-            var nextOpenIssue = (Number(data.next.periodNumber)+1);
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-            $('.newIssue span').html(data.current.periodNumber1);
-            $('.nextIssue span').html(nextOpenIssue);
-            $('.periodNumber').html(data.current.periodNumber);
-            $('.surplus_num').html(data.current.surplus_num);
 
-            var nums = data.current.awardNumbers.split(',');
-            var  dat =  shuju(nums);
-            var str=''
-            str = str + '<a class="ball-red">' + dat[0] + '</a>';
-            str = str + '<a class="ball-red">' + dat[1] + '</a>';
-            str = str + '<a class="ball-red">' + dat[2] + '</a>';
-            str = str + '<div class="sscLH">';
-            str = str + '<a>' + dat[3] + '</a>';
-            str = str + '<a>' + dat[4] + '</a>';
-            str = str + '<a>' + dat[5] + '</a>';
-            str = str + '<a>' + dat[6] + '</a>';
-            str = str + '</div>';
-
-            $('.openCodeList').html(str)
 
 
             if (timeInterval != 0) {
                  if (currentPeriodNumber != -1 ) {    //判断第一次加载
 
-                     window.setTimeout(getHistoryData('50'), (data.next.awardTimeInterval*1000) < 10 ? 1000 : _time);
+
                 }
                 if (currentPeriodNumber == -1) {    //判断第一次加载
                     currentPeriodNumber = data.current.periodNumber;
@@ -108,6 +87,26 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../pc28/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
+            var nextOpenIssue = (Number(data.next.periodNumber)+1);
+            $('.newIssue span').html(data.current.periodNumber1);
+            $('.nextIssue span').html(nextOpenIssue);
+            $('.periodNumber').html(data.current.periodNumber);
+            $('.surplus_num').html(data.current.surplus_num);
+
+            var nums = data.current.awardNumbers.split(',');
+            var  dat =  shuju(nums);
+            var str=''
+            str = str + '<a class="ball-red">' + dat[0] + '</a>';
+            str = str + '<a class="ball-red">' + dat[1] + '</a>';
+            str = str + '<a class="ball-red">' + dat[2] + '</a>';
+            str = str + '<div class="sscLH">';
+            str = str + '<a>' + dat[3] + '</a>';
+            str = str + '<a>' + dat[4] + '</a>';
+            str = str + '<a>' + dat[5] + '</a>';
+            str = str + '<a>' + dat[6] + '</a>';
+            str = str + '</div>';
+            $('.openCodeList').html(str)
+            getHistoryData('50')
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 

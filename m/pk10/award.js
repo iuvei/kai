@@ -41,16 +41,6 @@ $(function () {
     var awardTick = function () {
 
         $.post('../../pk10/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
-
-            var nextOpenIssue = Number(data.next.periodNumber)+1;
-            // var nextOpenTime =data.next.awardTime.substr(11,5);
-            // $('.nextOpenIssue').html(nextOpenIssue);
-            // $('.nextOpenTime').html(nextOpenTime);
-            // $('.openIssue').html(data.current.periodNumber);
-            // $('.residueIssue').html(data.current.surplus_num);
-            // $('.totalIssue').html(data.current.current_num);
-
-
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -93,22 +83,7 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../pk10/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
-            //请求到数据后需要做的事情
-            cpCurrAwardData = data;
-
-            //期数不同，则开始封盘倒计时
-            if (data.current.periodNumber != cpNumber) {
-                cpNextAwardTimeInterval = data.next.awardTimeInterval;
-                if (countDownTimer) {
-                    window.clearInterval(countDownTimer);
-                }
-                countDownTimer = window.setInterval(function () {
-                    cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval - 1000);
-
-                    showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
-                }, 1000);
-            }
-            var nextOpenIssue = Number(data.next.periodNumber)+1;
+            var nextOpenIssue = (Number(data.next.periodNumber)+1);
             $('.newIssue span').html(data.current.periodNumber1);
             $('.nextIssue span').html(nextOpenIssue);
             $('.periodNumber').html(data.current.periodNumber);
@@ -118,8 +93,7 @@ $(function () {
             for (var i = 0; i < nums.length; i++) {
                 str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
             }
-            $('.openCodeList').html(str)
-
+            $('.openCodeList').html(str);
             var nums = data.current.awardNumbers.split(',');
             $('.lhResult a').eq(0).html(long(nums[0],nums[9]));
             $('.lhResult a').eq(1).html(long(nums[1],nums[8]));
@@ -148,12 +122,27 @@ $(function () {
             $('.lhResult a').eq(7).html(sum);
             $('.lhResult a').eq(8).html(dx);
             $('.lhResult a').eq(9).html(ds);
+            getHistoryData('15')
 
+            //请求到数据后需要做的事情
+            cpCurrAwardData = data;
+
+            //期数不同，则开始封盘倒计时
+            if (data.current.periodNumber != cpNumber) {
+                cpNextAwardTimeInterval = data.next.awardTimeInterval;
+                if (countDownTimer) {
+                    window.clearInterval(countDownTimer);
+                }
+                countDownTimer = window.setInterval(function () {
+                    cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval - 1000);
+
+                    showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
+                }, 1000);
+            }
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
             cpNumber = data.current.periodNumber;
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
-                window.setTimeout(getHistoryData('15'), data.next.awardTimeInterval < 10 ? 1000 : _time);
             }
             var xiaqi = parseInt(data.next.periodNumber)+1;
 
