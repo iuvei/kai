@@ -429,6 +429,13 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	-webkit-box-shadow: 3px 3px 4px #C4C0C0;
 	 
 }
+#xia-yx1{
+	color: #fff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
 .xia-yxx-list{position: absolute;left: 0vw; top: 8vw; width: 100%; display: none; z-index: 999}
 .xia-yxx-list{ background: #ffffff; overflow: hidden;border-bottom: 1px solid #aeaeae; padding-left: 0.7vw; padding-bottom: 1.5vw}
 
@@ -649,7 +656,6 @@ overflow:hidden;
 	height: 6vw;
 	text-indent: -900em;
 	overflow: hidden; display: inline-block;
-
 	cursor: pointer;
 	outline: none;
 	background:  url(../images/icon-back2.png) no-repeat center center;
