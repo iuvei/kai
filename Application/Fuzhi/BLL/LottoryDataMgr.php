@@ -5484,7 +5484,6 @@ class LottoryDataMgr
             $return = $module->query($sql);
             $time = $time + 24 * 3600;
         }
-
         $return = $return[0];
         $return['actionNoIndex'] = $return['actionNo'];
         if (($fun = $types[$type]['onGetNoed']) && method_exists($this, $fun)) {
@@ -5495,11 +5494,13 @@ class LottoryDataMgr
 
     public function getGameCurrentNo($type, $module, $time)
     {
+
+
         $type = intval($type);
         $types = $this->getTypes($module);
-        $kjTime = $types[$type]["data_ftime"];
-
-        $atime = date('H:i:s', $time + $kjTime);
+//        $kjTime = $types[$type]["data_ftime"];
+//        $atime = date('H:i:s', $time + $kjTime);
+        $atime = date('H:i:s', $time);
 
         $sql = "select actionNo, actionTime from {$this->prename}data_time where type={$type} and actionTime<='%s' order by actionTime desc limit 1";
 
