@@ -5474,8 +5474,9 @@ class LottoryDataMgr
         $type = intval($type);
        
         $types = $this->getTypes($module);
-        $kjTime = $types[$type]["data_ftime"];
-        $atime = date('H:i:s', $time + $kjTime);
+       // $kjTime = $types[$type]["data_ftime"];
+       // $atime = date('H:i:s', $time + $kjTime);
+        $atime = date('H:i:s', $time);
         $sql = "select actionNo, actionTime from {$this->prename}data_time where type={$type} and actionTime>'%s' order by actionTime limit 1";
         $return = $module->query($sql, $atime);
         if (!$return) {
