@@ -22,9 +22,10 @@
 
 
 .sscLH{
-    width: 60vw;
-    float: right;
+    /*width: 60vw;*/
+    float: right;flex: 1;
 }
+.openCodeList .sscBall{margin-right: 2vw}
 .sscLH a{
     width: 8vw;
     height: 6.5vw;
@@ -64,7 +65,8 @@
     text-align: right;
     width: 60%; float: right;
 }
-.openCodeList img{width: 30px;height: 30px;margin-right: 10px}
+.openCodeList img{width: 8vw;height: 8vw;    margin-right: 1vw;
+    margin-left: 1vw;}
 .openCodeList,.lhResult,.nextOpenList{
     width: 100%;
     text-align: center;
@@ -520,10 +522,11 @@ body{color: #666;background-color: #f0f0f0;}
     -webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    font-size: 3.8vw;
 }
 .openCode img{
     width: 30px;
-    height: 30px;
+    height: 30px;vertical-align: middle;
 }
 /*.openCode>div a{
     margin: auto;

@@ -214,6 +214,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	position: relative;font-size: 3.2vw;}
 .ball-red,.ball-blue {display:inline-block;
 	margin-right: 1vw;
+	margin-left: 1vw;
 	width: 6.5vw;
 	height: 6.5vw;
 	line-height: 6.5vw;
