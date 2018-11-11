@@ -62,7 +62,7 @@ include("../conn.php");
         <div class="nextTime">
             <span id="headOpenTimeM"></span>:<span id="headOpenTimeS"></span>
         </div>
-        <a class="video2" href="shipin.php">
+        <a class="video2">
             <img src="/m/style/images/ico_sp.png"><span>开奖直播</span>
         </a>
 

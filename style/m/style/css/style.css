@@ -180,8 +180,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	overflow:hidden;
 	background:#fff; height:40px; line-height:40px;
 	width:100%; margin:0 auto;
-	
-	z-index:88888px;
+	z-index:88888;
 	border-bottom:1px solid #d9d9d9;z-index:100;
 	 
 }
