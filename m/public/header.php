@@ -3,10 +3,11 @@
 <header class="header">
 	<a onClick="history.go(-1);" class="back">上一页</a>
 <!--	<a href="../" class="logo">头彩开奖网</a>-->
-    <a class="class="logo">
+    <div class="logo">
     <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">
         <ul class="">
-            </li><li><a href="../pk10/" game="pk10" class="">北京PK10</a></li>
+
+            <li><a href="../pk10/" game="pk10" class="">北京PK10</a></li>
             <li><a href="../sfpk10/" game="jssc">三分PK10</a></li>
             <li><a href="../tcpk10/" game="tcpk10">极速PK10</a></li>
             <li><a href="../xyft/" game="xyft">幸运飞艇</a></li>
@@ -22,7 +23,7 @@
             <li><a href="../txffc/" game="txffc" class="cur">腾讯分分彩</a></li>
         </ul>
     </div>
-    </a>
+    </div>
     <div class="fl xia-yx" id="xia-yx1"><?=$web_type?><span class="xialabt" id="xialabt1"></span> </div>
 	<a href="../" class="menu">首页</a>
 </header>
