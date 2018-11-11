@@ -46,7 +46,8 @@
     position: relative;
     width: 100%;
     background: #f0f0f0;
-    height:1200px
+    height: 880px;
+    /*height:1200px*/
 }
 
 .bodybox .menubannboxc .menubox {
