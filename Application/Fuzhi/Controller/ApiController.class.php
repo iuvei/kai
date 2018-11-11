@@ -4,6 +4,7 @@ namespace Fuzhi\Controller;
 use Think\Controller;
 use Think\Exception;
 use Think\Page;
+date_default_timezone_set('PRC');
 
 class ApiController extends Controller{
     private $prename = 'lot_';
