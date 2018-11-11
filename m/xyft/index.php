@@ -82,7 +82,7 @@ include("../conn.php");
 
     </div>
 </div>
-<div class="choose" id="chooseNum">
+<div class="choose" id="chooseNum" style="display: none">
     <div class="chooseRow1 chooseRow1-on">
         <a>1</a>
         <a>2</a>

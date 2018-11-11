@@ -107,7 +107,7 @@ include("../conn.php");
 <!--        <div class="itm-time">开奖时间<a class="nextOpenTime" id="time"></a></div>-->
 <!--    </div>-->
 <!--</div>-->
-<div class="choose" id="chooseNum">
+<div class="choose" id="chooseNum" style="display: none">
     <div class="chooseRow1 chooseRow1-on">
         <a>1</a>
         <a>2</a>

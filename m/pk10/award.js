@@ -122,11 +122,10 @@ $(function () {
             $('.lhResult a').eq(7).html(sum);
             $('.lhResult a').eq(8).html(dx);
             $('.lhResult a').eq(9).html(ds);
-            getHistoryData('15')
+            getHistoryData('15');
 
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
-
             //期数不同，则开始封盘倒计时
             if (data.current.periodNumber != cpNumber) {
                 cpNextAwardTimeInterval = data.next.awardTimeInterval;
