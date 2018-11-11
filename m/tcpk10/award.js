@@ -83,6 +83,7 @@ $(function () {
     var cpCurrAwardData = null;
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
+        console.log('comeing--------------')
         $.post('../../tcpk10/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
             var nextOpenIssue = (Number(data.next.periodNumber)+1).toString().substr(6);
             $('.newIssue span').html(data.current.periodNumber1.substr(6));
@@ -134,9 +135,9 @@ $(function () {
                 if (countDownTimer) {
                     window.clearInterval(countDownTimer);
                 }
+
                 countDownTimer = window.setInterval(function () {
                     cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval - 1000);
-
                     showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
                 }, 1000);
             }
@@ -147,9 +148,10 @@ $(function () {
 
             var xiaqi = parseInt(data.next.periodNumber)+1;
 
+            console.log(data.next.awardTimeInterval);
 
+            loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval <= 2000 ? 1000 : data.next.awardTimeInterval + 1000);
 
-            loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);
