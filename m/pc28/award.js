@@ -96,11 +96,12 @@ $(function () {
             var nums = data.current.awardNumbers.split(',');
             var  dat =  shuju(nums);
             var str=''
-            str = str + '<a class="ball-red">' + dat[0] + '</a>';
-            str = str + '<a class="ball-red">' + dat[1] + '</a>';
-            str = str + '<a class="ball-red">' + dat[2] + '</a>';
+            str = str + '<a class="ball-red">' + dat[0] + '</a> + ';
+            str = str + '<a class="ball-red">' + dat[1] + '</a> + ';
+            str = str + '<a class="ball-red">' + dat[2] + '</a> = ';
+            str = str + '<a class="ball-blue">' + dat[3] + '</a>';
             str = str + '<div class="sscLH">';
-            str = str + '<a>' + dat[3] + '</a>';
+
             str = str + '<a>' + dat[4] + '</a>';
             str = str + '<a>' + dat[5] + '</a>';
             str = str + '<a>' + dat[6] + '</a>';

@@ -63,7 +63,7 @@
 	background:#28c200;
 }
 .nextOpenTime{margin-left: 3px}
-body{color: #333;background-color: #f8f8f8;}
+body{color: #666;background-color: #f8f8f8;}
 .head{border-bottom: 1px #ccc solid;}
 .headRow1,.headRow2,.headRow3{width: 100%;display: flex;  font-size: 2.93333vw; color: #333}
 .headRow1>input{
@@ -218,7 +218,7 @@ body{color: #333;background-color: #f8f8f8;}
 	justify-items: center;
 	align-items: center;
 	width: 100%;
-	background-color: #e0e0ea;
+	background-color: #f8f8f8;
 }
 .choose2 a{
 	background-color: #fff;
