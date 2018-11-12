@@ -384,11 +384,11 @@ var webListOP = {
 //					"text":"分享模式",
 //					"href":"javascript:void(0);"
 //				},
-				{
+				/*{
 					"text":"开奖视频",
 					"href":"cqssc/shipin/",
 					"aClass":"redColor"
-				},
+				},*/
 				{
 					"text":"时时彩技巧",
 					"href":"jiqiao/cqssc/"
@@ -474,11 +474,11 @@ var webListOP = {
 					"text":"横版走势图",
 					"href":"jsk3/zoushitu.html"
 				},
-				{
+				/*{
 					"text":"开奖视频",
 					"href":"jsk3/shipin",
 					"aClass":"redColor"
-				}
+				}*/
 			],
 		"tjssc": [
 					{
@@ -525,11 +525,11 @@ var webListOP = {
 						"text":"时时彩技巧",
 						"href":"jiqiao/tjssc/"
 					},
-					{
+					/*{
 						"text":"开奖视频",
 						"href":"tjssc/shipin",
 						"aClass":"redColor"
-					},
+					},*/
 					{
 						"text":"遗漏大数据",
 						"href":"tjssc/omitdata.html",
@@ -586,11 +586,11 @@ var webListOP = {
             "text":"时时彩技巧",
             "href":"jiqiao/jsssc/"
         },
-        {
+       /* {
             "text":"开奖视频",
             "href":"jsssc/shipin",
             "aClass":"redColor"
-        },
+        },*/
         {
             "text":"遗漏大数据",
             "href":"jsssc/omitdata.html",
@@ -695,10 +695,10 @@ var webListOP = {
 						"href":"jiqiao/fc3d/"
 					},
 					
-					{
+					/*{
 						"text":"开奖视频",
 						"href":"fc3d/shipin"
-					},
+					},*/
 					
 				],
 		"shssl": [
@@ -729,11 +729,11 @@ var webListOP = {
 					{
 						"text":"单双大小历史",
 						"href":"shssl/ballstat.html"
-					},
+					}/*,
 					{
 						"text":"开奖视频",
 						"href":"shssl/shipin"
-					},
+					}*/,
 					{
 						"text":"时时乐技巧",
 						"href":"jiqiao/shssl/"

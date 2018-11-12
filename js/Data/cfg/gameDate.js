@@ -71,16 +71,16 @@ var webListOP = {
 //					"text":"淘宝模式",
 //					"href":"pk10/betmode.html"
 //				},
-				{
+				/*{
 					"text":"免费参考",
 					"href":"pk10/betgame.html"
-				},
-				{
+				},*/
+				/*{
 					"text":"pk10开奖直播",
 					"href":"pk10/shipin/",
 					"title":"在线观看pk10开奖直播",
 					"aClass":"redColor"
-				},
+				},*/
 				{
 					"text":"冷热码分析",
 					"href":"pk10/coldhotnumber.html"
@@ -174,12 +174,12 @@ var webListOP = {
 //             "text":"免费参考",
 //             "href":"xyft/betgame.html"
 //         },
-        {
+        /*{
             "text":"幸运飞艇开奖直播",
             "href":"xyft/shipin/",
             "title":"在线观看极速pk10开奖直播",
             "aClass":"redColor"
-        },
+        },*/
         // {
         //     "text":"冷热码分析",
         //     "href":"xyft/coldhotnumber.html"
@@ -273,16 +273,16 @@ var webListOP = {
 //					"text":"淘宝模式",
 //					"href":"pk10/betmode.html"
 //				},
-        {
+       /* {
             "text":"免费参考",
             "href":"jssc/betgame.html"
-        },
-        {
+        },*/
+       /* {
             "text":"极速pk10开奖直播",
             "href":"jssc/shipin/",
             "title":"在线观看极速pk10开奖直播",
             "aClass":"redColor"
-        },
+        },*/
         {
             "text":"冷热码分析",
             "href":"jssc/coldhotnumber.html"
@@ -382,20 +382,20 @@ var webListOP = {
 //					"text":"淘宝模式",
 //					"href":"javascript:void(0);"
 //				},
-				{
+				/*{
 					"text":"免费推荐",
 					"href":"gdkl10/betgame.html"
-				},
+				},*/
 				{
 					"text":"快乐十分技巧",
 					"href":"jiqiao/gdkl10/"
 				},
-				{
+				/*{
 					"text":"开奖直播",
 					"href":"gdkl10/shipin/",
 					"title": "在线观看快乐十分开奖直播",
 					"aClass":"redColor"
-				},
+				},*/
 				{
 					"text":"横版走势图",
 					"href":"gdkl10/zoushitu.html"
@@ -477,19 +477,19 @@ var webListOP = {
 //					"text":"淘宝模式",
 //					"href":"javascript:void(0);"
 //				},
-				{
+				/*{
 					"text":"免费参考",
 					"href":"cqssc/betgame.html"
-				},
+				},*/
 //				{
 //					"text":"分享模式",
 //					"href":"javascript:void(0);"
 //				},
-				{
+				/*{
 					"text":"开奖视频",
 					"href":"cqssc/shipin/",
 					"aClass":"redColor"
-				},
+				},*/
 				{
 					"text":"时时彩技巧",
 					"href":"jiqiao/cqssc/"
@@ -540,11 +540,11 @@ var webListOP = {
 					"text":"横版走势图",
 					"href":"jsk3/zoushitu.html"
 				},
-				{
+				/*{
 					"text":"开奖视频",
 					"href":"jsk3/shipin",
 					"aClass":"redColor"
-				}
+				}*/
 			],
 		"cqft": [
 					{
@@ -575,11 +575,11 @@ var webListOP = {
 						"text":"番摊技巧",
 						"href":"jiqiao/cqft/"
 					},
-					{
+					/*{
 						"text":"开奖视频",
 						"href":"cqft/shipin",
 						"aClass":"redColor"
-					},
+					},*/
 					{
 						"text":"遗漏大数据",
 						"href":"cqft/omitdata.html",
@@ -607,12 +607,12 @@ var webListOP = {
             "text":"番摊单双大小历史",
             "href":"bjft/ballstat.html"
         },
-        {
+        /*{
             "text":"番摊开奖直播",
             "href":"bjft/shipin/",
             "title":"在线观看番摊开奖直播",
             "aClass":"redColor"
-        },
+        },*/
         {
             "text":"番摊技巧",
             "href":"jiqiao/bjft/"
@@ -645,12 +645,12 @@ var webListOP = {
         //     "text":"单双大小历史",
         //     "href":"pc28/ballstat.html"
         // },
-        {
+        /*{
             "text":"加拿大28开奖直播",
             "href":"pc28/shipin/",
             "title":"在线观看番摊开奖直播",
             "aClass":"redColor"
-        },
+        },*/
         {
             "text":"加拿大28技巧",
             "href":"jiqiao/pc28/"
@@ -686,12 +686,12 @@ var webListOP = {
             "text":"单双大小历史",
             "href":"txffc/ballstat.html"
         },
-        {
+        /*{
             "text":"开奖直播",
             "href":"txffc/shipin/",
             "title":"在线观看番摊开奖直播",
             "aClass":"redColor"
-        },
+        },*/
         {
             "text":"分分彩技巧",
             "href":"jiqiao/txffc/"
@@ -752,11 +752,11 @@ var webListOP = {
             "text":"时时彩技巧",
             "href":"jiqiao/jsssc/"
         },
-        {
+        /*{
             "text":"开奖视频",
             "href":"jsssc/shipin",
             "aClass":"redColor"
-        },
+        },*/
         {
             "text":"遗漏大数据",
             "href":"jsssc/omitdata.html",
@@ -806,11 +806,11 @@ var webListOP = {
             "text":"时时彩技巧",
             "href":"jiqiao/tcssc/"
         },
-        {
+        /*{
             "text":"开奖视频",
             "href":"tcssc/shipin",
             "aClass":"redColor"
-        },
+        },*/
         // {
         //     "text":"遗漏大数据",
         //     "href":"tcssc/omitdata.html",
@@ -874,12 +874,12 @@ var webListOP = {
             "text":"免费参考",
             "href":"tcpk10/betgame.html"
         },
-        {
+        /*{
             "text":"极速pk10开奖直播",
             "href":"tcpk10/shipin/",
             "title":"在线观看极速pk10开奖直播",
             "aClass":"redColor"
-        },
+        },*/
         {
             "text":"冷热码分析",
             "href":"tcpk10/coldhotnumber.html"
@@ -951,12 +951,12 @@ var webListOP = {
             "text":"免费参考",
             "href":"sfpk10/betgame.html"
         },
-        {
+        /*{
             "text":"三分pk10开奖直播",
             "href":"sfpk10/shipin/",
             "title":"在线观看三分pk10开奖直播",
             "aClass":"redColor"
-        },
+        },*/
         {
             "text":"冷热码分析",
             "href":"sfpk10/coldhotnumber.html"
@@ -1042,11 +1042,11 @@ var webListOP = {
             "text":"时时彩技巧",
             "href":"jiqiao/sfssc/"
         },
-        {
+        /*{
             "text":"开奖视频",
             "href":"sfssc/shipin",
             "aClass":"redColor"
-        },
+        },*/
         {
             "text":"遗漏大数据",
             "href":"sfssc/omitdata.html",
