@@ -14,7 +14,7 @@
         width: 25px;
         height: 25px;
         float: left;
-        padding-right: 8px;
+        padding-right: 8px;    border-radius: 8px;
     }
 
 .nums {
@@ -27,8 +27,9 @@
         width: 25px;
         height: 25px;
        display: inline-block;
-        padding-right: 4px;
-        padding-left: 5px;
+        /*padding-right: 4px;*/
+        /*padding-left: 5px;*/
+        margin: 0 4px;
     }
 
 .shade i {
@@ -299,7 +300,7 @@
 .lot-award .currentAward .title{ height:24px; line-height:24px;}
 .lot-award .currentAward .period,.lot-award .currentAward .period-info{ line-height:24px;}
 .lot-nums{ width:500px; height:40px; padding:5px 0 5px 10px;}
-.lot-nums span{ width:40px; height:40px; background:url("../../images/num.png") no-repeat 0 0; padding-right:0; margin-right:10px;}
+.lot-nums span{ width:40px; height:40px; background:url("../../images/num.png") no-repeat 0 0; padding-right:0; margin-right:10px;    border-radius: 8px;}
 .lot-nums .no1{ background-position:0 0 !important;}
 .lot-nums .no2{ background-position:0 -41px !important;}
 .lot-nums .no3{ background-position:0 -82px !important;}
@@ -320,7 +321,7 @@
     width:40px; height:40px; background:url("../../images/num1.png") no-repeat 0 0;
     display: inline-block;
     margin: 5px 1px;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 .shade i {
     background: url("../../images/pk10-nums-shade.gif") no-repeat;
