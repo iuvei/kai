@@ -101,7 +101,9 @@ $(function () {
                     str = str + "<span class='no" + nums[i] + "'></span>";
                 }
                 $(".lot-nums").html(str);
+
                 $(".warnTime #period").html("第" + (Number(data.next.periodNumber) + 1).toString().substr(4) + "期");
+
             }
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
@@ -122,7 +124,8 @@ $(function () {
             }
             var qihao1 = data.current.periodNumber1.substr(6,2)+data.next.periodNumber;
 
-
+            $(".warnTime #period").html("第" +(Number(data.next.periodNumber)).toString().substr(4) + "期");
+            
             var leavePeriod = 180 - cpNumber;
             if (leavePeriod == 0) {
                 var d = new Date();

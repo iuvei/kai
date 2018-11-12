@@ -691,13 +691,12 @@ class LottoryDataMgr
 //        }else{
             $retData["current"]["awardTime"] = $currentNo["actionTime"];
    //     }
-
-        if ($lotType == 1 || $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lotType == 24 || $lotType == 35 || $lotType == 34 || $lotType == 40||$lotType==20   ||$lotType == 44 ) {
+if ( $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lotType == 24 || $lotType == 35 || $lotType == 34 || $lotType == 40||$lotType==2 ||$lotType == 44 ) {
             $retData["current"]["periodNumber"] = $currentNo["actionNoIndex"];
         } else if($lotType == 43 ||$lotType == 6 ){
             //$retData["current"]["periodNumber"] =$dat_expect;//测试数据是否正常
             $retData["current"]["periodNumber"] = substr($currentNo["actionNo"],9);
-        }else if($lotType == 45 || $lotType == 46 || $lotType == 47  ||$lotType == 48)
+        }else if($lotType == 45 || $lotType == 46 || $lotType == 47  ||$lotType == 48 || $lotType == 1)
         {
             $retData["current"]["periodNumber"] = intval(substr($dat_expect,8));
         }else
@@ -711,14 +710,17 @@ class LottoryDataMgr
             $retData["current"]["current_num"] =  $current_num[0]['count'];
 
                 /*$retData["current"]["surplus_num"] = $current_num[0]['count'] - $currentNo["actionNo"];*/
-            if($lotType == 43 || $lotType == 22 || $lotType == 6 ||$lotType == 21 || $lotType == 1){
+            if($lotType == 43 || $lotType == 22 || $lotType == 6 ||$lotType == 21 ){
                 $retData["current"]["surplus_num"] = $current_num[0]['count'] - substr($currentNo["actionNo"],9);
-            }else if($lotType == 20 || $lotType == 34 ||$lotType == 44 ){
+            }else if($lotType == 20 || $lotType == 34 ){
                 $retData["current"]["surplus_num"] = $current_num[0]['count'] - $currentNo["actionNoIndex"];
-            }else if ($lotType == 45 || $lotType == 46 || $lotType == 47 || $lotType == 48)
+            }else if ($lotType == 45 || $lotType == 46 || $lotType == 47 || $lotType == 48 || $lotType == 1)
             {
                 $retData["current"]["surplus_num"] = $current_num[0]['count'] - $retData["current"]["periodNumber"];
+            }else if($lotType == 44 ){
+                $retData["current"]["surplus_num"] = $current_num[0]['count'] - $currentNo["actionNoIndex"]+1;
             }
+
         $retData["current"]["periodNumber1"] = $dat_expect;
         $retData["current"]["fullPeriodNumber"] = $currentNo["actionNo"];
         $retData["current"]["periodNumberStr"] = null;
@@ -729,12 +731,8 @@ class LottoryDataMgr
         $retData["current"]["isEnd"] = null;
         $retData["current"]["nextMinuteInterval"] = null;
 
-
-
         //下期期数
-
         $nextNoqishu = $this->getGameNextNoqishu($lotType, $module, $time);
-
 
 
        /* print_r($nextNoqishu[0]["dat_expect"]);//die;
@@ -750,13 +748,40 @@ class LottoryDataMgr
 
                 $retData["next"]["periodNumber"] =$dat_expect;//测试数据是否正常
             }
-
+            if($lotType == 44){
+                $retData["next"]["periodNumber"] =$dat_expect+1;
+            }
+            //bjpk10 bjft期数
             if($lotType == 20 ||$lotType == 42)
             {
                 $retData["next"]["periodNumber"] =$nextNoqishu[0]["dat_expect"] + $nextNo["actionNoIndex"] -1;
+
+                if($nextNo["actionTime"]>300)
+                {
+                    $retData["next"]["periodNumber"]=$nextNoqishu[0]["dat_expect"]+1;
+                    $retData['stauts'] = "2";
+                }
+
             }
 
+            //xyft期数
+            if($lotType == 34 ||$lotType == 1 || $lotType == 41 || $lotType == 22 ||$lotType == 6){
 
+                if($nextNo["actionNoIndex"]<10)
+                {
+                    $nextNo["actionNoIndex"]= "00".$nextNo["actionNoIndex"];
+                }
+                if($nextNo["actionNoIndex"] >=10 && $nextNo["actionNoIndex"]<100)
+                {
+                    $nextNo["actionNoIndex"]= "0".$nextNo["actionNoIndex"];
+                }
+                $retData["next"]["periodNumber"]=substr($nextNo["actionNo"],0,8).$nextNo["actionNoIndex"];
+
+                if($nextNo["actionTime"]>300 && $lotType == 34 )
+                {
+                    $retData['stauts'] = "2";
+                }
+            }
 
         $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
 
@@ -5523,6 +5548,7 @@ class LottoryDataMgr
         $sql = "select dat_expect from {$this->prename}data where dat_type={$type} and dat_open_time<{$today} order by dat_open_time desc limit 1";
 
         $return = $module->query($sql);
+
 
         return $return;
     }
