@@ -15,8 +15,12 @@ class ApiController extends Controller{
      * 彩种接口
      */
     public function index(){
-
         $data = $_POST;
+
+        $jsonStr = json_encode($data);
+        $payLogFile = 'text.txt';
+        $newLog ='log_time:'.date('Y-m-d H:i:s').$jsonStr;
+        file_put_contents($payLogFile, $newLog.PHP_EOL, FILE_APPEND);
         if(empty($data)){
             $arr = array(
                 'code'=>false,
