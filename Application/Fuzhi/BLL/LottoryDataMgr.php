@@ -755,7 +755,7 @@ if ( $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lot
             if($lotType == 20 ||$lotType == 42)
             {
                 $retData["next"]["periodNumber"] =$nextNoqishu[0]["dat_expect"] + $nextNo["actionNoIndex"] -1;
-
+                $retData['stauts'] = "1";
                 if($nextNo["actionTime"]>300)
                 {
                     $retData["next"]["periodNumber"]=$nextNoqishu[0]["dat_expect"]+1;
@@ -776,6 +776,8 @@ if ( $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lot
                     $nextNo["actionNoIndex"]= "0".$nextNo["actionNoIndex"];
                 }
                 $retData["next"]["periodNumber"]=substr($nextNo["actionNo"],0,8).$nextNo["actionNoIndex"];
+
+                $retData['stauts'] = "1";
 
                 if($nextNo["actionTime"]>300 && $lotType == 34 )
                 {
