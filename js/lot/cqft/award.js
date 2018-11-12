@@ -95,7 +95,7 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.get('cqssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
-            var qihao2 = data.next.periodNumber.substr(4);
+            var qihao2 = data.current.periodNumber1.substr(4);
             $(".currentAward .period").html(qihao2 + " 期");
             // $(".currentAward .period").html(data.current.fullPeriodNumber + " 期");
             var nums = data.current.awardNumbers.split(',');
@@ -124,8 +124,7 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            var qihao1 = parseInt(data.next.periodNumber.substr(4))+1;
-            $(".warnTime #period").html("第" + qihao1 + "期");
+            $(".warnTime #period").html("第" + data.next.periodNumber.substr(4) + "期");
             var leavePeriod = 120 - cpNumber;
             if (leavePeriod == 0) {
                 var d = new Date();

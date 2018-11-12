@@ -149,9 +149,8 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../pk10/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
-            var nextOpenIssue = Number(data.next.periodNumber)+1;
             $('.newIssue span').html(data.current.periodNumber1);
-            $('.nextIssue span').html(nextOpenIssue);
+            $('.nextIssue span').html(data.next.periodNumber);
             $('.periodNumber').html(data.current.periodNumber);
             $('.surplus_num').html(data.current.surplus_num);
             var nums = data.current.awardNumbers.split(',');

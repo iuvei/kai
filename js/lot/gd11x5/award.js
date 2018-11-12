@@ -134,7 +134,7 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            $(".warnTime #period").html("第" + (parseInt(data.current.periodNumber1)+1).toString().substr(4) + "期");
+            $(".warnTime #period").html("第" + data.next.periodNumber.substr(4) + "期");
             $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
 
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);

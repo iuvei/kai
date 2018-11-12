@@ -150,7 +150,6 @@ $(function () {
     function loadAwardTimes() {
         $.post('../../cqssc/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
             var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(4);
-
             $('.newIssue span').html(data.current.periodNumber1.substr(4));
             $('.nextIssue span').html(nextOpenIssue);
             $('.periodNumber').html(data.current.periodNumber);
