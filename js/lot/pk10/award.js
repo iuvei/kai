@@ -96,8 +96,7 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.get('pk10/getPk10AwardTimes.do', { ajaxhandler: 'GetPk10AwardTimes', t: Math.random() }, function (data) {
-
-                $(".currentAward .period").html(parseInt(data.current.periodNumber1) + " 期");
+            $(".currentAward .period").html((parseInt(data.next.periodNumber)-1) + " 期");
                 var nums;
                 var str = "";
                 if(data.current.awardNumbers != null)
@@ -130,7 +129,7 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            $(".warnTime #period").html("第" + (parseInt(data.next.periodNumber)+1) + "期");
+            $(".warnTime #period").html("第" + (parseInt(data.next.periodNumber)) + "期");
             $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
 
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
