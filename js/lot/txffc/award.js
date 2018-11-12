@@ -47,7 +47,7 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
             if (timeInterval != 0) {
-                $(".currentAward .period").html(data.current.periodNumber1.substr(6) + " 期");
+                $(".currentAward .period").html(data.next.periodNumber.substr(6) + " 期");
                 var nums = data.current.awardNumbers.split(',');
                 var str = "";
                 for (var i = 0; i < nums.length; i++) {
@@ -86,7 +86,7 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.get('txffc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
-            $(".currentAward .period").html(data.current.periodNumber1.substr(6) + " 期");
+            $(".currentAward .period").html(data.next.periodNumber.substr(6) + " 期");
             var nums = data.current.awardNumbers.split(',');
             var str = "";
             for (var i = 0; i < nums.length; i++) {

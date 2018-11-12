@@ -1392,7 +1392,9 @@ body{color: #666;background-color: #f0f0f0;}
 .openIssue,.residueIssue,.totalIssue{
 	color: #db4a58;
 }
-
+.BallNumHead .lastA{
+	margin-right: 0px !important;
+}
 
 
 

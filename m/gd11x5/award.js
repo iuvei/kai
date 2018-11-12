@@ -156,7 +156,6 @@ $(function () {
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
 });
 function getHistoryData(count,date) {
-	layer.open({type: 2,time: 1});
     $.get("../../gd11x5/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
 
         if(result&&result.rows){
