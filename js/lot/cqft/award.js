@@ -124,7 +124,7 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            var qihao1 = parseInt(data.current.periodNumber1.substr(4))+1;
+            var qihao1 = parseInt(data.next.periodNumber.substr(4))+1;
             $(".warnTime #period").html("第" + qihao1 + "期");
             var leavePeriod = 120 - cpNumber;
             if (leavePeriod == 0) {

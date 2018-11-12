@@ -160,6 +160,17 @@ $(function () {
 
             var srt = '';
             var sum = eval(nums.join("+"));
+            var tan = sum%4;
+            if(tan==0){
+                tan=4
+            }
+            var ft='';
+            for (var i=0;i<tan;i++) {
+                ft=ft+'<span class="ball-red-span"></span>'
+            }
+            console.log(ft)
+            ft ='番摊：'+ft;
+            $('.qiansan').html(ft);
             var dx = '';
             var ds = '';
             if(sum > 22){

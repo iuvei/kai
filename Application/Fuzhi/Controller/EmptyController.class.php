@@ -135,7 +135,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                     $this->title = $title_c.C("WEB_SITE_JSSC_TITLE") . ' - ' . C('WEB_SITE_TITLE');
                                     $this->keyword = C("WEB_SITE_JSSC_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                     $this->description = C("WEB_SITE_JSSC_DESCR");
-                                    $lottoryName = "极速pk10";
+                                    $lottoryName = "极速赛车";
                                     $totalExpect = 1152;
                                 } else {
                                     if ($ctrlName == 'jsk3') {
@@ -195,10 +195,10 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                 $totalExpect = 1440;
                                                             }else{
                                                                 if ($ctrlName == 'tcpk10') {
-                                                                    $this->title = $title_c.'极速pk10开奖视频_极速pk10开奖号码_极速pk10开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                    $this->title = $title_c.'极速赛车开奖视频_极速赛车开奖号码_极速赛车开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                     $this->keyword = C("WEB_SITE_tcpk10_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                     $this->description = C("WEB_SITE_tcpk10_DESCR");
-                                                                    $lottoryName = "极速pk10";//头彩
+                                                                    $lottoryName = "极速赛车";//头彩
                                                                     $totalExpect = 1440;
                                                                 }else{
                                                                     if ($ctrlName == 'tcssc') {
@@ -511,7 +511,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                             $id = 55;
                             break;
                         case 'tcpk10':
-                            $JiQiaotitle = '极速pk10技巧';
+                            $JiQiaotitle = '极速赛车技巧';
                             $id = 56;
                             break;
                         case 'sfpk10':
