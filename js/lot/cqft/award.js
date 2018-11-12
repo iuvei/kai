@@ -95,7 +95,7 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.get('cqssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
-            var qihao2 = data.current.periodNumber1.substr(4);
+            var qihao2 = data.next.periodNumber.substr(4);
             $(".currentAward .period").html(qihao2 + " 期");
             // $(".currentAward .period").html(data.current.fullPeriodNumber + " 期");
             var nums = data.current.awardNumbers.split(',');

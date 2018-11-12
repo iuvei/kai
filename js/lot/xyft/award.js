@@ -118,7 +118,7 @@ $(function () {
             }
             var qihao1 = data.current.periodNumber1.substr(6,2)+data.next.periodNumber;
 
-            $(".warnTime #period").html("第" +(Number(data.current.periodNumber1)+1).toString().substr(4) + "期");
+            $(".warnTime #period").html("第" +(Number(data.next.periodNumber)).toString().substr(4) + "期");
             var leavePeriod = 180 - cpNumber;
             if (leavePeriod == 0) {
                 var d = new Date();
