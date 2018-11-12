@@ -11,7 +11,7 @@
                 <li><a href="hmzs.php">号码走势</a></li>
                 <li><a href="lrtj.php">冷热统计</a></li>
 <!--                <li><a href="jiqiao.php">玩法技巧</a></li>-->
-                <li><a href="shipin.php">开奖直播</a></li>
+<!--                <li><a href="shipin.php">开奖直播</a></li>-->
                 <li class="guanbi"><a>关闭</a></li>
             </ul>
         </div>
