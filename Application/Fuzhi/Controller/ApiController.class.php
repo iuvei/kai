@@ -59,9 +59,23 @@ class ApiController extends Controller{
             'dat_codes'=>$data['code'],
         );
         C('DB_PREFIX','lot_');
+
+
         $res = M('data')->add($where);
 
-        file_put_contents('lgc2.log',date("Y-m-d H:i:s").var_export($res,true).M('data')->getLastsql()."</br>",FILE_APPEND);
+
+        $payLogFile = 'text.txt';
+        $newLog ='log_time:'.date('Y-m-d H:i:s').$res;
+        file_put_contents($payLogFile, $newLog.PHP_EOL, FILE_APPEND);
+        if($res == "" || $res == null )
+        {
+            $arr = array(
+                'code'=>true,
+                'msg'=>'重复请求',
+            );
+            echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+        }
+
         if($res < 1){
             $arr = array(
                 'code'=>false,

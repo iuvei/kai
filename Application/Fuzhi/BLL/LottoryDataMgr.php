@@ -728,31 +728,39 @@ class LottoryDataMgr
         $retData["current"]["pan"] = $pan;
         $retData["current"]["isEnd"] = null;
         $retData["current"]["nextMinuteInterval"] = null;
-//        if($lotType == 43){
-//            $retData["next"]["awardTime"] = $awrdtime2;
-//            $retData["next"]["awardTimeInterval"] = $awrdtime3*1000;
-//            $retData["next"]["periodNumber"] =$dat_expect+1;//测试数据是否正常
-//        }else{
+
+
+
+        //下期期数
+
+        $nextNoqishu = $this->getGameNextNoqishu($lotType, $module, $time);
+
+
+
+       /* print_r($nextNoqishu[0]["dat_expect"]);//die;
+
+        print_r("----");
+
+        print_r($nextNo["actionNoIndex"]);*/
+
             $retData["next"]["awardTime"] = $nextNo["actionTime"];
             if ($lotType == 1 || $lotType == 21 || $lotType == 3 || $lotType == 18 || $lotType == 22 || $lotType == 24 || $lotType == 35 || $lotType == 6 || $lotType == 34) {
                 $retData["next"]["periodNumber"] = $nextNo["actionNoIndex"];
             } else {
-                // $retData["next"]["periodNumber"] = $nextNo["actionNo"];
+
                 $retData["next"]["periodNumber"] =$dat_expect;//测试数据是否正常
             }
-            /*if($lotType == 43){
-                $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"])  - time();
-            }else {
 
-                $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
+            if($lotType == 20 ||$lotType == 42)
+            {
+                $retData["next"]["periodNumber"] =$nextNoqishu[0]["dat_expect"] + $nextNo["actionNoIndex"] -1;
+            }
 
-            }*/
 
-    //    }
 
         $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
 
-
+//dump($dat_expect);die;
         $retData["next"]["fullPeriodNumber"] = 0;
         $retData["next"]["periodNumberStr"] = "{$nextNo["actionNo"]}";
 
@@ -763,6 +771,7 @@ class LottoryDataMgr
         $retData["next"]["nextMinuteInterval"] = null;
 
         $ret = json_encode($retData);
+
         return $ret;
     }
 
@@ -5475,7 +5484,7 @@ class LottoryDataMgr
     function getGameNextNo($type, $module, $time)
     {
         $type = intval($type);
-       
+
         $types = $this->getTypes($module);
        // $kjTime = $types[$type]["data_ftime"];
        // $atime = date('H:i:s', $time + $kjTime);
@@ -5492,6 +5501,29 @@ class LottoryDataMgr
         if (($fun = $types[$type]['onGetNoed']) && method_exists($this, $fun)) {
             $this->{$fun}($return['actionNo'], $return['actionTime'], $time);
         }
+        return $return;
+    }
+
+    public  function getGameNextNoqishu($type, $module, $time){
+
+        date_default_timezone_set('PRC');
+
+        $type = intval($type);
+
+        $types = $this->getTypes($module);
+
+        if ($type == 20 )
+        {
+            $today = strtotime(date("Y-m-d"),time());
+        }
+
+
+       // $sql = "select * from {$this->prename}data where type={$type} and actionTime{$today} order by actionTime limit 1";
+
+        $sql = "select dat_expect from {$this->prename}data where dat_type={$type} and dat_open_time<{$today} order by dat_open_time desc limit 1";
+
+        $return = $module->query($sql);
+
         return $return;
     }
 
@@ -5520,9 +5552,9 @@ class LottoryDataMgr
         if (($fun = $types[$type]['onGetNoed']) && method_exists($this, $fun)) {
             $this->{$fun}($return['actionNo'], $return['actionTime'], $time);
         }
-      //  var_dump($return);die;
         return $return;
     }
+
 
     public function getTypeFtime($type, $module)
     {
