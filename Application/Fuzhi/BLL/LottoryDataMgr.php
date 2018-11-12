@@ -751,7 +751,7 @@ class LottoryDataMgr
                 $retData["next"]["periodNumber"] =$dat_expect;//测试数据是否正常
             }
 
-            if($lotType == 20 )
+            if($lotType == 20 ||$lotType == 42)
             {
                 $retData["next"]["periodNumber"] =$nextNoqishu[0]["dat_expect"] + $nextNo["actionNoIndex"] -1;
             }
