@@ -24,7 +24,13 @@ include("../conn.php");
 
     <style type="text/css">
 
-
+    .ftList a{
+        width: 30vw;
+        height: 4vw;
+        display: block;
+        float: left;
+        margin-left: 2vw;
+    }
 
     </style>
 
@@ -51,6 +57,11 @@ include("../conn.php");
     </div>
     <div class="openCodeList">
         <img src="/m/style/images/loading2.gif">
+    </div>
+    <div class="ftList">
+        <a class="qiansan">前三：<span class="ball-red-span"></span><span class="ball-red-span"></span><span class="ball-red-span"></span><span class="ball-red-span"></span></a>
+        <a class="zhongsan">前三：<span class="ball-red-span"></span><span class="ball-red-span"></span><span class="ball-red-span"></span><span class="ball-red-span"></span></a>
+        <a class="housan">前三：<span class="ball-red-span"></span><span class="ball-red-span"></span><span class="ball-red-span"></span><span class="ball-red-span"></span></a>
     </div>
     <div class="nextOpenList">
         <div class="nextIssue">距<span></span>期开奖</div>

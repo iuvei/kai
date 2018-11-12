@@ -37,7 +37,7 @@ if(strpos($self,"xyft")){
     $name = 44;
     $web_type = "腾讯分分彩";
 }elseif(strpos($self,"tcpk10")){
-    $web_type = "极速PK10";
+    $web_type = "极速赛车";
     $name = 46;
 }elseif(strpos($self,"tcssc")){
     $web_type = "极速时时彩";

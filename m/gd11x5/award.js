@@ -82,9 +82,9 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../gd11x5/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
-            var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(4);
+
             $('.newIssue span').html(data.current.periodNumber1.substr(4));
-            $('.nextIssue span').html(nextOpenIssue);
+            $('.nextIssue span').html(data.next.periodNumber.substr(4));
             $('.periodNumber').html(data.current.periodNumber);
             $('.surplus_num').html(data.current.surplus_num);
             var nums = data.current.awardNumbers.split(',');

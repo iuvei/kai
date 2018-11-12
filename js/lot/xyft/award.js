@@ -74,7 +74,6 @@ $(function () {
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
             _time = 30000;
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
-            $(".warnTime #period").html("第" +(Number(data.current.periodNumber1)+1).toString().substr(4) + "期");
             timeInterval = 0;
         }, 'json').error(function () {
             if (errorCount < 20) {
@@ -102,6 +101,9 @@ $(function () {
                     str = str + "<span class='no" + nums[i] + "'></span>";
                 }
                 $(".lot-nums").html(str);
+
+                $(".warnTime #period").html("第" + (Number(data.next.periodNumber) + 1).toString().substr(4) + "期");
+
             }
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
