@@ -137,7 +137,7 @@ include("../conn.php");
         <a>亚军</a>
         <a>季军</a>
         <a>第四</a>
-        <a>第五</a>
+        <a class="lastA">第五</a>
     </div>
 </div>
 <div id="historyList"></div>
@@ -236,6 +236,7 @@ include("../conn.php");
         $('#chooseType2 a').removeClass('chooseTypeColor');
         $(this).addClass('chooseTypeColor');
         if( $(this).text()=='筛选'){
+            $('.lastDiv').show();
             $('.openCode a').show();
             $('.BallNum').show();
             $('.zuhe').hide();
@@ -245,6 +246,7 @@ include("../conn.php");
             $('.pk10Shuang').hide();
             $('.choose').show();
         }else if($(this).text()=='大小'){
+            $('.lastDiv').show();
             $('.openCode a').hide();
             $('.BallNum').show();
             $('.zuhe').hide();
@@ -253,6 +255,7 @@ include("../conn.php");
             $('.pk10Da').show();
             $('.pk10Xiao').show();
         }else if($(this).text()=='单双'){
+            $('.lastDiv').show();
             $('.openCode a').hide();
             $('.BallNum').show();
             $('.zuhe').hide();
@@ -261,6 +264,7 @@ include("../conn.php");
             $('.pk10Dan').show();
             $('.pk10Shuang').show();
         }else if($(this).text()=='号码'){
+            $('.lastDiv').show();
             $('.openCode a').show();
             $('.BallNum').show();
             $('.zuhe').hide();

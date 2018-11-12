@@ -215,7 +215,7 @@ function getHistoryData(count,date) {
                 html += '<div>'+'<a class="no' + data.n7 + '">' + data.n7 + '</a>'
                     +'<a class="pk10'+DXClass(data.n7)+'"  style="display: none">' + DX(data.n7)+ '</a>'
                     +'<a class="pk10'+DSClass(data.n7)+'"  style="display: none">' + ds(data.n7)+ '</a>'
-                    +'<a class="pk10'+lhClass(data.n4,data.n7)+' '+'zuhe'+'"  style="display: none">' + long(data.n8,data.n9)+ '</a>'
+                    +'<a class="pk10'+lhClass(data.n4,data.n7)+' '+'zuhe'+'"  style="display: none">' + long(data.n4,data.n7)+ '</a>'
                     +'</div>';
                 html += '<div>'+'<a class="no' + data.n8 + '">' + data.n8 + '</a>'
                     +'<a class="pk10'+DXClass(data.n8)+'"  style="display: none">' + DX(data.n8)+ '</a>'
