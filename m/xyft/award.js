@@ -3,6 +3,7 @@ $(function () {
     var currentPeriodNumber = -1;
     var nextPeriodNumber = -1;
     var timeInterval = 5000;
+    var lastOpenCode = -1;
     //请求出错次数
     var errorCount = 0;
     //请求次数
@@ -64,6 +65,8 @@ $(function () {
 
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
+            lastOpenCode =data.current.awardNumbers;
+            setTimeout(polling(),1000)
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(awardTick, 1000 + Math.random() * 10000);
@@ -141,8 +144,6 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
             }
             var xiaqi = parseInt(data.next.periodNumber)+1;
-
-
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
         }, 'json').error(function () {
             if (errorCount < 20) {
@@ -158,6 +159,65 @@ $(function () {
     window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
+    var loading = -1;
+    function polling() {
+        if(loading==-1){
+            loading=2
+        }else {
+            $.post('../../xyft/getPk10AwardTimes.do', {t: Math.random()}, function (data) {
+                if(data.status == 2){
+                    return
+                }
+                if (lastOpenCode == data.current.awardNumbers) {
+                    setTimeout(polling(), 10000);
+                } else {
+                    var nextOpenIssue = (Number(data.next.periodNumber) + 1);
+                    $('.newIssue span').html(data.current.periodNumber1);
+                    $('.nextIssue span').html(nextOpenIssue);
+                    $('.periodNumber').html(data.current.periodNumber);
+                    $('.surplus_num').html(data.current.surplus_num);
+                    var nums = data.current.awardNumbers.split(',');
+                    var str = "";
+                    for (var i = 0; i < nums.length; i++) {
+                        str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
+                    }
+                    $('.openCodeList').html(str);
+                    var nums = data.current.awardNumbers.split(',');
+                    $('.lhResult a').eq(0).html(long(nums[0], nums[9]));
+                    $('.lhResult a').eq(1).html(long(nums[1], nums[8]));
+                    $('.lhResult a').eq(2).html(long(nums[2], nums[7]));
+                    $('.lhResult a').eq(3).html(long(nums[3], nums[6]));
+                    $('.lhResult a').eq(4).html(long(nums[4], nums[5]));
+
+                    var sum = parseInt(nums[0]) + parseInt(nums[1]);
+                    var dx = '';
+                    var ds = '';
+                    if (sum > 11) {
+                        dx = '大';
+                    } else if (sum < 11) {
+                        dx = '小';
+                    } else {
+                        dx = '和';
+                    }
+                    if (sum % 2 == 0) {
+                        ds = '双';
+                    } else {
+                        ds = '单';
+                    }
+                    if (sum == 11) {
+                        ds = '和';
+                    }
+                    $('.lhResult a').eq(7).html(sum);
+                    $('.lhResult a').eq(8).html(dx);
+                    $('.lhResult a').eq(9).html(ds);
+                    getHistoryData('15');
+                }
+            }, 'json').error(function () {
+
+            });
+        }
+    }
+
 });
 function getHistoryData(count,date) {
 	layer.open({type: 2,time: 1});

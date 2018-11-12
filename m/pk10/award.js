@@ -68,6 +68,8 @@ $(function () {
 		
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
+            lastOpenCode =data.current.awardNumbers;
+            setTimeout(polling(),1000)
 
         }, 'json').error(function () {
             if (errorCount < 20) {
@@ -167,6 +169,9 @@ $(function () {
             loading=2
         }else {
             $.post('../../pk10/getPk10AwardTimes.do', {t: Math.random()}, function (data) {
+                if(data.status == 2){
+                    return
+                }
                 if (lastOpenCode == data.current.awardNumbers) {
                     setTimeout(polling(), 10000);
                 } else {
