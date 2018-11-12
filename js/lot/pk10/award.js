@@ -65,8 +65,6 @@ $(function () {
                 nextPeriodNumber = data.next.periodNumber;
 
             }
-            lastOpenCode =data.current.awardNumbers;
-            setTimeout(polling(),1000)
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;

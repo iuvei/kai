@@ -39,7 +39,6 @@ $(function () {
     }
     var awardTick = function () {
         $.get('xyft/getxjsscAwardData.do', {  t: Math.random() }, function (data) {
-            console.log(1)
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
                 timeInterval = 16000;
@@ -92,6 +91,7 @@ $(function () {
     var cpCurrAwardData = null;
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
+
         $.get('xyft/getxjsscAwardTimes.do', { ajaxhandler: 'GetxjsscAwardTimes', t: Math.random() }, function (data) {
             if(lastOpenCode!=data.current.awardNumbers) {
                 var qihao2 = data.current.periodNumber1.substr(4);
@@ -117,7 +117,6 @@ $(function () {
                 }, 1000);
             }
             cpNumber = data.current.periodNumber;
-            console.log(cpNumber)
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);

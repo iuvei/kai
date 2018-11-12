@@ -3,6 +3,7 @@ $(function () {
     var currentPeriodNumber = -1;
     var nextPeriodNumber = -1;
     var timeInterval = 5000;
+    var lastOpenCode = -1;
     //请求出错次数
     var errorCount = 0;
     //请求次数
@@ -68,7 +69,7 @@ $(function () {
             }
 
 		
-            window.setTimeout(awardTick, (data.next.awardTimeInterval*1000) < 10 ? 1000 : _time);
+            window.setTimeout(awardTick, (data.next.awardTimeInterval) < 10 ? 1000 : _time);
             timeInterval = 0;
 
         }, 'json').error(function () {
@@ -113,13 +114,13 @@ $(function () {
 
             //期数不同，则开始封盘倒计时
             if (data.current.periodNumber != cpNumber) {
-                cpNextAwardTimeInterval = (data.next.awardTimeInterval * 1000);
+                cpNextAwardTimeInterval = (data.next.awardTimeInterval);
                 if (countDownTimer) {
                     window.clearInterval(countDownTimer);
                 }
                 countDownTimer = window.setInterval(function () {
                     cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval - 1000);
-					
+                    console.log(data.next.awardTimeInterval)
                     showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
                 }, 1000);
             }
@@ -132,7 +133,9 @@ $(function () {
             var xiaqi = parseInt(data.next.periodNumber)+ 1;
 
              
-            loadAwardTimesTimer = window.setTimeout(loadAwardTimes, (data.next.awardTimeInterval*1000) < 10 ? 10000 : (data.next.awardTimeInterval*1000) + 1000);
+            loadAwardTimesTimer = window.setTimeout(loadAwardTimes, (data.next.awardTimeInterval) < 10 ? 10000 : (data.next.awardTimeInterval) + 1000);
+            lastOpenCode =data.current.awardNumbers;
+            setTimeout(polling(),1000)
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);
@@ -147,9 +150,47 @@ $(function () {
     window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
+    var loading = -1;
+    function polling() {
+        if(loading==-1){
+            loading=2
+        }else {
+            $.post('../../pc28/getPk10AwardTimes.do', {t: Math.random()}, function (data) {
+                if(data.status == 2){
+                    return
+                }
+                if (lastOpenCode == data.current.awardNumbers) {
+                    setTimeout(polling(), 10000);
+                } else {
+                    var nextOpenIssue = (Number(data.next.periodNumber)+1);
+                    $('.newIssue span').html(data.current.periodNumber1);
+                    $('.nextIssue span').html(nextOpenIssue);
+                    $('.periodNumber').html(data.current.periodNumber);
+                    $('.surplus_num').html(data.current.surplus_num);
+
+                    var nums = data.current.awardNumbers.split(',');
+                    var  dat =  shuju(nums);
+                    var str=''
+                    str = str + '<a class="ball-red">' + dat[0] + '</a> + ';
+                    str = str + '<a class="ball-red">' + dat[1] + '</a> + ';
+                    str = str + '<a class="ball-red">' + dat[2] + '</a> = ';
+                    str = str + '<a class="ball-blue">' + dat[3] + '</a>';
+                    str = str + '<div class="sscLH">';
+
+                    str = str + '<a>' + dat[4] + '</a>';
+                    str = str + '<a>' + dat[5] + '</a>';
+                    str = str + '<a>' + dat[6] + '</a>';
+                    str = str + '</div>';
+                    $('.openCodeList').html(str)
+                    getHistoryData('50')
+                }
+            }, 'json').error(function () {
+
+            });
+        }
+    }
 });
 function getHistoryData(count,date) {
-	layer.open({type: 2,time: 1});
     $.get("../../pc28/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
         if(result&&result.rows){
         	var j = 0;
