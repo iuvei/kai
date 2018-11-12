@@ -95,6 +95,18 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.get('cqssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
+            var qihao2 = data.current.periodNumber1.substr(4);
+            $(".currentAward .period").html(qihao2 + " 期");
+            // $(".currentAward .period").html(data.current.fullPeriodNumber + " 期");
+            var nums = data.current.awardNumbers.split(',');
+            var str = "";
+            for (var i = 0; i < nums.length; i++) {
+                str = str + "<span class='no" + nums[i] + "'>" + nums[i] + "</span>";
+            }
+            $(".lot-nums").html(str);
+            if (currentPeriodNumber == -1) {
+                $(".currentAward .period").css("color", "green");
+            }
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 

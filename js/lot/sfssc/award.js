@@ -88,6 +88,22 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.get('sfssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
+            $(".currentAward .period").html(data.current.periodNumber1.substr(6) + " 期");
+            var nums = data.current.awardNumbers.split(',');
+            var str = "";
+            for (var i = 0; i < nums.length; i++) {
+                str = str + "<span class='no" + nums[i] + "'>" + nums[i] + "</span>";
+            }
+            $(".lot-nums").html(str);
+            if (currentPeriodNumber == -1) {
+                $(".currentAward .period").css("color", "green");
+            }
+            var nums = data.current.awardNumbers.split(',');
+            var str = "";
+            for (var i = 0; i < nums.length; i++) {
+                str = str + "<span class='no" + nums[i] + "'>" + nums[i] + "</span>";
+            }
+            $(".lot-nums").html(str);
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 
@@ -137,6 +153,7 @@ $(function () {
 
 function updateHistoryRecord() {
     $.get('sfssc/getNewestRecord.do', { t: Math.random() }, function (data) {
+        $(".warnTime #period").html("第" + (parseInt(data.current.periodNumber1)+1).toString().substr(6) + "期");
         var numbers = data.numbers.split(',');
         var tr1 = $("#history tr").eq(1);
         var clsName = "odd";

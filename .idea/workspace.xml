@@ -2,167 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3631bfa7-9644-4afb-9ca6-5ec2baa935b7" name="Default" comment="增加">
-      <change beforePath="$PROJECT_DIR$/Addons/js/Data/cfg/gameDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/Addons/js/Data/cfg/gameDate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Addons/js/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Addons/js/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/Controller/EmptyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/Controller/EmptyController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Common/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Common/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html.bak" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html.bak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index22.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index22.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Common/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Common/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html.bak" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html.bak" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/article.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sitemap/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sitemap/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/172f76e1eff1292fe01081e2c6672fb6.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/172f76e1eff1292fe01081e2c6672fb6.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/2f649f99878ab03c677076f28af99618.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/2f649f99878ab03c677076f28af99618.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/37cb78913528cded565db031422df678.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/37cb78913528cded565db031422df678.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/4437f00fbc3fa046a2cd241be6568e17.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/4437f00fbc3fa046a2cd241be6568e17.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/44568ef439cdfeda3241d6b048943d79.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/44568ef439cdfeda3241d6b048943d79.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/4bfaa858c8150acf74bf4b2ec2dc33d2.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/4bfaa858c8150acf74bf4b2ec2dc33d2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/4dff70681b98885f5a975cb4956e482a.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/4dff70681b98885f5a975cb4956e482a.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/5cdf5fe446e263261b20340a58cc8b73.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/5cdf5fe446e263261b20340a58cc8b73.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/63938cd9033f2559126292b14fd77425.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/63938cd9033f2559126292b14fd77425.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/ac74d7ec37da9f3961c7746423e59dc5.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/ac74d7ec37da9f3961c7746423e59dc5.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/ad97cba2ae653bce834d2f286fc72431.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/ad97cba2ae653bce834d2f286fc72431.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/aed0bded693f606d28fa7e80e234bd3f.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/aed0bded693f606d28fa7e80e234bd3f.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/b04ff255d5748ebe84a85e2994764b1f.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/b04ff255d5748ebe84a85e2994764b1f.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/bd5c716fa3408b53025cc4cd0b766894.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/bd5c716fa3408b53025cc4cd0b766894.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/cd20a343a67d70ee3888425b768f4c47.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/cd20a343a67d70ee3888425b768f4c47.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/cf4a7b33d1b1a89edab55c129c838609.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/cf4a7b33d1b1a89edab55c129c838609.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/eb763060d4558c02b1d4917dbab08c51.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/eb763060d4558c02b1d4917dbab08c51.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/ef6a8ddf07629eceb5f4565c1fb8a052.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/ef6a8ddf07629eceb5f4565c1fb8a052.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/efbbb1afccef1f0ce04e34bf43572430.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/efbbb1afccef1f0ce04e34bf43572430.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/fd5abec39b0d920a806f352eec8253cc.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/fd5abec39b0d920a806f352eec8253cc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/fede0d914d57c980db1099a3ec3a5556.php" beforeDir="false" afterPath="$PROJECT_DIR$/Runtime/Cache/Fuzhi/fede0d914d57c980db1099a3ec3a5556.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Data/cfg/gameDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Data/cfg/gameDate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/js/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/bjft/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/bjft/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/bjft/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/bjft/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/bjft/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/bjft/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/bjft/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/bjft/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/bjft/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/bjft/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/bjft/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/bjft/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/bjft/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/bjft/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/conn.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/conn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqft/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqft/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqft/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqft/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqft/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqft/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqft/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqft/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqft/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqft/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqft/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqft/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqft/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqft/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqssc/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqssc/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqssc/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqssc/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqssc/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqssc/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/cqssc/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gd11x5/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gd11x5/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gd11x5/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gd11x5/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gd11x5/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gd11x5/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gd11x5/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/gdkl10/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsk3/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jssc/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jssc/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jssc/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jssc/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jssc/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jssc/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jssc/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsssc/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsssc/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsssc/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsssc/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsssc/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsssc/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/jsssc/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pc28/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pc28/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pc28/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pc28/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pc28/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pc28/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pk10/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pk10/cltj2.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/cltj2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pk10/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pk10/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pk10/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pk10/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pk10/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/pk10/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/sfpk10/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfpk10/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/sfpk10/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfpk10/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/sfpk10/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfpk10/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/sfpk10/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfpk10/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/sfpk10/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfpk10/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/sfpk10/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfpk10/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/sfpk10/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfpk10/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/sfssc/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfssc/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/sfssc/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfssc/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/sfssc/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfssc/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/sfssc/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfssc/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/sfssc/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfssc/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/sfssc/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfssc/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/sfssc/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfssc/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/shipin/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/shipin/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/shipin/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/shipin/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/shipin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/shipin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/shipin/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/shipin/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/shipin/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/shipin/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/shipin/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/shipin/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/style/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/m/style/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcpk10/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcpk10/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcpk10/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcpk10/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcpk10/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcpk10/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcpk10/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcpk10/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcpk10/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcpk10/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcpk10/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcpk10/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcpk10/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcpk10/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcssc/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcssc/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcssc/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcssc/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcssc/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcssc/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcssc/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcssc/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcssc/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcssc/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcssc/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcssc/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/tcssc/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcssc/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/txffc/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/txffc/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/txffc/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/txffc/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/txffc/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/txffc/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/txffc/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/txffc/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/txffc/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/txffc/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/txffc/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/txffc/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/txffc/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/txffc/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xyft/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/cltj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xyft/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/hmzs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xyft/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xyft/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/jiqiao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xyft/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/lrtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xyft/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/shipin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/xyft/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/smtj.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/m/2index.php" beforeDir="false" afterPath="$PROJECT_DIR$/style/m/2index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/m/conn.php" beforeDir="false" afterPath="$PROJECT_DIR$/style/m/conn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/m/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/style/m/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/m/style/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style/m/style/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/css/index.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -272,27 +141,34 @@
     <session id="270372223">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="html" value="2" />
           <entry key="js" value="23" />
-          <entry key="php" value="21" />
+          <entry key="php" value="25" />
+          <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="HTML" value="2" />
           <entry key="JavaScript" value="23" />
-          <entry key="PHP" value="21" />
+          <entry key="PHP" value="25" />
+          <entry key="PLAIN_TEXT" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="css" value="12" />
+          <entry key="html" value="3" />
           <entry key="js" value="260" />
-          <entry key="php" value="4" />
+          <entry key="php" value="31" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="1" />
+          <entry key="CSS" value="12" />
+          <entry key="HTML" value="4" />
           <entry key="JavaScript" value="259" />
-          <entry key="PHP" value="4" />
+          <entry key="PHP" value="31" />
         </counts>
       </usages-collector>
     </session>
@@ -348,107 +224,198 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/jssc/shipin.php">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1767">
-              <caret line="93" column="54" selection-start-line="93" selection-start-column="54" selection-end-line="93" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/sfssc/shipin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="85" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/tcpk10/shipin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1843">
-              <caret line="97" selection-start-line="97" selection-end-line="97" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/tcssc/shipin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2052">
-              <caret line="108" column="62" selection-start-line="108" selection-start-column="62" selection-end-line="108" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/txffc/shipin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1881">
-              <caret line="99" selection-start-line="99" selection-end-line="99" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/xyft/shipin.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1843">
-              <caret line="97" selection-start-line="97" selection-end-line="97" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10488">
-              <caret line="552" column="9" selection-start-line="552" selection-start-column="9" selection-end-line="552" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Common/index22.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="149" column="8" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+            <state relative-caret-position="280">
+              <caret line="689" column="75" selection-start-line="689" selection-start-column="71" selection-end-line="689" selection-end-column="75" />
               <folding>
-                <element signature="n#style#0;n#ul#0;n#div#2;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#volist#0;n#ul#0;n#div#2;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#3;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#5;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="e#18193#18197#0" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#volist#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#6;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#0;n#volist#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#6;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="e#19124#19128#0" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#volist#0;n#ul#0;n#div#2;n#div#1;n#div#1;n#div#0;n#div#0;n#div#6;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#0;n#volist#0;n#ul#0;n#div#2;n#div#1;n#div#1;n#div#0;n#div#0;n#div#6;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="e#20053#20057#0" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#6;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#volist#0;n#ul#0;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#6;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#0;n#volist#0;n#ul#0;n#div#2;n#div#2;n#div#1;n#div#0;n#div#0;n#div#6;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="e#20998#21002#0" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#li#0;n#volist#0;n#ul#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#6;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#li#0;n#volist#0;n#ul#0;n#div#2;n#div#3;n#div#1;n#div#0;n#div#0;n#div#6;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#6;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#0;n#div#0;n#div#1;n#div#0;n#div#6;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#6;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h3#7;n#div#0;n#div#1;n#div#0;n#div#6;n#div#1;n#div#3;n#div#0;n#block#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#7;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#8;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#iframe#9;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#41529#41535#0" expanded="true" />
+                <element signature="e#41535#41541#0" expanded="true" />
+                <element signature="e#41627#41633#0" expanded="true" />
+                <element signature="e#41633#41639#0" expanded="true" />
+                <element signature="e#41721#41727#0" expanded="true" />
+                <element signature="e#41727#41733#0" expanded="true" />
+                <element signature="e#41815#41821#0" expanded="true" />
+                <element signature="e#41821#41827#0" expanded="true" />
+                <element signature="e#41909#41915#0" expanded="true" />
+                <element signature="e#41915#41921#0" expanded="true" />
+                <element signature="e#42004#42010#0" expanded="true" />
+                <element signature="e#42010#42016#0" expanded="true" />
+                <element signature="e#42096#42102#0" expanded="true" />
+                <element signature="e#42102#42108#0" expanded="true" />
+                <element signature="e#42184#42190#0" expanded="true" />
+                <element signature="e#42190#42196#0" expanded="true" />
+                <element signature="e#42273#42279#0" expanded="true" />
+                <element signature="e#42279#42285#0" expanded="true" />
+                <element signature="e#46993#46999#1" expanded="true" />
+                <element signature="e#47061#47067#1" expanded="true" />
+                <element signature="e#47129#47135#1" expanded="true" />
+                <element signature="e#47197#47203#1" expanded="true" />
+                <element signature="e#47265#47271#1" expanded="true" />
+                <element signature="e#47347#47353#1" expanded="true" />
+                <element signature="e#47435#47441#1" expanded="true" />
+                <element signature="e#47527#47533#1" expanded="true" />
+                <element signature="e#57811#57817#1" expanded="true" />
+                <element signature="e#57879#57885#1" expanded="true" />
+                <element signature="e#57947#57953#1" expanded="true" />
+                <element signature="e#58015#58021#1" expanded="true" />
+                <element signature="e#58083#58089#1" expanded="true" />
+                <element signature="e#58165#58171#1" expanded="true" />
+                <element signature="e#58253#58259#1" expanded="true" />
+                <element signature="e#58345#58351#1" expanded="true" />
+                <element signature="e#62969#62975#0" expanded="true" />
+                <element signature="e#62975#62981#0" expanded="true" />
+                <element signature="e#63067#63073#0" expanded="true" />
+                <element signature="e#63073#63079#0" expanded="true" />
+                <element signature="e#63161#63167#0" expanded="true" />
+                <element signature="e#63167#63173#0" expanded="true" />
+                <element signature="e#63255#63261#0" expanded="true" />
+                <element signature="e#63261#63267#0" expanded="true" />
+                <element signature="e#63349#63355#0" expanded="true" />
+                <element signature="e#63355#63361#0" expanded="true" />
+                <element signature="e#63444#63450#0" expanded="true" />
+                <element signature="e#63450#63456#0" expanded="true" />
+                <element signature="e#63536#63542#0" expanded="true" />
+                <element signature="e#63542#63548#0" expanded="true" />
+                <element signature="e#63624#63630#0" expanded="true" />
+                <element signature="e#63630#63636#0" expanded="true" />
+                <element signature="e#63713#63719#0" expanded="true" />
+                <element signature="e#63719#63725#0" expanded="true" />
+                <element signature="e#67762#67768#0" expanded="true" />
+                <element signature="e#67768#67774#0" expanded="true" />
+                <element signature="e#67844#67850#0" expanded="true" />
+                <element signature="e#67850#67856#0" expanded="true" />
+                <element signature="e#67922#67928#0" expanded="true" />
+                <element signature="e#67928#67934#0" expanded="true" />
+                <element signature="e#68000#68006#0" expanded="true" />
+                <element signature="e#68006#68012#0" expanded="true" />
+                <element signature="e#68078#68084#0" expanded="true" />
+                <element signature="e#68084#68090#0" expanded="true" />
+                <element signature="e#68157#68163#0" expanded="true" />
+                <element signature="e#68163#68169#0" expanded="true" />
+                <element signature="e#68233#68239#0" expanded="true" />
+                <element signature="e#68239#68245#0" expanded="true" />
+                <element signature="e#68305#68311#0" expanded="true" />
+                <element signature="e#68311#68317#0" expanded="true" />
+                <element signature="e#68378#68384#0" expanded="true" />
+                <element signature="e#68384#68390#0" expanded="true" />
+                <element signature="e#78368#78374#1" expanded="true" />
+                <element signature="e#78456#78462#1" expanded="true" />
+                <element signature="e#78548#78554#1" expanded="true" />
+                <element signature="e#78637#78643#1" expanded="true" />
+                <element signature="e#78726#78732#1" expanded="true" />
+                <element signature="e#78812#78818#1" expanded="true" />
+                <element signature="e#83261#83267#1" expanded="true" />
+                <element signature="e#83353#83359#1" expanded="true" />
+                <element signature="e#83441#83447#1" expanded="true" />
+                <element signature="e#83530#83536#1" expanded="true" />
+                <element signature="e#83624#83630#1" expanded="true" />
+                <element signature="e#83718#83724#1" expanded="true" />
+                <element signature="e#83811#83817#1" expanded="true" />
+                <element signature="e#83905#83911#1" expanded="true" />
+                <element signature="e#88055#88061#1" expanded="true" />
+                <element signature="e#88147#88153#1" expanded="true" />
+                <element signature="e#88235#88241#1" expanded="true" />
+                <element signature="e#88324#88330#1" expanded="true" />
+                <element signature="e#88414#88420#1" expanded="true" />
+                <element signature="e#88503#88509#1" expanded="true" />
+                <element signature="e#93246#93252#1" expanded="true" />
+                <element signature="e#93338#93344#1" expanded="true" />
+                <element signature="e#93426#93432#1" expanded="true" />
+                <element signature="e#93515#93521#1" expanded="true" />
+                <element signature="e#93605#93611#1" expanded="true" />
+                <element signature="e#93694#93700#1" expanded="true" />
+                <element signature="e#93774#93780#1" expanded="true" />
+                <element signature="e#93853#93859#1" expanded="true" />
+                <element signature="e#93932#93938#1" expanded="true" />
+                <element signature="e#97972#97978#1" expanded="true" />
+                <element signature="e#98060#98066#1" expanded="true" />
+                <element signature="e#98144#98150#1" expanded="true" />
+                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#6;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#6;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#2;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#6;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#6;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#6;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#5;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#6;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#li#6;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#6;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#102357#102363#1" expanded="true" />
+                <element signature="e#102436#102442#1" expanded="true" />
+                <element signature="e#102520#102526#1" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/sfpk10/shipin.php">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_op.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="85" />
+            <state relative-caret-position="513">
+              <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="16">
+              <caret line="98" column="60" selection-start-line="98" selection-start-column="60" selection-end-line="98" selection-end-column="60" />
+              <folding>
+                <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Documents/NetSarang Computer/6/Xftp/Temporary/ApiController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/text.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/ArticleController.class.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/AddonsController.class.php">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -463,11 +430,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getCqsscAwardTimes</find>
-      <find>qishu</find>
-      <find>period</find>
-      <find>.bt-jg&quot;).html(srt);</find>
-      <find>qihao</find>
       <find>xiaqi</find>
       <find>$(&quot;#pk10 .bt-jg&quot;).html(srt);</find>
       <find>console.log(num);</find>
@@ -493,6 +455,11 @@
       <find>cpNextAwardTimeInterval</find>
       <find>headOpenTime</find>
       <find>广东快乐十分</find>
+      <find>kair</find>
+      <find>.bodybox .menubannboxc</find>
+      <find>开奖视频</find>
+      <find>web_listOP_ul</find>
+      <find>file_put_contents</find>
     </findStrings>
     <replaceStrings>
       <replace>1200px</replace>
@@ -529,6 +496,7 @@
       <dir>D:\kia\m\xyft</dir>
       <dir>D:\kia\m\cqssc</dir>
       <dir>D:\kia\m\jsssc</dir>
+      <dir>D:\kaijiang\kai\Application\Fuzhi\View</dir>
       <dir>D:\kaijiang\kai</dir>
     </dirStrings>
   </component>
@@ -538,19 +506,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/positiontrend.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/samepositiontrend.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/twosidedstat.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/yilou.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/zoushitu.html" />
         <option value="$PROJECT_DIR$/js/lot/sfpk10/award.js" />
         <option value="$PROJECT_DIR$/js/lot/sfpk10/numberstat.js" />
         <option value="$PROJECT_DIR$/js/lot/sfssc/award.js" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/Public/head.html" />
         <option value="$PROJECT_DIR$/js/Data/cfg/gameDate.js" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_op.html" />
         <option value="$PROJECT_DIR$/js/beforPage.js" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/Controller/EmptyController.class.php" />
@@ -589,6 +552,11 @@
         <option value="$PROJECT_DIR$/m/style/js/warntime.js" />
         <option value="$PROJECT_DIR$/m/style/css/histoly.css" />
         <option value="$PROJECT_DIR$/m/cqssc/index.php" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html" />
+        <option value="$USER_HOME$/Documents/NetSarang Computer/6/Xftp/Temporary/ApiController.class.php" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/Controller/text.txt" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php" />
       </list>
     </option>
   </component>
@@ -630,8 +598,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
-    <option name="width" value="1924" />
+    <option name="x" value="517" />
+    <option name="width" value="1107" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
@@ -645,6 +613,24 @@
             <path>
               <item name="kai" type="b2602c69:ProjectViewProjectNode" />
               <item name="kai" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kai" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kai" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kai" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -855,12 +841,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319073000" />
+    <option name="totallyTimeSpent" value="322879000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14658849" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15138593" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -935,108 +922,40 @@
     <option name="LAST_COMMIT_MESSAGE" value="增加" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/m/tcpk10/award.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="299" column="16" selection-start-line="299" selection-start-column="16" selection-end-line="299" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="269" column="32" lean-forward="true" selection-start-line="269" selection-start-column="32" selection-end-line="269" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/EmptyController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4541">
-          <caret line="239" column="21" selection-start-line="239" selection-start-column="21" selection-end-line="239" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/tcssc/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2150">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/cqft/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/tcssc/award.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-157">
-          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/jssc/award.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="127" column="12" selection-start-line="127" selection-start-column="12" selection-end-line="129" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/cqft/award.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="100" column="61" lean-forward="true" selection-start-line="99" selection-start-column="12" selection-end-line="100" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/jsk3/award.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="107" column="12" selection-start-line="107" selection-start-column="12" selection-end-line="108" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/gdkl10/award.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="126" column="12" selection-start-line="126" selection-start-column="12" selection-end-line="127" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/pc28/award.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="86" column="12" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="5356" column="113" selection-start-line="5356" selection-start-column="112" selection-end-line="5356" selection-end-column="113" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="58" column="65" selection-start-line="58" selection-start-column="53" selection-end-line="58" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_op.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        <state relative-caret-position="584">
+          <caret line="150" column="20" selection-start-line="150" selection-start-column="20" selection-end-line="150" selection-end-column="20" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="e#31#37#0" expanded="true" />
+            <element signature="e#38#44#0" expanded="true" />
+            <element signature="e#96#102#0" expanded="true" />
+            <element signature="e#102#108#0" expanded="true" />
+            <element signature="e#108#114#0" expanded="true" />
+            <element signature="e#114#120#0" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="29" column="28" lean-forward="true" selection-start-line="29" selection-start-column="28" selection-end-line="29" selection-end-column="28" />
+        <state relative-caret-position="570">
+          <caret line="65" column="2" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -1069,8 +988,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/m/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10488">
-          <caret line="552" column="9" selection-start-line="552" selection-start-column="9" selection-end-line="552" selection-end-column="9" />
+        <state relative-caret-position="171">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#5;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#6;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1147,8 +1087,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/m/pk10/award.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+        <state relative-caret-position="-570">
+          <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1191,11 +1162,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
           <caret line="46" column="47" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#1;n#li#0;n#ul#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1224,9 +1190,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="64" column="14" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1244,8 +1207,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/m/style/js/warntime.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="47" lean-forward="true" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+        <state relative-caret-position="54">
+          <caret line="6" column="9" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -1267,6 +1230,247 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
           <caret line="81" column="55" selection-start-line="81" selection-start-column="55" selection-end-line="81" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="689" column="75" selection-start-line="689" selection-start-column="71" selection-end-line="689" selection-end-column="75" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#4;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#5;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#6;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#7;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#8;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#9;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#41529#41535#0" expanded="true" />
+            <element signature="e#41535#41541#0" expanded="true" />
+            <element signature="e#41627#41633#0" expanded="true" />
+            <element signature="e#41633#41639#0" expanded="true" />
+            <element signature="e#41721#41727#0" expanded="true" />
+            <element signature="e#41727#41733#0" expanded="true" />
+            <element signature="e#41815#41821#0" expanded="true" />
+            <element signature="e#41821#41827#0" expanded="true" />
+            <element signature="e#41909#41915#0" expanded="true" />
+            <element signature="e#41915#41921#0" expanded="true" />
+            <element signature="e#42004#42010#0" expanded="true" />
+            <element signature="e#42010#42016#0" expanded="true" />
+            <element signature="e#42096#42102#0" expanded="true" />
+            <element signature="e#42102#42108#0" expanded="true" />
+            <element signature="e#42184#42190#0" expanded="true" />
+            <element signature="e#42190#42196#0" expanded="true" />
+            <element signature="e#42273#42279#0" expanded="true" />
+            <element signature="e#42279#42285#0" expanded="true" />
+            <element signature="e#46993#46999#1" expanded="true" />
+            <element signature="e#47061#47067#1" expanded="true" />
+            <element signature="e#47129#47135#1" expanded="true" />
+            <element signature="e#47197#47203#1" expanded="true" />
+            <element signature="e#47265#47271#1" expanded="true" />
+            <element signature="e#47347#47353#1" expanded="true" />
+            <element signature="e#47435#47441#1" expanded="true" />
+            <element signature="e#47527#47533#1" expanded="true" />
+            <element signature="e#57811#57817#1" expanded="true" />
+            <element signature="e#57879#57885#1" expanded="true" />
+            <element signature="e#57947#57953#1" expanded="true" />
+            <element signature="e#58015#58021#1" expanded="true" />
+            <element signature="e#58083#58089#1" expanded="true" />
+            <element signature="e#58165#58171#1" expanded="true" />
+            <element signature="e#58253#58259#1" expanded="true" />
+            <element signature="e#58345#58351#1" expanded="true" />
+            <element signature="e#62969#62975#0" expanded="true" />
+            <element signature="e#62975#62981#0" expanded="true" />
+            <element signature="e#63067#63073#0" expanded="true" />
+            <element signature="e#63073#63079#0" expanded="true" />
+            <element signature="e#63161#63167#0" expanded="true" />
+            <element signature="e#63167#63173#0" expanded="true" />
+            <element signature="e#63255#63261#0" expanded="true" />
+            <element signature="e#63261#63267#0" expanded="true" />
+            <element signature="e#63349#63355#0" expanded="true" />
+            <element signature="e#63355#63361#0" expanded="true" />
+            <element signature="e#63444#63450#0" expanded="true" />
+            <element signature="e#63450#63456#0" expanded="true" />
+            <element signature="e#63536#63542#0" expanded="true" />
+            <element signature="e#63542#63548#0" expanded="true" />
+            <element signature="e#63624#63630#0" expanded="true" />
+            <element signature="e#63630#63636#0" expanded="true" />
+            <element signature="e#63713#63719#0" expanded="true" />
+            <element signature="e#63719#63725#0" expanded="true" />
+            <element signature="e#67762#67768#0" expanded="true" />
+            <element signature="e#67768#67774#0" expanded="true" />
+            <element signature="e#67844#67850#0" expanded="true" />
+            <element signature="e#67850#67856#0" expanded="true" />
+            <element signature="e#67922#67928#0" expanded="true" />
+            <element signature="e#67928#67934#0" expanded="true" />
+            <element signature="e#68000#68006#0" expanded="true" />
+            <element signature="e#68006#68012#0" expanded="true" />
+            <element signature="e#68078#68084#0" expanded="true" />
+            <element signature="e#68084#68090#0" expanded="true" />
+            <element signature="e#68157#68163#0" expanded="true" />
+            <element signature="e#68163#68169#0" expanded="true" />
+            <element signature="e#68233#68239#0" expanded="true" />
+            <element signature="e#68239#68245#0" expanded="true" />
+            <element signature="e#68305#68311#0" expanded="true" />
+            <element signature="e#68311#68317#0" expanded="true" />
+            <element signature="e#68378#68384#0" expanded="true" />
+            <element signature="e#68384#68390#0" expanded="true" />
+            <element signature="e#78368#78374#1" expanded="true" />
+            <element signature="e#78456#78462#1" expanded="true" />
+            <element signature="e#78548#78554#1" expanded="true" />
+            <element signature="e#78637#78643#1" expanded="true" />
+            <element signature="e#78726#78732#1" expanded="true" />
+            <element signature="e#78812#78818#1" expanded="true" />
+            <element signature="e#83261#83267#1" expanded="true" />
+            <element signature="e#83353#83359#1" expanded="true" />
+            <element signature="e#83441#83447#1" expanded="true" />
+            <element signature="e#83530#83536#1" expanded="true" />
+            <element signature="e#83624#83630#1" expanded="true" />
+            <element signature="e#83718#83724#1" expanded="true" />
+            <element signature="e#83811#83817#1" expanded="true" />
+            <element signature="e#83905#83911#1" expanded="true" />
+            <element signature="e#88055#88061#1" expanded="true" />
+            <element signature="e#88147#88153#1" expanded="true" />
+            <element signature="e#88235#88241#1" expanded="true" />
+            <element signature="e#88324#88330#1" expanded="true" />
+            <element signature="e#88414#88420#1" expanded="true" />
+            <element signature="e#88503#88509#1" expanded="true" />
+            <element signature="e#93246#93252#1" expanded="true" />
+            <element signature="e#93338#93344#1" expanded="true" />
+            <element signature="e#93426#93432#1" expanded="true" />
+            <element signature="e#93515#93521#1" expanded="true" />
+            <element signature="e#93605#93611#1" expanded="true" />
+            <element signature="e#93694#93700#1" expanded="true" />
+            <element signature="e#93774#93780#1" expanded="true" />
+            <element signature="e#93853#93859#1" expanded="true" />
+            <element signature="e#93932#93938#1" expanded="true" />
+            <element signature="e#97972#97978#1" expanded="true" />
+            <element signature="e#98060#98066#1" expanded="true" />
+            <element signature="e#98144#98150#1" expanded="true" />
+            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#6;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#1;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#6;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#2;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#6;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#6;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#4;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#6;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#5;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#6;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#li#6;n#ul#0;n#div#1;n#div#0;n#div#2;n#div#6;n#div#1;n#main#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#102357#102363#1" expanded="true" />
+            <element signature="e#102436#102442#1" expanded="true" />
+            <element signature="e#102520#102526#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/tcpk10/award.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="169" column="37" selection-start-line="169" selection-start-column="37" selection-end-line="169" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/shipin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1634">
+          <caret line="7" column="66" selection-start-line="7" selection-start-column="66" selection-end-line="7" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_op.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="98" column="60" selection-start-line="98" selection-start-column="60" selection-end-line="98" selection-end-column="60" />
+          <folding>
+            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/ArticleController.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/AddonsController.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/MP_verify_MUpdLBqUMEG0b4FW.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/NetSarang Computer/6/Xftp/Temporary/ApiController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="22" column="30" lean-forward="true" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/text.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/ApiController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="18" column="29" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
         </state>
       </provider>
     </entry>

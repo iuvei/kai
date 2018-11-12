@@ -534,6 +534,9 @@ class LottoryDataMgr
            // $pages = (int)wjStrFilter(I('get.page'));
         }
 
+        if(empty($date)){
+            $date = date('Y-m-d');
+        }
         $cacheName = $type . '_' . $page . '_' . $count . '_' . $date;
         $ret = S($cacheName);
 

@@ -99,6 +99,29 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.get('pc28/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
+            $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+            var nums = data.current.awardNumbers.split(',');
+
+            var totalNum_a = Number(nums[1]) + Number(nums[4]) + Number(nums[7]) +Number(nums[10]) + Number(nums[13]) + Number(nums[16]);
+            var totalNum_b = Number(nums[2]) + Number(nums[5]) + Number(nums[8]) +Number(nums[11]) + Number(nums[14]) + Number(nums[17]);
+            var totalNum_c = Number(nums[3]) + Number(nums[6]) + Number(nums[9]) +Number(nums[12]) + Number(nums[15]) + Number(nums[18]) ;
+
+            totalNum_a = Number(totalNum_a)%10;
+            totalNum_b = Number(totalNum_b) % 10;
+            totalNum_c = Number(totalNum_c) % 10;
+            // nums=totalNum_a+totalNum_b+totalNum_c;
+            // alert(totalNum_a);
+            // alert(totalNum_b);
+            // alert(totalNum_c);
+            // alert(nums);
+            var str = "";
+
+            str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
+
+            $(".lot-nums").html(str);
+            if (currentPeriodNumber == -1) {
+                $(".currentAward .period").css("color", "green");
+            }
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 
