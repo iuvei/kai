@@ -2,6 +2,7 @@ $(function () {
     var currentPeriodNumber = -1;
     var timeInterval = 5000;
     var nextPeriodNumber = -1;
+    var lastOpenCode = -1;
     //请求出错次数
     var errorCount = 0;
     //请求次数
@@ -38,6 +39,7 @@ $(function () {
     }
     var awardTick = function () {
         $.get('pc28/getCqsscAwardData.do', {  t: Math.random() }, function (data) {
+
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
                 timeInterval = 16000;
@@ -47,26 +49,7 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
             //if (timeInterval != 0) {
-            $(".currentAward .period").html(data.current.periodNumber1 + " 期");
-            var nums = data.current.awardNumbers.split(',');
 
-            var totalNum_a = Number(nums[1]) + Number(nums[4]) + Number(nums[7]) +Number(nums[10]) + Number(nums[13]) + Number(nums[16]);
-            var totalNum_b = Number(nums[2]) + Number(nums[5]) + Number(nums[8]) +Number(nums[11]) + Number(nums[14]) + Number(nums[17]);
-            var totalNum_c = Number(nums[3]) + Number(nums[6]) + Number(nums[9]) +Number(nums[12]) + Number(nums[15]) + Number(nums[18]) ;
-
-            totalNum_a = Number(totalNum_a)%10;
-            totalNum_b = Number(totalNum_b) % 10;
-            totalNum_c = Number(totalNum_c) % 10;
-            // nums=totalNum_a+totalNum_b+totalNum_c;
-            // alert(totalNum_a);
-            // alert(totalNum_b);
-            // alert(totalNum_c);
-            // alert(nums);
-            var str = "";
-
-            str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
-
-            $(".lot-nums").html(str);
             if (currentPeriodNumber == -1) {
                 $(".currentAward .period").css("color", "green");
             }
@@ -78,6 +61,7 @@ $(function () {
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
             currentPeriodNumber = data.current.periodNumber;
+
             nextPeriodNumber = data.next.periodNumber;
             //}
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
@@ -98,27 +82,31 @@ $(function () {
     var cpCurrAwardData = null;
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
+        console.log(2)
         $.get('pc28/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
-            $(".currentAward .period").html(data.current.periodNumber1 + " 期");
-            var nums = data.current.awardNumbers.split(',');
+            if(lastOpenCode!=data.current.awardNumbers){
+                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                var nums = data.current.awardNumbers.split(',');
 
-            var totalNum_a = Number(nums[1]) + Number(nums[4]) + Number(nums[7]) +Number(nums[10]) + Number(nums[13]) + Number(nums[16]);
-            var totalNum_b = Number(nums[2]) + Number(nums[5]) + Number(nums[8]) +Number(nums[11]) + Number(nums[14]) + Number(nums[17]);
-            var totalNum_c = Number(nums[3]) + Number(nums[6]) + Number(nums[9]) +Number(nums[12]) + Number(nums[15]) + Number(nums[18]) ;
+                var totalNum_a = Number(nums[1]) + Number(nums[4]) + Number(nums[7]) +Number(nums[10]) + Number(nums[13]) + Number(nums[16]);
+                var totalNum_b = Number(nums[2]) + Number(nums[5]) + Number(nums[8]) +Number(nums[11]) + Number(nums[14]) + Number(nums[17]);
+                var totalNum_c = Number(nums[3]) + Number(nums[6]) + Number(nums[9]) +Number(nums[12]) + Number(nums[15]) + Number(nums[18]) ;
 
-            totalNum_a = Number(totalNum_a)%10;
-            totalNum_b = Number(totalNum_b) % 10;
-            totalNum_c = Number(totalNum_c) % 10;
-            // nums=totalNum_a+totalNum_b+totalNum_c;
-            // alert(totalNum_a);
-            // alert(totalNum_b);
-            // alert(totalNum_c);
-            // alert(nums);
-            var str = "";
+                totalNum_a = Number(totalNum_a)%10;
+                totalNum_b = Number(totalNum_b) % 10;
+                totalNum_c = Number(totalNum_c) % 10;
+                // nums=totalNum_a+totalNum_b+totalNum_c;
+                // alert(totalNum_a);
+                // alert(totalNum_b);
+                // alert(totalNum_c);
+                // alert(nums);
+                var str = "";
 
-            str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
+                str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
 
-            $(".lot-nums").html(str);
+                $(".lot-nums").html(str);
+            }
+
             if (currentPeriodNumber == -1) {
                 $(".currentAward .period").css("color", "green");
             }
@@ -152,6 +140,8 @@ $(function () {
                 var nd = new Date(data.next.awardTime.split(' ')[0].replace("-", "/", "gi"));
                 if (d.getDate() == nd.getDate()) leavePeriod = 120;
             }
+            lastOpenCode =data.current.awardNumbers;
+            setTimeout(polling(),1000)
             //$(" .lot-award .currentAward .period-info .period-leave").html(cpNumber);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
             //  alert(loadAwardTimesTimer);
@@ -166,9 +156,51 @@ $(function () {
         }
     }
 
-    window.setTimeout(awardTick, 1000);
+   // window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
+    var loading = -1;
+    function polling() {
+        if(loading==-1){
+            loading=2
+        }else {
+            $.post('pc28/getCqsscAwardTimes.do', {t: Math.random()}, function (data) {
+                if(data.status == 2){
+                    return
+                }
+                if (lastOpenCode == data.current.awardNumbers) {
+                    setTimeout(polling(), 10000);
+                    $('.lot-nums').html('<p>等待开奖...</p>')
+                } else {
+                    $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                    var nums = data.current.awardNumbers.split(',');
+
+                    var totalNum_a = Number(nums[1]) + Number(nums[4]) + Number(nums[7]) +Number(nums[10]) + Number(nums[13]) + Number(nums[16]);
+                    var totalNum_b = Number(nums[2]) + Number(nums[5]) + Number(nums[8]) +Number(nums[11]) + Number(nums[14]) + Number(nums[17]);
+                    var totalNum_c = Number(nums[3]) + Number(nums[6]) + Number(nums[9]) +Number(nums[12]) + Number(nums[15]) + Number(nums[18]) ;
+
+                    totalNum_a = Number(totalNum_a)%10;
+                    totalNum_b = Number(totalNum_b) % 10;
+                    totalNum_c = Number(totalNum_c) % 10;
+                    // nums=totalNum_a+totalNum_b+totalNum_c;
+                    // alert(totalNum_a);
+                    // alert(totalNum_b);
+                    // alert(totalNum_c);
+                    // alert(nums);
+                    var str = "";
+
+                    str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
+
+                    $(".lot-nums").html(str);
+                    $(".warnTime #period").html("第" + (Number(data.next.periodNumber)+1) + "期");
+                    getHistoryData()
+
+                }
+            }, 'json').error(function () {
+
+            });
+        }
+    }
 });
 
 
