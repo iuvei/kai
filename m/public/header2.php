@@ -3,7 +3,7 @@
 
 <div class="daojishi1">
     <div class="fl" id="xia-yx2">开奖历史<span class="xialabt2 " id="xialabt2"></span>
-        <div class="xia-yxx-list" id="xia-yxx-list2" style="display: none;">
+        <div class="xia-yxx-list" id="xia-yxx-list2" style="top:16vw;display: none;">
             <ul class="">
                 <li><a href="./" class="cur">开奖历史</a></li>
                 <li><a href="smtj.php">两面统计</a></li>
