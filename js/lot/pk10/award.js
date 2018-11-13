@@ -99,7 +99,7 @@ $(function () {
 
                 $(".lot-nums").html(str);
 
-            $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
+            $(".warnTime #period").html("第" + data.next.fullPeriodNumber + "期");
             $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
 
 
