@@ -842,7 +842,7 @@ time: 1542068782325*/
 
             $xqqihao= str_replace("-","0",$ret['issue']);
 
-            if($lotType == 44 ||$lotType == 1||$lotType == 34 || $lotType ==47 ||$lotType == 48 ||$lotType==46 ||$lotType == 6)
+            if($lotType == 44 ||$lotType == 1||$lotType == 34 || $lotType ==47 ||$lotType == 48 ||$lotType==46||$lotType==45 ||$lotType == 6)
             {
                 $sqqihao= str_replace("-","",$ret['preIssue']['issue']);
                 $xqqihao= str_replace("-","",$ret['issue']);
@@ -883,11 +883,9 @@ time: 1542068782325*/
 //        if($lotType ==20 || $lotType == 34){
 //            $sres['periodNumber'] = $ret['preIssue']['issue_no'] +1;
 //        }else{
-            $sres['periodNumber'] = $ret['preIssue']['issue_no'];
+
 //        }
-
-
-        $sres['periodNumber'] = $ret['preIssue']['issue_no'] +1;
+        $sres['periodNumber'] = $ret['preIssue']['issue_no'];
         $sres['periodNumber1'] = $sqqihao;
         $sres['current_num'] = $ret['issue_total'];
 
@@ -5906,10 +5904,10 @@ time: 1542068782325*/
             case "tcpk10":
                 $issue = $this->getJsSscOpentimes($time);
                 break;
-            /*case "pc28":
-                $issueStart = 2354807 + intval((time() - 79020 - strtotime('2018-11-14 01:09:30')) / 86400) * 397;
-                $issue = $this->getCombOpentimes_v2(79230, 397, 210, $time, $issueStart);
-                break;*/
+            case "pc28":
+                /*$issueStart = 2354807 + intval((time() - 79020 - strtotime('2018-11-14 00:00:00')) / 86400) * 397;
+                $issue = $this->getCombOpentimes_v2(79230, 397, 210, $time, $issueStart);*/
+                break;
             case "gd11x5":
                 $issue = $this->getCombOpentimes_v2(32430, 84, 600, time());
                 break;
