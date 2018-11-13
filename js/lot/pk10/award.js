@@ -180,7 +180,7 @@ $(function () {
                 }
             }, 'json').error(function () {
        });
-    }   
+    }
 });
 function getHistoryData(count) {
     $.get("pk10/getHistoryData.do", { count:typeof(count)=="undefined"?16:count,t: Math.random() }, function (result) {
