@@ -39,7 +39,6 @@ $(function () {
     var awardTick = function () {
         $.get('cqssc/getCqsscAwardData.do', {  t: Math.random() }, function (data) {
 
-            $(".currentAward .period").html(parseInt(data.current.periodNumber1).toString().substr(4) + " 期");
             var nums
             var str = "";
             if (data.current.awardNumbers != '')

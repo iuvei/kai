@@ -38,7 +38,8 @@ include("../conn.php");
         </div>
     </div>
     <div class="openCodeList">
-        <img src="/m/style/images/loading2.gif">
+        <p>等待开奖...</p>
+<!--<img src="/m/style/images/loading2.gif">-->
     </div>
     <div class="lhResult">
         <a>龙</a>
