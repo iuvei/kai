@@ -84,8 +84,7 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.get('pk10/getPk10AwardTimes.do', { ajaxhandler: 'GetPk10AwardTimes', t: Math.random() }, function (data) {
-            if(lastOpenCode!=data.current.awardNumbers) {
-                $(".currentAward .period").html((parseInt(data.next.periodNumber) - 1) + " 期");
+                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
                 var nums;
                 var str = "";
                 if (data.current.awardNumbers != null)
@@ -98,8 +97,7 @@ $(function () {
                     str = str + "<span class='no" + nums[i] + "'></span>";
                 }
                 $(".lot-nums").html(str);
-            }
-            $(".warnTime #period").html("第" + (parseInt(data.next.periodNumber)) + "期");
+            $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
             $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             //请求到数据后需要做的事情
             cpCurrAwardData = data;

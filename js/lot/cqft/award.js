@@ -53,7 +53,7 @@ $(function () {
             }
 
             if (timeInterval != 0) {
-                var qihao2 = data.current.periodNumber1.substr(4);
+                var qihao2 = data.current.periodNumberStr.substr(4);
                 $(".currentAward .period").html(qihao2 + " 期");
                 // $(".currentAward .period").html(data.current.fullPeriodNumber + " 期");
                 var nums = data.current.awardNumbers.split(',');

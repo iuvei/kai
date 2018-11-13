@@ -839,17 +839,38 @@ time: 1542068782325*/
 
         $ret = $this -> getIssueInfo($type);
 
+
         $sqqihao= str_replace("-","",$ret['preIssue']['issue']);
-        $xqqihao=str_replace("-","",$ret['issue']);
+        $xqqihao= str_replace("-","",$ret['issue']);
+
+        if($lotType == 20){
+            $sqqihao += 1;
+            $xqqihao += 1;
+        }
 
         $kjHao1 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $sqqihao");
         $kjHao2 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $xqqihao");
-//        dump($ret);
-//        dump($kjHao1);
-//        dump($kjHao2);die;
+
+        $sres["awardNumbers"] =$kjHao1[0]['dat_codes'];
 
 
-        $sres["awardNumbers"] =  $kjHao1[0]['dat_codes'];
+        if ( $lotType ==20 )
+        {
+            $arr =  explode(",",$kjHao1[0]['dat_codes']);
+
+
+            foreach ($arr as $k => $v)
+            {
+                $arr[$k] = preg_replace('/^0*/', '', $v);
+            }
+
+            $arr_str =implode(",",$arr);
+
+
+            $sres["awardNumbers"] =$arr_str;
+
+        }
+
         $sres["awardTime"] = $ret['preIssue']['opentime'];
         $sres['fullPeriodNumber'] = $ret['preIssue']['issue'];
         $sres['periodNumber'] = $ret['preIssue']['issue_no'];
@@ -5837,11 +5858,11 @@ time: 1542068782325*/
             case "cqft":
                 $issue = $this->getSscOpentimes($time);
                 break;
-           /* case LotteryMain::pk10_bjpk10:
+            case "pk10":
                 $issueStart = 674080 + intval((time() - 32820 - strtotime('2018-04-01 00:00:00')) / 86400) * 179;
                 $issue = $this->getCombOpentimes_v2(32820, 179, 300, $time, $issueStart);
                 break;
-            case LotteryMain::pk10_xyft:
+           /* case LotteryMain::pk10_xyft:
                 $issue = $this->getCombOpentimes_v2(46800 + 540, 180, 300, $time);
                 break;
             case LotteryMain::pc28_bjpc28:
@@ -6041,8 +6062,8 @@ time: 1542068782325*/
         $preIssueNo = 0;
 
         for ($issue_no = 1; $issue_no <= $issueCount; $issue_no++) {
-            $timespan = $tsDayStart + $tsDay + $issue_no * $ts;
 
+            $timespan = $tsDayStart + $tsDay + $issue_no * $ts;
             $opentime = Array();
             $opentime['timespan'] = $timespan;
             $opentime['issue_no'] = $issue_no;
