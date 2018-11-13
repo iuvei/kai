@@ -87,7 +87,7 @@ $(function () {
                 $(".currentAward .period").html(data.current.periodNumber1 + " 期");
                 var nums;
                 var str = "";
-                if (data.current.awardNumbers != null)
+                if (data.current.awardNumbers != '')
                     nums = data.current.awardNumbers.split(',');
                 else {
                     str = "<p>等待开奖...<p>";
@@ -96,6 +96,7 @@ $(function () {
                 for (var i = 0; i < nums.length; i++) {
                     str = str + "<span class='no" + nums[i] + "'></span>";
                 }
+
                 $(".lot-nums").html(str);
 
             $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
@@ -155,7 +156,7 @@ $(function () {
                     $(".currentAward .period").html((parseInt(data.next.periodNumber)-1) + " 期");
                     var nums;
                     var str = "";
-                    if(data.current.awardNumbers != null)
+                    if(data.current.awardNumbers != '')
                         nums = data.current.awardNumbers.split(',');
                     else
                     {
