@@ -97,8 +97,12 @@ $(function () {
                     str = str + "<span class='no" + nums[i] + "'></span>";
                 }
                 $(".lot-nums").html(str);
+
             $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
             $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
+
+            }
+
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 
