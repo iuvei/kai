@@ -177,7 +177,7 @@ var webListOP = {
         /*{
             "text":"幸运飞艇开奖直播",
             "href":"xyft/shipin/",
-            "title":"在线观看极速赛车开奖直播",
+            "title":"在线观看TC极速赛车开奖直播",
             "aClass":"redColor"
         },*/
         // {
@@ -221,11 +221,11 @@ var webListOP = {
 
     "jssc": [
         {
-            "text":"极速赛车",
+            "text":"TC极速赛车",
             "href":"jssc/index.html"
         },
         {
-            "text":"极速赛车开奖",
+            "text":"TC极速赛车开奖",
             "href":"jssc/kaijiang.html"
         },
         {
@@ -278,9 +278,9 @@ var webListOP = {
             "href":"jssc/betgame.html"
         },*/
        /* {
-            "text":"极速赛车开奖直播",
+            "text":"TC极速赛车开奖直播",
             "href":"jssc/shipin/",
-            "title":"在线观看极速赛车开奖直播",
+            "title":"在线观看TC极速赛车开奖直播",
             "aClass":"redColor"
         },*/
         {
@@ -292,7 +292,7 @@ var webListOP = {
             "href":"jssc/shdd.html"
         },*/
         {
-            "text":"极速赛车技巧",
+            "text":"TC极速赛车技巧",
             "href":"jiqiao/jssc/"
         },
         {
@@ -709,7 +709,7 @@ var webListOP = {
 
     "jsssc": [
         {
-            "text":"极速时时彩",
+            "text":"TC极速时时彩",
             "href":"jsssc/index.html"
         },
         {
@@ -771,7 +771,7 @@ var webListOP = {
 
     "tcssc": [
         {
-            "text":"极速时时彩",
+            "text":"TC极速时时彩",
             "href":"tcssc/index.html"
         },
         {
@@ -826,11 +826,11 @@ var webListOP = {
 
     "tcpk10": [
         {
-            "text":"极速赛车",
+            "text":"TC极速赛车",
             "href":"tcpk10/index.html"
         },
         {
-            "text":"极速赛车开奖",
+            "text":"TC极速赛车开奖",
             "href":"tcpk10/kaijiang.html"
         },
         {
@@ -875,9 +875,9 @@ var webListOP = {
             "href":"tcpk10/betgame.html"
         },
         /*{
-            "text":"极速赛车开奖直播",
+            "text":"TC极速赛车开奖直播",
             "href":"tcpk10/shipin/",
-            "title":"在线观看极速赛车开奖直播",
+            "title":"在线观看TC极速赛车开奖直播",
             "aClass":"redColor"
         },*/
         {
@@ -885,7 +885,7 @@ var webListOP = {
             "href":"tcpk10/coldhotnumber.html"
         },
         {
-            "text":"极速赛车技巧",
+            "text":"TC极速赛车技巧",
             "href":"jiqiao/tcpk10/"
         },
         {

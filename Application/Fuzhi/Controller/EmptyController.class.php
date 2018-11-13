@@ -125,17 +125,17 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                 $totalExpect = 84;
                             } else {
 								if ($ctrlName == 'jsssc') {
-                                $this->title = $title_c.'极速时时彩开奖视频_极速时时彩开奖号码_极速时时彩开奖记录 - ' . C('WEB_SITE_TITLE');
+                                $this->title = $title_c.'TC极速时时彩开奖视频_TC极速时时彩开奖号码_TC极速时时彩开奖记录 - ' . C('WEB_SITE_TITLE');
                                 $this->keyword = C("WEB_SITE_jsssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                 $this->description = C("WEB_SITE_jsssc_DESCR");
-                                $lottoryName = "极速时时彩";
+                                $lottoryName = "TC极速时时彩";
                                 $totalExpect = 1152;
                             } else {
                                 if ($ctrlName == 'jssc') {
                                     $this->title = $title_c.C("WEB_SITE_JSSC_TITLE") . ' - ' . C('WEB_SITE_TITLE');
                                     $this->keyword = C("WEB_SITE_JSSC_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                     $this->description = C("WEB_SITE_JSSC_DESCR");
-                                    $lottoryName = "极速赛车";
+                                    $lottoryName = "TC极速赛车";
                                     $totalExpect = 1152;
                                 } else {
                                     if ($ctrlName == 'jsk3') {
@@ -195,17 +195,17 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                 $totalExpect = 1440;
                                                             }else{
                                                                 if ($ctrlName == 'tcpk10') {
-                                                                    $this->title = $title_c.'极速赛车开奖视频_极速赛车开奖号码_极速赛车开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                    $this->title = $title_c.'TC极速赛车开奖视频_TC极速赛车开奖号码_TC极速赛车开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                     $this->keyword = C("WEB_SITE_tcpk10_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                     $this->description = C("WEB_SITE_tcpk10_DESCR");
-                                                                    $lottoryName = "极速赛车";//头彩
+                                                                    $lottoryName = "TC极速赛车";//头彩
                                                                     $totalExpect = 1440;
                                                                 }else{
                                                                     if ($ctrlName == 'tcssc') {
-                                                                        $this->title = $title_c.'极速时时彩开奖视频_极速时时彩开奖号码_极速时时彩开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                        $this->title = $title_c.'TC极速时时彩开奖视频_TC极速时时彩开奖号码_TC极速时时彩开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                         $this->keyword = C("WEB_SITE_tcssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                         $this->description = C("WEB_SITE_tcssc_DESCR");
-                                                                        $lottoryName = "极速时时彩";//头彩
+                                                                        $lottoryName = "TC极速时时彩";//头彩
                                                                         $totalExpect = 1440;
                                                                     }else{
                                                                         if ($ctrlName == 'sfssc') {
@@ -507,11 +507,11 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                             $id = 54;
                             break;
                         case 'tcssc':
-                            $JiQiaotitle = '极速时时彩技巧';
+                            $JiQiaotitle = 'TC极速时时彩技巧';
                             $id = 55;
                             break;
                         case 'tcpk10':
-                            $JiQiaotitle = '极速赛车技巧';
+                            $JiQiaotitle = 'TC极速赛车技巧';
                             $id = 56;
                             break;
                         case 'sfpk10':
