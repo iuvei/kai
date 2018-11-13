@@ -874,6 +874,15 @@ time: 1542068782325*/
 
         $sres["awardTime"] = $ret['preIssue']['opentime'];
         $sres['fullPeriodNumber'] = $ret['preIssue']['issue'];
+
+
+        if($lotType ==20 || $lotType == 34){
+            $sres['periodNumber'] = $ret['preIssue']['issue_no'] +1;
+        }else{
+            $sres['periodNumber'] = $ret['preIssue']['issue_no'];
+        }
+
+
         $sres['periodNumber'] = $ret['preIssue']['issue_no'] +1;
         $sres['periodNumber1'] = $sqqihao;
         $sres['current_num'] = $ret['issue_total'];
@@ -881,12 +890,14 @@ time: 1542068782325*/
 
         if ($lotType ==20 ){
             $xres["awardTimeInterval"] =($ret['timeremain']+30) *1000;
+            $xres['periodNumber'] = $ret['issue_no'] +1;
         } else{
             $xres["awardTimeInterval"] =$ret['timeremain'] *1000;
+            $xres['periodNumber'] = $ret['issue_no'] ;
         }
         $xres["awardTime"] = $ret['opentime'];
         $xres['fullPeriodNumber'] = $ret['issue'];
-        $xres['periodNumber'] = $ret['issue_no'] +1;
+
         $xres['periodNumberStr'] = $xqqihao;
 
 
