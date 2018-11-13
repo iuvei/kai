@@ -839,23 +839,16 @@ time: 1542068782325*/
 
         $ret = $this -> getIssueInfo($type);
 
-        if($lotType == 22 )
-        {
+
             $sqqihao= str_replace("-","0",$ret['preIssue']['issue']);
-        }else{
-            $sqqihao= str_replace("-","",$ret['preIssue']['issue']);
-        }
+            $xqqihao= str_replace("-","0",$ret['issue']);
 
 
-
-//        $xqqihao= str_replace("-","",$ret['issue']);
-
-        if($lotType ==20 ||$lotType == 34)
-        {
-            $sqqihao += 1;
-
-        }
-
+//        if($lotType ==20 ||$lotType == 34)
+//        {
+//            $sqqihao += 1;
+//
+//        }
         $kjHao1 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $sqqihao");
       //  $kjHao2 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $xqqihao");
 
@@ -865,18 +858,16 @@ time: 1542068782325*/
         }
 
 
+        $sres['surplus_num'] = $ret['issue_total'] - $ret['preIssue']['issue_no'];
+
         if ( $lotType ==20 || $lotType == 34)
         {
             $arr =  explode(",",$kjHao1[0]['dat_codes']);
-
             foreach ($arr as $k => $v)
             {
                 $arr[$k] = preg_replace('/^0*/', '', $v);
             }
-
             $arr_str =implode(",",$arr);
-
-
             $sres["awardNumbers"] =$arr_str;
 
         }else{
@@ -887,22 +878,21 @@ time: 1542068782325*/
         $sres['fullPeriodNumber'] = $ret['preIssue']['issue'];
 
 
-        if($lotType ==20 || $lotType == 34){
-            $sres['periodNumber'] = $ret['preIssue']['issue_no'] +1;
-        }else{
+//        if($lotType ==20 || $lotType == 34){
+//            $sres['periodNumber'] = $ret['preIssue']['issue_no'] +1;
+//        }else{
             $sres['periodNumber'] = $ret['preIssue']['issue_no'];
-        }
+//        }
 
 
         $sres['periodNumber'] = $ret['preIssue']['issue_no'] +1;
         $sres['periodNumber1'] = $sqqihao;
         $sres['current_num'] = $ret['issue_total'];
 
-        $sres['surplus_num'] = $ret['issue_total'] - $ret['preIssue']['issue_no'];
 
         if ($lotType ==20 ){
             $xres["awardTimeInterval"] =($ret['timeremain']+30) *1000;
-            $xres['periodNumber'] = $ret['issue_no'] +1;
+
         } else{
             $xres["awardTimeInterval"] =$ret['timeremain'] *1000;
             $xres['periodNumber'] = $ret['issue_no'] ;
@@ -5888,7 +5878,7 @@ time: 1542068782325*/
                 break;
             case "pk10":
                 $issueStart = 674080 + intval((time() - 32820 - strtotime('2018-04-01 00:00:00')) / 86400) * 179;
-                $issue = $this->getCombOpentimes_v2(32820, 179, 300, $time, $issueStart);
+                $issue = $this->getCombOpentimes_v2(32520, 179, 300, $time, $issueStart);
                 break;
             case "xyft":
                 $issue = $this->getCombOpentimes_v2(46800 + 540, 180, 300, $time);
