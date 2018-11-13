@@ -846,17 +846,21 @@ time: 1542068782325*/
         if($lotType ==20 ||$lotType == 34)
         {
             $sqqihao += 1;
-            $xqqihao += 1;
+
         }
 
         $kjHao1 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $sqqihao");
-        $kjHao2 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $xqqihao");
+      //  $kjHao2 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $xqqihao");
+
+        if($kjHao1[0]['dat_codes'] == null)
+        {
+            $kjHao1[0]['dat_codes'] = "";
+        }
 
 
         if ( $lotType ==20 || $lotType == 34)
         {
             $arr =  explode(",",$kjHao1[0]['dat_codes']);
-
 
             foreach ($arr as $k => $v)
             {
