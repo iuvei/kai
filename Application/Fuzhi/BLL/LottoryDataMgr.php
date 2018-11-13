@@ -838,8 +838,6 @@ periodNumberStr: "20181113-024"
 time: 1542068782325*/
 
         $ret = $this -> getIssueInfo($type);
-
-
             $xqqihao= str_replace("-","0",$ret['issue']);
 
             if($lotType == 44 ||$lotType == 1||$lotType == 34 || $lotType ==47 ||$lotType == 48 ||$lotType==46||$lotType==45 ||$lotType == 6)
@@ -5893,7 +5891,6 @@ time: 1542068782325*/
                 break;
             case "sfpk10":
                 $issue = $this->getSfSscOpentimes($time);
-                /*$issue = $this->getCombOpentimes_v2(0, 440, 180, time());*/
                 break;
             case "sfssc":
                 $issue = $this->getSfSscOpentimes($time);
@@ -5905,8 +5902,8 @@ time: 1542068782325*/
                 $issue = $this->getJsSscOpentimes($time);
                 break;
             case "pc28":
-                /*$issueStart = 2354807 + intval((time() - 79020 - strtotime('2018-11-14 00:00:00')) / 86400) * 397;
-                $issue = $this->getCombOpentimes_v2(79230, 397, 210, $time, $issueStart);*/
+                $issueStart = 2354753 + intval((time() - 79020 - strtotime('2018-11-14 00:00:00')) / 86400) * 397;
+                $issue = $this->getCombOpentimes_v2(79230, 397, 210, $time, $issueStart);
                 break;
             case "gd11x5":
                 $issue = $this->getCombOpentimes_v2(32430, 84, 600, time());
@@ -6078,7 +6075,7 @@ time: 1542068782325*/
         $issue['timeremain'] = $issue['timespan'] - $time;
         $issue['preIssue'] = $preIssue;
         if ($time < ($opentimes[24]['timespan'] - $ts) && $time > $opentimes[23]['timespan']) {
-            $issue['status'] = 2;
+            $issue['status'] = 0;
         } else {
             $issue['status'] = 1;
         }
@@ -6096,8 +6093,6 @@ time: 1542068782325*/
      */
     private function getSfSscOpentimes($time = 0)
     {
-
-
         $tsStart = 300;
         $issueCount = 440;
         $ts = 180;
@@ -6112,16 +6107,18 @@ time: 1542068782325*/
          *  如果开奖时间不是00:00:00，那么time()的当前期号日期，可能自动跳为第二天
          *  所以，time()减去tsStart【第一期开奖时间】，则期号日期100%是当天的
          */
-        $rootTimespan = strtotime(date('Y-m-d', ($time - $ts)));
+        $rootTimespan = strtotime(date('Y-m-d', ($time - $tsStart)));
         $opentimes = Array();
         $subIssueLength = strlen($issueCount);
         $preIssue = Array();
         for ($issue_no = 1; $issue_no <= $issueCount; $issue_no++) {
 
-            if ($issue_no < 120) {
+            if ($issue_no < 80) {
                 $timespan = $rootTimespan + ($issue_no) * $ts;
-            } elseif ($issue_no == 120) {
+            } elseif ($issue_no == 80) {
                 $timespan = $rootTimespan + 12000;
+            }else{
+                $timespan = $rootTimespan + (21600) + ($issue_no -81) * 180;
             }
             // 开奖时间
             $opentime = Array();
@@ -6155,7 +6152,7 @@ time: 1542068782325*/
         $issue['timeremain'] = $issue['timespan'] - $time;
         $issue['preIssue'] = $preIssue;
         if ($time < ($opentimes[24]['timespan'] - $ts) && $time > $opentimes[23]['timespan']) {
-            $issue['status'] = 2;
+            $issue['status'] = 0;
         } else {
             $issue['status'] = 1;
         }
@@ -6166,13 +6163,11 @@ time: 1542068782325*/
 
 
     /**
-     * 获得sf的开奖时间
+     * 获得js的开奖时间
      * @param int $time
      */
     private function getJsSscOpentimes($time = 0)
     {
-
-
         $tsStart = 300;
         $issueCount = 1440;
         $ts = 75;
@@ -6187,7 +6182,7 @@ time: 1542068782325*/
          *  如果开奖时间不是00:00:00，那么time()的当前期号日期，可能自动跳为第二天
          *  所以，time()减去tsStart【第一期开奖时间】，则期号日期100%是当天的
          */
-        $rootTimespan = strtotime(date('Y-m-d', ($time - $ts)));
+        $rootTimespan = strtotime(date('Y-m-d', ($time - $tsStart)));
         $opentimes = Array();
         $subIssueLength = strlen($issueCount);
         $preIssue = Array();
@@ -6197,6 +6192,8 @@ time: 1542068782325*/
                 $timespan = $rootTimespan + ($issue_no) * $ts;
             } elseif ($issue_no == 191) {
                 $timespan = $rootTimespan + 12000;
+            }else{
+                $timespan = $rootTimespan + (21600) + ($issue_no -191) * 75;
             }
             // 开奖时间
             $opentime = Array();
@@ -6230,7 +6227,7 @@ time: 1542068782325*/
         $issue['timeremain'] = $issue['timespan'] - $time;
         $issue['preIssue'] = $preIssue;
         if ($time < ($opentimes[24]['timespan'] - $ts) && $time > $opentimes[23]['timespan']) {
-            $issue['status'] = 2;
+            $issue['status'] = 0;
         } else {
             $issue['status'] = 1;
         }
@@ -6317,7 +6314,7 @@ time: 1542068782325*/
         $issue['preIssue'] = $opentimes[$preIssueNo];
         $issue['timeremain'] = $issue['timespan'] - $time;
         if ($time < ($opentimes[$issueCount + 1]['timespan']) && $time > $opentimes[$issueCount]['timespan']) {
-            $issue['status'] = 2;
+            $issue['status'] = 0;
         } else {
             $issue['status'] = 1;
         }
