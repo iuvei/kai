@@ -840,9 +840,15 @@ time: 1542068782325*/
         $ret = $this -> getIssueInfo($type);
 
 
-            $sqqihao= str_replace("-","0",$ret['preIssue']['issue']);
             $xqqihao= str_replace("-","0",$ret['issue']);
 
+            if($lotType == 44 ||$lotType == 1)
+            {
+                $sqqihao= str_replace("-","",$ret['preIssue']['issue']);
+
+            }else{
+                $sqqihao= str_replace("-","0",$ret['preIssue']['issue']);
+            }
 
 //        if($lotType ==20 ||$lotType == 34)
 //        {
@@ -905,6 +911,7 @@ time: 1542068782325*/
 
         $datas["current"] = $sres;
         $datas["next"] = $xres;
+        $datas['status'] = $ret['status'];
 
    //     dump($datas);die;
         $datas = json_encode($datas);
@@ -5881,10 +5888,16 @@ time: 1542068782325*/
                 $issue = $this->getCombOpentimes_v2(32520, 179, 300, $time, $issueStart);
                 break;
             case "xyft":
-                $issue = $this->getCombOpentimes_v2(46800 + 540, 180, 300, $time);
+                $issue = $this->getCombOpentimes_v2(46500 + 540, 180, 300, $time);
                 break;
             case "jsk3":
                 $issue = $this->getCombOpentimes_v2(30600, 82, 600, time());
+                break;
+            case "txffc":
+                $issue = $this->getCombOpentimes_v2(60, 1440, 60, time());
+                break;
+            case "sfpk10":
+                $issue = $this->getCombOpentimes_v2(30600, 440, 180, time());
                 break;
            /*
             case LotteryMain::pc28_bjpc28:
@@ -6053,7 +6066,7 @@ time: 1542068782325*/
         $issue['timeremain'] = $issue['timespan'] - $time;
         $issue['preIssue'] = $preIssue;
         if ($time < ($opentimes[24]['timespan'] - $ts) && $time > $opentimes[23]['timespan']) {
-            $issue['status'] = 0;
+            $issue['status'] = 2;
         } else {
             $issue['status'] = 1;
         }
@@ -6136,7 +6149,7 @@ time: 1542068782325*/
         $issue['preIssue'] = $opentimes[$preIssueNo];
         $issue['timeremain'] = $issue['timespan'] - $time;
         if ($time < ($opentimes[$issueCount + 1]['timespan']) && $time > $opentimes[$issueCount]['timespan']) {
-            $issue['status'] = 0;
+            $issue['status'] = 2;
         } else {
             $issue['status'] = 1;
         }
