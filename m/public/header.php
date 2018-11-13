@@ -12,7 +12,7 @@
             <li><a href="../tcpk10/" game="tcpk10">TC极速赛车</a></li>
             <li><a href="../xyft/" game="xyft">幸运飞艇</a></li>
             <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
-            <li><a href="../tcssc/" game="tcssc">TC极速时时彩</a></li>
+            <li><a href="../tcssc/" game="tcssc">TC极速时时</a></li>
             <li><a href="../sfssc/" game="jsssc">三分时时彩</a></li>
             <li><a game="bjft" href="../bjft/">北京番摊</a></li>
             <li><a game="cqft" href="../cqft">重庆番摊</a></li>

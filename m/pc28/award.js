@@ -41,6 +41,27 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../pc28/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
+            if(data.current.awardNumbers!=''){
+                $('.newIssue span').html(data.current.periodNumber1);
+                $('.nextIssue span').html(data.next.periodNumberStr);
+                $('.periodNumber').html(data.current.periodNumber);
+                $('.surplus_num').html(data.current.surplus_num);
+                var nums = data.current.awardNumbers.split(',');
+                var  dat =  shuju(nums);
+                var str=''
+                str = str + '<a class="ball-red">' + dat[0] + '</a> + ';
+                str = str + '<a class="ball-red">' + dat[1] + '</a> + ';
+                str = str + '<a class="ball-red">' + dat[2] + '</a> = ';
+                str = str + '<a class="ball-blue">' + dat[3] + '</a>';
+                str = str + '<div class="sscLH">';
+
+                str = str + '<a>' + dat[4] + '</a>';
+                str = str + '<a>' + dat[5] + '</a>';
+                str = str + '<a>' + dat[6] + '</a>';
+                str = str + '</div>';
+                $('.openCodeList').html(str)
+                getHistoryData('50')
+            }
             //计数请求次数
             requireCount += 1;
 
@@ -88,25 +109,27 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../pc28/getCqsscAwardTimes.do', {t: Math.random() }, function (data) {
-            $('.newIssue span').html(data.current.periodNumber1.substr(4));
-            $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
-            $('.periodNumber').html(data.current.periodNumber);
-            $('.surplus_num').html(data.current.surplus_num);
-            var nums = data.current.awardNumbers.split(',');
-            var  dat =  shuju(nums);
-            var str=''
-            str = str + '<a class="ball-red">' + dat[0] + '</a> + ';
-            str = str + '<a class="ball-red">' + dat[1] + '</a> + ';
-            str = str + '<a class="ball-red">' + dat[2] + '</a> = ';
-            str = str + '<a class="ball-blue">' + dat[3] + '</a>';
-            str = str + '<div class="sscLH">';
+            if(data.current.awardNumbers!=''){
+                $('.newIssue span').html(data.current.periodNumber1);
+                $('.nextIssue span').html(data.next.periodNumberStr);
+                $('.periodNumber').html(data.current.periodNumber);
+                $('.surplus_num').html(data.current.surplus_num);
+                var nums = data.current.awardNumbers.split(',');
+                var  dat =  shuju(nums);
+                var str=''
+                str = str + '<a class="ball-red">' + dat[0] + '</a> + ';
+                str = str + '<a class="ball-red">' + dat[1] + '</a> + ';
+                str = str + '<a class="ball-red">' + dat[2] + '</a> = ';
+                str = str + '<a class="ball-blue">' + dat[3] + '</a>';
+                str = str + '<div class="sscLH">';
 
-            str = str + '<a>' + dat[4] + '</a>';
-            str = str + '<a>' + dat[5] + '</a>';
-            str = str + '<a>' + dat[6] + '</a>';
-            str = str + '</div>';
-            $('.openCodeList').html(str)
-            getHistoryData('50')
+                str = str + '<a>' + dat[4] + '</a>';
+                str = str + '<a>' + dat[5] + '</a>';
+                str = str + '<a>' + dat[6] + '</a>';
+                str = str + '</div>';
+                $('.openCodeList').html(str)
+                getHistoryData('50')
+            }
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 
@@ -128,6 +151,8 @@ $(function () {
             }
            // console.log(data.next.periodNumber);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, (data.next.awardTimeInterval) < 10 ? 10000 : (data.next.awardTimeInterval) + 1000);
+            lastOpenCode =data.current.awardNumbers;
+            setTimeout(polling(),1000)
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);
@@ -142,6 +167,49 @@ $(function () {
     window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
+    var loading = -1;
+    function polling() {
+        $.post('../../pc28/getCqsscAwardTimes.do', {t: Math.random()}, function (data) {
+            if(data.status == 2){
+                return
+            }
+            if(loading==-1){
+                if(data.current.awardNumbers==''){
+                    setTimeout(function () {
+                        polling();
+                    },3000)
+                }
+                loading=2
+            }else {
+                if (lastOpenCode == data.current.awardNumbers) {
+                    setTimeout(function () {
+                        polling();
+                    }, 3000)
+                } else {
+                    $('.newIssue span').html(data.current.periodNumber1);
+                    $('.nextIssue span').html(data.next.periodNumberStr);
+                    $('.periodNumber').html(data.current.periodNumber);
+                    $('.surplus_num').html(data.current.surplus_num);
+                    var nums = data.current.awardNumbers.split(',');
+                    var  dat =  shuju(nums);
+                    var str=''
+                    str = str + '<a class="ball-red">' + dat[0] + '</a> + ';
+                    str = str + '<a class="ball-red">' + dat[1] + '</a> + ';
+                    str = str + '<a class="ball-red">' + dat[2] + '</a> = ';
+                    str = str + '<a class="ball-blue">' + dat[3] + '</a>';
+                    str = str + '<div class="sscLH">';
+
+                    str = str + '<a>' + dat[4] + '</a>';
+                    str = str + '<a>' + dat[5] + '</a>';
+                    str = str + '<a>' + dat[6] + '</a>';
+                    str = str + '</div>';
+                    $('.openCodeList').html(str)
+                    getHistoryData('50')
+                }
+            }
+        }, 'json').error(function () {
+        });
+    }
 });
 function getHistoryData(count,date) {
     $.get("../../pc28/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {

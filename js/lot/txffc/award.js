@@ -186,7 +186,7 @@ $(function () {
                         str = str + '<span>'+nums[i]+'</span>';
                     }
                     $(".lot-nums").html(str);
-                    $(".warnTime #period").html("第" + data.next.fullPeriodNumber + "期");
+                    $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(6) + "期");
                     getHistoryData();
                 }
             }

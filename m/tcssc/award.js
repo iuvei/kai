@@ -43,8 +43,8 @@ $(function () {
             //计数请求次数
             requireCount += 1;
             if(data.current.awardNumbers!='') {
-                $('.newIssue span').html(data.current.periodNumber1.substr(4));
-                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.newIssue span').html(data.current.periodNumber1.substr(6));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(6));
                 $('.periodNumber').html(data.current.periodNumber);
                 $('.surplus_num').html(data.current.surplus_num);
                 var nums = data.current.awardNumbers.split(',');
@@ -119,8 +119,8 @@ $(function () {
     function loadAwardTimes() {
         $.post('../../tcssc/getxjsscAwardTimes.do', {t: Math.random() }, function (data) {
             if(data.current.awardNumbers!='') {
-                $('.newIssue span').html(data.current.periodNumber1.substr(4));
-                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.newIssue span').html(data.current.periodNumber1.substr(6));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(6));
                 $('.periodNumber').html(data.current.periodNumber);
                 $('.surplus_num').html(data.current.surplus_num);
                 var nums = data.current.awardNumbers.split(',');
@@ -212,8 +212,8 @@ $(function () {
                         polling();
                     }, 3000)
                 } else {
-                    $('.newIssue span').html(data.current.periodNumber1.substr(4));
-                    $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                    $('.newIssue span').html(data.current.periodNumber1.substr(6));
+                    $('.nextIssue span').html(data.next.periodNumberStr.substr(6));
                     $('.periodNumber').html(data.current.periodNumber);
                     $('.surplus_num').html(data.current.surplus_num);
                     var nums = data.current.awardNumbers.split(',');

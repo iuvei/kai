@@ -142,8 +142,6 @@ $(function () {
             }
             $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
-            lastOpenCode =data.current.awardNumbers;
-            setTimeout(polling(),1000)
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);
