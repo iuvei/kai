@@ -40,6 +40,43 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../txffc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
+            if(data.current.awardNumbers!='') {
+                $('.newIssue span').html(data.current.periodNumber1.substr(4));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.periodNumber').html(data.current.periodNumber);
+                $('.surplus_num').html(data.current.surplus_num);
+                var nums = data.current.awardNumbers.split(',');
+                var srt = '';
+                var sum = eval(nums.join("+"));
+                var dx = '';
+                var ds = '';
+                if (sum > 22) {
+                    dx = '大';
+                } else {
+                    dx = '小';
+                }
+                if (sum % 2 == 0) {
+                    ds = '双';
+                } else {
+                    ds = '单';
+                }
+
+                for (var i = 0; i < nums.length; i++) {
+
+                    srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
+
+                }
+                srt = srt + '<div class="sscLH">';
+                srt = srt + '<a>' + long(nums[0], nums[4]) + '</a>';
+                srt = srt + '<a>' + '<span></span>' + '</a>';
+                srt = srt + '<a>' + '总和' + '</a>';
+                srt = srt + '<a>' + sum + '</a>';
+                srt = srt + '<a>' + dx + '</a>';
+                srt = srt + '<a>' + ds + '</a>';
+                srt = srt + '</div>';
+                $('.openCodeList').html(srt)
+                getHistoryData('50')
+            }
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -85,43 +122,43 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../txffc/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
+            if(data.current.awardNumbers!='') {
+                $('.newIssue span').html(data.current.periodNumber1.substr(4));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.periodNumber').html(data.current.periodNumber);
+                $('.surplus_num').html(data.current.surplus_num);
+                var nums = data.current.awardNumbers.split(',');
+                var srt = '';
+                var sum = eval(nums.join("+"));
+                var dx = '';
+                var ds = '';
+                if (sum > 22) {
+                    dx = '大';
+                } else {
+                    dx = '小';
+                }
+                if (sum % 2 == 0) {
+                    ds = '双';
+                } else {
+                    ds = '单';
+                }
 
-            $('.newIssue span').html(data.current.periodNumber1.substr(4));
-            $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
-            $('.periodNumber').html(data.current.periodNumber);
-            $('.surplus_num').html(data.current.surplus_num);
-            var nums = data.current.awardNumbers.split(',');
-            var srt = '';
-            var sum = eval(nums.join("+"));
-            var dx = '';
-            var ds = '';
-            if(sum > 22){
-                dx = '大';
-            }else {
-                dx = '小';
+                for (var i = 0; i < nums.length; i++) {
+
+                    srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
+
+                }
+                srt = srt + '<div class="sscLH">';
+                srt = srt + '<a>' + long(nums[0], nums[4]) + '</a>';
+                srt = srt + '<a>' + '<span></span>' + '</a>';
+                srt = srt + '<a>' + '总和' + '</a>';
+                srt = srt + '<a>' + sum + '</a>';
+                srt = srt + '<a>' + dx + '</a>';
+                srt = srt + '<a>' + ds + '</a>';
+                srt = srt + '</div>';
+                $('.openCodeList').html(srt)
+                getHistoryData('50')
             }
-            if(sum%2 == 0){
-                ds = '双';
-            }else {
-                ds = '单';
-            }
-
-            for (var i = 0; i < nums.length; i++) {
-
-                srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
-
-            }
-            srt = srt + '<div class="sscLH">';
-            srt = srt + '<a>' + long(nums[0],nums[4]) + '</a>';
-            srt = srt + '<a>' + '<span></span>' + '</a>';
-            srt = srt + '<a>' + '总和' + '</a>';
-            srt = srt + '<a>' + sum + '</a>';
-            srt = srt + '<a>' + dx  + '</a>';
-            srt = srt + '<a>' + ds  + '</a>';
-            srt = srt + '</div>';
-            $('.openCodeList').html(srt)
-            getHistoryData('50')
-
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
             //期数不同，则开始封盘倒计时
@@ -160,7 +197,7 @@ $(function () {
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
     var loading = -1;
     function polling() {
-        $.post('../../tcssc/getxjsscAwardTimes.do', {t: Math.random()}, function (data) {
+        $.post('../../txffc/getPk10AwardTimes.do', {t: Math.random()}, function (data) {
             if(data.status == 2){
                 return
             }

@@ -102,6 +102,55 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../cqssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
+            if(data.current.awardNumbers!='') {
+                $('.newIssue span').html(data.current.periodNumber1.substr(4));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.periodNumber').html(data.current.periodNumber);
+                $('.surplus_num').html(data.current.surplus_num);
+                var nums = data.current.awardNumbers.split(',');
+
+                var srt = '';
+                var sum = eval(nums.join("+"));
+                var tan = sum % 4;
+                if (tan == 0) {
+                    tan = 4
+                }
+                var ft = '';
+                for (var i = 0; i < tan; i++) {
+                    ft = ft + '<span class="ball-red-span"></span>'
+                }
+                console.log(ft)
+                ft = '番摊：' + ft;
+                $('.qiansan').html(ft);
+                var dx = '';
+                var ds = '';
+                if (sum > 22) {
+                    dx = '大';
+                } else {
+                    dx = '小';
+                }
+                if (sum % 2 == 0) {
+                    ds = '双';
+                } else {
+                    ds = '单';
+                }
+
+                for (var i = 0; i < nums.length; i++) {
+
+                    srt = srt + '<a class="sscBall2 mg">' + nums[i] + '</a>';
+
+                }
+                srt = srt + '<div class="sscLH">';
+                srt = srt + '<a>' + long(nums[0], nums[4]) + '</a>';
+                srt = srt + '<a>' + '<span></span>' + '</a>';
+                srt = srt + '<a>' + '总和' + '</a>';
+                srt = srt + '<a>' + sum + '</a>';
+                srt = srt + '<a>' + dx + '</a>';
+                srt = srt + '<a>' + ds + '</a>';
+                srt = srt + '</div>';
+                $('.openCodeList1').html(srt)
+                getHistoryData('50')
+            }
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -238,7 +287,7 @@ $(function () {
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
     var loading = -1;
     function polling() {
-        $.post('../../tcssc/getxjsscAwardTimes.do', {t: Math.random()}, function (data) {
+        $.post('../../cqssc/getPk10AwardTimes.do', {t: Math.random()}, function (data) {
             if(data.status == 2){
                 return
             }

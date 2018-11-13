@@ -201,7 +201,7 @@ $(function () {
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
     var loading = -1;
     function polling() {
-        $.post('../../tcssc/getxjsscAwardTimes.do', {t: Math.random()}, function (data) {
+        $.post('../../sfssc/getxjsscAwardTimes.do', {t: Math.random()}, function (data) {
             if(data.status == 2){
                 return
             }
