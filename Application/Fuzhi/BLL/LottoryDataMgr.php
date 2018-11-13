@@ -843,10 +843,8 @@ time: 1542068782325*/
         $sqqihao= str_replace("-","",$ret['preIssue']['issue']);
         $xqqihao= str_replace("-","",$ret['issue']);
 
-        if($lotType == 20){
-            $sqqihao += 1;
-            $xqqihao += 1;
-        }
+        $sqqihao += 1;
+        $xqqihao += 1;
 
         $kjHao1 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $sqqihao");
         $kjHao2 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $xqqihao");
@@ -854,7 +852,7 @@ time: 1542068782325*/
         $sres["awardNumbers"] =$kjHao1[0]['dat_codes'];
 
 
-        if ( $lotType ==20 )
+        if ( $lotType ==20 || $lotType == 34)
         {
             $arr =  explode(",",$kjHao1[0]['dat_codes']);
 
@@ -877,8 +875,10 @@ time: 1542068782325*/
         $sres['periodNumber1'] = $sqqihao;
         $sres['current_num'] = $ret['issue_total'];
 
-
-        $xres["awardTimeInterval"] = $ret['timeremain']*1000 ;
+        $xres["awardTimeInterval"] =$ret['timeremain'] *1000;
+        if ($lotType ==20 ){
+            $xres["awardTimeInterval"] =($ret['timeremain']+30) *1000;
+        }
         $xres["awardTime"] = $ret['opentime'];
         $xres['fullPeriodNumber'] = $ret['issue'];
         $xres['periodNumber'] = $ret['issue_no'];
@@ -5862,9 +5862,13 @@ time: 1542068782325*/
                 $issueStart = 674080 + intval((time() - 32820 - strtotime('2018-04-01 00:00:00')) / 86400) * 179;
                 $issue = $this->getCombOpentimes_v2(32820, 179, 300, $time, $issueStart);
                 break;
-           /* case LotteryMain::pk10_xyft:
+            case "xyft":
                 $issue = $this->getCombOpentimes_v2(46800 + 540, 180, 300, $time);
                 break;
+            case "jsk3":
+                $issue = $this->getCombOpentimes_v2(31200, 82, 600, time());
+                break;
+           /*
             case LotteryMain::pc28_bjpc28:
             case LotteryMain::kl8_bjkl8:
                 $issueStart = 880058 + intval((time() - 32700 - strtotime('2018-04-01 00:00:00')) / 86400) * 179;
@@ -5878,9 +5882,7 @@ time: 1542068782325*/
                 $issueStart = $issueStartObj['issue'];
                 $issue = $this->getCombOpentimes_v2(75660, 378, 210, time(), $issueStart);
                 break;
-            case LotteryMain::k3_jsk3:
-                $issue = $this->getCombOpentimes_v2(31200, 82, 600, time());
-                break;
+
             case LotteryMain::kl10_gdkl10:
                 $issue = $this->getCombOpentimes_v2(33000, 84, 600, time());
                 break;
