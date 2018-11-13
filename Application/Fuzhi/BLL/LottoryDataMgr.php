@@ -842,7 +842,7 @@ time: 1542068782325*/
 
             $xqqihao= str_replace("-","0",$ret['issue']);
 
-            if($lotType == 44 ||$lotType == 1)
+            if($lotType == 44 ||$lotType == 1||$lotType == 34)
             {
                 $sqqihao= str_replace("-","",$ret['preIssue']['issue']);
 
@@ -5894,7 +5894,7 @@ time: 1542068782325*/
                 $issue = $this->getCombOpentimes_v2(30600, 82, 600, time());
                 break;
             case "txffc":
-                $issue = $this->getCombOpentimes_v2(60, 1440, 60, time());
+                $issue = $this->getCombOpentimes_v2(0, 1440, 60, time());
                 break;
             case "sfpk10":
                 $issue = $this->getCombOpentimes_v2(30600, 440, 180, time());
