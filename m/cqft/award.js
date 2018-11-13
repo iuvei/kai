@@ -64,6 +64,7 @@ $(function () {
     var currentPeriodNumber = -1;
     var nextPeriodNumber = -1;
     var timeInterval = 5000;
+    var lastOpenCode = -1;
     //请求出错次数
     var errorCount = 0;
     //请求次数
@@ -149,55 +150,55 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../cqssc/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
-            var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(4);
-            $('.newIssue span').html(data.current.periodNumber1.substr(4));
-            $('.nextIssue span').html(nextOpenIssue);
-            $('.periodNumber').html(data.current.periodNumber);
-            $('.surplus_num').html(data.current.surplus_num);
+            if(data.current.awardNumbers!='') {
+                $('.newIssue span').html(data.current.periodNumber1.substr(4));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.periodNumber').html(data.current.periodNumber);
+                $('.surplus_num').html(data.current.surplus_num);
+                var nums = data.current.awardNumbers.split(',');
 
-            var nums = data.current.awardNumbers.split(',');
+                var srt = '';
+                var sum = eval(nums.join("+"));
+                var tan = sum % 4;
+                if (tan == 0) {
+                    tan = 4
+                }
+                var ft = '';
+                for (var i = 0; i < tan; i++) {
+                    ft = ft + '<span class="ball-red-span"></span>'
+                }
+                console.log(ft)
+                ft = '番摊：' + ft;
+                $('.qiansan').html(ft);
+                var dx = '';
+                var ds = '';
+                if (sum > 22) {
+                    dx = '大';
+                } else {
+                    dx = '小';
+                }
+                if (sum % 2 == 0) {
+                    ds = '双';
+                } else {
+                    ds = '单';
+                }
 
-            var srt = '';
-            var sum = eval(nums.join("+"));
-            var tan = sum%4;
-            if(tan==0){
-                tan=4
-            }
-            var ft='';
-            for (var i=0;i<tan;i++) {
-                ft=ft+'<span class="ball-red-span"></span>'
-            }
-            console.log(ft)
-            ft ='番摊：'+ft;
-            $('.qiansan').html(ft);
-            var dx = '';
-            var ds = '';
-            if(sum > 22){
-                dx = '大';
-            }else {
-                dx = '小';
-            }
-            if(sum%2 == 0){
-                ds = '双';
-            }else {
-                ds = '单';
-            }
+                for (var i = 0; i < nums.length; i++) {
 
-            for (var i = 0; i < nums.length; i++) {
+                    srt = srt + '<a class="sscBall2 mg">' + nums[i] + '</a>';
 
-                srt = srt + '<a class="sscBall2 mg">' + nums[i] + '</a>';
-
+                }
+                srt = srt + '<div class="sscLH">';
+                srt = srt + '<a>' + long(nums[0], nums[4]) + '</a>';
+                srt = srt + '<a>' + '<span></span>' + '</a>';
+                srt = srt + '<a>' + '总和' + '</a>';
+                srt = srt + '<a>' + sum + '</a>';
+                srt = srt + '<a>' + dx + '</a>';
+                srt = srt + '<a>' + ds + '</a>';
+                srt = srt + '</div>';
+                $('.openCodeList1').html(srt)
+                getHistoryData('50')
             }
-            srt = srt + '<div class="sscLH">';
-            srt = srt + '<a>' + long(nums[0],nums[4]) + '</a>';
-            srt = srt + '<a>' + '<span></span>' + '</a>';
-            srt = srt + '<a>' + '总和' + '</a>';
-            srt = srt + '<a>' + sum + '</a>';
-            srt = srt + '<a>' + dx  + '</a>';
-            srt = srt + '<a>' + ds  + '</a>';
-            srt = srt + '</div>';
-            $('.openCodeList1').html(srt)
-            getHistoryData('50')
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
             //期数不同，则开始封盘倒计时
@@ -219,6 +220,8 @@ $(function () {
             }
             // $(".headOpenTime .headOpenTimeM").html(data.next.periodNumber);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
+            lastOpenCode =data.current.awardNumbers;
+            setTimeout(polling(),1000)
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);
@@ -233,6 +236,77 @@ $(function () {
     window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
+    var loading = -1;
+    function polling() {
+        $.post('../../tcssc/getxjsscAwardTimes.do', {t: Math.random()}, function (data) {
+            if(data.status == 2){
+                return
+            }
+            if(loading==-1){
+                if(data.current.awardNumbers==''){
+                    setTimeout(function () {
+                        polling();
+                    },3000)
+                }
+                loading=2
+            }else {
+                if (lastOpenCode == data.current.awardNumbers) {
+                    setTimeout(function () {
+                        polling();
+                    }, 3000)
+                } else {
+                    $('.newIssue span').html(data.current.periodNumber1.substr(4));
+                    $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                    $('.periodNumber').html(data.current.periodNumber);
+                    $('.surplus_num').html(data.current.surplus_num);
+                    var nums = data.current.awardNumbers.split(',');
+
+                    var srt = '';
+                    var sum = eval(nums.join("+"));
+                    var tan = sum % 4;
+                    if (tan == 0) {
+                        tan = 4
+                    }
+                    var ft = '';
+                    for (var i = 0; i < tan; i++) {
+                        ft = ft + '<span class="ball-red-span"></span>'
+                    }
+                    console.log(ft)
+                    ft = '番摊：' + ft;
+                    $('.qiansan').html(ft);
+                    var dx = '';
+                    var ds = '';
+                    if (sum > 22) {
+                        dx = '大';
+                    } else {
+                        dx = '小';
+                    }
+                    if (sum % 2 == 0) {
+                        ds = '双';
+                    } else {
+                        ds = '单';
+                    }
+
+                    for (var i = 0; i < nums.length; i++) {
+
+                        srt = srt + '<a class="sscBall2 mg">' + nums[i] + '</a>';
+
+                    }
+                    srt = srt + '<div class="sscLH">';
+                    srt = srt + '<a>' + long(nums[0], nums[4]) + '</a>';
+                    srt = srt + '<a>' + '<span></span>' + '</a>';
+                    srt = srt + '<a>' + '总和' + '</a>';
+                    srt = srt + '<a>' + sum + '</a>';
+                    srt = srt + '<a>' + dx + '</a>';
+                    srt = srt + '<a>' + ds + '</a>';
+                    srt = srt + '</div>';
+                    $('.openCodeList1').html(srt)
+                    getHistoryData('50')
+                }
+            }
+        }, 'json').error(function () {
+        });
+    }
 });
 function getHistoryData(count,date) {
     layer.open({type: 2,time: 1});

@@ -127,7 +127,6 @@ $(function () {
             $('.periodNumber').html(data.current.periodNumber);
             $('.surplus_num').html(data.current.surplus_num);
             var nums = data.current.awardNumbers.split(',');
-
             var srt = '';
             var sum = eval(nums.join("+"));
             var dx = '';

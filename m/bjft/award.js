@@ -105,6 +105,72 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../pk10/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
+            $('.newIssue span').html(data.current.periodNumber1);
+            $('.nextIssue span').html(data.next.periodNumberStr);
+            $('.periodNumber').html(data.current.periodNumber);
+            $('.surplus_num').html(data.current.surplus_num);
+            var nums = data.current.awardNumbers.split(',');
+            var str = "";
+            for (var i = 0; i < nums.length; i++) {
+                str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
+            }
+            $('.openCodeList').html(str)
+            var nums = data.current.awardNumbers.split(',');
+            var tan = Number(nums[0]) + Number(nums[1]) + Number(nums[2]);
+            var tan2 = Number(nums[4]) + Number(nums[5]) + Number(nums[6]);
+            var tan3 = Number(nums[7]) + Number(nums[8]) + Number(nums[9]);
+            var tan_2 = tan%4;
+            if(tan_2 == 0){
+                tan_2 = 4;
+            }
+            var tan_3 = tan2%4;
+            if(tan_3 == 0){
+                tan_4 = 4;
+            }
+            var tan_4 = tan3%4;
+            if(tan_4 == 0){
+                tan_4 = 4;
+            }
+            var ft='';
+            for (var i=0;i<tan_2;i++) {
+                ft=ft+'<span class="ball-red-span"></span>'
+            }
+            ft ='前三：'+ft;
+            $('.qiansan').html(ft);
+            var ft='';
+            for (var i=0;i<tan_3;i++) {
+                ft+='<span class="ball-red-span"></span>'
+            }
+            ft='中三：'+ft;
+            $('.zhongsan').html(ft);
+            var ft='';
+            for (var i=0;i<tan_4;i++) {
+                ft+='<span class="ball-red-span"></span>'
+            }
+            ft ='后三：'+ft;
+            $('.housan').html(ft);
+            var sum = parseInt(nums[0])+parseInt(nums[1]);
+            var dx = '';
+            var ds = '';
+            if(sum > 11){
+                dx = '大';
+            }else if(sum < 11){
+                dx = '小';
+            }else {
+                dx = '和';
+            }
+            if(sum%2 == 0){
+                ds = '双';
+            }else {
+                ds = '单';
+            }
+            if(sum == 11){
+                ds = '和';
+            }
+            $('.lhResult a').eq(7).html(sum);
+            $('.lhResult a').eq(8).html(dx);
+            $('.lhResult a').eq(9).html(ds);
+            getHistoryData('15')
 
 
             //计数请求次数
@@ -150,7 +216,7 @@ $(function () {
     function loadAwardTimes() {
         $.post('../../pk10/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
             $('.newIssue span').html(data.current.periodNumber1);
-            $('.nextIssue span').html(data.next.periodNumber);
+            $('.nextIssue span').html(data.next.periodNumberStr);
             $('.periodNumber').html(data.current.periodNumber);
             $('.surplus_num').html(data.current.surplus_num);
             var nums = data.current.awardNumbers.split(',');
@@ -236,7 +302,6 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
             }
 
-            var xiaqi = parseInt(data.next.periodNumber)+1;
 
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
         }, 'json').error(function () {

@@ -40,6 +40,42 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../jsk3/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
+            $('.newIssue span').html(data.current.periodNumber1.substr(4));
+            $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+            $('.periodNumber').html(data.current.periodNumber);
+            $('.surplus_num').html(data.current.surplus_num);
+            var str = "";
+            var nums = data.current.awardNumbers.split(',');
+
+            for (var i = 0; i < nums.length; i++) {
+                str += '<img src="/images/images/dice'+nums[i]+'.png">';
+            }
+            for (var i = 0; i < nums.length; i++) {
+                str += '<img src="/images/images/yxx'+nums[i]+'.png">';
+            }
+
+            var sum = eval(nums.join("+"));
+            var dx = '';
+            var ds = '';
+            if(sum > 10){
+                dx = '大';
+            }else {
+                dx = '小';
+            }
+            if(sum%2 == 0){
+                ds = '双';
+            }else {
+                ds = '单';
+            }
+
+            str = str + '<div class="sscLH">';
+            str +="<a>"+'总和'+"</a>";
+            str +="<a>"+sum+"</a>";
+            str +="<a>"+dx+"</a>";
+            str +="<a>"+ds+"</a>";
+            str = str + '</div>';
+            $('.openCodeList').html(str);
+            getHistoryData('30');
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -85,10 +121,9 @@ $(function () {
         $.post('../../jsk3/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
 
             $('.newIssue span').html(data.current.periodNumber1.substr(4));
-            $('.nextIssue span').html(data.next.periodNumber.substr(4));
+            $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
             $('.periodNumber').html(data.current.periodNumber);
             $('.surplus_num').html(data.current.surplus_num);
-
             var str = "";
             var nums = data.current.awardNumbers.split(',');
 
