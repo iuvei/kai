@@ -41,47 +41,47 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../xyft/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
-            var nextOpenIssue = ((Number(data.current.periodNumber1)+1).toString().substr(4));
-            $('.newIssue span').html(data.next.periodNumberStr.substr(4));
-            $('.nextIssue span').html(nextOpenIssue);
-            $('.periodNumber').html(data.current.periodNumber);
-            $('.surplus_num').html(data.current.surplus_num);
-            var nums = data.current.awardNumbers.split(',');
-            var str = "";
-            for (var i = 0; i < nums.length; i++) {
-                str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
-            }
-            $('.openCodeList').html(str);
-            var nums = data.current.awardNumbers.split(',');
-            $('.lhResult a').eq(0).html(long(nums[0],nums[9]));
-            $('.lhResult a').eq(1).html(long(nums[1],nums[8]));
-            $('.lhResult a').eq(2).html(long(nums[2],nums[7]));
-            $('.lhResult a').eq(3).html(long(nums[3],nums[6]));
-            $('.lhResult a').eq(4).html(long(nums[4],nums[5]));
+            if(data.current.awardNumbers!=''){
+                $('.newIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.periodNumber').html(data.current.periodNumber);
+                $('.surplus_num').html(data.current.surplus_num);
+                var nums = data.current.awardNumbers.split(',');
+                var str = "";
+                for (var i = 0; i < nums.length; i++) {
+                    str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
+                }
+                $('.openCodeList').html(str);
+                var nums = data.current.awardNumbers.split(',');
+                $('.lhResult a').eq(0).html(long(nums[0],nums[9]));
+                $('.lhResult a').eq(1).html(long(nums[1],nums[8]));
+                $('.lhResult a').eq(2).html(long(nums[2],nums[7]));
+                $('.lhResult a').eq(3).html(long(nums[3],nums[6]));
+                $('.lhResult a').eq(4).html(long(nums[4],nums[5]));
 
-            var sum = parseInt(nums[0])+parseInt(nums[1]);
-            var dx = '';
-            var ds = '';
-            if(sum > 11){
-                dx = '大';
-            }else if(sum < 11){
-                dx = '小';
-            }else {
-                dx = '和';
+                var sum = parseInt(nums[0])+parseInt(nums[1]);
+                var dx = '';
+                var ds = '';
+                if(sum > 11){
+                    dx = '大';
+                }else if(sum < 11){
+                    dx = '小';
+                }else {
+                    dx = '和';
+                }
+                if(sum%2 == 0){
+                    ds = '双';
+                }else {
+                    ds = '单';
+                }
+                if(sum == 11){
+                    ds = '和';
+                }
+                $('.lhResult a').eq(7).html(sum);
+                $('.lhResult a').eq(8).html(dx);
+                $('.lhResult a').eq(9).html(ds);
+                getHistoryData('15')
             }
-            if(sum%2 == 0){
-                ds = '双';
-            }else {
-                ds = '单';
-            }
-            if(sum == 11){
-                ds = '和';
-            }
-            $('.lhResult a').eq(7).html(sum);
-            $('.lhResult a').eq(8).html(dx);
-            $('.lhResult a').eq(9).html(ds);
-            getHistoryData('15')
-
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -124,48 +124,47 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../xyft/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
+            if(data.current.awardNumbers!='') {
+                $('.newIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.periodNumber').html(data.current.periodNumber);
+                $('.surplus_num').html(data.current.surplus_num);
+                var nums = data.current.awardNumbers.split(',');
+                var str = "";
+                for (var i = 0; i < nums.length; i++) {
+                    str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
+                }
+                $('.openCodeList').html(str);
+                var nums = data.current.awardNumbers.split(',');
+                $('.lhResult a').eq(0).html(long(nums[0], nums[9]));
+                $('.lhResult a').eq(1).html(long(nums[1], nums[8]));
+                $('.lhResult a').eq(2).html(long(nums[2], nums[7]));
+                $('.lhResult a').eq(3).html(long(nums[3], nums[6]));
+                $('.lhResult a').eq(4).html(long(nums[4], nums[5]));
 
-            var nextOpenIssue = ((Number(data.current.periodNumber1)+1).toString().substr(4));
-            $('.newIssue span').html(data.next.periodNumberStr.substr(4));
-            $('.nextIssue span').html(nextOpenIssue);
-            $('.periodNumber').html(data.current.periodNumber);
-            $('.surplus_num').html(data.current.surplus_num);
-            var nums = data.current.awardNumbers.split(',');
-            var str = "";
-            for (var i = 0; i < nums.length; i++) {
-                str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
+                var sum = parseInt(nums[0]) + parseInt(nums[1]);
+                var dx = '';
+                var ds = '';
+                if (sum > 11) {
+                    dx = '大';
+                } else if (sum < 11) {
+                    dx = '小';
+                } else {
+                    dx = '和';
+                }
+                if (sum % 2 == 0) {
+                    ds = '双';
+                } else {
+                    ds = '单';
+                }
+                if (sum == 11) {
+                    ds = '和';
+                }
+                $('.lhResult a').eq(7).html(sum);
+                $('.lhResult a').eq(8).html(dx);
+                $('.lhResult a').eq(9).html(ds);
+                getHistoryData('15')
             }
-            $('.openCodeList').html(str);
-            var nums = data.current.awardNumbers.split(',');
-            $('.lhResult a').eq(0).html(long(nums[0],nums[9]));
-            $('.lhResult a').eq(1).html(long(nums[1],nums[8]));
-            $('.lhResult a').eq(2).html(long(nums[2],nums[7]));
-            $('.lhResult a').eq(3).html(long(nums[3],nums[6]));
-            $('.lhResult a').eq(4).html(long(nums[4],nums[5]));
-
-            var sum = parseInt(nums[0])+parseInt(nums[1]);
-            var dx = '';
-            var ds = '';
-            if(sum > 11){
-                dx = '大';
-            }else if(sum < 11){
-                dx = '小';
-            }else {
-                dx = '和';
-            }
-            if(sum%2 == 0){
-                ds = '双';
-            }else {
-                ds = '单';
-            }
-            if(sum == 11){
-                ds = '和';
-            }
-            $('.lhResult a').eq(7).html(sum);
-            $('.lhResult a').eq(8).html(dx);
-            $('.lhResult a').eq(9).html(ds);
-            getHistoryData('15')
-
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 
@@ -202,7 +201,7 @@ $(function () {
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
     var loading = -1;
     function polling() {
-        $.post('pk10/getPk10AwardTimes.do', {t: Math.random()}, function (data) {
+        $.post('../../xyft/getPk10AwardTimes.do', {t: Math.random()}, function (data) {
             if(data.status == 2){
                 return
             }
@@ -215,13 +214,12 @@ $(function () {
                 loading=2
             }else {
                 if (lastOpenCode == data.current.awardNumbers) {
-                    $(".lot-nums").html('<p>等待开奖...<p>');
                     setTimeout(function () {
                         polling();
                     }, 3000)
                 } else {
-                    $('.newIssue span').html(data.current.periodNumber1);
-                    $('.nextIssue span').html(data.next.periodNumberStr);
+                    $('.newIssue span').html(data.current.periodNumber1.substr(4));
+                    $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
                     $('.periodNumber').html(data.current.periodNumber);
                     $('.surplus_num').html(data.current.surplus_num);
                     var nums = data.current.awardNumbers.split(',');
