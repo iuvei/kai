@@ -142,39 +142,45 @@ $(function () {
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
     var loading = -1;
     function polling() {
-        if(loading==-1){
-            loading=2
-        }else {
             $.post('pk10/getPk10AwardTimes.do', {t: Math.random()}, function (data) {
                 if(data.status == 2){
                     return
                 }
-                if (lastOpenCode == data.current.awardNumbers) {
-                    $(".lot-nums").html('<p>等待开奖...<p>');
-                    setTimeout(polling(), 10000);
-                } else {
-                    $(".currentAward .period").html((parseInt(data.next.periodNumber)-1) + " 期");
-                    var nums;
-                    var str = "";
-                    if(data.current.awardNumbers != '')
-                        nums = data.current.awardNumbers.split(',');
-                    else
-                    {
-                        str = "<p>等待开奖...<p>";
-                        nums = new Array();
+                if(loading==-1){
+                    if(data.current.awardNumbers==''){
+                        $(".lot-nums").html('<p>等待开奖...<p>');
+                        setTimeout(function () {
+                            polling();
+                        },3000)
                     }
-                    for (var i = 0; i < nums.length; i++) {
-                        str = str + "<span class='no" + nums[i] + "'></span>";
+                    loading=2
+                }else {
+                    if (lastOpenCode == data.current.awardNumbers) {
+                        $(".lot-nums").html('<p>等待开奖...<p>');
+                        setTimeout(function () {
+                            polling();
+                        }, 3000)
+                    } else {
+                        $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                        var nums;
+                        var str = "";
+                        if (data.current.awardNumbers != '')
+                            nums = data.current.awardNumbers.split(',');
+                        else {
+                            str = "<p>等待开奖...<p>";
+                            nums = new Array();
+                        }
+                        for (var i = 0; i < nums.length; i++) {
+                            str = str + "<span class='no" + nums[i] + "'></span>";
+                        }
+                        $(".lot-nums").html(str);
+                        $(".warnTime #period").html("第" + data.next.fullPeriodNumber + "期");
+                        getHistoryData();
                     }
-                    $(".lot-nums").html(str);
-                    $(".warnTime #period").html("第" + (parseInt(data.next.periodNumber)) + "期");
-                    getHistoryData();
                 }
             }, 'json').error(function () {
-
-            });
-        }
-    }
+       });
+    }   
 });
 function getHistoryData(count) {
     $.get("pk10/getHistoryData.do", { count:typeof(count)=="undefined"?16:count,t: Math.random() }, function (result) {
