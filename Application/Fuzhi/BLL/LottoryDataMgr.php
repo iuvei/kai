@@ -839,9 +839,16 @@ time: 1542068782325*/
 
         $ret = $this -> getIssueInfo($type);
 
+        if($lotType == 22 )
+        {
+            $sqqihao= str_replace("-","0",$ret['preIssue']['issue']);
+        }else{
+            $sqqihao= str_replace("-","",$ret['preIssue']['issue']);
+        }
 
-        $sqqihao= str_replace("-","",$ret['preIssue']['issue']);
-        $xqqihao= str_replace("-","",$ret['issue']);
+
+
+//        $xqqihao= str_replace("-","",$ret['issue']);
 
         if($lotType ==20 ||$lotType == 34)
         {
@@ -891,6 +898,7 @@ time: 1542068782325*/
         $sres['periodNumber1'] = $sqqihao;
         $sres['current_num'] = $ret['issue_total'];
 
+        $sres['surplus_num'] = $ret['issue_total'] - $ret['preIssue']['issue_no'];
 
         if ($lotType ==20 ){
             $xres["awardTimeInterval"] =($ret['timeremain']+30) *1000;
@@ -5886,7 +5894,7 @@ time: 1542068782325*/
                 $issue = $this->getCombOpentimes_v2(46800 + 540, 180, 300, $time);
                 break;
             case "jsk3":
-                $issue = $this->getCombOpentimes_v2(31200, 82, 600, time());
+                $issue = $this->getCombOpentimes_v2(30600, 82, 600, time());
                 break;
            /*
             case LotteryMain::pc28_bjpc28:
