@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3631bfa7-9644-4afb-9ca6-5ec2baa935b7" name="Default" comment="增加">
       <change beforePath="$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/lot/pk10/award.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/lot/pk10/award.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -130,14 +127,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="js" value="260" />
-          <entry key="php" value="137" />
+          <entry key="php" value="201" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="1" />
           <entry key="JavaScript" value="259" />
-          <entry key="PHP" value="137" />
+          <entry key="PHP" value="201" />
         </counts>
       </usages-collector>
     </session>
@@ -198,8 +195,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="5854" column="26" selection-start-line="5854" selection-start-column="26" selection-end-line="5854" selection-end-column="26" />
+            <state relative-caret-position="90">
+              <caret line="841" column="10" selection-start-line="841" selection-start-column="10" selection-end-line="841" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -587,7 +584,7 @@
       <path value="$PROJECT_DIR$/phpMyAdmin/vendor/phpmyadmin/shapefile" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="517" />
     <option name="width" value="1107" />
     <option name="height" value="1056" />
@@ -879,10 +876,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="342917000" />
+    <option name="totallyTimeSpent" value="343465000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15138593" />
@@ -1531,8 +1528,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="5854" column="26" selection-start-line="5854" selection-start-column="26" selection-end-line="5854" selection-end-column="26" />
+        <state relative-caret-position="90">
+          <caret line="841" column="10" selection-start-line="841" selection-start-column="10" selection-end-line="841" selection-end-column="21" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
