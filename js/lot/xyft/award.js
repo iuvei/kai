@@ -92,19 +92,26 @@ $(function () {
     function loadAwardTimes() {
 
         $.get('xyft/getxjsscAwardTimes.do', { ajaxhandler: 'GetxjsscAwardTimes', t: Math.random() }, function (data) {
-            if(lastOpenCode!=data.current.awardNumbers) {
-                var qihao2 = data.current.periodNumber1.substr(4);
-                $(".currentAward .period").html(qihao2 + " 期");
-                var nums = data.current.awardNumbers.split(',');
-                var str = "";
-                for (var i = 0; i < nums.length; i++) {
-                    str = str + "<span class='no" + nums[i] + "'></span>";
-                }
-                $(".lot-nums").html(str);
-
-                $(".warnTime #period").html("第" + (Number(data.next.periodNumber) + 1).toString().substr(4) + "期");
-
+            
+            $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+            var nums;
+            var str = "";
+            if (data.current.awardNumbers != '')
+                nums = data.current.awardNumbers.split(',');
+            else {
+                str = "<p>等待开奖...<p>";
+                nums = new Array();
             }
+            for (var i = 0; i < nums.length; i++) {
+                str = str + "<span class='no" + nums[i] + "'></span>";
+            }
+
+            $(".lot-nums").html(str);
+
+            $(".warnTime #period").html("第" + data.next.fullPeriodNumber + "期");
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
+
+
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 
@@ -122,9 +129,6 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            var qihao1 = data.current.periodNumber1.substr(6,2)+data.next.periodNumber;
-
-            $(".warnTime #period").html("第" +(Number(data.next.periodNumber)).toString().substr(4) + "期");
 
             var leavePeriod = 180 - cpNumber;
             if (leavePeriod == 0) {
