@@ -842,7 +842,7 @@ time: 1542068782325*/
 
             $xqqihao= str_replace("-","0",$ret['issue']);
 
-            if($lotType == 44 ||$lotType == 1||$lotType == 34 || $lotType ==47 ||$lotType == 48 ||$lotType == 45||$lotType==46)
+            if($lotType == 44 ||$lotType == 1||$lotType == 34 || $lotType ==47 ||$lotType == 48 ||$lotType == 45||$lotType==46 ||$lotType == 6)
             {
                 $sqqihao= str_replace("-","",$ret['preIssue']['issue']);
                 $xqqihao= str_replace("-","",$ret['issue']);
@@ -862,7 +862,7 @@ time: 1542068782325*/
 
         $sres['surplus_num'] = $ret['issue_total'] - $ret['preIssue']['issue_no'];
 
-        if ( $lotType ==20 || $lotType == 34 || $lotType == 47 ||$lotType == 48 ||$lotType==46)
+        if ( $lotType ==20 || $lotType == 34 || $lotType == 47  ||$lotType==46 || $lotType ==6)
         {
             $arr =  explode(",",$kjHao1[0]['dat_codes']);
             foreach ($arr as $k => $v)
@@ -5872,6 +5872,7 @@ time: 1542068782325*/
 
     public function getIssueInfo($lottery_id, $time = 0)
     {
+        //dump($lottery_id);
         switch ($lottery_id) {
             case "cqssc":
                 $issue = $this->getSscOpentimes($time);
@@ -5905,8 +5906,11 @@ time: 1542068782325*/
                 $issue = $this->getCombOpentimes_v2(15, 1440, 75, time());
                 break;
             case "pc28":
-                $issueStart = 2354800 + intval((time() - 32820 - strtotime('2018-11-14 00:45:00')) / 86400) * 397;
-                $issue = $this->getCombOpentimes_v2(32520, 397, 210, $time, $issueStart);
+                $issueStart = 2354807 + intval((time() - 79020 - strtotime('2018-11-14 01:09:30')) / 86400) * 397;
+                $issue = $this->getCombOpentimes_v2(79230, 397, 210, $time, $issueStart);
+                break;
+            case "gd11x5":
+                $issue = $this->getCombOpentimes_v2(32430, 84, 600, time());
                 break;
            /*
             case LotteryMain::pc28_bjpc28:
