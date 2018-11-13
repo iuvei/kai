@@ -51,7 +51,7 @@ $(function () {
             for (var i = 0; i < nums.length; i++) {
                 str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
             }
-           // $('.openCodeList').html(str);
+            $('.openCodeList').html(str);
             var nums = data.current.awardNumbers.split(',');
             $('.lhResult a').eq(0).html(long(nums[0],nums[9]));
             $('.lhResult a').eq(1).html(long(nums[1],nums[8]));
@@ -135,7 +135,7 @@ $(function () {
             for (var i = 0; i < nums.length; i++) {
                 str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
             }
-            //$('.openCodeList').html(str);
+            $('.openCodeList').html(str);
             var nums = data.current.awardNumbers.split(',');
             $('.lhResult a').eq(0).html(long(nums[0],nums[9]));
             $('.lhResult a').eq(1).html(long(nums[1],nums[8]));
@@ -209,7 +209,6 @@ $(function () {
             }
             if(loading==-1){
                 if(data.current.awardNumbers==''){
-                    $(".openCodeList").html('<p>等待开奖...<p>');
                     setTimeout(function () {
                         polling();
                     },3000)
