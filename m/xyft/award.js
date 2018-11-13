@@ -3,7 +3,6 @@ $(function () {
     var currentPeriodNumber = -1;
     var nextPeriodNumber = -1;
     var timeInterval = 5000;
-    var lastOpenCode = -1;
     //请求出错次数
     var errorCount = 0;
     //请求次数
@@ -41,6 +40,23 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../xyft/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
+
+            var nums;
+            var str = "";
+            if (data.current.awardNumbers != '')
+                nums = data.current.awardNumbers.split(',');
+            else {
+                str = "<p>等待开奖...<p>";
+                nums = new Array();
+            }
+            for (var i = 0; i < nums.length; i++) {
+                str = str + "<span class='no" + nums[i] + "'></span>";
+            }
+
+            $(".lot-nums").html(str);
+            $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+            $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(4) + "期");
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -65,8 +81,6 @@ $(function () {
 
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
-            lastOpenCode =data.current.awardNumbers;
-            setTimeout(polling(),1000)
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(awardTick, 1000 + Math.random() * 10000);
@@ -83,46 +97,22 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../xyft/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
-            var nextOpenIssue = ((Number(data.current.periodNumber1)+1).toString().substr(4));
-            $('.newIssue span').html(data.current.periodNumber1.substr(4));
-            $('.nextIssue span').html(nextOpenIssue);
-            $('.periodNumber').html(data.current.periodNumber);
-            $('.surplus_num').html(data.current.surplus_num);
-            var nums = data.current.awardNumbers.split(',');
+            var nums;
             var str = "";
+            if (data.current.awardNumbers != '')
+                nums = data.current.awardNumbers.split(',');
+            else {
+                str = "<p>等待开奖...<p>";
+                nums = new Array();
+            }
             for (var i = 0; i < nums.length; i++) {
-                str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
+                str = str + "<span class='no" + nums[i] + "'></span>";
             }
-            $('.openCodeList').html(str);
-            var nums = data.current.awardNumbers.split(',');
-            $('.lhResult a').eq(0).html(long(nums[0],nums[9]));
-            $('.lhResult a').eq(1).html(long(nums[1],nums[8]));
-            $('.lhResult a').eq(2).html(long(nums[2],nums[7]));
-            $('.lhResult a').eq(3).html(long(nums[3],nums[6]));
-            $('.lhResult a').eq(4).html(long(nums[4],nums[5]));
 
-            var sum = parseInt(nums[0])+parseInt(nums[1]);
-            var dx = '';
-            var ds = '';
-            if(sum > 11){
-                dx = '大';
-            }else if(sum < 11){
-                dx = '小';
-            }else {
-                dx = '和';
-            }
-            if(sum%2 == 0){
-                ds = '双';
-            }else {
-                ds = '单';
-            }
-            if(sum == 11){
-                ds = '和';
-            }
-            $('.lhResult a').eq(7).html(sum);
-            $('.lhResult a').eq(8).html(dx);
-            $('.lhResult a').eq(9).html(ds);
-            getHistoryData('15')
+            $(".lot-nums").html(str);
+            $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+            $(".warnTime #period").html("第" + data.next.fullPeriodNumber + "期");
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
 
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
@@ -159,65 +149,6 @@ $(function () {
     window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
-    var loading = -1;
-    function polling() {
-        if(loading==-1){
-            loading=2
-        }else {
-            $.post('../../xyft/getPk10AwardTimes.do', {t: Math.random()}, function (data) {
-                if(data.status == 2){
-                    return
-                }
-                if (lastOpenCode == data.current.awardNumbers) {
-                    setTimeout(polling(), 10000);
-                } else {
-                    var nextOpenIssue = (Number(data.next.periodNumber) + 1);
-                    $('.newIssue span').html(data.current.periodNumber1);
-                    $('.nextIssue span').html(nextOpenIssue);
-                    $('.periodNumber').html(data.current.periodNumber);
-                    $('.surplus_num').html(data.current.surplus_num);
-                    var nums = data.current.awardNumbers.split(',');
-                    var str = "";
-                    for (var i = 0; i < nums.length; i++) {
-                        str = str + '<a class="no' + nums[i] + '">' + nums[i] + '</a>';
-                    }
-                    $('.openCodeList').html(str);
-                    var nums = data.current.awardNumbers.split(',');
-                    $('.lhResult a').eq(0).html(long(nums[0], nums[9]));
-                    $('.lhResult a').eq(1).html(long(nums[1], nums[8]));
-                    $('.lhResult a').eq(2).html(long(nums[2], nums[7]));
-                    $('.lhResult a').eq(3).html(long(nums[3], nums[6]));
-                    $('.lhResult a').eq(4).html(long(nums[4], nums[5]));
-
-                    var sum = parseInt(nums[0]) + parseInt(nums[1]);
-                    var dx = '';
-                    var ds = '';
-                    if (sum > 11) {
-                        dx = '大';
-                    } else if (sum < 11) {
-                        dx = '小';
-                    } else {
-                        dx = '和';
-                    }
-                    if (sum % 2 == 0) {
-                        ds = '双';
-                    } else {
-                        ds = '单';
-                    }
-                    if (sum == 11) {
-                        ds = '和';
-                    }
-                    $('.lhResult a').eq(7).html(sum);
-                    $('.lhResult a').eq(8).html(dx);
-                    $('.lhResult a').eq(9).html(ds);
-                    getHistoryData('15');
-                }
-            }, 'json').error(function () {
-
-            });
-        }
-    }
-
 });
 function getHistoryData(count,date) {
     $.get("../../xyft/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
