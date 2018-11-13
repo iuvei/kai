@@ -100,7 +100,7 @@ $(function () {
                 $(".lot-nums").html(str);
             }
             $(".warnTime #period").html("第" + (parseInt(data.next.periodNumber)) + "期");
-            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num+1);
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 

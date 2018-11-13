@@ -83,7 +83,6 @@ $(function () {
     var cpCurrAwardData = null;
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
-        console.log('comeing--------------')
         $.post('../../tcpk10/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
             var nextOpenIssue = (Number(data.next.periodNumber)+1).toString().substr(6);
             $('.newIssue span').html(data.current.periodNumber1.substr(6));
@@ -124,7 +123,9 @@ $(function () {
             $('.lhResult a').eq(7).html(sum);
             $('.lhResult a').eq(8).html(dx);
             $('.lhResult a').eq(9).html(ds);
-            getHistoryData('15')
+            window.setTimeout(function () {
+                getHistoryData('15')
+            },5000)
 
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
@@ -147,8 +148,6 @@ $(function () {
             }
 
             var xiaqi = parseInt(data.next.periodNumber)+1;
-
-            console.log(data.next.awardTimeInterval);
 
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval <= 2000 ? 1000 : data.next.awardTimeInterval + 1000);
 
