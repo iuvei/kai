@@ -843,13 +843,14 @@ time: 1542068782325*/
         $sqqihao= str_replace("-","",$ret['preIssue']['issue']);
         $xqqihao= str_replace("-","",$ret['issue']);
 
-        $sqqihao += 1;
-        $xqqihao += 1;
+        if($lotType ==20 ||$lotType == 34)
+        {
+            $sqqihao += 1;
+            $xqqihao += 1;
+        }
 
         $kjHao1 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $sqqihao");
         $kjHao2 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $xqqihao");
-
-        $sres["awardNumbers"] =$kjHao1[0]['dat_codes'];
 
 
         if ( $lotType ==20 || $lotType == 34)
@@ -867,21 +868,36 @@ time: 1542068782325*/
 
             $sres["awardNumbers"] =$arr_str;
 
+        }else{
+            $sres["awardNumbers"] =$kjHao1[0]['dat_codes'];
         }
 
         $sres["awardTime"] = $ret['preIssue']['opentime'];
         $sres['fullPeriodNumber'] = $ret['preIssue']['issue'];
-        $sres['periodNumber'] = $ret['preIssue']['issue_no'];
+
+
+        if($lotType ==20 || $lotType == 34){
+            $sres['periodNumber'] = $ret['preIssue']['issue_no'] +1;
+        }else{
+            $sres['periodNumber'] = $ret['preIssue']['issue_no'];
+        }
+
+
+        $sres['periodNumber'] = $ret['preIssue']['issue_no'] +1;
         $sres['periodNumber1'] = $sqqihao;
         $sres['current_num'] = $ret['issue_total'];
 
-        $xres["awardTimeInterval"] =$ret['timeremain'] *1000;
+
         if ($lotType ==20 ){
             $xres["awardTimeInterval"] =($ret['timeremain']+30) *1000;
+            $xres['periodNumber'] = $ret['issue_no'] +1;
+        } else{
+            $xres["awardTimeInterval"] =$ret['timeremain'] *1000;
+            $xres['periodNumber'] = $ret['issue_no'] ;
         }
         $xres["awardTime"] = $ret['opentime'];
         $xres['fullPeriodNumber'] = $ret['issue'];
-        $xres['periodNumber'] = $ret['issue_no'];
+
         $xres['periodNumberStr'] = $xqqihao;
 
 
