@@ -97,15 +97,15 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.get('gd11x5/getxjsscAwardTimes.do', { ajaxhandler: 'GetPk10AwardTimes', t: Math.random() }, function (data) {
-            if (data.current.awardNumbers != ''){
-                var nums;
+            if (data.current.awardNumbers != '') {
+                var nums ;
                 var str = "";
                 nums = data.current.awardNumbers.split(',');
                 for (var i = 0; i < nums.length; i++) {
-                    str = str + '<span>' + nums[i] + '</span>';
+                    str = str + "<span class='no" + nums[i] + "'>" + nums[i] + "</span>";
                 }
                 $(".lot-nums").html(str);
-                $(".currentAward .period").html(data.current.periodNumber1.substr(4) + " 期");
+                $(".currentAward .period").html(data.current.periodNumber1.toString().substr(4) + " 期");
                 $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(4) + "期");
                 $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             }
@@ -132,7 +132,6 @@ $(function () {
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
-            lastOpenCode =data.current.awardNumbers;
             setTimeout(polling(),1000)
         }, 'json').error(function () {
             if (errorCount < 20) {
@@ -148,39 +147,28 @@ $(function () {
     window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
-    var loading = -1;
     function polling() {
         $.post('gd11x5/getxjsscAwardTimes.do', {t: Math.random()}, function (data) {
             if(data.status == 2){
                 return
             }
-            if(loading==-1){
-                if(data.current.awardNumbers==''){
-                    $(".lot-nums").html('<p>等待开奖...<p>');
-                    setTimeout(function () {
-                        polling();
-                    },3000)
-                }
-                loading=2
+            if(data.current.awardNumbers==''){
+                $(".lot-nums").html('<p>等待开奖...<p>');
+                setTimeout(function () {
+                    polling();
+                },3000)
             }else {
-                if (lastOpenCode == data.current.awardNumbers) {
-                    $(".lot-nums").html('<p>等待开奖...<p>');
-                    setTimeout(function () {
-                        polling();
-                    }, 3000)
-                } else {
-                    var nums;
-                    var str = "";
-                    nums = data.current.awardNumbers.split(',');
-                    for (var i = 0; i < nums.length; i++) {
-                        str = str + '<span>' + nums[i] + '</span>';
-                    }
-                    $(".lot-nums").html(str);
-                    $(".currentAward .period").html(data.current.periodNumber1.substr(4) + " 期");
-                    $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(4) + "期");
-                    $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
-                    getHistoryData()
+                var nums ;
+                var str = "";
+                nums = data.current.awardNumbers.split(',');
+                for (var i = 0; i < nums.length; i++) {
+                    str = str + "<span class='no" + nums[i] + "'>" + nums[i] + "</span>";
                 }
+                $(".lot-nums").html(str);
+                $(".currentAward .period").html(data.current.periodNumber1.toString().substr(4) + " 期");
+                $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(4) + "期");
+                $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
+                getHistoryData()
             }
         }, 'json').error(function () {
         });
