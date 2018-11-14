@@ -173,7 +173,7 @@ $(function () {
                         polling();
                     }, 3000)
                 } else {
-                    $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                    $(".currentAward .period").html(data.current.periodNumber1.substr(6) + " 期");
                     var nums;
                     var str = "";
                     if (data.current.awardNumbers != '')
