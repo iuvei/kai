@@ -42,7 +42,7 @@ $(function () {
     var awardTick = function () {
         $.post('../../xyft/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
             if(data.current.awardNumbers!=''){
-                $('.newIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.newIssue span').html(data.current.periodNumber1.substr(4));
                 $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
                 $('.periodNumber').html(data.current.periodNumber);
                 $('.surplus_num').html(data.current.surplus_num);
@@ -125,7 +125,7 @@ $(function () {
     function loadAwardTimes() {
         $.post('../../xyft/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
             if(data.current.awardNumbers!='') {
-                $('.newIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.newIssue span').html(data.current.periodNumber1.substr(4));
                 $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
                 $('.periodNumber').html(data.current.periodNumber);
                 $('.surplus_num').html(data.current.surplus_num);

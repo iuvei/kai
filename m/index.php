@@ -17,7 +17,7 @@ include(dirname(__FILE__)."\conn.php");
 
 <script src="style/js/jquery.js"></script>
 <script src="style/js/jquery.cookie.js"></script>
-<link type="text/css" href="style/css/style.css?v=5474" rel="stylesheet">
+<link type="text/css" href="style/css/style.css?v=484" rel="stylesheet">
 <style>
 .add-home {
 	position:fixed;
@@ -976,7 +976,7 @@ function IndexOpen() {
             "<i class='no" + nums[1].replace(/\b(0+)/gi,"") + "'>" + nums[1].replace(/\b(0+)/gi,"") + "</i>" +
             "<i class='no" + nums[2].replace(/\b(0+)/gi,"") + "'>" + nums[2].replace(/\b(0+)/gi,"") + "</i>" +
 
-            "<i class='no" + nums[3].replace(/\b(0+)/gi,"") + "'>" + nums[4].replace(/\b(0+)/gi,"") + "</i>" +
+            "<i class='no" + nums[3].replace(/\b(0+)/gi,"") + "'>" + nums[3].replace(/\b(0+)/gi,"") + "</i>" +
 
             "<i class='no" + nums[4].replace(/\b(0+)/gi,"") + "'>" + nums[4].replace(/\b(0+)/gi,"") + "</i>" +
             "<i class='no" + nums[5].replace(/\b(0+)/gi,"") + "'>" + nums[5].replace(/\b(0+)/gi,"") + "</i>" +
