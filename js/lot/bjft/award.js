@@ -135,7 +135,7 @@ $(function () {
                 }
                 countDownTimer = window.setInterval(function () {
                     cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval - 1000);
-                    showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
+                    showCountDown(cpNextAwardTimeInterval, data.current.fullPeriodNumber);
                 }, 1000);
             }
             cpNumber = data.current.periodNumber;
