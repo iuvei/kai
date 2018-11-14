@@ -155,16 +155,13 @@ include("../conn.php");
 </div>
 <div id="historyList"></div>
 
+<?php include("../public/paging.php"); ?>
 <?php include("../public/footer.php"); ?>
-
-
 <script type="text/javascript">
 
 
 
     $(function () {
-
-
         //显示默认日期
         var now = new Date();
 
@@ -174,14 +171,12 @@ include("../conn.php");
         $('.dataWeed').html(getWeed($("#dateTime").val()))
 
 
-
-
         //提取记录
-
         getHistoryData('15','');
 
 
     });
+
     /*期数*/
     var issueStr = '';
     var arr=[];
