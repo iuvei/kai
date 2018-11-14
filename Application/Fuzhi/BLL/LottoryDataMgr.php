@@ -127,10 +127,10 @@ class LottoryDataMgr
         return $ret;
     }
 
-    private function getLottoryByDate($module, $lotType, $date,$count=null)
+    private function getLottoryByDate($module, $lotType, $date,$count=null,$pages = 0,$offset = 0)
     {
         if(empty($count)){
-            $count=30;
+            $count=50;
         }
         $lotType = (int)$lotType;
         $date = date('Y-m-d', strtotime($date));
@@ -143,7 +143,14 @@ class LottoryDataMgr
             $endTime = strtotime($date . ' 23:59:59');
         }
 
-        $ret = $module->query("select replace(dat_expect,'-','') dat_expect,dat_codes,dat_open_time from {$this->prename}data where dat_type=%d and dat_open_time between %d and %d order by dat_expect desc limit %d", $lotType, $startTime, $endTime,$count);
+        if($pages != 0 && $offset != 0){
+           /* $pages  = 1;
+            $offset = 10;*/
+            $counts = ($pages-1)*$offset.",".$offset;
+            $ret = $module->query("select replace(dat_expect,'-','') dat_expect,dat_codes,dat_open_time from {$this->prename}data where dat_type=%d and dat_open_time between %d and %d order by dat_expect desc limit $counts", $lotType, $startTime, $endTime);
+        }else{
+            $ret = $module->query("select replace(dat_expect,'-','') dat_expect,dat_codes,dat_open_time from {$this->prename}data where dat_type=%d and dat_open_time between %d and %d order by dat_expect desc limit %d", $lotType, $startTime, $endTime,$count);
+        }
 
         if ($ret === false) {
             $ret = array();
@@ -527,11 +534,13 @@ class LottoryDataMgr
         if (IS_POST) {
             $count = (int)wjStrFilter(I('post.count'));
             $date = wjStrFilter(I('post.date'));
-           // $pages = (int)wjStrFilter(I('post.page'));
+            $pages = (int)wjStrFilter(I('post.page'));
+            $offset = (int)wjStrFilter(I('get.offset'));
         } else {
             $count = (int)wjStrFilter(I('get.count'));
             $date = wjStrFilter(I('get.date'));
-           // $pages = (int)wjStrFilter(I('get.page'));
+            $pages = (int)wjStrFilter(I('get.page'));
+            $offset = (int)wjStrFilter(I('get.offset'));
         }
 
         if(empty($date)){
@@ -552,7 +561,7 @@ class LottoryDataMgr
             if ($date == '' || $date == 'null') {
                 $openedCaiList = $this->getLottoryByCnt($module, $lotType, $count);
             } else {
-                $openedCaiList = $this->getLottoryByDate($module, $lotType, $date,$count);
+                $openedCaiList = $this->getLottoryByDate($module, $lotType, $date,$count,$pages,$offset);
             }
             if( $lotType == 44 ) {
                 for ($i = 0; $i < count($openedCaiList); $i++) {
@@ -607,9 +616,29 @@ class LottoryDataMgr
                 $retData["rows"][$i]["lotteryDateStr"] = date('Y-m-d', $openedCaiList[$i]["dat_open_time"]);
                 $retData["rows"][$i]["termNumStr"] = "";
             }}
+
+
+            if($offset!=0 && $pages!=0)
+            {
+                $lotType = (int)$lotType;
+                $date = date('Y-m-d', strtotime($date));
+                $yestoday = date("Y-m-d",strtotime("-$date day"));
+                if($lotType == 43){
+                    $startTime = strtotime($yestoday . ' 21:00:00');
+                    $endTime = strtotime($date . ' 19:00:00');
+                }else{
+                    $startTime = strtotime($date . ' 00:00:00');
+                    $endTime = strtotime($date . ' 23:59:59');
+                }
+                $sql = "SELECT count(*) as count FROM {$this->prename}data where dat_type=$lotType and  dat_open_time>$startTime and dat_open_time<$endTime";
+                $res = $module->query($sql);
+                $retData["count"] = $res[0]['count'];
+            }
+
             $ret = json_encode($retData);
             S($cacheName, $ret, array('type' => 'file', 'expire' => $expire));
         }
+
         return $ret;
     }
 
