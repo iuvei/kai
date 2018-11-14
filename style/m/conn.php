@@ -23,7 +23,7 @@ if(strpos($self,"xyft")){
 	$web_type = "广东11选5";
 }elseif(strpos($self,"jsk3")){
     $name = 22;
-	$web_type = "江苏快三";
+	$web_type = "江苏快3";
 }else{
     $name = 20;
 	$web_type = "北京pk10";

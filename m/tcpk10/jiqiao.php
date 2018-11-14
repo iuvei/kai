@@ -40,12 +40,12 @@ $cid = 42;
     <div class="xia-yxx-list" id="xia-yxx-list1" style="display: none;">
         <ul class="">
             <li><a href="../pk10/" game="pk10" class="">北京pk10</a></li>
-            <li><a href="../sfpk10/" game="jssc">三分pk10</a></li>
+            <li><a href="../sfpk10/" game="jssc">TC三分赛车</a></li>
             <li><a href="../tcpk10/" game="tcpk10">TC极速赛车</a></li>
             <li><a href="../xyft/" game="xyft">幸运飞艇</a></li>
             <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
-            <li><a href="../tcssc/" game="tcssc">TC极速时时彩</a></li>
-            <li><a href="../sfssc/" game="jsssc">三分时时彩</a></li>
+            <li><a href="../tcssc/" game="tcssc">TC分分彩</a></li>
+            <li><a href="../sfssc/" game="jsssc">TC三分彩</a></li>
             <li><a game="bjft" href="../bjft/">北京番摊</a></li>
             <li><a game="cqft" href="../cqft">重庆番摊</a></li>
             <li><a href="../jsk3/" game="jsk3">江苏快3</a></li>

@@ -306,7 +306,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
                 <div class="kaij-mylist-r">
                     <div class="kaij-mylist-hd">
                          <div class="itm-time">下期开奖：<span id="time">载入中</span></div>
-	                     <div class="itm-tit">江苏快三<span class="itm-qih" id="qihao">载入中</span></div>
+	                     <div class="itm-tit">江苏快3<span class="itm-qih" id="qihao">载入中</span></div>
                     </div>
                     <div class="kaij-mylist-bd">
                         <div class="itm-result">

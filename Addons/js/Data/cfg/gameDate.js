@@ -543,7 +543,7 @@ var webListOP = {
 				],
     "jsssc": [
         {
-            "text":"TC极速时时彩",
+            "text":"TC分分彩",
             "href":"jsssc/index.html"
         },
         {

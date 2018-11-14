@@ -23,7 +23,7 @@ if(strpos($self,"xyft")){
 	$web_type = "广东11选5";
 }elseif(strpos($self,"jsk3")){
     $name = 22;
-	$web_type = "江苏快三";
+	$web_type = "江苏快3";
 }elseif(strpos($self,"bjft")){
     $name = 42;
     $web_type = "北京番摊";
@@ -40,13 +40,13 @@ if(strpos($self,"xyft")){
     $web_type = "TC极速赛车";
     $name = 46;
 }elseif(strpos($self,"tcssc")){
-    $web_type = "TC极速时时彩";
+    $web_type = "TC分分彩";
     $name = 45;
 }elseif(strpos($self,"sfpk10")){
-    $web_type = "三分PK10";
+    $web_type = "TC三分赛车";
     $name = 47;
 }elseif(strpos($self,"sfssc")){
-    $web_type = "三分时时彩";
+    $web_type = "TC三分彩";
     $name = 48;
 }else{
     $name = 20;

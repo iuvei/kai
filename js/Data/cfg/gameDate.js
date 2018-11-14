@@ -709,7 +709,7 @@ var webListOP = {
 
     "jsssc": [
         {
-            "text":"TC极速时时彩",
+            "text":"TC分分彩",
             "href":"jsssc/index.html"
         },
         {
@@ -771,7 +771,7 @@ var webListOP = {
 
     "tcssc": [
         {
-            "text":"TC极速时时彩",
+            "text":"TC分分彩",
             "href":"tcssc/index.html"
         },
         {
@@ -895,11 +895,11 @@ var webListOP = {
     ],
     "sfpk10": [
         {
-            "text":"三分pk10",
+            "text":"TC三分赛车",
             "href":"sfpk10/index.html"
         },
         {
-            "text":"三分pk10开奖",
+            "text":"TC三分赛车开奖",
             "href":"sfpk10/kaijiang.html"
         },
         {
@@ -952,9 +952,9 @@ var webListOP = {
             "href":"sfpk10/betgame.html"
         },
         /*{
-            "text":"三分pk10开奖直播",
+            "text":"TC三分赛车开奖直播",
             "href":"sfpk10/shipin/",
-            "title":"在线观看三分pk10开奖直播",
+            "title":"在线观看TC三分赛车开奖直播",
             "aClass":"redColor"
         },*/
         {
@@ -966,7 +966,7 @@ var webListOP = {
         //     "href":"sfpk10/shdd.html"
         // },
         {
-            "text":"三分pk10技巧",
+            "text":"TC三分赛车技巧",
             "href":"jiqiao/sfpk10/"
         },
         {
@@ -999,7 +999,7 @@ var webListOP = {
 
     "sfssc": [
         {
-            "text":"三分时时彩",
+            "text":"TC三分彩",
             "href":"sfssc/index.html"
         },
         {

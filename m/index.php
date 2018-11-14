@@ -140,12 +140,12 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 
 
             <li><a href="pk10/" game="pk10" class="">北京PK10</a></li>
-            <li><a href="sfpk10/" game="jssc">三分PK10</a></li>
+            <li><a href="sfpk10/" game="jssc">TC三分赛车</a></li>
             <li><a href="tcpk10/" game="tcpk10">TC极速赛车</a></li>
             <li><a href="xyft/" game="xyft">幸运飞艇</a></li>
             <li><a href="cqssc/" game="cqssc">重庆时时彩</a></li>
-            <li><a href="tcssc/" game="tcssc">TC极速时时彩</a></li>
-            <li><a href="sfssc/" game="jsssc">三分时时彩</a></li>
+            <li><a href="tcssc/" game="tcssc">TC分分彩</a></li>
+            <li><a href="sfssc/" game="jsssc">TC三分彩</a></li>
             <li><a game="bjft" href="bjft/">北京番摊</a></li>
             <li><a game="cqft" href="cqft">重庆番摊</a></li>
             <li><a href="jsk3/" game="jsk3">江苏快3</a></li>
@@ -207,7 +207,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 <!--                     <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xync"></span></div>-->
         <div class="kaij-mylist-r">
             <div class="kaij-mylist-hd">
-                <div  class="yx_name">三分PK10
+                <div  class="yx_name">TC三分赛车
                 </div>
                 <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
                 <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
@@ -324,7 +324,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 <!--                       <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xjssc"></span></div>-->
         <div class="kaij-mylist-r">
             <div class="kaij-mylist-hd">
-                <div class="yx_name">三分时时彩
+                <div class="yx_name">TC三分彩
                 </div>
                 <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
                 <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
@@ -353,7 +353,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
         <!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-tcssc"></span></div>-->
         <div class="kaij-mylist-r">
             <div class="kaij-mylist-hd">
-                <div class="yx_name"> TC极速时时彩
+                <div class="yx_name"> TC分分彩
                 </div>
                 <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
                 <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
@@ -469,7 +469,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 <!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-jsk3"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
-                    <div  class="yx_name">江苏快三
+                    <div  class="yx_name">江苏快3
                     </div>
                     <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
                     <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>

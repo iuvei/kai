@@ -24,7 +24,7 @@
           <li><a href="/xjssc/"><em class="xjssc-icon"></em>新疆时时彩</a> <span id="xjssc-timeqihaob"></span></li>
           <li><a href="/tjssc/"><em class="tjssc-icon"></em>天津时时彩 </a><span id="tjssc-timeqihaob"></span></li>
           <li><a href="/gd11x5/"><em class="gd11x5-icon"></em>广东11选5 </a><span id="gd11x5-timeqihaob"></span></li>
-          <li><a href="/jsk3/"><em class="jsk3-icon"></em>江苏快三 </a><span id="jsk3-timeqihaob"></span></li>
+          <li><a href="/jsk3/"><em class="jsk3-icon"></em>江苏快3 </a><span id="jsk3-timeqihaob"></span></li>
         </ul>
       </div>
 
@@ -643,7 +643,7 @@ $(function(){
                 </li>	
  </volist> 
  </ul>
-			<h3 style="border-bottom:none"><em></em>江苏快三开奖号码</h3>
+			<h3 style="border-bottom:none"><em></em>江苏快3开奖号码</h3>
 			<ul>
 			<volist name="list_jsk3" id="data">
 				<li>
