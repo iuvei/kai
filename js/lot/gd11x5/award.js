@@ -2,6 +2,7 @@ $(function () {
     var currentPeriodNumber = -1;
     var nextPeriodNumber = -1;
     var timeInterval = 5000;
+    var lastOpenCode = -1;
     //请求出错次数
     var errorCount = 0;
     //请求次数
@@ -39,6 +40,18 @@ $(function () {
     }
     var awardTick = function () {
         $.get('gd11x5/getxjsscAwardData.do', { ajaxhandler: 'GetPk10AwardData', t: Math.random() }, function (data) {
+            if (data.current.awardNumbers != ''){
+                var nums;
+                var str = "";
+                nums = data.current.awardNumbers.split(',');
+                for (var i = 0; i < nums.length; i++) {
+                    str = str + '<span>' + nums[i] + '</span>';
+                }
+                $(".lot-nums").html(str);
+                $(".currentAward .period").html(data.current.periodNumber1.substr(4) + " 期");
+                $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(4) + "期");
+                $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
+            }
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -49,21 +62,8 @@ $(function () {
                 hideLotPeriodNumWarn();
             }
             if (timeInterval != 0) {
-                var qihao2 = data.current.periodNumber1.substr(4);
-                $(".currentAward .period").html(qihao2 + " 期");
-                var nums;
-                var str = "";
-                if(data.current.awardNumbers != null)
-                    nums = data.current.awardNumbers.split(',');
-                else
-                {
-                    str = "<p>等待开奖...<p>";
-                    nums = new Array();
-                }
-                for (var i = 0; i < nums.length; i++) {
-                    str = str + '<span>'+nums[i]+'</span>';
-                }
-                $(".lot-nums").html(str);
+
+
                 if (currentPeriodNumber == -1) {
                     $(".currentAward .period").css("color", "green");
                 }
@@ -97,21 +97,18 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.get('gd11x5/getxjsscAwardTimes.do', { ajaxhandler: 'GetPk10AwardTimes', t: Math.random() }, function (data) {
-            var qihao2 = data.current.periodNumber1.substr(4);
-            $(".currentAward .period").html(qihao2 + " 期");
-            var nums;
-            var str = "";
-            if(data.current.awardNumbers != null)
+            if (data.current.awardNumbers != ''){
+                var nums;
+                var str = "";
                 nums = data.current.awardNumbers.split(',');
-            else
-            {
-                str = "<p>等待开奖...<p>";
-                nums = new Array();
+                for (var i = 0; i < nums.length; i++) {
+                    str = str + '<span>' + nums[i] + '</span>';
+                }
+                $(".lot-nums").html(str);
+                $(".currentAward .period").html(data.current.periodNumber1.substr(4) + " 期");
+                $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(4) + "期");
+                $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             }
-            for (var i = 0; i < nums.length; i++) {
-                str = str + '<span>'+nums[i]+'</span>';
-            }
-            $(".lot-nums").html(str);
             if (currentPeriodNumber == -1) {
                 $(".currentAward .period").css("color", "green");
             }
@@ -134,10 +131,9 @@ $(function () {
                 ctimeOfPeriod = data.current.periodNumber;
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
-            $(".warnTime #period").html("第" + data.next.periodNumber.substr(4) + "期");
-            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
-
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
+            lastOpenCode =data.current.awardNumbers;
+            setTimeout(polling(),1000)
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);
@@ -152,6 +148,43 @@ $(function () {
     window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
+    var loading = -1;
+    function polling() {
+        $.post('gd11x5/getxjsscAwardTimes.do', {t: Math.random()}, function (data) {
+            if(data.status == 2){
+                return
+            }
+            if(loading==-1){
+                if(data.current.awardNumbers==''){
+                    $(".lot-nums").html('<p>等待开奖...<p>');
+                    setTimeout(function () {
+                        polling();
+                    },3000)
+                }
+                loading=2
+            }else {
+                if (lastOpenCode == data.current.awardNumbers) {
+                    $(".lot-nums").html('<p>等待开奖...<p>');
+                    setTimeout(function () {
+                        polling();
+                    }, 3000)
+                } else {
+                    var nums;
+                    var str = "";
+                    nums = data.current.awardNumbers.split(',');
+                    for (var i = 0; i < nums.length; i++) {
+                        str = str + '<span>' + nums[i] + '</span>';
+                    }
+                    $(".lot-nums").html(str);
+                    $(".currentAward .period").html(data.current.periodNumber1.substr(4) + " 期");
+                    $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(4) + "期");
+                    $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
+                    getHistoryData()
+                }
+            }
+        }, 'json').error(function () {
+        });
+    }
 });
 function getHistoryData(count) {
     $.get("gd11x5/getNewestRecord.do", { count:typeof(count)=="undefined"?16:count,t: Math.random() }, function (result) {
