@@ -88,8 +88,14 @@ $(function () {
     function loadAwardTimes() {
         $.get('tcssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
             $(".currentAward .period").html(data.current.periodNumber1.substr(6)+ " 期");
-            var nums = data.current.awardNumbers.split(',');
             var str = "";
+
+            if (data.current.awardNumbers != '')
+                nums = data.current.awardNumbers.split(',');
+            else {
+                str = "<p>等待开奖...<p>";
+                nums = new Array();
+            }
             for (var i = 0; i < nums.length; i++) {
                 str = str + "<span class='no" + nums[i] + "'>" + nums[i] + "</span>";
             }

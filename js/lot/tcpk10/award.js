@@ -99,7 +99,7 @@ $(function () {
             $(".currentAward .period").html(data.current.periodNumber1.substr(6)+ " 期");
             var nums;
             var str = "";
-            if(data.current.awardNumbers != null)
+            if(data.current.awardNumbers != "")
                 nums = data.current.awardNumbers.split(',');
             else
             {
