@@ -17,7 +17,7 @@ include(dirname(__FILE__)."\conn.php");
 
 <script src="style/js/jquery.js"></script>
 <script src="style/js/jquery.cookie.js"></script>
-<link type="text/css" href="style/css/style.css?v=484" rel="stylesheet">
+<link type="text/css" href="style/css/style.css?v=789456" rel="stylesheet">
 <style>
 .add-home {
 	position:fixed;
