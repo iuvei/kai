@@ -5884,7 +5884,7 @@ time: 1542068782325*/
                 $issue = $this->getCombOpentimes_v2(46500 + 540, 180, 300, $time);
                 break;
             case "jsk3":
-                $issue = $this->getCombOpentimes_v2(30600, 82, 600, time());
+                $issue = $this->getCombOpentimes_v2(30540, 82, 600, time());
                 break;
             case "txffc":
                 $issue = $this->getCombOpentimes_v2(0, 1440, 60, time());
