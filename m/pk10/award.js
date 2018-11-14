@@ -218,11 +218,6 @@ $(function () {
                 }
                 loading=2
             }else {
-                if (lastOpenCode == data.current.awardNumbers) {
-                    setTimeout(function () {
-                        polling();
-                    }, 3000)
-                } else {
                     $('.newIssue span').html(data.current.periodNumber1);
                     $('.nextIssue span').html(data.next.periodNumberStr);
                     $('.periodNumber').html(data.current.periodNumber);
@@ -262,7 +257,6 @@ $(function () {
                     $('.lhResult a').eq(8).html(dx);
                     $('.lhResult a').eq(9).html(ds);
                     getHistoryData('15')
-                }
             }
         }, 'json').error(function () {
         });
@@ -331,7 +325,6 @@ function getHistoryData(count,date) {
 
                 j++;
         	}
-			
         	$("#historyList").html(html);
 
         }else {
