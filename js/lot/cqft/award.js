@@ -183,8 +183,7 @@ $(function () {
                         polling();
                     }, 3000)
                 } else {
-                    $(".currentAward .period").html(data.current.periodNumber1 + " 期");
-                    var nums;
+                    var nums
                     var str = "";
                     if (data.current.awardNumbers != '')
                         nums = data.current.awardNumbers.split(',');
@@ -193,10 +192,13 @@ $(function () {
                         nums = new Array();
                     }
                     for (var i = 0; i < nums.length; i++) {
-                        str = str + '<span>'+nums[i]+'</span>';
+                        str = str + "<span class='no" + nums[i] + "'>" + nums[i] + "</span>";
                     }
                     $(".lot-nums").html(str);
-                    $(".warnTime #period").html("第" + data.next.fullPeriodNumber + "期");
+                    $(".currentAward .period").html(data.current.periodNumber1.toString().substr(4) + " 期");
+                    $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(4) + "期");
+                    $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
+
                     getHistoryData();
                 }
             }

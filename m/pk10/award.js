@@ -223,8 +223,8 @@ $(function () {
                         polling();
                     }, 3000)
                 } else {
-                    $('.newIssue span').html(data.current.periodNumber1.substr(4));
-                    $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                    $('.newIssue span').html(data.current.periodNumber1);
+                    $('.nextIssue span').html(data.next.periodNumberStr);
                     $('.periodNumber').html(data.current.periodNumber);
                     $('.surplus_num').html(data.current.surplus_num);
                     var nums = data.current.awardNumbers.split(',');
@@ -234,40 +234,39 @@ $(function () {
                     }
                     $('.openCodeList').html(str);
                     var nums = data.current.awardNumbers.split(',');
-                    $('.lhResult a').eq(0).html(long(nums[0],nums[9]));
-                    $('.lhResult a').eq(1).html(long(nums[1],nums[8]));
-                    $('.lhResult a').eq(2).html(long(nums[2],nums[7]));
-                    $('.lhResult a').eq(3).html(long(nums[3],nums[6]));
-                    $('.lhResult a').eq(4).html(long(nums[4],nums[5]));
+                    $('.lhResult a').eq(0).html(long(nums[0], nums[9]));
+                    $('.lhResult a').eq(1).html(long(nums[1], nums[8]));
+                    $('.lhResult a').eq(2).html(long(nums[2], nums[7]));
+                    $('.lhResult a').eq(3).html(long(nums[3], nums[6]));
+                    $('.lhResult a').eq(4).html(long(nums[4], nums[5]));
 
-                    var sum = parseInt(nums[0])+parseInt(nums[1]);
+                    var sum = parseInt(nums[0]) + parseInt(nums[1]);
                     var dx = '';
                     var ds = '';
-                    if(sum > 11){
+                    if (sum > 11) {
                         dx = '大';
-                    }else if(sum < 11){
+                    } else if (sum < 11) {
                         dx = '小';
-                    }else {
+                    } else {
                         dx = '和';
                     }
-                    if(sum%2 == 0){
+                    if (sum % 2 == 0) {
                         ds = '双';
-                    }else {
+                    } else {
                         ds = '单';
                     }
-                    if(sum == 11){
+                    if (sum == 11) {
                         ds = '和';
                     }
                     $('.lhResult a').eq(7).html(sum);
                     $('.lhResult a').eq(8).html(dx);
                     $('.lhResult a').eq(9).html(ds);
-                    getHistoryData('15');
+                    getHistoryData('15')
                 }
             }
         }, 'json').error(function () {
         });
     }
-
 });
 function getHistoryData(count,date) {
     $.get("../../pk10/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {

@@ -40,22 +40,26 @@ $(function () {
     }
     var awardTick = function () {
         $.get('pk10/getPk10AwardData.do', { ajaxhandler: 'GetPk10AwardData', t: Math.random() }, function (data) {
-            var nums;
-            var str = "";
-            if (data.current.awardNumbers != '')
-                nums = data.current.awardNumbers.split(',');
-            else {
-                str = "<p>等待开奖...<p>";
-                nums = new Array();
-            }
-            for (var i = 0; i < nums.length; i++) {
-                str = str + "<span class='no" + nums[i] + "'></span>";
-            }
+            if(data.current.awardNumbers!='') {
+                var nums;
+                var str = "";
+                if (data.current.awardNumbers != ''){
+                    nums = data.current.awardNumbers.split(',');
+                }
+                else {
+                    str = "<p>等待开奖...<p>";
+                    nums = new Array();
+                }
+                for (var i = 0; i < nums.length; i++) {
 
-            $(".lot-nums").html(str);
-            $(".currentAward .period").html(data.current.periodNumber1 + " 期");
-            $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
-            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
+                    str = str + "<span class='no" + nums[i] + "'></span>";
+                }
+
+                $(".lot-nums").html(str);
+                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
+                $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
+            }
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -99,24 +103,28 @@ $(function () {
     var cpCurrAwardData = null;
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
+
         $.get('pk10/getPk10AwardTimes.do', { ajaxhandler: 'GetPk10AwardTimes', t: Math.random() }, function (data) {
-            var nums;
-            var str = "";
-            if (data.current.awardNumbers != '')
-                nums = data.current.awardNumbers.split(',');
-            else {
-                str = "<p>等待开奖...<p>";
-                nums = new Array();
-            }
-            for (var i = 0; i < nums.length; i++) {
-                str = str + "<span class='no" + nums[i] + "'></span>";
-            }
+            if(data.current.awardNumbers!='') {
+                var nums;
+                var str = "";
+                if (data.current.awardNumbers != ''){
+                    nums = data.current.awardNumbers.split(',');
 
-            $(".lot-nums").html(str);
-            $(".currentAward .period").html(data.current.periodNumber1 + " 期");
-            $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
-            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
+                }
+                else {
+                    str = "<p>等待开奖...<p>";
+                    nums = new Array();
+                }
+                for (var i = 0; i < nums.length; i++) {
+                    str = str + "<span class='no" + nums[i] + "'></span>";
+                }
 
+                $(".lot-nums").html(str);
+                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
+                $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
+            }
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 
@@ -137,6 +145,8 @@ $(function () {
                 luzhuFirstShow(currentPeriodNumber, ctimeOfPeriod);
             }
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, cpNextAwardTimeInterval < 10 ? 10000 : cpNextAwardTimeInterval + 1000);
+            lastOpenCode =data.current.awardNumbers;
+            setTimeout(polling(),1000)
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);
@@ -172,7 +182,6 @@ $(function () {
                             polling();
                         }, 3000)
                     } else {
-                        $(".currentAward .period").html(data.current.periodNumber1 + " 期");
                         var nums;
                         var str = "";
                         if (data.current.awardNumbers != '')
@@ -184,8 +193,11 @@ $(function () {
                         for (var i = 0; i < nums.length; i++) {
                             str = str + "<span class='no" + nums[i] + "'></span>";
                         }
+
                         $(".lot-nums").html(str);
-                        $(".warnTime #period").html("第" + data.next.fullPeriodNumber + "期");
+                        $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                        $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
+                        $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
                         getHistoryData();
                     }
                 }

@@ -159,7 +159,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 #historyList{ background: #ececec}
 
 .kaij-mylist {border-top:1px solid #ECECEC;background:#f5f5f5;width: 100%;height:450vw}
-.kaij-mylist-li {position:relative;width: 100%;min-height: 30vw}
+.kaij-mylist-li {position:relative;}
 /*.kaij-mylist-li > a {display:block;padding:13px 0;color:#333;}*/
 .yx_name{
 	height: 10vw;
@@ -171,7 +171,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	color: #333;float: left;
 	/* border-bottom: 1px solid #e0e0e0; */
 }
-.yx_a{ margin:2vw; display: block;overflow: hidden; background:#fffaf4; border: 1px solid #ccc; border-radius: 10px;padding-bottom: 1.5vw;height: 30vw}
+.yx_a{ margin:2vw; display: block;overflow: hidden; background:#fffaf4; border: 1px solid #ccc; border-radius: 10px;padding-bottom: 1.5vw;}
 .kaij-mylist-li > a:active {background-color:#F5F5F5;}
 .kaij-mylist-l {float:left;width:50px;text-align:center; padding-top:9px}
 .kaij-mylist-r {padding:0 1.3vw;}
@@ -179,15 +179,9 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 .kaij-mylist-hd .itm-time {float:right;    height: 10vw;
 	line-height: 10vw;    font-size: 3vw;
 	color: #808080; position: relative;}
-.kaij-mylist-hd{
-	min-height: 10vw;
-}
-.kaij-mylist-bd,.itm-result{
-	min-height: 7vw;
-}
-.bt-jg{
-	min-height: 5vw;
-}
+
+
+
 .kaij-mylist-hd .itm-time-time{
 	/*position: absolute;*/
 	/*right: 1vw;*/
