@@ -38,7 +38,7 @@ $infos = mysql_fetch_array(mysql_query("select * from ot_document_article where 
 
 
    
-<script src="award.js?v=20181110" type="text/javascript"></script>
+<script src="award.js?v=20181114" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
 <div class="daojishi">
  <div class="fl"><?=$web_type?></div>

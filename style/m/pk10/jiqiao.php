@@ -34,7 +34,7 @@ $cid = 42;
 
 
    
-<script src="award.js?v=20181110" type="text/javascript"></script>
+<script src="award.js?v=20181114" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
 <div class="daojishi">
  <div class="fl"><?=$web_type?></div>
