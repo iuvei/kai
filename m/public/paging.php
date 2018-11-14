@@ -18,7 +18,7 @@
     <script src="/m/style/js/myPage.js" type="text/javascript"></script>
     <script type="text/javascript">
         function loadData(num) {
-            $("#PageCount").val("31");
+            $("#PageCount").val(num);
         }
         function exeData(num, type) {
             loadData(num);
@@ -48,9 +48,6 @@
                 }
             });
         }
-        $(function () {
-            loadData(1);
-            loadpage();
-        });
+
     </script>
 </form>

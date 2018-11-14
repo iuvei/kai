@@ -158,6 +158,7 @@ include("../conn.php");
 
 
    
+<?php include("../public/sscPage.php"); ?>
 <?php include("../public/footer.php"); ?>
 
 
@@ -183,8 +184,7 @@ $(function () {
 
 
 	//提取记录
-
-    getHistoryData('50','');
+    getHistoryData(1,50)
 
 
 });
@@ -193,7 +193,7 @@ $(function () {
 
 function Search() {
 	
-	getHistoryData('50', $("#dateTime").val());
+	getHistoryData( 1,50,$("#dateTime").val());
     $(".dataYMD").html( $("#dateTime").val());
     $('.dataWeed').html(getWeed($("#dateTime").val()))
 	return false;
@@ -201,7 +201,7 @@ function Search() {
 //刷新
 function refresh(){
 
-	getHistoryData('50','');
+    getHistoryData(1,50)
 
 }
 

@@ -130,7 +130,7 @@ $(function () {
         $('#chooseNum a').removeClass('chooseTypeColor');
         $('#chooseType2 a').removeClass('chooseTypeColor');
         $('#chooseType a').removeClass('chooseTypeColor');
-        getHistoryData('50', $("#dateTime").val());
+        getHistoryData(1,50, $("#dateTime").val());
         $(".dataYMD").html( $("#dateTime").val());
         $('.dataWeed').html(getWeed($("#dateTime").val()))
         return false;

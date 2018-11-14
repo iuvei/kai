@@ -39,6 +39,9 @@ $(function () {
     }
     var awardTick = function () {
         $.get('txffc/getCqsscAwardData.do', {  t: Math.random() }, function (data) {
+            $(".currentAward .period").html(data.current.periodNumber1.toString().substr(6) + " 期");
+            $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(6) + "期");
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             if (data.current.awardNumbers != '') {
                 var nums ;
                 var str = "";
@@ -47,9 +50,6 @@ $(function () {
                     str = str + "<span class='no" + nums[i] + "'>" + nums[i] + "</span>";
                 }
                 $(".lot-nums").html(str);
-                $(".currentAward .period").html(data.current.periodNumber1.toString().substr(6) + " 期");
-                $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(6) + "期");
-                $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             }
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -92,6 +92,9 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.get('txffc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
+            $(".currentAward .period").html(data.current.periodNumber1.toString().substr(6) + " 期");
+            $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(6) + "期");
+            $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             if (data.current.awardNumbers != '') {
                 var nums ;
                 var str = "";
@@ -100,9 +103,6 @@ $(function () {
                     str = str + "<span class='no" + nums[i] + "'>" + nums[i] + "</span>";
                 }
                 $(".lot-nums").html(str);
-                $(".currentAward .period").html(data.current.periodNumber1.toString().substr(6) + " 期");
-                $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(6) + "期");
-                $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             }
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
@@ -149,6 +149,9 @@ $(function () {
                 return
             }
             if(data.current.awardNumbers==''){
+                $(".currentAward .period").html(data.current.periodNumber1.toString().substr(6) + " 期");
+                $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(6) + "期");
+                $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
                 $(".lot-nums").html('<p>等待开奖...<p>');
                 setTimeout(function () {
                     polling();
@@ -161,9 +164,6 @@ $(function () {
                     str = str + "<span class='no" + nums[i] + "'>" + nums[i] + "</span>";
                 }
                 $(".lot-nums").html(str);
-                $(".currentAward .period").html(data.current.periodNumber1.toString().substr(6) + " 期");
-                $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(6) + "期");
-                $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
                 getHistoryData()
             }
         }, 'json').error(function () {

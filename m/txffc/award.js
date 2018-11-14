@@ -75,7 +75,7 @@ $(function () {
                 srt = srt + '<a>' + ds + '</a>';
                 srt = srt + '</div>';
                 $('.openCodeList').html(srt)
-                getHistoryData('50')
+                getHistoryData(1,50)
             }
             //计数请求次数
             requireCount += 1;
@@ -157,7 +157,7 @@ $(function () {
                 srt = srt + '<a>' + ds + '</a>';
                 srt = srt + '</div>';
                 $('.openCodeList').html(srt)
-                getHistoryData('50')
+                getHistoryData(1,50)
             }
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
@@ -248,15 +248,15 @@ $(function () {
                     srt = srt + '<a>' + ds  + '</a>';
                     srt = srt + '</div>';
                     $('.openCodeList').html(srt)
-                    getHistoryData('50')
+                    getHistoryData(1,50)
                 }
             }
         }, 'json').error(function () {
         });
     }
 });
-function getHistoryData(count,date) {
-    $.get("../../txffc/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
+function getHistoryData(page,offset,date) {
+    $.get("../../txffc/getHistoryData.do", {page:page,offset:offset,date:date,t: Math.random()}, function (result) {
         if(result&&result.rows){
         	var j = 0;
         	var html = '';
@@ -317,6 +317,14 @@ function getHistoryData(count,date) {
                 j++;
         	}
         	$("#historyList").html(html);
+            var setTotalCount = 1000;
+            $('#box').paging({
+                initPageNo: 3, // 初始页码
+                totalPages: 750, //总页数
+                totalCount: '合计' + setTotalCount + '条数据', // 条目总数
+                slideSpeed: 600, // 缓动速度。单位毫秒
+                jump: true, //是否支持跳转
+            })
         }else {
 			 $("#historyList").html("<li>对不起，今天暂无数据，请按日期检索！</li>");
 			}
