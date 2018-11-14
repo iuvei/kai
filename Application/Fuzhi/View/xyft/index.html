@@ -180,7 +180,7 @@
 				        }
 				        function getHistoryData(){
 			        		$.post("xyft/getHistoryData.do",
-			       				{count:12}, 
+			       				{count:20},
 			       				function(r) {
 			        				if (r) {
 			        					doTCompile("history_data", r.rows);

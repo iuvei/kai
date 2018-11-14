@@ -50,9 +50,6 @@ $(function () {
                 totalNum_c = Number(totalNum_c) % 10;
                 str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
                 $(".lot-nums").html(str);
-            } else {
-                str = "<p>等待开奖...<p>";
-                $(".lot-nums").html(str);
             }
             $(".currentAward .period").html(data.current.periodNumber1 + " 期");
             $(".warnTime #period").html("第" + data.next.periodNumberStr+ "期");
@@ -113,9 +110,6 @@ $(function () {
                 totalNum_c = Number(totalNum_c) % 10;
                 str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
                 $(".lot-nums").html(str);
-            } else {
-                str = "<p>等待开奖...<p>";
-                $(".lot-nums").html(str);
             }
             $(".currentAward .period").html(data.current.periodNumber1 + " 期");
             $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
@@ -172,46 +166,34 @@ $(function () {
    // window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
-    var loading = -1;
     function polling() {
         $.post('pc28/getCqsscAwardTimes.do', {t: Math.random()}, function (data) {
             if(data.status == 2){
                 return
             }
-            if(loading==-1){
-                if(data.current.awardNumbers==''){
-                    $(".lot-nums").html('<p>等待开奖...<p>');
-                    setTimeout(function () {
-                        polling();
-                    },3000)
-                }
-                loading=2
+            if(data.current.awardNumbers==''){
+                $(".lot-nums").html('<p>等待开奖...<p>');
+                setTimeout(function () {
+                    polling();
+                },3000)
             }else {
-                if (lastOpenCode == data.current.awardNumbers) {
-                    $(".lot-nums").html('<p>等待开奖...<p>');
-                    setTimeout(function () {
-                        polling();
-                    }, 3000)
-                } else {
-                    var str = "";
-                    if (data.current.awardNumbers != ''){
-                        var nums = data.current.awardNumbers.split(',');
-                        var totalNum_a = Number(nums[1]) + Number(nums[4]) + Number(nums[7]) +Number(nums[10]) + Number(nums[13]) + Number(nums[16]);
-                        var totalNum_b = Number(nums[2]) + Number(nums[5]) + Number(nums[8]) +Number(nums[11]) + Number(nums[14]) + Number(nums[17]);
-                        var totalNum_c = Number(nums[3]) + Number(nums[6]) + Number(nums[9]) +Number(nums[12]) + Number(nums[15]) + Number(nums[18]) ;
-                        totalNum_a = Number(totalNum_a)%10;
-                        totalNum_b = Number(totalNum_b) % 10;
-                        totalNum_c = Number(totalNum_c) % 10;
-                        str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
-                        $(".lot-nums").html(str);
-                    } else {
-                        str = "<p>等待开奖...<p>";
-                        $(".lot-nums").html(str);
-                    }
-                    $(".currentAward .period").html(data.current.periodNumber1 + " 期");
-                    $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
-                    $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
+                var str = "";
+                if (data.current.awardNumbers != ''){
+                    var nums = data.current.awardNumbers.split(',');
+                    var totalNum_a = Number(nums[1]) + Number(nums[4]) + Number(nums[7]) +Number(nums[10]) + Number(nums[13]) + Number(nums[16]);
+                    var totalNum_b = Number(nums[2]) + Number(nums[5]) + Number(nums[8]) +Number(nums[11]) + Number(nums[14]) + Number(nums[17]);
+                    var totalNum_c = Number(nums[3]) + Number(nums[6]) + Number(nums[9]) +Number(nums[12]) + Number(nums[15]) + Number(nums[18]) ;
+                    totalNum_a = Number(totalNum_a)%10;
+                    totalNum_b = Number(totalNum_b) % 10;
+                    totalNum_c = Number(totalNum_c) % 10;
+                    str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
+                    $(".lot-nums").html(str);
                 }
+                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                $(".warnTime #period").html("第" + data.next.periodNumberStr+ "期");
+                $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
+
+                getHistoryData()
             }
         }, 'json').error(function () {
         });
