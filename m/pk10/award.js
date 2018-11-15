@@ -326,7 +326,7 @@ function getHistoryData(count,date) {
                 j++;
         	}
         	$("#historyList").html(html);
-
+            setTotalCount=8;
         }else {
 			 $("#historyList").html("<p>对不起，今天暂无数据，请按日期检索！</p>");
 			}
