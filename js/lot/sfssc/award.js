@@ -154,9 +154,6 @@ $(function () {
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
     function polling() {
         $.post('sfssc/getCqsscAwardTimes.do', {t: Math.random()}, function (data) {
-            if(data.status == 2){
-                return
-            }
             if(data.current.awardNumbers==''){
                 $(".lot-nums").html('<p>等待开奖...<p>');
                 setTimeout(function () {
