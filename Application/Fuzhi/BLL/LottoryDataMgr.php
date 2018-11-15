@@ -633,6 +633,8 @@ class LottoryDataMgr
                 $sql = "SELECT count(*) as count FROM {$this->prename}data where dat_type=$lotType and  dat_open_time>$startTime and dat_open_time<$endTime";
                 $res = $module->query($sql);
                 $retData["count"] = $res[0]['count'];
+                $retData["page"] = $pages;
+                $retData["offset"] = $offset;
             }
 
             $ret = json_encode($retData);
@@ -5931,7 +5933,7 @@ time: 1542068782325*/
                 $issue = $this->getJspkSscOpentimes($time);
                 break;
             case "pc28":
-                $issueStart = 2354715 + intval((time() - 0 - strtotime('2018-11-14 00:00:00')) / 86400) * 397;
+                $issueStart = 2354785 + intval((time() - 0 - strtotime('2018-11-14 00:00:00')) / 86400) * 397;
                 $issue = $this->getCombOpentimes_v2(0, 397, 210, $time, $issueStart);
                 break;
             case "gd11x5":
