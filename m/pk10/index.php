@@ -151,8 +151,8 @@ include("../conn.php");
         <a class="lastA">第五</a>
     </div>
 </div>
-<?php //include("../public/paging.php"); ?>
-<!--<div class="pageLod" style="display: none"><img src="../style/images/loading2.gif"></div>-->
+<?php include("../public/paging.php"); ?>
+<div class="pageLod" style="display: none"><img src="../style/images/loading2.gif"></div>
 <div id="historyList"></div>
 <?php include("../public/footer.php"); ?>
 
@@ -163,6 +163,8 @@ include("../conn.php");
 
 
     $(function () {
+
+
         //显示默认日期
         var now = new Date();
 

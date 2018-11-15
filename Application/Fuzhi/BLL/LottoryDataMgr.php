@@ -1,8 +1,6 @@
 <?php
-namespace Fuzhi\BLL;
 
-use Fuzhi\BLL\RemoteDataMgr;
-use Think\Page;
+namespace Fuzhi\BLL;
 
 require_once "RemoteDataMgr.php";
 require_once "ZstAnalyser.php";
@@ -11,7 +9,9 @@ require_once "ConfigMgr.php";
 class LottoryDataMgr
 {
     private static $_instance = null;
-    function __construct() {
+
+    function __construct()
+    {
         header("Access-Control-Allow-Origin: *");
         header('Access-Control-Allow-Methods:OPTIONS, GET, POST'); // 允许option，get，post请求
         header('Access-Control-Allow-Headers:x-requested-with'); // 允许x-requested-with请求头
@@ -127,29 +127,30 @@ class LottoryDataMgr
         return $ret;
     }
 
-    private function getLottoryByDate($module, $lotType, $date,$count=null,$pages = 0,$offset = 0)
+    private function getLottoryByDate($module, $lotType, $date, $count = null, $pages = 0, $offset = 0)
     {
-        if(empty($count)){
-            $count=50;
+        if (empty($count)) {
+            $count = 50;
         }
         $lotType = (int)$lotType;
         $date = date('Y-m-d', strtotime($date));
-        $yestoday = date("Y-m-d",strtotime("-$date day"));
-        if($lotType == 43){
+        $yestoday = date("Y-m-d", strtotime("-$date day"));
+        if ($lotType == 43) {
             $startTime = strtotime($yestoday . ' 21:00:00');
             $endTime = strtotime($date . ' 19:00:00');
-        }else{
+        } else {
             $startTime = strtotime($date . ' 00:00:00');
             $endTime = strtotime($date . ' 23:59:59');
         }
 
-        if($pages != 0 && $offset != 0){
-           /* $pages  = 1;
-            $offset = 10;*/
-            $counts = ($pages-1)*$offset.",".$offset;
+//        print_r($pages);
+        if ($pages != 0 && $offset != 0) {
+            /* $pages  = 1;
+             $offset = 10;*/
+            $counts = ($pages - 1) * $offset . "," . $offset;
             $ret = $module->query("select replace(dat_expect,'-','') dat_expect,dat_codes,dat_open_time from {$this->prename}data where dat_type=%d and dat_open_time between %d and %d order by dat_expect desc limit $counts", $lotType, $startTime, $endTime);
-        }else{
-            $ret = $module->query("select replace(dat_expect,'-','') dat_expect,dat_codes,dat_open_time from {$this->prename}data where dat_type=%d and dat_open_time between %d and %d order by dat_expect desc limit %d", $lotType, $startTime, $endTime,$count);
+        } else {
+            $ret = $module->query("select replace(dat_expect,'-','') dat_expect,dat_codes,dat_open_time from {$this->prename}data where dat_type=%d and dat_open_time between %d and %d order by dat_expect desc limit %d", $lotType, $startTime, $endTime, $count);
         }
 
         if ($ret === false) {
@@ -174,11 +175,12 @@ class LottoryDataMgr
             } else {
                 //print_r("123");die;
                 if ($page == 'getPk10AwardData.do' || $page == 'getPk10AwardTimes.do' || $page == 'getCqsscAwardData.do' || $page == 'getCqsscAwardTimes.do' || $page == 'getGdkl10AwardData.do' || $page == 'getGdkl10AwardTimes.do' || $page == 'getJsk3AwardData.do' || $page == 'getJsk3AwardTimes.do' || $page == 'gettjsscAwardData.do' || $page == 'getxjsscAwardData.do' || $page == 'getfc3dAwardData.do' || $page == 'getpl3AwardData.do' || $page == 'getgd11x5AwardData.do' || $page == 'gettjsscAwardTimes.do' || $page == 'getpl3AwardTimes.do' || $page == 'getfc3dcAwardTimes.do' || $page == 'getxjsscAwardTimes.do' || $page == 'getShsslAwardData.do' || $page == 'getShsslAwardTimes.do' || $page == 'getXyncAwardData.do' || $page == 'getXyncAwardTimes.do' || $page == 'getkl8AwardData.do' || $page == 'getkl8AwardTimes.do') {
-                    if($type == 'cqft'){
-                        $type = 'cqssc';$lotType=1;
-                    }elseif ($type == 'bjft'){
+                    if ($type == 'cqft') {
+                        $type = 'cqssc';
+                        $lotType = 1;
+                    } elseif ($type == 'bjft') {
                         $type = 'pk10';
-                        $lotType=20;
+                        $lotType = 20;
                     }
                     $ret = $this->getAwardTime($type, $page, $lotType, $expire);
                 } else {
@@ -263,23 +265,24 @@ class LottoryDataMgr
             }
         }
         if ($ret === false) {
-            if($type == 'pc28'){
+            if ($type == 'pc28') {
                 $ret = $this->getPk10Data($type, $page, $param);
             }
-            if($type == 'sfssc'){
+            if ($type == 'sfssc') {
                 $ret = $this->getcqsscData($type, $page, $param);
             }
-            if($type == 'tcssc'){
+            if ($type == 'tcssc') {
                 $ret = $this->getcqsscData($type, $page, $param);
-            } if($type == 'tcpk10'){
+            }
+            if ($type == 'tcpk10') {
                 $ret = $this->getPk10Data($type, $page, $param);
             }
             if ($type == 'sfpk10') {
-              //  dump($type);die;
+                //  dump($type);die;
                 $ret = $this->getPk10Data($type, $page, $param);
             }
             if ($type == 'pk10') {
-               // dump($type);die;
+                // dump($type);die;
                 $ret = $this->getPk10Data($type, $page, $param);
             } else {
                 if ($type == 'cqssc') {
@@ -302,13 +305,13 @@ class LottoryDataMgr
                                         if ($page == "getMissingList.do") {
                                             $ret = $this->getMissingList($type, $page, $param);
                                         } else {
-                                           // print_r($page);die;
+                                            // print_r($page);die;
                                             if ($page == "getLmcList.do") {
                                                 $ret = $this->getLmcList($type, $page, $param);
                                             } else {
                                                 if ($page == "getTodayNum.do") {
                                                     $ret = $this->getTodayNum($type, $page, $param);
-                                                }else{
+                                                } else {
 
                                                 }
                                             }
@@ -329,7 +332,7 @@ class LottoryDataMgr
     {
         $ret = false;
         $expire = 2;
-        if($type == 'cqft'){
+        if ($type == 'cqft') {
             $type = 'cqssc';
         }
         $lotType = $this->getLotTypeByType($type);
@@ -390,7 +393,7 @@ class LottoryDataMgr
         $expire = 2;
         $lotType = $this->getLotTypeByType($type);
         $name = I("get.name");
-       // print_r($lotType);exit;
+        // print_r($lotType);exit;
         if ($page == 'getMergeData.do') {
             $ret = "{'clList':[]}";
         } else {
@@ -398,7 +401,7 @@ class LottoryDataMgr
                 $ret = $this->getcqsscLuZhuTongji($type, $page, $lotType, $expire);
             } else {
                 if ($page == 'getLonghuLuzhuData.do') {
-                    $ret = $this->getcqsscLonghuLuzhuData($type, $page, $lotType, $expire,$name);
+                    $ret = $this->getcqsscLonghuLuzhuData($type, $page, $lotType, $expire, $name);
                 } else {
                     if ($page == 'getHaomaLuData.do') {
                         $ret = $this->getcqsscHaomaLuData($type, $page, $lotType, $expire);
@@ -488,34 +491,34 @@ class LottoryDataMgr
                 }
                 if ($lotType == 22) {
                     $retData[$i]["Value"] = "" . ZstAnalyser::getArrSum($OpenCodes);
-                } else if($lotType == 43){
-                    $totalNum_a = (int)$OpenCodes[1] + (int)$OpenCodes[4] + (int)$OpenCodes[7] +(int)$OpenCodes[10] + (int)$OpenCodes[13] + (int)$OpenCodes[16];
-                    $totalNum_b = (int)$OpenCodes[2] + (int)$OpenCodes[5] + (int)$OpenCodes[8] +(int)$OpenCodes[11] + (int)$OpenCodes[14] + (int)$OpenCodes[17];
-                    $totalNum_c = (int)$OpenCodes[3] + (int)$OpenCodes[6] + (int)$OpenCodes[9] +(int)$OpenCodes[12] + (int)$OpenCodes[15] + (int)$OpenCodes[18] ;
-                    $totalNum = ($totalNum_a%10) + ($totalNum_b%10) + ($totalNum_c%10);
-                    $retData[$i]["Value"] =$totalNum;
-                }else {
-                    if(empty($tan_2)){
-                        $retData[$i]["Value"] = "" . (int)$OpenCodes[$ball - 1] ;
-                    }else if($name == 'bjft'){
-                        if($tan_2 == 1){
-                            $tan = (int)$OpenCodes[0] +(int)$OpenCodes[1] + (int)$OpenCodes[2] ;
-                        }else if($tan_2 == 2){
-                            $tan = (int)$OpenCodes[4] +(int)$OpenCodes[5] + (int)$OpenCodes[6] ;
-                        }else{
-                            $tan = (int)$OpenCodes[7] +(int)$OpenCodes[8] + (int)$OpenCodes[9] ;
+                } else if ($lotType == 43) {
+                    $totalNum_a = (int)$OpenCodes[1] + (int)$OpenCodes[4] + (int)$OpenCodes[7] + (int)$OpenCodes[10] + (int)$OpenCodes[13] + (int)$OpenCodes[16];
+                    $totalNum_b = (int)$OpenCodes[2] + (int)$OpenCodes[5] + (int)$OpenCodes[8] + (int)$OpenCodes[11] + (int)$OpenCodes[14] + (int)$OpenCodes[17];
+                    $totalNum_c = (int)$OpenCodes[3] + (int)$OpenCodes[6] + (int)$OpenCodes[9] + (int)$OpenCodes[12] + (int)$OpenCodes[15] + (int)$OpenCodes[18];
+                    $totalNum = ($totalNum_a % 10) + ($totalNum_b % 10) + ($totalNum_c % 10);
+                    $retData[$i]["Value"] = $totalNum;
+                } else {
+                    if (empty($tan_2)) {
+                        $retData[$i]["Value"] = "" . (int)$OpenCodes[$ball - 1];
+                    } else if ($name == 'bjft') {
+                        if ($tan_2 == 1) {
+                            $tan = (int)$OpenCodes[0] + (int)$OpenCodes[1] + (int)$OpenCodes[2];
+                        } else if ($tan_2 == 2) {
+                            $tan = (int)$OpenCodes[4] + (int)$OpenCodes[5] + (int)$OpenCodes[6];
+                        } else {
+                            $tan = (int)$OpenCodes[7] + (int)$OpenCodes[8] + (int)$OpenCodes[9];
                         }
-                        if($tan%4 == 0){
-                            $retData[$i]["Value"] =4;
-                        }else{
-                            $retData[$i]["Value"] =$tan%4;
+                        if ($tan % 4 == 0) {
+                            $retData[$i]["Value"] = 4;
+                        } else {
+                            $retData[$i]["Value"] = $tan % 4;
                         }
-                    }else if($name == 'cqft'){
-                        $tan = (int)$OpenCodes[0] +(int)$OpenCodes[1] + (int)$OpenCodes[2]+ (int)$OpenCodes[3] +(int)$OpenCodes[4];
-                        if($tan%4 == 0){
-                            $retData[$i]["Value"] =4;
-                        }else{
-                            $retData[$i]["Value"] =$tan%4;
+                    } else if ($name == 'cqft') {
+                        $tan = (int)$OpenCodes[0] + (int)$OpenCodes[1] + (int)$OpenCodes[2] + (int)$OpenCodes[3] + (int)$OpenCodes[4];
+                        if ($tan % 4 == 0) {
+                            $retData[$i]["Value"] = 4;
+                        } else {
+                            $retData[$i]["Value"] = $tan % 4;
                         }
                     }
                 }
@@ -530,7 +533,6 @@ class LottoryDataMgr
 
     private function getHistoryData($type, $page, $lotType, $expire)
     {
-
         if (IS_POST) {
             $count = (int)wjStrFilter(I('post.count'));
             $date = wjStrFilter(I('post.date'));
@@ -543,11 +545,12 @@ class LottoryDataMgr
             $offset = (int)wjStrFilter(I('get.offset'));
         }
 
-        if(empty($date)){
+        if (empty($date)) {
             $date = date('Y-m-d');
         }
         $cacheName = $type . '_' . $page . '_' . $count . '_' . $date;
-        $ret = S($cacheName);
+//        $ret = S($cacheName);
+        $ret=false;
 
         if ($ret === false || $ret == '') {
             $module = M();
@@ -556,20 +559,20 @@ class LottoryDataMgr
             $retData["code"] = null;
             $retData["msg"] = null;
             $retData["rows"] = array();
-           // dump($lotType);die;
+            // dump($lotType);die;
             if (isset($_GET['adate'])) $date = date("Y-m-d", time());
             if ($date == '' || $date == 'null') {
                 $openedCaiList = $this->getLottoryByCnt($module, $lotType, $count);
             } else {
-                $openedCaiList = $this->getLottoryByDate($module, $lotType, $date,$count,$pages,$offset);
+                $openedCaiList = $this->getLottoryByDate($module, $lotType, $date, $count, $pages, $offset);
             }
-            if( $lotType == 44 ) {
+            if ($lotType == 44) {
                 for ($i = 0; $i < count($openedCaiList); $i++) {
                     if ($date == '' && $count > 0 && $i >= $count) {
                         break;
                     }
-                    $lingdian =  strtotime(date('Y-m-d',time()));
-                    $opentime =  substr($openedCaiList[$i]["dat_expect"],8);
+                    $lingdian = strtotime(date('Y-m-d', time()));
+                    $opentime = substr($openedCaiList[$i]["dat_expect"], 8);
                     $opentime = $opentime * 60 + $lingdian;
                     /*dump($opentime);die;*/
                     $retData["rows"][$i] = array();
@@ -591,42 +594,42 @@ class LottoryDataMgr
                     $retData["rows"][$i]["lotteryDateStr"] = date('Y-m-d', $openedCaiList[$i]["dat_open_time"]);
                     $retData["rows"][$i]["termNumStr"] = "";
                 }
-            }else{
+            } else {
 
-            for ($i = 0; $i < count($openedCaiList); $i++) {
-                if ($date == '' && $count > 0 && $i >= $count) {
-                    break;
-                }
-                $retData["rows"][$i] = array();
-                $OpenCodes = ZstAnalyser::getCodeArr($openedCaiList[$i]["dat_codes"]);
-                $retData["rows"][$i]["id"] = $i;
-                $retData["rows"][$i]["betEndTime"] = null;
-                $retData["rows"][$i]["termNum"] = $openedCaiList[$i]["dat_expect"];
-                $retData["rows"][$i]["lotteryNum"] = implode('', $OpenCodes);
-                $retData["rows"][$i]["lotteryTime"] = date('Y-m-d H:i:s', $openedCaiList[$i]["dat_open_time"]);
-                $retData["rows"][$i]["gameId"] = $this->getGameIdByLotType($lotType);
-                for ($j = 0; $j < 21; $j++) {
-                    if ($j < count($OpenCodes)) {
-                        $retData["rows"][$i]["n" . ($j + 1)] = (int)$OpenCodes[$j];
-                    } else {
-                        $retData["rows"][$i]["n" . ($j + 1)] = null;
+                for ($i = 0; $i < count($openedCaiList); $i++) {
+                    if ($date == '' && $count > 0 && $i >= $count) {
+                        break;
                     }
+                    $retData["rows"][$i] = array();
+                    $OpenCodes = ZstAnalyser::getCodeArr($openedCaiList[$i]["dat_codes"]);
+                    $retData["rows"][$i]["id"] = $i;
+                    $retData["rows"][$i]["betEndTime"] = null;
+                    $retData["rows"][$i]["termNum"] = $openedCaiList[$i]["dat_expect"];
+                    $retData["rows"][$i]["lotteryNum"] = implode('', $OpenCodes);
+                    $retData["rows"][$i]["lotteryTime"] = date('Y-m-d H:i:s', $openedCaiList[$i]["dat_open_time"]);
+                    $retData["rows"][$i]["gameId"] = $this->getGameIdByLotType($lotType);
+                    for ($j = 0; $j < 21; $j++) {
+                        if ($j < count($OpenCodes)) {
+                            $retData["rows"][$i]["n" . ($j + 1)] = (int)$OpenCodes[$j];
+                        } else {
+                            $retData["rows"][$i]["n" . ($j + 1)] = null;
+                        }
+                    }
+                    $retData["rows"][$i]["lotteryDate"] = date('Y-m-d 00:00:00', $openedCaiList[$i]["dat_open_time"]);
+                    $retData["rows"][$i]["lotteryDateStr"] = date('Y-m-d', $openedCaiList[$i]["dat_open_time"]);
+                    $retData["rows"][$i]["termNumStr"] = "";
                 }
-                $retData["rows"][$i]["lotteryDate"] = date('Y-m-d 00:00:00', $openedCaiList[$i]["dat_open_time"]);
-                $retData["rows"][$i]["lotteryDateStr"] = date('Y-m-d', $openedCaiList[$i]["dat_open_time"]);
-                $retData["rows"][$i]["termNumStr"] = "";
-            }}
+            }
 
 
-            if($offset!=0 && $pages!=0)
-            {
+            if ($offset != 0 && $pages != 0) {
                 $lotType = (int)$lotType;
                 $date = date('Y-m-d', strtotime($date));
-                $yestoday = date("Y-m-d",strtotime("-$date day"));
-                if($lotType == 43){
+                $yestoday = date("Y-m-d", strtotime("-$date day"));
+                if ($lotType == 43) {
                     $startTime = strtotime($yestoday . ' 21:00:00');
                     $endTime = strtotime($date . ' 19:00:00');
-                }else{
+                } else {
                     $startTime = strtotime($date . ' 00:00:00');
                     $endTime = strtotime($date . ' 23:59:59');
                 }
@@ -643,7 +646,6 @@ class LottoryDataMgr
 
         return $ret;
     }
-
 
 
     private function getAwardTime($type, $page, $lotType, $expire)
@@ -834,9 +836,6 @@ class LottoryDataMgr
 //        return $ret;
 
 
-
-
-
         /*
          time: 1542068782325, firstPeriod: 20181113000, apiVersion: 1,…}
 apiVersion: 1
@@ -868,41 +867,37 @@ periodNumber: "24"
 periodNumberStr: "20181113-024"
 time: 1542068782325*/
 
-        $ret = $this -> getIssueInfo($type);
-            $xqqihao= str_replace("-","0",$ret['issue']);
+        $ret = $this->getIssueInfo($type);
+        $xqqihao = str_replace("-", "0", $ret['issue']);
 
-            if($lotType == 44 ||$lotType == 1||$lotType == 34 || $lotType ==47 ||$lotType == 48 ||$lotType==46||$lotType==45 ||$lotType == 6)
-            {
-                $sqqihao= str_replace("-","",$ret['preIssue']['issue']);
-                $xqqihao= str_replace("-","",$ret['issue']);
-            }else{
-                $xqqihao= str_replace("-","0",$ret['issue']);
-                $sqqihao= str_replace("-","0",$ret['preIssue']['issue']);
-            }
+        if ($lotType == 44 || $lotType == 1 || $lotType == 34 || $lotType == 47 || $lotType == 48 || $lotType == 46 || $lotType == 45 || $lotType == 6) {
+            $sqqihao = str_replace("-", "", $ret['preIssue']['issue']);
+            $xqqihao = str_replace("-", "", $ret['issue']);
+        } else {
+            $xqqihao = str_replace("-", "0", $ret['issue']);
+            $sqqihao = str_replace("-", "0", $ret['preIssue']['issue']);
+        }
 
         $kjHao1 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $sqqihao");
-      //  $kjHao2 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $xqqihao");
+        //  $kjHao2 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $xqqihao");
 
-        if($kjHao1[0]['dat_codes'] == null)
-        {
+        if ($kjHao1[0]['dat_codes'] == null) {
             $kjHao1[0]['dat_codes'] = "";
         }
 
 
         $sres['surplus_num'] = $ret['issue_total'] - $ret['preIssue']['issue_no'];
 
-        if ( $lotType ==20 || $lotType == 34 || $lotType == 47  ||$lotType==46 || $lotType ==6)
-        {
-            $arr =  explode(",",$kjHao1[0]['dat_codes']);
-            foreach ($arr as $k => $v)
-            {
+        if ($lotType == 20 || $lotType == 34 || $lotType == 47 || $lotType == 46 || $lotType == 6) {
+            $arr = explode(",", $kjHao1[0]['dat_codes']);
+            foreach ($arr as $k => $v) {
                 $arr[$k] = preg_replace('/^0*/', '', $v);
             }
-            $arr_str =implode(",",$arr);
-            $sres["awardNumbers"] =$arr_str;
+            $arr_str = implode(",", $arr);
+            $sres["awardNumbers"] = $arr_str;
 
-        }else{
-            $sres["awardNumbers"] =$kjHao1[0]['dat_codes'];
+        } else {
+            $sres["awardNumbers"] = $kjHao1[0]['dat_codes'];
         }
 
         $sres["awardTime"] = $ret['preIssue']['opentime'];
@@ -919,12 +914,12 @@ time: 1542068782325*/
         $sres['current_num'] = $ret['issue_total'];
 
 
-        if ($lotType ==20 ){
-            $xres["awardTimeInterval"] =($ret['timeremain']+30) *1000;
+        if ($lotType == 20) {
+            $xres["awardTimeInterval"] = ($ret['timeremain'] + 30) * 1000;
 
-        } else{
-            $xres["awardTimeInterval"] =$ret['timeremain'] *1000;
-            $xres['periodNumber'] = $ret['issue_no'] ;
+        } else {
+            $xres["awardTimeInterval"] = $ret['timeremain'] * 1000;
+            $xres['periodNumber'] = $ret['issue_no'];
         }
         $xres["awardTime"] = $ret['opentime'];
         $xres['fullPeriodNumber'] = $ret['issue'];
@@ -936,10 +931,10 @@ time: 1542068782325*/
         $datas["next"] = $xres;
         $datas['status'] = $ret['status'];
 
-   //     dump($datas);die;
+        //     dump($datas);die;
         $datas = json_encode($datas);
 
-         return $datas;
+        return $datas;
 
     }
 
@@ -1101,7 +1096,7 @@ time: 1542068782325*/
                 }
             }
             $date = empty($_GET['date']) ? date('Y-m-d') : $_GET['date'];
-           // print_r($date);exit;
+            // print_r($date);exit;
             $openedCaiList = $this->getLottoryByDate($module, $lotType, $date);
 
             foreach ($openedCaiList as $openedCai) {
@@ -1849,7 +1844,7 @@ time: 1542068782325*/
         $cacheName = $type . '_' . $page . '_' . $gameId . '_' . $type . '_' . $rows;
 
         $ret = S($cacheName);
-       // dump(S($cacheName));die;
+        // dump(S($cacheName));die;
         if ($ret === false || $ret == '') {
             $ZstData = '';
             $module = M();
@@ -2085,7 +2080,7 @@ time: 1542068782325*/
                 $today = date("Y-m-d");
                 $totalDates = getDates(date("Y-m-d", strtotime("-{$dateType} month")), $today);
                 $lotType = $this->getLotTypeByGameId($gameId);
-                $shows = $this->calLmcListDay($module, $lotType, $today, $rank - 1, $iAllCodesCnt / 2,$name);
+                $shows = $this->calLmcListDay($module, $lotType, $today, $rank - 1, $iAllCodesCnt / 2, $name);
                 $cfg = new ConfigMgr();
                 $historyString = '';
                 $history = array();
@@ -2097,7 +2092,7 @@ time: 1542068782325*/
                 foreach ($totalDates as $d) {
                     $lastDay = $d;
                     if ($history == NULL or !array_key_exists($lastDay, $history)) {
-                        $history[$lastDay] = $this->calLmcListDay($module, $lotType, $lastDay, $rank - 1, $iAllCodesCnt / 2,$name);
+                        $history[$lastDay] = $this->calLmcListDay($module, $lotType, $lastDay, $rank - 1, $iAllCodesCnt / 2, $name);
                         $foundNew = true;
                     }
                 }
@@ -2134,14 +2129,14 @@ time: 1542068782325*/
                     }
                 }
             }
-         //   print_r($retData);exit;
+            //   print_r($retData);exit;
             $ret = json_encode($retData);
             S($cacheName, $ret, array('type' => 'file', 'expire' => $expire));
         }
         return $ret;
     }
 
-    function calLmcListDay($module, $lotType, $day, $rank, $threshold,$name)
+    function calLmcListDay($module, $lotType, $day, $rank, $threshold, $name)
     {
         $shows = array();
         $omits = array();
@@ -2159,16 +2154,16 @@ time: 1542068782325*/
             if (count($OpenCodes) <= $rank) {
                 continue;
             }
-            if($name == 'bjft'){
-                if($rank == 1){
+            if ($name == 'bjft') {
+                if ($rank == 1) {
                     $code = (int)$OpenCodes[0] + (int)$OpenCodes[1] + (int)$OpenCodes[2];
-                }else if($rank == 2){
+                } else if ($rank == 2) {
                     $code = (int)$OpenCodes[4] + (int)$OpenCodes[5] + (int)$OpenCodes[6];
-                }else{
+                } else {
                     $code = (int)$OpenCodes[7] + (int)$OpenCodes[8] + (int)$OpenCodes[9];
                 }
-                $code_1 = $code%4;
-                if($code_1 == 0){
+                $code_1 = $code % 4;
+                if ($code_1 == 0) {
                     $code_1 = 4;
                 }
 
@@ -2186,10 +2181,10 @@ time: 1542068782325*/
                     $shows[$omits[$n]][$n]++;
                     $omits[$n] = 0;
                 }
-            }else if($name == 'cqft'){
+            } else if ($name == 'cqft') {
                 $code = (int)$OpenCodes[0] + (int)$OpenCodes[1] + (int)$OpenCodes[2] + (int)$OpenCodes[3] + (int)$OpenCodes[4];
-                $code_1 = $code%4;
-                if($code_1 == 0){
+                $code_1 = $code % 4;
+                if ($code_1 == 0) {
                     $code_1 = 4;
                 }
                 $m = $code_1 >= 2 ? 0 : 1;
@@ -2207,11 +2202,11 @@ time: 1542068782325*/
                     $shows[$omits[$n]][$n]++;
                     $omits[$n] = 0;
                 }
-            }else if($lotType == 43){
-                $totalNum_a = (int)$OpenCodes[1] + (int)$OpenCodes[4] + (int)$OpenCodes[7] +(int)$OpenCodes[10] + (int)$OpenCodes[13] + (int)$OpenCodes[16];
-                $totalNum_b = (int)$OpenCodes[2] + (int)$OpenCodes[5] + (int)$OpenCodes[8] +(int)$OpenCodes[11] + (int)$OpenCodes[14] + (int)$OpenCodes[17];
-                $totalNum_c = (int)$OpenCodes[3] + (int)$OpenCodes[6] + (int)$OpenCodes[9] +(int)$OpenCodes[12] + (int)$OpenCodes[15] + (int)$OpenCodes[18] ;
-                $totalNum = ($totalNum_a%10) + ($totalNum_b%10) + ($totalNum_c%10);
+            } else if ($lotType == 43) {
+                $totalNum_a = (int)$OpenCodes[1] + (int)$OpenCodes[4] + (int)$OpenCodes[7] + (int)$OpenCodes[10] + (int)$OpenCodes[13] + (int)$OpenCodes[16];
+                $totalNum_b = (int)$OpenCodes[2] + (int)$OpenCodes[5] + (int)$OpenCodes[8] + (int)$OpenCodes[11] + (int)$OpenCodes[14] + (int)$OpenCodes[17];
+                $totalNum_c = (int)$OpenCodes[3] + (int)$OpenCodes[6] + (int)$OpenCodes[9] + (int)$OpenCodes[12] + (int)$OpenCodes[15] + (int)$OpenCodes[18];
+                $totalNum = ($totalNum_a % 10) + ($totalNum_b % 10) + ($totalNum_c % 10);
                 $m = $totalNum > 13 ? 0 : 1;
                 $n = $totalNum > 14 ? 1 : 0;
                 $omits[$m]++;
@@ -2226,7 +2221,7 @@ time: 1542068782325*/
                     $shows[$omits[$n]][$n]++;
                     $omits[$n] = 0;
                 }
-            }else{
+            } else {
                 $code = (int)$OpenCodes[$rank];
 
                 $m = $code >= $threshold ? 0 : 1;
@@ -2627,7 +2622,7 @@ time: 1542068782325*/
         return $ret;
     }
 
-    function getcqsscLonghuLuzhuData($type, $page, $lotType, $expire,$name)
+    function getcqsscLonghuLuzhuData($type, $page, $lotType, $expire, $name)
     {
         $cacheName = $type . '_' . $page;
         $ret = S($cacheName);
@@ -2656,7 +2651,7 @@ time: 1542068782325*/
                 if (count($OpenCodes) != 5) {
                     continue;
                 }
-                if(empty($name)){
+                if (empty($name)) {
                     for ($i = 0; $i < 1; $i++) {
                         $value = ZstAnalyser::getDragonOrTiger($OpenCodes[$i], $OpenCodes[4 - $i]);
                         $this->addPk10LzValue($values[0][$i], $value, "龙", $cnt[0][$i], $last[0][$i], $index[0][$i], "和");
@@ -2664,10 +2659,10 @@ time: 1542068782325*/
                             $cntEqual++;
                         }
                     }
-                }else{
-                    $num = $OpenCodes[0]+$OpenCodes[1]+$OpenCodes[2]+$OpenCodes[3]+$OpenCodes[4];
-                    $num = $num%4;
-                    $data[$k]=$num;
+                } else {
+                    $num = $OpenCodes[0] + $OpenCodes[1] + $OpenCodes[2] + $OpenCodes[3] + $OpenCodes[4];
+                    $num = $num % 4;
+                    $data[$k] = $num;
 //                    if($num == 0){
 //                        $num_tow = 4;
 //                    }
@@ -2681,59 +2676,56 @@ time: 1542068782325*/
 //                    }else{
 //                        $data['ds'][$k] = '单';
 //                    }
-                  //  print_r($data);
+                    //  print_r($data);
                 }
 
             }
 
-           if(empty($name)){
-               for ($i = 0; $i < 1; $i++) {
-                   $this->addcqsscLonghuLuzhuDataHeader($values[0][$i], $cnt[0][$i], count($openedCaiList) - $cnt[0][$i] - $cntEqual, $cntEqual, "龙", "虎", "和", "龙虎");
-                   $ZstData = $ZstData . $values[0][$i] . "</td></tr></tbody></table></div>";
-               }
-               $ret = $ZstData;
-               S($cacheName, $ret, array('type' => 'file', 'expire' => $expire));
-           }else{
-               $html1='';
-              // $text='';
-               $n=0;
-               $n2=0;
-               $n3=0;
-               $n4=0;
-               foreach($data as $k => $v){
-                        if($v == 0){
-                            $v = 4;
-                        }
+            if (empty($name)) {
+                for ($i = 0; $i < 1; $i++) {
+                    $this->addcqsscLonghuLuzhuDataHeader($values[0][$i], $cnt[0][$i], count($openedCaiList) - $cnt[0][$i] - $cntEqual, $cntEqual, "龙", "虎", "和", "龙虎");
+                    $ZstData = $ZstData . $values[0][$i] . "</td></tr></tbody></table></div>";
+                }
+                $ret = $ZstData;
+                S($cacheName, $ret, array('type' => 'file', 'expire' => $expire));
+            } else {
+                $html1 = '';
+                // $text='';
+                $n = 0;
+                $n2 = 0;
+                $n3 = 0;
+                $n4 = 0;
+                foreach ($data as $k => $v) {
+                    if ($v == 0) {
+                        $v = 4;
+                    }
 
-                   if($v >= 2){
-                       $html1 .="<td class='odd'><label>小</label></td>";
-                       $n++;
-                      // $data1['dx'][$k]='小';
-                   }else{
-                       $html1 .="<td class='even'><p>大</p></td>";
-                       $n2++;
-                     //  $data1['dx'][$k]='大';
-                   }
-                   if($v%2 == 0){
-                       $html1 .="<td class=\"even\"><span>双</span></td>";
-                       $n3++;
-                   }else{
-                       $html1 .="<td class='odd'><label style=\"font-weight: bold; display: block;\">单</label></td>";
-                       $n4++;
-                   }
-
-
-               }
-               $html = "<div class=\"luzhu_scroll\" style=\"width: 1198px; overflow-x: auto;\"><table class=\"roadmap-table \"><tbody><tr valign=\"top\">".$html1."</tr></tbody></table></div>";
-               $text =" <table class=\"roadmap-table-caption\"><tbody><tr><td><span>今日号码累计：<span class=\"count\"> 大（".$n2."） 小（".$n."） 单（".$n4."）双（".$n3."）</span> 番摊</span></td></tr></tbody></table>";
+                    if ($v >= 2) {
+                        $html1 .= "<td class='odd'><label>小</label></td>";
+                        $n++;
+                        // $data1['dx'][$k]='小';
+                    } else {
+                        $html1 .= "<td class='even'><p>大</p></td>";
+                        $n2++;
+                        //  $data1['dx'][$k]='大';
+                    }
+                    if ($v % 2 == 0) {
+                        $html1 .= "<td class=\"even\"><span>双</span></td>";
+                        $n3++;
+                    } else {
+                        $html1 .= "<td class='odd'><label style=\"font-weight: bold; display: block;\">单</label></td>";
+                        $n4++;
+                    }
 
 
+                }
+                $html = "<div class=\"luzhu_scroll\" style=\"width: 1198px; overflow-x: auto;\"><table class=\"roadmap-table \"><tbody><tr valign=\"top\">" . $html1 . "</tr></tbody></table></div>";
+                $text = " <table class=\"roadmap-table-caption\"><tbody><tr><td><span>今日号码累计：<span class=\"count\"> 大（" . $n2 . "） 小（" . $n . "） 单（" . $n4 . "）双（" . $n3 . "）</span> 番摊</span></td></tr></tbody></table>";
 
 
-
-               $ret = $text.$html;
-               //print_r($data1);exit;
-           }
+                $ret = $text . $html;
+                //print_r($data1);exit;
+            }
 
         }
         return $ret;
@@ -2784,7 +2776,7 @@ time: 1542068782325*/
                     $index[$i][$j] = 1;
                 }
             }
-          // dump($index);die;
+            // dump($index);die;
             $openedCaiList = $this->getLottoryByDate($module, $lotType, $date);
             foreach ($openedCaiList as $openedCai) {
                 $OpenCodes = ZstAnalyser::getCodeArr($openedCai['dat_codes']);
@@ -2994,24 +2986,22 @@ time: 1542068782325*/
                     }
                     $shows[$m]["lDate"] = date('Y-m-d', $openedCai["dat_open_time"]);
 
-                    if($lotType == 1 ||$lotType ==34  || $lotType == 47 || $lotType == 48 ||$lotType == 6 ||$lotType== 21 |$lotType ==45 )
-                    {
-                        $shows[$m]["endIndex"] = substr($openedCai['dat_expect'],6);
+                    if ($lotType == 1 || $lotType == 34 || $lotType == 47 || $lotType == 48 || $lotType == 6 || $lotType == 21 | $lotType == 45) {
+                        $shows[$m]["endIndex"] = substr($openedCai['dat_expect'], 6);
                         if ($shows[$m]["startIndex"] == 0) {
-                            $shows[$m]["startIndex"] = substr($openedCai['dat_expect'],6);
+                            $shows[$m]["startIndex"] = substr($openedCai['dat_expect'], 6);
                         }
-                    }else
-                    {
+                    } else {
                         $shows[$m]["endIndex"] = $openedCai['dat_expect'];
                         if ($shows[$m]["startIndex"] == 0) {
                             $shows[$m]["startIndex"] = $openedCai['dat_expect'];
                         }
                     }
 
-                    if($lotType == 20 || $lotType == 34 || $lotType == 46 || $lotType  == 47  ){
-                        $code = $OpenCodes[0]+$OpenCodes[1];
+                    if ($lotType == 20 || $lotType == 34 || $lotType == 46 || $lotType == 47) {
+                        $code = $OpenCodes[0] + $OpenCodes[1];
                         $code_num = 11;
-                    }else if($lotType == 1 || $lotType == 45 || $lotType == 48 || $lotType == 44  ||$lotType == 6 ){
+                    } else if ($lotType == 1 || $lotType == 45 || $lotType == 48 || $lotType == 44 || $lotType == 6) {
                         $code = array_sum($OpenCodes);
                         $code_num = 22;
                     }
@@ -5314,24 +5304,23 @@ time: 1542068782325*/
                                 } else {
                                     if ($gameId == 7) {
                                         return 18;
-                                    }else{
+                                    } else {
                                         if ($gameId == 43) {
                                             return 43;
-                                        }else{
-                                            if($gameId == 44){
+                                        } else {
+                                            if ($gameId == 44) {
                                                 return 44;
-                                            }else{
-                                                if($gameId == 45){
+                                            } else {
+                                                if ($gameId == 45) {
                                                     return 45;
-                                                }else{
-                                                    if($gameId == 46){
+                                                } else {
+                                                    if ($gameId == 46) {
                                                         return 46;
-                                                    }else {
-                                                        if($gameId == 47){
+                                                    } else {
+                                                        if ($gameId == 47) {
                                                             return 47;
-                                                        }else{
-                                                            if($gameId == 48)
-                                                            {
+                                                        } else {
+                                                            if ($gameId == 48) {
                                                                 return 48;
                                                             }
                                                         }
@@ -5424,17 +5413,17 @@ time: 1542068782325*/
                                 } else {
                                     if ($lotType == 18) {
                                         return 7;
-                                    }else{
-                                        if($lotType == 43){
+                                    } else {
+                                        if ($lotType == 43) {
                                             return 43;
-                                        }else{
-                                            if($lotType == 44){
+                                        } else {
+                                            if ($lotType == 44) {
                                                 return 44;
-                                            }else{
-                                                if($lotType == 45){
+                                            } else {
+                                                if ($lotType == 45) {
                                                     return 45;
-                                                }else{
-                                                    if($lotType == 46){
+                                                } else {
+                                                    if ($lotType == 46) {
                                                         return 46;
                                                     }
                                                 }
@@ -5458,7 +5447,7 @@ time: 1542068782325*/
 
             return 10;
         } else {
-            if ($lotType == 1 || $lotType == 43 || $lotType == 45 ||$lotType == 48) {
+            if ($lotType == 1 || $lotType == 43 || $lotType == 45 || $lotType == 48) {
                 return 5;
             } else {
                 if ($lotType == 21) {
@@ -5478,8 +5467,8 @@ time: 1542068782325*/
                                 } else {
                                     if ($lotType == 18) {
                                         return 8;
-                                    }else{
-                                       return 10;
+                                    } else {
+                                        return 10;
                                     }
                                 }
                             }
@@ -5516,24 +5505,22 @@ time: 1542068782325*/
                                 } else {
                                     if ($lotType == 18) {
                                         return 20;
-                                    }else{
+                                    } else {
                                         if ($lotType == 43) {
                                             return 43;
-                                        }else{
+                                        } else {
                                             if ($lotType == 44) {
                                                 return 44;
-                                            }else{
+                                            } else {
                                                 if ($lotType == 45) {
                                                     return 45;
-                                                }else{
+                                                } else {
                                                     if ($lotType == 46) {
                                                         return 46;
-                                                    }else
-                                                    {
+                                                    } else {
                                                         if ($lotType == 47) {
                                                             return 10;
-                                                        }else
-                                                        {
+                                                        } else {
                                                             if ($lotType == 48) {
                                                                 return 10;
                                                             }
@@ -5578,22 +5565,22 @@ time: 1542068782325*/
                                 } else {
                                     if ($lotType == 18) {
                                         return false;
-                                    }else{
+                                    } else {
                                         if ($lotType == 43) {
                                             return true;
-                                        }else{
+                                        } else {
                                             if ($lotType == 44) {
                                                 return true;
-                                            }else{
+                                            } else {
                                                 if ($lotType == 45) {
                                                     return true;
-                                                }else{
+                                                } else {
                                                     if ($lotType == 46) {
                                                         return true;
-                                                    }else{
+                                                    } else {
                                                         if ($lotType == 47) {
                                                             return true;
-                                                        }else{
+                                                        } else {
                                                             if ($lotType == 48) {
                                                                 return true;
                                                             }
@@ -5654,8 +5641,8 @@ time: 1542068782325*/
         $type = intval($type);
 
         $types = $this->getTypes($module);
-       // $kjTime = $types[$type]["data_ftime"];
-       // $atime = date('H:i:s', $time + $kjTime);
+        // $kjTime = $types[$type]["data_ftime"];
+        // $atime = date('H:i:s', $time + $kjTime);
         $atime = date('H:i:s', $time);
         $sql = "select actionNo, actionTime from {$this->prename}data_time where type={$type} and actionTime>'%s' order by actionTime limit 1";
         $return = $module->query($sql, $atime);
@@ -5672,7 +5659,8 @@ time: 1542068782325*/
         return $return;
     }
 
-    public  function getGameNextNoqishu($type, $module, $time){
+    public function getGameNextNoqishu($type, $module, $time)
+    {
 
         date_default_timezone_set('PRC');
 
@@ -5680,13 +5668,12 @@ time: 1542068782325*/
 
         $types = $this->getTypes($module);
 
-        if ($type == 20 )
-        {
-            $today = strtotime(date("Y-m-d"),time());
+        if ($type == 20) {
+            $today = strtotime(date("Y-m-d"), time());
         }
 
 
-       // $sql = "select * from {$this->prename}data where type={$type} and actionTime{$today} order by actionTime limit 1";
+        // $sql = "select * from {$this->prename}data where type={$type} and actionTime{$today} order by actionTime limit 1";
 
         $sql = "select dat_expect from {$this->prename}data where dat_type={$type} and dat_open_time<{$today} order by dat_open_time desc limit 1";
 
@@ -5709,7 +5696,7 @@ time: 1542068782325*/
         $sql = "select actionNo, actionTime from {$this->prename}data_time where type={$type} and actionTime<='%s' order by actionTime desc limit 1";
 
         $return = $module->query($sql, $atime);
-       // echo
+        // echo
         if (!$return) {
             $sql = "select actionNo, actionTime from {$this->prename}data_time where type={$type} order by actionTime desc limit 1";
             $return = $module->query($sql);
@@ -5875,7 +5862,7 @@ time: 1542068782325*/
 
         foreach ($openedCaiList as $openedCai) {
             $OpenCodes = ZstAnalyser::getCodeArr($openedCai['dat_codes']);
-          //  print_r($iOpenCodeCnt); print_r(count($OpenCodes) );exit;
+            //  print_r($iOpenCodeCnt); print_r(count($OpenCodes) );exit;
             if (count($OpenCodes) != $iOpenCodeCnt) {
                 continue;
             }
@@ -5939,60 +5926,60 @@ time: 1542068782325*/
             case "gd11x5":
                 $issue = $this->getCombOpentimes_v2(32430, 84, 600, time());
                 break;
-           /*
-            case LotteryMain::pc28_bjpc28:
-            case LotteryMain::kl8_bjkl8:
-                $issueStart = 880058 + intval((time() - 32700 - strtotime('2018-04-01 00:00:00')) / 86400) * 179;
-                $issue = $this->getCombOpentimes_v2(32400, 179, 300, time(), $issueStart);
-                break;
-            case LotteryMain::pc28_jndpc28:
-            case LotteryMain::kl8_jndkl8:
-                $where = Array();
-                $where['lottery_id'] = LotteryMain::kl8_jndkl8;
-                $issueStartObj = OpencodeIssue::inst()->where($where)->first();
-                $issueStart = $issueStartObj['issue'];
-                $issue = $this->getCombOpentimes_v2(75660, 378, 210, time(), $issueStart);
-                break;
+            /*
+             case LotteryMain::pc28_bjpc28:
+             case LotteryMain::kl8_bjkl8:
+                 $issueStart = 880058 + intval((time() - 32700 - strtotime('2018-04-01 00:00:00')) / 86400) * 179;
+                 $issue = $this->getCombOpentimes_v2(32400, 179, 300, time(), $issueStart);
+                 break;
+             case LotteryMain::pc28_jndpc28:
+             case LotteryMain::kl8_jndkl8:
+                 $where = Array();
+                 $where['lottery_id'] = LotteryMain::kl8_jndkl8;
+                 $issueStartObj = OpencodeIssue::inst()->where($where)->first();
+                 $issueStart = $issueStartObj['issue'];
+                 $issue = $this->getCombOpentimes_v2(75660, 378, 210, time(), $issueStart);
+                 break;
 
-            case LotteryMain::kl10_gdkl10:
-                $issue = $this->getCombOpentimes_v2(33000, 84, 600, time());
-                break;
-            case LotteryMain::xync_cqxync:
-                $issue = $this->getCombOpentimes_v2(46800 + 540, 180, 300, time());
-                break;
-            case LotteryMain::lhc_xglhc:
-                $stopIssueCount = 6; // 停开期数
-                $time = time();
-                $issue = $this->getLhcOpentimes($time, $stopIssueCount);
-                break;
-            case LotteryMain::ssc_75ssc:
-            case LotteryMain::pk10_75pk10:
-            case LotteryMain::pc28_75pc28:
-            case LotteryMain::kl8_75kl8:
-            case LotteryMain::k3_75k3:
-            case LotteryMain::_3d_75_3d:
-            case LotteryMain::kl10_75kl10:
-            case LotteryMain::_11x5_75_11x5:
-            case LotteryMain::lhc_75lhc:
-                $issue = $this->getCombOpentimes_v2(28800, 960, 75, $time);
-                break;
-            case LotteryMain::ssc_60ssc:
-            case LotteryMain::pk10_60pk10:
-            case LotteryMain::pc28_60pc28:
-            case LotteryMain::kl8_60kl8:
-            case LotteryMain::k3_60k3:
-            case LotteryMain::_3d_603d:
-            case LotteryMain::kl10_60kl10:
-            case LotteryMain::lhc_60lhc:
-            case LotteryMain::_11x5_60_11x5:
-                $issue = $this->getCombOpentimes_v2(21600, 1400, 60, $time);
-                break;
-            case LotteryMain::ssc_tjssc:
-            case LotteryMain::ssc_xjssc:
-            case LotteryMain::ssc_txffc:
-            case LotteryMain::ssc_hg90s:
-            case LotteryMain::_3d_fc3d:
-            case LotteryMain::_3d_shssl:*/
+             case LotteryMain::kl10_gdkl10:
+                 $issue = $this->getCombOpentimes_v2(33000, 84, 600, time());
+                 break;
+             case LotteryMain::xync_cqxync:
+                 $issue = $this->getCombOpentimes_v2(46800 + 540, 180, 300, time());
+                 break;
+             case LotteryMain::lhc_xglhc:
+                 $stopIssueCount = 6; // 停开期数
+                 $time = time();
+                 $issue = $this->getLhcOpentimes($time, $stopIssueCount);
+                 break;
+             case LotteryMain::ssc_75ssc:
+             case LotteryMain::pk10_75pk10:
+             case LotteryMain::pc28_75pc28:
+             case LotteryMain::kl8_75kl8:
+             case LotteryMain::k3_75k3:
+             case LotteryMain::_3d_75_3d:
+             case LotteryMain::kl10_75kl10:
+             case LotteryMain::_11x5_75_11x5:
+             case LotteryMain::lhc_75lhc:
+                 $issue = $this->getCombOpentimes_v2(28800, 960, 75, $time);
+                 break;
+             case LotteryMain::ssc_60ssc:
+             case LotteryMain::pk10_60pk10:
+             case LotteryMain::pc28_60pc28:
+             case LotteryMain::kl8_60kl8:
+             case LotteryMain::k3_60k3:
+             case LotteryMain::_3d_603d:
+             case LotteryMain::kl10_60kl10:
+             case LotteryMain::lhc_60lhc:
+             case LotteryMain::_11x5_60_11x5:
+                 $issue = $this->getCombOpentimes_v2(21600, 1400, 60, $time);
+                 break;
+             case LotteryMain::ssc_tjssc:
+             case LotteryMain::ssc_xjssc:
+             case LotteryMain::ssc_txffc:
+             case LotteryMain::ssc_hg90s:
+             case LotteryMain::_3d_fc3d:
+             case LotteryMain::_3d_shssl:*/
             default:
                 $issue = null;
                 break;
@@ -6147,9 +6134,9 @@ time: 1542068782325*/
             if ($issue_no < 81) {
                 $timespan = $rootTimespan + ($issue_no) * $ts;
             } elseif ($issue_no == 81) {
-                $timespan = $rootTimespan + 3600*6+195;
-            }else{
-                $timespan = $rootTimespan + 3600*6+195 + ($issue_no -81) * 180;
+                $timespan = $rootTimespan + 3600 * 6 + 195;
+            } else {
+                $timespan = $rootTimespan + 3600 * 6 + 195 + ($issue_no - 81) * 180;
             }
             // 开奖时间
             $opentime = Array();
@@ -6166,7 +6153,7 @@ time: 1542068782325*/
             if ($time > $timespan) {
                 $preIssue = $opentime;
             }
-           // echo date('Y-m-d H:i:s', $timespan).":".$issue_no."\n";
+            // echo date('Y-m-d H:i:s', $timespan).":".$issue_no."\n";
         }
         $opentime = Array();
         $timespan = $rootTimespan + 86400 + 180;
@@ -6187,8 +6174,6 @@ time: 1542068782325*/
 
         return $issue;
     }
-
-
 
 
     /**
@@ -6220,9 +6205,9 @@ time: 1542068782325*/
             if ($issue_no < 81) {
                 $timespan = $rootTimespan + ($issue_no) * $ts;
             } elseif ($issue_no == 81) {
-                $timespan = $rootTimespan + 3600*6 +180;
-            }else{
-                $timespan = $rootTimespan + 3600*6 +180+ ($issue_no -81) * 180;
+                $timespan = $rootTimespan + 3600 * 6 + 180;
+            } else {
+                $timespan = $rootTimespan + 3600 * 6 + 180 + ($issue_no - 81) * 180;
             }
             // 开奖时间
             $opentime = Array();
@@ -6239,7 +6224,7 @@ time: 1542068782325*/
             if ($time > $timespan) {
                 $preIssue = $opentime;
             }
-        //    echo date('Y-m-d H:i:s', $timespan).":".$issue_no."\n";
+            //    echo date('Y-m-d H:i:s', $timespan).":".$issue_no."\n";
         }
         $opentime = Array();
         $timespan = $rootTimespan + 86400 + 180;
@@ -6296,9 +6281,9 @@ time: 1542068782325*/
             if ($issue_no < 193) {
                 $timespan = $rootTimespan + ($issue_no) * $ts;
             } elseif ($issue_no == 193) {
-                $timespan = $rootTimespan + 3600*6+165;
-            }else{
-                $timespan = $rootTimespan + 3600*6+165 + ($issue_no -193) * 75;
+                $timespan = $rootTimespan + 3600 * 6 + 165;
+            } else {
+                $timespan = $rootTimespan + 3600 * 6 + 165 + ($issue_no - 193) * 75;
             }
             // 开奖时间
             $opentime = Array();
@@ -6312,7 +6297,7 @@ time: 1542068782325*/
             }
             $opentimes[$issue_no] = $opentime;
 
-           // echo date('Y-m-d H:i:s', $timespan).":".$issue_no."\n";
+            // echo date('Y-m-d H:i:s', $timespan).":".$issue_no."\n";
 
             if ($time > $timespan) {
                 $preIssue = $opentime;
@@ -6338,7 +6323,6 @@ time: 1542068782325*/
 
         return $issue;
     }
-
 
 
     /**
@@ -6370,9 +6354,9 @@ time: 1542068782325*/
             if ($issue_no < 193) {
                 $timespan = $rootTimespan + ($issue_no) * $ts;
             } elseif ($issue_no == 193) {
-                $timespan = $rootTimespan + 3600*6+150;
-            }else{
-                $timespan = $rootTimespan + 3600*6+150+ ($issue_no -193) * 75;
+                $timespan = $rootTimespan + 3600 * 6 + 150;
+            } else {
+                $timespan = $rootTimespan + 3600 * 6 + 150 + ($issue_no - 193) * 75;
             }
             // 开奖时间
             $opentime = Array();
@@ -6386,7 +6370,7 @@ time: 1542068782325*/
             }
             $opentimes[$issue_no] = $opentime;
 
-      //      echo date('Y-m-d H:i:s', $timespan).":".$issue_no."\n";
+            //      echo date('Y-m-d H:i:s', $timespan).":".$issue_no."\n";
 
             if ($time > $timespan) {
                 $preIssue = $opentime;
@@ -6411,7 +6395,6 @@ time: 1542068782325*/
         $issue['issue_total'] = $issueCount;
         return $issue;
     }
-
 
 
     private function getCombOpentimes_v2($tsDayStart, $issueCount, $ts, $time = 0, $issueStart = null)

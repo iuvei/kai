@@ -1155,10 +1155,9 @@ function suoha(nums){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60);
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1180,6 +1179,7 @@ function suoha(nums){
     }, 1000);
 
 }
+
 function timers(intDiff,div,name){
     time_r1 =   window.setInterval(function(){
         var day=0,
@@ -1187,10 +1187,9 @@ function timers(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1222,10 +1221,9 @@ function timer2(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60);
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1254,10 +1252,9 @@ function timers2(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1289,10 +1286,9 @@ function timer3(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60);
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1323,10 +1319,9 @@ function timers3(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1359,10 +1354,9 @@ function timer4(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1395,10 +1389,9 @@ function timer5(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1430,10 +1423,9 @@ function timers5(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60);
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1467,10 +1459,9 @@ function timer6(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60);
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1502,10 +1493,9 @@ function timers6(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1538,10 +1528,9 @@ function timer7(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60);
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1573,10 +1562,9 @@ function timers7(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1610,10 +1598,9 @@ function timer8(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff)  - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1645,10 +1632,9 @@ function timers8(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1681,10 +1667,9 @@ function timer9(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff)  - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1715,10 +1700,9 @@ function timer10(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff)  - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1751,10 +1735,9 @@ function timer11(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff)  - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1787,10 +1770,9 @@ function timer12(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1819,10 +1801,9 @@ function timer13(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff)  - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");
@@ -1851,10 +1832,9 @@ function timer14(intDiff,div,name){
             minute=0,
             second=0;//时间默认值
         if(intDiff-1 > 0){
-            day = Math.floor(intDiff / (60 * 60 * 24));
-            hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-            minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-            second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff) - (minute * 60);
         }
         if(minute == 0 && second <= 30){
             $("#"+div+" .opentyle").text("开奖中...");

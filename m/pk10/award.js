@@ -321,7 +321,7 @@ function getHistoryData(count,date) {
                 j++;
         	}
         	$("#historyList").html(html);
-            //getPkData(date)
+            getPkData(date)
         }else {
 			 //$("#historyList").html("<p>对不起，今天暂无数据，请按日期检索！</p>");
 			}
