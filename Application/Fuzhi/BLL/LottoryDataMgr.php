@@ -633,6 +633,9 @@ class LottoryDataMgr
                 $sql = "SELECT count(*) as count FROM {$this->prename}data where dat_type=$lotType and  dat_open_time>$startTime and dat_open_time<$endTime";
                 $res = $module->query($sql);
                 $retData["count"] = $res[0]['count'];
+                $retData["page"] = $pages;
+                $retData["offset"] = $offset;
+
             }
 
             $ret = json_encode($retData);

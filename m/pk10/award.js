@@ -264,7 +264,7 @@ $(function () {
 });
 function getHistoryData(count,date) {
     $.get("../../pk10/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
-        if(result&&result.rows){
+        if(result&&result.rows.toString().length>3){
         	var j = 0;
         	var html = '';
         	for(var i in result.rows){
@@ -328,7 +328,7 @@ function getHistoryData(count,date) {
         	$("#historyList").html(html);
             getPkData(date)
         }else {
-			 $("#historyList").html("<p>对不起，今天暂无数据，请按日期检索！</p>");
+			 //$("#historyList").html("<p>对不起，今天暂无数据，请按日期检索！</p>");
 			}
     }, "json");
 }
