@@ -140,6 +140,8 @@ $(function () {
             if(data.status == 2){
                 return
             }
+            $(".currentAward .period").html(data.current.periodNumber1.toString().substr(6) + " 期");
+            $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(6) + "期");
             if(data.current.awardNumbers==''){
                 $(".lot-nums").html('<p>等待开奖...<p>');
                 setTimeout(function () {
@@ -153,8 +155,6 @@ $(function () {
                     str = str + "<span class='no" + nums[i] + "'>" + nums[i] + "</span>";
                 }
                 $(".lot-nums").html(str);
-                $(".currentAward .period").html(data.current.periodNumber1.toString().substr(6) + " 期");
-                $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(6) + "期");
                 $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
                 getHistoryData()
             }

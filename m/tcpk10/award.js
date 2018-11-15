@@ -75,13 +75,14 @@ $(function () {
                 if (sum == 11) {
                     ds = '和';
                 }
-                $('.lhResult a').eq(7).html(sum);
-                $('.lhResult a').eq(8).html(dx);
-                $('.lhResult a').eq(9).html(ds);
-                window.setTimeout(function () {
-                    getHistoryData('15')
-                }, 5000)
             }
+            $('.lhResult a').eq(7).html(sum);
+            $('.lhResult a').eq(8).html(dx);
+            $('.lhResult a').eq(9).html(ds);
+           /* window.setTimeout(function () {
+                getHistoryData('15')
+            },5000)*/
+
 
             //计数请求次数
             requireCount += 1;
@@ -162,13 +163,12 @@ $(function () {
                 if (sum == 11) {
                     ds = '和';
                 }
-                $('.lhResult a').eq(7).html(sum);
-                $('.lhResult a').eq(8).html(dx);
-                $('.lhResult a').eq(9).html(ds);
-                window.setTimeout(function () {
-                    getHistoryData('15')
-                }, 5000)
             }
+
+            $('.lhResult a').eq(7).html(sum);
+            $('.lhResult a').eq(8).html(dx);
+            $('.lhResult a').eq(9).html(ds);
+
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
 
