@@ -20,7 +20,7 @@ include("../conn.php");
     <script src="../style/js/lotcommon.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
     <script src="../style/js/warntime.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
     <link type="text/css" href="../style/css/style.css?v=<?php echo date("Y/m/d")?>"  rel="stylesheet">
-    <link type="text/css" href="../style/css/histoly.css?v=<?php echo date("Y/m/d")?>" rel="stylesheet">
+
 
 
     <style type="text/css">
@@ -158,7 +158,6 @@ include("../conn.php");
 
 
    
-<?php include("../public/sscPage.php"); ?>
 <?php include("../public/footer.php"); ?>
 
 
@@ -184,16 +183,34 @@ $(function () {
 
 
 	//提取记录
-    getHistoryData(1,50)
 
+    getHistoryData('50','');
+    window.onscroll=function(){
+
+        var scrollTop = document.documentElement.scrollTop;
+        console.log(scrollTop)
+        //differ控制滑动的相对距离达到一定程度时获取数据
+        if(scrollTop>1000)
+        {
+            document.querySelector('body').addEventListener('touchstart', function (ev) {
+                event.preventDefault();
+            });
+//            var v2=document.body.offsetHeight-document.documentElement.clientHeight;
+//            alert("滚动测试");
+           // alert("滚动,v1:"+scrollTop+ ",v2:" + v2 + ",v3:" + document.body.offsetHeight + ",v4:" + document.documentElement.clientHeight);
+            // getcolumnlist(column_number);//column_number 为查询页数
+        }
+    }
 
 });
 //搜索
 
 
+
+
 function Search() {
 	
-	getHistoryData( 1,50,$("#dateTime").val());
+	getHistoryData('50', $("#dateTime").val());
     $(".dataYMD").html( $("#dateTime").val());
     $('.dataWeed').html(getWeed($("#dateTime").val()))
 	return false;
@@ -201,7 +218,7 @@ function Search() {
 //刷新
 function refresh(){
 
-    getHistoryData(1,50)
+	getHistoryData('50','');
 
 }
 

@@ -75,7 +75,6 @@ $(function () {
                 srt = srt + '<a>' + ds + '</a>';
                 srt = srt + '</div>';
                 $('.openCodeList').html(srt)
-                getHistoryData(1,50)
             }
             //计数请求次数
             requireCount += 1;
@@ -157,7 +156,6 @@ $(function () {
                 srt = srt + '<a>' + ds + '</a>';
                 srt = srt + '</div>';
                 $('.openCodeList').html(srt)
-                getHistoryData(1,50)
             }
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
@@ -179,7 +177,6 @@ $(function () {
             }
            // $(".headOpenTime .headOpenTimeM").html(data.next.periodNumber);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
-            lastOpenCode =data.current.awardNumbers;
             setTimeout(polling(),1000)
         }, 'json').error(function () {
             if (errorCount < 20) {
@@ -195,68 +192,60 @@ $(function () {
     window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
-    var loading = -1;
     function polling() {
         $.post('../../txffc/getPk10AwardTimes.do', {t: Math.random()}, function (data) {
             if(data.status == 2){
                 return
             }
-            if(loading==-1){
-                if(data.current.awardNumbers==''){
-                    setTimeout(function () {
-                        polling();
-                    },3000)
-                }
-                loading=2
+            if(data.current.awardNumbers==''){
+                setTimeout(function () {
+                    polling();
+                },3000)
             }else {
-                if (lastOpenCode == data.current.awardNumbers) {
-                    setTimeout(function () {
-                        polling();
-                    }, 3000)
+                $('.newIssue span').html(data.current.periodNumber1.substr(6));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(6));
+                $('.periodNumber').html(data.current.periodNumber);
+                $('.surplus_num').html(data.current.surplus_num);
+                var nums = data.current.awardNumbers.split(',');
+                var srt = '';
+                var sum = eval(nums.join("+"));
+                var dx = '';
+                var ds = '';
+                if (sum > 22) {
+                    dx = '大';
                 } else {
-                    $('.newIssue span').html(data.current.periodNumber1.substr(4));
-                    $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
-                    $('.periodNumber').html(data.current.periodNumber);
-                    $('.surplus_num').html(data.current.surplus_num);
-                    var nums = data.current.awardNumbers.split(',');
-                    var srt = '';
-                    var sum = eval(nums.join("+"));
-                    var dx = '';
-                    var ds = '';
-                    if(sum > 22){
-                        dx = '大';
-                    }else {
-                        dx = '小';
-                    }
-                    if(sum%2 == 0){
-                        ds = '双';
-                    }else {
-                        ds = '单';
-                    }
-
-                    for (var i = 0; i < nums.length; i++) {
-
-                        srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
-
-                    }
-                    srt = srt + '<div class="sscLH">';
-                    srt = srt + '<a>' + long(nums[0],nums[4]) + '</a>';
-                    srt = srt + '<a>' + '<span></span>' + '</a>';
-                    srt = srt + '<a>' + '总和' + '</a>';
-                    srt = srt + '<a>' + sum + '</a>';
-                    srt = srt + '<a>' + dx  + '</a>';
-                    srt = srt + '<a>' + ds  + '</a>';
-                    srt = srt + '</div>';
-                    $('.openCodeList').html(srt)
-                    getHistoryData(1,50)
+                    dx = '小';
                 }
+                if (sum % 2 == 0) {
+                    ds = '双';
+                } else {
+                    ds = '单';
+                }
+
+                for (var i = 0; i < nums.length; i++) {
+
+                    srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
+
+                }
+                srt = srt + '<div class="sscLH">';
+                srt = srt + '<a>' + long(nums[0], nums[4]) + '</a>';
+                srt = srt + '<a>' + '<span></span>' + '</a>';
+                srt = srt + '<a>' + '总和' + '</a>';
+                srt = srt + '<a>' + sum + '</a>';
+                srt = srt + '<a>' + dx + '</a>';
+                srt = srt + '<a>' + ds + '</a>';
+                srt = srt + '</div>';
+                $('.openCodeList').html(srt)
+                window.setTimeout(function () {
+                    getHistoryData('50')
+                },5000)
             }
         }, 'json').error(function () {
         });
     }
 });
-function getHistoryData(page,offset,date) {
-    $.get("../../txffc/getHistoryData.do", {page:page,offset:offset,date:date,t: Math.random()}, function (result) {
+function getHistoryData(count,date) {
+    $.get("../../txffc/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
         if(result&&result.rows){
         	var j = 0;
         	var html = '';
@@ -317,14 +306,6 @@ function getHistoryData(page,offset,date) {
                 j++;
         	}
         	$("#historyList").html(html);
-            var setTotalCount = 1000;
-            $('#box').paging({
-                initPageNo: 3, // 初始页码
-                totalPages: 750, //总页数
-                totalCount: '合计' + setTotalCount + '条数据', // 条目总数
-                slideSpeed: 600, // 缓动速度。单位毫秒
-                jump: true, //是否支持跳转
-            })
         }else {
 			 $("#historyList").html("<li>对不起，今天暂无数据，请按日期检索！</li>");
 			}

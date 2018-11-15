@@ -17,16 +17,12 @@ include("../conn.php");
 <script src="../style/js/jquery.js"></script>
 <script src="../style/js/layer.js"></script>
     <script src="../style/js/lotcommon.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
-    <script src="../style/js/warntime.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
+    <script src="../style/js/warntime.js?v=<?php echo date("Y/m/d")?>v2" type="text/javascript"></script>
     <link type="text/css" href="../style/css/style.css?v=<?php echo date("Y/m/d")?>"  rel="stylesheet">
-    <link type="text/css" href="../style/css/histoly.css?v=<?php echo date("Y/m/d")?>" rel="stylesheet">
 </head>
 <body>
-
-
-
 <?php include("../public/header.php"); ?>
-<script src="award.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
+<script src="award.js?v=<?php echo date("Y/m/d")?>v2" type="text/javascript"></script>
 <!--<link type="text/css" href="../style/css/pk10.css" rel="stylesheet">-->
 <?php include("../public/header2.php"); ?>
 

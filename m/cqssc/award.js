@@ -39,43 +39,43 @@ $(function () {
     }
     var awardTick = function () {
         $.post('../../cqssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
+            if(data.current.awardNumbers!='') {
+                $('.newIssue span').html(data.current.periodNumber1.substr(6));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(6));
+                $('.periodNumber').html(data.current.periodNumber);
+                $('.surplus_num').html(data.current.surplus_num);
+                var nums = data.current.awardNumbers.split(',');
+                var srt = '';
+                var sum = eval(nums.join("+"));
+                var dx = '';
+                var ds = '';
+                if (sum > 22) {
+                    dx = '大';
+                } else {
+                    dx = '小';
+                }
+                if (sum % 2 == 0) {
+                    ds = '双';
+                } else {
+                    ds = '单';
+                }
 
-            $('.newIssue span').html(data.current.periodNumber1.substr(4));
-            $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
-            $('.periodNumber').html(data.current.periodNumber);
-            $('.surplus_num').html(data.current.surplus_num);
-            var nums = data.current.awardNumbers.split(',');
+                for (var i = 0; i < nums.length; i++) {
 
-            var srt = '';
-            var sum = eval(nums.join("+"));
-            var dx = '';
-            var ds = '';
-            if(sum > 22){
-                dx = '大';
-            }else {
-                dx = '小';
+                    srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
+
+                }
+                srt = srt + '<div class="sscLH">';
+                srt = srt + '<a>' + long(nums[0], nums[4]) + '</a>';
+                srt = srt + '<a>' + '<span></span>' + '</a>';
+                srt = srt + '<a>' + '总和' + '</a>';
+                srt = srt + '<a>' + sum + '</a>';
+                srt = srt + '<a>' + dx + '</a>';
+                srt = srt + '<a>' + ds + '</a>';
+                srt = srt + '</div>';
+                $('.openCodeList').html(srt)
             }
-            if(sum%2 == 0){
-                ds = '双';
-            }else {
-                ds = '单';
-            }
 
-            for (var i = 0; i < nums.length; i++) {
-
-                srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
-
-            }
-            srt = srt + '<div class="sscLH">';
-            srt = srt + '<a>' + long(nums[0],nums[4]) + '</a>';
-            srt = srt + '<a>' + '<span></span>' + '</a>';
-            srt = srt + '<a>' + '总和' + '</a>';
-            srt = srt + '<a>' + sum + '</a>';
-            srt = srt + '<a>' + dx  + '</a>';
-            srt = srt + '<a>' + ds  + '</a>';
-            srt = srt + '</div>';
-            $('.openCodeList').html(srt)
-            getHistoryData('50')
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -122,41 +122,42 @@ $(function () {
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
         $.post('../../cqssc/getCqsscAwardTimes.do', {t: Math.random() }, function (data) {
-            $('.newIssue span').html(data.current.periodNumber1.substr(4));
-            $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
-            $('.periodNumber').html(data.current.periodNumber);
-            $('.surplus_num').html(data.current.surplus_num);
-            var nums = data.current.awardNumbers.split(',');
-            var srt = '';
-            var sum = eval(nums.join("+"));
-            var dx = '';
-            var ds = '';
-            if(sum > 22){
-                dx = '大';
-            }else {
-                dx = '小';
-            }
-            if(sum%2 == 0){
-                ds = '双';
-            }else {
-                ds = '单';
-            }
+            if(data.current.awardNumbers!='') {
+                $('.newIssue span').html(data.current.periodNumber1.substr(6));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(6));
+                $('.periodNumber').html(data.current.periodNumber);
+                $('.surplus_num').html(data.current.surplus_num);
+                var nums = data.current.awardNumbers.split(',');
+                var srt = '';
+                var sum = eval(nums.join("+"));
+                var dx = '';
+                var ds = '';
+                if (sum > 22) {
+                    dx = '大';
+                } else {
+                    dx = '小';
+                }
+                if (sum % 2 == 0) {
+                    ds = '双';
+                } else {
+                    ds = '单';
+                }
 
-            for (var i = 0; i < nums.length; i++) {
+                for (var i = 0; i < nums.length; i++) {
 
-                srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
+                    srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
 
+                }
+                srt = srt + '<div class="sscLH">';
+                srt = srt + '<a>' + long(nums[0], nums[4]) + '</a>';
+                srt = srt + '<a>' + '<span></span>' + '</a>';
+                srt = srt + '<a>' + '总和' + '</a>';
+                srt = srt + '<a>' + sum + '</a>';
+                srt = srt + '<a>' + dx + '</a>';
+                srt = srt + '<a>' + ds + '</a>';
+                srt = srt + '</div>';
+                $('.openCodeList').html(srt)
             }
-            srt = srt + '<div class="sscLH">';
-            srt = srt + '<a>' + long(nums[0],nums[4]) + '</a>';
-            srt = srt + '<a>' + '<span></span>' + '</a>';
-            srt = srt + '<a>' + '总和' + '</a>';
-            srt = srt + '<a>' + sum + '</a>';
-            srt = srt + '<a>' + dx  + '</a>';
-            srt = srt + '<a>' + ds  + '</a>';
-            srt = srt + '</div>';
-            $('.openCodeList').html(srt)
-            getHistoryData('50')
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
             //期数不同，则开始封盘倒计时
@@ -178,6 +179,7 @@ $(function () {
             }
            // $(".headOpenTime .headOpenTimeM").html(data.next.periodNumber);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
+            polling()
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);
@@ -192,6 +194,57 @@ $(function () {
     window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
+    function polling() {
+        $.post('../../cqssc/getCqsscAwardTimes.do', {t: Math.random()}, function (data) {
+            if(data.status == 2){
+                return
+            }
+            if(data.current.awardNumbers==''){
+                setTimeout(function () {
+                    polling();
+                },3000)
+            }else {
+                $('.newIssue span').html(data.current.periodNumber1.substr(4));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.periodNumber').html(data.current.periodNumber);
+                $('.surplus_num').html(data.current.surplus_num);
+                var nums = data.current.awardNumbers.split(',');
+                var srt = '';
+                var sum = eval(nums.join("+"));
+                var dx = '';
+                var ds = '';
+                if (sum > 22) {
+                    dx = '大';
+                } else {
+                    dx = '小';
+                }
+                if (sum % 2 == 0) {
+                    ds = '双';
+                } else {
+                    ds = '单';
+                }
+
+                for (var i = 0; i < nums.length; i++) {
+
+                    srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
+
+                }
+                srt = srt + '<div class="sscLH">';
+                srt = srt + '<a>' + long(nums[0], nums[4]) + '</a>';
+                srt = srt + '<a>' + '<span></span>' + '</a>';
+                srt = srt + '<a>' + '总和' + '</a>';
+                srt = srt + '<a>' + sum + '</a>';
+                srt = srt + '<a>' + dx + '</a>';
+                srt = srt + '<a>' + ds + '</a>';
+                srt = srt + '</div>';
+                $('.openCodeList').html(srt)
+                window.setTimeout(function () {
+                    getHistoryData('50')
+                },5000)
+            }
+        }, 'json').error(function () {
+        });
+    }
 
 });
 function getHistoryData(count,date) {
