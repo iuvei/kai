@@ -635,7 +635,6 @@ class LottoryDataMgr
                 $retData["count"] = $res[0]['count'];
                 $retData["page"] = $pages;
                 $retData["offset"] = $offset;
-
             }
 
             $ret = json_encode($retData);

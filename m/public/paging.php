@@ -17,19 +17,19 @@
     </div>
     <script src="/m/style/js/myPage.js" type="text/javascript"></script>
     <script type="text/javascript">
-        var onlyEvent = false;
+
+
+
+
         function loadData(num) {
             $("#PageCount").val(num);
         }
+        var onlyEvent = false;
         function exeData(num, type) {
             loadData(num);
             loadpage();
         }
         function loadpage(date) {
-            if(onlyEvent){
-                return
-            }else {
-                onlyEvent = true;
                 $("#dateSle").val(date);
                 var myPageCount = parseInt($("#PageCount").val());
                 var myPageSize = parseInt($("#PageSize").val());
@@ -52,11 +52,13 @@
                         }
                     }
                 });
-            }
         }
         function UpData(page,date) {
             $.get("../../pk10/getHistoryData.do", { page:page,offset:15,date:date,t: Math.random() }, function (result) {
                 if(result&&result.rows){
+                    setTimeout(function () {
+                        $('#form1').show();
+                    },1000);
                     var j = 0;
                     var html = '';
                     for(var i in result.rows){
@@ -117,7 +119,6 @@
                         j++;
                     }
                     $("#historyList").html(html);
-                    $('#form1').show();
                 }else {
                     $("#historyList").html("<p>对不起，今天暂无数据，请按日期检索！</p>");
                 }

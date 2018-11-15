@@ -22,9 +22,6 @@ include("../conn.php");
 
 </head>
 <body>
-<script>
-
-</script>
 <?php include("../public/header.php"); ?>
 <script src="award.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
 <?php include("../public/header2.php"); ?>
@@ -72,7 +69,6 @@ include("../conn.php");
 
     </div>
 </div>
-<?php include("../public/paging.php"); ?>
 <!--<div class="head">-->
 <!--    <div class="headRow1">-->
 <!--        <input type="date" id="dateTime" onchange="Search()">-->
@@ -156,8 +152,9 @@ include("../conn.php");
     </div>
 </div>
 <div id="historyList"></div>
-
+<?php include("../public/paging.php"); ?>
 <?php include("../public/footer.php"); ?>
+
 <script type="text/javascript">
 
 

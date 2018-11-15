@@ -1,5 +1,5 @@
 
-.pagination{
+.pagination,#pageLoding{
     font-size: 3.2vw;
     width: 100%;
     display: flex;
