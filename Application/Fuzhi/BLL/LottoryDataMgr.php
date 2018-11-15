@@ -5931,8 +5931,8 @@ time: 1542068782325*/
                 $issue = $this->getJspkSscOpentimes($time);
                 break;
             case "pc28":
-                $issueStart = 2355150 + intval((time() - 79020 - strtotime('2018-11-14 00:00:00')) / 86400) * 397;
-                $issue = $this->getCombOpentimes_v2(79230, 397, 210, $time, $issueStart);
+                $issueStart = 2354715 + intval((time() - 0 - strtotime('2018-11-14 00:00:00')) / 86400) * 397;
+                $issue = $this->getCombOpentimes_v2(0, 397, 210, $time, $issueStart);
                 break;
             case "gd11x5":
                 $issue = $this->getCombOpentimes_v2(32430, 84, 600, time());
@@ -6117,13 +6117,13 @@ time: 1542068782325*/
     //js
 
     /**
-     * 获得sfssc的开奖时间
+     * 获得sf时时彩的开奖时间
      * @param int $time
      */
     private function getSfSscOpentimes($time = 0)
     {
         $tsStart = 300;
-        $issueCount = 349;
+        $issueCount = 439;
         $ts = 180;
 
         // 默认当前时间
@@ -6145,9 +6145,9 @@ time: 1542068782325*/
             if ($issue_no < 81) {
                 $timespan = $rootTimespan + ($issue_no) * $ts;
             } elseif ($issue_no == 81) {
-                $timespan = $rootTimespan + 3600*6;
+                $timespan = $rootTimespan + 3600*6+195;
             }else{
-                $timespan = $rootTimespan + 3600*6+15 + ($issue_no -80) * 180;
+                $timespan = $rootTimespan + 3600*6+195 + ($issue_no -81) * 180;
             }
             // 开奖时间
             $opentime = Array();
@@ -6164,6 +6164,7 @@ time: 1542068782325*/
             if ($time > $timespan) {
                 $preIssue = $opentime;
             }
+           // echo date('Y-m-d H:i:s', $timespan).":".$issue_no."\n";
         }
         $opentime = Array();
         $timespan = $rootTimespan + 86400 + 180;
@@ -6189,7 +6190,7 @@ time: 1542068782325*/
 
 
     /**
-     * 获得sfssc的开奖时间
+     * 获得sf赛车的开奖时间
      * @param int $time
      */
     private function getSfpkSscOpentimes($time = 0)
@@ -6214,12 +6215,12 @@ time: 1542068782325*/
         $preIssue = Array();
         for ($issue_no = 1; $issue_no <= $issueCount; $issue_no++) {
 
-            if ($issue_no < 80) {
+            if ($issue_no < 81) {
                 $timespan = $rootTimespan + ($issue_no) * $ts;
-            } elseif ($issue_no == 80) {
-                $timespan = $rootTimespan + 3600*6;
+            } elseif ($issue_no == 81) {
+                $timespan = $rootTimespan + 3600*6 +180;
             }else{
-                $timespan = $rootTimespan + 3600*6 + ($issue_no -80) * 180;
+                $timespan = $rootTimespan + 3600*6 +180+ ($issue_no -81) * 180;
             }
             // 开奖时间
             $opentime = Array();
@@ -6236,6 +6237,7 @@ time: 1542068782325*/
             if ($time > $timespan) {
                 $preIssue = $opentime;
             }
+        //    echo date('Y-m-d H:i:s', $timespan).":".$issue_no."\n";
         }
         $opentime = Array();
         $timespan = $rootTimespan + 86400 + 180;
@@ -6264,7 +6266,7 @@ time: 1542068782325*/
 
 
     /**
-     * 获得jsss的开奖时间
+     * 获得js时时彩的开奖时间
      * @param int $time
      */
     private function getJsSscOpentimes($time = 0)
@@ -6338,7 +6340,7 @@ time: 1542068782325*/
 
 
     /**
-     * 获得js的开奖时间
+     * 获得js赛车的开奖时间
      * @param int $time
      */
     private function getJspkSscOpentimes($time = 0)
@@ -6382,14 +6384,12 @@ time: 1542068782325*/
             }
             $opentimes[$issue_no] = $opentime;
 
-         //   echo date('Y-m-d H:i:s', $timespan).":".$issue_no."\n";
+      //      echo date('Y-m-d H:i:s', $timespan).":".$issue_no."\n";
 
             if ($time > $timespan) {
                 $preIssue = $opentime;
             }
         }
-
-        //dump($preIssue);die;
 
         $opentime = Array();
         $timespan = $rootTimespan + 86400 + 75;
