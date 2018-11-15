@@ -199,7 +199,6 @@ $(function () {
     window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
-    var loading = -1;
     function polling() {
         $.post('../../xyft/getPk10AwardTimes.do', {t: Math.random()}, function (data) {
             if(data.status == 2){

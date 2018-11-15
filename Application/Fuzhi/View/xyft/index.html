@@ -3,7 +3,7 @@
 <block name="style">
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
-	
+
 </block>
 
 <block name="body">
@@ -20,18 +20,18 @@
 			<div class="web_listOP">
     <ul id="web_listOP_ul"><li class="hover"><a href="xyft/">幸运飞艇</a></li><li><a href="xyft/kaijiang.html">历史开奖号码</a></li><li><a href="xyft/luzhubigorsmall.html">单双大小路珠</a></li><li><a href="xyft/luzhutotal.html">总和路珠</a></li><li><a href="xyft/ballstat.html">单双大小历史</a></li><li><a href="xyft/numberstat.html">历史号码统计</a></li><li><a href="xyft/zoushitu.html">横版走势图</a></li><li><a href="jiqiao/xyft/">幸运飞艇技巧</a></li><!--<li><a href="xyft/shipin" class="redColor">开奖视频</a></li>--><li><a href="xyft/omitdata.html">遗漏大数据</a><span class="hoticon"></span> </li><li><a href="xyft/twosidedstat.html">两面数据统计</a><span class="wen_newIcon"></span> </li></ul>
 </div>
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
 					<input type="hidden" value="getHistoryData|drawTrend" id="callFun" time="1000" />
-					
-			        
+
+
 			        <div class="index-history">
 			            <div class="title mt10">
 			                <h2>开奖记录</h2>
 			                <a href="xyft/kaijiang.html" >查看全部>></a>
-			            </div>       
+			            </div>
 			            <div id="history_data-html"></div>
-	      				<script id="history_data-tmpl" type="text/template">    
+	      				<script id="history_data-tmpl" type="text/template">
 			            <table id="history" class="lot-table">
 				            <tbody>
 								<tr class="head">
@@ -42,7 +42,7 @@
 						<td colspan="5">1~5龙虎</td>
 					</tr>
 								{{
-									for (var i = 0; i <it.length; i++) { 
+									for (var i = 0; i <it.length; i++) {
 										var row=it[i];
 										var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
 										var totalNum=row.n1+row.n2+row.n3+row.n4+row.n5;
@@ -54,7 +54,7 @@
 										}else if(row.n1==row.n10){
 											lhStr="和";
 										}
-										
+
 										var lhStr2="";
 										if(row.n2>row.n9){
 											lhStr2="龙";
@@ -63,7 +63,7 @@
 										}else if(row.n2==row.n9){
 											lhStr2="和";
 										}
-										
+
 										var lhStr3="";
 										if(row.n3>row.n8){
 											lhStr3="龙";
@@ -72,7 +72,7 @@
 										}else if(row.n3==row.n8){
 											lhStr3="和";
 										}
-										
+
 										var lhStr4="";
 										if(row.n4>row.n7){
 											lhStr4="龙";
@@ -81,7 +81,7 @@
 										}else if(row.n4==row.n7){
 											lhStr4="和";
 										}
-										
+
 										var lhStr5="";
 										if(row.n5>row.n6){
 											lhStr5="龙";
@@ -90,7 +90,7 @@
 										}else if(row.n5==row.n6){
 											lhStr5="和";
 										}
-											
+
 								}}
 										<tr class="{{=(i+1)%2==0?'even':'odd'}}">
 											<td>
@@ -116,7 +116,7 @@
 											<td>{{=row.n1+row.n2}}</td>
 											<td class="{{=(row.n1+row.n2)> 10?'r':''}}"><p>{{=(row.n1+row.n2)<= 10?"小":"大"}}</p></td>
 											<td class="{{=(row.n1+row.n2)%2!=0?'r':''}}"><p>{{=(row.n1+row.n2)%2==0?"双":"单"}}</p></td>
-											
+
 											<td><p class="{{=lhStr=='龙'?'r':''}}">{{=lhStr}}</p></td>
 											<td><p class="{{=lhStr2=='龙'?'r':''}}">{{=lhStr2}}</p></td>
 											<td><p class="{{=lhStr3=='龙'?'r':''}}">{{=lhStr3}}</p></td>
@@ -129,8 +129,8 @@
 				        	</tbody>
 						</table>
 			            </script>
-						
-						
+
+
 			        <div class="lot-article mt10">
 				<div class="l-title">
 					<h2>幸运飞艇技巧</h2>
@@ -151,19 +151,19 @@
 				<?php } ?>
 			</volist>
 						</ul>
-		
-                   
-                 
+
+
+
 				</div>
 			</div>
 			  <div class="lot-about mt10">
                 <div class="l-title">
                     <h2>幸运飞艇号码走势图</h2>
                 </div>
-                
+
                     <div id="sContainer">
 				</div>
-               
+
             </div>
 			        </div>
 			        <script src="js/highchats/highcharts.js"  type="text/javascript"></script>
@@ -176,7 +176,7 @@
 				            $.get("xyft/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
 				                showChartline("第一球走势图", data, function () { return this.x + '期:' + this.y }, 0, 10, true, 0, "sContainer");
 				            }, "json");
-				            
+
 				        }
 				        function getHistoryData(){
 			        		$.post("xyft/getHistoryData.do",

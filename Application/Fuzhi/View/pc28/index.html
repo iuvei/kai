@@ -18,7 +18,7 @@
 		<include file="Public/lottory_op"/>
 		<div class="clear"></div>
     <input type="hidden" value="getHistoryData|drawTrend" id="callFun" time="1000" />
-		
+
 		<div class="index-history">
             <div class="title mt10">
                 <h2>
@@ -36,7 +36,7 @@
 							<td colspan="3">总和</td>
 						</tr>
 						{{
-							for (var i = 0; i <it.length; i++) { 
+							for (var i = 0; i <it.length; i++) {
 								var row=it[i];
 								var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
 								var totalNum_a = row.n2 + row.n5 + row.n8 +row.n11 + row.n14 + row.n17;
@@ -68,7 +68,7 @@
 						}else if(totalNum <= 27 && totalNum >= 22){
 						danshaung = '极大';
 						}
-									
+
 						}}
 								<tr class="{{=(i+1)%2==0?'even':'odd'}}">
 									<td>
@@ -109,7 +109,7 @@
 		            $.get("pc28/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
 		                showChartline("总和走势图", data, function () { return this.x + '期:' + this.y }, 0, 27, true, 0, "sContainer");
 		            }, "json");
-		            
+
 		        }
 		        function getHistoryData(){
 	        		$.post("pc28/getHistoryData.do",
@@ -128,7 +128,7 @@
 					<a href="jiqiao/cqft/" >更多&gt;&gt;</a>
 				</div>
 				<div class="wrap">
-				
+
     <ul>
 		<li>
 			<?php if(!empty($artical_first['id'])){ ?>
@@ -142,24 +142,24 @@
 			<?php } ?>
 		</volist>
 						</ul>
-		
-                   
-                 
+
+
+
 				</div>
 			</div>
             <div class="lot-about mt10">
                 <div class="l-title">
                     <h2>加拿大28号码走势图</h2>
                 </div>
-                
+
                     <div id="sContainer">
 				</div>
-               
+
             </div>
-            
+
         </div>
 		<div class="clear"></div>
 	</div>
    </div>
-   
+
 		</block>
