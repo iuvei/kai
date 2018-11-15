@@ -154,9 +154,9 @@ $(function () {
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
     function polling() {
         $.post('sfssc/getCqsscAwardTimes.do', {t: Math.random()}, function (data) {
+            $(".currentAward .period").html(data.current.periodNumber1.toString().substr(6) + " 期");
+            $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(6) + "期");
             if(data.current.awardNumbers==''){
-                $(".currentAward .period").html(data.current.periodNumber1.toString().substr(6) + " 期");
-                $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(6) + "期");
                 $(".lot-nums").html('<p>等待开奖...<p>');
                 setTimeout(function () {
                     polling();

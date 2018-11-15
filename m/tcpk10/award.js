@@ -78,9 +78,9 @@ $(function () {
             $('.lhResult a').eq(7).html(sum);
             $('.lhResult a').eq(8).html(dx);
             $('.lhResult a').eq(9).html(ds);
-            window.setTimeout(function () {
+           /* window.setTimeout(function () {
                 getHistoryData('15')
-            },5000)
+            },5000)*/
 
             //计数请求次数
             requireCount += 1;
@@ -163,9 +163,9 @@ $(function () {
             $('.lhResult a').eq(7).html(sum);
             $('.lhResult a').eq(8).html(dx);
             $('.lhResult a').eq(9).html(ds);
-            window.setTimeout(function () {
+           /* window.setTimeout(function () {
                 getHistoryData('15')
-            },5000)
+            },5000)*/
 
             //请求到数据后需要做的事情
             cpCurrAwardData = data;

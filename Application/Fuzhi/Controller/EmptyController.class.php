@@ -199,14 +199,14 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                     $this->keyword = C("WEB_SITE_tcpk10_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                     $this->description = C("WEB_SITE_tcpk10_DESCR");
                                                                     $lottoryName = "TC极速赛车";//头彩
-                                                                    $totalExpect = 1440;
+                                                                    $totalExpect = 1054;
                                                                 }else{
                                                                     if ($ctrlName == 'tcssc') {
                                                                         $this->title = $title_c.'TC分分彩开奖视频_TC分分彩开奖号码_TC分分彩开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                         $this->keyword = C("WEB_SITE_tcssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                         $this->description = C("WEB_SITE_tcssc_DESCR");
                                                                         $lottoryName = "TC分分彩";//头彩
-                                                                        $totalExpect = 1440;
+                                                                        $totalExpect = 1054;
                                                                     }else{
                                                                         if ($ctrlName == 'sfssc') {
                                                                             $this->title = $title_c.'TC三分赛车开奖视频_TC三分赛车开奖号码_TC三分赛车开奖记录 - ' . C('WEB_SITE_TITLE');
