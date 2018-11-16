@@ -17,7 +17,7 @@ $(function () {
             _time = ~ ~_time;
             _container = _container ? _container : "lot-wrap";
             setTimeout(function () {
-                $.get('cqssc/' + _page, { t: Math.random() }, function (text) {
+                $.get('txffc/' + _page, { t: Math.random() }, function (text) {
                     $('#' + _container).html(text);
                     //文字闪烁
                     Glitter();

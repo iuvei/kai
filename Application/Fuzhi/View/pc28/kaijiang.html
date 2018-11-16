@@ -205,8 +205,8 @@
    		<table id="history" class="lot-table">
 	            <tbody>
 					<tr class="head">
-						<td width="100">时间</td>
 						<td width="100">期号</td>
+						<td width="100">时间</td>
 						<td width="680">开奖号码</td>
 						<td colspan="3">总和</td>
 					</tr>
@@ -248,11 +248,11 @@
 							<tr class="{{=(i+1)%2==0?'even':'odd'}}">
 								<td>
 
-									<p>{{=lowDate}}</p>
+									<p>{{=row.termNum}}</p>
 								</td>
 								<td>
-									<p>{{=row.termNum}}</p>
 
+									<p>{{=lowDate}}</p>
 								</td>
 								<td class="nums">
 									<span class="no1">{{=totalNum_a}}</span>

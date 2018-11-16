@@ -181,8 +181,8 @@ function getHistoryData(count) {
                 if (j%2==0) {
                     clsName = "odd";
                 }
-                html += '<tr class="' + clsName + '"><td><p class="">' +data.lotteryTime.substring(5, 16) + '</p></td><td><p class="">'
-                    +  data.termNum ;
+                html += '<tr class="' + clsName + '"><td><p class="">' +  data.termNum  + '</p></td><td><p class="">'
+                    +data.lotteryTime.substring(5, 16);
                 html += '</p></td><td class="nums">';
                 html += '<i class="pk-no' + data.n1 + '"></i>';
                 html += '<i class="pk-no' + data.n2 + '"></i>';
@@ -263,12 +263,14 @@ function getHistoryData(count) {
                 html += '</tr>';
                 j++;
             }
+
             html ='<tr class="head">' +
-                '<td width="120">时间</td>' +
                 '<td width="140">期号</td>' +
+                '<td width="120">时间</td>' +
                 '<td width="650">开奖号码</td>' +
-                '<td colspan="3">冠亚军和</td>' +
-                '<td colspan="5">1~5龙虎</td>' +
+                '<td colspan="3">前三</td>' +
+                '<td colspan="3">中三</td>' +
+                '<td colspan="3">后三</td>' +
                 '</tr>'+html
             $("#history").html(html);
         }

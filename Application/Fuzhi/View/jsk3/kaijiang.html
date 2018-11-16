@@ -78,7 +78,7 @@
                              {count:120,date:date}, function(datas) {
 					    	if(datas){
 					    		var data = datas.rows;
-					    		var str = '<tr class="head"><td width="120px">时间</td> <td width="140px">期号</td><td>开奖号码</td><td colspan="2">总和</td></tr>';
+					    		var str = '<tr class="head"><td width="140px">期号</td><td width="120px">时间</td> <td>开奖号码</td><td colspan="2">总和</td></tr>';
 								for(var key in data){
 									var flag = data[key];
 									var num1 = flag.n1;
@@ -97,8 +97,9 @@
 										desc = "小";
 									}
 									str+='<tr class="even">'+
+                                        '<td><p class="">'+flag.termNum.substr(4)+'</p></td>'+
 											'<td><p class="">'+time+'</p>'+
-												'<td><p class="">'+flag.termNum+'</p></td>'+
+
 											'<td class="nums">'+
 												'<i class="lot-no'+num1+'"></i>'+
 												'<i class="lot-no'+num2+'"></i>'+

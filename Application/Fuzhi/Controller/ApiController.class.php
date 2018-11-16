@@ -52,6 +52,24 @@ class ApiController extends Controller{
             echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
         }
 
+
+        $getData['dat_type'] = $res['id'];
+        $getData['dat_expect'] = $data['issue'];
+
+        $response = M('data')->where($getData)->find();
+
+        if($response)
+        {
+            $arr = array(
+                'code'=>true,
+                'msg'=>'数据已存在',
+            );
+            $jsonStr = json_encode($response);
+            $newLog ='log_time:'.date('Y-m-d H:i:s').$jsonStr;
+            file_put_contents($payLogFile, $newLog.PHP_EOL, FILE_APPEND);
+            echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+        }
+
         $where = array(
             'dat_type'=>$res['id'],
             'dat_open_time'=>time(),
@@ -67,14 +85,7 @@ class ApiController extends Controller{
         $payLogFile = 'text.txt';
         $newLog ='log_time:'.date('Y-m-d H:i:s').$res;
         file_put_contents($payLogFile, $newLog.PHP_EOL, FILE_APPEND);
-        if($res == "" || $res == null )
-        {
-            $arr = array(
-                'code'=>true,
-                'msg'=>'重复请求',
-            );
-            echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
-        }
+
 
         if($res < 1){
             $arr = array(
