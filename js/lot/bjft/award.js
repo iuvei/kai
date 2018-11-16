@@ -198,11 +198,11 @@ function getHistoryData(count) {
                 var srt = guanyahe%4;
                 html += '</td>';
                 if(srt == 0){
-                    html += '<td>4摊</td>';
+                    html += '<td><span class="fantan">4摊</span></td>';
                     html += "<td><p class='r'>大</p></td>";
                     html += '<td><p >双</p></td>';
                 }else {
-                    html += '<td>' + srt + '摊</td>';
+                    html += '<td><span class="fantan">' + srt + '摊</span></td>';
                     if(srt == 3){
                         html += "<td><p class='r'>大</p></td>";
                     }else {
@@ -220,11 +220,11 @@ function getHistoryData(count) {
                 var srt = guanyahe2%4;
                 html += '</td>';
                 if(srt == 0){
-                    html += '<td>4摊</td>';
+                    html += '<td><span class="fantan">4摊</span></td>';
                     html += "<td><p class='r'>大</p></td>";
                     html += '<td><p >双</p></td>';
                 }else {
-                    html += '<td>' + srt + '摊</td>';
+                    html += '<td><span class="fantan">' + srt + '摊</span></td>';
                     if(srt == 3){
                         html += "<td><p class='r'>大</p></td>";
                     }else {
@@ -243,11 +243,11 @@ function getHistoryData(count) {
                 var srt = guanyahe3%4;
                 html += '</td>';
                 if(srt == 0){
-                    html += '<td>4摊</td>';
+                    html += '<td><span class="fantan">4摊</span></td>';
                     html += "<td><p class='r'>大</p></td>";
                     html += '<td><p >双</p></td>';
                 }else {
-                    html += '<td>' + srt + '摊</td>';
+                    html += '<td><span class="fantan">' + srt + '摊</span></td>';
                     if(srt == 3){
                         html += "<td><p class='r'>大</p></td>";
                     }else {

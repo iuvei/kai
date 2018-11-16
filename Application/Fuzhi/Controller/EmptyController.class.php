@@ -180,13 +180,13 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                 $lottoryName = "重庆番摊";
                                 $totalExpect = 120;
 												}else{
-                                                        if ($ctrlName == 'pc28') {
+                                                        /*if ($ctrlName == 'pc28') {
                                                             $this->title = $title_c.'加拿大28开奖视频_加拿大28开奖号码_加拿大28开奖记录 - ' . C('WEB_SITE_TITLE');
                                                             $this->keyword = C("WEB_SITE_xjssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                             $this->description = C("WEB_SITE_xjssc_DESCR");
                                                             $lottoryName = "加拿大28";
                                                             $totalExpect = 1;
-                                                        }else{
+                                                        }else{*/
                                                             if ($ctrlName == 'txffc') {
                                                                 $this->title = $title_c.'腾讯分分彩开奖视频_腾讯分分彩开奖号码_腾讯分分彩开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                 $this->keyword = C("WEB_SITE_xjssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
@@ -228,7 +228,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                             }
                                                         }
                                                     }
-												}
+//												}
 												
 											}
 											}
@@ -305,10 +305,10 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
 					    $swfurl = "http://f.907794.com/pk10/Preloader.swf";
                         $id = 44;
                         break;
-                    case 'pc28':
-                        $swfurl = "http://f.907794.com/pc28/Preloader.swf";
-                        $id = 55;
-                        break;
+//                    case 'pc28':
+//                        $swfurl = "http://f.907794.com/pc28/Preloader.swf";
+//                        $id = 55;
+//                        break;
                     case 'txffc':
                         $swfurl = "http://f.907794.com/txffc/Preloader.swf";
                         $id = 56;
@@ -391,9 +391,9 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                      case 'jssc':
                          $swfurl = "/v2/jkpk10";
                          break;
-                     case 'pc28':
+                     /*case 'pc28':
                          $swfurl = "/v2/jnd28";
-                         break;
+                         break;*/
                      case 'txffc':
                          $swfurl = "/v2/txffc";
                          break;

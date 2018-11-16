@@ -628,43 +628,43 @@ var webListOP = {
         }
     ],
 
-    "pc28": [
-        {
-            "text":"加拿大28",
-            "href":"pc28/index.html"
-        },
-        {
-            "text":"历史开奖号码",
-            "href":"pc28/kaijiang.html"
-        },
-        {
-            "text":"号码路珠",
-            "href":"pc28/merge.html"
-        },
-        // {
-        //     "text":"单双大小历史",
-        //     "href":"pc28/ballstat.html"
-        // },
-        /*{
-            "text":"加拿大28开奖直播",
-            "href":"pc28/shipin/",
-            "title":"在线观看番摊开奖直播",
-            "aClass":"redColor"
-        },*/
-        {
-            "text":"加拿大28技巧",
-            "href":"jiqiao/pc28/"
-        },
-        {
-            "text":"遗漏大数据",
-            "href":"pc28/omitdata.html",
-            
-        },
-        {
-            "text":"横版走势图",
-            "href":"pc28/zoushitu.html"
-        }
-    ],
+    // "pc28": [
+    //     {
+    //         "text":"加拿大28",
+    //         "href":"pc28/index.html"
+    //     },
+    //     {
+    //         "text":"历史开奖号码",
+    //         "href":"pc28/kaijiang.html"
+    //     },
+    //     {
+    //         "text":"号码路珠",
+    //         "href":"pc28/merge.html"
+    //     },
+    //     // {
+    //     //     "text":"单双大小历史",
+    //     //     "href":"pc28/ballstat.html"
+    //     // },
+    //     /*{
+    //         "text":"加拿大28开奖直播",
+    //         "href":"pc28/shipin/",
+    //         "title":"在线观看番摊开奖直播",
+    //         "aClass":"redColor"
+    //     },*/
+    //     {
+    //         "text":"加拿大28技巧",
+    //         "href":"jiqiao/pc28/"
+    //     },
+    //     {
+    //         "text":"遗漏大数据",
+    //         "href":"pc28/omitdata.html",
+    //
+    //     },
+    //     {
+    //         "text":"横版走势图",
+    //         "href":"pc28/zoushitu.html"
+    //     }
+    // ],
     "txffc": [
         {
             "text":"腾讯分分彩",

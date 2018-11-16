@@ -151,7 +151,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
             <li><a href="jsk3/" game="jsk3">江苏快3</a></li>
             <li><a href="gd11x5/" game="gd11x5">广东11选5</a></li>
         <!--    <li><a href="gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
-            <li><a href="pc28/" game="pc28">加拿大28</a></li>
+            <!--<li><a href="pc28/" game="pc28">加拿大28</a></li>-->
             <li><a href="txffc/" game="txffc" class="cur">腾讯分分彩</a></li>
 
 
@@ -436,33 +436,33 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 
         </a>
     </li>
-    <li class="kaij-mylist-li" id="pc28">
-        <a href="pc28/" class="yx_a">
-
-        <!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pc28"></span></div>-->
-        <div class="kaij-mylist-r">
-            <div class="kaij-mylist-hd">
-                <div  class="yx_name"> 加拿大28
-                </div>
-                <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
-                <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
-            </div>
-            <div class="kaij-mylist-bd">
-                <div class="itm-result">
-                    <div class="ball-wrap" id="number">
-                        <img src="style/images/loading2.gif" alt="载入中">
-                    </div>
-                </div>
-<!--                <div class="bt-aa">-->
-<!--                    <a href="pc28/">开奖历史</a>-->
-<!--                    <a href="pc28/smtj.php">两面统计</a>-->
-<!--                    <a href="pc28/cltj.php">长龙统计</a>-->
-<!--                    <a href="pc28/shipin.php">开奖视频</a>-->
+<!--    <li class="kaij-mylist-li" id="pc28">-->
+<!--        <a href="pc28/" class="yx_a">-->
+<!---->
+<!--        <!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pc28"></span></div>-->-->
+<!--        <div class="kaij-mylist-r">-->
+<!--            <div class="kaij-mylist-hd">-->
+<!--                <div  class="yx_name"> 加拿大28-->
 <!--                </div>-->
-            </div>
-        </div>
-        </a>
-    </li>
+<!--                <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>-->
+<!--                <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>-->
+<!--            </div>-->
+<!--            <div class="kaij-mylist-bd">-->
+<!--                <div class="itm-result">-->
+<!--                    <div class="ball-wrap" id="number">-->
+<!--                        <img src="style/images/loading2.gif" alt="载入中">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--<!--                <div class="bt-aa">-->-->
+<!--<!--                    <a href="pc28/">开奖历史</a>-->-->
+<!--<!--                    <a href="pc28/smtj.php">两面统计</a>-->-->
+<!--<!--                    <a href="pc28/cltj.php">长龙统计</a>-->-->
+<!--<!--                    <a href="pc28/shipin.php">开奖视频</a>-->-->
+<!--<!--                </div>-->-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        </a>-->
+<!--    </li>-->
     <li class="kaij-mylist-li" id="jsk3">
         <a href="jsk3/" class="yx_a">
 

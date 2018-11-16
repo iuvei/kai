@@ -30,10 +30,10 @@ if(strpos($self,"xyft")){
 }elseif(strpos($self,"cqft")){
     $name = 41;
     $web_type = "重庆番摊";
-}elseif(strpos($self,"pc28")){
+}/*elseif(strpos($self,"pc28")){
     $name = 43;
     $web_type = "加拿大28";
-}elseif(strpos($self,"txffc")){
+}*/elseif(strpos($self,"txffc")){
     $name = 44;
     $web_type = "腾讯分分彩";
 }elseif(strpos($self,"tcpk10")){
