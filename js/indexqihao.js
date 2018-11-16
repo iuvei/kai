@@ -912,7 +912,7 @@ function indexdata() {
                 setInterval(f2(),3000);
                 $("#txffc .kajianhao").html("");
                 $("#txffc .kajianhao").html("<span style='color: red'>开奖中...</span>");
-                //return;
+                return;
             }
                 clearInterval(xiaoguo);
                 clearInterval(time_r18);
