@@ -332,7 +332,7 @@ function getPkData(date) {
     $.get("../../pk10/getHistoryData.do", {date: date, page: 1, offset: 15, t: Math.random()}, function (result) {
         if (result.count) {
             loadData(result.count);
-            loadpage(date);
+            loadpage(date,'pk10');
         }
     }, "json");
 

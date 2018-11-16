@@ -318,7 +318,7 @@ function getHistoryData(count,date) {
             }
 
             $("#historyList").html(html);
-            //getPkData(date)
+            getPkData(date)
         }else {
             $("#historyList").html("<p>对不起，今天暂无数据，请按日期检索！</p>");
         }
@@ -328,7 +328,7 @@ function getPkData(date) {
     $.get("../../sfpk10/getHistoryData.do", {date: date, page: 1, offset: 15, t: Math.random()}, function (result) {
         if (result.count) {
             loadData(result.count);
-            loadpage(date);
+            loadpage(date,'sfpk10');
         }
     }, "json");
 

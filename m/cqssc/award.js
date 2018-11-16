@@ -310,10 +310,20 @@ function getHistoryData(count,date) {
                 j++;
         	}
         	$("#historyList").html(html);
+            getPkData(date)
         }else {
 			 $("#historyList").html("<li>对不起，今天暂无数据，请按日期检索！</li>");
 			}
     }, "json");
+}
+function getPkData(date) {
+    $.get("../../cqssc/getHistoryData.do", {date: date, page: 1, offset: 15, t: Math.random()}, function (result) {
+        if (result.count) {
+            loadData(result.count);
+            loadpage(date,'cqssc');
+        }
+    }, "json");
+
 }
 function DXClass(num) {
     if(num<=4){

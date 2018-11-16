@@ -324,13 +324,21 @@ function getHistoryData(count,date) {
             }
 
             $("#historyList").html(html);
-
+            getPkData(date)
         }else {
             $("#historyList").html("<p>对不起，今天暂无数据，请按日期检索！</p>");
         }
     }, "json");
 }
+function getPkData(date) {
+    $.get("../../xyft/getHistoryData.do", {date: date, page: 1, offset: 15, t: Math.random()}, function (result) {
+        if (result.count) {
+            loadData(result.count);
+            loadpage(date,'tcpk10');
+        }
+    }, "json");
 
+}
 function getClass(num1,num2) {
     var sum = parseInt(num1)+parseInt(num2);
     if(sum > 11){
