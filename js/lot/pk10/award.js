@@ -176,6 +176,7 @@ $(function () {
 function getHistoryData(count) {
     $.get("pk10/getHistoryData.do", { count:typeof(count)=="undefined"?16:count,t: Math.random() }, function (result) {
         if(result&&result.rows){
+          //  $("#history .head").after("");
             var j = 0;
             var html = '';
             for(var i in result.rows){
@@ -186,7 +187,7 @@ function getHistoryData(count) {
                 }
                 html += '<tr class="' + clsName + '"><td><p class="">' + data.lotteryTime.substring(5, 16)+ '</p></td><td><p class="">'
                     +  data.termNum ;
-                html += '</p></td><td class="nums">';
+                html += '</p></td><td class="nums" style="width: 651px">';
                 html += '<i class="pk-no' + data.n1 + '"></i>';
                 html += '<i class="pk-no' + data.n2 + '"></i>';
                 html += '<i class="pk-no' + data.n3 + '"></i>';
@@ -222,7 +223,7 @@ function getHistoryData(count) {
                 html += '</tr>';
                 j++;
             }
-            $("#history .head").after(html);
+            $("#history").html(html);
         }
     }, "json");
 }
