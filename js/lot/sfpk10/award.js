@@ -173,6 +173,7 @@ $(function () {
 });
 function getHistoryData(count) {
     $.get("sfpk10/getHistoryData.do", { count:typeof(count)=="undefined"?16:count,t: Math.random() }, function (result) {
+
         if(result&&result.rows){
         	var j = 0;
         	var html = '';
@@ -220,7 +221,14 @@ function getHistoryData(count) {
                 html += '</tr>';
                 j++;
         	}
-        	$("#history .head").after(html);
+            html ='<tr class="head">' +
+                '<td width="120">时间</td>' +
+                '<td width="140">期号</td>' +
+                '<td width="650">开奖号码</td>' +
+                '<td colspan="3">冠亚军和</td>' +
+                '<td colspan="5">1~5龙虎</td>' +
+                '</tr>'+html
+        	$("#history").html(html);
         }
     }, "json");
 }
