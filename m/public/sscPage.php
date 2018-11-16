@@ -56,7 +56,7 @@
                 if(result&&result.rows){
                     var j = 0;
                     var html = '';
-                    if(gamekey=='cqssc'){
+                    if(gamekey=='cqssc'||gamekey=='gd11x5'){
                         for(var i in result.rows) {
                             var data = result.rows[i];
                             html += '<div class="openCode">';
@@ -93,7 +93,7 @@
                             html += '</div>';
                             j++;
                         }
-                    }else if(gamekey=='tcssc'||gamekey=='sfssc'){
+                    }else if(gamekey=='tcssc'||gamekey=='sfssc'||gamekey=='txffc'){
                         for(var i in result.rows) {
                             var data = result.rows[i];
                             html += '<div class="openCode">';
@@ -128,6 +128,33 @@
                             html += '<div>' + '<a>' + long(data.n1, data.n5) + '</a>' + '</div>';
 
                             html += '</div>';
+                            j++;
+                        }
+                    }else if(gamekey=='cqft'){
+                        for(var i in result.rows){
+                            var data = result.rows[i];
+                            $('.chooseIssue').append('<option value="'+data.termNum.substr(4)+'">'+data.termNum.substr(4)+'</option>');
+                            html += '<div class="openCode">';
+                            html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(4)+'</span>' +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+                            /*数字*/
+                            html += '<div>'+'<a class="sscBall">' + data.n1 + '</a>'+ '</div>';
+                            html += '<div>'+'<a class="sscBall">' + data.n2 + '</a>'+ '</div>';
+                            html += '<div>'+'<a class="sscBall">' + data.n3 + '</a>'+ '</div>';
+                            html += '<div>'+'<a class="sscBall">' + data.n4 + '</a>'+ '</div>';
+                            html += '<div>'+'<a class="sscBall">' + data.n5 + '</a>'+ '</div>';
+
+                            var tan_num = [data.n1,data.n2,data.n3,data.n4,data.n5];
+                            tan_num = tan(tan_num);
+                            var guanyahe = arr_num(data.lotteryNum);
+                            var sum = eval(guanyahe.join("+"));
+                            html += '<div>'+'<a>'+ sum + '</a>'+'</div>';
+                            html += '<div>'+'<a class="sscBall cqft">'+ tan_num + '</a>'+'</div>';
+                            html += '<div>'+'<a>'+ dx(sum) + '</a>'+'</div>';
+                            html += '<div>'+'<a>'+ ds(sum) + '</a>'+'</div>';
+
+
+                            html += '</div>';
+
                             j++;
                         }
                     }

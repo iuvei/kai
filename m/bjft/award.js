@@ -50,8 +50,24 @@ $(function () {
     });
 
 
-
-
+    $('#dateTime').change(function () {
+        arr=[];
+        issueStr = '';
+        $('.openCode a').show();
+        $('.BallNum').show();
+        $('.zuhe').hide();
+        $('.pk10Da').hide();
+        $('.pk10Xiao').hide();
+        $('.pk10Dan').hide();
+        $('.pk10Shuang').hide();
+        $('#chooseNum a').removeClass('chooseTypeColor');
+        $('#chooseType2 a').removeClass('chooseTypeColor');
+        $('#chooseType a').removeClass('chooseTypeColor');
+        getHistoryData('15', $("#dateTime").val());
+        $(".dataYMD").html( $("#dateTime").val());
+        $('.dataWeed').html(getWeed($("#dateTime").val()))
+        return false;
+    });
 
 
 
@@ -522,10 +538,20 @@ function getHistoryData(count,date) {
         	}
 			
         	$("#historyList").html(html);
+            getPkData(date)
         }else {
 			 $("#historyList").html("<li>对不起，今天暂无数据，请按日期检索！</li>");
 			}
     }, "json");
+}
+function getPkData(date) {
+    $.get("../../pk10/getHistoryData.do", {date: date, page: 1, offset: 15, t: Math.random()}, function (result) {
+        if (result.count) {
+            loadData(result.count);
+            loadpage(date,'pk10');
+        }
+    }, "json");
+
 }
 
 

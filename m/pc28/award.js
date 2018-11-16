@@ -139,7 +139,6 @@ $(function () {
                 }
                 countDownTimer = window.setInterval(function () {
                     cpNextAwardTimeInterval = Math.max(0, cpNextAwardTimeInterval - 1000);
-                    console.log(data.next.awardTimeInterval)
                     showCountDown(cpNextAwardTimeInterval, data.next.periodNumber);
                 }, 1000);
             }
@@ -330,12 +329,21 @@ function getHistoryData(count,date) {
         	}
 			
         	$("#historyList").html(html);
+            getPkData(date)
         }else {
 			 $("#historyList").html("<li>对不起，今天暂无数据，请按日期检索！</li>");
 			}
     }, "json");
 }
+function getPkData(date) {
+    $.get("../../pc28/getHistoryData.do", {date: date, page: 1, offset: 15, t: Math.random()}, function (result) {
+        if (result.count) {
+            loadData(result.count);
+            loadpage(date,'pc28');
+        }
+    }, "json");
 
+}
 
 
 

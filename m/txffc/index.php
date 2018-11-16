@@ -157,7 +157,8 @@ include("../conn.php");
 
 
 
-   
+<?php include("../public/sscPage.php"); ?>
+<div class="pageLod" style="display: none"><img src="../style/images/loading2.gif"></div>
 <?php include("../public/footer.php"); ?>
 
 
@@ -185,23 +186,6 @@ $(function () {
 	//提取记录
 
     getHistoryData('50','');
-    window.onscroll=function(){
-
-        var scrollTop = document.documentElement.scrollTop;
-        console.log(scrollTop)
-        //differ控制滑动的相对距离达到一定程度时获取数据
-        if(scrollTop>1000)
-        {
-            document.querySelector('body').addEventListener('touchstart', function (ev) {
-                event.preventDefault();
-            });
-//            var v2=document.body.offsetHeight-document.documentElement.clientHeight;
-//            alert("滚动测试");
-           // alert("滚动,v1:"+scrollTop+ ",v2:" + v2 + ",v3:" + document.body.offsetHeight + ",v4:" + document.documentElement.clientHeight);
-            // getcolumnlist(column_number);//column_number 为查询页数
-        }
-    }
-
 });
 //搜索
 

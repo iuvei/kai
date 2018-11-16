@@ -94,7 +94,8 @@ include("../conn.php");
 </div>
 <div id="historyList"></div>
 
-   
+<?php include("../public/jnd.php"); ?>
+<div class="pageLod" style="display: none"><img src="../style/images/loading2.gif"></div>
 <?php include("../public/footer.php"); ?>
 
 
