@@ -29,7 +29,7 @@ function indexdata() {
                 $("#pk10_hot .kajianhao").html("<span style='color: red'>开奖中...</span>");
                 $("#pk10 .kajianhao").html("");
                 $("#pk10 .kajianhao").html("<span style='color: red'>开奖中...</span>");
-                //return;
+                return;
             }
             $("#pk10_hot .numberbox").html("");
             $("#pk10 .numberbox").html("");
@@ -781,6 +781,12 @@ function indexdata() {
     function f4() {
         $.getJSON("/jsk3/getPk10AwardTimes.do", {t: Math.random()},
             function (data) {
+                if(data.current.awardNumbers == '' || data.current.awardNumbers == null){
+                    setInterval(f4(),3000);
+                    $("#kuai3 .kajianhao").html("");
+                    $("#kuai3 .kajianhao").html("<span style='color: red'>开奖中...</span>");
+                    return;
+                }
                 clearInterval(xiaoguo);
                 clearInterval(time_r16);
                 timer10(parseInt((data.next.awardTimeInterval) / 1000), "kuai3 .nextkai_time",'jsk3');
