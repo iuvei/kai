@@ -291,9 +291,9 @@
 
 
 .shade .numsRed {
-        background: url("../../images/pk10-nums-red.gif") no-repeat;
+    background: url("../../images/pk10-nums-red.png") no-repeat;
     }
-    
+
 .lot-award .warnTime{ float:left;}
 .lot-award li{ margin-left: 20px;}
 .lot-award .currentAward{ width:512px;}
