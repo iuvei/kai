@@ -108,7 +108,6 @@ $(function () {
                 $('.periodNumber').html(data.current.periodNumber);
                 $('.surplus_num').html(data.current.surplus_num);
                 var nums = data.current.awardNumbers.split(',');
-
                 var srt = '';
                 var sum = eval(nums.join("+"));
                 var tan = sum % 4;
@@ -119,35 +118,12 @@ $(function () {
                 for (var i = 0; i < tan; i++) {
                     ft = ft + '<span class="ball-red-span"></span>'
                 }
-                console.log(ft)
-                ft = '番摊：' + ft;
-                $('.qiansan').html(ft);
-                var dx = '';
-                var ds = '';
-                if (sum > 22) {
-                    dx = '大';
-                } else {
-                    dx = '小';
-                }
-                if (sum % 2 == 0) {
-                    ds = '双';
-                } else {
-                    ds = '单';
-                }
-
+                ft = '<a class="AFT">番摊：</a>' + ft;
                 for (var i = 0; i < nums.length; i++) {
 
                     srt = srt + '<a class="sscBall2 mg">' + nums[i] + '</a>';
-
                 }
-                srt = srt + '<div class="sscLH">';
-                srt = srt + '<a>' + long(nums[0], nums[4]) + '</a>';
-                srt = srt + '<a>' + '<span></span>' + '</a>';
-                srt = srt + '<a>' + '总和' + '</a>';
-                srt = srt + '<a>' + sum + '</a>';
-                srt = srt + '<a>' + dx + '</a>';
-                srt = srt + '<a>' + ds + '</a>';
-                srt = srt + '</div>';
+                srt = srt +ft
                 $('.openCodeList1').html(srt)
             }
             //计数请求次数
@@ -204,7 +180,6 @@ $(function () {
                 $('.periodNumber').html(data.current.periodNumber);
                 $('.surplus_num').html(data.current.surplus_num);
                 var nums = data.current.awardNumbers.split(',');
-
                 var srt = '';
                 var sum = eval(nums.join("+"));
                 var tan = sum % 4;
@@ -215,35 +190,12 @@ $(function () {
                 for (var i = 0; i < tan; i++) {
                     ft = ft + '<span class="ball-red-span"></span>'
                 }
-                console.log(ft)
-                ft = '番摊：' + ft;
-                $('.qiansan').html(ft);
-                var dx = '';
-                var ds = '';
-                if (sum > 22) {
-                    dx = '大';
-                } else {
-                    dx = '小';
-                }
-                if (sum % 2 == 0) {
-                    ds = '双';
-                } else {
-                    ds = '单';
-                }
-
+                ft = '<a class="AFT">番摊：</a>' + ft;
                 for (var i = 0; i < nums.length; i++) {
 
                     srt = srt + '<a class="sscBall2 mg">' + nums[i] + '</a>';
-
                 }
-                srt = srt + '<div class="sscLH">';
-                srt = srt + '<a>' + long(nums[0], nums[4]) + '</a>';
-                srt = srt + '<a>' + '<span></span>' + '</a>';
-                srt = srt + '<a>' + '总和' + '</a>';
-                srt = srt + '<a>' + sum + '</a>';
-                srt = srt + '<a>' + dx + '</a>';
-                srt = srt + '<a>' + ds + '</a>';
-                srt = srt + '</div>';
+                srt = srt +ft
                 $('.openCodeList1').html(srt)
             }
             //请求到数据后需要做的事情
@@ -297,7 +249,6 @@ $(function () {
                 $('.periodNumber').html(data.current.periodNumber);
                 $('.surplus_num').html(data.current.surplus_num);
                 var nums = data.current.awardNumbers.split(',');
-
                 var srt = '';
                 var sum = eval(nums.join("+"));
                 var tan = sum % 4;
@@ -308,35 +259,12 @@ $(function () {
                 for (var i = 0; i < tan; i++) {
                     ft = ft + '<span class="ball-red-span"></span>'
                 }
-                console.log(ft)
-                ft = '番摊：' + ft;
-                $('.qiansan').html(ft);
-                var dx = '';
-                var ds = '';
-                if (sum > 22) {
-                    dx = '大';
-                } else {
-                    dx = '小';
-                }
-                if (sum % 2 == 0) {
-                    ds = '双';
-                } else {
-                    ds = '单';
-                }
-
+                ft = '<a class="AFT">番摊：</a>' + ft;
                 for (var i = 0; i < nums.length; i++) {
 
                     srt = srt + '<a class="sscBall2 mg">' + nums[i] + '</a>';
-
                 }
-                srt = srt + '<div class="sscLH">';
-                srt = srt + '<a>' + long(nums[0], nums[4]) + '</a>';
-                srt = srt + '<a>' + '<span></span>' + '</a>';
-                srt = srt + '<a>' + '总和' + '</a>';
-                srt = srt + '<a>' + sum + '</a>';
-                srt = srt + '<a>' + dx + '</a>';
-                srt = srt + '<a>' + ds + '</a>';
-                srt = srt + '</div>';
+                srt = srt +ft
                 $('.openCodeList1').html(srt)
                 window.setTimeout(function () {
                     getHistoryData('50')

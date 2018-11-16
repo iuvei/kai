@@ -52,10 +52,11 @@ include("../conn.php");
     </div>
     <div class="openCodeList1">
         <img src="/m/style/images/loading2.gif">
+        <div class="ftList">
+            <a class="qiansan">番摊：<span class="ball-red-span"></span><span class="ball-red-span"></span><span class="ball-red-span"></span><span class="ball-red-span"></span></a>
+        </div>
     </div>
-    <div class="ftList">
-        <a class="qiansan">番摊：<span class="ball-red-span"></span><span class="ball-red-span"></span><span class="ball-red-span"></span><span class="ball-red-span"></span></a>
-    </div>
+
     <div class="nextOpenList">
         <div class="nextIssue">距<span></span>期开奖</div>
 

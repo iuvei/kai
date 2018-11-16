@@ -41,6 +41,9 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 
 
 }
+.AFT{
+	padding-left: 10px;
+}
 .openCodeList p{color: #0CA818;padding-left: 2vw}
 
 .barner{ width: 100%; overflow: hidden;}

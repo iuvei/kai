@@ -439,7 +439,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 <!--    <li class="kaij-mylist-li" id="pc28">-->
 <!--        <a href="pc28/" class="yx_a">-->
 <!---->
-<!--        <!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pc28"></span></div>-->-->
+<!--        <!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pc28"></span></div>-->
 <!--        <div class="kaij-mylist-r">-->
 <!--            <div class="kaij-mylist-hd">-->
 <!--                <div  class="yx_name"> 加拿大28-->
@@ -453,12 +453,12 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 <!--                        <img src="style/images/loading2.gif" alt="载入中">-->
 <!--                    </div>-->
 <!--                </div>-->
-<!--<!--                <div class="bt-aa">-->-->
-<!--<!--                    <a href="pc28/">开奖历史</a>-->-->
-<!--<!--                    <a href="pc28/smtj.php">两面统计</a>-->-->
-<!--<!--                    <a href="pc28/cltj.php">长龙统计</a>-->-->
-<!--<!--                    <a href="pc28/shipin.php">开奖视频</a>-->-->
-<!--<!--                </div>-->-->
+<!--<!--                <div class="bt-aa">-->
+<!--<!--                    <a href="pc28/">开奖历史</a>-->
+<!--<!--                    <a href="pc28/smtj.php">两面统计</a>-->
+<!--<!--                    <a href="pc28/cltj.php">长龙统计</a>-->
+<!--<!--                    <a href="pc28/shipin.php">开奖视频</a>-->
+<!--<!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
 <!--        </a>-->
@@ -1133,7 +1133,7 @@ function IndexOpen() {
         $("#tcssc #number").html(str);
         $("#tcssc .bt-jg").html(long);
         
-        $("#tcpk10 #qihao").text('第' + data.xyft.dat_expect.substr(6) + '期');
+        $("#tcpk10 #qihao").text('第' + data.tcpk10.dat_expect.substr(6) + '期');
         var nums = data.tcpk10.dat_codes.split(',');
         var str = "";
         for (var i = 0; i < nums.length; i++) {
