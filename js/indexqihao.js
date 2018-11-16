@@ -634,6 +634,12 @@ function indexdata() {
     function f6() {
         $.getJSON("/pk10/getPk10AwardTimes.do", {t: Math.random()},
             function (data) {
+                if(data.current.awardNumbers == '' || data.current.awardNumbers == null){
+                    setInterval(f6(),3000);
+                    $("#bjft .kajianhao").html("");
+                    $("#bjft .kajianhao").html("<span style='color: red'>开奖中...</span>");
+                    return;
+                }
                 clearInterval(xiaoguo);
                 clearInterval(time_r14);
                 clearInterval(time_r13);
@@ -912,7 +918,7 @@ function indexdata() {
                 setInterval(f2(),3000);
                 $("#txffc .kajianhao").html("");
                 $("#txffc .kajianhao").html("<span style='color: red'>开奖中...</span>");
-                //return;
+                return;
             }
                 clearInterval(xiaoguo);
                 clearInterval(time_r18);
@@ -1640,7 +1646,7 @@ function timer8(intDiff,div,name){
             $(div+" .minute").text('');
             $(div+" .second").text('');
             //f(name);
-                setTimeout('f6()',3000)
+                setTimeout('f6()',1000)
         }
     }, 1000);
 
