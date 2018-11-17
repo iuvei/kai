@@ -17,10 +17,6 @@ class ApiController extends Controller{
     public function index(){
         $data = $_POST;
 
-        $jsonStr = json_encode($data);
-        $payLogFile = 'text.txt';
-        $newLog ='log_time:'.date('Y-m-d H:i:s').$jsonStr;
-        file_put_contents($payLogFile, $newLog.PHP_EOL, FILE_APPEND);
         if(empty($data)){
             $arr = array(
                 'code'=>false,
@@ -28,7 +24,13 @@ class ApiController extends Controller{
             );
             echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
         }
-        file_put_contents('lgc1.log',date("Y-m-d H:i:s").var_export($data,true)."</br>",FILE_APPEND);//日志
+
+
+        //全部数据日志
+        $jsonStr1 = json_encode($data);
+        $payLogFile1 = 'text.log';
+        $newLog1 ='log_time:'.date('Y-m-d H:i:s').$jsonStr1;
+        file_put_contents($payLogFile1, $newLog1.PHP_EOL, FILE_APPEND);
 
         if(empty($data['name'])){
             $arr = array(
@@ -39,16 +41,28 @@ class ApiController extends Controller{
         }
         C('DB_PREFIX','lot_');
         $name = $this->caizhong($data['name']);
-        file_put_contents('lgc5.log',date("Y-m-d H:i:s").var_export($name,true)."</br>",FILE_APPEND);//日志
+
+        //彩种日志
+        $jsonStr2 = json_encode($name);
+        $payLogFile2 = 'game.log';
+        $newLog2 ='log_time:'.date('Y-m-d H:i:s').$jsonStr2;
+        file_put_contents($payLogFile2, $newLog2.PHP_EOL, FILE_APPEND);
+
+
         $res = M('type')->where(array('name'=>$name))->find();
 
-        file_put_contents('lgc.log',date("Y-m-d H:i:s").var_export($res,true)."</br>",FILE_APPEND);
 
         if(empty($res)){
             $arr = array(
                 'code'=>false,
                 'msg'=>'没有这个彩种',
             );
+            //分类
+            $jsonarr3 = json_encode($arr);
+            $jsonStr3 = json_encode($res);
+            $payLogFile3 = 'gametype.log';
+            $newLog3 ='log_time:'.date('Y-m-d H:i:s').$jsonStr3.":".$jsonarr3;
+            file_put_contents($payLogFile3, $newLog3.PHP_EOL, FILE_APPEND);
             echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
         }
 
@@ -64,9 +78,11 @@ class ApiController extends Controller{
                 'code'=>true,
                 'msg'=>'数据已存在',
             );
-            $jsonStr = json_encode($response);
-            $newLog ='log_time:'.date('Y-m-d H:i:s').$jsonStr;
-            file_put_contents($payLogFile, $newLog.PHP_EOL, FILE_APPEND);
+            $payLogFile4 = 'err.log';
+            $jsonarr4 = json_encode($arr);
+            $jsonStr4 = json_encode($response);
+            $newLog4 ='log_time:'.date('Y-m-d H:i:s').$jsonStr4.":".$jsonarr4;
+            file_put_contents($payLogFile4, $newLog4.PHP_EOL, FILE_APPEND);
             echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
         }
 
@@ -82,16 +98,15 @@ class ApiController extends Controller{
         $res = M('data')->add($where);
 
 
-        $payLogFile = 'text.txt';
-        $newLog ='log_time:'.date('Y-m-d H:i:s').$res;
-        file_put_contents($payLogFile, $newLog.PHP_EOL, FILE_APPEND);
-
-
         if($res < 1){
             $arr = array(
                 'code'=>false,
                 'msg'=>'系统有误',
             );
+            $payLogFile5 = 'err.log';
+            $jsonStr5 = json_encode($response);
+            $newLog5 ='log_time:'.date('Y-m-d H:i:s').$jsonStr5;
+            file_put_contents($payLogFile5, $newLog5.PHP_EOL, FILE_APPEND);
             echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
         }
 
@@ -99,6 +114,10 @@ class ApiController extends Controller{
             'code'=>true,
             'msg'=>'成功',
         );
+        $jsonarr6 = json_encode($arr);
+        $payLogFile6 = 'succeed.log';
+        $newLog6 ='log_time:'.date('Y-m-d H:i:s').$res.":".$jsonarr6;
+        file_put_contents($payLogFile6, $newLog6.PHP_EOL, FILE_APPEND);
         echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
     }
 
