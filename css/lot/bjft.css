@@ -299,7 +299,7 @@
 .lot-award .currentAward{ width:512px;}
 .lot-award .currentAward .title{ height:24px; line-height:24px;}
 .lot-award .currentAward .period,.lot-award .currentAward .period-info{ line-height:24px;}
-.lot-nums{ width:500px; height:40px; padding:5px 0 5px 10px;}
+.lot-nums{ width:500px; height:78px; padding:5px 0 5px 10px;}
 .lot-nums span{ width:40px; height:40px; background:url("../../images/num.png") no-repeat 0 0; padding-right:0; margin-right:10px;    border-radius: 8px;}
 .lot-nums .no1{ background-position:0 0 !important;}
 .lot-nums .no2{ background-position:0 -41px !important;}
@@ -342,6 +342,20 @@
     background: #0092dd;
     border-radius: 4px;
     color: #fff;
+}
+.ftTan{
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    float: left;
+}
+.qftTan{
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    float: left;
 }
 .nums .output-li { width:40px; height:40px; background:url("../../images/num1.png") no-repeat 0 0; padding-right:0; margin-right:10px;}
 .lot-nums .no1,

@@ -48,6 +48,7 @@ $(function () {
                 for (var i = 0; i < nums.length; i++) {
                     str = str + "<span class='no" + nums[i] + "'></span>";
                 }
+                console.log(str);
                 $(".lot-nums").html(str);
                 $(".currentAward .period").html(data.current.periodNumber1 + " 期");
                 $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
@@ -102,6 +103,48 @@ $(function () {
                 for (var i = 0; i < nums.length; i++) {
                     str = str + "<span class='no" + nums[i] + "'></span>";
                 }
+                var qiansan = parseInt(nums[0]) + parseInt(nums[1]) + parseInt(nums[2]);
+                var zhongsan = parseInt(nums[4]) + parseInt(nums[5]) + parseInt(nums[6]);
+                var housan = parseInt(nums[7])+ parseInt(nums[8]) + parseInt(nums[9]);
+
+                qiansan = qiansan%4;
+                zhongsan = zhongsan%4;
+                housan = housan%4;
+
+                if(qiansan == 0){
+                    str += '<i class="qftTan">'+"前三："+'<i class="fantan">'+"4摊"+'</i>';
+                    str+="&nbsp;<i class='fantan'>大</i>"+'</i>';
+                }else {
+                    str += '<i class="qftTan">'+"前三："+'<i class="fantan">'+qiansan+"摊"+'</i>';
+                    if(qiansan == 3){
+                        str+="&nbsp;<i class='fantan'>大</i>"+'</i>';
+                    }else {
+                        str+="&nbsp;<i class='fantan'>小</i>"+'</i>';
+                    }
+                }
+                if(zhongsan == 0){
+                    str += '<i class="ftTan">'+"中三："+'<i class="fantan">'+"4摊"+'</i>';
+                    str+= "&nbsp;<i class='fantan'>大</i>"+'</i>';
+                }else {
+                    str += '<i class="ftTan">'+"中三："+'<i class="fantan">'+qiansan+"摊"+'</i>';
+                    if(zhongsan == 3){
+                        str+="&nbsp;<i class='fantan'>大</i>"+'</i>';
+                    }else {
+                        str+="&nbsp;<i class='fantan'>小</i>"+'</i>';
+                    }
+                }
+                if(housan == 0){
+                    str += '<i class="ftTan">'+"后三："+'<i class="fantan">'+"4摊"+'</i>';
+                    str+= "&nbsp;<i class='fantan'>大</i>"+'</i>';
+                }else {
+                    str += '<i class="ftTan">'+"后三："+'<i class="fantan">'+qiansan+"摊"+'</i>';
+                    if(housan == 3){
+                        str+="&nbsp;<i class='fantan'>大</i>"+'</i>';
+                    }else {
+                        str+="&nbsp;<i class='fantan'>小</i>"+'</i>';
+                    }
+                }
+
                 $(".lot-nums").html(str);
                 $(".currentAward .period").html(data.current.periodNumber1 + " 期");
                 $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
@@ -161,6 +204,47 @@ $(function () {
                     for (var i = 0; i < nums.length; i++) {
                         str = str + "<span class='no" + nums[i] + "'></span>";
                     }
+                    var qiansan = parseInt(nums[0]) + parseInt(nums[1]) + parseInt(nums[2]);
+                    var zhongsan = parseInt(nums[4]) + parseInt(nums[5]) + parseInt(nums[6]);
+                    var housan = parseInt(nums[7])+ parseInt(nums[8]) + parseInt(nums[9]);
+
+                    qiansan = qiansan%4;
+                    zhongsan = zhongsan%4;
+                    housan = housan%4;
+
+                    if(qiansan == 0){
+                        str += '<i class="qftTan">'+"前三："+'<i class="fantan">'+"4摊"+'</i>';
+                        str+="&nbsp;<i class='fantan'>大</i>"+'</i>';
+                    }else {
+                        str += '<i class="qftTan">'+"前三："+'<i class="fantan">'+qiansan+"摊"+'</i>';
+                        if(qiansan == 3){
+                            str+="&nbsp;<i class='fantan'>大</i>"+'</i>';
+                        }else {
+                            str+="&nbsp;<i class='fantan'>小</i>"+'</i>';
+                        }
+                    }
+                    if(zhongsan == 0){
+                        str += '<i class="ftTan">'+"中三："+'<i class="fantan">'+"4摊"+'</i>';
+                        str+= "&nbsp;<i class='fantan'>大</i>"+'</i>';
+                    }else {
+                        str += '<i class="ftTan">'+"中三："+'<i class="fantan">'+qiansan+"摊"+'</i>';
+                        if(zhongsan == 3){
+                            str+="&nbsp;<i class='fantan'>大</i>"+'</i>';
+                        }else {
+                            str+="&nbsp;<i class='fantan'>小</i>"+'</i>';
+                        }
+                    }
+                    if(housan == 0){
+                        str += '<i class="ftTan">'+"后三："+'<i class="fantan">'+"4摊"+'</i>';
+                        str+= "&nbsp;<i class='fantan'>大</i>"+'</i>';
+                    }else {
+                        str += '<i class="ftTan">'+"后三："+'<i class="fantan">'+qiansan+"摊"+'</i>';
+                        if(housan == 3){
+                            str+="&nbsp;<i class='fantan'>大</i>"+'</i>';
+                        }else {
+                            str+="&nbsp;<i class='fantan'>小</i>"+'</i>';
+                        }
+                    }
                     $(".lot-nums").html(str);
                     $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
                 }
@@ -213,7 +297,6 @@ function getHistoryData(count) {
                     }else {
                         html += "<td><p class='r'>单</td>";
                     }
-
                 }
 
                 var guanyahe2 = data.n5 + data.n6 + data.n7;
