@@ -68,7 +68,7 @@ include("../conn.php");
 
 
 <div class="video">
-<a class="sp" href="shipin.php">视频开奖直播</a>
+<!--<a class="sp" href="shipin.php">视频开奖直播</a>-->
 <a class="qq" style="border-left:1px solid #ddd" href="<?=$qqun?>" target="_blank">高手交流QQ群</a>
 </div>
 

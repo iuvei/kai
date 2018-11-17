@@ -73,17 +73,18 @@
                     <div class="dateLineTable" style="padding: 0;" id="trendChart">
                         <div id="history_data-html"></div>
                         <script id="history_data-tmpl" type="text/template">
-                            <table class="lot-table" id="history" style="margin-top: 8px;" >
+                            <table class="lot-table" id="history-record" style="margin-top: 8px;" >
                                 <tr class="head">
-                                    <td rowspan="2" width="120">时间
+                                    <td rowspan="2" width="180">时间
                                     </td>
-                                    <td rowspan="2" width="160">期号
-                                    </td>
+                                    <!--<td rowspan="2" width="160">期号
+                                    </td>-->
                                     <td width="650" rowspan="2">
                                         同位开奖号码分布
                                         <p id="ckb-samepn" style="width:130px;margin:0 auto;">
                                             <b class="checkbox" style="margin: 10px 5px 0 0;"></b>
-                                            <span style="cursor: pointer;color:#c3271d">显示同位号码</span>
+                                            <span style="cursor: pointer;color:#c3271d;position: absolute;margin-left: -57px;
+    padding-top: 7px;">显示同位号码</span>
                                         </p>
                                     </td>
                                     <td rowspan="2" width="120">升平降
@@ -109,13 +110,14 @@
                                 }}
                                 <tr class='{{=odd_even}}'>
                                     <td>
-
-                                        <p class="">{{=lowDate}}</p>
+                                        <p class="p">{{=row.termNum.substr(6)}} </p>
+                                        <p class="t">{{=lowDate}}</p>
+                                        <!--<p class="">{{=lowDate}}</p>-->
                                     </td>
-                                    <td>
-                                        <p class="">{{=row.termNum}} </p>
+                                    <!--<td>-->
+                                        <!--<p class="">{{=row.termNum}} </p>-->
 
-                                    </td>
+                                    <!--</td>-->
                                     <td class="nums shade">
                                         <i class='pk-no{{=row.n1}}' name="num-{{=row.n1}}"></i>
                                         <i class='pk-no{{=row.n2}}' name="num-{{=row.n2}}"></i>
@@ -199,7 +201,7 @@
                                                     clearDraw();
                                                     showSelectBall();
                                                     var list = data.nums;
-                                                    var trs = $("#history tr[class!=head]");
+                                                    var trs = $("#history-record tr[class!=head]");
                                                     for (var i = 0; i < trs.length; i++) {
                                                         var tr=$(trs[i]);
                                                         if (i >= count) tr.hide();
@@ -232,7 +234,7 @@
                         }
 
                         function showSelectBall() {
-                            var trs = $("#history tr[class!=head]");
+                            var trs = $("#history-record tr[class!=head]");
                             var show = false;
                             if ($("#ckb-samepn b").hasClass("checked")) {
                                 show = true;
@@ -253,8 +255,8 @@
                             chartLine.clearLines();
                             $("i").removeClass("noshade").removeClass("numsRed").removeClass("numline").attr("s", 0);
 
-                            $("#history td[name=even],#history td[name=odd],#history td[name=big],#history td[name=small]").text("");
-                            // $("#history td").removeClass("td_drakblue").removeClass("td_draklightgreen").removeClass("td_lightblue");
+                            $("#history-record td[name=even],#history-record td[name=odd],#history-record td[name=big],#history-record td[name=small]").text("");
+                            // $("#history-record td").removeClass("td_drakblue").removeClass("td_draklightgreen").removeClass("td_lightblue");
                         }
 
                         function ckbSamepnClick(){
