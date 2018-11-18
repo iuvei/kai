@@ -302,12 +302,12 @@
 
 .lot-table .odd {
 	background-color: #fff;
-	font-size: 13px
+	font-size: 14px
 }
 
 .lot-table .even {
 	background-color: #f9f9f9;
-	font-size: 13px
+	font-size: 14px
 }
 
 .lot-table .lose {
@@ -2101,3 +2101,134 @@ select{
 	border-radius: 4px;}
 .luzhu{ margin: 0 auto;}
 
+
+.no1 {
+	background: #FFCC00;
+	margin: auto;
+	width: 28px;
+	height: 28px;
+	font-size: 14px;
+	font-weight: 700;
+	display: block;
+	line-height:28px;
+	border-radius: 3px;
+	color: #ffffff;
+}
+.no2 {
+	background:#0089ff;
+	margin: auto;
+	width:28px;
+	height:28px;
+	font-size: 14px;
+	font-weight: 700;
+	display: block;
+	line-height:28px;
+	border-radius: 3px;
+	color: #ffffff;
+}
+.no3 {
+	background:#4d4d4d;
+	margin: auto;
+	width:28px;
+	height:28px;
+	font-size: 14px;
+	font-weight: 700;
+	display: block;
+	line-height:28px;
+	border-radius: 3px;
+	color: #ffffff;
+}
+.no4 {
+	margin: auto;
+	width:28px;
+	height:28px;
+	font-size: 14px;
+	font-weight: 700;
+	display: block;
+	line-height:28px;
+	border-radius: 3px;
+	color: #ffffff;
+	background:#ff7300;
+}
+.no5 {
+	margin: auto;
+	width:28px;
+	height:28px;
+	font-size: 14px;
+	font-weight: 700;
+	display: block;
+	line-height:28px;
+	border-radius: 3px;
+	color: #ffffff;
+	background: #3399CC;
+}
+.no6 {
+	margin: auto;
+	width:28px;
+	height:28px;
+	font-size: 14px;
+	font-weight: 700;
+	display: block;
+	line-height:28px;
+	border-radius: 3px;
+	color: #ffffff;
+	background:#5200ff;
+}
+.no7 {
+	margin: auto;
+	width:28px;
+	height:28px;
+	font-size: 14px;
+	font-weight: 700;
+	display: block;
+	line-height:28px;
+	border-radius: 3px;
+	color: #ffffff;
+	background: #bbb;
+}
+.no8 {
+	margin: auto;
+	width:28px;
+	height:28px;
+	font-size: 14px;
+	font-weight: 700;
+	display: block;
+	line-height:28px;
+	border-radius: 3px;
+	color: #ffffff;
+	background:#ff0000;
+}
+.no9 {
+	margin: auto;
+	width:28px;
+	height:28px;
+	font-size: 14px;
+	font-weight: 700;
+	display: block;
+	line-height:28px;
+	border-radius: 3px;
+	color: #ffffff;
+	background:#760000;
+}
+.no10 {
+	margin: auto;
+	width:28px;
+	height:28px;
+	font-size: 14px;
+	font-weight: 700;
+	display: block;
+	line-height:28px;
+	border-radius: 3px;
+	color: #ffffff;
+	background:#28c200;
+}
+.nno2{	margin: auto;
+	width:28px;
+	height:28px;
+	font-size: 14px;
+	font-weight: 700;
+	display: block;
+	line-height:28px;
+	border-radius: 50%;
+	color: #ffffff;
+	background:#0d76c6;}

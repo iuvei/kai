@@ -318,7 +318,7 @@
                            {{ var row=it[i-1]; }}
                            <tr class="{{=joClass}}">
                                <td>
-                                   {{=eval('dataTypeNumsDesc['+dataType+'].n'+row.num)}}
+                                   <span class="no{{=eval('dataTypeNumsDesc['+dataType+'].n'+row.num)}}">   {{=eval('dataTypeNumsDesc['+dataType+'].n'+row.num)}}</span>
                                </td>
                                <td>
                                    <span class="{{=row.nowMissing<=0?"lose":"win"}}">
