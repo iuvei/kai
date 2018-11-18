@@ -154,7 +154,7 @@
 			    });
 			    function luzhu(rows, n){
 			    	var j = 0;
-	            	var html = '<div style="width:1198px; overflow-x:auto;" class="luzhu_scroll">'
+	            	var html = '<div style="width:1200px; overflow-x:auto;" class="luzhu_scroll">'
 	            			+'<table class="roadmap-table mb-15"><tr valign="top">';
            			var l1=0;
 		        	var h1=0;
@@ -191,7 +191,7 @@
 	            	html += '</tr> </table></div>';
 	            	var tmp = '<table class="roadmap-table-caption"><tr><td>'+
 	            		'<span>今日号码累计：<span class="count"> 前（'+l1+'） 后（'+h1+'）</span> 号码'+n+'</span>'
-	            		+'</td></tr></table>';
+	            		+'<span class="count" style="margin-left: 5px;">  最新</span><span class="count" style=" font-size: 18px;font-weight: bold;"> ↓</span></td></tr></table>';
 	            	return tmp + html;
 			    }
 			    function SearchQianhouLuzhu() {

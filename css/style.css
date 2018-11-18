@@ -489,7 +489,7 @@
 }
 
 .roadmap-table {
-	text-align: center
+	text-align: center; float: right;
 }
 
 .mb-15 {
@@ -502,7 +502,7 @@
 	padding-top: 5px;
 	text-align: center;
 	font-size: 14px;
-	min-width: 25px;
+	min-width: 29px;
 }
 
 .roadmap-table .odd {

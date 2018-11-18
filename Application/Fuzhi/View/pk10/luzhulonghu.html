@@ -284,7 +284,7 @@
 			    var NUM_INDEX = {1:'冠军',2:'亚军',3:'第三名',4:'第四名',5:'第五名'};
 			    function luzhu(rows, n){
 			    	var j = 0;
-	            	var html = '<div style="width:1198px; overflow-x:auto;" class="luzhu_scroll">'
+	            	var html = '<div style="width:1200px; overflow-x:auto;" class="luzhu_scroll">'
 	            			+'<table class="roadmap-table "><tr id=luzhudiv'+n+'  valign="top">';
            			var l1=0;
 		        	var h1=0;
@@ -349,7 +349,13 @@
 	            	html += '</tr> </table></div>';
 	            	var tmp = '<table class="roadmap-table-caption"><tr><td>'+
 	            		'<span>今日号码累计：<span class="count"> 龙（'+l1+'） 虎（'+h1+'）</span>'+NUM_INDEX[n]+'龙虎</span>'
-	            		+'</td></tr></table>';
+	            		+'<span class="count" style="\n' +
+                        '    margin-left: 5px;\n' +
+                        '">  最新</span>\n' +
+                        '<span class="count" style="\n' +
+                        '    font-size: 18px;\n' +
+                        '    font-weight: bold;\n' +
+                        '"> ↓</span></td></tr></table>';
 	            	return tmp + html;
 			    }
 			    function SearchLuzhu() {
