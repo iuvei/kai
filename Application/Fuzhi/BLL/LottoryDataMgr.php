@@ -129,9 +129,9 @@ class LottoryDataMgr
 
     private function getLottoryByDate($module, $lotType, $date, $count = null, $pages = 0, $offset = 0)
     {
-        if (empty($count)) {
-            $count = 200;
-        }
+        /*if (empty($count)) {
+            $count = 50;
+        }*/
         $lotType = (int)$lotType;
         $date = date('Y-m-d', strtotime($date));
         $yestoday = date("Y-m-d", strtotime("-$date day"));

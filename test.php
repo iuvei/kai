@@ -47,7 +47,7 @@ while ($row=$result->fetch_assoc())
     $data[]= $arr;
 }
 
-//print_r($data);die;
+print_r($data);die;
  $close_time='';
  $open_time='';
  foreach ($data as $k=>$v ){
