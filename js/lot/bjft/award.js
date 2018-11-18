@@ -126,7 +126,7 @@ $(function () {
                     str += '<i class="ftTan">'+"中三："+'<i class="fantan">'+"4摊"+'</i>';
                     str+= "&nbsp;<i class='fantan'>大</i>"+'</i>';
                 }else {
-                    str += '<i class="ftTan">'+"中三："+'<i class="fantan">'+qiansan+"摊"+'</i>';
+                    str += '<i class="ftTan">'+"中三："+'<i class="fantan">'+zhongsan+"摊"+'</i>';
                     if(zhongsan == 3){
                         str+="&nbsp;<i class='fantan'>大</i>"+'</i>';
                     }else {
@@ -137,7 +137,7 @@ $(function () {
                     str += '<i class="ftTan">'+"后三："+'<i class="fantan">'+"4摊"+'</i>';
                     str+= "&nbsp;<i class='fantan'>大</i>"+'</i>';
                 }else {
-                    str += '<i class="ftTan">'+"后三："+'<i class="fantan">'+qiansan+"摊"+'</i>';
+                    str += '<i class="ftTan">'+"后三："+'<i class="fantan">'+housan+"摊"+'</i>';
                     if(housan == 3){
                         str+="&nbsp;<i class='fantan'>大</i>"+'</i>';
                     }else {
@@ -227,7 +227,7 @@ $(function () {
                         str += '<i class="ftTan">'+"中三："+'<i class="fantan">'+"4摊"+'</i>';
                         str+= "&nbsp;<i class='fantan'>大</i>"+'</i>';
                     }else {
-                        str += '<i class="ftTan">'+"中三："+'<i class="fantan">'+qiansan+"摊"+'</i>';
+                        str += '<i class="ftTan">'+"中三："+'<i class="fantan">'+zhongsan+"摊"+'</i>';
                         if(zhongsan == 3){
                             str+="&nbsp;<i class='fantan'>大</i>"+'</i>';
                         }else {
@@ -238,7 +238,7 @@ $(function () {
                         str += '<i class="ftTan">'+"后三："+'<i class="fantan">'+"4摊"+'</i>';
                         str+= "&nbsp;<i class='fantan'>大</i>"+'</i>';
                     }else {
-                        str += '<i class="ftTan">'+"后三："+'<i class="fantan">'+qiansan+"摊"+'</i>';
+                        str += '<i class="ftTan">'+"后三："+'<i class="fantan">'+housan+"摊"+'</i>';
                         if(housan == 3){
                             str+="&nbsp;<i class='fantan'>大</i>"+'</i>';
                         }else {
