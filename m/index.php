@@ -129,7 +129,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 </script>
 </head>
 <body>
-
+<div class="cont">
 <header class="header">
 <!--	<a onClick="javascript:return_prepage();" class="back">上一页</a>-->
 	<a href="./" class="logo" style="float: left;margin-left: 1vw"><img src="style/images/logo.png"></a>
@@ -582,6 +582,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 
             
 </ul>
+</div>
 <!-- 游戏列表切换-->
 <script type="text/javascript">
     $(document).ready(function(){
