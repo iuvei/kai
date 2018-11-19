@@ -1,4 +1,4 @@
-<?php 
+<?php
 include(dirname(__FILE__)."\conn.php");
 
 ?>
@@ -7,7 +7,7 @@ include(dirname(__FILE__)."\conn.php");
 <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
-    
+
     <meta name="HandheldFriendly" content="true" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -17,14 +17,14 @@ include(dirname(__FILE__)."\conn.php");
 
 <script src="style/js/jquery.js"></script>
 <script src="style/js/jquery.cookie.js"></script>
-<link type="text/css" href="style/css/style.css?v=20181118" rel="stylesheet">
+<link type="text/css" href="style/css/style.css?v=201811121" rel="stylesheet">
 <style>
 .add-home {
 	position:fixed;
 	bottom:10px;
 	left:0;
 	right:0;
-	z-index:10; 
+	z-index:10;
 }
 .add-home-content {
 	border:solid 1px #000;
@@ -70,7 +70,7 @@ include(dirname(__FILE__)."\conn.php");
 	z-index:3
 }
 .add-home .ion-ios-upload-outline {
-	
+
 	color:#007aff;
 	background:url(/style/images/i.png) no-repeat;
 	width:30px; height:30px; display:block; background-size: 70%; float:left
@@ -121,7 +121,7 @@ $(".add-home").show();
 }
 });　
 
-function closeAddHome() 
+function closeAddHome()
 {
 $(".add-home").hide();
 $.cookie('home_cookiea', '1', { expires: 7 });
@@ -161,7 +161,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 </header>
 
 
-   
+
 <div class="h50">
 
 </div>
@@ -170,7 +170,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 </div>
 
 <ul class="kaij-mylist">
-	     
+
     <li class="kaij-mylist-li" id="pk10">
 	                <a href="pk10/" class="yx_a">
 
@@ -580,7 +580,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 
 
 
-            
+
 </ul>
 </div>
 <!-- 游戏列表切换-->
@@ -597,8 +597,8 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 
     });
 </script>
-		
-		
+
+
 
 <?php include("public/footer.php"); ?>
 <script>
@@ -1133,7 +1133,7 @@ function IndexOpen() {
         long = ssclh(nums,1);
         $("#tcssc #number").html(str);
         $("#tcssc .bt-jg").html(long);
-        
+
         $("#tcpk10 #qihao").text('第' + data.tcpk10.dat_expect.substr(6) + '期');
         var nums = data.tcpk10.dat_codes.split(',');
         var str = "";
@@ -1309,7 +1309,7 @@ function yxx(num) {
  }
 
 
-</script>		
-			
+</script>
+
 </body>
 </html>

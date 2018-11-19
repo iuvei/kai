@@ -22,6 +22,7 @@ include("../conn.php");
 
 </head>
 <body>
+<div class="cont">
 <?php include("../public/header.php"); ?>
 <script src="award.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
 <?php include("../public/header2.php"); ?>
@@ -356,6 +357,6 @@ include("../conn.php");
 
     }
 </script>
-<script src="../style/js/common.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
+    <script src="../style/js/common.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script></div>
 </body>
 </html>

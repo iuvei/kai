@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("../conn.php");
 ?>
 <!DOCTYPE HTML>
@@ -6,7 +6,7 @@ include("../conn.php");
 <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
-    
+
     <meta name="HandheldFriendly" content="true" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -36,8 +36,7 @@ include("../conn.php");
 
 </head>
 <body>
-
-
+<div class="cont">
 
 <?php include("../public/header.php"); ?>
 
@@ -102,12 +101,12 @@ include("../conn.php");
 
 
       <script type="text/javascript">
-      
-  
-  	
+
+
+
 $(function () {
 
-	
+
 	//显示默认日期
 	var now = new Date();
 
@@ -134,6 +133,6 @@ function refresh(){
 }
 
 </script>
-<script src="../style/js/common.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
+    <script src="../style/js/common.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script></div>
 </body>
 </html>

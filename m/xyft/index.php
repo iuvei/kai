@@ -4,6 +4,9 @@ include("../conn.php");
 <!DOCTYPE HTML>
 <html>
 <head>
+
+
+
     <meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
 
@@ -30,7 +33,7 @@ include("../conn.php");
 
 </head>
 <body>
-
+<div class="cont">
 
 
 <?php include("../public/header.php"); ?>
@@ -384,6 +387,9 @@ include("../conn.php");
 
 
 </script>
-<script src="../style/js/common.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
+    <script src="../style/js/common.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script></div>
 </body>
+<style>
+        body{}
+</style>
 </html>

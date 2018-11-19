@@ -21,6 +21,7 @@ include("../conn.php");
     <link type="text/css" href="../style/css/style.css?v=<?php echo date("Y/m/d")?>"  rel="stylesheet">
 </head>
 <body>
+<div class="cont">
 <?php include("../public/header.php"); ?>
 <script src="award.js?v=<?php echo date("Y/m/d")?>v2" type="text/javascript"></script>
 <!--<link type="text/css" href="../style/css/pk10.css" rel="stylesheet">-->

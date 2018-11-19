@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("../conn.php");
 ?>
 <!DOCTYPE HTML>
@@ -6,12 +6,12 @@ include("../conn.php");
 <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
-    
+
     <meta name="HandheldFriendly" content="true" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    
+
 <meta name="format-detection"content="telephone=no"/>
 <title><?=$web_type?>开奖直播_<?=$web_type?>开奖历史记录_<?=$webtitle?>手机版</title>
 <script src="../style/js/jquery.js"></script>
@@ -32,7 +32,7 @@ include("../conn.php");
 </head>
 <body>
 
-
+<div class="cont">
 
 <?php include("../public/header.php"); ?>
 
@@ -163,9 +163,9 @@ include("../conn.php");
 
 
       <script type="text/javascript">
-      
-  
-  	
+
+
+
 $(function () {
 
     // $('#chooseType').click(function () {
@@ -176,7 +176,7 @@ $(function () {
 
 
 
-  
+
     $("#dateTime").val(now.getFullYear()+"-"+((now.getMonth()+1)<10?"0":"")+(now.getMonth()+1)+"-"+(now.getDate()<10?"0":"")+now.getDate());
     $(".dataYMD").html( $("#dateTime").val());
     $('.dataWeed').html(getWeed($("#dateTime").val()))
@@ -193,7 +193,7 @@ $(function () {
 
 
 function Search() {
-	
+
 	getHistoryData('50', $("#dateTime").val());
     $(".dataYMD").html( $("#dateTime").val());
     $('.dataWeed').html(getWeed($("#dateTime").val()))
@@ -207,6 +207,6 @@ function refresh(){
 }
 
 </script>
-<script src="../style/js/common.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
+    <script src="../style/js/common.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script></div>
 </body>
 </html>

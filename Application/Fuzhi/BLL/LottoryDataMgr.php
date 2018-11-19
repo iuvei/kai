@@ -129,9 +129,9 @@ class LottoryDataMgr
 
     private function getLottoryByDate($module, $lotType, $date, $count = null, $pages = 0, $offset = 0)
     {
-        /*if (empty($count)) {
-            $count = 50;
-        }*/
+        if (empty($count)) {
+            $count = 200;
+        }
         $lotType = (int)$lotType;
         $date = date('Y-m-d', strtotime($date));
         $yestoday = date("Y-m-d", strtotime("-$date day"));
@@ -545,13 +545,13 @@ class LottoryDataMgr
             $offset = (int)wjStrFilter(I('get.offset'));
         }
 
-        /*if (empty($date)) {
+        if (empty($date)) {
             $date = date('Y-m-d');
         }else{
             if($date != date('Y-m-d',strtotime($date))){
                 $date =   date('Y-m-d');
             }
-        }*/
+        }
         $cacheName = $type . '_' . $page . '_' . $count . '_' . $date;
 //        $ret = S($cacheName);
         $ret=false;
