@@ -82,7 +82,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
 			 default :
 			 $title_c = "";
 			 break;
-			 
+
 		}
         $this->assign('lottory', $ctrlName);
         if ($ctrlName == 'tcpk10' || $ctrlName == 'tcssc' || $ctrlName == 'pk10' || $ctrlName == 'cqssc' || $ctrlName == 'gdkl10' || $ctrlName == 'jssc' || $ctrlName == 'jsk3' || $ctrlName == 'kl8' || $ctrlName == 'bjft' || $ctrlName == 'jsssc'  || $ctrlName == 'xyft'  || $ctrlName == 'fc3d' || $ctrlName == 'pl3'
@@ -209,14 +209,14 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                         $totalExpect = 1054;
                                                                     }else{
                                                                         if ($ctrlName == 'sfssc') {
-                                                                            $this->title = $title_c.'TC三分赛车开奖视频_TC三分赛车开奖号码_TC三分赛车开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                            $this->title = $title_c.'TC三分彩开奖视频_TC三分赛车开奖号码_TC三分赛车开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                             $this->keyword = C("WEB_SITE_tcssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                             $this->description = C("WEB_SITE_tcssc_DESCR");
                                                                             $lottoryName = "TC三分彩";//头彩
                                                                             $totalExpect = 441;
                                                                         }else{
                                                                             if ($ctrlName == 'sfpk10') {
-                                                                                $this->title = $title_c.'TC三分彩开奖视频_TC三分彩开奖号码_TC三分彩开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                                $this->title = $title_c.'TC三分赛车开奖视频_TC三分彩开奖号码_TC三分彩开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                                 $this->keyword = C("WEB_SITE_tcssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                                 $this->description = C("WEB_SITE_tcssc_DESCR");
                                                                                 $lottoryName = "TC三分赛车";//头彩
@@ -229,7 +229,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                         }
                                                     }
 //												}
-												
+
 											}
 											}
 										}
@@ -619,16 +619,16 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
 
                         $list_jssc = $module->query("SELECT * FROM lot_data where dat_type=39 order by dat_open_time desc limit 4");
                         $this->assign('list_jssc', $list_jssc);
-		
+
 						$list_cqssc = $module->query("SELECT * FROM lot_data where dat_type=1 order by dat_open_time desc limit 4");
         				$this->assign('list_cqssc', $list_cqssc);
-		
+
 						$list_gdkl10 = $module->query("SELECT * FROM lot_data where dat_type=21 order by dat_open_time desc limit 4");
         				$this->assign('list_gdkl10', $list_gdkl10);
-		
+
 						$list_xync = $module->query("SELECT * FROM lot_data where dat_type=18 order by dat_open_time desc limit 4");
 						$this->assign('list_xync', $list_xync);
-		
+
 						$list_jsssc = $module->query("SELECT * FROM lot_data where dat_type=40 order by dat_open_time desc limit 4");
 						$this->assign('list_jsssc', $list_jsssc);
 
@@ -637,10 +637,10 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
 
                         $list_cqft = $module->query("SELECT * FROM lot_data where dat_type=41 order by dat_open_time desc limit 4");
                         $this->assign('list_cqft', $list_cqft);
-		
+
 						$list_gd11x5 = $module->query("SELECT * FROM lot_data where dat_type=6 order by dat_open_time desc limit 4");
 						$this->assign('list_gd11x5', $list_gd11x5);
-		
+
 						$list_jsk3 = $module->query("SELECT * FROM lot_data where dat_type=22 order by dat_open_time desc limit 4");
 						$this->assign('list_jsk3', $list_jsk3);
 
@@ -689,7 +689,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                 $Document->where($map)->setInc('view');
                                 $pic = get_cover($info["cover_id"]);
                                 $info['cover_path'] = $pic["path"];
-                                $this->assign('info', $info);			
+                                $this->assign('info', $info);
                                 $this->display("{$ctrlName}/article");
                             } else {
                                 $perPage = 30;
