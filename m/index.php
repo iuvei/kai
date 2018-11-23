@@ -152,7 +152,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
             <li><a href="gd11x5/" game="gd11x5">广东11选5</a></li>
         <!--    <li><a href="gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
             <!--<li><a href="pc28/" game="pc28">加拿大28</a></li>-->
-            <li><a href="txffc/" game="txffc" class="cur">腾讯分分彩</a></li>
+            <li><a href="txffc/" game="txffc" class="cur">幸运分分彩</a></li>
 
 
 
@@ -550,7 +550,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 <!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-txffc"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
-                    <div  class="yx_name">腾讯分分彩
+                    <div  class="yx_name">幸运分分彩
                     </div>
                     <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
                     <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>

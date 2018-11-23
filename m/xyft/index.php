@@ -4,9 +4,6 @@ include("../conn.php");
 <!DOCTYPE HTML>
 <html>
 <head>
-
-
-
     <meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
 
@@ -33,14 +30,12 @@ include("../conn.php");
 
 </head>
 <body>
-<div class="cont">
-
-
 <?php include("../public/header.php"); ?>
-
+<div class="cont">
 <script src="award.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
 <!--<link type="text/css" href="../style/css/pk10.css" rel="stylesheet">-->
 <?php include("../public/header2.php"); ?>
+
 <div class="openResult">
     <div class="openIssueList">
         <div class="newIssue">
@@ -179,6 +174,7 @@ include("../conn.php");
         <a class="no1">10</a>
     </div>
 </div>-->
+
 <?php include("../public/paging.php"); ?>
 <div class="pageLod" style="display: none"><img src="../style/images/loading2.gif"></div>
 <?php include("../public/footer.php"); ?>
@@ -387,9 +383,7 @@ include("../conn.php");
 
 
 </script>
-    <script src="../style/js/common.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script></div>
+    <script src="../style/js/common.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
+</div>
 </body>
-<style>
-        body{}
-</style>
 </html>

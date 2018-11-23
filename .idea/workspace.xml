@@ -4,9 +4,71 @@
     <list default="true" id="aeccc0ce-7afd-4f39-a56e-3d313d3b26de" name="Default" comment="头部游戏排序，游戏LOGO图片">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Fuzhi/Controller/EmptyController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/Controller/EmptyController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index22.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index22.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Data/cfg/gameDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Data/cfg/gameDate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/bjft/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/bjft/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/bjft/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/bjft/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/conn.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/conn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/cqft/award.js" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqft/award.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/cqft/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqft/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/cqft/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqft/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/cqssc/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/cqssc/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/cqssc/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gd11x5/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gd11x5/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gd11x5/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gdkl10/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/cltj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gdkl10/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/hmzs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gdkl10/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gdkl10/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gdkl10/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/lrtj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gdkl10/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/shipin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/gdkl10/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/gdkl10/smtj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jsk3/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jsk3/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsk3/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jssc/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/cltj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jssc/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/hmzs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jssc/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jssc/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jssc/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/lrtj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jssc/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/shipin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jssc/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jssc/smtj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jsssc/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/cltj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jsssc/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/hmzs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jsssc/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jsssc/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jsssc/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/lrtj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jsssc/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/shipin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/jsssc/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/jsssc/smtj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/pc28/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pc28/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/pk10/cltj2.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/cltj2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/pk10/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/pk10/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/public/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/public/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/sfpk10/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfpk10/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/sfpk10/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfpk10/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/sfssc/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfssc/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/sfssc/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/sfssc/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/shipin/cltj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/shipin/cltj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/shipin/hmzs.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/shipin/hmzs.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/shipin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/shipin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/shipin/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/shipin/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/shipin/lrtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/shipin/lrtj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/shipin/smtj.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/shipin/smtj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/tcpk10/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcpk10/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/tcpk10/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcpk10/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/tcpk10/shipin.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcpk10/shipin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/tcssc/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcssc/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/tcssc/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/tcssc/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/txffc/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/txffc/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/txffc/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/txffc/jiqiao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xyft/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/m/xyft/jiqiao.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/xyft/jiqiao.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,26 +90,28 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="5" />
-          <entry key="php" value="1" />
+          <entry key="css" value="2" />
+          <entry key="html" value="10" />
+          <entry key="php" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="5" />
-          <entry key="PHP" value="1" />
+          <entry key="CSS" value="2" />
+          <entry key="HTML" value="10" />
+          <entry key="PHP" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="7" />
-          <entry key="php" value="2" />
+          <entry key="html" value="20" />
+          <entry key="php" value="43" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="7" />
-          <entry key="PHP" value="2" />
+          <entry key="HTML" value="20" />
+          <entry key="PHP" value="43" />
         </counts>
       </usages-collector>
     </session>
@@ -55,56 +119,64 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/tcpk10/index.php">
+        <entry file="file://$PROJECT_DIR$/m/pk10/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+            <state relative-caret-position="437">
+              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/tcssc/kaijiang.html">
+        <entry file="file://$PROJECT_DIR$/m/sfpk10/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-171" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/tcssc/index.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+            <state relative-caret-position="646">
+              <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/txffc/index.html">
+        <entry file="file://$PROJECT_DIR$/m/sfssc/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+            <state relative-caret-position="287">
+              <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html">
+        <entry file="file://$PROJECT_DIR$/m/cqft/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1596" />
+            <state relative-caret-position="503">
+              <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/bjft/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="589">
+              <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/EmptyController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="811">
-              <caret line="252" column="16" lean-forward="true" selection-start-line="252" selection-start-column="16" selection-end-line="252" selection-end-column="16" />
+            <state relative-caret-position="1806">
+              <caret line="252" column="16" selection-start-line="252" selection-start-column="16" selection-end-line="252" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/tcpk10/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -112,17 +184,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/m/cqssc/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3800">
-              <caret line="200" column="107" selection-start-line="200" selection-start-column="107" selection-end-line="200" selection-end-column="107" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/gd11x5/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3971">
-              <caret line="209" column="107" selection-start-line="209" selection-start-column="107" selection-end-line="209" selection-end-column="107" />
+            <state relative-caret-position="572">
+              <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -130,8 +193,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/m/jsk3/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2717">
-              <caret line="143" selection-start-line="143" selection-end-line="143" />
+            <state relative-caret-position="684">
+              <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/gd11x5/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="344">
+              <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -147,9 +219,22 @@
       <find>style='height: 30px;' class='ball'</find>
       <find>findPk10TodayCount</find>
       <find>font-size: 3.8vw;</find>
+      <find>三分彩开奖</find>
+      <find>20181112</find>
+      <find>\n\	\	\	  \&lt;div class\=\&quot;info_news news_top\&quot;\&gt;</find>
+      <find>20181111</find>
+      <find>/images/txffc-logo.png?</find>
+      <find>腾讯分分彩</find>
     </findStrings>
+    <replaceStrings>
+      <replace>20181112</replace>
+      <replace>20181212</replace>
+      <replace />
+      <replace>幸运分分彩</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>F:\tckai\kai\Application</dir>
+      <dir>D:\kaijiang\kai</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -160,7 +245,6 @@
       <list>
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/pk10/merge.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/pk10/yilou.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php" />
@@ -171,6 +255,23 @@
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/numberstat.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/index.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/txffc/index.html" />
+        <option value="$PROJECT_DIR$/style/m/style/css/style.css" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/View/Public/head.html" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" />
+        <option value="$PROJECT_DIR$/Application/View/Public/lottory_latest.html" />
+        <option value="$PROJECT_DIR$/Application/View/Common/index.html" />
+        <option value="$PROJECT_DIR$/m/xyft/index.php" />
+        <option value="$PROJECT_DIR$/m/txffc/index.php" />
+        <option value="$PROJECT_DIR$/m/tcssc/index.php" />
+        <option value="$PROJECT_DIR$/m/tcpk10/index.php" />
+        <option value="$PROJECT_DIR$/m/sfssc/index.php" />
+        <option value="$PROJECT_DIR$/m/sfpk10/index.php" />
+        <option value="$PROJECT_DIR$/m/pk10/index.php" />
+        <option value="$PROJECT_DIR$/m/jsk3/index.php" />
+        <option value="$PROJECT_DIR$/m/gd11x5/index.php" />
+        <option value="$PROJECT_DIR$/m/cqssc/index.php" />
+        <option value="$PROJECT_DIR$/m/cqft/index.php" />
+        <option value="$PROJECT_DIR$/m/bjft/index.php" />
       </list>
     </option>
   </component>
@@ -211,7 +312,7 @@
       <path value="$PROJECT_DIR$/phpMyAdmin/vendor/twig/twig" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="246" />
     <option name="y" value="33" />
     <option name="width" value="1169" />
@@ -233,27 +334,6 @@
               <item name="kai" type="b2602c69:ProjectViewProjectNode" />
               <item name="kai" type="462c0819:PsiDirectoryNode" />
               <item name="Application" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kai" type="462c0819:PsiDirectoryNode" />
-              <item name="Application" type="462c0819:PsiDirectoryNode" />
-              <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kai" type="462c0819:PsiDirectoryNode" />
-              <item name="Application" type="462c0819:PsiDirectoryNode" />
-              <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kai" type="462c0819:PsiDirectoryNode" />
-              <item name="Application" type="462c0819:PsiDirectoryNode" />
-              <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="sfpk10" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -337,7 +417,7 @@
       <option name="presentableId" value="Default" />
       <updated>1542421779056</updated>
       <workItem from="1542421780281" duration="9976000" />
-      <workItem from="1542657623621" duration="1011000" />
+      <workItem from="1542657623621" duration="8516000" />
     </task>
     <task id="LOCAL-00001" summary="头部游戏排序，游戏LOGO图片">
       <created>1542446687940</created>
@@ -350,11 +430,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10990000" />
+    <option name="totallyTimeSpent" value="18495000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28304905" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -430,9 +509,6 @@
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/top_ad.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/head.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
@@ -444,13 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="14" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="200" column="53" selection-start-line="200" selection-start-column="53" selection-end-line="200" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -550,76 +619,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/txffc/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3971">
-          <caret line="209" column="107" selection-start-line="209" selection-start-column="107" selection-end-line="209" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/xyft/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7315">
-          <caret line="385" selection-start-line="385" selection-end-line="385" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/sfpk10/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/sfssc/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3781">
-          <caret line="199" column="107" selection-start-line="199" selection-start-column="107" selection-end-line="199" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/tcssc/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3990">
-          <caret line="210" column="107" selection-start-line="210" selection-start-column="107" selection-end-line="210" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/cqft/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3610">
-          <caret line="190" column="107" selection-start-line="190" selection-start-column="107" selection-end-line="190" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/cqssc/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3800">
-          <caret line="200" column="107" selection-start-line="200" selection-start-column="107" selection-end-line="200" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/gd11x5/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3971">
-          <caret line="209" column="107" selection-start-line="209" selection-start-column="107" selection-end-line="209" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/jsk3/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2717">
-          <caret line="143" selection-start-line="143" selection-end-line="143" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/tcpk10/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/tcssc/kaijiang.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-171" />
@@ -647,10 +646,136 @@
         <state relative-caret-position="-1596" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/style/m/style/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="77" column="57" selection-start-line="77" selection-start-column="57" selection-end-line="77" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1241" column="105" selection-start-line="1241" selection-start-column="105" selection-end-line="1241" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Common/index22.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="458" selection-start-line="458" selection-end-line="458" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Public/lottory_latest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="60" column="55" selection-start-line="60" selection-start-column="55" selection-end-line="60" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/View/Common/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="1789" column="90" selection-start-line="1789" selection-start-column="90" selection-end-line="1789" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/xyft/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/txffc/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="36" column="84" selection-start-line="36" selection-start-column="84" selection-end-line="36" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/tcssc/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/tcpk10/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="25" column="18" selection-start-line="25" selection-start-column="18" selection-end-line="25" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sfssc/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/sfpk10/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="34" column="18" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/pk10/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/jsk3/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="36" column="18" selection-start-line="36" selection-start-column="18" selection-end-line="36" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/gd11x5/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/cqssc/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="38" column="18" selection-start-line="38" selection-start-column="18" selection-end-line="38" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/cqft/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="35" column="6" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/bjft/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="37" column="6" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/EmptyController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="811">
-          <caret line="252" column="16" lean-forward="true" selection-start-line="252" selection-start-column="16" selection-end-line="252" selection-end-column="16" />
+        <state relative-caret-position="1806">
+          <caret line="252" column="16" selection-start-line="252" selection-start-column="16" selection-end-line="252" selection-end-column="16" />
         </state>
       </provider>
     </entry>

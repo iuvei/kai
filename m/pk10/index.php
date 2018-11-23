@@ -22,8 +22,8 @@ include("../conn.php");
 
 </head>
 <body>
-<div class="cont">
 <?php include("../public/header.php"); ?>
+<div class="cont">
 <script src="award.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
 <?php include("../public/header2.php"); ?>
 

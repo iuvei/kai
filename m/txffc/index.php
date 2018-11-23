@@ -32,13 +32,11 @@ include("../conn.php");
 
 </head>
 <body>
-
-<div class="cont">
-
 <?php include("../public/header.php"); ?>
-
+<div class="cont">
 <script src="award.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
 <?php include("../public/header2.php"); ?>
+
 <div class="openResult">
     <div class="openIssueList">
         <div class="newIssue">
@@ -205,8 +203,8 @@ function refresh(){
 	getHistoryData('50','');
 
 }
-
 </script>
-    <script src="../style/js/common.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script></div>
+    <script src="../style/js/common.js?v=<?php echo date("Y/m/d")?>" type="text/javascript"></script>
+</div>
 </body>
 </html>

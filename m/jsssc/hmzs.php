@@ -1,4 +1,4 @@
-<?php 
+<?php
 include("../conn.php");
 ?>
 <!DOCTYPE HTML>
@@ -6,12 +6,12 @@ include("../conn.php");
 <head>
     <meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
-    
+
     <meta name="HandheldFriendly" content="true" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    
+
 <meta name="format-detection"content="telephone=no"/>
 <title><?=$web_type?>走势_<?=$webtitle?>手机版</title>
 <script src="../style/js/jquery.js"></script>
@@ -32,7 +32,7 @@ include("../conn.php");
 <?php include("../public/header.php"); ?>
 
 
-   
+
 <script src="award.js" type="text/javascript"></script>
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
 <div class="daojishi1">
@@ -51,7 +51,7 @@ include("../conn.php");
             <li><a href="../gd11x5/" game="gd11x5">广东11选5</a></li>
             <li><a href="../gdkl10/" game="gdkl10">广东快乐十分</a></li>
             <!--<li><a href="../pc28/" game="pc28">加拿大28</a></li>-->
-            <li><a href="../txffc/" game="txffc" class="cur">腾讯分分彩</a></li>
+            <li><a href="../txffc/" game="txffc" class="cur">幸运分分彩</a></li>
         </ul>
     </div>
     <div class="fl xia-yx" id="xia-yx1"><?=$web_type?><span class="xialabt" id="xialabt1"></span> </div>
@@ -121,12 +121,12 @@ include("../conn.php");
 <!--				  <li><a class="no" href="javascript:void(0);" ball="8">第8名</a></li>-->
 <!--				  <li><a class="no" href="javascript:void(0);" ball="9">第9名</a></li>-->
 <!--				  <li><a class="no" href="javascript:void(0);" ball="10">第10名</a></li>-->
-			
+
 				</ul>
 			</div>
 
 
-   
+
 <?php include("../public/footer.php"); ?>
 
 
@@ -140,7 +140,7 @@ include("../conn.php");
                     });
                 });
             });
-            
+
             function drawTrend() {
             	layer.open({type: 2,time: 1});
             	var ball = $(".ball li .cur").attr("ball");
@@ -155,15 +155,15 @@ include("../conn.php");
 				// ballNames["8"] = "第八名";
 				// ballNames["9"] = "第九名";
 				// ballNames["10"] = "第十名";
-            
-            
-               
+
+
+
                $.get("../ajax/pk10_trend.php", { type:40, ball: ball, count: 8, t: Math.random() }, function (data) {
             	   layer.closeAll();
                 	data=eval(data);
                    showChartline(ballNames[ball]+"走势图", data, "号",0, 9, 'container',ballNames[ball]);
                }, "json");
-               
+
             }
 
             function showChartline(title, data, mingzi, ymin, ymax, container,name) {

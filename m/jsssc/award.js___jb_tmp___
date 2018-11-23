@@ -1,70 +1,7 @@
-
-
-
 $(function () {
-
-    /*期数*/
-    var issueStr = '';
-
-    $('.chooseIssue').change(function () {
-        issueStr=$(this).val();
-
-        if(issueStr==''){//全部期数
-            $('.openCode').show();
-            return
-        }
-        for (var i=0;i<$('.Issue').length;i++){
-            if( $('.Issue').eq(i).text() == issueStr){
-                $('.Issue').eq(i).parent().parent().parent().show();
-            }else {
-                $('.Issue').eq(i).parent().parent().parent().hide();
-            }
-        }
-    });
-    /*筛选类型*/
-    $('#chooseType a').click(function () {
-
-        $('.sscBall').addClass('sscBallNoColor');
-        $('#chooseType a').removeClass('chooseTypeColor');
-        $(this).addClass('chooseTypeColor');
-
-        if( $(this).text()=='摊1'){
-            for (var i=0;i<$('.sscBall').text().length;i++){
-                if($('.cqft').eq(i).text()== 1){
-
-                    $('.cqft').eq(i).parent().parent().children('div').children('a').removeClass('sscBallNoColor');
-                }
-            }
-        } else if( $(this).text()=='摊2'){
-            for (var i=0;i<$('.sscBall').text().length;i++){
-                if($('.cqft').eq(i).text()== 2){
-                    $('.cqft').eq(i).parent().parent().children('div').children('a').removeClass('sscBallNoColor');
-                }
-            }
-        }else if( $(this).text()=='摊3'){
-            for (var i=0;i<$('.sscBall').text().length;i++){
-                if($('.cqft').eq(i).text()== 3){
-                    $('.cqft').eq(i).parent().parent().children('div').children('a').removeClass('sscBallNoColor');
-                }
-            }
-        }else if( $(this).text()=='摊4'){
-            for (var i=0;i<$('.sscBall').text().length;i++){
-                if($('.cqft').eq(i).text()== 4){
-                    $('.cqft').eq(i).parent().parent().children('div').children('a').removeClass('sscBallNoColor');
-                }
-            }
-        } else if($(this).text()=='号码'){
-            $('.sscBall').removeClass('sscBallNoColor');
-        }
-
-    });
-
-
-
     var currentPeriodNumber = -1;
     var nextPeriodNumber = -1;
     var timeInterval = 5000;
-    var lastOpenCode = -1;
     //请求出错次数
     var errorCount = 0;
     //请求次数
@@ -80,7 +17,7 @@ $(function () {
             _container = _container ? _container : "lot-wrap";
 
             setTimeout(function () {
-                $.get('http://m.qx66.com/cqssc/' + _page, { t: Math.random() }, function (text) {
+                $.get('http://m.qx66.com/jsssc/' + _page, { t: Math.random() }, function (text) {
                     $('#' + _container).html(text);
                     //文字闪烁
                     Glitter();
@@ -101,33 +38,7 @@ $(function () {
         }
     }
     var awardTick = function () {
-        $.post('../../cqssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
-            if(data.current.awardNumbers!='') {
-                $('.newIssue span').html(data.current.periodNumber1.substr(4));
-                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
-                $('.periodNumber').html(data.current.periodNumber);
-                $('.surplus_num').html(data.current.surplus_num);
-                var nums = data.current.awardNumbers.split(',');
-                var srt = '';
-                var sum = eval(nums.join("+"));
-                var tan = sum % 4;
-                if (tan == 0) {
-                    tan = 4
-                }
-                var ft = '';
-                for (var i = 0; i < tan; i++) {
-                    ft = ft + '<span class="ball-red-span"></span>'
-                }
-                console.log(ft)
-                ft = '<a class="AFT">番摊：</a>' + ft;
-                for (var i = 0; i < nums.length; i++) {
-
-                    srt = srt + '<a class="sscBall2 mg">' + nums[i] + '</a>';
-
-                }
-                srt = srt +ft
-                $('.openCodeList1').html(srt)
-            }
+        $.post('../../jsssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
             //计数请求次数
             requireCount += 1;
             if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
@@ -137,7 +48,50 @@ $(function () {
                 requireCount = errorCount = 0;
                 hideLotPeriodNumWarn();
             }
-            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
+
+            var nextOpenIssue = (Number(data.current.periodNumber1)+1).toString().substr(4);
+
+            $('.newIssue span').html(data.current.periodNumber1.substr(4));
+            $('.nextIssue span').html(nextOpenIssue);
+            $('.periodNumber').html(data.current.periodNumber);
+            $('.surplus_num').html(data.current.surplus_num);
+
+            var nums = data.current.awardNumbers.split(',');
+
+
+
+
+            var srt = '';
+            var sum = eval(nums.join("+"));
+            var dx = '';
+            var ds = '';
+            if(sum > 22){
+                dx = '大';
+            }else {
+                dx = '小';
+            }
+            if(sum%2 == 0){
+                ds = '双';
+            }else {
+                ds = '单';
+            }
+
+            for (var i = 0; i < nums.length; i++) {
+
+                srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
+
+            }
+            srt = srt + '<dic class="sscLH">';
+            srt = srt + '<a>' + long(nums[0],nums[4]) + '</a>';
+            srt = srt + '<a>' + '<span></span>' + '</a>';
+            srt = srt + '<a>' + '总和' + '</a>';
+            srt = srt + '<a>' + sum + '</a>';
+            srt = srt + '<a>' + dx  + '</a>';
+            srt = srt + '<a>' + ds  + '</a>';
+            srt = srt + '</dic>';
+
+
+            $('.openCodeList').html(srt)
 
             if (timeInterval != 0) {
                 if (currentPeriodNumber != -1 ) {    //判断第一次加载
@@ -152,11 +106,12 @@ $(function () {
 
 
             }
-
+            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
 
 
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
+
 
 
 
@@ -175,32 +130,9 @@ $(function () {
     var cpCurrAwardData = null;
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
-        $.post('../../cqssc/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
-            if(data.current.awardNumbers!='') {
-                $('.newIssue span').html(data.current.periodNumber1.substr(4));
-                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
-                $('.periodNumber').html(data.current.periodNumber);
-                $('.surplus_num').html(data.current.surplus_num);
-                var nums = data.current.awardNumbers.split(',');
-                var srt = '';
-                var sum = eval(nums.join("+"));
-                var tan = sum % 4;
-                if (tan == 0) {
-                    tan = 4
-                }
-                var ft = '';
-                for (var i = 0; i < tan; i++) {
-                    ft = ft + '<span class="ball-red-span"></span>'
-                }
-                ft = '<a class="AFT">番摊：</a>' + ft;
-                for (var i = 0; i < nums.length; i++) {
+        $.post('../../jsssc/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
 
-                    srt = srt + '<a class="sscBall2 mg">' + nums[i] + '</a>';
 
-                }
-                srt = srt +ft
-                $('.openCodeList1').html(srt)
-            }
             //请求到数据后需要做的事情
             cpCurrAwardData = data;
             //期数不同，则开始封盘倒计时
@@ -220,9 +152,8 @@ $(function () {
             if (ctimeOfPeriod == -1) {//判断第一次加载
                 ctimeOfPeriod = data.current.periodNumber;
             }
-            // $(".headOpenTime .headOpenTimeM").html(data.next.periodNumber);
+           // $(".headOpenTime .headOpenTimeM").html(data.next.periodNumber);
             loadAwardTimesTimer = window.setTimeout(loadAwardTimes, data.next.awardTimeInterval < 10 ? 10000 : data.next.awardTimeInterval + 1000);
-            setTimeout(polling(),1000)
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(loadAwardTimes, 1000 + Math.random() * 10000);
@@ -237,95 +168,75 @@ $(function () {
     window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
-    function polling() {
-        $.post('../../cqssc/getPk10AwardTimes.do', {t: Math.random()}, function (data) {
-            if(data.status == 2){
-                return
-            }
-            if(data.current.awardNumbers==''){
-                setTimeout(function () {
-                    polling();
-                },3000)
-            }else {
-                $('.newIssue span').html(data.current.periodNumber1.substr(4));
-                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
-                $('.periodNumber').html(data.current.periodNumber);
-                $('.surplus_num').html(data.current.surplus_num);
-                var nums = data.current.awardNumbers.split(',');
-                var srt = '';
-                var sum = eval(nums.join("+"));
-                var tan = sum % 4;
-                if (tan == 0) {
-                    tan = 4
-                }
-                var ft = '';
-                for (var i = 0; i < tan; i++) {
-                    ft = ft + '<span class="ball-red-span"></span>'
-                }
-                console.log(ft)
-                ft = '<a class="AFT">番摊：</a>' + ft;
-                for (var i = 0; i < nums.length; i++) {
-
-                    srt = srt + '<a class="sscBall2 mg">' + nums[i] + '</a>';
-
-                }
-                srt = srt +ft
-                $('.openCodeList1').html(srt)
-                window.setTimeout(function () {
-                    getHistoryData('50')
-                },5000)
-            }
-        }, 'json').error(function () {
-        });
-    }
 });
 function getHistoryData(count,date) {
-    $.get("../../cqssc/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
+	layer.open({type: 2,time: 1});
+    $.get("../../jsssc/getHistoryData.do", { count:count,date:date,t: Math.random() }, function (result) {
 
         if(result&&result.rows){
-            var j = 0;
-            var html = '';
-            for(var i in result.rows){
-                var data = result.rows[i];
+        	var j = 0;
+        	var html = '';
+        	for(var i in result.rows){
+        		var data = result.rows[i];
                 $('.chooseIssue').append('<option value="'+data.termNum.substr(4)+'">'+data.termNum.substr(4)+'</option>');
                 html += '<div class="openCode">';
                 html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(4)+'</span>' +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
                 /*数字*/
-                html += '<div>'+'<a class="sscBall">' + data.n1 + '</a>'+ '</div>';
-                html += '<div>'+'<a class="sscBall">' + data.n2 + '</a>'+ '</div>';
-                html += '<div>'+'<a class="sscBall">' + data.n3 + '</a>'+ '</div>';
-                html += '<div>'+'<a class="sscBall">' + data.n4 + '</a>'+ '</div>';
-                html += '<div>'+'<a class="sscBall">' + data.n5 + '</a>'+ '</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n1 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n1)+'"  style="display: none">' + DX(data.n1)+ '</a>'+
+                    '<a class="ssc'+DSClass(data.n1)+'"  style="display: none">' + ds(data.n1)+ '</a>'
+                    +'</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n2 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n2)+'"  style="display: none">' + DX(data.n2)+ '</a>'
+                    +'<a class="ssc'+DSClass(data.n2)+'"  style="display: none">' + ds(data.n2)+ '</a>'
+                    +'</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n3 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n3)+'"  style="display: none">' + DX(data.n3)+ '</a>'
+                    +'<a class="ssc'+DSClass(data.n3)+'"  style="display: none">' + ds(data.n3)+ '</a>'
+                    +'</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n4 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n4)+'"  style="display: none">' + DX(data.n4)+ '</a>'
+                    +'<a class="ssc'+DSClass(data.n4)+'"  style="display: none">' + ds(data.n4)+ '</a>'
+                    +'</div>';
+                html += '<div>'+'<a class="sscBall">' + data.n5 + '</a>'+
+                    '<a class="ssc'+DXClass(data.n5)+'"  style="display: none">' + DX(data.n5)+ '</a>'
+                    +'<a class="ssc'+DSClass(data.n5)+'"  style="display: none">' + ds(data.n5)+ '</a>'
+                    +'</div>';
 
-                var tan_num = [data.n1,data.n2,data.n3,data.n4,data.n5];
-                tan_num = tan(tan_num);
                 var guanyahe = arr_num(data.lotteryNum);
                 var sum = eval(guanyahe.join("+"));
                 html += '<div>'+'<a>'+ sum + '</a>'+'</div>';
-                html += '<div>'+'<a class="sscBall cqft">'+ tan_num + '</a>'+'</div>';
                 html += '<div>'+'<a>'+ dx(sum) + '</a>'+'</div>';
                 html += '<div>'+'<a>'+ ds(sum) + '</a>'+'</div>';
-
+                html += '<div>'+'<a>'+ long(data.n1,data.n5) + '</a>'+'</div>';
 
                 html += '</div>';
+        		// html += '<li class="' + clsName + '">';
+				// html += '<table width="100%">';
+				// html += '<tr>';
+        		// html += '<td width="20%">' + data.termNum.substring(8, 16) +'期</br>';
+				// html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
+                // html += '<td class=""><div class="nums-div">';
+				// html += '<i class="ball-red">' + data.n1 + '</i>';
+				// html += '<i class="ball-red">' + data.n2 + '</i>';
+				// html += '<i class="ball-red">' + data.n3 + '</i>';
+				// html += '<i class="ball-red">' + data.n4 + '</i>';
+				// html += '<i class="ball-red">' + data.n5 + '</i>';
 
+                // html += '<div class="bt-jg"><span>'+long(data.n1,data.n5)+'</span><span style="color: #bbbbbb">|</span><span>'+ sum +'</span><span>'+ dx(sum)+'</span><span>'+ds(sum)+'</span>'+
+                //     '</br><span class="span-2">'+shun(data.n1,data.n2,data.n3)+'</span><span class="span-2">'+shun(data.n2,data.n3,data.n4)+'</span>' +
+                //     '<span class="span-2">'+shun(data.n3,data.n4,data.n5)+'</span><span class="span-2">'+douniu(guanyahe)+'</span></div></div></td>';
+
+                // html += '</tr>';
+				// html += '</table>';
+				// html += '</li>';
                 j++;
-            }
-            $("#historyList").html(html);
-            getPkData(date)
+        	}
+        	$("#historyList").html(html);
         }else {
-            $("#historyList").html("<li>对不起，今天暂无数据，请按日期检索！</li>");
-        }
+			 $("#historyList").html("<li>对不起，今天暂无数据，请按日期检索！</li>");
+			}
     }, "json");
-}
-function getPkData(date) {
-    $.get("../../cqssc/getHistoryData.do", {date: date, page: 1, offset: 15, t: Math.random()}, function (result) {
-        if (result.count) {
-            loadData(result.count);
-            loadpage(date,'cqssc');
-        }
-    }, "json");
-
 }
 function DXClass(num) {
     if(num<=4){
@@ -506,15 +417,6 @@ function douniu(nums){
 
 
 function lh(nums) {
-    var sum = eval(nums.join("+"));
-    sum = sum%4;
-    if(sum == 0){
-        sum = 4;
-    }
-    var tan;
-    tan = sum+'摊';
-
-    console.log(tan);
     var srt = '';
     var sum = eval(nums.join("+"));;
     var dx = '';
@@ -541,20 +443,10 @@ function lh(nums) {
     srt +="<span>"+sum+"</span>";
     srt +="<span>"+dx+"</span>";
     srt +="<span>"+ds+"</span>";
-    // console.log(srt);
+   // console.log(srt);
     return srt;
 }
 
-
-function tan(num) {
-    var sum = eval(num.join("+"));
-    sum = sum%4;
-    if(sum == 0){
-        sum = 4;
-    }
-    return sum
-
-}
 
 
 

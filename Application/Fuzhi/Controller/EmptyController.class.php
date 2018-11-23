@@ -188,10 +188,10 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                             $totalExpect = 1;
                                                         }else{*/
                                                             if ($ctrlName == 'txffc') {
-                                                                $this->title = $title_c.'腾讯分分彩开奖视频_腾讯分分彩开奖号码_腾讯分分彩开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                $this->title = $title_c.'幸运分分彩开奖视频_幸运分分彩开奖号码_幸运分分彩开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                 $this->keyword = C("WEB_SITE_xjssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                 $this->description = C("WEB_SITE_xjssc_DESCR");
-                                                                $lottoryName = "腾讯分分彩";
+                                                                $lottoryName = "幸运分分彩";
                                                                 $totalExpect = 1440;
                                                             }else{
                                                                 if ($ctrlName == 'tcpk10') {
@@ -459,7 +459,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                             $id = 55;
                             break;
                         case 'txffc':
-                            $JiQiaotitle = '腾讯分分彩技巧';
+                            $JiQiaotitle = '幸运分分彩技巧';
                             $id = 56;
                             break;
                         case 'jsk3':

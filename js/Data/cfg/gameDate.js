@@ -667,7 +667,7 @@ var webListOP = {
     // ],
     "txffc": [
         {
-            "text":"腾讯分分彩",
+            "text":"幸运分分彩",
             "href":"txffc/index.html"
         },
         {
