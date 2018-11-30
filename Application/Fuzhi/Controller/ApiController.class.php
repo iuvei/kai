@@ -1,6 +1,7 @@
 <?php
 namespace Fuzhi\Controller;
 
+use PhpMyAdmin\Config\Forms\User\MainForm;
 use Think\Controller;
 use Think\Exception;
 use Think\Page;
@@ -96,7 +97,24 @@ class ApiController extends Controller{
 
 
         $res = M('data')->add($where);
-
+        if($res)
+        {
+            $datalist=S($data["name"]);
+            $data["open_time"] =date('Y-m-d H:i');
+            if(!empty($datalist)){
+                $count = count($datalist);
+                if ($count>=10)
+                {
+                    array_shift($datalist);
+                }
+                $datalist[] = $data;
+                S($data["name"],$datalist);
+            }else{
+                S($data["name"],[$data]);
+            }
+//
+//         S($data["name"],null);
+        }
 
         if($res < 1){
             $arr = array(
@@ -331,6 +349,9 @@ class ApiController extends Controller{
     }
     private function caizhong($data){
         switch ($data){
+            case "bjft":
+                return "pk10-bj";
+                break;
             case "bjpk10":
                 return "pk10-bj";
                 break;
@@ -1148,6 +1169,101 @@ class ApiController extends Controller{
         $dx = $this->sdsd($dx);
        // $dx =$this-> cl($dx);
         return $dx[0];
+    }
+
+
+    //传游戏名如：bjpk10 查最新开奖的十条开奖结果
+    public function GetResultData(){
+        $data =I("name");
+
+        if(empty($data))
+        {
+            $arr = array(
+                'code'=>false,
+                'msg'=>'参数为空',
+            );
+            echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+        }
+        C('DB_PREFIX','lot_');
+
+        $gamename = $this->caizhong($data);
+        $t_where['name'] = $gamename;
+        $gameId = M("type")->where($t_where) -> getField("id");
+
+        if (!$gameId)
+        {
+            $arr = array(
+                'code'=>false,
+                'msg'=>'参数有误',
+            );
+            echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+        }
+
+        $where["dat_type"] = $gameId;
+        $st = strtotime(date('Y-m-d',time()));
+
+        $where["dat_open_time"] = array( "0"=>"gt","1"=>$st);
+
+        $res = M('data')->where($where)->order("dat_open_time desc")->limit(10)->select();
+
+        if (!$res){
+            $arr = array(
+                'code'=>false,
+                'msg'=>'系统错误',
+            );
+            echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+        }
+
+        echo json_encode($res,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+    }
+
+    //传游戏key值过来获取十条记录
+
+    public function LotteryRecord(){
+
+        $data = I("name");
+        if(empty($data)){
+            $arr = array(
+                'code'=>false,
+                'msg'=>'参数为空',
+            );
+            echo json_encode($arr,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
+        }
+        if($data =="bjft" || $data =="bjpk10") {
+            $data = "pk10";//
+        }else if($data =="cqft") {
+            $data = "cqssc";//
+        }else if($data =="jnd28"){
+            $data = "pc28";//
+        }else if($data =="xyffc"){
+            $data ="txffc";//幸运分分彩
+        }else if($data =="jspk10" || $data =="jssc"){
+            $data ="tcpk10";//极速赛车
+        }else if($data =="sfc"){
+            $data ="sfssc";//三分彩
+        }else if($data =="ffc"){
+            $data ="tcssc";//分分彩
+        }else if($data =="sfsc") {
+            $data ="sfpk10";//三分赛车
+        }
+
+        $arr=S($data);
+
+        foreach ($arr as $k => $v)
+        {
+            unset($v['name']);
+            $arr_one[]=$v;
+        }
+
+        if(empty($arr_one)){
+            $arr_one = array(
+                'code'=>false,
+                'msg'=>'没有此游戏',
+            );
+        }
+        $res = array_reverse($arr_one);
+//        print_r($res);
+        echo json_encode($res,JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);exit;
     }
 
 }
