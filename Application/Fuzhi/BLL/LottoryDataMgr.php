@@ -2082,7 +2082,7 @@ time: 1542068782325*/
             } else {
                 $module = M();
                 $today = date("Y-m-d");
-                $totalDates = getDates(date("Y-m-d", strtotime("-{$dateType} month")), $today);
+                $totalDates = +getDates(date("Y-m-d", strtotime("-{$dateType} month")), $today);
                 $lotType = $this->getLotTypeByGameId($gameId);
                 $shows = $this->calLmcListDay($module, $lotType, $today, $rank - 1, $iAllCodesCnt / 2, $name);
                 $cfg = new ConfigMgr();

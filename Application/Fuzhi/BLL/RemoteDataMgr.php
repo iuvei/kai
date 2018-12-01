@@ -20,7 +20,6 @@ class RemoteDataMgr
 
         if ($refresh) {
             $ret = fopen_url($url, $postParam);
-            dump($ret);die;
             if ($cacheName && $ret != '') {
                 S($cacheName, $ret, array('type' => 'file', 'expire' => $expire));
             }
