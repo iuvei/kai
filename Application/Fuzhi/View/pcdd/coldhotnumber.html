@@ -1,0 +1,58 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+  			<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+		<include file="Public/lottory_op"/>
+
+<input type="hidden" id="callFun" value="reloadData" time="1000"/>
+		<div style="margin-bottom: 20px;" id="lot-wrap">
+			<h2 style="margin: 15px;">冷热状态分析</h2>
+		
+			<div>
+				<div id="times-show"
+					style="float: left; padding-left: 20px; cursor: pointer;">
+					<span style="padding-right: 10px;"><b class="checkbox"></b></span> <span
+						class="ckb-txt"><label>显示热号码出现次数</label></span>
+				</div>
+				<div style="text-align: right;">
+					最近更新数据时间：22:09 <a style="cursor: pointer; color: blue;"
+						href="javascript:reloadData();">手动刷新</a>
+				</div>
+			</div>
+		
+		
+			<div class="tips">小贴士：热：近20期内出现频繁、活跃的号码；冷：近20期出现频率低甚至没有出现的号码。</div>
+			<script type="text/javascript">
+				$(function () {
+					reloadData();
+				});
+				function reloadData() {
+					$.get('pk10/findColdHotNumber.do?' + Math.random(), null, function(text) {
+						$('#lot-wrap').append(text);
+					});
+				}
+				$("#times-show ").click(function() {
+					if ($("b", $(this)).attr("class") == "checkbox") {
+						$("b", $(this)).addClass("checked");
+						$(".redBalls2").show()
+					} else {
+						$("b", $(this)).removeClass("checked");
+						$(".redBalls2").hide()
+					}
+				});
+			</script>
+		</div>
+	</div>
+	<div class="clear"></div>
+	</block>

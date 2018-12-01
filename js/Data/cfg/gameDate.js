@@ -96,7 +96,7 @@ var webListOP = {
 				{
 					"text":"遗漏大数据",
 					"href":"pk10/omitdata.html",
-					
+
 				},
 				{
 					"text":"两面数据统计",
@@ -298,7 +298,7 @@ var webListOP = {
         {
             "text":"遗漏大数据",
             "href":"jssc/omitdata.html",
-            
+
         },
         {
             "text":"两面数据统计",
@@ -408,7 +408,7 @@ var webListOP = {
 				{
 					"text":"遗漏大数据",
 					"href":"gdkl10/omitdata.html",
-					
+
 				},
 				{
 					"text":"两面数据统计",
@@ -502,7 +502,7 @@ var webListOP = {
 				{
 					"text":"遗漏大数据",
 					"href":"cqssc/omitdata.html",
-					
+
 				}
 			],
 
@@ -583,7 +583,7 @@ var webListOP = {
 					{
 						"text":"遗漏大数据",
 						"href":"cqft/omitdata.html",
-						
+
 					}
 				],
     "bjft": [
@@ -620,7 +620,7 @@ var webListOP = {
         {
             "text":"遗漏大数据",
             "href":"bjft/omitdata.html",
-            
+
         },
         {
             "text":"横版走势图",
@@ -699,7 +699,7 @@ var webListOP = {
         {
             "text":"遗漏大数据",
             "href":"txffc/omitdata.html",
-            
+
         },
         {
             "text":"横版走势图",
@@ -760,7 +760,7 @@ var webListOP = {
         {
             "text":"遗漏大数据",
             "href":"jsssc/omitdata.html",
-            
+
         },
         {
             "text":"两面数据统计",
@@ -1056,6 +1056,105 @@ var webListOP = {
             "text":"两面数据统计",
             "href":"sfssc/twosidedstat.html",
             "spanClass":"wen_newIcon"
+        }
+    ],
+    "jlk3": [
+        {
+            "text":"吉林骰宝(快3)",
+            "href":"jlk3/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"jlk3/kaijiang.html"
+        },
+        {
+            "text":"号码遗漏",
+            "href":"jlk3/numberomit.html"
+        },
+        {
+            "text":"总和路珠",
+            "href":"jlk3/luzhumerge.html"
+        },
+        {
+            "text":"号码路珠",
+            "href":"jlk3/luzhunumber.html"
+        },
+        {
+            "text":"历史号码统计",
+            "href":"jlk3/numberstat.html"
+        },
+        {
+            "text":"横版走势图",
+            "href":"jlk3/zoushitu.html"
+        },
+
+    ],
+    "gxk3": [
+        {
+            "text":"广西骰宝(快3)",
+            "href":"gxk3/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"gxk3/kaijiang.html"
+        },
+        {
+            "text":"号码遗漏",
+            "href":"gxk3/numberomit.html"
+        },
+        {
+            "text":"总和路珠",
+            "href":"gxk3/luzhumerge.html"
+        },
+        {
+            "text":"号码路珠",
+            "href":"gxk3/luzhunumber.html"
+        },
+        {
+            "text":"历史号码统计",
+            "href":"gxk3/numberstat.html"
+        },
+        {
+            "text":"横版走势图",
+            "href":"gxk3/zoushitu.html"
+        },
+
+    ],
+    "pcdd": [
+        {
+            "text":"pc蛋蛋",
+            "href":"pcdd/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"pcdd/kaijiang.html"
+        },
+        {
+            "text":"号码路珠",
+            "href":"pcdd/merge.html"
+        },
+        // {
+        //     "text":"单双大小历史",
+        //     "href":"pcdd/ballstat.html"
+        // },
+        /*{
+            "text":"加拿大28开奖直播",
+            "href":"pcdd/shipin/",
+            "title":"在线观看番摊开奖直播",
+            "aClass":"redColor"
+        },*/
+        {
+            "text":"pc蛋蛋技巧",
+            "href":"jiqiao/pcdd/"
+        },
+        {
+            "text":"遗漏大数据",
+            "href":"pcdd/omitdata.html",
+
+        },
+        {
+            "text":"横版走势图",
+            "href":"pcdd/zoushitu.html"
         }
     ],
 

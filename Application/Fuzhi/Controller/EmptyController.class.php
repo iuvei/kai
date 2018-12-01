@@ -86,7 +86,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
 		}
         $this->assign('lottory', $ctrlName);
         if ($ctrlName == 'tcpk10' || $ctrlName == 'tcssc' || $ctrlName == 'pk10' || $ctrlName == 'cqssc' || $ctrlName == 'gdkl10' || $ctrlName == 'jssc' || $ctrlName == 'jsk3' || $ctrlName == 'kl8' || $ctrlName == 'bjft' || $ctrlName == 'jsssc'  || $ctrlName == 'xyft'  || $ctrlName == 'fc3d' || $ctrlName == 'pl3'
-            || $ctrlName == 'pl3' || $ctrlName == 'gd11x5' || $ctrlName == 'cqft' || $ctrlName == 'pc28' || $ctrlName == 'txffc' || $ctrlName == 'sfssc' || $ctrlName == 'sfpk10') {
+            || $ctrlName == 'pl3' || $ctrlName == 'gd11x5' || $ctrlName == 'cqft' || $ctrlName == 'pc28' || $ctrlName == 'txffc' || $ctrlName == 'sfssc' || $ctrlName == 'sfpk10'||$ctrlName == 'pcdd'||$ctrlName == 'jlk3'|| $ctrlName == 'gxk3' ) {
             $lottoryName = '';
             $totalExpect = 0;
             if ($ctrlName == 'pk10') {
@@ -221,6 +221,32 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                                 $this->description = C("WEB_SITE_tcssc_DESCR");
                                                                                 $lottoryName = "TC三分赛车";//头彩
                                                                                 $totalExpect = 441;
+                                                                            }else{
+                                                                                if($ctrlName == 'pcdd'){
+                                                                                    $this->title = $title_c.'PC蛋蛋开奖视频_PC蛋蛋开奖号码_PC蛋蛋开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                                    $this->keyword = C("WEB_SITE_xjssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                    $this->description = C("WEB_SITE_tcssc_DESCR");
+                                                                                    $lottoryName = "PC蛋蛋";//头彩
+                                                                                    $totalExpect = 180;
+                                                                                }else{
+                                                                                    if($ctrlName == 'jlk3'){
+                                                                                        $this->title = $title_c.'吉林快3开奖视频_吉林快3开奖号码_吉林快3开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                                        $this->keyword = C("WEB_SITE_JSK3_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                        $this->description = C("WEB_SITE_JSK3_DESCR");
+                                                                                        $lottoryName ='吉林快3';//头彩
+                                                                                        $totalExpect = 87;
+                                                                                    }else{
+                                                                                        if($ctrlName == 'gxk3'){
+
+                                                                                            $this->title = $title_c.'广西快3开奖视频_广西快3开奖号码_广西快3开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                                            $this->keyword = C("WEB_SITE_JSK3_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                            $this->description = C("WEB_SITE_JSK3_DESCR");
+                                                                                            $lottoryName ='广西快3';//头彩
+                                                                                            $totalExpect = 78;
+                                                                                        }
+
+                                                                                    }
+                                                                                }
                                                                             }
                                                                         }
                                                                     }
