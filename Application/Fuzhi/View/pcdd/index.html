@@ -22,8 +22,8 @@
 		<div class="index-history">
             <div class="title mt10">
                 <h2>
-					加拿大28开奖记录</h2>
-                <a href="pc28/kaijiang.html" >查看全部&gt;&gt;</a>
+					PC蛋蛋开奖记录</h2>
+                <a href="pcdd/kaijiang.html" >查看全部&gt;&gt;</a>
             </div>
             <div id="history_data-html"></div>
 	      	<script id="history_data-tmpl" type="text/template">
@@ -106,13 +106,14 @@
 					drawTrend();
 				});
 		        function drawTrend() {
-		            $.get("pc28/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
+		            $.get("pcdd/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
+		                console.log(data)
 		                showChartline("总和走势图", data, function () { return this.x + '期:' + this.y }, 0, 27, true, 0, "sContainer");
 		            }, "json");
 
 		        }
 		        function getHistoryData(){
-	        		$.post("pc28/getHistoryData.do",
+	        		$.post("pcdd/getHistoryData.do",
 	       				{count:20},
 	       				function(r) {
 	        				if (r) {
@@ -124,7 +125,7 @@
 		    </script>
 			<div class="lot-article mt10">
 				<div class="l-title">
-					<h2>加拿大28技巧</h2>
+					<h2>PC蛋蛋技巧</h2>
 					<a href="jiqiao/cqft/" >更多&gt;&gt;</a>
 				</div>
 				<div class="wrap">
@@ -132,7 +133,7 @@
     <ul>
 		<li>
 			<?php if(!empty($artical_first['id'])){ ?>
-			<a target="_blank" href="jiqiao/cqft/{$artical_first['id']}.html" >·{$artical_first['title']}</a>
+			<!--<a target="_blank" href="jiqiao/cqft/{$artical_first['id']}.html" >·{$artical_first['title']}</a>-->
 			<?php } ?>
 		</li>
 		<volist name="lists" id="data">
@@ -149,7 +150,7 @@
 			</div>
             <div class="lot-about mt10">
                 <div class="l-title">
-                    <h2>加拿大28号码走势图</h2>
+                    <h2>PC蛋蛋号码走势图</h2>
                 </div>
 
                     <div id="sContainer">
