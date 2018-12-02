@@ -16,7 +16,7 @@
 
 <div class="lot-wrap">
 			<include file="Public/lottory_op"/>
-<div class="clear"></div> 
+<div class="clear"></div>
 				<!--  内容开始 -->
 			<div id="lot-wrap">
                 <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
@@ -47,7 +47,7 @@
 								<p class="t">21:50</p>
 							</td>
 							<td class="nums">
-								<i class="lot-no1"></i> 
+								<i class="lot-no1"></i>
 								<i class="lot-no1"></i>
 								<i class="lot-no6"></i></td>
 							<td class="wd-150">8</td>
@@ -59,7 +59,7 @@
 								<p class="t">21:40</p>
 							</td>
 							<td class="nums">
-								<i class="lot-no1"></i> 
+								<i class="lot-no1"></i>
 								<i class="lot-no5"></i>
 								<i class="lot-no6"></i></td>
 							<td class="wd-150">12</td>
@@ -70,11 +70,11 @@
 				</table>
 
 				<script type="text/javascript">
-				   
+
 				 function Search() {
 					    //$.get("jsk3/getHistoryNumber.do?date=" + $("#dateData").val(), null, function (datas)
 					    var date=$("#dateData").val();
-                        $.post("jsk3/getHistoryData.do",
+                        $.post("gxk3/getHistoryData.do",
                              {count:120,date:date}, function(datas) {
 					    	if(datas){
 					    		var data = datas.rows;

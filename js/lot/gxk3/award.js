@@ -37,7 +37,7 @@ $(function () {
         }
     }
     var awardTick = function () {
-        $.get('jsk3/getJsk3AwardData.do', {  t: Math.random() }, function (data) {
+        $.get('gxk3/getJsk3AwardData.do', {  t: Math.random() }, function (data) {
             if (data.current.awardNumbers != '') {
                 var nums
                 var str = "";
@@ -92,7 +92,7 @@ $(function () {
     var cpCurrAwardData = null;
     var cpNextAwardTimeInterval = -1;
     function loadAwardTimes() {
-        $.get('jsk3/getJsk3AwardTimes.do', {  t: Math.random() }, function (data) {
+        $.get('gxk3/getJsk3AwardTimes.do', {  t: Math.random() }, function (data) {
             if (data.current.awardNumbers != '') {
                 var nums
                 var str = "";
@@ -148,7 +148,7 @@ $(function () {
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
     function polling() {
-        $.post('jsk3/getJsk3AwardTimes.do', {t: Math.random()}, function (data) {
+        $.post('gxk3/getJsk3AwardTimes.do', {t: Math.random()}, function (data) {
             if(data.status == 2){
                 return
             }
@@ -177,7 +177,7 @@ $(function () {
 
 
 function updateHistoryRecord() {
-    $.get('jsk3/getNewestRecord.do', { t: Math.random() }, function (data) {
+    $.get('gxk3/getNewestRecord.do', { t: Math.random() }, function (data) {
         var numbers = data.numbers.split(',');
         var tr1 = $("#history tr").eq(1);
         var clsName = "odd";

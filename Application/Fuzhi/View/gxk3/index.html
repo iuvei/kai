@@ -24,7 +24,7 @@
 			<div class="index-history">
 				<div class="title mt10">
 					<h2>开奖记录</h2>
-					<a href="jsk3/kaijiang.html">查看全部&gt;&gt;</a>
+					<a href="gxk3/kaijiang.html">查看全部&gt;&gt;</a>
 				</div>
 				<table id="history" class="lot-table"> </table>
 				<div style="width:1198px;" class="lot-about mt10">
@@ -41,7 +41,7 @@
 				 function Search() {
 					    //$.get("jsk3/getHistoryNumber.do?date=" + $("#dateData").val(), null, function (datas)
 					    var date=$("#dateData").val();
-                        $.post("jsk3/getHistoryData.do",
+                        $.post("gxk3/getHistoryData.do",
                              {count:20}, function(datas) {
 					    	if(datas){
 					    		var data = datas.rows;
