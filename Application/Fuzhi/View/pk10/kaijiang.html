@@ -6,7 +6,7 @@
 </block>
 
 <block name="body">
- 
+
 <!--body-content-->
 <div class="body-content">
 	<!-- 彩票大厅 头部 -->
@@ -125,9 +125,9 @@
 
 
                 //开奖历史
-                function getHistoryData(){
+                function getHistoryData(date){
                     $.post("pk10/getHistoryData.do",
-                        {count:120},
+                        {count:120,date:date},
                         function(r) {
                             if (r) {
                                 doTCompile("history_data", r.rows);

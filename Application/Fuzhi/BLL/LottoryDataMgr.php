@@ -548,11 +548,11 @@ class LottoryDataMgr
 
         if (empty($date)) {
             $date = date('Y-m-d');
-        }else{
+        }/*else{
             if($date != date('Y-m-d',strtotime($date))){
                 $date =   date('Y-m-d');
             }
-        }
+        }*/
         $cacheName = $type . '_' . $page . '_' . $count . '_' . $date;
 //        $ret = S($cacheName);
         $ret=false;
@@ -5990,13 +5990,13 @@ time: 1542068782325*/
                 break;
             case "pcdd":
                 $issueStart = 923912 + intval((time() - 3600*9+300 - strtotime('2018-12-01 09:05:00')) / 86400) * 180-180;
-                $issue = $this->getCombOpentimes_v2(3600*9+15, 179, 300, $time,$issueStart);
+                $issue = $this->getCombOpentimes_v2(3600*9, 179, 300, $time,$issueStart);
                 break;
             case "jlk3":
-                $issue = $this->getCombOpentimes_v2(3600*8+24*60, 87, 540, time());
+                $issue = $this->getCombOpentimes_v2(3600*8+24*60+40, 87, 540, time());
                 break;
             case "gxk3":
-                $issue = $this->getCombOpentimes_v2(3600*9+28*60, 78, 600, time());
+                $issue = $this->getCombOpentimes_v2(3600*9+28*60+16, 78, 600, time());
                 break;
 
             /*

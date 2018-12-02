@@ -125,9 +125,9 @@
 
 
                         //开奖历史
-                        function getHistoryData(){
+                        function getHistoryData(data){
                             $.post("sfpk10/getHistoryData.do",
-                                {count:120},
+                                {count:120,data:data},
                                 function(r) {
                                     if (r) {
                                         doTCompile("history_data", r.rows);

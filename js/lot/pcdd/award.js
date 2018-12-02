@@ -184,7 +184,7 @@ $(function () {
                 }
 
                 $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
-                getHistoryData()
+                getHistoryData(date)
             }
         }, 'json').error(function () {
         });
