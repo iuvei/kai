@@ -41,13 +41,9 @@ $(function () {
         $.get('pcdd/getCqsscAwardData.do', {  t: Math.random() }, function (data) {
             var str = "";
             if (data.current.awardNumbers != ''){
-                var nums = data.current.awardNumbers.split(',');
-                var totalNum_a = Number(nums[1]) + Number(nums[4]) + Number(nums[7]) +Number(nums[10]) + Number(nums[13]) + Number(nums[16]);
-                var totalNum_b = Number(nums[2]) + Number(nums[5]) + Number(nums[8]) +Number(nums[11]) + Number(nums[14]) + Number(nums[17]);
-                var totalNum_c = Number(nums[3]) + Number(nums[6]) + Number(nums[9]) +Number(nums[12]) + Number(nums[15]) + Number(nums[18]) ;
-                totalNum_a = Number(totalNum_a)%10;
-                totalNum_b = Number(totalNum_b) % 10;
-                totalNum_c = Number(totalNum_c) % 10;
+                var totalNum_a =data.current.awardNumbers.split(',')[0];
+                var totalNum_b =data.current.awardNumbers.split(',')[1];
+                var totalNum_c =data.current.awardNumbers.split(',')[2];
                 str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
                 $(".lot-nums").html(str);
             }
@@ -101,13 +97,12 @@ $(function () {
         $.get('pcdd/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
             var str = "";
             if (data.current.awardNumbers != ''){
-                var nums = data.current.awardNumbers.split(',');
-                var totalNum_a = Number(nums[1]) + Number(nums[4]) + Number(nums[7]) +Number(nums[10]) + Number(nums[13]) + Number(nums[16]);
-                var totalNum_b = Number(nums[2]) + Number(nums[5]) + Number(nums[8]) +Number(nums[11]) + Number(nums[14]) + Number(nums[17]);
-                var totalNum_c = Number(nums[3]) + Number(nums[6]) + Number(nums[9]) +Number(nums[12]) + Number(nums[15]) + Number(nums[18]) ;
-                totalNum_a = Number(totalNum_a)%10;
-                totalNum_b = Number(totalNum_b) % 10;
-                totalNum_c = Number(totalNum_c) % 10;
+                var totalNum_a =data.current.awardNumbers.split(',')[0];
+                var totalNum_b =data.current.awardNumbers.split(',')[1];
+                var totalNum_c =data.current.awardNumbers.split(',')[2];
+
+                console.log(totalNum_a)
+
                 str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
                 $(".lot-nums").html(str);
             }
@@ -181,13 +176,9 @@ $(function () {
             }else {
                 var str = "";
                 if (data.current.awardNumbers != ''){
-                    var nums = data.current.awardNumbers.split(',');
-                    var totalNum_a = Number(nums[1]) + Number(nums[4]) + Number(nums[7]) +Number(nums[10]) + Number(nums[13]) + Number(nums[16]);
-                    var totalNum_b = Number(nums[2]) + Number(nums[5]) + Number(nums[8]) +Number(nums[11]) + Number(nums[14]) + Number(nums[17]);
-                    var totalNum_c = Number(nums[3]) + Number(nums[6]) + Number(nums[9]) +Number(nums[12]) + Number(nums[15]) + Number(nums[18]) ;
-                    totalNum_a = Number(totalNum_a)%10;
-                    totalNum_b = Number(totalNum_b) % 10;
-                    totalNum_c = Number(totalNum_c) % 10;
+                    var totalNum_a =data.current.awardNumbers.split(',')[0];
+                    var totalNum_b =data.current.awardNumbers.split(',')[1];
+                    var totalNum_c =data.current.awardNumbers.split(',')[2];
                     str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
                     $(".lot-nums").html(str);
                 }

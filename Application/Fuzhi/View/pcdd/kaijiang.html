@@ -23,12 +23,12 @@
 </script>
 <script type="text/javascript">    var lotteryLuzhu = "";</script>
 <script src="js/lot/lotcommon.js"  type="text/javascript"></script>
-<script src="js/lot/cqssc/award.js?v=20181114"  type="text/javascript"></script>
+<script src="js/lot/pcdd/award.js?v=20181114"  type="text/javascript"></script>
 <script src="js/lot/warntime.js"  type="text/javascript"></script>
    <div class="lot-wrap">
 				<div class="clear"></div> 
     <div id="lot-wrap"> 
-     <input type="hidden" value="Search" id="callFun" lottery="cqssc" /> 
+     <input type="hidden" value="Search" id="callFun" lottery="pcdd" /> 
      <div class="lot-search"> 
       <div class="lot-search"> 
        <div class="car-num"> 
@@ -214,12 +214,9 @@
 						for (var i = 0; i <it.length; i++) { 
 							var row=it[i];
 							var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
-					var totalNum_a = row.n2 + row.n5 + row.n8 +row.n11 + row.n14 + row.n17;
-					var totalNum_b = row.n3 + row.n6 + row.n9 +row.n12 + row.n15 + row.n18;
-					var totalNum_c = row.n4 + row.n7 + row.n10 +row.n13 + row.n16 + row.n19 ;
-					totalNum_a = totalNum_a%10;
-					totalNum_b = totalNum_b % 10;
-					totalNum_c = totalNum_c % 10;
+					var totalNum_a = row.n1 ;
+					var totalNum_b = row.n2 ;
+					var totalNum_c = row.n3 ;
 					var totalNum=totalNum_a+totalNum_b+totalNum_c;
 					var sebo="";
 					var danshaung="";
@@ -298,7 +295,7 @@
 	    reloadNumberStatRemind();
 	    //双号
 	    function reloadTwoBallRemind() {
-            $.get("pc28/twoBallRemind.do", { t: Math.random() }, function (json) {
+            $.get("pcdd/twoBallRemind.do", { t: Math.random() }, function (json) {
                 $("#twoball_balls").text(json.TwoSided.length > 0 ? json.TwoSided : "无");
                 $("#twoball_issuetoday").text(json.IssueToday);
                 $("#twoball_issuenext").text(json.IssueNext);
@@ -310,7 +307,7 @@
         
         //长龙
         function reloadChangLong() {
-        	$.post("pc28/getMergeData.do",
+        	$.post("pcdd/getMergeData.do",
     				function(r) {
     					if (r) {
     						doTCompile("cl_list", r.clList);
@@ -321,7 +318,7 @@
         
         //开奖历史
         function getHistoryData(date){
-    		$.post("pc28/getHistoryData.do",
+    		$.post("pcdd/getHistoryData.do",
    				{count:120,date:date}, 
    				function(r) {
     				if (r) {

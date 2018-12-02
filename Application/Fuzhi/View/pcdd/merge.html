@@ -92,7 +92,7 @@
                         orderType=2;
                     //长龙
                     function getMergeData(){
-                        $.post("/pc28/getMergeData.do",
+                        $.post("/pcdd/getMergeData.do",
                             {rank:rank},
                             function(r) {
                                 console.log(r);
@@ -304,7 +304,7 @@
                         return tmp + html;
                     }
                     function searchLuzhu() {
-                        $.get("/pc28/kaijiang.do", {}, function (result) {
+                        $.get("/pcdd/kaijiang.do", {}, function (result) {
 
                             var tmp1='', tmp2='', tmp3='',data,data2,data3,res4,res2,res3;
                             if(result&&result.rows&&result.rows.length>0){
@@ -323,7 +323,7 @@
 
                     //冠亚和路珠
                     function getGuanyaLuzhubseo(){
-                        $.get("/pc28/guanyaLuzhubseo.do", {
+                        $.get("/pcdd/guanyaLuzhubseo.do", {
                             t : Math.random()
                         }, function(text) {
                             $('#jshtml').html(text);
@@ -344,7 +344,7 @@
                             dataType=dataTypeNum;
                         if(rankNum)
                             rank=rankNum;
-                        window.location.href="/pc28/merge.html#dataType="+dataType+"&gameId="+gameId+"&rank="+rank+"&orderCloumn="+orderCloumn+"&orderType="+orderType;
+                        window.location.href="/pcdd/merge.html#dataType="+dataType+"&gameId="+gameId+"&rank="+rank+"&orderCloumn="+orderCloumn+"&orderType="+orderType;
                         load();
                     }
                     $(".web_Sortk .btn span").live("click",
