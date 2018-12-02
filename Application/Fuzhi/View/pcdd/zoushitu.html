@@ -90,6 +90,7 @@
                                         name:'cqft',
                                         t : Math.random()
                                     }, function(result) {
+                                        console.log(result);
                                         var data = eval(result);
                                         showChartline(" ", result, function() {
                                             return this.x + '期:' + this.y }, 0, 27, true);
@@ -100,6 +101,7 @@
                                         count : 40,
                                         t : Math.random()
                                     }, function(result) {
+                                        console.log(result);
                                         var data = eval(result);
                                         showPk10line(" ", data, function() {
                                             return this.x + '期:' + ballName[this.y - 1]

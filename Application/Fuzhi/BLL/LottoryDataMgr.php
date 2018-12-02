@@ -491,7 +491,7 @@ class LottoryDataMgr
                 if (count($OpenCodes) < $ball || strlen($openedCaiList[$i]["dat_expect"]) < 2) {
                     continue;
                 }
-                if ($lotType == 22) {
+                if ($lotType == 22 ||$lotType == 49||$lotType == 50||$lotType == 51) {
                     $retData[$i]["Value"] = "" . ZstAnalyser::getArrSum($OpenCodes);
                 } else if ($lotType == 43) {
                     $totalNum_a = (int)$OpenCodes[1] + (int)$OpenCodes[4] + (int)$OpenCodes[7] + (int)$OpenCodes[10] + (int)$OpenCodes[13] + (int)$OpenCodes[16];
@@ -5984,11 +5984,11 @@ time: 1542068782325*/
                 $issue = $this->getCombOpentimes_v2(32430, 84, 600, time());
                 break;
             case "pcdd":
-                $issueStart = 923912 + intval((time() - 3600*9+300 - strtotime('2018-12-01 09:05:00')) / 86400) * 180;
+                $issueStart = 923912 + intval((time() - 3600*9+300 - strtotime('2018-12-01 09:05:00')) / 86400) * 180-180;
                 $issue = $this->getCombOpentimes_v2(3600*9+15, 180, 300, $time,$issueStart);
                 break;
             case "jlk3":
-                $issue = $this->getCombOpentimes_v2(3600*9+33*60, 87, 540, time());
+                $issue = $this->getCombOpentimes_v2(3600*8+24*60, 87, 540, time());
                 break;
             case "gxk3":
                 $issue = $this->getCombOpentimes_v2(3600*9+28*60, 78, 600, time());
