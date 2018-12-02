@@ -3597,14 +3597,14 @@ time: 1542068782325*/
                                     if ($lotType == 24) {
                                         $iAllSum = 11;
                                     } else {
-                                        if ($lotType == 22) {
+                                        if ($lotType == 22||$lotType != 50 ||$lotType != 51) {
                                             $iAllSum = 11;
                                         }
                                     }
                                 }
                             }
                         }
-                        if ($lotType != 24 && $lotType != 22) {
+                        if ($lotType != 24 && $lotType != 22 ||$lotType != 50 ||$lotType != 51) {
                             $sum = ZstAnalyser::getArrSum($OpenCodes);
                             $ret = $ret . "\"" . ($sum > $iAllSum ? "大" : ($sum == $iAllSum ? "和" : "小")) . "\",";
                         } else {
