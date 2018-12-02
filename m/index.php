@@ -767,7 +767,7 @@ function CheckAward(page, method, downTimer, number, timeSpan) {
     function(data,page) {
         if (data.current.periodNumber != number) {
 
-            if(timeSpan == 'pcdd'){
+            if(timeSpan == 'pc28'){
                 var time = parseInt((data.next.awardTimeInterval * 1000) / 1000);
             }else {
                 var time = parseInt(data.next.awardTimeInterval / 1000);
