@@ -78,6 +78,7 @@ class LottoryDataMgr
                             $ret = RemoteDataMgr::getData($urlAll, "", $cacheName . I('get.type') . ',' . I('get.date'));
                         } else {
                             if ($page == "luZhuLonghu.do" || $page == "luZhuTotal.do" || $page == "getHaomaLuData.do" || $page == "getLonghuLuzhuData.do" || $page == "guanyaLuzhubseo.do" || $page == "eobsLuzhu.do") {
+//                                dump($urlAll);dump($cacheName);dump(I('get.date'));die;
 
                                 $ret = RemoteDataMgr::getData($urlAll, "", $cacheName . I('get.date'));
                             } else {
@@ -5436,6 +5437,26 @@ time: 1542068782325*/
                                                 } else {
                                                     if ($lotType == 46) {
                                                         return 46;
+                                                    }else{
+                                                        if ($lotType == 47) {
+                                                            return 47;
+                                                        }else{
+                                                            if ($lotType == 48) {
+                                                                return 48;
+                                                            }else{
+                                                                if ($lotType == 49) {
+                                                                    return 49;
+                                                                }else{
+                                                                    if ($lotType == 50) {
+                                                                        return 50;
+                                                                    }else{
+                                                                        if ($lotType == 51) {
+                                                                            return 51;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
                                                     }
                                                 }
                                             }
@@ -5464,7 +5485,7 @@ time: 1542068782325*/
                 if ($lotType == 21) {
                     return 8;
                 } else {
-                    if ($lotType == 22) {
+                    if ($lotType == 22 ||$lotType == 49||$lotType == 50||$lotType == 51) {
                         return 3;
                     } else {
                         if ($lotType == 3 || $lotType == 35 || $lotType == 6) {
@@ -5534,6 +5555,18 @@ time: 1542068782325*/
                                                         } else {
                                                             if ($lotType == 48) {
                                                                 return 10;
+                                                            }else{
+                                                                if ($lotType == 49) {
+                                                                    return 6;
+                                                                }else{
+                                                                    if ($lotType == 50) {
+                                                                        return 6;
+                                                                    }else{
+                                                                        if ($lotType == 51) {
+                                                                            return 6;
+                                                                        }
+                                                                    }
+                                                                }
                                                             }
                                                         }
                                                     }
@@ -5594,6 +5627,19 @@ time: 1542068782325*/
                                                         } else {
                                                             if ($lotType == 48) {
                                                                 return true;
+                                                            }else{
+                                                                if($lotType == 49)
+                                                                {
+                                                                    return true;
+                                                                }else {
+                                                                    if($lotType == 50) {
+                                                                        return true;
+                                                                    }else{
+                                                                        if($lotType == 51) {
+                                                                            return true;
+                                                                        }
+                                                                    }
+                                                                }
                                                             }
                                                         }
                                                     }
