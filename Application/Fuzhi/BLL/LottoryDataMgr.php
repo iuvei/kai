@@ -3615,7 +3615,7 @@ time: 1542068782325*/
                 }
             }
             $ret = substr($ret, 0, strlen($ret) - 1);
-            if ($lotType == 22) {
+            if ($lotType == 22 ||$lotType == 50 ||$lotType == 51 ) {
                 $arr = explode(",", $ret);
                 $last = '';
                 $ret = "[";
