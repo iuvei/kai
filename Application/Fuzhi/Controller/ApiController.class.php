@@ -397,6 +397,15 @@ class ApiController extends Controller{
             case "sfssc":
                 return "sfssc";
                 break;
+            case "pcdd":
+                return "pcdd";
+                break;
+            case "jlk3":
+                return "jlk3";
+                break;
+            case "gxk3":
+                return "gxk3";
+                break;
             default:
                 return "404";
 

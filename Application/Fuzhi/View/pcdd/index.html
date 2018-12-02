@@ -107,7 +107,7 @@
 				});
 		        function drawTrend() {
 		            $.get("pcdd/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
-		                console.log(data)
+		                console.log(data);
 		                showChartline("总和走势图", data, function () { return this.x + '期:' + this.y }, 0, 27, true, 0, "sContainer");
 		            }, "json");
 

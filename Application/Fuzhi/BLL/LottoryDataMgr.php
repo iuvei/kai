@@ -165,12 +165,13 @@ class LottoryDataMgr
         $ret = false;
         $lotType = $this->getLotTypeByType($type);
         $expire = 2;
-
+//        print_r($page);exit;
         if ($page == 'getHistoryData.do') {
 
             $ret = $this->getHistoryData($type, $page, $lotType, $expire);
         } else {
             if ($page == "numbertrendData.do") {
+
                 $ret = $this->getNumberTrendData($type, $page, $lotType, $expire);
             } else {
                 //print_r("123");die;
@@ -5386,6 +5387,12 @@ time: 1542068782325*/
                         return 47;
                     case 'sfssc':
                         return 48;
+                    case 'pcdd':
+                        return 49;
+                    case 'jlk3':
+                        return 50;
+                    case 'gxk3':
+                        return 51;
                 }
             }
         }
@@ -5930,6 +5937,17 @@ time: 1542068782325*/
             case "gd11x5":
                 $issue = $this->getCombOpentimes_v2(32430, 84, 600, time());
                 break;
+            case "pcdd":
+                $issueStart = 923732 + intval((time() - 3600*9+300 - strtotime('2018-12-01 09:05:00')) / 86400) * 180;
+                $issue = $this->getCombOpentimes_v2(3600*9+300, 180, 300, $time,$issueStart);
+                break;
+            case "jlk3":
+                $issue = $this->getCombOpentimes_v2(3600*9+33*60, 87, 540, time());
+                break;
+            case "gxk3":
+                $issue = $this->getCombOpentimes_v2(3600*9+38*60, 78, 600, time());
+                break;
+
             /*
              case LotteryMain::pc28_bjpc28:
              case LotteryMain::kl8_bjkl8:
@@ -6403,6 +6421,8 @@ time: 1542068782325*/
 
     private function getCombOpentimes_v2($tsDayStart, $issueCount, $ts, $time = 0, $issueStart = null)
     {
+
+
 //        $time ?: time();
         if ($time == 0) {// 默认当前时间
             $time = time();

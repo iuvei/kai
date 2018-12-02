@@ -23,7 +23,10 @@ var beforPageJs = {
 				|| pathname.indexOf("/tcssc") >= 0
 				|| pathname.indexOf("/tcpk10") >= 0
 				|| pathname.indexOf("/sfssc") >= 0
-				|| pathname.indexOf("/sfpk10") >= 0) {
+				|| pathname.indexOf("/sfpk10") >= 0
+				|| pathname.indexOf("/pcdd") >= 0
+				|| pathname.indexOf("/jlk3") >= 0
+				|| pathname.indexOf("/gxk3") >= 0) {
             var i = 0;
             if(pathname.split("/")[1] == 'fuzhi')
                 i = 1;
