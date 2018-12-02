@@ -121,17 +121,15 @@ include("../conn.php");
      function chang() {
          var id = "<?= $name?>";
          layer.open({type: 2,time: 1});
-         $.get("/Fuzhi/Api/cllz", {id:id}, function (result) {
+         $.get("/Fuzhi/Api/cllz", {id:51}, function (result) {
              var data = eval(result);
-             console.log(data.length);
              dataLen = data.length;
+             console.log(result)
              var name;
              name = ['第一球','第二球','第三球'];
              var html = '';
-             console.log(dataLen)
              for(var i=0;i<dataLen;i++){
                  $("#longDrag").html('');
-                 console.log(data[i]['dx']);
                  if(data[i]['ds'] && data[i]['ds']['times'] != 1){
                      html += '<li><span>'+name[i]+'</span>：<span>'+data[i]['ds']['type']+'</span><span class="num_'+data[i]['ds']['times']+'">'+data[i]['ds']['times']+'</span>期</li>';
                  }
@@ -155,7 +153,8 @@ include("../conn.php");
  function changLong() {
 	 layer.open({type: 2,time: 1});
      var id = "<?= $name?>";
-     $.get("/Fuzhi/Api/changlong", {id:id}, function (data) {
+
+     $.get("/Fuzhi/Api/changlong", {id:51}, function (data) {
      	if(data){
      		var html = '';
      		 for(var o in data){  
