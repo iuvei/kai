@@ -1076,8 +1076,9 @@ var webListOP = {
             "href":"jlk3/luzhumerge.html"
         },
         {
-            "text":"号码路珠",
-            "href":"jlk3/luzhunumber.html"
+            "text":"免费参考",
+            "href":"jlk3/betgame.html",
+            "spanClass":"wen_newIcon"
         },
         {
             "text":"历史号码统计",
@@ -1107,12 +1108,13 @@ var webListOP = {
             "href":"gxk3/luzhumerge.html"
         },
         {
-            "text":"号码路珠",
-            "href":"gxk3/luzhunumber.html"
-        },
-        {
             "text":"历史号码统计",
             "href":"gxk3/numberstat.html"
+        },
+        {
+            "text":"免费参考",
+            "href":"gxk3/betgame.html",
+            "spanClass":"wen_newIcon"
         },
         {
             "text":"横版走势图",
@@ -1121,6 +1123,7 @@ var webListOP = {
 
     ],
     "pcdd": [
+
         {
             "text":"pc蛋蛋",
             "href":"pcdd/index.html"
@@ -1129,14 +1132,14 @@ var webListOP = {
             "text":"历史开奖号码",
             "href":"pcdd/kaijiang.html"
         },
-        {
+        /*{
             "text":"号码路珠",
             "href":"pcdd/merge.html"
-        },
-        // {
-        //     "text":"单双大小历史",
-        //     "href":"pcdd/ballstat.html"
-        // },
+        },*/
+/*        {
+            "text":"单双大小历史",
+            "href":"pcdd/ballstat.html"
+        },*/
         /*{
             "text":"加拿大28开奖直播",
             "href":"pcdd/shipin/",
@@ -1146,6 +1149,11 @@ var webListOP = {
         {
             "text":"pc蛋蛋技巧",
             "href":"jiqiao/pcdd/"
+        },
+        {
+            "text":"免费参考",
+            "href":"pcdd/betgame.html",
+            "spanClass":"wen_newIcon"
         },
         {
             "text":"遗漏大数据",
