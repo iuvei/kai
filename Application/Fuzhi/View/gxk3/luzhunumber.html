@@ -19,7 +19,7 @@
 				<div class="clear"></div> 
 				<!--  内容开始 -->
 					<input type="hidden" id="callFun" value="getLuzhuNumber"/>
-					<script type="text/javascript">   lotteryLuzhu = "jsk3_luzhunumber";</script>
+					<script type="text/javascript">   lotteryLuzhu = "gxk3_luzhunumber";</script>
     <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
 
 	<div class="merge-title-table-title" style="margin-bottom: 10px;">
@@ -122,7 +122,7 @@
 				      <script type="text/javascript">
 				      	function getLuzhuNumber(){
 				      		var date=$("#dateData").val();
-				      		$.post("jsk3/getLuzhuNumber.do",
+				      		$.post("gxk3/getLuzhuNumber.do",
 				   				{date:date}, 
 				   				function(r) {
 				    				if (r) {

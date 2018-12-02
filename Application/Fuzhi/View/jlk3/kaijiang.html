@@ -72,9 +72,9 @@
 				<script type="text/javascript">
 				   
 				 function Search() {
-					    //$.get("jsk3/getHistoryNumber.do?date=" + $("#dateData").val(), null, function (datas)
+					    //$.get("jlk3/getHistoryNumber.do?date=" + $("#dateData").val(), null, function (datas)
 					    var date=$("#dateData").val();
-                        $.post("jsk3/getHistoryData.do",
+                        $.post("jlk3/getHistoryData.do",
                              {count:120,date:date}, function(datas) {
 					    	if(datas){
 					    		var data = datas.rows;

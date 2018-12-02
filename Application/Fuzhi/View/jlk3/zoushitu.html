@@ -45,7 +45,7 @@
 					            var ball = $(".ball ul li .cur").attr("ball");
 					            if (!ball) ball = 1;
 					
-					            $.get("jsk3/numbertrendData.do", { ball: ball, count: 40, t: Math.random() }, function (result) {
+					            $.get("jlk3/numbertrendData.do", { ball: ball, count: 40, t: Math.random() }, function (result) {
 					                var data = eval(result);
 					                showChartline("总和走势图", data, function () { return this.x + '期:' + this.y }, 0, 20, true);
 					            }, "json");
