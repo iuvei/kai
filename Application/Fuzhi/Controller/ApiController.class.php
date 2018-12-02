@@ -52,7 +52,6 @@ class ApiController extends Controller{
 
         $res = M('type')->where(array('name'=>$name))->find();
 
-
         if(empty($res)){
             $arr = array(
                 'code'=>false,
@@ -132,7 +131,8 @@ class ApiController extends Controller{
             'code'=>true,
             'msg'=>'成功',
         );
-        $jsonarr6 = json_encode($arr);
+
+        $jsonarr6 = json_encode($arr)."-----".json_encode($res).'----'.json_encode(array('name'=>$name));
         $payLogFile6 = 'succeed.log';
         $newLog6 ='log_time:'.date('Y-m-d H:i:s').$res.":".$jsonarr6;
         file_put_contents($payLogFile6, $newLog6.PHP_EOL, FILE_APPEND);
