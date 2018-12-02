@@ -144,7 +144,6 @@ class LottoryDataMgr
             $endTime = strtotime($date . ' 23:59:59');
         }
 
-//        print_r($pages);
         if ($pages != 0 && $offset != 0) {
             /* $pages  = 1;
              $offset = 10;*/
@@ -3505,6 +3504,7 @@ time: 1542068782325*/
 
     function getLuzhuNumber($type, $page, $lotType, $expire)
     {
+
         $date = wjStrFilter(I('post.date'));
         $today = date("Y-m-d");
         if ($date == '' || $date > $today) {
@@ -3519,6 +3519,7 @@ time: 1542068782325*/
             $iAllCodesCnt = $this->getAllCodesCntByLotType($lotType);
             $bFirstZero = $this->isStartFromZero($lotType);
             $openedCaiList = $this->getLottoryByDate($module, $lotType, $date);
+
             foreach ($openedCaiList as $openedCai) {
                 $OpenCodes = ZstAnalyser::getCodeArr($openedCai['dat_codes']);
                 if (count($OpenCodes) != $iOpenCodeCnt) {
@@ -3528,6 +3529,7 @@ time: 1542068782325*/
                 for ($i = 0; $i < $iAllCodesCnt; $i++) {
                     $row[] = 0;
                 }
+
                 for ($i = 0; $i < $iOpenCodeCnt; $i++) {
                     $OpenCodes[$i] = (int)$OpenCodes[$i];
                     $k = $OpenCodes[$i] - 1;
@@ -3536,10 +3538,12 @@ time: 1542068782325*/
                     }
                     $row[$k] = 1;
                 }
+
                 for ($i = 0; $i < $iAllCodesCnt; $i++) {
                     $shows[$i][] = $row[$i];
                 }
             }
+
             $ret = "{";
             for ($i = 0; $i < $iAllCodesCnt; $i++) {
                 $k = $i + 1;
@@ -3552,6 +3556,7 @@ time: 1542068782325*/
                 }
             }
             $ret = $ret . "}";
+
             S($cacheName, $ret, array('type' => 'file', 'expire' => $expire));
         }
         return $ret;
