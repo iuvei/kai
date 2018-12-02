@@ -60,7 +60,7 @@ while( $row = $result->fetch_assoc()){
 				</div></td></tr></table>
 			</article>"
         );
-    }else if($typeid == 22){
+    }else if($typeid == 22 || $typeid==51 ||$typeid==50){
         $tarr = array(
             0=>substr($row['dat_expect'],-2),
             1=>$exp[$ball],

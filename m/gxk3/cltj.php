@@ -124,7 +124,6 @@ include("../conn.php");
          $.get("/Fuzhi/Api/cllz", {id:51}, function (result) {
              var data = eval(result);
              dataLen = data.length;
-             console.log(result)
              var name;
              name = ['第一球','第二球','第三球'];
              var html = '';
