@@ -168,7 +168,6 @@ $(function () {
                 }
                 $(".lot-nums").html(str);
                 $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
-                getHistoryData()
             }
         }, 'json').error(function () {
         });
