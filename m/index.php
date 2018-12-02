@@ -151,7 +151,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
             <li><a href="jsk3/" game="jsk3">江苏快3</a></li>
             <li><a href="gd11x5/" game="gd11x5">广东11选5</a></li>
         <!--    <li><a href="gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
-            <!--<li><a href="pc28/" game="pc28">加拿大28</a></li>-->
+            <!--<li><a href="pcdd/" game="pcdd">加拿大28</a></li>-->
             <li><a href="pcdd/" game="pcdd">PC蛋蛋</a></li>
             <li><a href="txffc/" game="txffc" class="cur">幸运分分彩</a></li>
 
@@ -437,33 +437,26 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 
         </a>
     </li>
-<!--    <li class="kaij-mylist-li" id="pc28">-->
-<!--        <a href="pc28/" class="yx_a">-->
-<!---->
-<!--        <!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pc28"></span></div>-->
-<!--        <div class="kaij-mylist-r">-->
-<!--            <div class="kaij-mylist-hd">-->
-<!--                <div  class="yx_name"> 加拿大28-->
-<!--                </div>-->
-<!--                <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>-->
-<!--                <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>-->
-<!--            </div>-->
-<!--            <div class="kaij-mylist-bd">-->
-<!--                <div class="itm-result">-->
-<!--                    <div class="ball-wrap" id="number">-->
-<!--                        <img src="style/images/loading2.gif" alt="载入中">-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--<!--                <div class="bt-aa">-->
-<!--<!--                    <a href="pc28/">开奖历史</a>-->
-<!--<!--                    <a href="pc28/smtj.php">两面统计</a>-->
-<!--<!--                    <a href="pc28/cltj.php">长龙统计</a>-->
-<!--<!--                    <a href="pc28/shipin.php">开奖视频</a>-->
-<!--<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        </a>-->
-<!--    </li>-->
+    <li class="kaij-mylist-li" id="pcdd">
+        <a href="pcdd/" class="yx_a">
+       <!-- <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pcdd"></span></div>-->
+        <div class="kaij-mylist-r">
+            <div class="kaij-mylist-hd">
+                <div class="yx_name">PC蛋蛋
+                </div>
+                <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
+            </div>
+            <div class="kaij-mylist-bd">
+                <div class="itm-result">
+                    <div class="ball-wrap" id="number">
+                        <img src="style/images/loading2.gif" alt="载入中">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
     <li class="kaij-mylist-li" id="jsk3">
         <a href="jsk3/" class="yx_a">
 
@@ -471,6 +464,66 @@ $.cookie('home_cookiea', '1', { expires: 7 });
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
                     <div  class="yx_name">江苏快3
+                    </div>
+                    <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
+                </div>
+                <div class="kaij-mylist-bd">
+                    <div class="itm-result">
+                        <div class="ball-wrap" id="number">
+                            <img src="style/images/loading2.gif" alt="载入中">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bt-jg">  </div>
+
+<!--        <div class="bt-aa">-->
+<!--            <a href="jsk3/">开奖历史</a>-->
+<!--            <a href="jsk3/smtj.php">两面统计</a>-->
+<!--            <a href="jsk3/cltj.php">长龙统计</a>-->
+<!--            <a href="jsk3/shipin.php">开奖视频</a>-->
+<!--        </div>-->
+
+        </a>
+    </li>
+    <li class="kaij-mylist-li" id="gxk3">
+        <a href="gxk3/" class="yx_a">
+
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-jsk3"></span></div>-->
+            <div class="kaij-mylist-r">
+                <div class="kaij-mylist-hd">
+                    <div  class="yx_name">广西快3
+                    </div>
+                    <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
+                </div>
+                <div class="kaij-mylist-bd">
+                    <div class="itm-result">
+                        <div class="ball-wrap" id="number">
+                            <img src="style/images/loading2.gif" alt="载入中">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bt-jg">  </div>
+
+<!--        <div class="bt-aa">-->
+<!--            <a href="jsk3/">开奖历史</a>-->
+<!--            <a href="jsk3/smtj.php">两面统计</a>-->
+<!--            <a href="jsk3/cltj.php">长龙统计</a>-->
+<!--            <a href="jsk3/shipin.php">开奖视频</a>-->
+<!--        </div>-->
+
+        </a>
+    </li>
+    <li class="kaij-mylist-li" id="jlk3">
+        <a href="jlk3/" class="yx_a">
+
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-jsk3"></span></div>-->
+            <div class="kaij-mylist-r">
+                <div class="kaij-mylist-hd">
+                    <div  class="yx_name">吉林快3
                     </div>
                     <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
                     <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
@@ -619,12 +672,16 @@ var jsssc_number = -1;
 var jsssc_downTimer = null;
 var jsk3_number = -1;
 var jsk3_downTimer = null;
+var gxk3_number = -1;
+var gxk3_number = null;
+var jlk3_number = -1;
+var jlk3_number = null;
  var cqft_number = -1;
  var cqft_downTimer = null;
  var bjft_number = -1;
  var bjft_downTimer = null;
- var pc28_number = -1;
- var pc28_downTimer = null;
+ var pcdd_number = -1;
+ var pcdd_downTimer = null;
  var txffc_number = -1;
  var txffc_downTimer = null;
  var tcssc_number = -1;
@@ -645,8 +702,10 @@ $(function() {
     CheckAward("jsssc", "GetXjsscAwardTimes", this.jsssc_downTimer, jsssc_number, "jsssc");
     CheckAward("cqft", "GetTjsscAwardTimes", this.cqft_downTimer, pk10_downTimer, "cqft");
     CheckAward("jsk3", "GetJsk3AwardTimes", this.jsk3_downTimer, jsk3_number, "jsk3");
+    CheckAward("gxk3", "GetJsk3AwardTimes", this.gxk3_downTimer, gxk3_number, "gxk3");
+    CheckAward("jlk3", "GetJsk3AwardTimes", this.jlk3_downTimer, jlk3_number, "jlk3");
     CheckAward("bjft", "GetTjsscAwardTimes", this.bjft_downTimer, bjft_number, "bjft");
-    CheckAward("pc28", "GetTjsscAwardTimes", this.pc28_downTimer, pc28_number, "pc28");
+    CheckAward("pcdd", "GetTjsscAwardTimes", this.pcdd_downTimer, pcdd_number, "pcdd");
     CheckAward("txffc", "GetTjsscAwardTimes", this.txffc_downTimer, txffc_number, "txffc");
     CheckAward("tcssc", "GetXjsscAwardTimes", this.tcssc_downTimer, tcssc_number, "tcssc");
     CheckAward("sfssc", "GetXjsscAwardTimes", this.sfssc_downTimer, sfssc_number, "sfssc");
@@ -675,10 +734,14 @@ function showTime(page, timeSpan, time, qihao) {
             CheckAward("cqft", "GetCqsscAwardTimes", this.cqft_downTimer, cqft_number, "cqft", qihao)
         } else if (timeSpan == "jsk3") {
             CheckAward("jsk3", "GetJsk3AwardTimes", this.jsk3_downTimer, jsk3_number, "jsk3", qihao)
+        } else if (timeSpan == "gxk3") {
+            CheckAward("gxk3", "GetJsk3AwardTimes", this.gxk3_downTimer, gxk3_number, "gxk3", qihao)
+        } else if (timeSpan == "jlk3") {
+            CheckAward("jlk3", "GetJsk3AwardTimes", this.jlk3_downTimer, jlk3_number, "jlk3", qihao)
         }else if (timeSpan == "bjft") {
             CheckAward("bjft", "GetPk10AwardTimes", this.bjft_downTimer, bjft_number, "bjft", qihao)
-        }else if (timeSpan == "pc28") {
-            CheckAward("pc28", "GetPk10AwardTimes", this.pc28_downTimer, pc28_number, "pc28", qihao)
+        }else if (timeSpan == "pcdd") {
+            CheckAward("pcdd", "GetPk10AwardTimes", this.pcdd_downTimer, pcdd_number, "pcdd", qihao)
         }else if (timeSpan == "txffc") {
             CheckAward("txffc", "GetPk10AwardTimes", this.txffc_downTimer, txffc_number, "txffc", qihao)
         }else if (timeSpan == "tcssc") {
@@ -704,7 +767,7 @@ function CheckAward(page, method, downTimer, number, timeSpan) {
     function(data,page) {
         if (data.current.periodNumber != number) {
 
-            if(timeSpan == 'pc28'){
+            if(timeSpan == 'pcdd'){
                 var time = parseInt((data.next.awardTimeInterval * 1000) / 1000);
             }else {
                 var time = parseInt(data.next.awardTimeInterval / 1000);
@@ -728,6 +791,7 @@ function CheckAward(page, method, downTimer, number, timeSpan) {
 function IndexOpen() {
     $.post("ajax/getindex.php", {},
     function(data) {
+        console.log(data)
         $("#pk10 #qihao").text('第' + data.pk10.dat_expect + '期');
         var nums = data.pk10.dat_codes.split(',');
         var str = "";
@@ -859,6 +923,46 @@ function IndexOpen() {
         str = str + '<a class="k3zh">'+yxx(nums[2])+'</a>';
         str+='</div>';
         $("#jsk3 #number").html(str);
+
+        $("#gxk3 #qihao").text('第' + data.gxk3.dat_expect.substr(4) + '期');
+        var nums = data.gxk3.dat_codes.split(',');
+        var str = "";
+        for (var i = 0; i < nums.length; i++) {
+            str = str + "<i class='num" + nums[i]+ "'></i>"
+        }
+        var long;
+        long = ssclh(nums,3);
+        str = str + '<a class="k3zh">'+long+'</a>'
+
+        str+='<div class="yxx">'
+        for (var i = 0; i < nums.length; i++) {
+            str = str + "<i class='num-yxx" + nums[i]+ "'></i>"
+        }
+        str = str + '<a class="k3zh">'+yxx(nums[0])+'</a>';
+        str = str + '<a class="k3zh">'+yxx(nums[1])+'</a>';
+        str = str + '<a class="k3zh">'+yxx(nums[2])+'</a>';
+        str+='</div>';
+        $("#gxk3 #number").html(str);
+
+         $("#jlk3 #qihao").text('第' + data.jlk3.dat_expect.substr(4) + '期');
+        var nums = data.jlk3.dat_codes.split(',');
+        var str = "";
+        for (var i = 0; i < nums.length; i++) {
+            str = str + "<i class='num" + nums[i]+ "'></i>"
+        }
+        var long;
+        long = ssclh(nums,3);
+        str = str + '<a class="k3zh">'+long+'</a>'
+
+        str+='<div class="yxx">'
+        for (var i = 0; i < nums.length; i++) {
+            str = str + "<i class='num-yxx" + nums[i]+ "'></i>"
+        }
+        str = str + '<a class="k3zh">'+yxx(nums[0])+'</a>';
+        str = str + '<a class="k3zh">'+yxx(nums[1])+'</a>';
+        str = str + '<a class="k3zh">'+yxx(nums[2])+'</a>';
+        str+='</div>';
+        $("#jlk3 #number").html(str);
 
 
 
@@ -1050,14 +1154,11 @@ function IndexOpen() {
 
 
 
-        $("#pc28 #qihao").text('第' + data.pc28.dat_expect + '期');
-        var nums = data.pc28.dat_codes.split(',');
-        var totalNum_a =  nums[1] + nums[4] + nums[7] + nums[10] + nums[13] + nums[16];
-        var totalNum_b =  nums[2] + nums[5] + nums[8] + nums[11] + nums[14] + nums[17];
-        var totalNum_c =  nums[3] + nums[6] + nums[9] + nums[12] + nums[15] + nums[18];
-        totalNum_a = Number(totalNum_a)%10;
-        totalNum_b = Number(totalNum_b) % 10;
-        totalNum_c = Number(totalNum_c) % 10;
+        $("#pcdd #qihao").text('第' + data.pcdd.dat_expect + '期');
+        var nums = data.pcdd.dat_codes.split(',');
+        var totalNum_a =  nums[0];
+        var totalNum_b =  nums[1];
+        var totalNum_c =  nums[2];
         var totalNum=Number(totalNum_a)+Number(totalNum_b)+Number(totalNum_c);
         var sebo="";
         var danshaung="";
@@ -1121,7 +1222,7 @@ function IndexOpen() {
             str = str + "<span style='background-color: #fffaf4;'>" +ds+ "</span>";
         }
 
-        $("#pc28 #number").html(str);
+        $("#pcdd #number").html(str);
 
         $("#tcssc #qihao").text('第' + pad(data.tcssc.dat_expect, 3).substr(6) + '期');
         var nums = data.tcssc.dat_codes.split(',');

@@ -98,6 +98,7 @@ include("../conn.php");
         <a>总和</a>
         <a>大小</a>
         <a>单双</a>
+        <a>波色</a>
     </div>
 </div>
 <div id="historyList"></div>

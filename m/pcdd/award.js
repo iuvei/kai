@@ -57,6 +57,8 @@ $(function () {
                 var zonghe =zh(nums[0],nums[1],nums[2]);
                 var dx =aaaa(zonghe)[0];
                 var ds =aaaa(zonghe)[1];
+                var bose =aaaa(zonghe)[2];
+                str = str + '<a>' + bose + '</a>';
                 str = str + '<a>' + dx + '</a>';
                 str = str + '<a>' + ds + '</a>';
                 // str = str + '<a>' + dat[4] + '</a>';
@@ -127,6 +129,8 @@ $(function () {
                 var zonghe =zh(nums[0],nums[1],nums[2]);
                 var dx =aaaa(zonghe)[0];
                 var ds =aaaa(zonghe)[1];
+                var bose =aaaa(zonghe)[2];
+                str = str + '<a>' + bose + '</a>';
                 str = str + '<a>' + dx + '</a>';
                 str = str + '<a>' + ds + '</a>';
                 // str = str + '<a>' + dat[4] + '</a>';
@@ -194,6 +198,8 @@ $(function () {
                 var zonghe =zh(nums[0],nums[1],nums[2]);
                 var dx =aaaa(zonghe)[0];
                 var ds =aaaa(zonghe)[1];
+                var bose =aaaa(zonghe)[2];
+                str = str + '<a>' + bose + '</a>';
                 str = str + '<a>' + dx + '</a>';
                 str = str + '<a>' + ds + '</a>';
                 str = str + '</div>';
@@ -271,7 +277,7 @@ function getHistoryData(count,date) {
                     html += '<div>'+'<a >' + dx + '</a>'+'</div>';
                     }
 
-
+                html += '<div>'+'<a >' + sebo + '</a>'+'</div>';
 
 
 
@@ -370,7 +376,17 @@ function aaaa(totalNum) {
     }else{
         dx = '单';
     }
-    return [danshaung,dx]
+    var sebo="";
+    if(totalNum == 1 || totalNum == 4 || totalNum == 7 || totalNum == 10 || totalNum == 16 || totalNum == 19 || totalNum == 22 || totalNum == 25){
+        sebo = '绿';
+    }else if(totalNum == 2 || totalNum == 5 || totalNum == 8 || totalNum == 11 || totalNum == 17 || totalNum == 20 || totalNum == 23 || totalNum == 26){
+        sebo = '蓝';
+    }else if(totalNum == 3 || totalNum == 6 || totalNum == 9 || totalNum == 12 || totalNum == 15 || totalNum == 18 || totalNum == 21 || totalNum == 24){
+        sebo = '红';
+    }else if(totalNum == 0 || totalNum == 13 || totalNum == 14 || totalNum == 27 ){
+        sebo = '和';
+    }
+    return [danshaung,dx,sebo]
 }
 
 
