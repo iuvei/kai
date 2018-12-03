@@ -80,7 +80,6 @@ $(function () {
             var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
             window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
             timeInterval = 0;
-            console.log(11111111)
         }, 'json').error(function () {
             if (errorCount < 20) {
                 window.setTimeout(awardTick, 1000 + Math.random() * 10000);

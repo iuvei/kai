@@ -7,6 +7,7 @@ f9();
 f7();
 f6();
 f5();
+/*f41();*/
 f4();
 f3();
 f2();
@@ -782,8 +783,7 @@ function indexdata() {
 
             });
     }
-
-
+     //jsk3
     function f4() {
         $.getJSON("/jsk3/getPk10AwardTimes.do", {t: Math.random()},
             function (data) {
@@ -852,6 +852,77 @@ function indexdata() {
                 //  $("#kuai3 .preDrawIssue").html(cpNumber);
             });
     }
+
+    //jlk3
+/*    function f41() {
+        $.getJSON("/jlk3/getPk10AwardTimes.do", {t: Math.random()},
+            function (data) {
+                if(data.current.awardNumbers == '' || data.current.awardNumbers == null){
+                    setInterval(f41(),3000);
+                    $("#kuai31 .kajianhao").html("");
+                    $("#kuai31 .kajianhao").html("<span style='color: red'>开奖中...</span>");
+                    return;
+                }
+                clearInterval(xiaoguo);
+                clearInterval(time_r16);
+                timer101(parseInt((data.next.awardTimeInterval) / 1000), "kuai31 .nextkai_time",'jlk3');
+                var nums = data.current.awardNumbers.split(',');
+                var str = Number(nums[0]) + Number(nums[1]) + Number(nums[2]);
+                //  cpNumber = data.current.periodNumber;
+
+                $("#kuai31 .rowbox2").find(".sumNum").text(str),
+                    $("#kuai31 .rowbox2").find(".sumSingleDouble").text(str % 2 == 0 ? "双" : "单"),
+                    $("#kuai31 .rowbox2").find(".sumBigSmall").text(str > 10 ? "大" : "小");
+
+                for (var i = 0; i < nums.length; i++) {
+                    $("#kuai31 .kajianhao li:eq(" + i + ")").removeClass()
+
+                    $("#kuai31 .kajianhao li:eq(" + i + ")").addClass('num' + nums[i])
+                }
+
+                function test(a) {
+                    switch (a) {
+                        case "1":
+                            return "鱼";
+                            break;
+                        case "2":
+                            return "虾";
+                            break;
+                        case "3":
+                            return "葫芦";
+                            break;
+                        case "4":
+                            return "金钱";
+                            break;
+                        case "5":
+                            return "蟹";
+                            break;
+                        default:
+                            return "鸡";
+
+                    }
+                }
+
+                var type_one = test(nums[0]);
+                var type_two = test(nums[1]);
+                var type_three = test(nums[2]);
+
+                $("#kuai31").find(".firstSeafood").text(type_one);
+
+                $("#kuai31").find(".secondSeafood").text(type_two);
+
+                $("#kuai31").find(".thirdSeafood").text(type_three);
+
+                var cpNumber = data.current.periodNumber;
+                // var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-2);
+
+                $("#kuai31 .preDrawIssue").html(data.current.periodNumber1.toString().substr(4));
+                $("#kuai31 .drawCount").html(cpNumber);
+                $("#kuai31 .sdrawCountnext").html(87 - cpNumber);
+            //  $("#kuai3 .preDrawIssue").html(cpNumber);
+        });
+}*/
+
     function f3() {
         $.getJSON("/pc28/getPk10AwardTimes.do", {t: Math.random()},
             function (data) {
@@ -1049,7 +1120,7 @@ function douniu(nums){
         nums[num] = null;
         nums[num2] = null;
         nums[num3] = null;
-        
+
 
         var num4=[];
         var num5=0;
@@ -1749,6 +1820,40 @@ function timer10(intDiff,div,name){
             $(div+" .second").text('');
             //f(name);
                 setTimeout('f4()',3000)
+        }
+    }, 1000);
+
+}
+
+//jlk3
+function timer101(intDiff,div,name){
+
+    time_r16 = window.setInterval( function(){
+        var day=0,
+            hour=0,
+            minute=0,
+            second=0;//时间默认值
+        if(intDiff-1 > 0){
+
+            minute = Math.floor(intDiff / 60) ;
+            second = Math.floor(intDiff)  - (minute * 60);
+        }
+        if(minute == 0 && second <= 30){
+            $("#"+div+" .opentyle").text("开奖中...");
+        }else {
+            $("#"+div+" .opentyle").text("");
+        }
+        $("#"+div+" .minute").text(minute);
+        $("#"+div+" .second").text(second);
+
+        m = minute;
+        s = second;
+        intDiff--;
+        if(intDiff==0) {
+            $(div+" .minute").text('');
+            $(div+" .second").text('');
+            //f(name);
+            setTimeout('f41()',3000)
         }
     }, 1000);
 
