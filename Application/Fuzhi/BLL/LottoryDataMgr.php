@@ -5989,7 +5989,7 @@ time: 1542068782325*/
                 $issue = $this->getCombOpentimes_v2(32430, 84, 600, time());
                 break;
             case "pcdd":
-                $issueStart = 923912 + intval((time() - 3600*9+300 - strtotime('2018-12-01 09:05:00')) / 86400) * 180-180;
+                $issueStart = 923733 + intval((time() - 3600*9+300 - strtotime('2018-12-01 00:00:00')) / 86400) * 179;
                 $issue = $this->getCombOpentimes_v2(3600*9, 179, 300, $time,$issueStart);
                 break;
             case "jlk3":

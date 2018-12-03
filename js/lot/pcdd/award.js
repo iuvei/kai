@@ -46,6 +46,7 @@ $(function () {
                 var totalNum_c =data.current.awardNumbers.split(',')[2];
                 str = str + "<span class='no1'>" + totalNum_a + "</span><span class='no2'>" + totalNum_b + "</span><span class='no3'>" + totalNum_c + "</span>";
                 $(".lot-nums").html(str);
+
             }
             $(".currentAward .period").html(data.current.periodNumber1 + " 期");
             $(".warnTime #period").html("第" + data.next.periodNumberStr+ "期");
@@ -184,7 +185,7 @@ $(function () {
                 }
 
                 $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
-                getHistoryData(date)
+                getHistoryData()
             }
         }, 'json').error(function () {
         });
