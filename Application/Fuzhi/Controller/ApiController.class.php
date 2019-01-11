@@ -409,8 +409,8 @@ class ApiController extends Controller{
             case "jnd28":
                 return "jnd28";
                 break;
-            case "jisk3":
-                return "jisk3";
+            case "jisuk3":
+                return "jisuk3";
                 break;
             case "js28":
                 return "js28";
