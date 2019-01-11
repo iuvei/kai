@@ -406,6 +406,21 @@ class ApiController extends Controller{
             case "gxk3":
                 return "gxk3";
                 break;
+            case "jnd28":
+                return "jnd28";
+                break;
+            case "jisk3":
+                return "jisk3";
+                break;
+            case "js28":
+                return "js28";
+                break;
+            case "jsdd":
+                return "jsdd";
+                break;
+            case "js11x5":
+                return "js11x5";
+                break;
             default:
                 return "404";
 
