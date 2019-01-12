@@ -151,6 +151,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
             <li><a href="jsk3/" game="jsk3">江苏快3</a></li>
             <li><a href="gxk3/" game="gxk3">广西快3</a></li>
             <li><a href="jlk3/" game="jlk3">吉林快3</a></li>
+            <li><a href="jisuk3/" game="jisuk3">极速快3</a></li>
 
             <li><a href="gd11x5/" game="gd11x5">广东11选5</a></li>
         <!--    <li><a href="gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
@@ -550,6 +551,36 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 
         </a>
     </li>
+    <li class="kaij-mylist-li" id="jisuk3">
+        <a href="jisuk3/" class="yx_a">
+
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-jsk3"></span></div>-->
+            <div class="kaij-mylist-r">
+                <div class="kaij-mylist-hd">
+                    <div  class="yx_name">极速快3
+                    </div>
+                    <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
+                </div>
+                <div class="kaij-mylist-bd">
+                    <div class="itm-result">
+                        <div class="ball-wrap" id="number">
+                            <img src="style/images/loading2.gif" alt="载入中">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bt-jg">  </div>
+
+<!--        <div class="bt-aa">-->
+<!--            <a href="jsk3/">开奖历史</a>-->
+<!--            <a href="jsk3/smtj.php">两面统计</a>-->
+<!--            <a href="jsk3/cltj.php">长龙统计</a>-->
+<!--            <a href="jsk3/shipin.php">开奖视频</a>-->
+<!--        </div>-->
+
+        </a>
+    </li>
     <li class="kaij-mylist-li cq-box" id="gd11x5">
         <a href="gd11x5/" class="yx_a">
 
@@ -676,9 +707,11 @@ var jsssc_downTimer = null;
 var jsk3_number = -1;
 var jsk3_downTimer = null;
 var gxk3_number = -1;
-var gxk3_number = null;
+var gxk3_downTimer = null;
 var jlk3_number = -1;
-var jlk3_number = null;
+var jlk3_downTimer = null;
+var jisuk3_number = -1;
+ var jisuk3_downTimer = null;
  var cqft_number = -1;
  var cqft_downTimer = null;
  var bjft_number = -1;
@@ -707,6 +740,7 @@ $(function() {
     CheckAward("jsk3", "GetJsk3AwardTimes", this.jsk3_downTimer, jsk3_number, "jsk3");
     CheckAward("gxk3", "GetJsk3AwardTimes", this.gxk3_downTimer, gxk3_number, "gxk3");
     CheckAward("jlk3", "GetJsk3AwardTimes", this.jlk3_downTimer, jlk3_number, "jlk3");
+    CheckAward("jisuk3", "GetJsk3AwardTimes", this.jisuk3_downTimer, jisuk3_number, "jisuk3");
     CheckAward("bjft", "GetTjsscAwardTimes", this.bjft_downTimer, bjft_number, "bjft");
     CheckAward("pcdd", "GetTjsscAwardTimes", this.pcdd_downTimer, pcdd_number, "pcdd");
     CheckAward("txffc", "GetTjsscAwardTimes", this.txffc_downTimer, txffc_number, "txffc");
@@ -741,6 +775,8 @@ function showTime(page, timeSpan, time, qihao) {
             CheckAward("gxk3", "GetJsk3AwardTimes", this.gxk3_downTimer, gxk3_number, "gxk3", qihao)
         } else if (timeSpan == "jlk3") {
             CheckAward("jlk3", "GetJsk3AwardTimes", this.jlk3_downTimer, jlk3_number, "jlk3", qihao)
+        }else if (timeSpan == "jisuk3") {
+            CheckAward("jisuk3", "GetJsk3AwardTimes", this.jisuk3_downTimer, jisuk3_number, "jisuk3", qihao)
         }else if (timeSpan == "bjft") {
             CheckAward("bjft", "GetPk10AwardTimes", this.bjft_downTimer, bjft_number, "bjft", qihao)
         }else if (timeSpan == "pcdd") {
@@ -966,6 +1002,26 @@ function IndexOpen() {
         str = str + '<a class="k3zh">'+yxx(nums[2])+'</a>';
         str+='</div>';
         $("#jlk3 #number").html(str);
+
+        $("#jisuk3 #qihao").text('第' + data.jisuk3.dat_expect.substr(6) + '期');
+        var nums = data.jisuk3.dat_codes.split(',');
+        var str = "";
+        for (var i = 0; i < nums.length; i++) {
+            str = str + "<i class='num" + nums[i]+ "'></i>"
+        }
+        var long;
+        long = ssclh(nums,3);
+        str = str + '<a class="k3zh">'+long+'</a>'
+
+        str+='<div class="yxx">'
+        for (var i = 0; i < nums.length; i++) {
+            str = str + "<i class='num-yxx" + nums[i]+ "'></i>"
+        }
+        str = str + '<a class="k3zh">'+yxx(nums[0])+'</a>';
+        str = str + '<a class="k3zh">'+yxx(nums[1])+'</a>';
+        str = str + '<a class="k3zh">'+yxx(nums[2])+'</a>';
+        str+='</div>';
+        $("#jisuk3 #number").html(str);
 
 
 

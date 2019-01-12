@@ -19,6 +19,7 @@
             <li><a href="../jsk3/" game="jsk3">江苏快3</a></li>
             <li><a href="../gxk3/" game="gxk3">广西快3</a></li>
             <li><a href="../jlk3/" game="jlk3">吉林快3</a></li>
+            <li><a href="../jisuk3/" game="jisuk3">极速快3</a></li>
             <li><a href="../gd11x5/" game="gd11x5">广东11选5</a></li>
             <!--            <li><a href="../gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
             <!--<li><a href="../pc28/" game="pc28">加拿大28</a></li>-->
