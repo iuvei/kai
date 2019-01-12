@@ -61,8 +61,11 @@
 
                         $('.chooseIssue').append('<option value="'+data.termNum.substr(4)+'">'+data.termNum.substr(4)+'</option>');
                         html += '<div class="openCode">';
-                        html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(4)+'</span>' +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
-
+                        if(gamekey=='jisuk3'){
+                            html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(6)+'</span>' +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+                        }else {
+                            html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(4)+'</span>' +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+                        }
                         html += '<div>'+'<img src="/images/images/dice'+data.n1+'.png">'+'</div>';
                         html += '<div>'+'<img src="/images/images/dice'+data.n2+'.png">'+'</div>';
                         html += '<div>'+'<img src="/images/images/dice'+data.n3+'.png">'+'</div>';
