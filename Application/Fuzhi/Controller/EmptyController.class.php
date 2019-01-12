@@ -86,7 +86,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
 		}
         $this->assign('lottory', $ctrlName);
         if ($ctrlName == 'tcpk10' || $ctrlName == 'tcssc' || $ctrlName == 'pk10' || $ctrlName == 'cqssc' || $ctrlName == 'gdkl10' || $ctrlName == 'jssc' || $ctrlName == 'jsk3' || $ctrlName == 'kl8' || $ctrlName == 'bjft' || $ctrlName == 'jsssc'  || $ctrlName == 'xyft'  || $ctrlName == 'fc3d' || $ctrlName == 'pl3'
-            || $ctrlName == 'pl3' || $ctrlName == 'gd11x5' || $ctrlName == 'cqft' || $ctrlName == 'pc28' || $ctrlName == 'txffc' || $ctrlName == 'sfssc' || $ctrlName == 'sfpk10'||$ctrlName == 'pcdd'||$ctrlName == 'jlk3'|| $ctrlName == 'gxk3' ) {
+            || $ctrlName == 'pl3' || $ctrlName == 'gd11x5' || $ctrlName == 'cqft' || $ctrlName == 'pc28' || $ctrlName == 'txffc' || $ctrlName == 'sfssc' || $ctrlName == 'sfpk10'||$ctrlName == 'pcdd'||$ctrlName == 'jlk3'|| $ctrlName == 'gxk3' || $ctrlName == 'jnd28' ) {
             $lottoryName = '';
             $totalExpect = 0;
             if ($ctrlName == 'pk10') {
@@ -237,12 +237,20 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                                         $totalExpect = 87;
                                                                                     }else{
                                                                                         if($ctrlName == 'gxk3'){
-
                                                                                             $this->title = $title_c.'广西快3开奖视频_广西快3开奖号码_广西快3开奖记录 - ' . C('WEB_SITE_TITLE');
                                                                                             $this->keyword = C("WEB_SITE_JSK3_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                                             $this->description = C("WEB_SITE_JSK3_DESCR");
                                                                                             $lottoryName ='广西快3';//头彩
                                                                                             $totalExpect = 78;
+                                                                                        }else{
+                                                                                            //print_r($ctrlName);exit;
+                                                                                            if($ctrlName == 'jnd28'){
+                                                                                                $this->title = $title_c.'加拿大28开奖视频_加拿大28开奖号码_加拿大28开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                                                $this->keyword = C("WEB_SITE_xjssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                                $this->description = C("WEB_SITE_xjssc_DESCR");
+                                                                                                $lottoryName = "加拿大28";
+                                                                                                $totalExpect = 1;
+                                                                                            }
                                                                                         }
 
                                                                                     }
