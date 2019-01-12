@@ -123,8 +123,8 @@ include("../conn.php");
 				// ballNames["10"] = "第十号";
             
             
-               
-               $.get("../ajax/pk10_trend.php", { type:22, ball: ball, count: 8, t: Math.random() }, function (data) {
+
+               $.get("../ajax/pk10_trend.php", { type:54, ball: ball, count: 8, t: Math.random() }, function (data) {
             	   layer.closeAll();
                 	data=eval(data);
                    showChartline(ballNames[ball]+"走势图", data, "号",1, 6, 'container',ballNames[ball]);
