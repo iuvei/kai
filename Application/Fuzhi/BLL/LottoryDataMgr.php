@@ -183,6 +183,9 @@ class LottoryDataMgr
                         $type = 'pk10';
                         $lotType = 20;
                     }
+                    if($type == 'jnd28'){
+                        $type = 'pcdd';
+                    }
                     $ret = $this->getAwardTime($type, $page, $lotType, $expire);
                 } else {
                     //print_r("123");die;
