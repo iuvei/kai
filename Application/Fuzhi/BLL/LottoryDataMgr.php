@@ -5791,16 +5791,16 @@ class LottoryDataMgr
                 $issue = $this->getJspkSscOpentimes($time);
                 break;
             case "jisuk3":
-                $issue = $this->getJspkSscOpentimes($time);
+                $issue = $this->getJSOpentimes($time);
                 break;
             case "js28":
-                $issue = $this->getJspkSscOpentimes($time);
+                $issue = $this->getJSOpentimes($time);
                 break;
             case "jsdd":
-                $issue = $this->getJspkSscOpentimes($time);
+                $issue = $this->getJSOpentimes($time);
                 break;
             case "js11x5":
-                $issue = $this->getJspkSscOpentimes($time);
+                $issue = $this->getJSOpentimes($time);
                 break;
             case "pc28":
                 $issueStart = 2354785 + intval((time() - 0 - strtotime('2018-11-14 00:00:00')) / 86400) * 397;
@@ -6289,6 +6289,80 @@ class LottoryDataMgr
         $issue['issue_total'] = $issueCount;
         return $issue;
     }
+
+    /**
+     * 获得js的开奖时间
+     * @param int $time
+     */
+    private function getJSOpentimes($time = 0)
+    {
+        $tsStart = 300;
+        $issueCount = 1054;
+        $ts = 75;
+
+        // 默认当前时间
+        if (empty($time)) {
+            $time = time();
+        }
+        /*
+         * 期号日期
+         *  假定每天的第一期开奖时间为00:00:00，那么当时间为time()时100%是当前的期号日期
+         *  如果开奖时间不是00:00:00，那么time()的当前期号日期，可能自动跳为第二天
+         *  所以，time()减去tsStart【第一期开奖时间】，则期号日期100%是当天的
+         */
+        $rootTimespan = strtotime(date('Y-m-d', ($time - 75)));
+        $opentimes = Array();
+        $subIssueLength = strlen($issueCount);
+        $preIssue = Array();
+        for ($issue_no = 1; $issue_no <= $issueCount; $issue_no++) {
+
+            if ($issue_no < 193) {
+                $timespan = $rootTimespan + ($issue_no) * $ts;
+            } elseif ($issue_no == 193) {
+                $timespan = $rootTimespan + 3600 * 6 + 150;
+            } else {
+                $timespan = $rootTimespan + 3600 * 6 + 150 + ($issue_no - 193) * 75;
+            }
+            // 开奖时间
+            $opentime = Array();
+            $opentime['timespan'] = $timespan;
+            $opentime['issue_no'] = $issue_no;
+            $opentime['opentime'] = date('Y-m-d H:i:s', $timespan);
+            if (empty($issueStart)) {
+                $opentime['issue'] = date('Ymd-', $rootTimespan) . sprintf("%0{$subIssueLength}d", $issue_no);
+            } else {
+                $opentime['issue'] = $issueStart + $issue_no;
+            }
+            $opentimes[$issue_no] = $opentime;
+
+              //   echo date('Y-m-d H:i:s', $timespan).":".$issue_no."\n";
+
+            if ($time > $timespan) {
+                $preIssue = $opentime;
+            }
+        }
+
+
+
+        $opentime = Array();
+        $timespan = $rootTimespan + 86400 + 75;
+        $opentime['timespan'] = $timespan;
+        $opentime['issue_no'] = 1;
+        $opentime['opentime'] = date('Y-m-d H:i:s', $timespan);
+        if (empty($issueStart)) {
+            $opentime['issue'] = date('Ymd-', $rootTimespan + 86400) . sprintf("%0{$subIssueLength}d", 1);
+        } else {
+            $opentime['issue'] = $issueStart + $issueCount + 1;
+        }
+        $opentimes[$issueCount + 1] = $opentime;
+
+        $issue = $opentimes[$preIssue['issue_no'] + 1];
+        $issue['timeremain'] = $issue['timespan'] - $time;
+        $issue['preIssue'] = $preIssue;
+        $issue['issue_total'] = $issueCount;
+        return $issue;
+    }
+
 
     private function getCombOpentimes_v2($tsDayStart, $issueCount, $ts, $time = 0, $issueStart = null)
     {
