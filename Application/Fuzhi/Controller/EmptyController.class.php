@@ -85,8 +85,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
 
 		}
         $this->assign('lottory', $ctrlName);
-        if ($ctrlName == 'tcpk10' || $ctrlName == 'tcssc' || $ctrlName == 'pk10' || $ctrlName == 'cqssc' || $ctrlName == 'gdkl10' || $ctrlName == 'jssc' || $ctrlName == 'jsk3' || $ctrlName == 'kl8' || $ctrlName == 'bjft' || $ctrlName == 'jsssc'  || $ctrlName == 'xyft'  || $ctrlName == 'fc3d' || $ctrlName == 'pl3'
-            || $ctrlName == 'pl3' || $ctrlName == 'gd11x5' || $ctrlName == 'cqft' || $ctrlName == 'pc28' || $ctrlName == 'txffc' || $ctrlName == 'sfssc' || $ctrlName == 'sfpk10'||$ctrlName == 'pcdd'||$ctrlName == 'jlk3'|| $ctrlName == 'gxk3' || $ctrlName == 'jnd28' ) {
+        if ($ctrlName == 'tcpk10' || $ctrlName == 'tcssc' || $ctrlName == 'pk10' || $ctrlName == 'cqssc' || $ctrlName == 'gdkl10' || $ctrlName == 'jssc' || $ctrlName == 'jsk3' || $ctrlName == 'kl8' || $ctrlName == 'bjft' || $ctrlName == 'jsssc'  || $ctrlName == 'xyft'  || $ctrlName == 'fc3d' || $ctrlName == 'pl3' || $ctrlName == 'pl3' || $ctrlName == 'gd11x5' || $ctrlName == 'cqft' || $ctrlName == 'pc28' || $ctrlName == 'txffc' || $ctrlName == 'sfssc' || $ctrlName == 'sfpk10'||$ctrlName == 'pcdd'||$ctrlName == 'jlk3'|| $ctrlName == 'gxk3' || $ctrlName == 'jnd28' || $ctrlName == 'js28' ||$ctrlName == 'jisuk3'||$ctrlName == 'jsdd'||$ctrlName == 'js11x5') {
             $lottoryName = '';
             $totalExpect = 0;
             if ($ctrlName == 'pk10') {
@@ -246,10 +245,43 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                                             //print_r($ctrlName);exit;
                                                                                             if($ctrlName == 'jnd28'){
                                                                                                 $this->title = $title_c.'加拿大28开奖视频_加拿大28开奖号码_加拿大28开奖记录 - ' . C('WEB_SITE_TITLE');
-                                                                                                $this->keyword = C("WEB_SITE_xjssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
-                                                                                                $this->description = C("WEB_SITE_xjssc_DESCR");
+                                                                                                $this->keyword = C("WEB_SITE_JND28_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                                $this->description = C("WEB_SITE_JND28_DESCR");
                                                                                                 $lottoryName = "加拿大28";
-                                                                                                $totalExpect = 1;
+                                                                                                $totalExpect = 179;
+                                                                                            }else{
+                                                                                                if($ctrlName == 'js28'){
+                                                                                                    $this->title = $title_c.'极速28开奖视频_极速28开奖号码_极速28开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                                                    $this->keyword = C("WEB_SITE_JND28_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                                    $this->description = C("WEB_SITE_JND28_DESCR");
+                                                                                                    $lottoryName = "极速28";
+                                                                                                    $totalExpect = 1140;
+                                                                                                }else{
+                                                                                                    if($ctrlName == 'jisuk3'){
+                                                                                                        $this->title = $title_c.'极速快3开奖视频_极速快3开奖号码_极速快3开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                                                        $this->keyword = C("WEB_SITE_JISUK3_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                                        $this->description = C("WEB_SITE_JISUK3_DESCR");
+                                                                                                        $lottoryName = "极速快3";
+                                                                                                        $totalExpect = 1140;
+                                                                                                    }else{
+                                                                                                        if($ctrlName == 'jsdd'){
+                                                                                                            $this->title = $title_c.'极速蛋蛋开奖视频_极速蛋蛋开奖号码_极速蛋蛋开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                                                            $this->keyword = C("WEB_SITE_JSDD_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                                            $this->description = C("WEB_SITE_JSDD_DESCR");
+                                                                                                            $lottoryName = "极速蛋蛋";
+                                                                                                            $totalExpect = 1140;
+                                                                                                        }else{
+                                                                                                            if($ctrlName == 'js11x5'){
+                                                                                                                $this->title = $title_c.'极速11选5开奖视频_极速11选5开奖号码_极速11选5开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                                                                $this->keyword = C("WEB_SITE_JS11X5_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                                                $this->description = C("WEB_SITE_JS11X5_DESCR");
+                                                                                                                $lottoryName = "极速11选5";
+                                                                                                                $totalExpect = 1140;
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+
+                                                                                                }
                                                                                             }
                                                                                         }
 

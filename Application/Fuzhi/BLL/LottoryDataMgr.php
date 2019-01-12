@@ -185,6 +185,7 @@ class LottoryDataMgr
                     }
                     if($type == 'jnd28'){
                         $type = 'pcdd';
+                        $lotType = 43;
                     }
                     $ret = $this->getAwardTime($type, $page, $lotType, $expire);
                 } else {
@@ -5962,6 +5963,18 @@ time: 1542068782325*/
             case "pk10":
                 $issueStart = 674080 + intval((time() - 32820 - strtotime('2018-04-01 00:00:00')) / 86400) * 179;
                 $issue = $this->getCombOpentimes_v2(32520, 179, 300, $time, $issueStart);
+                break;
+            case "jisuk3":
+                $issue = $this->getCombOpentimes_v2(6*3600+1*60+15, 1440, 60, time());
+                break;
+            case "js28":
+                $issue = $this->getCombOpentimes_v2(6*3600+1*60+15, 1440, 60, time());
+                break;
+            case "jsdd":
+                $issue = $this->getCombOpentimes_v2(6*3600+1*60+15, 1440, 60, time());
+                break;
+            case "js11x5":
+                $issue = $this->getCombOpentimes_v2(6*3600+1*60+15, 1440, 60, time());
                 break;
             case "xyft":
                 $issue = $this->getCombOpentimes_v2(46500 + 540, 180, 300, $time);
