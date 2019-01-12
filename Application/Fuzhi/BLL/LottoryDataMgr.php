@@ -167,7 +167,6 @@ class LottoryDataMgr
         $expire = 2;
 //       print_r($lotType);exit;
         if ($page == 'getHistoryData.do') {
-
             $ret = $this->getHistoryData($type, $page, $lotType, $expire);
         } else {
             if ($page == "numbertrendData.do") {
@@ -578,6 +577,7 @@ class LottoryDataMgr
             } else {
                 $openedCaiList = $this->getLottoryByDate($module, $lotType, $date, $count, $pages, $offset);
             }
+
             if ($lotType == 44) {
                 for ($i = 0; $i < count($openedCaiList); $i++) {
                     if ($date == '' && $count > 0 && $i >= $count) {
@@ -656,6 +656,7 @@ class LottoryDataMgr
             S($cacheName, $ret, array('type' => 'file', 'expire' => $expire));
         }
 
+//        print_r($ret);
         return $ret;
     }
 
@@ -667,10 +668,11 @@ class LottoryDataMgr
         $time = time();
         $MillisecondTime = getMillisecond();
         $kjHao = null;
+
         $ret = $this->getIssueInfo($type);
         $xqqihao = str_replace("-", "0", $ret['issue']);
 
-        if ($lotType == 44 || $lotType == 1 || $lotType == 34 || $lotType == 47 || $lotType == 48 || $lotType == 46 || $lotType == 45 || $lotType == 6 || $lotType== 54 ||$lotType == 55 || $lotType == 56 || $lotType == 58 ) {
+        if ($lotType == 44 || $lotType == 1 || $lotType == 34 || $lotType == 47 || $lotType == 48 || $lotType == 46 || $lotType == 45 || $lotType == 6 || $lotType== 54 ||$lotType == 55 || $lotType == 56 || $lotType == 58 || $lotType == 39) {
             $sqqihao = str_replace("-", "", $ret['preIssue']['issue']);
             $xqqihao = str_replace("-", "", $ret['issue']);
         } else {
@@ -735,9 +737,6 @@ class LottoryDataMgr
 
         //     dump($datas);die;
         $datas = json_encode($datas);
-
-
-        print_r($datas);
 
         return $datas;
 
