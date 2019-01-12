@@ -1,5 +1,5 @@
 <?php
-include("../conn.php"); 
+include("../conn.php");
 $typeid = (int)$_GET['type'];
 $ball = $_GET['ball']-1;
 $count = (int)$_GET['count'];
@@ -10,6 +10,9 @@ $sql="select dat_expect,dat_codes from lot_data where `dat_type`=$typeid order b
 
 $result = $mysqli->query($sql);
 $row = $result->fetch_assoc();
+
+
+
 
 while( $row = $result->fetch_assoc()){
 	$exp = explode(",",$row['dat_codes']);
@@ -60,7 +63,7 @@ while( $row = $result->fetch_assoc()){
 				</div></td></tr></table>
 			</article>"
         );
-    }else if($typeid == 22 || $typeid==51 ||$typeid==50){
+    }else if($typeid == 22 || $typeid==51 ||$typeid==50 || $typeid == 54){
         $tarr = array(
             0=>substr($row['dat_expect'],-2),
             1=>$exp[$ball],
@@ -110,9 +113,8 @@ while( $row = $result->fetch_assoc()){
     }
 
 	$array[]=$tarr;
-    
+
 }
 $array = array_reverse($array);
-//var_dump($array);
 echo json_encode($array);
 ?>
