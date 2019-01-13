@@ -1,10 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<extend name="Base/common"/>
 
-</body>
-</html>
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+<!--body-content-->
+<div class="body-content">
+	<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+		<include file="Public/lottory_op"/>
+		<div class="clear"></div>
+    <input type="hidden" value="getHistoryData|drawTrend" id="callFun" time="1000" />
+
+		<div class="index-history">
+            <div class="title mt10">
+                <h2>
+					PC蛋蛋开奖记录</h2>
+                <a href="jsdd/kaijiang.html" >查看全部&gt;&gt;</a>
+            </div>
+            <div id="history_data-html"></div>
+	      	<script id="history_data-tmpl" type="text/template">
+	      		<table id="history" class="lot-table">
+		            <tbody>
+						<tr class="head">
+							<td width="100">期号</td>
+							<td width="100">时间</td>
+							<td width="660">开奖号码</td>
+							<td colspan="3">总和</td>
+						</tr>
+						{{
+							for (var i = 0; i <it.length; i++) {
+								var row=it[i];
+								var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
+								var totalNum_a = row.n1;
+								var totalNum_b = row.n2;
+								var totalNum_c = row.n3;
+								var totalNum=totalNum_a+totalNum_b+totalNum_c;
+								var sebo="";
+								var danshaung="";
+						if(totalNum == 1 || totalNum == 4 || totalNum == 7 || totalNum == 10 || totalNum == 16 || totalNum == 19 || totalNum == 22 || totalNum == 25){
+								sebo = '绿波';
+						}else if(totalNum == 2 || totalNum == 5 || totalNum == 8 || totalNum == 11 || totalNum == 17 || totalNum == 20 || totalNum == 23 || totalNum == 26){
+						sebo = '蓝波';
+						}else if(totalNum == 3 || totalNum == 6 || totalNum == 9 || totalNum == 12 || totalNum == 15 || totalNum == 18 || totalNum == 21 || totalNum == 24){
+						sebo = '红波';
+						}else if(totalNum == 0 || totalNum == 13 || totalNum == 14 || totalNum == 27 ){
+						sebo = '和';
+						}
+						if(totalNum  == 13 || totalNum == 14 ){
+						danshaung = '和';
+						}else if(totalNum < 13 && totalNum > 5){
+						danshaung = '小';
+						}else if(totalNum < 22 && totalNum > 14){
+						danshaung = '大';
+						}else if(totalNum <= 5 && totalNum >= 0){
+						danshaung = '极小';
+						}else if(totalNum <= 27 && totalNum >= 22){
+						danshaung = '极大';
+						}
+
+						}}
+								<tr class="{{=(i+1)%2==0?'even':'odd'}}">
+									<td>
+										<p >{{=row.termNum.substr(6)}}</p>
+
+									</td>
+									<td>
+										<p >{{=lowDate}}</p>
+
+									</td>
+
+									<td class="nums">
+										<span class="no1">{{=totalNum_a}}</span>
+										<span style="width: 2%">+</span>
+										<span class="no2">{{=totalNum_b}}</span>
+										<span style="width: 2%">+</span>
+										<span class="no3">{{=totalNum_c}}</span>
+										<span style="width: 2%">=</span>
+										<span class="no4">{{=totalNum}}</span>
+									</td>
+									<td>{{=sebo}}</td>
+									<td class="{{=totalNum%2!=0?'r':''}}"><p>{{=totalNum%2==0?"双":"单"}}</p></td>
+									<td class="{{=totalNum> 22?'r':''}}"><p>{{=danshaung}}</p></td>
+								</tr>
+						{{
+							}
+						}}
+		        	</tbody>
+				</table>
+			</script>
+			<script src="js/highchats/highcharts.js"  type="text/javascript"></script>
+			<script src="js/util/jschart.js"  type="text/javascript"></script>
+			<script type="text/javascript">
+				$(function(){
+					drawTrend();
+				});
+		        function drawTrend() {
+		            $.get("jsdd/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
+		                console.log(data);
+		                showChartline("总和走势图", data, function () { return this.x + '期:' + this.y }, 0, 27, true, 0, "sContainer");
+		            }, "json");
+
+		        }
+		        function getHistoryData(){
+	        		$.post("jsdd/getHistoryData.do",
+	       				{count:20},
+	       				function(r) {
+	        				if (r) {
+	        				    console.log(r)
+	        					doTCompile("history_data", r.rows);
+	        				}
+	       			}, "json");
+		        }
+	            getHistoryData();
+		    </script>
+			<div class="lot-article mt10">
+				<div class="l-title">
+					<h2>极速蛋蛋技巧</h2>
+					<a href="jiqiao/cqft/" >更多&gt;&gt;</a>
+				</div>
+				<div class="wrap">
+
+    <ul>
+		<li>
+			<?php if(!empty($artical_first['id'])){ ?>
+			<!--<a target="_blank" href="jiqiao/cqft/{$artical_first['id']}.html" >·{$artical_first['title']}</a>-->
+			<?php } ?>
+		</li>
+		<volist name="lists" id="data">
+			<li>
+				<?php if(!empty($data['id'])){ ?>
+				<a target="_blank" href="jiqiao/cqft/{$data['id']}.html">·{$data.title}</a></li>
+			<?php } ?>
+		</volist>
+						</ul>
+
+
+
+				</div>
+			</div>
+            <div class="lot-about mt10">
+                <div class="l-title">
+                    <h2>极速蛋蛋号码走势图</h2>
+                </div>
+
+                    <div id="sContainer">
+				</div>
+
+            </div>
+
+        </div>
+		<div class="clear"></div>
+	</div>
+   </div>
+
+		</block>
