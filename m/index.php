@@ -147,8 +147,9 @@ $.cookie('home_cookiea', '1', { expires: 7 });
             <li><a href="tcssc/" game="tcssc">TC分分彩</a></li>
             <li><a href="sfssc/" game="jsssc">TC三分彩</a></li>
             <li><a game="bjft" href="bjft/">北京番摊</a></li>
-            <li><a game="sfpk10ft" href="sfpk10ft/">三分彩番摊</a></li>
+            <li><a game="sfpk10ft" href="sfpk10ft/">三分赛车番摊</a></li>
             <li><a game="cqft" href="cqft">重庆番摊</a></li>
+            <li><a game="sfcft" href="sfcft">三分彩番摊</a></li>
             <li><a href="jsk3/" game="jsk3">江苏快3</a></li>
             <li><a href="gxk3/" game="gxk3">广西快3</a></li>
             <li><a href="jlk3/" game="jlk3">吉林快3</a></li>
@@ -423,7 +424,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 <!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pk10"></span></div>-->
             <div class="kaij-mylist-r">
                 <div class="kaij-mylist-hd">
-                    <div class="yx_name"> 三分彩番摊
+                    <div class="yx_name"> 三分赛车番摊
                     </div>
                     <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
                     <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
@@ -457,6 +458,34 @@ $.cookie('home_cookiea', '1', { expires: 7 });
         <div class="kaij-mylist-r">
             <div class="kaij-mylist-hd">
                 <div class="yx_name">重庆番摊
+                </div>
+                <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
+            </div>
+            <div class="kaij-mylist-bd">
+                <div class="itm-result">
+                    <div class="ball-wrap" id="number">
+                        <img src="style/images/loading2.gif" alt="载入中">
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--        <div class="bt-aa">-->
+<!--            <a href="pk10/">开奖历史</a>-->
+<!--            <a href="pk10/smtj.php">两面统计</a>-->
+<!--            <a href="pk10/cltj.php">长龙统计</a>-->
+<!--            <a href="pk10/shipin.php">开奖视频</a>-->
+<!--        </div>-->
+
+        </a>
+    </li>
+    <li class="kaij-mylist-li" id="sfcft">
+        <a href="sfcft/" class="yx_a">
+
+        <!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-cqssc"></span></div>-->
+        <div class="kaij-mylist-r">
+            <div class="kaij-mylist-hd">
+                <div class="yx_name">三分彩番摊
                 </div>
                 <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
                 <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
@@ -822,6 +851,8 @@ var jisuk3_number = -1;
  var jisuk3_downTimer = null;
  var cqft_number = -1;
  var cqft_downTimer = null;
+ var sfcft_number = -1;
+ var sfcft_downTimer = null;
  var bjft_number = -1;
  var bjft_downTimer = null;
  var sfpk10ft_number = -1;
@@ -852,6 +883,7 @@ $(function() {
     CheckAward("js11x5", "GetGd11x5AwardTimes", this.js11x5_downTimer, js11x5_number, "js11x5");
     CheckAward("jsssc", "GetXjsscAwardTimes", this.jsssc_downTimer, jsssc_number, "jsssc");
     CheckAward("cqft", "GetTjsscAwardTimes", this.cqft_downTimer, pk10_downTimer, "cqft");
+    CheckAward("sfcft", "GetTjsscAwardTimes", this.sfcft_downTimer, pk10_downTimer, "sfcft");
     CheckAward("jsk3", "GetJsk3AwardTimes", this.jsk3_downTimer, jsk3_number, "jsk3");
     CheckAward("gxk3", "GetJsk3AwardTimes", this.gxk3_downTimer, gxk3_number, "gxk3");
     CheckAward("jlk3", "GetJsk3AwardTimes", this.jlk3_downTimer, jlk3_number, "jlk3");
@@ -889,6 +921,8 @@ function showTime(page, timeSpan, time, qihao) {
             CheckAward("jsssc", "GetXjsscAwardTimes", this.jsssc_downTimer, jsssc_number, "jsssc", qihao)
         } else if (timeSpan == "cqft") {
             CheckAward("cqft", "GetCqsscAwardTimes", this.cqft_downTimer, cqft_number, "cqft", qihao)
+        } else if (timeSpan == "sfcft") {
+            CheckAward("sfcft", "GetCqsscAwardTimes", this.sfcft_downTimer, sfcft_number, "sfcft", qihao)
         } else if (timeSpan == "jsk3") {
             CheckAward("jsk3", "GetJsk3AwardTimes", this.jsk3_downTimer, jsk3_number, "jsk3", qihao)
         } else if (timeSpan == "gxk3") {
@@ -1209,6 +1243,51 @@ function IndexOpen() {
         // }
 
         $("#cqft #number").html(str);
+
+        $("#sfcft #qihao").text('第' + data.sfcft.dat_expect.substr(4) + '期');
+        var nums = data.sfcft.dat_codes.split(',');
+        var str = "";
+        for (var i = 0; i < nums.length; i++) {
+            str = str + "<i class='ball-red'>" + nums[i] + "</i>"
+        }
+        var tan = Number(nums[0]) + Number(nums[1]) + Number(nums[2]) + Number(nums[3]) + Number(nums[4]);
+        var tan_2 = tan%4;
+        if(tan_2 == 0){
+            tan_2 = 4;
+        }
+        var dx='';
+        if(tan_2%2 ==2){
+            dx = '双';
+        }else {
+            dx = '单';
+        }
+        var ds='';
+        if(tan_2 <=2){
+            ds = '小';
+        }else {
+            ds = '大';
+        }
+        var tanshu =''
+        for(var i =0; i<tan_2;i++){
+            tanshu +='<samp class="ball-red-span">'+'</samp>'
+        }
+        tanshu='番摊结果：'+tanshu
+        // str += " 番摊结果：<samp class='ball-red-span'></samp><samp class='ball-red-span'></samp><samp class='ball-red-span'></samp>" +
+        //     "<span class='ball-red span-2' >"+ tan_2 +"摊</span>" ;
+
+        str+=tanshu;
+        // if(ds == '大'){
+        //     str += "<span class='ball-red' >"+ ds +"</span>";
+        // }else {
+        //     str += "<span class='ball-red' >"+ ds +"</span>"
+        // }
+        // if(dx == '单'){
+        //     str +=  "<span class='ball-red' >"+ dx +"</span>";
+        // }else {
+        //     str +=  "<span class='ball-red'>"+ dx +"</span>";
+        // }
+
+        $("#sfcft #number").html(str);
 
         $("#bjft #qihao").text('第' + data.pk10.dat_expect + '期');
         var nums = data.pk10.dat_codes.split(',');
