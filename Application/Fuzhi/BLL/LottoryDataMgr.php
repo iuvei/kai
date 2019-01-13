@@ -659,79 +659,137 @@ class LottoryDataMgr
 
     private function getAwardTime($type, $page, $lotType, $expire)
     {
+
         $module = M();
         $retData = array();
         $time = time();
         $MillisecondTime = getMillisecond();
         $kjHao = null;
 
-        $ret = $this->getIssueInfo($type);
-        $xqqihao = str_replace("-", "0", $ret['issue']);
-        if ($lotType == 44 || $lotType == 1 || $lotType == 34 || $lotType == 47 || $lotType == 48 || $lotType == 46 || $lotType == 45 || $lotType == 6 || $lotType== 54 ||$lotType == 55 || $lotType == 56 || $lotType == 58 || $lotType == 39) {
-            $sqqihao = str_replace("-", "", $ret['preIssue']['issue']);
-            $xqqihao = str_replace("-", "", $ret['issue']);
-        } else {
-            $xqqihao = str_replace("-", "0", $ret['issue']);
-            $sqqihao = str_replace("-", "0", $ret['preIssue']['issue']);
-        }
 
-        $kjHao1 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $sqqihao");
-        //  $kjHao2 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $xqqihao");
-
-        if ($kjHao1[0]['dat_codes'] == null) {
-            $kjHao1[0]['dat_codes'] = "";
-        }
-
-
-        $sres['surplus_num'] = $ret['issue_total'] - $ret['preIssue']['issue_no'];
-
-        if ($lotType == 20 || $lotType == 34 || $lotType == 47 || $lotType == 46 || $lotType == 6) {
-            $arr = explode(",", $kjHao1[0]['dat_codes']);
-            foreach ($arr as $k => $v) {
-                $arr[$k] = preg_replace('/^0*/', '', $v);
+        if($lotType == 43) {
+            $currentNo = $this->getGameCurrentNo($lotType, $module, $time);
+            $nextNo = $this->getGameNextNo($lotType, $module, $time);
+            $kjHao = $module->query("select dat_codes from {$this->prename}data where dat_type={$lotType} and dat_expect='{$currentNo['actionNo']}'");
+            if (!is_array($kjHao) || !$kjHao['dat_codes']) {
+                $kjHao = $module->query("select dat_codes,dat_expect from {$this->prename}data where dat_type={$lotType} order by dat_id desc limit 1");
             }
-            $arr_str = implode(",", $arr);
-            $sres["awardNumbers"] = $arr_str;
-
+        $dat_expect = $kjHao[0]['dat_expect'];
+        $awrdtime = date('Y-m-d H:i:s', $kjHao[0]['dat_open_time']);
+        $awrdtime2 = date('Y-m-d H:i:s', $kjHao[0]['dat_open_time'] + 210);
+        $awrdtime3 = ($kjHao[0]['dat_open_time'] + 210) - time();
+        $pan = null;
+        if ($kjHao === false || count($kjHao) == 0) {
+            $kjHao = null;
         } else {
-            $sres["awardNumbers"] = $kjHao1[0]['dat_codes'];
+            $data = explode(',', $kjHao[0]['dat_codes']);
+            $pos = strpos(end($data), '+');
+            if ($pos >= 0) {
+                $pan = substr(end($data), $pos + 1);
+            }
+            $kjHao = '';
+            foreach ($data as $value) {
+                $t = (int)$value;
+                $kjHao = $kjHao . $t . ',';
+            }
+            if ($kjHao != '') {
+                $kjHao = substr($kjHao, 0, strlen($kjHao) - 1);
+            }
+        }
+        $retData["firstPeriod"] = $dat_expect - $currentNo["actionNoIndex"]; //测试数据是否正常
+        $retData["apiVersion"] = 1;
+        $retData["current"]["awardTime"] = $currentNo["actionTime"];
+        $retData["current"]["periodNumber"] = $dat_expect;
+        $current_num = $module->query("select count(*) as count from lot_data_time where type =" . $lotType);
+        $retData["current"]["current_num"] = $current_num[0]['count'];
+        $retData["current"]["surplus_num"] = $current_num[0]['count'] - substr($currentNo["actionNo"], 9);
+        $retData["current"]["periodNumber1"] = $dat_expect;
+        $retData["current"]["fullPeriodNumber"] = $currentNo["actionNo"];
+        $retData["current"]["periodNumberStr"] = null;
+        $retData["current"]["awardTimeInterval"] = 0;
+        $retData["current"]["awardNumbers"] = $kjHao;
+        $retData["current"]["delayTimeInterval"] = null;
+        $retData["current"]["pan"] = $pan;
+        $retData["current"]["isEnd"] = null;
+        $retData["current"]["nextMinuteInterval"] = null;
+        //下期期数
+        $nextNoqishu = $this->getGameNextNoqishu($lotType, $module, $time);
+        $retData["next"]["periodNumber"] = $dat_expect;//测试数据是否正常
+        $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
+        $retData["next"]["fullPeriodNumber"] = 0;
+        $retData["next"]["periodNumberStr"] = $dat_expect+1;
+        $retData["next"]["awardNumbers"] = null;
+        $retData["next"]["delayTimeInterval"] = null;
+        $retData["next"]["pan"] = null;
+        $retData["next"]["isEnd"] = null;
+        $retData["next"]["nextMinuteInterval"] = null;
+        $datatime  = strtotime($currentNo['actionTime']) ;
+
+//       if( $time  >= $datatime ){
+//           $retData["current"]["periodNumber1"] = $dat_expect+1;
+//           $retData["current"]["awardNumbers"] = "";
+//          $retData["next"]["periodNumberStr"] = $dat_expect+2;
+//       }
+
+//       print_r($time);echo '</br>' ; print_r($datatime);die;
+
+        $ret = json_encode($retData);
+        return $ret;
+    }else{
+            $ret = $this->getIssueInfo($type);
+            $xqqihao = str_replace("-", "0", $ret['issue']);
+            if ($lotType == 44 || $lotType == 1 || $lotType == 34 || $lotType == 47 || $lotType == 48 || $lotType == 46 || $lotType == 45 || $lotType == 6 || $lotType== 54 ||$lotType == 55 || $lotType == 56 || $lotType == 58 || $lotType == 39) {
+                $sqqihao = str_replace("-", "", $ret['preIssue']['issue']);
+                $xqqihao = str_replace("-", "", $ret['issue']);
+            } else {
+                $xqqihao = str_replace("-", "0", $ret['issue']);
+                $sqqihao = str_replace("-", "0", $ret['preIssue']['issue']);
+            }
+
+            $kjHao1 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $sqqihao");
+            if($lotType == 43 ){
+
+            }
+            if ($kjHao1[0]['dat_codes'] == null) {
+                $kjHao1[0]['dat_codes'] = "";
+            }
+            $sres['surplus_num'] = $ret['issue_total'] - $ret['preIssue']['issue_no'];
+            if ($lotType == 20 || $lotType == 34 || $lotType == 47 || $lotType == 46 || $lotType == 6) {
+                $arr = explode(",", $kjHao1[0]['dat_codes']);
+                foreach ($arr as $k => $v) {
+                    $arr[$k] = preg_replace('/^0*/', '', $v);
+                }
+                $arr_str = implode(",", $arr);
+                $sres["awardNumbers"] = $arr_str;
+
+            } else {
+                $sres["awardNumbers"] = $kjHao1[0]['dat_codes'];
+            }
+            $sres["awardTime"] = $ret['preIssue']['opentime'];
+            $sres['fullPeriodNumber'] = $ret['preIssue']['issue'];
+            $sres['periodNumber'] = $ret['preIssue']['issue_no'];
+            $sres['periodNumber1'] = $sqqihao;
+            $sres['current_num'] = $ret['issue_total'];
+            if ($lotType == 20) {
+                $xres["awardTimeInterval"] = ($ret['timeremain'] + 30) * 1000;
+            } else {
+                $xres["awardTimeInterval"] = $ret['timeremain'] * 1000;
+                $xres['periodNumber'] = $ret['issue_no'];
+            }
+            $xres["awardTime"] = $ret['opentime'];
+            $xres['fullPeriodNumber'] = $ret['issue'];
+            $xres['periodNumberStr'] = $xqqihao;
+            $datas["current"] = $sres;
+            $datas["next"] = $xres;
+            $datas['status'] = $ret['status'];
+            $datas = json_encode($datas);
+
+            return $datas;
         }
 
-        $sres["awardTime"] = $ret['preIssue']['opentime'];
-        $sres['fullPeriodNumber'] = $ret['preIssue']['issue'];
 
 
-//        if($lotType ==20 || $lotType == 34){
-//            $sres['periodNumber'] = $ret['preIssue']['issue_no'] +1;
-//        }else{
 
-//        }
-        $sres['periodNumber'] = $ret['preIssue']['issue_no'];
-        $sres['periodNumber1'] = $sqqihao;
-        $sres['current_num'] = $ret['issue_total'];
-
-
-        if ($lotType == 20) {
-            $xres["awardTimeInterval"] = ($ret['timeremain'] + 30) * 1000;
-
-        } else {
-            $xres["awardTimeInterval"] = $ret['timeremain'] * 1000;
-            $xres['periodNumber'] = $ret['issue_no'];
-        }
-        $xres["awardTime"] = $ret['opentime'];
-        $xres['fullPeriodNumber'] = $ret['issue'];
-
-        $xres['periodNumberStr'] = $xqqihao;
-
-
-        $datas["current"] = $sres;
-        $datas["next"] = $xres;
-        $datas['status'] = $ret['status'];
-
-        //     dump($datas);die;
-        $datas = json_encode($datas);
-
-        return $datas;
 
     }
 
@@ -5796,8 +5854,8 @@ class LottoryDataMgr
                 $issue = $this->getJSOpentimes($time);
                 break;
             case "pc28":
-                $issueStart = 2354785 + intval((time() - 0 - strtotime('2018-11-14 00:00:00')) / 86400) * 397;
-                $issue = $this->getCombOpentimes_v2(0, 397, 210, $time, $issueStart);
+                $issueStart = 2354439 + intval((time() - 0 - strtotime('2018-11-14 00:00:00')) / 86400) * 397;
+                $issue = $this->getCombOpentimes_v2(-30, 397, 210, $time, $issueStart);
                 break;
             case "gd11x5":
                 $issue = $this->getCombOpentimes_v2(32430, 84, 600, time());
