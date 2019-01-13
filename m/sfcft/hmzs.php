@@ -37,23 +37,22 @@ include("../conn.php");
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
 <?php include("../public/sscHead.php"); ?>
 <?php include("../public/head3.php"); ?>
-
 <div id="container" style="border:1px solid #ddd">
 <img src="../style/images/loading2.gif">
 </div>
 
 					<div class="balllist">
 				<ul class="ball">
-				  <li><a href="javascript:void(0);" class='cur' ball="1">第1名</a></li>
-				  <li><a class="no" href="javascript:void(0);" ball="2">第2名</a></li>
-				  <li><a class="no" href="javascript:void(0);" ball="3">第3名</a></li>
-				  <li><a class="no" href="javascript:void(0);" ball="4">第4名</a></li>
-				  <li><a class="no" href="javascript:void(0);" ball="5">第5名</a></li>
-<!--				  <li><a class="no" href="javascript:void(0);" ball="6">第6名</a></li>-->
-<!--				  <li><a class="no" href="javascript:void(0);" ball="7">第7名</a></li>-->
-<!--				  <li><a class="no" href="javascript:void(0);" ball="8">第8名</a></li>-->
-<!--				  <li><a class="no" href="javascript:void(0);" ball="9">第9名</a></li>-->
-<!--				  <li><a class="no" href="javascript:void(0);" ball="10">第10名</a></li>-->
+				  <li><a href="javascript:void(0);" class='cur' ball="1">第1球</a></li>
+				  <li><a class="no" href="javascript:void(0);" ball="2">第2球</a></li>
+				  <li><a class="no" href="javascript:void(0);" ball="3">第3球</a></li>
+				  <li><a class="no" href="javascript:void(0);" ball="4">第4球</a></li>
+				  <li><a class="no" href="javascript:void(0);" ball="5">第5球</a></li>
+<!--				  <li><a class="no" href="javascript:void(0);" ball="6">第6球</a></li>-->
+<!--				  <li><a class="no" href="javascript:void(0);" ball="7">第7球</a></li>-->
+<!--				  <li><a class="no" href="javascript:void(0);" ball="8">第8球</a></li>-->
+<!--				  <li><a class="no" href="javascript:void(0);" ball="9">第9球</a></li>-->
+<!--				  <li><a class="no" href="javascript:void(0);" ball="10">第10球</a></li>-->
 			
 				</ul>
 			</div>
@@ -78,16 +77,16 @@ include("../conn.php");
             	layer.open({type: 2,time: 1});
             	var ball = $(".ball li .cur").attr("ball");
             	var ballNames = new Array();
-            	ballNames["1"] = "第一名";
-            	ballNames["2"] = "第二名";
-            	ballNames["3"] = "第三名";
-            	ballNames["4"] = "第四名";
-            	ballNames["5"] = "第五名";
-            	// ballNames["6"] = "第六名";
-            	// ballNames["7"] = "第七名";
-				// ballNames["8"] = "第八名";
-				// ballNames["9"] = "第九名";
-				// ballNames["10"] = "第十名";
+            	ballNames["1"] = "第一球";
+            	ballNames["2"] = "第二球";
+            	ballNames["3"] = "第三球";
+            	ballNames["4"] = "第四球";
+            	ballNames["5"] = "第五球";
+            	// ballNames["6"] = "第六球";
+            	// ballNames["7"] = "第七球";
+				// ballNames["8"] = "第八球";
+				// ballNames["9"] = "第九球";
+				// ballNames["10"] = "第十球";
             
             
                

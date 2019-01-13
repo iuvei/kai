@@ -37,7 +37,6 @@ include("../conn.php");
 <link type="text/css" href="../style/css/pk10.css" rel="stylesheet">
 <?php include("../public/sscHead.php"); ?>
 <?php include("../public/head3.php"); ?>
-
 <table class="lot-table">
 			
 				<tbody id="smyc">

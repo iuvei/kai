@@ -17,6 +17,7 @@
             <li><a game="bjft" href="../bjft/">北京番摊</a></li>
             <li><a game="sfpk10ft" href="../sfpk10ft/">三分赛车番摊</a></li>
             <li><a game="cqft" href="../cqft">重庆番摊</a></li>
+            <li><a game="sfcft" href="../sfcft">三分彩番摊</a></li>
             <li><a href="../jsk3/" game="jsk3">江苏快3</a></li>
             <li><a href="../gxk3/" game="gxk3">广西快3</a></li>
             <li><a href="../jlk3/" game="jlk3">吉林快3</a></li>
