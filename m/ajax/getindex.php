@@ -25,6 +25,7 @@ $ret['tcssc'] = gettopdata(45);
 $ret['sfpk10'] = gettopdata(47);
 $ret['sfpk10ft'] = gettopdata(47);
 $ret['sfssc'] = gettopdata(48);
+$ret['sfcft'] = gettopdata(48);
 echo json_encode($ret);
 
 function gettopdata($id){
