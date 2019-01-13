@@ -336,12 +336,12 @@ class LottoryDataMgr
     {
         $ret = false;
         $expire = 2;
-        if ($type == 'cqft') {
-            $type = 'cqssc';
-        }
-        if($type == 'jnd28'){
-            $type = 'pc28';
-        }
+        if ($type == 'cqft') {$type = 'cqssc';}
+        if($type == 'jnd28'){$type = 'pc28';}
+        if($type == "sfcft"){$type == "sfssc";}
+        if($type == "sfpk10ft"){$type == "sfpk10";}
+        if($type == "ftft"){$type == "xyft";}
+
         $lotType = $this->getLotTypeByType($type);
         if ($page == 'getMergeData.do') {
             $ret = $this->getPk10MergeData($type, $page, $lotType, $expire);
