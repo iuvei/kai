@@ -85,7 +85,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
 
 		}
         $this->assign('lottory', $ctrlName);
-        if ($ctrlName == 'tcpk10' || $ctrlName == 'tcssc' || $ctrlName == 'pk10' || $ctrlName == 'cqssc' || $ctrlName == 'gdkl10' || $ctrlName == 'jssc' || $ctrlName == 'jsk3' || $ctrlName == 'kl8' || $ctrlName == 'bjft' || $ctrlName == 'jsssc'  || $ctrlName == 'xyft'  || $ctrlName == 'fc3d' || $ctrlName == 'pl3' || $ctrlName == 'pl3' || $ctrlName == 'gd11x5' || $ctrlName == 'cqft' || $ctrlName == 'pc28' || $ctrlName == 'txffc' || $ctrlName == 'sfssc' || $ctrlName == 'sfpk10'||$ctrlName == 'pcdd'||$ctrlName == 'jlk3'|| $ctrlName == 'gxk3' || $ctrlName == 'jnd28' || $ctrlName == 'js28' ||$ctrlName == 'jisuk3'||$ctrlName == 'jsdd'||$ctrlName == 'js11x5') {
+        if ($ctrlName == 'tcpk10' || $ctrlName == 'tcssc' || $ctrlName == 'pk10' || $ctrlName == 'cqssc' || $ctrlName == 'gdkl10' || $ctrlName == 'jssc' || $ctrlName == 'jsk3' || $ctrlName == 'kl8' || $ctrlName == 'bjft' || $ctrlName == 'jsssc'  || $ctrlName == 'xyft'  || $ctrlName == 'fc3d' || $ctrlName == 'pl3' || $ctrlName == 'pl3' || $ctrlName == 'gd11x5' || $ctrlName == 'cqft' || $ctrlName == 'pc28' || $ctrlName == 'txffc' || $ctrlName == 'sfssc' || $ctrlName == 'sfpk10'||$ctrlName == 'pcdd'||$ctrlName == 'jlk3'|| $ctrlName == 'gxk3' || $ctrlName == 'jnd28' || $ctrlName == 'js28' ||$ctrlName == 'jisuk3'||$ctrlName == 'jsdd'||$ctrlName == 'js11x5' || $ctrlName == 'sfpk10ft' || $ctrlName == 'sfcft' || $ctrlName == 'ftft') {
             $lottoryName = '';
             $totalExpect = 0;
             if ($ctrlName == 'pk10') {
@@ -277,6 +277,30 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                                                                 $this->description = C("WEB_SITE_JS11X5_DESCR");
                                                                                                                 $lottoryName = "极速11选5";
                                                                                                                 $totalExpect = 1140;
+                                                                                                            }else {
+                                                                                                                if($ctrlName == 'sfpk10ft') {
+                                                                                                                    $this->title = $title_c.'TC三分赛车番摊开奖视频_TC三分赛车番摊开奖号码_TC三分赛车番摊开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                                                                    $this->keyword = C("WEB_SITE_tcsfpk10ft_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                                                    $this->description = C("WEB_SITE_tcsfpk10ft_DESCR");
+                                                                                                                    $lottoryName = "TC三分赛车番摊";//头彩
+                                                                                                                    $totalExpect = 441;
+                                                                                                                }else {
+                                                                                                                    if($ctrlName == 'sfcft') {
+                                                                                                                        $this->title = $title_c.'TC三分彩番摊开奖视频_TC三分彩番摊开奖号码_TC三分彩番摊开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                                                                        $this->keyword = C("WEB_SITE_tcsfcft_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                                                        $this->description = C("WEB_SITE_tcsfcft_DESCR");
+                                                                                                                        $lottoryName = "TC三分彩番摊";//头彩
+                                                                                                                        $totalExpect = 441;
+                                                                                                                }else{
+                                                                                                                        if ($ctrlName == 'ftft'){
+                                                                                                                            $this->title = $title_c.'飞艇番摊开奖视频_飞艇番摊开奖号码_飞艇番摊开奖记录 - ' . C('WEB_SITE_TITLE');
+                                                                                                                            $this->keyword = C("WEB_SITE_ftft_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                                                            $this->description = C("WEB_SITE_ftft_DESCR");
+                                                                                                                            $lottoryName = "飞艇番摊";//头彩
+                                                                                                                            $totalExpect = 441;
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                }
                                                                                                             }
                                                                                                         }
                                                                                                     }
