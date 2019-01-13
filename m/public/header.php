@@ -15,6 +15,7 @@
             <li><a href="../tcssc/" game="tcssc">TC分分彩</a></li>
             <li><a href="../sfssc/" game="jsssc">TC三分彩</a></li>
             <li><a game="bjft" href="../bjft/">北京番摊</a></li>
+            <li><a game="ftft" href="../ftft/">飞艇番摊</a></li>
             <li><a game="sfpk10ft" href="../sfpk10ft/">三分赛车番摊</a></li>
             <li><a game="cqft" href="../cqft">重庆番摊</a></li>
             <li><a game="sfcft" href="../sfcft">三分彩番摊</a></li>
