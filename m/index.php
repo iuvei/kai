@@ -147,6 +147,7 @@ $.cookie('home_cookiea', '1', { expires: 7 });
             <li><a href="tcssc/" game="tcssc">TC分分彩</a></li>
             <li><a href="sfssc/" game="jsssc">TC三分彩</a></li>
             <li><a game="bjft" href="bjft/">北京番摊</a></li>
+            <li><a game="sfpk10ft" href="sfpk10ft/">北京番摊</a></li>
             <li><a game="cqft" href="cqft">重庆番摊</a></li>
             <li><a href="jsk3/" game="jsk3">江苏快3</a></li>
             <li><a href="gxk3/" game="gxk3">广西快3</a></li>
@@ -154,10 +155,12 @@ $.cookie('home_cookiea', '1', { expires: 7 });
             <li><a href="jisuk3/" game="jisuk3">极速快3</a></li>
 
             <li><a href="gd11x5/" game="gd11x5">广东11选5</a></li>
+            <li><a href="js11x5/" game="js11x5">极速11选5</a></li>
         <!--    <li><a href="gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
             <!--<li><a href="pcdd/" game="pcdd">加拿大28</a></li>-->
             <li><a href="pcdd/" game="pcdd">PC蛋蛋</a></li>
             <li><a href="js28/" game="js28">极速28</a></li>
+            <li><a href="jsdd/" game="jsdd">极速蛋蛋</a></li>
             <li><a href="txffc/" game="txffc" class="cur">幸运分分彩</a></li>
 
 
@@ -482,6 +485,26 @@ $.cookie('home_cookiea', '1', { expires: 7 });
         </div>
         </a>
     </li>
+    <li class="kaij-mylist-li" id="jsdd">
+        <a href="jsdd/" class="yx_a">
+       <!-- <div class="kaij-mylist-l"><span class="ui-logo ui-logo-pcdd"></span></div>-->
+        <div class="kaij-mylist-r">
+            <div class="kaij-mylist-hd">
+                <div class="yx_name">极速蛋蛋
+                </div>
+                <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
+            </div>
+            <div class="kaij-mylist-bd">
+                <div class="itm-result">
+                    <div class="ball-wrap" id="number">
+                        <img src="style/images/loading2.gif" alt="载入中">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </a>
+    </li>
     <li class="kaij-mylist-li" id="jsk3">
         <a href="jsk3/" class="yx_a">
 
@@ -631,6 +654,35 @@ $.cookie('home_cookiea', '1', { expires: 7 });
 
         </a>
     </li>
+    <li class="kaij-mylist-li cq-box" id="js11x5">
+        <a href="js11x5/" class="yx_a">
+
+<!--            <div class="kaij-mylist-l"><span class="ui-logo ui-logo-gd11x5"></span></div>-->
+            <div class="kaij-mylist-r">
+                <div class="kaij-mylist-hd">
+                    <div  class="yx_name"> 极速11选5
+                    </div>
+                    <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                    <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
+                </div>
+                <div class="kaij-mylist-bd">
+                    <div class="itm-result">
+                        <div class="ball-wrap fl" id="number">
+                            <img src="style/images/loading2.gif" alt="载入中">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="bt-jg">  </div>
+<!--        <div class="bt-aa">-->
+<!--            <a href="gd11x5/">开奖历史</a>-->
+<!--            <a href="gd11x5/smtj.php">两面统计</a>-->
+<!--            <a href="gd11x5/cltj.php">长龙统计</a>-->
+<!--            <a href="gd11x5/shipin.php">开奖视频</a>-->
+<!--        </div>-->
+
+        </a>
+    </li>
 <!--    <li class="kaij-mylist-li cq-box" id="gdkl10">
         <a href="gdkl10/" class="yx_a">
 
@@ -723,6 +775,8 @@ var jssc_number = -1;
 var jssc_downTimer = null;
 var gd11x5_number = -1;
 var gd11x5_downTimer = null;
+var js11x5_number = -1;
+var js11x5_downTimer = null;
 var jsssc_number = -1;
 var jsssc_downTimer = null;
 var jsk3_number = -1;
@@ -741,6 +795,8 @@ var jisuk3_number = -1;
  var pcdd_downTimer = null;
  var js28_number = -1;
  var js28_downTimer = null;
+ var jsdd_number = -1;
+ var jsdd_downTimer = null;
  var txffc_number = -1;
  var txffc_downTimer = null;
  var tcssc_number = -1;
@@ -758,6 +814,7 @@ $(function() {
     CheckAward("gdkl10", "GetGdkl10AwardTimes", this.gdkl10_downTimer, gdkl10_number, "gdkl10");
     CheckAward("jssc", "GetPk10AwardTimes", this.jssc_downTimer, jssc_number, "jssc");
     CheckAward("gd11x5", "GetGd11x5AwardTimes", this.gd11x5_downTimer, gd11x5_number, "gd11x5");
+    CheckAward("js11x5", "GetGd11x5AwardTimes", this.js11x5_downTimer, js11x5_number, "js11x5");
     CheckAward("jsssc", "GetXjsscAwardTimes", this.jsssc_downTimer, jsssc_number, "jsssc");
     CheckAward("cqft", "GetTjsscAwardTimes", this.cqft_downTimer, pk10_downTimer, "cqft");
     CheckAward("jsk3", "GetJsk3AwardTimes", this.jsk3_downTimer, jsk3_number, "jsk3");
@@ -767,6 +824,7 @@ $(function() {
     CheckAward("bjft", "GetTjsscAwardTimes", this.bjft_downTimer, bjft_number, "bjft");
     CheckAward("pcdd", "GetTjsscAwardTimes", this.pcdd_downTimer, pcdd_number, "pcdd");
     CheckAward("js28", "GetTjsscAwardTimes", this.js28_downTimer, js28_number, "js28");
+    CheckAward("jsdd", "GetTjsscAwardTimes", this.jsdd_downTimer, jsdd_number, "jsdd");
     CheckAward("txffc", "GetTjsscAwardTimes", this.txffc_downTimer, txffc_number, "txffc");
     CheckAward("tcssc", "GetXjsscAwardTimes", this.tcssc_downTimer, tcssc_number, "tcssc");
     CheckAward("sfssc", "GetXjsscAwardTimes", this.sfssc_downTimer, sfssc_number, "sfssc");
@@ -789,6 +847,8 @@ function showTime(page, timeSpan, time, qihao) {
             CheckAward("jssc", "GetXyncAwardTimes", this.jssc_downTimer, jssc_number, "jssc", qihao)
         } else if (timeSpan == "gd11x5") {
             CheckAward("gd11x5", "GetGd11x5AwardTimes", this.gd11x5_downTimer, gd11x5_number, "gd11x5", qihao)
+        } else if (timeSpan == "js11x5") {
+            CheckAward("js11x5", "GetGd11x5AwardTimes", this.js11x5_downTimer, js11x5_number, "js11x5", qihao)
         } else if (timeSpan == "jsssc") {
             CheckAward("jsssc", "GetXjsscAwardTimes", this.jsssc_downTimer, jsssc_number, "jsssc", qihao)
         } else if (timeSpan == "cqft") {
@@ -807,6 +867,8 @@ function showTime(page, timeSpan, time, qihao) {
             CheckAward("pcdd", "GetPk10AwardTimes", this.pcdd_downTimer, pcdd_number, "pcdd", qihao)
         }else if (timeSpan == "js28") {
             CheckAward("js28", "GetPk10AwardTimes", this.js28_downTimer, js28_number, "js28", qihao)
+        }else if (timeSpan == "jsdd") {
+            CheckAward("jsdd", "GetPk10AwardTimes", this.jsdd_downTimer, jsdd_number, "jsdd", qihao)
         }else if (timeSpan == "txffc") {
             CheckAward("txffc", "GetPk10AwardTimes", this.txffc_downTimer, txffc_number, "txffc", qihao)
         }else if (timeSpan == "tcssc") {
@@ -954,6 +1016,20 @@ function IndexOpen() {
         long = ssclh(nums,4);
         $("#gd11x5 #number").html(str);
         $("#gd11x5 .bt-jg").html(long);
+
+        $("#js11x5 #qihao").text('第' + pad(data.js11x5.dat_expect, 3).substr(6) + '期');
+        var nums = data.js11x5.dat_codes.split(',');
+        var str = "";
+        for (var i = 0; i < nums.length; i++) {
+            str = str + "<i class='ball-red'>" + nums[i] + "</i>"
+        }
+        $("#js11x5 .bt-jg").html('');
+
+
+        var long;
+        long = ssclh(nums,4);
+        $("#js11x5 #number").html(str);
+        $("#js11x5 .bt-jg").html(long);
 
 
         $("#jsssc #qihao").text('第' + pad(data.jsssc.dat_expect, 3) + '期');
@@ -1380,6 +1456,77 @@ function IndexOpen() {
         }
 
         $("#js28 #number").html(str);
+
+
+        $("#jsdd #qihao").text('第' + data.jsdd.dat_expect.substr(6) + '期');
+        var nums = data.jsdd.dat_codes.split(',');
+        var totalNum_a =  nums[0];
+        var totalNum_b =  nums[1];
+        var totalNum_c =  nums[2];
+        var totalNum=Number(totalNum_a)+Number(totalNum_b)+Number(totalNum_c);
+        var sebo="";
+        var danshaung="";
+        if(totalNum == 1 || totalNum == 4 || totalNum == 7 || totalNum == 10 || totalNum == 16 || totalNum == 19 || totalNum == 22 || totalNum == 25){
+            sebo = '绿';
+        }else if(totalNum == 2 || totalNum == 5 || totalNum == 8 || totalNum == 11 || totalNum == 17 || totalNum == 20 || totalNum == 23 || totalNum == 26){
+            sebo = '蓝';
+        }else if(totalNum == 3 || totalNum == 6 || totalNum == 9 || totalNum == 12 || totalNum == 15 || totalNum == 18 || totalNum == 21 || totalNum == 24){
+            sebo = '红';
+        }else if(totalNum == 0 || totalNum == 13 || totalNum == 14 || totalNum == 27 ){
+            sebo = '和';
+        }
+        if(totalNum  == 13 || totalNum == 14 ){
+            danshaung = '和';
+        }else if(totalNum < 13 && totalNum > 5){
+            danshaung = '小';
+        }else if(totalNum < 22 && totalNum > 14){
+            danshaung = '大';
+        }else if(totalNum <= 5 && totalNum >= 0){
+            danshaung = '极小';
+        }else if(totalNum <= 27 && totalNum >= 22){
+            danshaung = '极大';
+        }
+        var ds ;
+        if(totalNum%2 == 0){
+            ds = '双';
+        }else {
+            ds = '单';
+        }
+        var str = "";
+
+        str = str + "<i class='ball-red' style='background-color: #a058c2;color: #fff;'>" +totalNum_a+ "</i>" +
+            "<i class='ball-red' style='background-color: #fffaf4;color: #5a5a5a' >+</i>" +
+            "<i class='ball-red' style='background-color: #a058c2;color: #fff;'>" +totalNum_b+ "</i>" +
+            "<i class='ball-red' style='background-color: #fffaf4;color: #5a5a5a' >+</i>" +
+            "<i class='ball-red' style='background-color: #a058c2 ;color: #fff;'>" +totalNum_c+ "</i>" +
+            "<i class='ball-red' style='background-color: #fffaf4;color: #5a5a5a' >=</i>" +
+            "<i class='ball-red' style='background-color: #ff7b00;color: #fff;'>" +totalNum+ "</i>";
+                if(sebo == '红'){
+                    str = str +   "<span style='background-color: #fffaf4;'>" +sebo+ "</span>" ;
+                }else if(sebo == '蓝'){
+                    str = str +   "<span style='background-color: #fffaf4;'>" +sebo+ "</span>" ;
+                }else if(sebo == '绿'){
+                    str = str +   "<span style='background-color: #fffaf4;'>" +sebo+ "</span>" ;
+                }else {
+                    str = str +   "<span class='ball-red' style='background-color: #fffaf4;' >" +sebo+ "</span>";
+                }
+        if( danshaung == '极大' ||  danshaung == '极小'){
+            str += "<span style='background-color: #fffaf4;'>" +danshaung+ "</span>";
+        }else {
+            if(danshaung == '大'){
+                str += "<span style='background-color: #fffaf4;'>" +danshaung+ "</span>";
+            }else {
+                str += "<span style='background-color: #fffaf4;'>" +danshaung+ "</span>";
+            }
+
+        }
+        if(ds == '单'){
+            str = str + "<span style='background-color: #fffaf4;'>" +ds+ "</span>";
+        }else {
+            str = str + "<span style='background-color: #fffaf4;'>" +ds+ "</span>";
+        }
+
+        $("#jsdd #number").html(str);
 
 
 

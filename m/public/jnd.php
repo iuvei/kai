@@ -99,7 +99,7 @@
                         }
                         $('.chooseIssue').append('<option value="' + data.termNum + '">' + data.termNum + '</option>');
                         html += '<div class="openCode">';
-                        if(gamekey=='js28'){
+                        if(gamekey=='js28'||gamekey=='jsdd'){
                             html += '<div class="qihao">' + '<div>' + '<span class="Issue">' + data.termNum.substr(6) + '</span>' + '期' + '</div>' + '<div>' + data.lotteryTime.substring(10, 16) + '</div>' + '</div>';
                         }else {
                             html += '<div class="qihao">' + '<div>' + '<span class="Issue">' + data.termNum + '</span>' + '期' + '</div>' + '<div>' + data.lotteryTime.substring(10, 16) + '</div>' + '</div>';
