@@ -175,17 +175,13 @@ class LottoryDataMgr
             } else {
 
                 if ($page == 'getPk10AwardData.do' || $page == 'getPk10AwardTimes.do' || $page == 'getCqsscAwardData.do' || $page == 'getCqsscAwardTimes.do' || $page == 'getGdkl10AwardData.do' || $page == 'getGdkl10AwardTimes.do' || $page == 'getJsk3AwardData.do' || $page == 'getJsk3AwardTimes.do' || $page == 'gettjsscAwardData.do' || $page == 'getxjsscAwardData.do' || $page == 'getfc3dAwardData.do' || $page == 'getpl3AwardData.do' || $page == 'getgd11x5AwardData.do' || $page == 'gettjsscAwardTimes.do' || $page == 'getpl3AwardTimes.do' || $page == 'getfc3dcAwardTimes.do' || $page == 'getxjsscAwardTimes.do' || $page == 'getShsslAwardData.do' || $page == 'getShsslAwardTimes.do' || $page == 'getXyncAwardData.do' || $page == 'getXyncAwardTimes.do' || $page == 'getkl8AwardData.do' || $page == 'getkl8AwardTimes.do') {
-                    if ($type == 'cqft') {
-                        $type = 'cqssc';
-                        $lotType = 1;
-                    } elseif ($type == 'bjft') {
-                        $type = 'pk10';
-                        $lotType = 20;
-                    }
-                    if($type == 'jnd28'){
-                        $type = 'pcdd';
-                        $lotType = 43;
-                    }
+                    if ($type == 'cqft') {$type = 'cqssc';$lotType = 1;
+                    } elseif ($type == 'bjft') {$type = 'pk10';$lotType = 20;
+                    }elseif($type == 'jnd28'){$type = 'pcdd';$lotType = 43;
+                    }elseif($type == 'sfpk10ft'){$type = 'sfpk10';$lotType = 47;
+                    }elseif($type == 'sfcft'){$type = 'sfssc';$lotType = 48;
+                    }elseif($type == 'ftft'){$type = 'xyft';$lotType = 34;}
+
                     $ret = $this->getAwardTime($type, $page, $lotType, $expire);
                 } else {
                     //print_r("123");die;
