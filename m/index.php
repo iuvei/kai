@@ -1351,7 +1351,7 @@ function IndexOpen() {
         var tanshu='后三：'+tanshu;
         $('.h3box').html(tanshu)
 
-        $("#sfpk10ft #qihao").text('第' + data.sfpk10.dat_expect + '期');
+        $("#sfpk10ft #qihao").text('第' + data.sfpk10.dat_expect.substr(6) + '期');
         var nums = data.sfpk10.dat_codes.split(',');
         var str = "";
         var tan2 = Number(nums[4]) + Number(nums[5]) + Number(nums[6]);
@@ -1476,21 +1476,21 @@ function IndexOpen() {
             tanshu += '<samp class="ball-red-span">'+'</samp>'
         }
         var tanshu='前三：'+tanshu;
-        $('.q3box').html(tanshu)
+        $('#sfpk10ft .q3box').html(tanshu)
 
         var tanshu='';
         for (var i=0 ;i<tan_3 ;i++){
             tanshu += '<samp class="ball-red-span">'+'</samp>'
         }
         var tanshu='中三：'+tanshu;
-        $('.z3box').html(tanshu)
+        $('#sfpk10ft .z3box').html(tanshu)
 
         var tanshu='';
         for (var i=0 ;i<tan_4 ;i++){
             tanshu += '<samp class="ball-red-span">'+'</samp>'
         }
         var tanshu='后三：'+tanshu;
-        $('.h3box').html(tanshu)
+        $('#sfpk10ft .h3box').html(tanshu)
 
 
 
