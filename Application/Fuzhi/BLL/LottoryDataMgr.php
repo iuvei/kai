@@ -671,7 +671,6 @@ class LottoryDataMgr
 
         $ret = $this->getIssueInfo($type);
         $xqqihao = str_replace("-", "0", $ret['issue']);
-
         if ($lotType == 44 || $lotType == 1 || $lotType == 34 || $lotType == 47 || $lotType == 48 || $lotType == 46 || $lotType == 45 || $lotType == 6 || $lotType== 54 ||$lotType == 55 || $lotType == 56 || $lotType == 58 || $lotType == 39) {
             $sqqihao = str_replace("-", "", $ret['preIssue']['issue']);
             $xqqihao = str_replace("-", "", $ret['issue']);
@@ -679,8 +678,6 @@ class LottoryDataMgr
             $xqqihao = str_replace("-", "0", $ret['issue']);
             $sqqihao = str_replace("-", "0", $ret['preIssue']['issue']);
         }
-
-
 
         $kjHao1 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $sqqihao");
         //  $kjHao2 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $xqqihao");
@@ -5206,7 +5203,7 @@ class LottoryDataMgr
                         return 55;
                     case 'jsdd':
                         return 56;
-                    case 'js11x4':
+                    case 'js11x5':
                         return 58;
                 }
             }
