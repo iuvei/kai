@@ -105,7 +105,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	background: #f13131 url(../images/menu-1.png) no-repeat center center;
 	background-size: 70%;
 }
-.bjftjg {
+.bjftjg,.sfpk10ftjg {
 	/* font-size: 14px; */
 	margin-bottom: 1vw;
 	font-size: 3.3vw;
@@ -282,7 +282,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 	display: inline-block;
 	min-width: 6.5vw;
 	}
-#pk10 .ball-wrap,#sfpk10 .ball-wrap,#tcpk10 .ball-wrap,#xyft .ball-wrap,#bjft .ball-wrap,#cqft .ball-wrap,#pc28 .ball-wrap{
+#pk10 .ball-wrap,#sfpk10 .ball-wrap,#tcpk10 .ball-wrap,#xyft .ball-wrap,#bjft .ball-wrap,#sfpk10ft .ball-wrap,#cqft .ball-wrap,#pc28 .ball-wrap{
 	width: 100%;
 	height: 7vw;
 	display: flex;
@@ -293,7 +293,7 @@ body{font-size:15px;line-height:1.5;-webkit-text-size-adjust:none;font-family:"M
 
 
 }
-#tcpk10 #number i,#xyft #number i,#pk10 #number i,#jssc #number i,#bjft #number i,#sfpk10 #number i{
+#tcpk10 #number i,#xyft #number i,#pk10 #number i,#jssc #number i,#bjft #number i,#sfpk10ft #number i,#sfpk10 #number i{
 	display: block;
 	float: left;
 	margin-right:2.08vw;
