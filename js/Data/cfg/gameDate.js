@@ -1090,6 +1090,38 @@ var webListOP = {
         },
 
     ],
+	"jisuk3": [
+        {
+            "text":"极速快三",
+            "href":"jisuk3/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"jisuk3/kaijiang.html"
+        },
+        {
+            "text":"号码遗漏",
+            "href":"jisuk3/numberomit.html"
+        },
+        {
+            "text":"总和路珠",
+            "href":"jisuk3/luzhumerge.html"
+        },
+        {
+            "text":"免费参考",
+            "href":"jisuk3/betgame.html",
+            "spanClass":"wen_newIcon"
+        },
+        {
+            "text":"历史号码统计",
+            "href":"jisuk3/numberstat.html"
+        },
+        {
+            "text":"横版走势图",
+            "href":"jisuk3/zoushitu.html"
+        },
+
+    ],
     "gxk3": [
         {
             "text":"广西骰宝(快3)",

@@ -8,7 +8,7 @@
 <script type="text/javascript">
 
     var gameNameTemp=beforPageJs.gameName|| beforPageJs_gameName;
-
+    console.log(gameNameTemp)
     if(pathname.indexOf("/jiqiao/")>=0){
         if (pathname.indexOf("/pk10/") >= 0){
             gameNameTemp="pk10";
@@ -50,11 +50,12 @@
             gameNameTemp="pcdd";
         }else if (pathname.indexOf("/jlk3/") >= 0){
             gameNameTemp="jlk3";
+        }else if (pathname.indexOf("/jisuk3/") >= 0){
+            gameNameTemp="jisuk3";
         }else if (pathname.indexOf("/gxk3/") >= 0){
             gameNameTemp="gxk3";
         }
     }
-
     var list = webListOP[gameNameTemp];
     if (list.length > 0) {
         var html = '';
