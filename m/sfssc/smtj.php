@@ -245,7 +245,7 @@ include("../conn.php");
 			    }
 			    function shuangmiantongji() {
 			    	layer.open({type: 2,time: 1});
-					$.get("../../jsssc/getHistoryData.do?adate",
+					$.get("../../sfssc/getHistoryData.do?adate",
  function(result){
 var dan='';
 			            if(result&&result.rows){

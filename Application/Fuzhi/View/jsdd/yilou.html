@@ -1,0 +1,340 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+				<div class="clear"></div>
+					<div class="index-head">
+	                    <div style="margin-bottom: 20px;">
+	                        <a name="info">
+	                        </a>
+	                        <ul class="lot-number-omit" style="margin-bottom: 20px;">
+	                            <li class="ball">
+	                                <ul id="rankUl">
+	                                    <li>
+	                                        <a href="javascript:gotoPage('',1)" id="rankLi1" class='cur'>
+	                                      	      第一球
+	                                        </a>
+	                                        |
+	                                    </li>
+	                                    <li>
+	                                        <a href="javascript:gotoPage('',2)" id="rankLi2" >
+	                                      	      第二球
+	                                        </a>
+	                                        |
+	                                    </li>
+	                                    <li>
+	                                        <a href="javascript:gotoPage('',3)" id="rankLi3" >
+	                                  	                  第三球
+	                                        </a>
+	                                        |
+	                                    </li>
+	                                    <li>
+	                                        <a href="javascript:gotoPage('',4)" id="rankLi4" >
+	                                   	                  第四球   
+	                                        </a>
+	                                        |
+	                                    </li>
+	                                    <li>
+	                                        <a href="javascript:gotoPage('',5)" id="rankLi5" >
+	                                        		第五球   
+	                                        </a>
+	                                    </li>
+	                                    <li>
+	                                        <span class="InstructionsForUse">
+	                                            <span class="InstructionsForUse_btn ">
+	                                                	使用说明
+	                                            </span>
+	                                            <span class="position">
+	                                                <span class="content">
+	                                                	1.表格统计了不同条件下号码的出现次数及遗漏（未出现）次数；<br />
+						                                2.输代表截止当前未出现的总次数，赢代表截止当前连续出现的总次数；<br />
+						                                3.点击向上或向下的三角标识，可按对应标签的出现次数排序。
+						                            </span>
+	                                            </span>
+	                                        </span>
+	                                    </li>
+	                                </ul>
+	                            </li>
+	                            <li class="type">
+	                                <ul id="dataTypeUl">
+	                                    <li>
+	                                        <a href="javascript:gotoPage(8)" id="dataTypeLi8">
+	                                            	总和大小
+	                                        </a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="javascript:gotoPage(7)" id="dataTypeLi7">
+	                                            	总和单双
+	                                        </a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="javascript:gotoPage(2)" id="dataTypeLi2">
+	                                          		 龙虎
+	                                        </a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="javascript:gotoPage(6)" id="dataTypeLi6">
+	                                       	    	大小
+	                                        </a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="javascript:gotoPage(5)" id="dataTypeLi5">
+	                                            	单双
+	                                        </a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="javascript:gotoPage(1)" class='cur' id="dataTypeLi1">
+	                                            	单号
+	                                        </a>
+	                                    </li>
+	                                </ul>
+	                            </li>
+	                        </ul>
+	                        <div id='lot_content'>
+	<!--                             <input type="hidden" id="pageName" value="yilou/1-1-1" controller="/missing/"/> -->
+	                            	<input type="hidden" id="callFun" value="getMissingList"/>
+	                                <div id="missing_list-html"></div>
+	     							<script id="missing_list-tmpl" type="text/template">
+    								<table class="lot-table" id="Table1">
+                                    <caption>
+                                    </caption>
+                                    <tr class="head">
+                                        <td width="170px">
+                                            	号码
+                                        </td>
+                                        <td>
+                                            <div class="web_Sortk">
+                                                <ul>
+                                                    <li class="ps1">
+                                                  	      遗漏输赢
+                                                    </li>
+                                                    <li class="btn" id="classUpDown1">
+                                                        <span class="btn1" order-cloumn="1" order-type="1">
+                                                        </span>
+                                                        <span class="btn2" order-cloumn="1" order-type="2">
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="web_Sortk">
+                                                <ul>
+                                                    <li class="ps1">
+                                                     	   今日出现
+                                                    </li>
+                                                    <li class="btn" id="classUpDown2">
+                                                        <span class="btn1" order-cloumn="2" order-type="1">
+                                                        </span>
+                                                        <span class="btn2" order-cloumn="2" order-type="2">
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="web_Sortk">
+                                                <ul>
+                                                    <li class="ps1">
+                                                       	 当前遗漏
+                                                    </li>
+                                                    <li class="btn " id="classUpDown3">
+                                                        <span class="btn1" order-cloumn="3" order-type="1">
+                                                        </span>
+                                                        <span class="btn2" order-cloumn="3" order-type="2">
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="web_Sortk">
+                                                <ul>
+                                                    <li class="ps1">
+                                                       	 今日遗漏
+                                                    </li>
+                                                    <li class="btn  " id="classUpDown4">
+                                                        <span class="btn1" order-cloumn="4" order-type="1">
+                                                        </span>
+                                                        <span class="btn2" order-cloumn="4" order-type="2">
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="web_Sortk">
+                                                <ul>
+                                                    <li class="ps1">
+                                                        	一周遗漏
+                                                    </li>
+                                                    <li class="btn  " id="classUpDown5">
+                                                         <span class="btn1" order-cloumn="5" order-type="1">
+                                                        </span>
+                                                        <span class="btn2" order-cloumn="5" order-type="2">
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="web_Sortk">
+                                                <ul>
+                                                    <li class="ps1">
+                                                     	   一月遗漏
+                                                    </li>
+                                                    <li class="btn  " id="classUpDown6">
+                                                         <span class="btn1" order-cloumn="6" order-type="1">
+                                                        </span>
+                                                        <span class="btn2" order-cloumn="6" order-type="2">
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="web_Sortk">
+                                                <ul>
+                                                    <li class="ps1">
+                                                    	    历史遗漏
+                                                    </li>
+                                                    <li class="btn  " id="classUpDown7">
+                                                         <span class="btn1" order-cloumn="7" order-type="1">
+                                                        </span>
+                                                        <span class="btn2" order-cloumn="7" order-type="2">
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                        {{ var rowsLen=it.length; }}
+                                        {{ for (var i = 1; i <=rowsLen; i++) { }}
+                                            {{ var joClass=i%2==0?"even":"odd"; }}
+                                            {{ var row=it[i-1]; }}
+                                            <tr class="{{=joClass}}">
+                                                <td>
+                                                    {{=eval('dataTypeNumsDesc['+dataType+'].n'+row.num)}}
+                                                </td>
+                                                <td>
+                                                    <span class="{{=row.nowMissing<=0?"lose":"win"}}">
+														{{var nowMissing=row.nowMissing==null?0:row.nowMissing;}}
+														{{=nowMissing<=0?"输":"赢"}}{{=Math.abs(nowMissing)}}
+													</span>
+                                                </td>
+                                                <td>
+                                                    {{=row.dayTotalNum==null?0:row.dayTotalNum}}
+                                                </td>
+                                                <td>
+                                                    {{=nowMissing>0?0:Math.abs(nowMissing)}}
+                                                </td>
+                                                <td>
+                                                    {{=row.dayMissing==null?0:row.dayMissing}}
+                                                </td>
+                                                <td>
+                                                    {{=row.weekTotalNum==null?0:row.weekTotalNum}}
+                                                </td>
+                                                <td>
+                                                    {{=row.monthTotalNum==null?0:row.monthTotalNum}}
+                                                </td>
+                                                <td>
+                                                    {{=row.allTotalNum==null?0:row.allTotalNum}}
+                                                </td>
+                                            </tr>
+                                        {{ } }}
+                               		 </table>
+								</script>
+	                            <!-- 
+	                            <div class="paginator" style="margin-bottom: 10px; margin-top: 20px;">
+	                                <a class="nolink">
+	                                    1
+	                                </a>
+	                            </div>
+	                             -->
+	                        </div>
+	                        <script type="text/javascript">
+		                        var Request =  GetRequest();
+		                        var dataType = Request['dataType'];
+		                        var gameId = Request['gameId'];
+		                        var rank = Request['rank'];
+		                        var orderCloumn = Request['orderCloumn'];
+		                        var orderType = Request['orderType'];
+		                        if(!dataType)
+		                            dataType=1;
+		                        if(!gameId)
+		                            gameId=1;
+		                        if(!rank&&dataType==1)
+		                            rank=1;
+		                        if(!orderCloumn)
+		                        	orderCloumn=1;
+		                        if(!orderType) 
+		                        	orderType=2;
+		                        var dataTypeNumsDesc={
+		                            "1":{"n0":"0", "n1":"1","n2":"2","n3":"3","n4":"4","n5":"5","n6":"6","n7":"7","n8":"8","n9":"9","n10":"10"},
+		                            "2":{"n1":"龙","n2":"虎","n3":"平"},
+		                            "5":{"n1":"单","n2":"双"},
+		                            "6":{"n1":"小","n2":"大"},
+		                            "7":{"n1":"总和单","n2":"总和双"},
+		                            "8":{"n1":"总和小","n2":"总和大"}
+		                        };
+	                        	function getMissingList(){
+	                        		var rankVal=rank;
+	                        		if(dataType==2||dataType==7||dataType==8){
+	                        			rankVal="";
+	                        		}
+	                       			$.post("missing/getMissingList.do",
+	                       				{dataType:dataType,gameId:gameId,rank:rankVal,orderCloumn:orderCloumn,orderType:orderType }, 
+	                       				function(r) {
+	                        				if (r) {
+	                        					doTCompile("missing_list", r.t);
+	                        					//处理排序样式
+	                        					$("#classUpDown"+orderCloumn).addClass(orderType==1?"btnUp":"btnDown");
+	                        					//处理 类型样式
+	                        					$("#dataTypeUl li a").removeClass("cur")
+	                        					$("#dataTypeLi"+dataType).addClass("cur")
+	                        					//处理排名样式
+	                        					$("#rankUl li a").removeClass("cur")
+	                        					$("#rankLi"+rank).addClass("cur")
+	                        				}
+	                       			}, "json");
+	                        	} 
+	                        	getMissingList();
+	                        	function gotoPage(dataTypeNum,rankNum){
+	                        		if(dataTypeNum)
+	                        			dataType=dataTypeNum;
+	                        		if(rankNum)
+	                        			rank=rankNum;
+	                           	 	window.location.href="cqssc/yilou.html#dataType="+dataType+"&gameId="+gameId+"&rank="+rank+"&orderCloumn="+orderCloumn+"&orderType="+orderType;
+	                           		getMissingList();
+	                           	}
+	                            $(".web_Sortk .btn span").live("click",
+	                            	function() {
+	                            		$(".web_Sortk li").removeClass("btnDown");
+	                            		$(".web_Sortk li").removeClass("btnUp");
+	                            		$(this).attr("class")=="btn1"?$(this).parents("li").addClass("btnUp"):$(this).parents("li").addClass("btnDown");
+	                            		orderCloumn=$(this).attr("order-cloumn");
+	                            		orderType=$(this).attr("order-type");
+	                            		gotoPage();
+	                            	}
+	                            );
+	                        </script>
+	                    </div>
+                	</div>
+				<div class="clear"></div>
+	    </div>
+</div>
+	        </block>

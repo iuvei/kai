@@ -3,6 +3,7 @@ include("../conn.php");
 $ret = array();
 $ret['pk10'] = gettopdata(20);
 $ret['xyft'] = gettopdata(34);
+$ret['ftft'] = gettopdata(34);
 $ret['cqssc'] = gettopdata(1);
 $ret['gdkl10'] = gettopdata(21);
 $ret['jssc'] = gettopdata(39);

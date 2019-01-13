@@ -19,6 +19,8 @@ var beforPageJs = {
 				|| pathname.indexOf("/jssc/") >= 0
 				|| pathname.indexOf("/cqft") >= 0
 				|| pathname.indexOf("/pc28") >= 0
+				|| pathname.indexOf("/js28") >= 0
+				|| pathname.indexOf("/jsdd") >= 0
 				|| pathname.indexOf("/txffc") >= 0
 				|| pathname.indexOf("/tcssc") >= 0
 				|| pathname.indexOf("/tcpk10") >= 0
@@ -26,6 +28,7 @@ var beforPageJs = {
 				|| pathname.indexOf("/sfpk10") >= 0
 				|| pathname.indexOf("/pcdd") >= 0
 				|| pathname.indexOf("/jlk3") >= 0
+				|| pathname.indexOf("/jisuk3") >= 0
 				|| pathname.indexOf("/gxk3") >= 0) {
             var i = 0;
             if(pathname.split("/")[1] == 'fuzhi')
@@ -41,3 +44,4 @@ var beforPageJs = {
 };
 // 不等页面加载完，先处理
 beforPageJs.getGameName();
+console.log(beforPageJs.gameName)

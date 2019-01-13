@@ -188,7 +188,7 @@ include("../conn.php");
     function chang() {
         var id = "<?= $name?>";
         layer.open({type: 2,time: 1});
-        $.get("/Fuzhi/Api/cllz", {id:id}, function (result) {
+        $.get("/Fuzhi/Api/cllz", {id:48}, function (result) {
             var data = eval(result);
             console.log(data.length);
             dataLen = data.length;

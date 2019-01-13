@@ -1090,6 +1090,38 @@ var webListOP = {
         },
 
     ],
+	"jisuk3": [
+        {
+            "text":"极速快三",
+            "href":"jisuk3/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"jisuk3/kaijiang.html"
+        },
+        {
+            "text":"号码遗漏",
+            "href":"jisuk3/numberomit.html"
+        },
+        {
+            "text":"总和路珠",
+            "href":"jisuk3/luzhumerge.html"
+        },
+        {
+            "text":"免费参考",
+            "href":"jisuk3/betgame.html",
+            "spanClass":"wen_newIcon"
+        },
+        {
+            "text":"历史号码统计",
+            "href":"jisuk3/numberstat.html"
+        },
+        {
+            "text":"横版走势图",
+            "href":"jisuk3/zoushitu.html"
+        },
+
+    ],
     "gxk3": [
         {
             "text":"广西骰宝(快3)",
@@ -1163,6 +1195,92 @@ var webListOP = {
         {
             "text":"横版走势图",
             "href":"pcdd/zoushitu.html"
+        }
+    ],
+	"js28": [
+
+        {
+            "text":"极速28",
+            "href":"js28/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"js28/kaijiang.html"
+        },
+        /*{
+            "text":"号码路珠",
+            "href":"js28/merge.html"
+        },*/
+/*        {
+            "text":"单双大小历史",
+            "href":"js28/ballstat.html"
+        },*/
+        /*{
+            "text":"加拿大28开奖直播",
+            "href":"pcdd/shipin/",
+            "title":"在线观看番摊开奖直播",
+            "aClass":"redColor"
+        },*/
+        {
+            "text":"极速28技巧",
+            "href":"jiqiao/js28/"
+        },
+        {
+            "text":"免费参考",
+            "href":"js28/betgame.html",
+            "spanClass":"wen_newIcon"
+        },
+        {
+            "text":"遗漏大数据",
+            "href":"js28/omitdata.html",
+
+        },
+        {
+            "text":"横版走势图",
+            "href":"js28/zoushitu.html"
+        }
+    ],
+	"jsdd": [
+
+        {
+            "text":"极速蛋蛋",
+            "href":"jsdd/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"jsdd/kaijiang.html"
+        },
+        /*{
+            "text":"号码路珠",
+            "href":"js28/merge.html"
+        },*/
+/*        {
+            "text":"单双大小历史",
+            "href":"js28/ballstat.html"
+        },*/
+        /*{
+            "text":"加拿大28开奖直播",
+            "href":"pcdd/shipin/",
+            "title":"在线观看番摊开奖直播",
+            "aClass":"redColor"
+        },*/
+        {
+            "text":"极速蛋蛋技巧",
+            "href":"jiqiao/jsdd/"
+        },
+        {
+            "text":"免费参考",
+            "href":"jsdd/betgame.html",
+            "spanClass":"wen_newIcon"
+        },
+        {
+            "text":"遗漏大数据",
+            "href":"jsdd/omitdata.html",
+
+        },
+        {
+            "text":"横版走势图",
+            "href":"jsdd/zoushitu.html"
         }
     ],
 

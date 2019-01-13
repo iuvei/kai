@@ -480,6 +480,46 @@ var webListOP = {
 					"aClass":"redColor"
 				}*/
 			],
+			"jisuk3": [
+				{
+					"text":"极速快3",
+					"href":"jisuk3/index.html"
+				},
+				{
+					"text":"历史开奖号码",
+					"href":"jisuk3/kaijiang.html"
+				},
+				{
+					"text":"号码遗漏",
+					"href":"jisuk3/numberomit.html"
+				},
+				{
+					"text":"总和路珠",
+					"href":"jisuk3/luzhumerge.html"
+				},
+				{
+					"text":"号码路珠",
+					"href":"jisuk3/luzhunumber.html"
+				},
+				{
+					"text":"历史号码统计",
+					"href":"jisuk3/numberstat.html"
+				},
+				{
+					"text":"免费参考",
+					"href":"jisuk3/betgame.html",
+					"spanClass":"wen_newIcon"
+				},
+				{
+					"text":"横版走势图",
+					"href":"jisuk3/zoushitu.html"
+				},
+				/*{
+					"text":"开奖视频",
+					"href":"jsk3/shipin",
+					"aClass":"redColor"
+				}*/
+			],
 		"tjssc": [
 					{
 						"text":"天津时时彩",
