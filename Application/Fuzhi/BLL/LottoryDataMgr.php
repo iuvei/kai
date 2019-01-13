@@ -181,7 +181,7 @@ class LottoryDataMgr
                     }elseif($type == 'sfpk10ft'){$type = 'sfpk10';$lotType = 47;
                     }elseif($type == 'sfcft'){$type = 'sfssc';$lotType = 48;
                     }elseif($type == 'ftft'){$type = 'xyft';$lotType = 34;}
-                    
+
                     $ret = $this->getAwardTime($type, $page, $lotType, $expire);
                 } else {
                     //print_r("123");die;
