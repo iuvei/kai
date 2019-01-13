@@ -246,7 +246,7 @@ include("../conn.php");
 			    }
 			    function shuangmiantongji() {
 			    	layer.open({type: 2,time: 1});
-					$.get("../../gd11x5/getHistoryData.do?count=200",
+					$.get("../../js11x5/getHistoryData.do?count=200",
  function(result){
 var dan='';
 			            if(result&&result.rows){

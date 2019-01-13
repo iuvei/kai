@@ -56,12 +56,16 @@
                 if(result&&result.rows){
                     var j = 0;
                     var html = '';
-                    if(gamekey=='cqssc'||gamekey=='gd11x5'){
+                    if(gamekey=='cqssc'||gamekey=='gd11x5'||gamekey=='js11x5'){
                         for(var i in result.rows) {
                             var data = result.rows[i];
                             html += '<div class="openCode">';
-                            html += '<div class="qihao">' + '<div>' + '<span class="Issue">' + data.termNum.substr(4) + '</span>' + '期' + '</div>' + '<div>' + data.lotteryTime.substring(10, 16) + '</div>' + '</div>';
-                            /*数字*/
+                            if(gamekey=='js11x5'){
+                                html += '<div class="qihao">' + '<div>' + '<span class="Issue">' + data.termNum.substr(6) + '</span>' + '期' + '</div>' + '<div>' + data.lotteryTime.substring(10, 16) + '</div>' + '</div>';
+                            }else {
+                                html += '<div class="qihao">' + '<div>' + '<span class="Issue">' + data.termNum.substr(4) + '</span>' + '期' + '</div>' + '<div>' + data.lotteryTime.substring(10, 16) + '</div>' + '</div>';
+                            }
+                    /*数字*/
                             html += '<div>' + '<a class="sscBall">' + data.n1 + '</a>' +
                                 '<a class="ssc' + DXClass(data.n1) + '"  style="display: none">' + DX(data.n1) + '</a>' +
                                 '<a class="ssc' + DSClass(data.n1) + '"  style="display: none">' + ds(data.n1) + '</a>'

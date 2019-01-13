@@ -33,6 +33,7 @@ $(function () {
         $('#chooseType2 a').removeClass('chooseTypeColor');
         $(this).addClass('chooseTypeColor');
         if( $(this).text()=='筛选'){
+            $('.ssche').hide();
             $('.sscDa').hide();
             $('.sscXiao').hide();
             $('.sscDan').hide();
@@ -40,18 +41,23 @@ $(function () {
             $('.choose').show();
             $('.sscBall').show();
         }else if($(this).text()=='大小'){
+            $('.ssche2').hide();
             $('.sscBall').hide();
             $('.sscDan').hide();
             $('.sscShuang').hide();
             $('.sscDa').show();
             $('.sscXiao').show();
+            $('.ssche').show();
         }else if($(this).text()=='单双'){
             $('.sscBall').hide();
             $('.sscDa').hide();
             $('.sscXiao').hide();
             $('.sscDan').show();
             $('.sscShuang').show();
+            $('.ssche').hide();
+            $('.ssche2').show();
         }else if($(this).text()=='号码'){
+            $('.ssche').hide();
             $('.sscDa').hide();
             $('.sscXiao').hide();
             $('.sscDan').hide();

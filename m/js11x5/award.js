@@ -40,8 +40,8 @@ $(function () {
     var awardTick = function () {
         $.post('../../js11x5/getPk10AwardTimes.do', { t: Math.random() }, function (data) {
             if(data.current.awardNumbers!='') {
-                $('.newIssue span').html(data.current.periodNumber1.substr(4));
-                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.newIssue span').html(data.current.periodNumber1.substr(6));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(6));
                 $('.periodNumber').html(data.current.periodNumber);
                 $('.surplus_num').html(data.current.surplus_num);
                 var nums = data.current.awardNumbers.split(',');
@@ -120,8 +120,8 @@ $(function () {
     function loadAwardTimes() {
         $.post('../../js11x5/getPk10AwardTimes.do', {t: Math.random() }, function (data) {
             if(data.current.awardNumbers!='') {
-                $('.newIssue span').html(data.current.periodNumber1.substr(4));
-                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.newIssue span').html(data.current.periodNumber1.substr(6));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(6));
                 $('.periodNumber').html(data.current.periodNumber);
                 $('.surplus_num').html(data.current.surplus_num);
                 var nums = data.current.awardNumbers.split(',');
@@ -202,8 +202,8 @@ $(function () {
                     polling();
                 },3000)
             }else {
-                $('.newIssue span').html(data.current.periodNumber1.substr(4));
-                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
+                $('.newIssue span').html(data.current.periodNumber1.substr(6));
+                $('.nextIssue span').html(data.next.periodNumberStr.substr(6));
                 $('.periodNumber').html(data.current.periodNumber);
                 $('.surplus_num').html(data.current.surplus_num);
                 var nums = data.current.awardNumbers.split(',');
@@ -255,7 +255,7 @@ function getHistoryData(count,date) {
         		var data = result.rows[i];
                 $('.chooseIssue').append('<option value="'+data.termNum.substr(4)+'">'+data.termNum.substr(4)+'</option>');
                 html += '<div class="openCode">';
-                html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(4)+'</span>' +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
+                html += '<div class="qihao">'+'<div>'+'<span class="Issue">'+data.termNum.substr(6)+'</span>' +'期'+'</div>'+'<div>'+ data.lotteryTime.substring(10, 16)+'</div>'+'</div>';
                 /*数字*/
                 html += '<div>'+'<a class="sscBall">' + data.n1 + '</a>'+
                     '<a class="ssc'+DXClass(data.n1)+'"  style="display: none">' + DX(data.n1)+ '</a>'+
@@ -323,27 +323,35 @@ function getPkData(date) {
     }, "json");
 
 }
+
 function DXClass(num) {
-    if(num<=4){
+    if(num==11){
+        return 'he'
+    }else if(num<=5){
         return 'Xiao';
     }else {
         return 'Da';
     }
 }
 function DSClass(nums) {
-    if(nums%2 == 0){
+    if(nums==11){
+        return 'he2'
+    }else if(nums%2 == 0){
         return  'Shuang';
     }else {
         return  'Dan';
     }
 }
 function DX(num) {
-    if(num<=4){
+    if(num==11){
+        return '和'
+    }else if(num<=5){
         return '小';
     }else {
         return '大';
     }
 }
+
 
 
 function arr_num(nums) {
@@ -373,7 +381,9 @@ function dx(nums) {
     }
 }
 function ds(nums) {
-    if(nums%2 == 0){
+    if(nums==11){
+        return '和'
+    }else if(nums%2 == 0){
         return  '双';
     }else {
         return  '单';

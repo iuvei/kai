@@ -323,27 +323,35 @@ function getPkData(date) {
     }, "json");
 
 }
+
 function DXClass(num) {
-    if(num<=4){
+    if(num==11){
+        return 'he'
+    }else if(num<=5){
         return 'Xiao';
     }else {
         return 'Da';
     }
 }
 function DSClass(nums) {
-    if(nums%2 == 0){
+    if(nums==11){
+        return 'he2'
+    }else if(nums%2 == 0){
         return  'Shuang';
     }else {
         return  'Dan';
     }
 }
 function DX(num) {
-    if(num<=4){
+    if(num==11){
+        return '和'
+    }else if(num<=5){
         return '小';
     }else {
         return '大';
     }
 }
+
 
 
 function arr_num(nums) {
@@ -373,7 +381,9 @@ function dx(nums) {
     }
 }
 function ds(nums) {
-    if(nums%2 == 0){
+    if(nums==11){
+        return '和'
+    }else if(nums%2 == 0){
         return  '双';
     }else {
         return  '单';

@@ -90,7 +90,7 @@ include("../conn.php");
                 //
             
                
-               $.get("../ajax/pk10_trend.php", { type:6, ball: ball, count: 8, t: Math.random() }, function (data) {
+               $.get("../ajax/pk10_trend.php", { type:58, ball: ball, count: 8, t: Math.random() }, function (data) {
             	   layer.closeAll();
                 	data=eval(data);
                    showChartline(ballNames[ball]+"走势图", data, "号",1, 11, 'container',ballNames[ball]);

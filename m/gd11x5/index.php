@@ -94,7 +94,7 @@ include("../conn.php");
     <a class="chooseType">号码</a>
     <a>大小</a>
     <a>单双</a>
-    <a>筛选</a>
+    <a style="display: none">筛选</a>
 </div>
 <div class="BallNum">
     <div class="BallNumHead">
