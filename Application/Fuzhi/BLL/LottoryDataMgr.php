@@ -5296,7 +5296,7 @@ class LottoryDataMgr
                 if ($lotType == 21) {
                     return 8;
                 } else {
-                    if ($lotType == 22 ||$lotType == 49||$lotType == 50||$lotType == 51) {
+                    if ($lotType == 22 ||$lotType == 49||$lotType == 50||$lotType == 51 || $lotType == 53 || $lotType == 54 || $lotType == 55 || $lotType == 56 ||$lotType == 58) {
                         return 3;
                     } else {
                         if ($lotType == 3 || $lotType == 35 || $lotType == 6) {
