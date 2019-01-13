@@ -1,0 +1,119 @@
+<extend name="Base/common"/>
+
+<block name="style">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+ 
+  <div class="body-content"> 
+   <!-- 彩票大厅 头部 -->
+  			<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+   <include file="Public/lottory_op"/>
+<div class="clear"></div>
+      <div id="lot-wrap">
+          <input type="hidden" time="10000" container="pk10twosidedstat" value="twosidedstat" id="callFun" />
+          <a name="mark"></a>
+          <div class="merge-title-table-title" style="margin-bottom: 10px;">
+
+              <span class="bbbb">两面数据统计</span>
+              <div class="twosidedtip" style="float: right">
+                  *以每10期为一组，统计最近20组中单双大小的出现次数。
+              </div>
+
+          </div>
+          <ul class="lot-number-omit" style="    height: 50px;">
+              <li id="choose_ball" class="ball" style="margin-bottom: 10px">
+                  <ul>
+                      <li><a class="currball" ball="1" href="javascript:void(0);">冠军</a> </li>
+                      <li><a ball="2" href="javascript:void(0);">亚军</a> </li>
+                      <li><a ball="3" href="javascript:void(0);">第三名</a></li>
+                      <li><a ball="4" href="javascript:void(0);">第四名</a> </li>
+                      <li><a ball="5" href="javascript:void(0);">第五名</a> </li>
+                      <li><a ball="6" href="javascript:void(0);">第六名</a> </li>
+                      <li><a ball="7" href="javascript:void(0);">第七名</a> </li>
+                      <li><a ball="8" href="javascript:void(0);">第八名</a></li>
+                      <li><a ball="9" href="javascript:void(0);">第九名</a> </li>
+                      <li><a ball="10" href="javascript:void(0);">第十名</a> </li>
+                  </ul> </li>
+          </ul>
+          <div id='cqssctwosidedstat'>
+              <div id="twoSidedStat_data-html"></div>
+              <script id="twoSidedStat_data-tmpl" type="text/template">
+                  <table class="lot-table">
+                      <caption>
+                      </caption>
+                      <tr class="head">
+                          <td><b>日期</b></td>
+                          <td width="18%"><b>单</b></td>
+                          <td width="18%"><b>双</b></td>
+                          <td width="18%"><b>大</b></td>
+                          <td width="18%"><b>小</b></td>
+                      </tr>
+                      {{
+                      for(var i=0;i<it.length;i++){
+                      var rowData=it[i];
+                      console.log(rowData);
+                      var odd_even="even";
+                      if(i%2!=0){
+                      odd_even="odd";
+                      }
+                      }}
+                      <tr class='{{=odd_even}}'>
+                          <td class="align">
+                              <table class="ptable" cellpadding="0" cellspacing="0" style="width: 70%">
+                                  <tr>
+                                      <td class="td1">{{=rowData.lDate}}</td>
+                                      <td class="td2"><span>{{=rowData.endIndex}}-{{=rowData.startIndex}}期</span></td>
+                                  </tr>
+                              </table>
+                          </td>
+                          <td>
+                              {{=rowData.even}}
+                          </td>
+                          <td>
+                              {{=rowData.odd}}
+                          </td>
+                          <td>
+                              {{=rowData.big}}
+                          </td>
+                          <td>
+                              {{=rowData.small}}
+                          </td>
+                      </tr>
+                      {{
+                      }
+                      }}
+                  </table>
+              </script>
+
+              <script type="text/javascript">
+                  $(function () {
+                      $("#choose_ball ul li a").bind("click", function () {
+                          $("#choose_ball li a.currball").removeClass("currball");
+                          $(this).addClass("currball");
+                          changeBall($(this).attr("ball"));
+                      });
+                  })
+                  function changeBall(ball) {
+                      var _container = $("#callFun").attr("container");
+                      _container = _container ? _container : "lot-wrap";
+                      $.get("sfpk10/twoSidedStat.do", { t: Math.random(), id: ball }, function (r) {
+                          doTCompile("twoSidedStat_data", r);
+                      },"json");
+                  }
+                  changeBall(1);
+                  function twosidedstat()
+                  {
+                      changeBall($("#choose_ball li a.currball").attr("ball"));
+                  }
+              </script>
+          </div>
+      </div>
+
+  </div>
+    <div class="clear"></div>
+  </block>

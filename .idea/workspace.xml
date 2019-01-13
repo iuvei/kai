@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aeccc0ce-7afd-4f39-a56e-3d313d3b26de" name="Default" comment="头部游戏排序，游戏LOGO图片">
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,29 +104,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/EmptyController.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8050">
-              <caret line="87" column="315" selection-start-line="87" selection-start-column="315" selection-end-line="87" selection-end-column="315" />
+            <state relative-caret-position="775">
+              <caret line="298" column="142" selection-start-line="298" selection-start-column="142" selection-end-line="298" selection-end-column="142" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/ZstAnalyser.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="75" column="122" selection-start-line="75" selection-start-column="122" selection-end-line="75" selection-end-column="122" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="188" column="80" selection-start-line="188" selection-start-column="80" selection-end-line="188" selection-end-column="80" />
+            <state relative-caret-position="1155">
+              <caret line="759" column="24" selection-start-line="759" selection-start-column="24" selection-end-line="759" selection-end-column="24" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -150,33 +141,6 @@
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/jisuk3/hmzs.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="126" column="56" selection-start-line="126" selection-start-column="56" selection-end-line="126" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/ajax/pk10_trend.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="65" column="123" selection-start-line="65" selection-start-column="123" selection-end-line="65" selection-end-column="123" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Common/Common/function.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="1" column="14914" selection-start-line="1" selection-start-column="14914" selection-end-line="1" selection-end-column="14914" />
             </state>
           </provider>
         </entry>
@@ -215,6 +179,7 @@
       <find>jsk3</find>
       <find>pcdd</find>
       <find>newIssue</find>
+      <find>mlaft</find>
     </findStrings>
     <replaceStrings>
       <replace>20181112</replace>
@@ -330,8 +295,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
-    <option name="width" value="1924" />
-    <option name="height" value="1056" />
+    <option name="width" value="1917" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -365,6 +330,13 @@
               <item name="Application" type="462c0819:PsiDirectoryNode" />
               <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
               <item name="BLL" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kai" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
+              <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kai" type="b2602c69:ProjectViewProjectNode" />
@@ -499,7 +471,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37664000" />
+    <option name="totallyTimeSpent" value="37684000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -576,12 +548,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="头部游戏排序，游戏LOGO图片" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/images/logo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/images/logo_v2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/txffc-logo.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -653,8 +619,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="188" column="80" selection-start-line="188" selection-start-column="80" selection-end-line="188" selection-end-column="80" />
+        <state relative-caret-position="1155">
+          <caret line="759" column="24" selection-start-line="759" selection-start-column="24" selection-end-line="759" selection-end-column="24" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -678,13 +644,6 @@
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/EmptyController.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8050">
-          <caret line="87" column="315" selection-start-line="87" selection-start-column="315" selection-end-line="87" selection-end-column="315" />
         </state>
       </provider>
     </entry>
@@ -867,6 +826,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="63" column="46" lean-forward="true" selection-start-line="63" selection-start-column="46" selection-end-line="63" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/ajax/pk10_trend.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="471">
+          <caret line="65" column="123" selection-start-line="65" selection-start-column="123" selection-end-line="65" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Common/Common/function.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="1" column="14914" selection-start-line="1" selection-start-column="14914" selection-end-line="1" selection-end-column="14914" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/EmptyController.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="775">
+          <caret line="298" column="142" selection-start-line="298" selection-start-column="142" selection-end-line="298" selection-end-column="142" />
         </state>
       </provider>
     </entry>
