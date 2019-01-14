@@ -248,7 +248,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                                                 $this->keyword = C("WEB_SITE_JND28_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                                                 $this->description = C("WEB_SITE_JND28_DESCR");
                                                                                                 $lottoryName = "加拿大28";
-                                                                                                $totalExpect = 179;
+                                                                                                $totalExpect = 396;
                                                                                             }else{
                                                                                                 if($ctrlName == 'js28'){
                                                                                                     $this->title = $title_c.'极速28开奖视频_极速28开奖号码_极速28开奖记录 - ' . C('WEB_SITE_TITLE');
