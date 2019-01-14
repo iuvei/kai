@@ -24,6 +24,7 @@ var beforPageJs = {
 				|| pathname.indexOf("/js11x5/") >= 0
 				|| pathname.indexOf("/cqft") >= 0
 				|| pathname.indexOf("/pc28") >= 0
+				|| pathname.indexOf("/jnd28") >= 0
 				|| pathname.indexOf("/js28") >= 0
 				|| pathname.indexOf("/jsdd") >= 0
 				|| pathname.indexOf("/txffc") >= 0

@@ -23,12 +23,12 @@
 </script>
 <script type="text/javascript">    var lotteryLuzhu = "";</script>
 <script src="js/lot/lotcommon.js"  type="text/javascript"></script>
-<script src="js/lot/cqssc/award.js?v=20181114"  type="text/javascript"></script>
+<script src="js/lot/jnd28/award.js?v=20181114"  type="text/javascript"></script>
 <script src="js/lot/warntime.js"  type="text/javascript"></script>
    <div class="lot-wrap">
 				<div class="clear"></div> 
     <div id="lot-wrap"> 
-     <input type="hidden" value="Search" id="callFun" lottery="cqssc" /> 
+     <input type="hidden" value="Search" id="callFun" lottery="jnd28" />
      <div class="lot-search"> 
       <div class="lot-search"> 
        <div class="car-num"> 
@@ -298,7 +298,7 @@
 	    reloadNumberStatRemind();
 	    //双号
 	    function reloadTwoBallRemind() {
-            $.get("pc28/twoBallRemind.do", { t: Math.random() }, function (json) {
+            $.get("jnd28/twoBallRemind.do", { t: Math.random() }, function (json) {
                 $("#twoball_balls").text(json.TwoSided.length > 0 ? json.TwoSided : "无");
                 $("#twoball_issuetoday").text(json.IssueToday);
                 $("#twoball_issuenext").text(json.IssueNext);
@@ -310,7 +310,7 @@
         
         //长龙
         function reloadChangLong() {
-        	$.post("pc28/getMergeData.do",
+        	$.post("jnd28/getMergeData.do",
     				function(r) {
     					if (r) {
     						doTCompile("cl_list", r.clList);
@@ -321,7 +321,7 @@
         
         //开奖历史
         function getHistoryData(date){
-    		$.post("pc28/getHistoryData.do",
+    		$.post("jnd28/getHistoryData.do",
    				{count:120,date:date}, 
    				function(r) {
     				if (r) {

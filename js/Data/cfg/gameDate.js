@@ -1405,6 +1405,49 @@ var webListOP = {
             "href":"jsdd/zoushitu.html"
         }
     ],
+	"jnd28": [
+
+        {
+            "text":"加拿大28",
+            "href":"jnd28/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"jnd28/kaijiang.html"
+        },
+        /*{
+            "text":"号码路珠",
+            "href":"js28/merge.html"
+        },*/
+/*        {
+            "text":"单双大小历史",
+            "href":"js28/ballstat.html"
+        },*/
+        /*{
+            "text":"加拿大28开奖直播",
+            "href":"pcdd/shipin/",
+            "title":"在线观看番摊开奖直播",
+            "aClass":"redColor"
+        },*/
+        {
+            "text":"加拿大28技巧",
+            "href":"jiqiao/jnd28/"
+        },
+        {
+            "text":"免费参考",
+            "href":"jnd28/betgame.html",
+            "spanClass":"wen_newIcon"
+        },
+        {
+            "text":"遗漏大数据",
+            "href":"jnd28/omitdata.html",
+
+        },
+        {
+            "text":"横版走势图",
+            "href":"jnd28/zoushitu.html"
+        }
+    ],
 	"js11x5": [
 
         {

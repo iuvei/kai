@@ -23,7 +23,7 @@
             <div class="title mt10">
                 <h2>
 					加拿大28开奖记录</h2>
-                <a href="pc28/kaijiang.html" >查看全部&gt;&gt;</a>
+                <a href="jnd28/kaijiang.html" >查看全部&gt;&gt;</a>
             </div>
             <div id="history_data-html"></div>
 	      	<script id="history_data-tmpl" type="text/template">
@@ -106,13 +106,13 @@
 					drawTrend();
 				});
 		        function drawTrend() {
-		            $.get("pc28/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
+		            $.get("jnd28/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
 		                showChartline("总和走势图", data, function () { return this.x + '期:' + this.y }, 0, 27, true, 0, "sContainer");
 		            }, "json");
 
 		        }
 		        function getHistoryData(){
-	        		$.post("pc28/getHistoryData.do",
+	        		$.post("jnd28/getHistoryData.do",
 	       				{count:20},
 	       				function(r) {
 	        				if (r) {
@@ -132,13 +132,14 @@
     <ul>
 		<li>
 			<?php if(!empty($artical_first['id'])){ ?>
-			<a target="_blank" href="jiqiao/cqft/{$artical_first['id']}.html" >·{$artical_first['title']}</a>
+			<!--<a target="_blank" href="jiqiao/cqft/{$artical_first['id']}.html" >·{$artical_first['title']}</a>-->
 			<?php } ?>
 		</li>
 		<volist name="lists" id="data">
 			<li>
 				<?php if(!empty($data['id'])){ ?>
-				<a target="_blank" href="jiqiao/cqft/{$data['id']}.html">·{$data.title}</a></li>
+				<!--<a target="_blank" href="jiqiao/cqft/{$data['id']}.html">·{$data.title}</a>-->
+			</li>
 			<?php } ?>
 		</volist>
 						</ul>
