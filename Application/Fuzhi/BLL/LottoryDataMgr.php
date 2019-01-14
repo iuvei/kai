@@ -752,7 +752,7 @@ class LottoryDataMgr
                 $kjHao1[0]['dat_codes'] = "";
             }
             $sres['surplus_num'] = $ret['issue_total'] - $ret['preIssue']['issue_no'];
-            if ($lotType == 20 || $lotType == 34 || $lotType == 47 || $lotType == 46 || $lotType == 6) {
+            if ($lotType == 20 || $lotType == 34 || $lotType == 47 || $lotType == 46 || $lotType == 6 || $lotType == 58) {
                 $arr = explode(",", $kjHao1[0]['dat_codes']);
                 foreach ($arr as $k => $v) {
                     $arr[$k] = preg_replace('/^0*/', '', $v);
