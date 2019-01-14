@@ -3,6 +3,8 @@ header("Content-type:text/html;charset=utf-8");
 const ONETHINK_ADDON_PATH = './Addons/';
 define('APP_PATH',str_replace("\m","",dirname(__FILE__)));
 $self = $_SERVER['PHP_SELF'];
+
+
 if(strpos($self,"xyft")){
     $name = 34;
 	$web_type = "幸运飞艇";
@@ -21,9 +23,18 @@ if(strpos($self,"xyft")){
 }elseif(strpos($self,"gd11x5")){
     $name = 6;
 	$web_type = "广东11选5";
+}elseif(strpos($self,"js11x5")){
+    $name = 58;
+	$web_type = "极速11选5";
 }elseif(strpos($self,"jsk3")){
     $name = 22;
 	$web_type = "江苏快3";
+}elseif(strpos($self,"gxk3")){
+    $name = 51;
+	$web_type = "广西快3";
+}elseif(strpos($self,"jlk3")){
+    $name = 50;
+	$web_type = "吉林快3";
 }elseif(strpos($self,"bjft")){
     $name = 42;
     $web_type = "北京番摊";
@@ -45,13 +56,37 @@ if(strpos($self,"xyft")){
 }elseif(strpos($self,"sfpk10")){
     $web_type = "TC三分赛车";
     $name = 47;
+}elseif(strpos($self,"sfpk10ft")){
+    $web_type = "三分赛车番摊";
+    $name = 52;
+}elseif(strpos($self,"ftft")){
+    $web_type = "飞艇番摊";
+    $name = 34;
+}elseif(strpos($self,"jisuk3")){
+    $web_type = "极速快3";
+    $name = 54;
+}elseif(strpos($self,"js28")){
+    $web_type = "极速28";
+    $name = 55;
 }elseif(strpos($self,"sfssc")){
     $web_type = "TC三分彩";
     $name = 48;
+}elseif(strpos($self,"sfcft")){
+    $web_type = "三分彩番摊";
+    $name = 48;
+}elseif(strpos($self,"pcdd")){
+    $web_type = "PC蛋蛋";
+    $name = 49;
+}elseif(strpos($self,"jnd28")){
+    $web_type = "加拿大28";
+    $name = 55;
 }else{
     $name = 20;
 	$web_type = "北京PK10";
 }
+if(strpos($self,"sfpk10ft")){
+    $web_type = "三分赛车番摊";
+};
 $dbcon = include(APP_PATH."/Application/Common/Conf/config.php");
 $con = mysqli_connect($dbcon['DB_HOST'],$dbcon['DB_USER'],$dbcon['DB_PWD']);
 mysqli_select_db($con, $dbcon['DB_NAME']);
