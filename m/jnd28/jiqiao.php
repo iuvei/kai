@@ -51,7 +51,7 @@ $cid = 43;
             <li><a href="../jsk3/" game="jsk3">江苏快3</a></li>
             <li><a href="../gd11x5/" game="gd11x5">广东11选5</a></li>
 <!--            <li><a href="../gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
-            <li><a href="../jnd28/" game="jnd28">加拿大28</a></li>
+            <li><a href="../pc28/" game="pc28">加拿大28</a></li>
             <li><a href="../txffc/" game="txffc" class="cur">幸运分分彩</a></li>
         </ul>
     </div>
@@ -60,7 +60,7 @@ $cid = 43;
     <div class="fr"><a class="sp" href="shipin.php">开奖直播</a></div>
 </div>
 <ul class="kaij-mylist">
-    <li class="kaij-mylist-li" id="jnd28" style="border-bottom: 1px solid #eeeeee;">
+    <li class="kaij-mylist-li" id="pc28" style="border-bottom: 1px solid #eeeeee;">
 
         <div class="kaij-mylist-r">
             <div class="kaij-mylist-hd">

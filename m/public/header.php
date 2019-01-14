@@ -27,8 +27,9 @@
             <li><a href="../js11x5/" game="js11x5">极速11选5</a></li>
             <!--            <li><a href="../gdkl10/" game="gdkl10">广东快乐十分</a></li>-->
             <!--<li><a href="../pc28/" game="pc28">加拿大28</a></li>-->
-            <li><a href="../js28/" game="js28">极速28</a></li>
             <li><a href="../pcdd/" game="pcdd">PC蛋蛋</a></li>
+            <li><a href="../jdn28/" game="jdn28">加拿大28</a></li>
+            <li><a href="../js28/" game="js28">极速28</a></li>
             <li><a href="../jsdd/" game="jsdd">极速蛋蛋</a></li>
             <li><a href="../txffc/" game="txffc" class="cur">幸运分分彩</a></li>
         </ul>
