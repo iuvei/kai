@@ -1,0 +1,194 @@
+<extend name="Base/common"/>
+
+<block name="style">
+	<link href="../../../../favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css?v=20181118" rel="stylesheet" />
+</block>
+
+<block name="body">
+ 
+<!--body-content-->
+<div class="body-content">
+	<!-- 彩票大厅 头部 -->
+<include file="Public/top_ad"/>
+
+<include file="Public/lottory_latest"/>
+
+<div class="lot-wrap">
+		<include file="Public/lottory_op"/>
+
+<div class="clear"></div>
+    <input type="hidden" value="getHistoryData|drawTrend" id="callFun" time="1000" />
+		
+		<div class="index-history">
+			<div class="title mt10">
+				<h2>开奖记录</h2>
+				<a href="ftft/kaijiang.html" >查看全部>></a>
+			</div>
+			<table id="history" class="lot-table">
+				<tbody>
+					<tr class="head">
+						<td width="120">时间</td>
+						<td width="140">期号</td>
+						<td width="650">开奖号码</td>
+						<td colspan="3">前三</td>
+						<td colspan="3">中三</td>
+						<td colspan="3">后三</td>
+					</tr>
+				</tbody>
+			</table>
+            <script type="text/javascript">
+                $(function () {
+                    getHistoryData(16);
+                });
+                function drawTrend() {
+                    $.get("xyft/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
+                        //data=[{"Key":"13","Value":"2"},{"Key":"14","Value":"2"},{"Key":"15","Value":"5"},{"Key":"16","Value":"3"},{"Key":"17","Value":"1"},{"Key":"18","Value":"6"},{"Key":"19","Value":"6"},{"Key":"20","Value":"5"},{"Key":"21","Value":"1"},{"Key":"22","Value":"9"},{"Key":"23","Value":"7"},{"Key":"24","Value":"7"},{"Key":"25","Value":"2"},{"Key":"26","Value":"9"},{"Key":"27","Value":"3"},{"Key":"28","Value":"6"},{"Key":"29","Value":"8"},{"Key":"30","Value":"5"},{"Key":"31","Value":"6"},{"Key":"32","Value":"5"},{"Key":"33","Value":"6"},{"Key":"34","Value":"6"},{"Key":"35","Value":"4"},{"Key":"36","Value":"6"},{"Key":"37","Value":"10"}];
+                        data=eval(data);
+                        showChartline("冠军走势图", data, function () { return '冠军'+this.x + '期 开出:' + this.y+"号" }, 0, 10, true, 0, "sContainer");
+                    }, "json");
+
+                }
+                drawTrend();
+                function Search() {
+                    $.get("xyft/kaijiang.do", function (result) {
+                        if(result&&result.rows&&result.rows.length>0){
+                            var j = 0;
+                            var html = '';
+                            for(var i in result.rows){
+                                var data = result.rows[i];
+                                var clsName = "even";
+                                if (j%2==0) {
+                                    clsName = "odd";
+                                }
+                                html += '<tr class="' + clsName + '"><td><p class="p">' + data.termNum + '</p><p class="t">'
+                                + data.lotteryTime.substring(5, 16);
+                                html += '</p></td><td class="nums">';
+                                html += '<i class="pk-no' + data.n1 + '"></i>';
+                                html += '<i class="pk-no' + data.n2 + '"></i>';
+                                html += '<i class="pk-no' + data.n3 + '"></i>';
+                                html += '<i class="pk-no' + data.n4 + '"></i>';
+                                html += '<i class="pk-no' + data.n5 + '"></i>';
+                                html += '<i class="pk-no' + data.n6 + '"></i>';
+                                html += '<i class="pk-no' + data.n7 + '"></i>';
+                                html += '<i class="pk-no' + data.n8 + '"></i>';
+                                html += '<i class="pk-no' + data.n9 + '"></i>';
+                                html += '<i class="pk-no' + data.n10 + '"></i>';
+                                var guanyahe = data.n1 + data.n2 + data.n3;
+                                var srt = guanyahe%4;
+                                html += '</td>';
+                                if(srt == 0){
+                                    html += '<td>4摊</td>';
+                                    html += "<td><p class='r'>大</p></td>";
+                                    html += '<td><p >双</p></td>';
+								}else {
+                                    html += '<td>' + srt + '摊</td>';
+                                    if(srt == 3){
+                                        html += "<td><p class='r'>大</p></td>";
+									}else {
+                                        html += "<td><p>小></td>";
+									}
+                                    if(srt == 2){
+                                        html += "<td><p >双</p></td>";
+                                    }else {
+                                        html += "<td><p class='r'>单></td>";
+                                    }
+
+								}
+
+                                var guanyahe2 = data.n5 + data.n6 + data.n7;
+                                var srt = guanyahe2%4;
+                                html += '</td>';
+                                if(srt == 0){
+                                    html += '<td>4摊</td>';
+                                    html += "<td><p class='r'>大</p></td>";
+                                    html += '<td><p >双</p></td>';
+                                }else {
+                                    html += '<td>' + srt + '摊</td>';
+                                    if(srt == 3){
+                                        html += "<td><p class='r'>大</p></td>";
+                                    }else {
+                                        html += "<td><p>小></td>";
+                                    }
+                                    if(srt == 2){
+                                        html += "<td><p >双</p></td>";
+                                    }else {
+                                        html += "<td><p class='r'>单></td>";
+                                    }
+
+                                }
+
+
+                                var guanyahe3 = data.n8 + data.n9 + data.n10;
+                                var srt = guanyahe3%4;
+                                html += '</td>';
+                                if(srt == 0){
+                                    html += '<td>4摊</td>';
+                                    html += "<td><p class='r'>大</p></td>";
+                                    html += '<td><p >双</p></td>';
+                                }else {
+                                    html += '<td>' + srt + '摊</td>';
+                                    if(srt == 3){
+                                        html += "<td><p class='r'>大</p></td>";
+                                    }else {
+                                        html += "<td><p>小></td>";
+                                    }
+                                    if(srt == 2){
+                                        html += "<td><p >双</p></td>";
+                                    }else {
+                                        html += "<td><p class='r'>单></td>";
+                                    }
+
+                                }
+
+                                html += '</tr>';
+                                j++;
+                            }
+                            $("#history .head").after(html);
+                        }else{
+                            $("#history tr:gt(0)").remove();
+                        }
+                    }, "json");
+                }
+            </script>
+		<div class="lot-article mt10">
+				<div class="l-title">
+					<h2>飞艇番摊技巧</h2>
+					<a href="jiqiao/ftft/" >更多&gt;&gt;</a>
+				</div>
+				<div class="wrap">
+				
+       <ul>
+		   <li>
+			   <?php if(empty($artical_first['id'])){ ?>
+			   <!--<a target="_blank" href="jiqiao/ftft/{$artical_first['id']}.html" >·{$artical_first['title']}</a>-->
+			   <?php } ?>
+		   </li>
+		   <volist name="lists" id="data">
+			   <li>
+				   <?php if(empty($data['id'])){ ?>
+				   <!--<a target="_blank" href="jiqiao/ftft/{$data['id']}.html">·{$data.title}</a></li>-->
+			   <?php } ?>
+		   </volist>
+						</ul>
+		
+                   
+                 
+				</div>
+			</div>
+            <div class="lot-about mt10">
+                <div class="l-title">
+                    <h2>飞艇番摊号码走势图</h2>
+                </div>
+                
+                    <div id="sContainer">
+				</div>
+               
+            </div>
+            
+        </div>
+		<div class="clear"></div>
+	</div>
+   </div>
+		</block>

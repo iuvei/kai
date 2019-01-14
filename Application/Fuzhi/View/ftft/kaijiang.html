@@ -1,0 +1,249 @@
+<extend name="Base/common"/>
+
+<block name="style">
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+		<include file="Public/top_ad"/>
+
+		<include file="Public/lottory_latest"/>
+
+		<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+
+			<div class="clear"></div>
+			<input type="hidden" id="callFun" value="callFun" time="1000"/>
+			<div style="margin-bottom:20px;" id="lot-wrap">
+				<div class="lot-search">
+					<div class="car-num">
+						<ul style="margin-bottom: 10px;" class="lot-number-omit">
+							<li style="padding-bottom: 2px;" class="ball">
+								<ul style="width: 750px; _width: 740px; float: left; margin-left: 10px;">
+
+								</ul>
+								<script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+								<div class="merge-title-table-title" style="margin-bottom: 10px;margin-top: -10px">
+
+									<span class="bbbb">开奖历史</span>
+
+									<ul style="float: right; width: 270px; text-align: right;">
+										<li>
+								<span style="display: block; float: left;">
+									<label style="margin: 0px;">选择日期：</label></span>
+											<span style="display: block; float: left;">
+									<input name="dateData" type="text" id="dateData"  class="Wdate" onClick="WdatePicker();" readonly="readonly" style=""></span>
+											<span style="padding-left: 10px;"><a style="margin: 0px;" href="javascript:Search();" class="a-bottom">查询</a></span>
+										</li>
+									</ul>
+								</div>
+
+							</li>
+						</ul>
+					</div>
+				</div>
+
+
+				<div style="clear: both"></div>
+				<div id="history-table">
+					<table id="history" class="lot-table">
+						<tbody>
+						<tr class="head">
+							<td width="140">期号
+							<td width="120">时间</td>
+							<td width="650">开奖号码</td>
+							<td colspan="3">前三</td>
+							<td colspan="3">中三</td>
+							<td colspan="3">后三</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<script type="text/javascript">
+                $(function () {
+                    callFun();
+                });
+                function callFun(){
+                    LoadPk10TipSet();
+                    getHistoryData(200);
+                    reloadBallStatRemind();
+                    reloadChangLong();
+                }
+                function reloadBallStatRemind() {
+                    $.get("/xyft/getBallStat.do?today=1",function(r){
+                        if (r) {
+                            doTCompile("ball_stat_list", r);
+                        }
+                    },"json");
+                }
+                function getVal(datas,date,rank,dataType,num){
+                    var dayTotalNum="0";
+                    for(var i=0;i<datas.length;i++){
+                        var d=datas[i];
+                        if(d.lotteryDate==date&&d.num==num&&d.dataType==dataType&&d.rank==rank){
+                            dayTotalNum= d.dayTotalNum;
+                            break;
+                        }
+                    }
+                    return dayTotalNum;
+                }
+                var NUM_INDEX = {1:'冠　军',2:'亚　军',3:'季　军',4:'第四名',5:'第五名',
+                    6:'第六名',7:'第七名',8:'第八名',9:'第九名',10:'第十名'};
+                var NUM_TYPE = {1:'大',2:'小',3:'单',4:'双',5:'龙', 6:'虎'};
+                function reloadChangLong() {
+                    $.post("/xyft/getMergeData.do",
+                        function(r) {
+                            if (r) {
+                                doTCompile("cl_list", r.clList);
+                            }
+                        }, "json");
+                }
+                function Search() {
+                    $.get("/xyft/kaijiang.do", { date: $("#dateData").val() }, function (result) {
+                        if(result&&result.rows&&result.rows.length>0){
+                            var j = 0;
+                            var html = '';
+                            for(var i in result.rows){
+                                var data = result.rows[i];
+                                var clsName = "even";
+                                if (j%2==0) {
+                                    clsName = "odd";
+                                }
+                                html += '<tr class="' + clsName + '"><td><p class="p">' +data.termNum  + '</p></td>';
+                                html += '<td><p class="t">'+ data.lotteryTime.substring(5, 16)+'</p></td>';
+                                html += '<td class="nums">';
+                                html += '<i class="pk-no' + data.n1 + '"></i>';
+                                html += '<i class="pk-no' + data.n2 + '"></i>';
+                                html += '<i class="pk-no' + data.n3 + '"></i>';
+                                html += '<i class="pk-no' + data.n4 + '"></i>';
+                                html += '<i class="pk-no' + data.n5 + '"></i>';
+                                html += '<i class="pk-no' + data.n6 + '"></i>';
+                                html += '<i class="pk-no' + data.n7 + '"></i>';
+                                html += '<i class="pk-no' + data.n8 + '"></i>';
+                                html += '<i class="pk-no' + data.n9 + '"></i>';
+                                html += '<i class="pk-no' + data.n10 + '"></i>';
+                                var guanyahe = data.n1 + data.n2 + data.n3;
+                                var srt = guanyahe%4;
+                                html += '</td>';
+                                if(srt == 0){
+                                    html += '<td><span class="fantan">4摊</span></td>';
+                                    html += "<td><p class='r'>大</p></td>";
+                                    html += '<td><p >双</p></td>';
+                                }else {
+                                    html += '<td><span class="fantan">' + srt + '摊</span></td>';
+                                    if(srt == 3){
+                                        html += "<td><p class='r'>大</p></td>";
+                                    }else {
+                                        html += "<td><p>小</td>";
+                                    }
+                                    if(srt == 2){
+                                        html += "<td><p >双</p></td>";
+                                    }else {
+                                        html += "<td><p class='r'>单</td>";
+                                    }
+
+                                }
+
+                                var guanyahe2 = data.n5 + data.n6 + data.n7;
+                                var srt = guanyahe2%4;
+                                html += '</td>';
+                                if(srt == 0){
+                                    html += '<td><span class="fantan">4摊</span></td>';
+                                    html += "<td><p class='r'>大</p></td>";
+                                    html += '<td><p >双</p></td>';
+                                }else {
+                                    html += '<td><span class="fantan">' + srt + '摊</span></td>';
+                                    if(srt == 3){
+                                        html += "<td><p class='r'>大</p></td>";
+                                    }else {
+                                        html += "<td><p>小</td>";
+                                    }
+                                    if(srt == 2){
+                                        html += "<td><p >双</p></td>";
+                                    }else {
+                                        html += "<td><p class='r'>单</td>";
+                                    }
+
+                                }
+
+
+                                var guanyahe3 = data.n8 + data.n9 + data.n10;
+                                var srt = guanyahe3%4;
+                                html += '</td>';
+                                if(srt == 0){
+                                    html += '<td><span class="fantan">4摊</span></td>';
+                                    html += "<td><p class='r'>大</p></td>";
+                                    html += '<td><p >双</p></td>';
+                                }else {
+                                    html += '<td><span class="fantan">' + srt + '摊</span></td>';
+                                    if(srt == 3){
+                                        html += "<td><p class='r'>大</p></td>";
+                                    }else {
+                                        html += "<td><p>小</td>";
+                                    }
+                                    if(srt == 2){
+                                        html += "<td><p >双</p></td>";
+                                    }else {
+                                        html += "<td><p class='r'>单</td>";
+                                    }
+                                }
+
+                                html += '</tr>';
+                                j++;
+                            }
+                            $("#history .head").nextAll().remove();
+                            $("#history .head").after(html);
+                        }else{
+                            $("#history tr:gt(0)").remove();
+                        }
+                    }, "json");
+                }
+                function showCarNum() {
+                    var datas = [];
+                    var ckbeds = $("#ball-choose li b.checked");
+                    for (var i = 0; i < ckbeds.length; i++) {
+                        datas.push($(ckbeds[i]).attr("data-c"));
+                    }
+
+                    $(".nums i").removeClass("noshade");
+                    if (datas.length > 0) {
+                        $(".nums").addClass("shade");
+                    }
+                    for (var i = 0; i < datas.length; i++) {
+                        var c = ".pk-no" + datas[i];
+                        $(c).addClass("noshade");
+                    }
+                    if (datas.length == 0) {
+                        $(".nums").removeClass("shade");
+                    }
+                }
+
+                $("#ball-choose li").click(function () {
+
+                    var c = $("b", $(this)).attr("data-c");
+
+                    if ($("b", $(this)).attr("class") == "checkbox") {
+                        $("b", $(this)).addClass("checked");
+                    } else {
+                        $("b", $(this)).removeClass("checked");
+                    }
+                    showCarNum();
+                })
+                function SetChk()
+                {
+                    $("#ball-choose b").removeClass("checked");
+                    $(".nums").removeClass("shade");
+                }
+			</script>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</block>
+

@@ -4,6 +4,7 @@
 var beforPageJs = {
 	getGameName : function() {
 		var pathname = window.location.pathname;
+		console.log(pathname)
 		if (pathname.indexOf("/fc3d/") >= 0
 				|| pathname.indexOf("/gdkl10/") >= 0
 				|| pathname.indexOf("/jsk3/") >= 0
@@ -17,6 +18,10 @@ var beforPageJs = {
 				|| pathname.indexOf("/xyft/") >= 0
 				|| pathname.indexOf("/bjft/") >= 0
 				|| pathname.indexOf("/jssc/") >= 0
+				|| pathname.indexOf("/sfcft/") >= 0
+				|| pathname.indexOf("/sfpk10ft/") >= 0
+				|| pathname.indexOf("/ftft/") >= 0
+				|| pathname.indexOf("/js11x5/") >= 0
 				|| pathname.indexOf("/cqft") >= 0
 				|| pathname.indexOf("/pc28") >= 0
 				|| pathname.indexOf("/js28") >= 0
