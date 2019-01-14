@@ -1409,7 +1409,7 @@ var webListOP = {
 
         {
             "text":"极速11选5",
-            "href":"jsdd/index.html"
+            "href":"js11x5/index.html"
         },
         {
             "text":"历史开奖号码",
@@ -1430,7 +1430,7 @@ var webListOP = {
             "aClass":"redColor"
         },*/
         {
-            "text":"极速蛋蛋技巧",
+            "text":"极速11选5技巧",
             "href":"jiqiao/js11x5/"
         },
         {
