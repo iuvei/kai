@@ -1,15 +1,15 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
 <block name="body">
- 
-  <!--body-content--> 
-  <div class="body-content"> 
-   <!-- 用户中心左则菜单开始 --> 
+
+  <!--body-content-->
+  <div class="body-content">
+   <!-- 用户中心左则菜单开始 -->
    	<div id="member-info">
         <div class="base-info">
             <a class="member-head" href="javascript:void(0);">
@@ -20,7 +20,7 @@
          <p class="update-info">
               <a href="javascript:openUpInfo('info');">更改资料</a><i>|</i>
              <a href="javascript:openUpInfo('password');">修改密码 </a>
-             <!-- 
+             <!--
              <a href="javascript:openUpInfo('bindmail');">绑定邮箱 </a><i>|</i>
              <a href="javascript:openUpInfo('bindphone');">激活手机</a>
               -->
@@ -29,7 +29,7 @@
             <li>
                 <a class="my-extend" href="javascript:void(0);">我的</a>
                 <ul>
-                	<!-- 
+                	<!--
                     <li>
                         <a class="my-mode " href="/uc/mymode">我的模式</a>
                     </li>
@@ -45,9 +45,9 @@
             </li>
         </ul>
     </div>
-    
-    
-    <div id="upUserInfo" class="body-content" style="width: 800px;height: 500px;display: none;">        
+
+
+    <div id="upUserInfo" class="body-content" style="width: 800px;height: 500px;display: none;">
 	    <div class="page-position">
 	        <a href="javascript:showUpUserInfo('infomation')" id="infomation" class="infomation-cur" ></a>
 	        <a href="javascript:showUpUserInfo('safetycenter')" id="safetycenter" class="safetycenter"></a>
@@ -102,35 +102,35 @@
 		            <button type="submit" id="btnUpdate" style="width:200px; height:30px; margin-left:100px;">确认修改</button>
 		            <input type="hidden" name="ajaxhandler" value="modifypass" />
 		        </div>
-		    </form>  
+		    </form>
 	    </div>
     </div>
-    
- 
-   <!-- 用户中心左则菜单结束 --> 
-   <div id="member-active"> 
-    <div class="use-operate"> 
-     <h4>常用操作</h4> 
-     <div style="height:100px;" class="info"> 
-      <dl data="dl1" class="dl1"> 
-       <dt> 
-        <a href="javascript:openUpInfo('info');">修改个人资料</a> 
-       </dt> 
+
+
+   <!-- 用户中心左则菜单结束 -->
+   <div id="member-active">
+    <div class="use-operate">
+     <h4>常用操作</h4>
+     <div style="height:100px;" class="info">
+      <dl data="dl1" class="dl1">
+       <dt>
+        <a href="javascript:openUpInfo('info');">修改个人资料</a>
+       </dt>
        <dd>
-         资料越详细越能丰富我们的数据库，让我们更了解您的需求。 
-       </dd> 
-      </dl> 
-      <dl data="dl2" class="dl2"> 
-       <dt> 
-        <a href="javascript:openUpInfo('password');">修改密码</a> 
-       </dt> 
+         资料越详细越能丰富我们的数据库，让我们更了解您的需求。
+       </dd>
+      </dl>
+      <dl data="dl2" class="dl2">
+       <dt>
+        <a href="javascript:openUpInfo('password');">修改密码</a>
+       </dt>
        <dd>
          密码是您在本站操作的唯一凭证。
-        <br /> 
-        <a href="javascript:openUpInfo('password');">修改登录密码</a> 
-       </dd> 
-      </dl> 
-      <!-- 
+        <br />
+        <a href="javascript:openUpInfo('password');">修改登录密码</a>
+       </dd>
+      </dl>
+      <!--
              <dl data="dl3" class="dl3">
                 <dt>
                     <a href="javascript:openUpInfo('bindmail');">邮箱绑定</a>
@@ -147,14 +147,14 @@
                    激活您的手机，您将可以在交流大厅和志同道合的朋友畅所欲言。
                 </dd>
             </dl>
-             --> 
-     </div> 
-    </div> 
-    <div class="clear"></div> 
-   </div> 
-  </div> 
+             -->
+     </div>
+    </div>
+    <div class="clear"></div>
+   </div>
+  </div>
   <script type="text/javascript" src="js/account.js" ></script>
-<script type="text/javascript">account.checkLogin();</script> 
+<script type="text/javascript">account.checkLogin();</script>
 <script type="text/javascript" src="js/service.js" ></script>
   	<script type="text/javascript" src="js/util/jquery.artDialog.min.js" ></script>
     <script type="text/javascript" src="js/util/Validform/Validform_v5.3.2_min.js" ></script>

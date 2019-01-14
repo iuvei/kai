@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -16,7 +16,7 @@
 
 <div class="lot-wrap">
 			<include file="Public/lottory_op"/>
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
 	<div class="merge-title-table-title" style="margin-bottom: 10px;">
 
@@ -26,7 +26,7 @@
 	</div>
 					<div id="lot-wrap">
 					<input type="hidden" id="callFun" value="getNumberStat"/>
-						<div id="number_stat_list-html" style="float: left;"></div> 
+						<div id="number_stat_list-html" style="float: left;"></div>
 						<script id="number_stat_list-tmpl" type="text/template">
 						  <table class="lot-table" >
 						    <caption></caption>
@@ -59,7 +59,7 @@
 							        <td width="40">龙</td>
 							        <td width="40">虎</td>
 							    </tr>
-							    {{ 
+							    {{
 							    	var rowsLen=it.length;
 							    	var recArray=new Array();
 						            function addRecArray(recTermNum){
@@ -74,7 +74,7 @@
 						                recArray.push(recTermNum);
 						              }
 						              return isExist;
-						            } 
+						            }
 							    	for(var i=0;i<rowsLen;i++){ /*循环开始A*/
 							    		var rd=it[i];
 							    		var dataType=rd.dataType;
@@ -139,9 +139,9 @@
 						            </td>
 						            <td>{{=getVal(it,ld,2,2)}}
 						            </td>
-						            
+
 						        </tr>
-					        {{ 
+					        {{
 							      }
 						     	}
 						    }}

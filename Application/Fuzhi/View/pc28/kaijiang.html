@@ -1,15 +1,15 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
 <block name="body">
- 
-  <!--body-content--> 
-  <div class="body-content"> 
-   <!-- 彩票大厅 头部 --> 
+
+  <!--body-content-->
+  <div class="body-content">
+   <!-- 彩票大厅 头部 -->
    <include file="Public/top_ad"/>
 	  <include file="Public/lottory_latest"/>
 
@@ -26,13 +26,13 @@
 <script src="js/lot/cqssc/award.js?v=20181114"  type="text/javascript"></script>
 <script src="js/lot/warntime.js"  type="text/javascript"></script>
    <div class="lot-wrap">
-				<div class="clear"></div> 
-    <div id="lot-wrap"> 
-     <input type="hidden" value="Search" id="callFun" lottery="cqssc" /> 
-     <div class="lot-search"> 
-      <div class="lot-search"> 
-       <div class="car-num"> 
-        <ul class="lot-number-omit" style="margin-bottom: 10px;"> 
+				<div class="clear"></div>
+    <div id="lot-wrap">
+     <input type="hidden" value="Search" id="callFun" lottery="cqssc" />
+     <div class="lot-search">
+      <div class="lot-search">
+       <div class="car-num">
+        <ul class="lot-number-omit" style="margin-bottom: 10px;">
          <li class="ball" style="padding-bottom: 2px;">
 			 <div class="merge-title-table-title" style="margin-bottom: 0px;">
 
@@ -56,91 +56,91 @@
            <li id="changlong-switch" style="display: none"> <b class="checkbox checked" style=""></b> <span class="ckb-txt"> <label style="cursor:pointer">长龙提醒</label></span></li>
           </ul>
 
-         </li> 
-        </ul> 
-       </div> 
-      </div> 
-     </div> 
-     <div class="dataTableKuangList" style="clear:both;margin-bottom:15px;" id="numstat_remind"> 
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <div class="dataTableKuangList" style="clear:both;margin-bottom:15px;" id="numstat_remind">
      <div id="todayNumberStatData-html"></div>
 	 <script id="todayNumberStatData-tmpl" type="text/template">
-		<table width="100%" border="0" cellspacing="1" cellpadding="0"> 
+		<table width="100%" border="0" cellspacing="1" cellpadding="0">
 	       <tbody>
-	        <tr class="huisekColor"> 
-	         <td colspan="17" class="firstTd"><span>今日号码统计</span></td> 
-	        </tr> 
-	        <tr class="huisekColor2"> 
-	         <td>0</td> 
-	         <td>1</td> 
-	         <td>2</td> 
-	         <td>3</td> 
-	         <td>4</td> 
-	         <td>5</td> 
-	         <td>6</td> 
-	         <td>7</td> 
-	         <td>8</td> 
-	         <td>9</td> 
-	         <td>单</td> 
-	         <td>双</td> 
-	         <td>大</td> 
-	         <td>小</td> 
-	         <td>龙</td> 
-	         <td>虎</td> 
-	         <td>平</td> 
-	        </tr> 
-	        <tr class="huisekColor3" id="todayNumberStatData"> 
-	         <td>{{=it.t1n0}}</td> 
-	         <td>{{=it.t1n1}}</td> 
-	         <td>{{=it.t1n2}}</td> 
-	         <td>{{=it.t1n3}}</td> 
-	         <td>{{=it.t1n4}}</td> 
-	         <td>{{=it.t1n5}}</td> 
-	         <td>{{=it.t1n6}}</td> 
-	         <td>{{=it.t1n7}}</td> 
-	         <td>{{=it.t1n8}}</td> 
-	         <td>{{=it.t1n9}}</td> 
-	         <td>{{=it.t5n1}}</td> 
-	         <td>{{=it.t5n2}}</td> 
-	         <td>{{=it.t6n2}}</td> 
-	         <td>{{=it.t6n1}}</td> 
-	         <td>{{=it.t2n1}}</td> 
-	         <td>{{=it.t2n2}}</td> 
-	         <td>{{=it.t2n3}}</td> 
-	        </tr> 
+	        <tr class="huisekColor">
+	         <td colspan="17" class="firstTd"><span>今日号码统计</span></td>
+	        </tr>
+	        <tr class="huisekColor2">
+	         <td>0</td>
+	         <td>1</td>
+	         <td>2</td>
+	         <td>3</td>
+	         <td>4</td>
+	         <td>5</td>
+	         <td>6</td>
+	         <td>7</td>
+	         <td>8</td>
+	         <td>9</td>
+	         <td>单</td>
+	         <td>双</td>
+	         <td>大</td>
+	         <td>小</td>
+	         <td>龙</td>
+	         <td>虎</td>
+	         <td>平</td>
+	        </tr>
+	        <tr class="huisekColor3" id="todayNumberStatData">
+	         <td>{{=it.t1n0}}</td>
+	         <td>{{=it.t1n1}}</td>
+	         <td>{{=it.t1n2}}</td>
+	         <td>{{=it.t1n3}}</td>
+	         <td>{{=it.t1n4}}</td>
+	         <td>{{=it.t1n5}}</td>
+	         <td>{{=it.t1n6}}</td>
+	         <td>{{=it.t1n7}}</td>
+	         <td>{{=it.t1n8}}</td>
+	         <td>{{=it.t1n9}}</td>
+	         <td>{{=it.t5n1}}</td>
+	         <td>{{=it.t5n2}}</td>
+	         <td>{{=it.t6n2}}</td>
+	         <td>{{=it.t6n1}}</td>
+	         <td>{{=it.t2n1}}</td>
+	         <td>{{=it.t2n2}}</td>
+	         <td>{{=it.t2n3}}</td>
+	        </tr>
 	       </tbody>
-	      </table> 
+	      </table>
 	 </script>
-     </div> 
-     
+     </div>
+
      <div class="kaijiang_tiptool" id="twoball_remind" style="display: none">
-      <div class="tiptool_head"> 
-       <ul> 
-        <li>双号提醒 </li> 
-       </ul> 
-      </div> 
-      <div class="tiptool_info" style="display: block;"> 
-       <ul> 
-        <li> <span>本期双号</span> <span>今日开出双号期数</span> <span>下期重复开出期数</span> <span>当前重复开出遗漏</span> <span class="last">今日最大遗漏</span> </li> 
-        <li> 
-        	<span id="twoball_balls"></span> 
-        	<span id="twoball_issuetoday"></span> 
-        	<span id="twoball_issuenext"></span> 
-        	<span id="twoball_omitcur"></span> 
-        	<span class="last" id="twoball_omitmax"></span> 
-        </li> 
-       </ul> 
-      </div> 
-     </div> 
+      <div class="tiptool_head">
+       <ul>
+        <li>双号提醒 </li>
+       </ul>
+      </div>
+      <div class="tiptool_info" style="display: block;">
+       <ul>
+        <li> <span>本期双号</span> <span>今日开出双号期数</span> <span>下期重复开出期数</span> <span>当前重复开出遗漏</span> <span class="last">今日最大遗漏</span> </li>
+        <li>
+        	<span id="twoball_balls"></span>
+        	<span id="twoball_issuetoday"></span>
+        	<span id="twoball_issuenext"></span>
+        	<span id="twoball_omitcur"></span>
+        	<span class="last" id="twoball_omitmax"></span>
+        </li>
+       </ul>
+      </div>
+     </div>
      <div class="kaijiang_tiptool" id="changlong_warn" style="display: none">
-      <div class="tiptool_head"> 
-       <ul> 
-        <li> 长龙连开提醒 </li> 
-       </ul> 
-      </div> 
+      <div class="tiptool_head">
+       <ul>
+        <li> 长龙连开提醒 </li>
+       </ul>
+      </div>
       <div class="tiptool_info" id="changlong_info">
-      	 <div id="cl_list-html" style="float: left;"></div> 
+      	 <div id="cl_list-html" style="float: left;"></div>
 	  	 <script id="cl_list-tmpl" type="text/template">
-	  	 	<ul> <li> 
+	  	 	<ul> <li>
 				 {{
 			     var rowsLen=it.length;
 			     for(var i=0;i<rowsLen;i++){ /*循环开始A*/
@@ -190,16 +190,16 @@
 							  tType="大";
 						  }
 					  }
-			  }} 
-			        <span>第{{=tRank}}球：{{=tType}} {{=rd.nowMissing}} 期</span> 
+			  }}
+			        <span>第{{=tRank}}球：{{=tType}} {{=rd.nowMissing}} 期</span>
 			{{
-		 		} 
+		 		}
 			}}
-				 </li> </ul> 
+				 </li> </ul>
 		  </script>
       </div>
-     </div> 
-     <div class="clear"></div> 
+     </div>
+     <div class="clear"></div>
      <div id="history_data-html"></div>
    	 <script id="history_data-tmpl" type="text/template">
    		<table id="history" class="lot-table">
@@ -211,7 +211,7 @@
 						<td colspan="3">总和</td>
 					</tr>
 					{{
-						for (var i = 0; i <it.length; i++) { 
+						for (var i = 0; i <it.length; i++) {
 							var row=it[i];
 							var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
 					var totalNum_a = row.n2 + row.n5 + row.n8 +row.n11 + row.n14 + row.n17;
@@ -243,7 +243,7 @@
 					}else if(totalNum <= 27 && totalNum >= 22){
 					danshaung = '极大';
 					}
-								
+
 					}}
 							<tr class="{{=(i+1)%2==0?'even':'odd'}}">
 								<td>
@@ -273,12 +273,12 @@
 					}}
 	        	</tbody>
 			</table>
-		</script> 
+		</script>
      <script type="text/javascript">
 	    $(function () {
 	        LoadCqssscTipSet();
 	    })
-	    
+
     	//今天号码统计
 	    function reloadNumberStatRemind() {
 	    	var numberStarts={};
@@ -304,10 +304,10 @@
                 $("#twoball_issuenext").text(json.IssueNext);
                 $("#twoball_omitcur").text(json.OmitCurrent);
                 $("#twoball_omitmax").text(json.OmitTodayMax);
-               },'json'); 
+               },'json');
 	    }
         reloadTwoBallRemind();
-        
+
         //长龙
         function reloadChangLong() {
         	$.post("pc28/getMergeData.do",
@@ -318,11 +318,11 @@
     			}, "json")
         }
         reloadChangLong();
-        
+
         //开奖历史
         function getHistoryData(date){
     		$.post("pc28/getHistoryData.do",
-   				{count:120,date:date}, 
+   				{count:120,date:date},
    				function(r) {
     				if (r) {
     					doTCompile("history_data", r.rows);
@@ -330,15 +330,15 @@
    			}, "json");
         }
         getHistoryData(null);
-        
+
 	    function Search() {
 	    	getHistoryData($("#dateData").val());
 	    }
 
 
-	</script> 
-    </div> 
-   </div> 
+	</script>
+    </div>
+   </div>
   </div>
 	  <style>.lot-wrap {
 		  padding: 0;

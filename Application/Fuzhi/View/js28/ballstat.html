@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -16,7 +16,7 @@
 
 <div class="lot-wrap">
 	    	<include file="Public/lottory_op"/>
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
 					 <div id="lot-wrap">
 					 <input type="hidden" id="callFun" value="getBallStat"/>
@@ -69,7 +69,7 @@
 							            </td>
 
 							    </tr>
-							    {{ 
+							    {{
 							    	var rowsLen=it.length;
 							    	var recArray=new Array();
 						            function addRecArray(recTermNum){
@@ -84,17 +84,17 @@
 						                recArray.push(recTermNum);
 						              }
 						              return isExist;
-						            } 
+						            }
 							    	for(var i=0;i<rowsLen;i++){ /*循环开始A*/
 							    		var rd=it[i];
 							    		var dataType=rd.dataType;
 							    		var ld=rd.lotteryDate;
 							    		if(!addRecArray(ld)){
 							     }}
-								    <tr class="{{=(i+1)%2==0?'even':'odd'}}"> 
-								     <td>{{=new Date(Date.parse(ld.replace(/-/g,"/"))).format("yyyy-MM-dd")}} </td> 
-								     <td colspan="20"> 
-								      <table class="ball"> 
+								    <tr class="{{=(i+1)%2==0?'even':'odd'}}">
+								     <td>{{=new Date(Date.parse(ld.replace(/-/g,"/"))).format("yyyy-MM-dd")}} </td>
+								     <td colspan="20">
+								      <table class="ball">
 								       <tbody>
 								        <tr>
 											<td class="bg1">{{=getVal(it,ld,1,6,2)}} </td>
@@ -108,9 +108,9 @@
 
 										</tr>
 								       </tbody>
-								      </table> </td> 
-								    </tr> 
-							    {{ 
+								      </table> </td>
+								    </tr>
+							    {{
 								      }
 							     	}
 							    }}

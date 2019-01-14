@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -16,7 +16,7 @@
 
 <div class="lot-wrap">
 			<include file="Public/lottory_op"/>
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
 					<input type="hidden" id="callFun" value="getLuzhuNumber"/>
 					<script type="text/javascript">   lotteryLuzhu = "jisuk3_luzhunumber";</script>
@@ -34,16 +34,16 @@
 		</div>
 
 	</div>
-				    
-				    <div id="lot-wrap"> 
+
+				    <div id="lot-wrap">
 				     <ul class="lot-number-omit  clearleft">
 				      <li class="ball" id="ball-choose" style="height: auto;margin-bottom: 0;">
 				       <ul style="width: 1121px; float: left;" class="ball-choose_ul">
-				        <li><span class="ckb"><b class="checkbox checked" data-c="1"></b></span><span class="ckb-txt"> <label>号码1</label></span></li> 
-				        <li><span class="ckb"><b class="checkbox checked" data-c="2"></b></span><span class="ckb-txt"> <label>号码2</label></span></li> 
-				        <li><span class="ckb"><b class="checkbox checked" data-c="3"></b></span><span class="ckb-txt"> <label>号码3</label></span></li> 
-				        <li><span class="ckb"><b class="checkbox checked" data-c="4"></b></span><span class="ckb-txt"> <label>号码4</label></span></li> 
-				        <li><span class="ckb"><b class="checkbox checked" data-c="5"></b></span><span class="ckb-txt"> <label>号码5</label></span></li> 
+				        <li><span class="ckb"><b class="checkbox checked" data-c="1"></b></span><span class="ckb-txt"> <label>号码1</label></span></li>
+				        <li><span class="ckb"><b class="checkbox checked" data-c="2"></b></span><span class="ckb-txt"> <label>号码2</label></span></li>
+				        <li><span class="ckb"><b class="checkbox checked" data-c="3"></b></span><span class="ckb-txt"> <label>号码3</label></span></li>
+				        <li><span class="ckb"><b class="checkbox checked" data-c="4"></b></span><span class="ckb-txt"> <label>号码4</label></span></li>
+				        <li><span class="ckb"><b class="checkbox checked" data-c="5"></b></span><span class="ckb-txt"> <label>号码5</label></span></li>
 				        <li><span class="ckb"><b class="checkbox checked" data-c="6"></b></span><span class="ckb-txt"> <label>号码6</label></span></li>
 						   <ul style="float: left; width: 100px;     margin-left: -55px;text-align: right;margin-top: -4px;">
 							   <span style="border-bottom: 1px solid red; padding-bottom: 2px;"><a href="javascript:void(0);" style="color: red" class="all-ball">全选</a></span>
@@ -53,34 +53,34 @@
 						   <span class="InstructionsForUse" style="float: right;"> <span class="InstructionsForUse_btn">使用说明 </span> <span class="position" style="left:-215px;top:26px;">
 							  <span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br /> 2.当长龙中断时，则另起一列显示结果；<br /> 3.“X”表示历史对应的某一期未出现该号码，“√”表示历史对应的某一期未出现了该号码。 </span>
 						  </span> </span>
-				       </ul> 
+				       </ul>
 
 
 					  </li>
 
 					 </ul>
-				     <div id="lot_content"> 
+				     <div id="lot_content">
 				      <div id="lzNumber_data-html"></div>
 				      <script id="lzNumber_data-tmpl" type="text/template">
 				      	  {{
 				      	  for(var i=1;i<=6;i++){
 				      		  var row=it[i+""];
-				      	  }}  
-					      	<div class="luzhu t_{{=i}}" style="clear:both;"> 
-						       <table class="roadmap-table-caption"> 
+				      	  }}
+					      	<div class="luzhu t_{{=i}}" style="clear:both;">
+						       <table class="roadmap-table-caption">
 						        <tbody>
-						         <tr> 
-						          <td> <span>今日累计：<span class="count"> 总来（<span id="zl{{=i}}"></span>） 没来（<span id="ml{{=i}}"></span>） </span> </span> 号码{{=i}} </td> 
-						         </tr> 
+						         <tr>
+						          <td> <span>今日累计：<span class="count"> 总来（<span id="zl{{=i}}"></span>） 没来（<span id="ml{{=i}}"></span>） </span> </span> 号码{{=i}} </td>
+						         </tr>
 						        </tbody>
-						       </table> 
+						       </table>
 						       <div style="width: 1198px; overflow-x: auto;" class="luzhu_scroll">
-						        <table class="roadmap-table mb-15" style="font-family:微软雅黑;"> 
+						        <table class="roadmap-table mb-15" style="font-family:微软雅黑;">
 						         <tbody>
-						          <tr valign="top"> 
+						          <tr valign="top">
 						          <td class="odd">
 						          {{
-						           var preNum; 
+						           var preNum;
 						           var symbol;
 						           var index=1;
 						           var zl=0;
@@ -95,13 +95,13 @@
 						        		   symbol="<span>√</span>";
 						        	   }
 						        	   if(n==0||preNum==num){
-						          }}	   
-						           		{{=symbol}} 
-						          {{ 
+						          }}
+						           		{{=symbol}}
+						          {{
 						          		}else{
 						          			index+=1;
 						          }}
-						          		</td><td class="{{=index%2==0?'even':'odd'}}">{{=symbol}} 
+						          		</td><td class="{{=index%2==0?'even':'odd'}}">{{=symbol}}
 						          {{
 						          		}
 						          		preNum=num;
@@ -109,21 +109,21 @@
 						          }}
 						          <input type="hidden" id="zlval{{=i}}" value="{{=zl}}"/>
 						          <input type="hidden" id="mlval{{=i}}" value="{{=ml}}"/>
-						          </tr> 
+						          </tr>
 						         </tbody>
-						        </table> 
-						       </div> 
-						      </div> 
+						        </table>
+						       </div>
+						      </div>
 				      	  {{
 				      	  	}
 				          }}
 					  </script>
-				      
+
 				      <script type="text/javascript">
 				      	function getLuzhuNumber(){
 				      		var date=$("#dateData").val();
 				      		$.post("jisuk3/getLuzhuNumber.do",
-				   				{date:date}, 
+				   				{date:date},
 				   				function(r) {
 				    				if (r) {
 				    					doTCompile("lzNumber_data", r);
@@ -138,9 +138,9 @@
 				      	function Search() {
 				      		getLuzhuNumber();
 					    }
-					 </script> 
-				     </div> 
-				    </div>  
+					 </script>
+				     </div>
+				    </div>
 				<!--  内容结束-->
 	    </div>
 	</div>

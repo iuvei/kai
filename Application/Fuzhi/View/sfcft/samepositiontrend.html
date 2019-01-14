@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="css/draw5.css">
@@ -19,8 +19,8 @@
 </block>
 
 <block name="body">
- 
-  <div class="body-content"> 
+
+  <div class="body-content">
     <include file="Public/top_ad"/>
 
       <include file="Public/lottory_latest"/>
@@ -136,8 +136,8 @@
             </div>
         </div>
     </div>
-    
-    <script type = "text/javascript" > 
+
+    <script type = "text/javascript" >
 	    $(function() {
 		    require(['trendChart'],
 		    function(trendChart) {
@@ -150,7 +150,7 @@
 		            lineWidth: 2,
 		            lineColor: "#BB8569"
 		        });
-		
+
 		        var ajaxUrl = "cqssc/samePositionTrend.do";
 		        var datas;
 		        var option;
@@ -184,14 +184,14 @@
 		                        pid: vsel
 		                    },
 		                    function(dataObj) {
-		                        //	 	                        var dataObj = eval("(" + data + ")");//转换为json对象 
+		                        //	 	                        var dataObj = eval("(" + data + ")");//转换为json对象
 		                        vm.totaldata = dataObj.chart;
 		                        //vm.selectdata = dataObj.option;
 		                        vm.time = dataObj.time;
-		
+
 		                        vm.SetStyle(vsel);
 		                        vm.drawLine();
-		
+
 		                        $(".data-stat").show();
 		                        $(".trendChartloading").hide();
 		                    },
@@ -204,7 +204,7 @@
 		                    } else {
 		                        vperid = pid;
 		                    }
-		
+
 		                    $(".data-stat").hide();
 		                    $(".trendChartloading").show();
 		                    chartLine.clearLines();
@@ -232,7 +232,7 @@
 		                vm.newNumber = ""; //最近新一期开出开奖号码
 		                vm.nextCurrNo = ""; //用于存储走势第一条期号
 		                vm.SetStyle = function(vperid) {
-		
+
 		                    if (vm.nextNo == vperid || (vm.currNo == vperid && ((vperid == vm.newIssue && vm.newNumber == "") || vm.currNo > vm.newIssue))) {
 		                        vm.nextCurrNo = vperid;
 		                        $("#td_award").show();
@@ -242,7 +242,7 @@
 		                    } else {
 		                        $("#td_award").hide();
 		                    }
-		
+
 		                }
 		                vm.AddOption = function() {
 		                    if ($("#periodCount option").eq(0).val() != vm.nextNo) {
@@ -270,42 +270,42 @@
 		                                vm.changePeriod("", vm.currNo);
 		                            }
 		                        }
-		
+
 		                    },
 		                    'json').error(function() {
-		
+
 							});
 		                }
 		                vm.drawLine = function() {
 		                    chartLine.clearLines();
 		                    chartLine.reDraw();
 		                };
-		
+
 		                vm.$watch("periodInfo",
 		                function(v) {
 		                    vm.periodInfo = v;
 		                    vm.SetLoadAwardInfo();
-		
+
 		                });
-		
+
 		            });
-		
+
 		            var vjson = datas;
 		            viewmodel.totaldata = vjson;
 		            viewmodel.selectdata = option;
-		
+
 		            $(".data-stat").show();
 		            $(".trendChartloading").hide();
 		            viewmodel.SetLoadAwardInfo();
-		
+
 		            avalon.scan();
 		            $(".jsloading").hide();
 		            viewmodel.drawLine();
-		
+
 		        },
 		        "json");
 		    });
-		
+
 		});
 		var vdraw = 0;
 		var bflag = false;
@@ -317,6 +317,6 @@
 
 	</script>
 	<script src="js/avalon.js"  type="text/javascript"></script>
-  </div> 
-  <div class="clear"></div> 
+  </div>
+  <div class="clear"></div>
   </block>

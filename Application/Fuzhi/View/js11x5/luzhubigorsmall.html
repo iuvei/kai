@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -19,13 +19,13 @@
 			<div class="web_listOP">
     <ul id="web_listOP_ul"><li><a href="gd11x5/">广东11选5</a></li><li><a href="gd11x5/kaijiang.html">历史开奖号码</a></li><li><a href="gd11x5/luzhulonghu.html">龙虎路珠</a></li><li class="hover"><a href="gd11x5/luzhubigorsmall.html">单双大小路珠</a></li><li><a href="gd11x5/luzhutotal.html">总和路珠</a></li><li><a href="gd11x5/ballstat.html">单双大小历史</a></li><li><a href="gd11x5/numberstat.html">历史号码统计</a></li><li><a href="gd11x5/zoushitu.html">横版走势图</a></li><li><a href="jiqiao/gd11x5/">广东11选5技巧</a></li><!--<li><a href="gd11x5/shipin" class="redColor">开奖视频</a></li>--><li><a href="gd11x5/omitdata.html">遗漏大数据</a><span class="hoticon"></span> </li><li><a href="gd11x5/twosidedstat.html">两面数据统计</a><span class="wen_newIcon"></span> </li></ul>
 </div>
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
     <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
 					<input type="hidden" id="callFun" value="Search"/>
 
-					 
-					 
+
+
 					 <div id="lot-wrap">
 					    <ul class="lot-number-omit  clearleft">
 					        <li class="ball" id="ball-choose" style="margin-bottom: 0px;padding-bottom: 0;">
@@ -82,8 +82,8 @@
 					      	  for(var i=1;i<=5;i++){
 					      		  var dxRow=it["dx"+i];
 					      		  var dsRow=it["ds"+i];
-					      	}}  
-								<div class="luzhu t_{{=i}}"> 
+					      	}}
+								<div class="luzhu t_{{=i}}">
 									<table class="roadmap-table-caption">
 								        <tr>
 								            <td>
@@ -98,7 +98,7 @@
 									        <tr valign="top">
 									        	<td class="odd">
 									        	{{
-										           var dxPreNum; 
+										           var dxPreNum;
 										           var dxSymbol;
 										           var dxIndex=1;
 										           var lzBigVal=0;
@@ -113,13 +113,13 @@
 										        		   dxSymbol="<label>小</label>";
 										        	   }
 										        	   if(n==0||dxPreNum==num){
-										           }}	   
-										           		{{=dxSymbol}} 
-										           {{ 
+										           }}
+										           		{{=dxSymbol}}
+										           {{
 										          		}else{
 										          			dxIndex+=1;
 										           }}
-										          		</td><td class="{{=dxIndex%2==0?'even':'odd'}}">{{=dxSymbol}} 
+										          		</td><td class="{{=dxIndex%2==0?'even':'odd'}}">{{=dxSymbol}}
 										           {{
 										          		}
 										          		dxPreNum=num;
@@ -130,10 +130,10 @@
 									        </tr>
 									    </table>
 									</div>
-									<div class="roadmap-bjl"></div>        
+									<div class="roadmap-bjl"></div>
 								</div>
-							
-		    					<div class="luzhu t_{{=i}}"> 
+
+		    					<div class="luzhu t_{{=i}}">
 									<table class="roadmap-table-caption">
 								        <tr>
 								            <td>
@@ -147,7 +147,7 @@
 									        <tr valign="top">
 												<td class="odd">
 									        	{{
-										           var dsPreNum; 
+										           var dsPreNum;
 										           var dsSymbol;
 										           var dsIndex=1;
 										           var lzdVal=0;
@@ -162,13 +162,13 @@
 										        		   dsSymbol="<label>双</label>";
 										        	   }
 										        	   if(n==0||dsPreNum==num){
-										           }}	   
-										           		{{=dsSymbol}} 
-										           {{ 
+										           }}
+										           		{{=dsSymbol}}
+										           {{
 										          		}else{
 										          			dsIndex+=1;
 										           }}
-										          		</td><td class="{{=dsIndex%2==0?'even':'odd'}}">{{=dsSymbol}} 
+										          		</td><td class="{{=dsIndex%2==0?'even':'odd'}}">{{=dsSymbol}}
 										           {{
 										          		}
 										          		dsPreNum=num;
@@ -179,7 +179,7 @@
 						                    </tr>
 									    </table>
 									</div>
-									<div class="roadmap-bjl"></div>        
+									<div class="roadmap-bjl"></div>
 								</div>
 							{{
 					      	  	}
@@ -191,7 +191,7 @@
 				      	function getLuzhuBigOrSmall(){
 				      		var date=$("#dateData").val();
 				      		$.post("gd11x5/getLuzhuBigOrSmall.do",
-				   				{date:date}, 
+				   				{date:date},
 				   				function(r) {
 				    				if (r) {
 				    					doTCompile("lzBigOrSmall_data", r);
@@ -208,7 +208,7 @@
 				      	function Search() {
 				      		getLuzhuBigOrSmall();
 					    }
-					 </script> 
+					 </script>
 				<!--  内容结束-->
 	    </div>
 	</div>

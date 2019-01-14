@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -16,7 +16,7 @@
 <include file="Public/lottory_latest"/>
 		<include file="Public/lottory_op"/>
 		<div id="lot-wrap" style="margin-bottom:20px;">
-            
+
 <input type="hidden" id="callFun" value="todaystatlist" time="2000" />
             <div class="merge-title-table-title">
 
@@ -101,7 +101,7 @@
     $(function () {
 
         json.push({ "index": 1, "star": 15, end: 100, color: "red", bgcolor: "color_red" });
-       
+
         $(".span").live("click", function () {
             var vindex = Number($(this).attr("pid"));
             var vlen = $("#colorSet span[id^='sid']").length;
@@ -152,7 +152,7 @@
                     json[pid - 1].star = star;
                     json[pid - 1].end = end;
                 }
-                
+
             }
         });
         $("#spAdd").click(function () {
@@ -254,7 +254,7 @@
         return ret;
     }
     function loadData() {
-       
+
         var row = checkInput();
         //alert(row+" -- "+JSON.stringify(json));
         if (0 == row) {

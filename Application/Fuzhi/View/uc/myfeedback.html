@@ -1,15 +1,15 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
 <block name="body">
- 
-  <!--body-content--> 
-  <div class="body-content"> 
-   <!-- 用户中心左则菜单开始 --> 
+
+  <!--body-content-->
+  <div class="body-content">
+   <!-- 用户中心左则菜单开始 -->
    	<div id="member-info">
         <div class="base-info">
             <a class="member-head" href="javascript:void(0);">
@@ -20,7 +20,7 @@
          <p class="update-info">
               <a href="javascript:openUpInfo('info');">更改资料</a><i>|</i>
              <a href="javascript:openUpInfo('password');">修改密码 </a>
-             <!-- 
+             <!--
              <a href="javascript:openUpInfo('bindmail');">绑定邮箱 </a><i>|</i>
              <a href="javascript:openUpInfo('bindphone');">激活手机</a>
               -->
@@ -29,7 +29,7 @@
             <li>
                 <a class="my-extend" href="javascript:void(0);">我的</a>
                 <ul>
-                	<!-- 
+                	<!--
                     <li>
                         <a class="my-mode " href="/uc/mymode">我的模式</a>
                     </li>
@@ -45,9 +45,9 @@
             </li>
         </ul>
     </div>
-    
-    
-    <div id="upUserInfo" class="body-content" style="width: 800px;height: 500px;display: none;">        
+
+
+    <div id="upUserInfo" class="body-content" style="width: 800px;height: 500px;display: none;">
 	    <div class="page-position">
 	        <a href="javascript:showUpUserInfo('infomation')" id="infomation" class="infomation-cur" ></a>
 	        <a href="javascript:showUpUserInfo('safetycenter')" id="safetycenter" class="safetycenter"></a>
@@ -102,39 +102,39 @@
 		            <button type="submit" id="btnUpdate" style="width:200px; height:30px; margin-left:100px;">确认修改</button>
 		            <input type="hidden" name="ajaxhandler" value="modifypass" />
 		        </div>
-		    </form>  
+		    </form>
 	    </div>
     </div>
-    
- 
-   <!-- 用户中心左则菜单结束 --> 
-   <div id="member-active"> 
-    <div class="userCenter_right"> 
-     <h1>我的反馈</h1> 
+
+
+   <!-- 用户中心左则菜单结束 -->
+   <div id="member-active">
+    <div class="userCenter_right">
+     <h1>我的反馈</h1>
       <div id="feedback-html"></div>
       <script id="feedback-tmpl" type="text/template">
-     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="userCenter_table"> 
-      <tbody> 
-       <tr class="firstBg"> 
-        <td height="45" align="center"><span class="bigFont">反馈内容</span></td> 
-        <td><span class="bigFont">作者</span></td> 
-        <td><span class="bigFont">时间</span></td> 
+     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="userCenter_table">
+      <tbody>
+       <tr class="firstBg">
+        <td height="45" align="center"><span class="bigFont">反馈内容</span></td>
+        <td><span class="bigFont">作者</span></td>
+        <td><span class="bigFont">时间</span></td>
        </tr>
-      
-      
+
+
 			{{ if(it.totalCount&&it.totalCount>0){ }}
 				{{ for (var i = 0, l = it.data.length; i < l; i++) { }}
 				{{ var replyContent=it.data[i].replyContent; }}
-				<tr class="trBg"> 
+				<tr class="trBg">
         		<td><span class="li_contents">{{=it.data[i].fbContent}}
 					{{ if(replyContent){ }}
 						<span style="position: relative">
                             <i class="returnTips" onclick="loadResult('{{=it.data[i].id}}');">已回复</i>
 						</span>
 					 {{ } }}
-					</span></td> 
-       			<td>{{=it.data[i].userName}}</td> 
-        		<td>{{=it.data[i].addTime}}</td> 
+					</span></td>
+       			<td>{{=it.data[i].userName}}</td>
+        		<td>{{=it.data[i].addTime}}</td>
        			</tr>
 				{{ if(replyContent){ }}
 				<tr style="display:none" id="tr_{{=it.data[i].id}}" flag="0">
@@ -143,29 +143,29 @@
 						<span class="returnCons">{{=it.data[i].replyContent}}</span></td>
                		<td>{{=it.data[i].replyAddTime}}</td>
          		</tr>
-				{{ } }} 
-			{{ } }} 
-       <tr> 
-        <td colspan="3" style="text-align:center;margin:0px"> 
-         	<div id="listPage" class="megas512"></div> 
-		</td> 
-       </tr> 
-      </tbody> 
-     </table> 
+				{{ } }}
+			{{ } }}
+       <tr>
+        <td colspan="3" style="text-align:center;margin:0px">
+         	<div id="listPage" class="megas512"></div>
+		</td>
+       </tr>
+      </tbody>
+     </table>
 		{{ } }}
 	   </script>
-    </div> 
-   </div> 
-  </div> 
-   
+    </div>
+   </div>
+  </div>
+
   <script type="text/javascript" src="js/account.js" ></script>
-<script type="text/javascript">account.checkLogin();</script> 
+<script type="text/javascript">account.checkLogin();</script>
 <script type="text/javascript" src="js/service.js" ></script>
   	<script type="text/javascript" src="js/util/jquery.artDialog.min.js" ></script>
     <script type="text/javascript" src="js/util/Validform/Validform_v5.3.2_min.js" ></script>
     <script type="text/javascript" src="js/common.js" ></script>
     <script type="text/javascript" src="js/uc/uc.js" ></script>
-  
+
 
   <link href="js/util/page/pagination.css"  rel="stylesheet" />
   <script type="text/javascript" src="js/util/page/jquery.pagination.js" ></script>

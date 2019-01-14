@@ -1,15 +1,15 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
 <block name="body">
- 
-  <!--body-content--> 
-  <div class="body-content"> 
-   <!-- ��Ʊ���� ͷ�� --> 
+
+  <!--body-content-->
+  <div class="body-content">
+   <!-- ��Ʊ���� ͷ�� -->
    <include file="Public/top_ad"/>
 	  <include file="Public/lottory_latest"/>
 
@@ -21,20 +21,20 @@
 <script type="text/javascript">
 	$('.lot-menu a').removeClass('cur');
 	$('[game="'+beforPageJs.gameName+'"]').addClass('cur');
-</script> 
+</script>
 
 <script type="text/javascript">    var lotteryLuzhu = "";</script>
 <script src="js/lot/lotcommon.js"  type="text/javascript"></script>
 <script src="js/lot/tcssc/award.js"  type="text/javascript"></script>
 <script src="js/lot/warntime.js"  type="text/javascript"></script>
    <div class="lot-wrap">
-				<div class="clear"></div> 
-    <div id="lot-wrap"> 
-     <input type="hidden" value="Search" id="callFun" lottery="cqssc" /> 
-     <div class="lot-search"> 
-      <div class="lot-search"> 
-       <div class="car-num"> 
-        <ul class="lot-number-omit" style="margin-bottom: 10px;"> 
+				<div class="clear"></div>
+    <div id="lot-wrap">
+     <input type="hidden" value="Search" id="callFun" lottery="cqssc" />
+     <div class="lot-search">
+      <div class="lot-search">
+       <div class="car-num">
+        <ul class="lot-number-omit" style="margin-bottom: 10px;">
          <li class="ball" style="padding-bottom: 2px;">
 			 <div class="merge-title-table-title" style="margin-bottom: 10px;">
 
@@ -51,67 +51,67 @@
 					 </li>
 				 </ul>
 			 </div>
-          <ul style="width: 750px;_width:740px;  float: left;margin-left:10px;"> 
+          <ul style="width: 750px;_width:740px;  float: left;margin-left:10px;">
 
           </ul>
 
-         </li> 
-        </ul> 
-       </div> 
-      </div> 
-     </div> 
-     <div class="dataTableKuangList" style="clear:both;margin-bottom:15px;" id="numstat_remind"> 
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <div class="dataTableKuangList" style="clear:both;margin-bottom:15px;" id="numstat_remind">
      <div id="todayNumberStatData-html"></div>
 	 <script id="todayNumberStatData-tmpl" type="text/template">
-		<table width="100%" border="0" cellspacing="1" cellpadding="0"> 
+		<table width="100%" border="0" cellspacing="1" cellpadding="0">
 	       <tbody>
-	        <tr class="huisekColor"> 
-	         <td colspan="17" class="firstTd"><span>���պ���ͳ��</span></td> 
-	        </tr> 
-	        <tr class="huisekColor2"> 
-	         <td>0</td> 
-	         <td>1</td> 
-	         <td>2</td> 
-	         <td>3</td> 
-	         <td>4</td> 
-	         <td>5</td> 
-	         <td>6</td> 
-	         <td>7</td> 
-	         <td>8</td> 
-	         <td>9</td> 
-	         <td>��</td> 
-	         <td>˫</td> 
-	         <td>��</td> 
-	         <td>С</td> 
-	         <td>��</td> 
-	         <td>��</td> 
-	         <td>ƽ</td> 
-	        </tr> 
-	        <tr class="huisekColor3" id="todayNumberStatData"> 
-	         <td>{{=it.t1n0}}</td> 
-	         <td>{{=it.t1n1}}</td> 
-	         <td>{{=it.t1n2}}</td> 
-	         <td>{{=it.t1n3}}</td> 
-	         <td>{{=it.t1n4}}</td> 
-	         <td>{{=it.t1n5}}</td> 
-	         <td>{{=it.t1n6}}</td> 
-	         <td>{{=it.t1n7}}</td> 
-	         <td>{{=it.t1n8}}</td> 
-	         <td>{{=it.t1n9}}</td> 
-	         <td>{{=it.t5n1}}</td> 
-	         <td>{{=it.t5n2}}</td> 
-	         <td>{{=it.t6n2}}</td> 
-	         <td>{{=it.t6n1}}</td> 
-	         <td>{{=it.t2n1}}</td> 
-	         <td>{{=it.t2n2}}</td> 
-	         <td>{{=it.t2n3}}</td> 
-	        </tr> 
+	        <tr class="huisekColor">
+	         <td colspan="17" class="firstTd"><span>���պ���ͳ��</span></td>
+	        </tr>
+	        <tr class="huisekColor2">
+	         <td>0</td>
+	         <td>1</td>
+	         <td>2</td>
+	         <td>3</td>
+	         <td>4</td>
+	         <td>5</td>
+	         <td>6</td>
+	         <td>7</td>
+	         <td>8</td>
+	         <td>9</td>
+	         <td>��</td>
+	         <td>˫</td>
+	         <td>��</td>
+	         <td>С</td>
+	         <td>��</td>
+	         <td>��</td>
+	         <td>ƽ</td>
+	        </tr>
+	        <tr class="huisekColor3" id="todayNumberStatData">
+	         <td>{{=it.t1n0}}</td>
+	         <td>{{=it.t1n1}}</td>
+	         <td>{{=it.t1n2}}</td>
+	         <td>{{=it.t1n3}}</td>
+	         <td>{{=it.t1n4}}</td>
+	         <td>{{=it.t1n5}}</td>
+	         <td>{{=it.t1n6}}</td>
+	         <td>{{=it.t1n7}}</td>
+	         <td>{{=it.t1n8}}</td>
+	         <td>{{=it.t1n9}}</td>
+	         <td>{{=it.t5n1}}</td>
+	         <td>{{=it.t5n2}}</td>
+	         <td>{{=it.t6n2}}</td>
+	         <td>{{=it.t6n1}}</td>
+	         <td>{{=it.t2n1}}</td>
+	         <td>{{=it.t2n2}}</td>
+	         <td>{{=it.t2n3}}</td>
+	        </tr>
 	       </tbody>
-	      </table> 
+	      </table>
 	 </script>
-     </div> 
+     </div>
 
-     <div class="clear"></div> 
+     <div class="clear"></div>
      <div id="history_data-html"></div>
    	 <script id="history_data-tmpl" type="text/template">
    		<table id="history" class="lot-table">
@@ -129,7 +129,7 @@
 						<td style="width: 70px; text-align: center;">斗牛</td>
 					</tr>
 					{{
-						for (var i = 0; i <it.length; i++) { 
+						for (var i = 0; i <it.length; i++) {
 							var row=it[i];
 							var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
 							var totalNum=row.n1+row.n2+row.n3+row.n4+row.n5;
@@ -141,7 +141,7 @@
 							}else if(row.n1==row.n5){
 								lhStr="和";
 							}
-								
+
 					}}
 							<tr class="{{=(i+1)%2==0?'even':'odd'}}">
 								<td>
@@ -174,12 +174,12 @@
 					}}
 	        	</tbody>
 			</table>
-		</script> 
+		</script>
      <script type="text/javascript">
 	    $(function () {
 	        LoadCqssscTipSet();
 	    })
-	    
+
     	//�������ͳ��
 	    function reloadNumberStatRemind() {
 	    	var numberStarts={};
@@ -205,10 +205,10 @@
                 $("#twoball_issuenext").text(json.IssueNext);
                 $("#twoball_omitcur").text(json.OmitCurrent);
                 $("#twoball_omitmax").text(json.OmitTodayMax);
-               },'json'); 
+               },'json');
 	    }
         reloadTwoBallRemind();
-        
+
         //����
         function reloadChangLong() {
         	$.post("tcssc/getMergeData.do",
@@ -219,11 +219,11 @@
     			}, "json")
         }
         reloadChangLong();
-        
+
         //������ʷ
         function getHistoryData(date){
     		$.post("tcssc/getHistoryData.do",
-   				{count:120,date:date}, 
+   				{count:120,date:date},
    				function(r) {
     				if (r) {
     					doTCompile("history_data", r.rows);
@@ -231,7 +231,7 @@
    			}, "json");
         }
         getHistoryData(null);
-        
+
 	    function Search() {
 	    	getHistoryData($("#dateData").val());
 	    }
@@ -378,7 +378,7 @@
 
 
 	 </script>
-    </div> 
-   </div> 
-  </div>   
+    </div>
+   </div>
+  </div>
     </block>

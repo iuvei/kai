@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -16,119 +16,119 @@
 
 <div class="lot-wrap">
 			<include file="Public/lottory_op"/>
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
 					 <div id="lot-wrap">
 					 <input type="hidden" id="callFun" value="getBallStat"/>
-						<div id="ball_stat_list-html" style="float: left;"></div> 
+						<div id="ball_stat_list-html" style="float: left;"></div>
 						<script id="ball_stat_list-tmpl" type="text/template">
-							<table class="lot-table"> 
-							   <caption> 
-							   </caption> 
+							<table class="lot-table">
+							   <caption>
+							   </caption>
 							   <tbody>
-							    <tr class="head"> 
-							     <td width="150">日期</td> 
-							     <td width="119px">第一球</td> 
-							     <td width="119px">第二球</td> 
-							     <td width="119px">第三球</td> 
-							     <td width="119px">第四球</td> 
-							     <td width="119px">第五球</td> 
-							     <td width="119px">第六球</td> 
-							     <td width="119px">第七球</td> 
-							     <td width="119px">第八球</td> 
-							    </tr> 
-							    <tr class="head" style="height: 30px;"> 
-							     <td width="150"> </td> 
-							     <td width="160px"> 
-							      <table class="ball"> 
-							       <tbody>
-							        <tr> 
-							         <td> 大 </td> 
-							         <td> 小 </td> 
-							         <td> 单 </td> 
-							         <td> 双 </td> 
-							        </tr> 
-							       </tbody>
-							      </table> </td> 
-							     <td width="160px"> 
-							      <table class="ball"> 
-							       <tbody>
-							        <tr> 
-							         <td> 大 </td> 
-							         <td> 小 </td> 
-							         <td> 单 </td> 
-							         <td> 双 </td> 
-							        </tr> 
-							       </tbody>
-							      </table> </td> 
-							     <td width="160px"> 
-							      <table class="ball"> 
-							       <tbody>
-							        <tr> 
-							         <td> 大 </td> 
-							         <td> 小 </td> 
-							         <td> 单 </td> 
-							         <td> 双 </td> 
-							        </tr> 
-							       </tbody>
-							      </table> </td> 
-							     <td width="160px"> 
-							      <table class="ball"> 
-							       <tbody>
-							        <tr> 
-							         <td> 大 </td> 
-							         <td> 小 </td> 
-							         <td> 单 </td> 
-							         <td> 双 </td> 
-							        </tr> 
-							       </tbody>
-							      </table> </td> 
-							     <td width="160px"> 
-							      <table class="ball"> 
-							       <tbody>
-							        <tr> 
-							         <td> 大 </td> 
-							         <td> 小 </td> 
-							         <td> 单 </td> 
-							         <td> 双 </td> 
-							        </tr> 
-							       </tbody>
-							      </table> </td> 
-							     <td width="160px"> 
-							      <table class="ball"> 
-							       <tbody>
-							        <tr> 
-							         <td> 大 </td> 
-							         <td> 小 </td> 
-							         <td> 单 </td> 
-							         <td> 双 </td> 
-							        </tr> 
-							       </tbody>
-							      </table> </td> 
-							     <td width="160px"> 
-							      <table class="ball"> 
-							       <tbody>
-							        <tr> 
-							         <td> 大 </td> 
-							         <td> 小 </td> 
-							         <td> 单 </td> 
-							         <td> 双 </td> 
-							        </tr> 
-							       </tbody>
-							      </table> </td> 
-							     <td width="160px"> 
-							      <table class="ball"> 
-							       <tbody>
-							        <tr> 
-							         <td> 大 </td> 
-							         <td> 小 </td> 
-							         <td> 单 </td> 
-							         <td> 双 </td> 
-							        </tr> 
-							       </tbody>
-							      </table> </td> 
+							    <tr class="head">
+							     <td width="150">日期</td>
+							     <td width="119px">第一球</td>
+							     <td width="119px">第二球</td>
+							     <td width="119px">第三球</td>
+							     <td width="119px">第四球</td>
+							     <td width="119px">第五球</td>
+							     <td width="119px">第六球</td>
+							     <td width="119px">第七球</td>
+							     <td width="119px">第八球</td>
 							    </tr>
-							    {{ 
+							    <tr class="head" style="height: 30px;">
+							     <td width="150"> </td>
+							     <td width="160px">
+							      <table class="ball">
+							       <tbody>
+							        <tr>
+							         <td> 大 </td>
+							         <td> 小 </td>
+							         <td> 单 </td>
+							         <td> 双 </td>
+							        </tr>
+							       </tbody>
+							      </table> </td>
+							     <td width="160px">
+							      <table class="ball">
+							       <tbody>
+							        <tr>
+							         <td> 大 </td>
+							         <td> 小 </td>
+							         <td> 单 </td>
+							         <td> 双 </td>
+							        </tr>
+							       </tbody>
+							      </table> </td>
+							     <td width="160px">
+							      <table class="ball">
+							       <tbody>
+							        <tr>
+							         <td> 大 </td>
+							         <td> 小 </td>
+							         <td> 单 </td>
+							         <td> 双 </td>
+							        </tr>
+							       </tbody>
+							      </table> </td>
+							     <td width="160px">
+							      <table class="ball">
+							       <tbody>
+							        <tr>
+							         <td> 大 </td>
+							         <td> 小 </td>
+							         <td> 单 </td>
+							         <td> 双 </td>
+							        </tr>
+							       </tbody>
+							      </table> </td>
+							     <td width="160px">
+							      <table class="ball">
+							       <tbody>
+							        <tr>
+							         <td> 大 </td>
+							         <td> 小 </td>
+							         <td> 单 </td>
+							         <td> 双 </td>
+							        </tr>
+							       </tbody>
+							      </table> </td>
+							     <td width="160px">
+							      <table class="ball">
+							       <tbody>
+							        <tr>
+							         <td> 大 </td>
+							         <td> 小 </td>
+							         <td> 单 </td>
+							         <td> 双 </td>
+							        </tr>
+							       </tbody>
+							      </table> </td>
+							     <td width="160px">
+							      <table class="ball">
+							       <tbody>
+							        <tr>
+							         <td> 大 </td>
+							         <td> 小 </td>
+							         <td> 单 </td>
+							         <td> 双 </td>
+							        </tr>
+							       </tbody>
+							      </table> </td>
+							     <td width="160px">
+							      <table class="ball">
+							       <tbody>
+							        <tr>
+							         <td> 大 </td>
+							         <td> 小 </td>
+							         <td> 单 </td>
+							         <td> 双 </td>
+							        </tr>
+							       </tbody>
+							      </table> </td>
+							    </tr>
+							    {{
 							    	var rowsLen=it.length;
 							    	var recArray=new Array();
 						            function addRecArray(recTermNum){
@@ -143,56 +143,56 @@
 						                recArray.push(recTermNum);
 						              }
 						              return isExist;
-						            } 
+						            }
 							    	for(var i=0;i<rowsLen;i++){ /*循环开始A*/
 							    		var rd=it[i];
 							    		var dataType=rd.dataType;
 							    		var ld=rd.lotteryDate;
 							    		if(!addRecArray(ld)){
 							     }}
-								    <tr class="{{=(i+1)%2==0?'even':'odd'}}"> 
-								     <td>{{=new Date(Date.parse(ld.replace(/-/g,"/"))).format("yyyy-MM-dd")}} </td> 
-								     <td colspan="20"> 
-								      <table class="ball"> 
+								    <tr class="{{=(i+1)%2==0?'even':'odd'}}">
+								     <td>{{=new Date(Date.parse(ld.replace(/-/g,"/"))).format("yyyy-MM-dd")}} </td>
+								     <td colspan="20">
+								      <table class="ball">
 								       <tbody>
-								        <tr> 
-								         <td class="bg1">{{=getVal(it,ld,1,6,2)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,1,6,1)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,1,5,1)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,1,5,2)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,2,6,2)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,2,6,1)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,2,5,1)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,2,5,2)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,3,6,2)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,3,6,1)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,3,5,1)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,3,5,2)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,4,6,2)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,4,6,1)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,4,5,1)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,4,5,2)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,5,6,2)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,5,6,1)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,5,5,1)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,5,5,2)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,6,6,2)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,6,6,1)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,6,5,1)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,6,5,2)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,7,6,2)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,7,6,1)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,7,5,1)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,7,5,2)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,8,6,2)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,8,6,1)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,8,5,1)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,8,5,2)}} </td> 
-								        </tr> 
+								        <tr>
+								         <td class="bg1">{{=getVal(it,ld,1,6,2)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,1,6,1)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,1,5,1)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,1,5,2)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,2,6,2)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,2,6,1)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,2,5,1)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,2,5,2)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,3,6,2)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,3,6,1)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,3,5,1)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,3,5,2)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,4,6,2)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,4,6,1)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,4,5,1)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,4,5,2)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,5,6,2)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,5,6,1)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,5,5,1)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,5,5,2)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,6,6,2)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,6,6,1)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,6,5,1)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,6,5,2)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,7,6,2)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,7,6,1)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,7,5,1)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,7,5,2)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,8,6,2)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,8,6,1)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,8,5,1)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,8,5,2)}} </td>
+								        </tr>
 								       </tbody>
-								      </table> </td> 
-								    </tr> 
-							    {{ 
+								      </table> </td>
+								    </tr>
+							    {{
 								      }
 							     	}
 							    }}

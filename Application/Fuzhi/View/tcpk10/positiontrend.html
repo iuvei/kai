@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/draw5.css">
     <link type="text/css" rel="stylesheet" href="css/layout.css">
@@ -18,12 +18,12 @@
 </block>
 
 <block name="body">
- 
-  <div class="body-content"> 
+
+  <div class="body-content">
    <include file="Public/top_ad"/>
 
       <include file="Public/lottory_latest"/>
-   
+
    	<input type="hidden" id="callFun" value="updateRecord" />
    	<div class ="jsloading"></div>
     <div class="web_dateLineBody" ms-controller="chart">
@@ -76,7 +76,7 @@
                         <li>|</li>
                         <li  ms-class="hover:ball==10"><a href="javascript:void(0);" data-ball="10" ms-click="changeball('第十名',10)">第十名</a></li>
                           <li id="chkFGX" ms-click="chkFgx"><b ms-class-1="checkbox" ms-class-2="checked:fgxIscheck" ></b><label style="cursor: pointer">分割线</label></li>
-                       
+
                     </ul>
                 </div>
                 <div class="right">
@@ -196,7 +196,7 @@
                 <table width="100%" border="0" cellspacing="1" cellpadding="0">
                     <tr>
                         <td rowspan="2" class="blue3"><span>期号</span></td>
-              
+
                         <td class="blue4" width="580"><span>{{ballName}}走势</span></td>
                         <td class="blue4" width="107">回摆</td>
                         <td class="blue4" width="71">单双</td>
@@ -248,8 +248,8 @@
                      <tbody id="chart">
                     <tr ms-repeat="trendDatas" style="display: none" class="data-stat">
                         <td class="white2" align="center"><span ms-class="redColor:el.isVirtual">{{el.Period}}</span></td>
-              
-                    
+
+
                         <td class="white2" valign="middle">
                             <div ms-class-1="web_numTenBall:el.isVirtual" ms-class-2="web_numTens:!el.isVirtual" ms-class-3="web_numBallWidth57" ms-class="web_changeColor:hotcoldIscheck&&el.isVirtual&&$index==2">
                                 <ul ms-if="!el.isVirtual">
@@ -300,7 +300,7 @@
 	    }
 	</script>
 	<script type="text/javascript">
-	    $(function () { 
+	    $(function () {
 	        require(['trendChart'], function (trendChart) {
 	            var chartLine = new trendChart({ css: { noyl: "noyl", bline: "bline", lines: [".hover2"] }, lineWidth: 2, lineColor: "#BB8569", ckbSplit: "#chkFGX" });
 	            // ckbDistribute: "#chkYL", ckbSplit: "#chkBZX", chkZX: "#chkZX"
@@ -327,7 +327,7 @@
 			                $(".trendChartloading").show();
 			                $.get("tcpk10/positionTrend.do", { ball: vm.ball, count: vm.periodCount, isToday: vm.periodCount == 0, t: Math.random() }, function (data) {
 // 			                    var json = eval(data);
-							
+
 			                    vm.$hotColdDatas = data.hotcold;
 			                    var tdatas = data.list;
 			                    var sdatas = data.stat;
@@ -474,7 +474,7 @@
 			            };
 			            vm.statTotal = function (d) {
 			                var newArr = viewmodel.totalDatas;
-			
+
 			                newArr[0].Nums[d.Result - 1] += 1;
 			                for (var i = 0; i < 10; i++) {
 			                    if (d.Nums[i] > newArr[1].Nums[i]) {
@@ -516,7 +516,7 @@
 			                } else if (d.Even > newArr[1].Even) {
 			                    newArr[1].Even = d.Even;
 			                }
-			
+
 			                viewmodel.totalDatas = newArr;
 			            };
 			            vm.addVirtualBalls = function () {
@@ -546,7 +546,7 @@
 			                }, 'json');
 			            })
 			        });
-			      
+
 			        viewmodel.trendDatas = datas;
 			        viewmodel.totalDatas = stats;
 			        viewmodel.$hotColdDatas = hotcolds;
@@ -560,11 +560,11 @@
 			        $(".jsloading").hide();
 			        viewmodel.drawLine();
 		        }, 'json');
-	        
+
 	   		});
 	    });
 	</script>
 	<script src="js/avalon.js"  type="text/javascript"></script>
-  </div> 
-  <div class="clear"></div> 
+  </div>
+  <div class="clear"></div>
   </block>

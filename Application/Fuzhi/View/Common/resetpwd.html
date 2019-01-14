@@ -7,7 +7,7 @@
 <meta name="description" content="{:C('WEB_SITE_DESCRIPTION')}" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta http-equiv="Content-Language" content="zh-cn" />
-<meta http-equiv="x-ua-compatible" content="ie=7" /> 
+<meta http-equiv="x-ua-compatible" content="ie=7" />
 <link rel="stylesheet" href="css/login.css"  />
 <style>
        #container
@@ -24,7 +24,7 @@
        }
    </style>
 <script type="text/javascript" src="js/util/jquery.min.js" ></script>
-<link href="js/util/Validform/themes/style.css"  rel="stylesheet" />
+<link href="js/util/Validform/themes/style.css?v=2019"  rel="stylesheet" />
 <script type="text/javascript" src="js/util/Validform/Validform_v5.3.2_min.js" ></script>
 <script type="text/javascript" src="js/util/httpUtil.js" ></script>
 <!--[if lt IE 9]>
@@ -45,7 +45,7 @@
 <!-- 			<li><a class="software" href="#">软件中心</a></li> -->
 		</ul>
 	</div>
-</header> 
+</header>
     <div class="rpw_content_wrap">
             <div id="rpw_content">
                 <ul class="step">
@@ -138,13 +138,13 @@
                 <!--完成:完成-->
                 <div class="step4 step0" style="display:none">
                     <img class="f_or_s" src="images/success.png"  alt="success" />
-   
+
                     <div class="turn_notice">
                         <h2>您已成功設置新密碼! 請使用新密碼進行登錄, <strong class="rreedd" id="change_url_auto2">5秒</strong>后返回會員登錄頁</h2>
                         <a class="button_f1 next" id="relogin" href="login.html" >重新登錄</a>
                     </div>
                 </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -157,7 +157,7 @@
 		<a href="404.html"  target="_blank" rel="nofollow">法律声明</a>
 	</p>
 	<p>{:C('WEB_SITE_NAME')}版权所有 @2008-2014</p>
- 
+
     </div>
     </footer>
 </div>
@@ -173,7 +173,7 @@ $(document).ready(function() {
 	$("#lid").attr("value",lid);
 	$("#timeStamp").attr("value",timeStamp);
 	$("#validateString").attr("value",validateString);
-	
+
 	if(type&&type==3){
 		$("#step-li-1").removeClass("current");
 		$("#step-li-2").removeClass("current");

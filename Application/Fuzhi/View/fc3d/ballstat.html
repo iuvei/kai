@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -19,15 +19,15 @@
 			<div class="web_listOP">
     <ul id="web_listOP_ul"><li><a href="fc3d/index.html">福彩3d</a></li><li><a href="fc3d/kaijiang.html">历史开奖号码</a></li><li><a href="fc3d/luzhulonghu.html">龙虎路珠</a></li><li><a href="fc3d/luzhubigorsmall.html">单双大小路珠</a></li><li><a href="fc3d/luzhutotal.html">总和路珠</a></li><li class="hover"><a href="fc3d/ballstat.html">单双大小历史</a></li><li><a href="fc3d/numberstat.html">历史号码统计</a></li><li><a href="fc3d/zoushitu.html">横版走势图</a></li><li><a href="jiqiao/fc3d/">福彩3d技巧</a></li><!--<li><a href="fc3d/shipin">开奖视频</a></li>--><li><a href="javascript:void(0);" class="redColor">开奖视频</a></li><li><a href="fc3d/omitdata.html">遗漏大数据</a><span class="hoticon"></span> </li><li><a href="fc3d/twosidedstat.html">两面数据统计</a><span class="wen_newIcon"></span> </li></ul>
 </div>
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
 					 <div id="lot-wrap">
 					 <input type="hidden" id="callFun" value="getBallStat"/>
-						<div id="ball_stat_list-html" style="float: left;"></div> 
+						<div id="ball_stat_list-html" style="float: left;"></div>
 						<script id="ball_stat_list-tmpl" type="text/template">
-							<table class="lot-table"> 
-							   <caption> 
-							   </caption> 
+							<table class="lot-table">
+							   <caption>
+							   </caption>
 							   <tbody>
 							    <tr class="head">
 							        <td width="150">
@@ -143,7 +143,7 @@
 							                </table>
 							            </td>
 							    </tr>
-							    {{ 
+							    {{
 							    	var rowsLen=it.length;
 							    	var recArray=new Array();
 						            function addRecArray(recTermNum){
@@ -158,44 +158,44 @@
 						                recArray.push(recTermNum);
 						              }
 						              return isExist;
-						            } 
+						            }
 							    	for(var i=0;i<rowsLen;i++){ /*循环开始A*/
 							    		var rd=it[i];
 							    		var dataType=rd.dataType;
 							    		var ld=rd.lotteryDate;
 							    		if(!addRecArray(ld)){
 							     }}
-								    <tr class="{{=(i+1)%2==0?'even':'odd'}}"> 
-								     <td>{{=new Date(Date.parse(ld.replace(/-/g,"/"))).format("yyyy-MM-dd")}} </td> 
-								     <td colspan="20"> 
-								      <table class="ball"> 
+								    <tr class="{{=(i+1)%2==0?'even':'odd'}}">
+								     <td>{{=new Date(Date.parse(ld.replace(/-/g,"/"))).format("yyyy-MM-dd")}} </td>
+								     <td colspan="20">
+								      <table class="ball">
 								       <tbody>
-								        <tr> 
-								         <td class="bg1">{{=getVal(it,ld,1,6,2)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,1,6,1)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,1,5,1)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,1,5,2)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,2,6,2)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,2,6,1)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,2,5,1)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,2,5,2)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,3,6,2)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,3,6,1)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,3,5,1)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,3,5,2)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,4,6,2)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,4,6,1)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,4,5,1)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,4,5,2)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,5,6,2)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,5,6,1)}} </td> 
-								         <td class="bg1">{{=getVal(it,ld,5,5,1)}} </td> 
-								         <td class="bg2">{{=getVal(it,ld,5,5,2)}} </td> 
-								        </tr> 
+								        <tr>
+								         <td class="bg1">{{=getVal(it,ld,1,6,2)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,1,6,1)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,1,5,1)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,1,5,2)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,2,6,2)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,2,6,1)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,2,5,1)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,2,5,2)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,3,6,2)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,3,6,1)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,3,5,1)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,3,5,2)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,4,6,2)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,4,6,1)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,4,5,1)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,4,5,2)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,5,6,2)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,5,6,1)}} </td>
+								         <td class="bg1">{{=getVal(it,ld,5,5,1)}} </td>
+								         <td class="bg2">{{=getVal(it,ld,5,5,2)}} </td>
+								        </tr>
 								       </tbody>
-								      </table> </td> 
-								    </tr> 
-							    {{ 
+								      </table> </td>
+								    </tr>
+							    {{
 								      }
 							     	}
 							    }}

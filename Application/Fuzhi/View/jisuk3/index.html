@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -16,7 +16,7 @@
 
 <div class="lot-wrap">
 	<include file="Public/lottory_op"/>
-<div class="clear"></div> 
+<div class="clear"></div>
 				<input type="hidden" id="callFun" value="Search" time="1000"/>
 				<!--  内容开始 -->
 
@@ -37,7 +37,7 @@
 				<div class="clear:both;"></div>
 			</div>
 			<script type="text/javascript">
-				   
+
 				 function Search() {
 					    //$.get("jisuk3/getHistoryNumber.do?date=" + $("#dateData").val(), null, function (datas)
 					    var date=$("#dateData").val();
