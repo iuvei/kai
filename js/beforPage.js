@@ -4,7 +4,7 @@
 var beforPageJs = {
 	getGameName : function() {
 		var pathname = window.location.pathname;
-		console.log(pathname)
+		console.log(pathname);
 		if (pathname.indexOf("/fc3d/") >= 0
 				|| pathname.indexOf("/gdkl10/") >= 0
 				|| pathname.indexOf("/jsk3/") >= 0
@@ -50,4 +50,4 @@ var beforPageJs = {
 };
 // 不等页面加载完，先处理
 beforPageJs.getGameName();
-console.log(beforPageJs.gameName)
+
