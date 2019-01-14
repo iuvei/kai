@@ -13,6 +13,7 @@
     .lot-menu li {
         float: left;
         position: relative;
+		height: 38px;
     }
 
         .lot-menu li a {
@@ -1999,7 +2000,7 @@ color: 	#FFF;
 text-align: center;
 text-decoration: none;
 margin: 0px 10px 0px 0px;
-background: url(../images/sp_btn.png) 
+background: url(../images/sp_btn.png)
 }
 .video_btn:hover {
 	color:#ffff00;

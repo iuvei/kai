@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -19,21 +19,21 @@
 			<div class="web_listOP">
     <ul id="web_listOP_ul"><li><a href="fc3d/">福彩3d</a></li><li><a href="fc3d/kaijiang.html">历史开奖号码</a></li><li class="hover"><a href="fc3d/luzhunumber.html">号码路珠</a></li><li><a href="fc3d/luzhulonghu.html">龙虎路珠</a></li><li><a href="fc3d/luzhubigorsmall.html">单双大小路珠</a></li><li><a href="fc3d/luzhutotal.html">总和路珠</a></li><li><a href="fc3d/ballstat.html">单双大小历史</a></li><li><a href="fc3d/numberstat.html">历史号码统计</a></li><li><a href="fc3d/zoushitu.html">横版走势图</a></li><li><a href="jiqiao/fc3d/">福彩3d技巧</a></li><li><a href="javascript:void(0);" class="redColor">开奖视频</a></li><li><a href="fc3d/omitdata.html">遗漏大数据</a><span class="hoticon"></span> </li><li><a href="fc3d/twosidedstat.html">两面数据统计</a><span class="wen_newIcon"></span> </li><li><a href="fc3d/betgame.html">免费参考</a></li></ul>
 </div>
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
 					<input type="hidden" id="callFun" value="getLuzhuNumber"/>
 					<script type="text/javascript">   lotteryLuzhu = "xjssc_luzhunumber";</script>
     <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
-					<div style="clear:left; width:100%;float:left;"> 
+					<div style="clear:left; width:100%;float:left;">
 				     <div class="show-bjl" style="margin-right: 10px;">
-				      	 选择日期: 
+				      	 选择日期:
 				      <input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
 				      <span style=" padding-left: 10px;"><a style="margin: 0px;" href="javascript:Search();" class="a-bottom">查询</a></span>
-				     </div> 
+				     </div>
 				    </div>
-				    
-				    
-				    <div id="lot-wrap"> 
+
+
+				    <div id="lot-wrap">
 				     <ul class="lot-number-omit mbottom10 clearleft">
 				        <li id="ball-choose" class="ball">
 				            <ul style="width: 880px; float: left;">
@@ -65,7 +65,7 @@
 				                            <span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br>
 				                                2.当长龙中断时，则另起一列显示结果；<br>
 				                                3.“X”表示历史对应的某一期未出现该号码，“√”表示历史对应的某一期未出现了该号码。
-				
+
 				                            </span>
 				                        </span>
 				                    </span>
@@ -77,28 +77,28 @@
 				            </ul>
 				        </li>
 				    </ul>
-				     <div id="lot_content"> 
+				     <div id="lot_content">
 				      <div id="lzNumber_data-html"></div>
 				      <script id="lzNumber_data-tmpl" type="text/template">
 				      	  {{
 				      	  for(var i=0;i<=9;i++){
 				      		  var row=it[i+""];
-				      	  }}  
-					      	<div class="luzhu t_{{=i}}" style="clear:both;"> 
-						       <table class="roadmap-table-caption"> 
+				      	  }}
+					      	<div class="luzhu t_{{=i}}" style="clear:both;">
+						       <table class="roadmap-table-caption">
 						        <tbody>
-						         <tr> 
-						          <td> <span>今日累计：<span class="count"> 总来（<span id="zl{{=i}}"></span>） 没来（<span id="ml{{=i}}"></span>） </span> </span> 号码{{=i}} </td> 
-						         </tr> 
+						         <tr>
+						          <td> <span>今日累计：<span class="count"> 总来（<span id="zl{{=i}}"></span>） 没来（<span id="ml{{=i}}"></span>） </span> </span> 号码{{=i}} </td>
+						         </tr>
 						        </tbody>
-						       </table> 
+						       </table>
 						       <div style="width: 1198px; overflow-x: auto;" class="luzhu_scroll">
-						        <table class="roadmap-table mb-15" style="font-family:微软雅黑;"> 
+						        <table class="roadmap-table mb-15" style="font-family:微软雅黑;">
 						         <tbody>
-						          <tr valign="top"> 
+						          <tr valign="top">
 						          <td class="odd">
 						          {{
-						           var preNum; 
+						           var preNum;
 						           var symbol;
 						           var index=1;
 						           var zl=0;
@@ -113,13 +113,13 @@
 						        		   symbol="<span>√</span>";
 						        	   }
 						        	   if(n==0||preNum==num){
-						          }}	   
-						           		{{=symbol}} 
-						          {{ 
+						          }}
+						           		{{=symbol}}
+						          {{
 						          		}else{
 						          			index+=1;
 						          }}
-						          		</td><td class="{{=index%2==0?'even':'odd'}}">{{=symbol}} 
+						          		</td><td class="{{=index%2==0?'even':'odd'}}">{{=symbol}}
 						          {{
 						          		}
 						          		preNum=num;
@@ -127,21 +127,21 @@
 						          }}
 						          <input type="hidden" id="zlval{{=i}}" value="{{=zl}}"/>
 						          <input type="hidden" id="mlval{{=i}}" value="{{=ml}}"/>
-						          </tr> 
+						          </tr>
 						         </tbody>
-						        </table> 
-						       </div> 
-						      </div> 
+						        </table>
+						       </div>
+						      </div>
 				      	  {{
 				      	  	}
 				          }}
 					  </script>
-				      
+
 				      <script type="text/javascript">
 				      	function getLuzhuNumber(){
 				      		var date=$("#dateData").val();
 				      		$.post("fc3d/getLuzhuNumber.do",
-				   				{date:date}, 
+				   				{date:date},
 				   				function(r) {
 				    				if (r) {
 				    					doTCompile("lzNumber_data", r);
@@ -156,9 +156,9 @@
 				      	function Search() {
 				      		getLuzhuNumber();
 					    }
-					 </script> 
-				     </div> 
-				    </div>  
+					 </script>
+				     </div>
+				    </div>
 				<!--  内容结束-->
 	    </div>
 	</div>

@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -19,7 +19,7 @@
 			<div class="web_listOP">
     <ul id="web_listOP_ul"><li><a href="xyft/">幸运飞艇</a></li><li><a href="xyft/kaijiang.html">历史开奖号码</a></li><li><a href="xyft/luzhubigorsmall.html">单双大小路珠</a></li><li class="hover"><a href="xyft/luzhutotal.html">总和路珠</a></li><li><a href="xyft/ballstat.html">单双大小历史</a></li><li><a href="xyft/numberstat.html">历史号码统计</a></li><li><a href="xyft/zoushitu.html">横版走势图</a></li><li><a href="jiqiao/xyft/">幸运飞艇技巧</a></li><!--<li><a href="xyft/shipin" class="redColor">开奖视频</a></li>--><li><a href="xyft/omitdata.html">遗漏大数据</a><span class="hoticon"></span> </li><li><a href="xyft/twosidedstat.html">两面数据统计</a><span class="wen_newIcon"></span> </li></ul>
 </div>
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
 				<input type="hidden" id="callFun" value="getLuzhuTotal"/>
     <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
@@ -70,11 +70,11 @@
 						<tr valign="top">
 						  <td class="odd">
 							{{
-								var preNum; 
+								var preNum;
 								var symbol;
 					            var index=1;
 					            var d=0;
-					            var x=0; 
+					            var x=0;
 					            var h=0;
 					      	    for(var i=0;i<=it.length;i++){
 					      	    	var num=it[i];
@@ -91,13 +91,13 @@
 					        			x+=1;
 					        	    }
 					        	    if(i==0||preNum==num){
-					      	  }}  
-					      	    	<{{=symbol}}>{{=num}}</{{=symbol}}> 
-			      	    	  {{ 
+					      	  }}
+					      	    	<{{=symbol}}>{{=num}}</{{=symbol}}>
+			      	    	  {{
 					          		}else{
 					          			index+=1;
 					          }}
-			      	    	  		</td><td class="{{=index%2==0?'even':'odd'}}"><{{=symbol}}>{{=num}}</{{=symbol}}> 
+			      	    	  		</td><td class="{{=index%2==0?'even':'odd'}}"><{{=symbol}}>{{=num}}</{{=symbol}}>
 			      	    	  {{
 					          		}
 					          		preNum=num;
@@ -112,7 +112,7 @@
 				</div>
 				<div class="roadmap-bjl">
 				</div>
-				
+
 				<table class="roadmap-table-caption">
 					<tr>
 						<td><span>今日累计：<span class="count"> 单（<span id="lzodd"></span>） 双（<span id="lzeven"></span>）
@@ -127,11 +127,11 @@
 						<tr valign="top">
 						  <td class="odd">
 							{{
-								var preNum; 
+								var preNum;
 								var symbol;
 					            var index=1;
 					            var odd=0;
-					            var even=0; 
+					            var even=0;
 					      	    for(var i=0;i<=it.length;i++){
 					      	    	var num=it[i];
 					      	    	if(!num)
@@ -144,13 +144,13 @@
 					        	    	even+=1;
 					        	    }
 					        	    if(i==0||preNum==num){
-					      	  }}  
-					      	    	<{{=symbol}}>{{=num}}</{{=symbol}}> 
-			      	    	  {{ 
+					      	  }}
+					      	    	<{{=symbol}}>{{=num}}</{{=symbol}}>
+			      	    	  {{
 					          		}else{
 					          			index+=1;
 					          }}
-			      	    	  		</td><td class="{{=index%2==0?'even':'odd'}}"><{{=symbol}}>{{=num}}</{{=symbol}}> 
+			      	    	  		</td><td class="{{=index%2==0?'even':'odd'}}"><{{=symbol}}>{{=num}}</{{=symbol}}>
 			      	    	  {{
 					          		}
 					          		preNum=num;
@@ -166,7 +166,7 @@
 			      	function getLuzhuTotal(){
 			      		var date=$("#dateData").val();
 			      		$.post("xyft/getLuzhuTotal.do",
-			   				{date:date,type:1}, 
+			   				{date:date,type:1},
 			   				function(r) {
 			    				if (r) {
 			    					doTCompile("lzTotalDx_data", r);
@@ -176,7 +176,7 @@
 			    				}
 			   			}, "json");
 			      		$.post("xyft/getLuzhuTotal.do",
-				   				{date:date,type:2}, 
+				   				{date:date,type:2},
 				   				function(r) {
 				    				if (r) {
 				    					doTCompile("lzTotalDs_data", r);
@@ -189,7 +189,7 @@
 			      	function Search() {
 			      		getLuzhuTotal();
 				    }
-				 </script> 
+				 </script>
 				 </div>
 				<!--  内容结束-->
 	    </div>

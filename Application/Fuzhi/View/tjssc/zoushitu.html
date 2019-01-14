@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -16,7 +16,7 @@
 
 <div class="lot-wrap">
 			<include file="Public/lottory_op"/>
-<div class="clear"></div> 
+<div class="clear"></div>
 				<!--  内容开始 -->
 					<div>
 						<input type="hidden" id="callFun" value="drawTrend" />
@@ -45,11 +45,11 @@
 					            });
 					            drawTrend();
 					        });
-					
+
 					        function drawTrend() {
 					            var ball = $(".ball ul li .cur").attr("ball");
 					            if (!ball) ball = 1;
-					
+
 					            $.get("tjssc/numbertrendData.do", { ball: ball, count: 40, t: Math.random() }, function (result) {
 					                var data = eval(result);
 					                showChartline("号码走势图", data, function () { return this.x + '期:' + this.y }, 0, 10, true);

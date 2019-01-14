@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -18,25 +18,25 @@
 			<include file="Public/lottory_op"/>
 				<div class="clear"></div>
                 <input type="hidden" value="getHistoryData|drawTrend" id="callFun" time="1000" />
-				
-			    <div class="index-history"> 
-			     <div class="title mt10"> 
+
+			    <div class="index-history">
+			     <div class="title mt10">
 			      <h2>开奖记录</h2>
 			      <a href="gdkl10/kaijiang.html" >查看全部&gt;&gt;</a>
-			     </div> 
+			     </div>
 			     <div id="history_data-html"></div>
 	      		 <script id="history_data-tmpl" type="text/template">
-					<table class="lot-table" id="history"> 
+					<table class="lot-table" id="history">
 				      <tbody>
-					      <tr class="head"> 
+					      <tr class="head">
 					        <td width="120px"> 时间 </td>
 							  <td width="160px"> 期号 </td>
 							  <td width="580px"> 开奖号码 </td>
-					        <td colspan="4"> 总和 </td> 
+					        <td colspan="4"> 总和 </td>
 					        <td colspan="4">1~4龙虎</td>
-					       </tr> 
+					       </tr>
 					      {{
-								for (var i = 0; i <it.length; i++) { 
+								for (var i = 0; i <it.length; i++) {
 									var row=it[i];
 									var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
 									var totalNum=row.n1+row.n2+row.n3+row.n4+row.n5+row.n6+row.n7+row.n8;
@@ -47,37 +47,37 @@
 										totalBigOrSmallStr="大";
 									else if(totalNum<84)
 										totalBigOrSmallStr="小";
-										
+
 							}}
-						       <tr class="{{=(i+1)%2==0?'even':'odd'}}"> 
+						       <tr class="{{=(i+1)%2==0?'even':'odd'}}">
 						        <td> <p class="">{{=lowDate}}</p> </td>
 								   <td> <p class="">{{=row.termNum}} </p>  </td>
 								   <td class="nums">
-						        	<span class="no1">{{=row.n1}}</span> 
-						        	<span class="no2">{{=row.n2}}</span> 
-						        	<span class="no3">{{=row.n3}}</span> 
-						        	<span class="no4">{{=row.n4}}</span> 
-						        	<span class="no5">{{=row.n5}}</span> 
-						        	<span class="no6">{{=row.n6}}</span> 
-						        	<span class="no7">{{=row.n7}}</span> 
-						        	<span class="no8">{{=row.n8}}</span> 
-						        </td> 
-						        <td class="wd-50">{{=totalNum}} </td> 
-						        <td class="wd-50"> <p class="{{=totalNum%2!=0?'r':''}}"> {{=totalNum%2==0?"双":"单"}}</p> </td> 
-						        <td class="wd-50"> <p class="{{=totalNum>84?'r':''}}"> {{=totalBigOrSmallStr}}</p> </td> 
-						        <td class="wd-50"> <p class="{{=totalNum % 10 > 5?'r':''}}"> {{=totalNum % 10 < 5 ? "尾小" : "尾大"}}</p> </td> 
+						        	<span class="no1">{{=row.n1}}</span>
+						        	<span class="no2">{{=row.n2}}</span>
+						        	<span class="no3">{{=row.n3}}</span>
+						        	<span class="no4">{{=row.n4}}</span>
+						        	<span class="no5">{{=row.n5}}</span>
+						        	<span class="no6">{{=row.n6}}</span>
+						        	<span class="no7">{{=row.n7}}</span>
+						        	<span class="no8">{{=row.n8}}</span>
+						        </td>
+						        <td class="wd-50">{{=totalNum}} </td>
+						        <td class="wd-50"> <p class="{{=totalNum%2!=0?'r':''}}"> {{=totalNum%2==0?"双":"单"}}</p> </td>
+						        <td class="wd-50"> <p class="{{=totalNum>84?'r':''}}"> {{=totalBigOrSmallStr}}</p> </td>
+						        <td class="wd-50"> <p class="{{=totalNum % 10 > 5?'r':''}}"> {{=totalNum % 10 < 5 ? "尾小" : "尾大"}}</p> </td>
 						        <td class="wd-50"> <p class="{{=row.n1 > row.n8?'r':''}}"> {{=row.n1 > row.n8?'龙':'虎'}}</p> </td>
 						        <td class="wd-50"> <p class="{{=row.n2 > row.n7?'r':''}}"> {{=row.n2 > row.n7?'龙':'虎'}}</p> </td>
 						        <td class="wd-50"> <p class="{{=row.n3 > row.n6?'r':''}}"> {{=row.n3 > row.n6?'龙':'虎'}}</p> </td>
 						        <td class="wd-50"> <p class="{{=row.n4 > row.n5?'r':''}}"> {{=row.n4 > row.n5?'龙':'虎'}}</p> </td>
-						       </tr> 
+						       </tr>
 						    {{
 								}
 							}}
 				      </tbody>
-				     </table> 
+				     </table>
 				 </script>
-			     
+
 				 <script src="js/highchats/highcharts.js"  type="text/javascript"></script>
 				 <script src="js/util/jschart.js"  type="text/javascript"></script>
 			     <script type="text/javascript">
@@ -89,7 +89,7 @@
 			        }
 			        function getHistoryData(){
 		        		$.post("gdkl10/getHistoryData.do",
-		       				{count:12}, 
+		       				{count:12},
 		       				function(r) {
 		        				if (r) {
 		        					doTCompile("history_data", r.rows);
@@ -119,23 +119,23 @@
 			<?php } ?>
 		</volist>
 						</ul>
-		
-                   
-                 
+
+
+
 				</div>
 			</div>
 			<div class="lot-about mt10">
                 <div class="l-title">
                     <h2>广东快乐十分号码走势图</h2>
                 </div>
-                
+
                     <div id="sContainer">
 				</div>
-               
+
             </div>
-			    </div> 
-			    <div class="clear"></div> 
+			    </div>
+			    <div class="clear"></div>
 	    </div>
 	</div>
-	
+
 	</block>

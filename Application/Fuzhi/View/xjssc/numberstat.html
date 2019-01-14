@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -19,11 +19,11 @@
 			<div class="web_listOP">
     <ul id="web_listOP_ul"><li><a href="jsssc/">TC分分彩</a></li><li><a href="xjssc/kaijiang.html">历史开奖号码</a></li><li><a href="xjssc/luzhunumber.html">号码路珠</a></li><li><a href="xjssc/luzhulonghu.html">龙虎路珠</a></li><li><a href="xjssc/luzhubigorsmall.html">单双大小路珠</a></li><li><a href="xjssc/luzhutotal.html">总和路珠</a></li><li><a href="xjssc/ballstat.html">单双大小历史</a></li><li class="hover"><a href="xjssc/numberstat.html">历史号码统计</a></li><li><a href="xjssc/zoushitu.html">横版走势图</a></li><li><a href="jiqiao/jsssc/">TC分分彩技巧</a></li><li><a href="xjssc/shipin" class="redColor">开奖视频</a></li><li><a href="xjssc/omitdata.html">遗漏大数据</a><span class="hoticon"></span> </li><li><a href="xjssc/twosidedstat.html">两面数据统计</a><span class="wen_newIcon"></span> </li></ul>
 </div>
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
 					<div id="lot-wrap">
 						<input type="hidden" id="callFun" value="getNumberStat" />
-						<div id="number_stat_list-html" style="float: left;"></div> 
+						<div id="number_stat_list-html" style="float: left;"></div>
 						<script id="number_stat_list-tmpl" type="text/template">
 							<table class="lot-table">
 							    <caption>
@@ -84,7 +84,7 @@
 							     	           平
 							        </td>
 							    </tr>
-							    {{ 
+							    {{
 							    	var rowsLen=it.length;
 							    	var recArray=new Array();
 						            function addRecArray(recTermNum){
@@ -99,7 +99,7 @@
 						                recArray.push(recTermNum);
 						              }
 						              return isExist;
-						            } 
+						            }
 							    	for(var i=0;i<rowsLen;i++){ /*循环开始A*/
 							    		var rd=it[i];
 							    		var dataType=rd.dataType;
@@ -148,7 +148,7 @@
 							            <td>{{=getVal(it,ld,2,3)}}
 							            </td>
 							        </tr>
-							     {{ 
+							     {{
 								      }
 							     	}
 							     }}

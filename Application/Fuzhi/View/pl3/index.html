@@ -1,10 +1,10 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 		<link rel="stylesheet" href="css/nva.css"  />
-	
+
 </block>
 
 <block name="body">
@@ -21,17 +21,17 @@
 			<div class="web_listOP">
     <ul id="web_listOP_ul"><li class="hover"><a href="pl3/">排列3</a></li><li><a href="pl3/kaijiang.html">历史开奖号码</a></li><li><a href="jiqiao/pl3/">排列3技巧</a></li><!--<li><a href="pl3/shipin">开奖视频</a></li>--></ul>
 </div>
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
 					<input type="hidden" value="getHistoryData|drawTrend" id="callFun" time="1000" />
-					
+
 			        <div class="index-history">
 			            <div class="title mt10">
 			                <h2>排列3开奖记录</h2>
 			                <a href="pl3/kaijiang.html" >查看全部>></a>
-			            </div>       
+			            </div>
 			            <div id="history_data-html"></div>
-	      				<script id="history_data-tmpl" type="text/template">    
+	      				<script id="history_data-tmpl" type="text/template">
 			            <table id="history" class="lot-table">
 				            <tbody>
 								<tr class="head">
@@ -44,7 +44,7 @@
 									<td style="width: 70px; text-align: center;">后三</td>
 								</tr>
 								{{
-									for (var i = 0; i <it.length; i++) { 
+									for (var i = 0; i <it.length; i++) {
 										var row=it[i];
 										var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
 										var totalNum=row.n1+row.n2+row.n3+row.n4+row.n3;
@@ -56,7 +56,7 @@
 										}else if(row.n1==row.n3){
 											lhStr="和";
 										}
-											
+
 								}}
 										<tr class="{{=(i+1)%2==0?'even':'odd'}}">
 											<td>
@@ -64,9 +64,9 @@
 												<p class="t">{{=lowDate}}</p>
 											</td>
 											<td class="nums">
-											    <span>{{=row.n1}}</span>                
-									<span>{{=row.n2}}</span>                
-									<span>{{=row.n3}}</span>   
+											    <span>{{=row.n1}}</span>
+									<span>{{=row.n2}}</span>
+									<span>{{=row.n3}}</span>
 											</td>
 											<td>{{=totalNum}}</td>
 											<td class="{{=totalNum%2!=0?'r':''}}"><p>{{=totalNum%2==0?"双":"单"}}</p></td>
@@ -94,19 +94,19 @@
 		<li><a target="_blank" href="jiqiao/pl3/{$data['id']}.html">·{$data.title}</a></li>
 		</volist>
 						</ul>
-		
-                   
-                 
+
+
+
 				</div>
 			</div>
 			<div class="lot-about mt10">
                 <div class="l-title">
                     <h2>排列3号码走势图</h2>
                 </div>
-                
+
                     <div id="sContainer">
 				</div>
-               
+
             </div>
 			            </div>
 			        </div>
@@ -120,11 +120,11 @@
 				            $.get("pl3/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
 				                showChartline("第一球走势图", data, function () { return this.x + '期:' + this.y }, 0, 10, true, 0, "sContainer");
 				            }, "json");
-				            
+
 				        }
 				        function getHistoryData(){
 			        		$.post("pl3/getHistoryData.do",
-			       				{count:12}, 
+			       				{count:12},
 			       				function(r) {
 			        				if (r) {
 			        					doTCompile("history_data", r.rows);

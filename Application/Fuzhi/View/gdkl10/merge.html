@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -19,8 +19,8 @@
 				<div class="clear"></div>
 
 				<!--  内容开始 -->
-					<div id="lot-wrap"> 
-				     <ul class="lot-number-omit"> 
+					<div id="lot-wrap">
+				     <ul class="lot-number-omit">
 				      <li class="ball">
 						  <div class="merge-title-table-title" style="margin-bottom: 10px;">
 
@@ -74,39 +74,39 @@
 
 						  </div>
 
-				      </li> 
+				      </li>
 				      <li class="type" style="width: 100% ; clear: both;">
 				       <ul style="margin-left: 12px;">
-				        <li> <label> <input type="checkbox" name="c_p" id="c_p1"  value="mlist-1"/>长龙提醒</label> </li> 
-				        <li> <label> <input type="checkbox" name="c_p" id="c_p2"  value="mlist-2"/>大小/单双路珠</label> </li> 
-				        <li> <label> <input type="checkbox" name="c_p" id="c_p3"  value="mlist-3"/>东南西北路珠</label> </li> 
-				        <li> <label> <input type="checkbox" name="c_p" id="c_p4"  value="mlist-4"/>总和大小/单双路珠</label> </li> 
-				        <li> <label> <input type="checkbox" name="c_p" id="c_p5"  value="mlist-5"/>和数单双路珠</label> </li> 
-				        <li> <label> <input type="checkbox" name="c_p" id="c_p8" value="mlist-6"/>龙虎路珠</label> </li> 
-				        <li> <label> <input type="checkbox" name="c_p" id="c_p8" value="mlist-7"/>中发白路珠</label> </li> 
-				        <li> <label id="ballIndex" style="display: none;">0</label> </li> 
-				       </ul> </li> 
-				     </ul> 
-				     <div class="clear"></div> 
+				        <li> <label> <input type="checkbox" name="c_p" id="c_p1"  value="mlist-1"/>长龙提醒</label> </li>
+				        <li> <label> <input type="checkbox" name="c_p" id="c_p2"  value="mlist-2"/>大小/单双路珠</label> </li>
+				        <li> <label> <input type="checkbox" name="c_p" id="c_p3"  value="mlist-3"/>东南西北路珠</label> </li>
+				        <li> <label> <input type="checkbox" name="c_p" id="c_p4"  value="mlist-4"/>总和大小/单双路珠</label> </li>
+				        <li> <label> <input type="checkbox" name="c_p" id="c_p5"  value="mlist-5"/>和数单双路珠</label> </li>
+				        <li> <label> <input type="checkbox" name="c_p" id="c_p8" value="mlist-6"/>龙虎路珠</label> </li>
+				        <li> <label> <input type="checkbox" name="c_p" id="c_p8" value="mlist-7"/>中发白路珠</label> </li>
+				        <li> <label id="ballIndex" style="display: none;">0</label> </li>
+				       </ul> </li>
+				     </ul>
+				     <div class="clear"></div>
 					<div id="lot_content">
-				      <input type="hidden" id="pageName" value="merge" time="6000" container="lot_content" /> 
+				      <input type="hidden" id="pageName" value="merge" time="6000" container="lot_content" />
 				      <div id="mlist-1">
-				      <table class="merge-title-table" style="margin-bottom: -1px;"> 
+				      <table class="merge-title-table" style="margin-bottom: -1px;">
 				       <tbody>
-				        <tr> 
+				        <tr>
 				         <td> <span>长龙提醒
 <!-- 				          <a href="/gdkl10/changlongwarn/1" target="_blank" class="changlong-setting"> 设置</a> -->
-				           </span> </td> 
-				         <td> 
+				           </span> </td>
+				         <td>
 <!-- 				         <a class="move-down" onclick="movePanel('c_p1','down');" title="向下"></a>  -->
-				         </td> 
-				        </tr> 
+				         </td>
+				        </tr>
 				       </tbody>
-				      </table> 
+				      </table>
 				      <div style="margin-bottom: 10px;">
-				       <div id="cl_list-html" style="float: left;"></div> 
+				       <div id="cl_list-html" style="float: left;"></div>
 				  	  <script id="cl_list-tmpl" type="text/template">
-				  	 	
+
 							 {{
 							     var rowsLen=it.length;
 							     for(var i=0;i<rowsLen;i++){ /*循环开始A*/
@@ -170,96 +170,96 @@
 											  tType="大";
 										  }
 									  }
-						  }} 
+						  }}
 							  <div class="cl_s">{{=tRank}}：{{=tType}} <span style="margin: 0px 10px;">连开</span> {{=rd.nowMissing}} 期</div>
 						{{
-					 	   } 
+					 	   }
 						}}
-							
-					  </script> 
-				       <div class="clear"></div> 
-				      </div> 
+
+					  </script>
+				       <div class="clear"></div>
+				      </div>
 				      </div>
 				      <div style="height: 5px; clear: both;">
-				      </div> 
+				      </div>
 				      <div id="mlist-2">
-				      <table class="merge-title-table"> 
+				      <table class="merge-title-table">
 				       <tbody>
-				        <tr> 
-				         <td> <span>大小/单双路珠</span> </td> 
+				        <tr>
+				         <td> <span>大小/单双路珠</span> </td>
 <!-- 				         <td> <a class="move-up" onclick="movePanel('c_p2','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p2','down');" title="向下"></a> </td>  -->
-				        </tr> 
+				        </tr>
 				       </tbody>
-				      </table> 
+				      </table>
 				      <div style="width:1198px; overflow-x: auto;" class="luzhu_scroll" id="dsdxlz_content">
-				      </div> 
+				      </div>
 				      </div>
 				      <br />
-				      <div id="mlist-3"> 
-				      <table class="merge-title-table"> 
+				      <div id="mlist-3">
+				      <table class="merge-title-table">
 				       <tbody>
-				        <tr> 
-				         <td> <span>东南西北路珠</span> </td> 
+				        <tr>
+				         <td> <span>东南西北路珠</span> </td>
 <!-- 				         <td> <a class="move-up" onclick="movePanel('c_p4','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p4','down');" title="向下"></a> </td>  -->
-				        </tr> 
+				        </tr>
 				       </tbody>
-				      </table> 
+				      </table>
 				      <div style="width:1198px; overflow-x: auto;" class="luzhu_scroll" id="dnxblz_content">
-				      </div> 
 				      </div>
-				      <br /> 
+				      </div>
+				      <br />
 				      <div id="mlist-4">
-				      <table class="merge-title-table"> 
+				      <table class="merge-title-table">
 				       <tbody>
-				        <tr> 
-				         <td> <span>总和大小/单双路珠</span> </td> 
+				        <tr>
+				         <td> <span>总和大小/单双路珠</span> </td>
 <!-- 				         <td> <a class="move-up" onclick="movePanel('c_p5','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p5','down');" title="向下"></a> </td>  -->
-				        </tr> 
+				        </tr>
 				       </tbody>
-				      </table> 
-				      <div  id="zhdxdslzContent"> 
-				      </div> 
+				      </table>
+				      <div  id="zhdxdslzContent">
 				      </div>
-				      <br /> 
+				      </div>
+				      <br />
 				      <div id="mlist-5">
-				      <table class="merge-title-table"> 
+				      <table class="merge-title-table">
 				       <tbody>
-				        <tr> 
-				         <td> <span>和数单双路珠</span> </td> 
+				        <tr>
+				         <td> <span>和数单双路珠</span> </td>
 <!-- 				         <td> <a class="move-up" onclick="movePanel('c_p5','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p5','down');" title="向下"></a> </td>  -->
-				        </tr> 
+				        </tr>
 				       </tbody>
-				      </table> 
-				      <div  id="hsdsContent"> 
-				      </div> 
+				      </table>
+				      <div  id="hsdsContent">
+				      </div>
 				      </div>
 				      <br />
 				      <div id="mlist-6">
-				      <table class="merge-title-table"> 
+				      <table class="merge-title-table">
 				       <tbody>
-				        <tr> 
-				         <td> <span>龙虎路珠</span> </td> 
+				        <tr>
+				         <td> <span>龙虎路珠</span> </td>
 <!-- 				         <td> <a class="move-up" onclick="movePanel('c_p8','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p8','down');" title="向下"></a> </td>  -->
-				        </tr> 
+				        </tr>
 				       </tbody>
-				      </table> 
+				      </table>
 				      <div style="width:1198px; overflow-x: auto;" class="luzhu_scroll" id="lhContent">
-				      </div> 
+				      </div>
 				      </div>
 				      <br>
 				      <div id="mlist-7">
-				      <table class="merge-title-table"> 
+				      <table class="merge-title-table">
 				       <tbody>
-				        <tr> 
-				         <td> <span>中发白路珠</span> </td> 
+				        <tr>
+				         <td> <span>中发白路珠</span> </td>
 <!-- 				         <td> <a class="move-up" onclick="movePanel('c_p8','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p8','down');" title="向下"></a> </td>  -->
-				        </tr> 
+				        </tr>
 				       </tbody>
-				      </table> 
+				      </table>
 				      <div style="width:1198px; overflow-x: auto;" class="luzhu_scroll" id="zfbContent">
-				      </div> 
 				      </div>
-				 </div> 
+				      </div>
+				 </div>
 				</div>
 				<script type="text/javascript">
 					var Request =  GetRequest();
@@ -276,14 +276,14 @@
 		    			}, "json")
 			        }
 				    reloadChangLong();
-				    
+
 				    function luzhuShow(){
 				   		for(var i=0;i<11;i++){
 			    			$(".t_"+i).hide();
 			    		}
 			    		$(".t_"+rank).show();
 				   	}
-				    
+
 				    //单双大小路珠
 				    function dsdxlz() {
 						var selDate = $("#dateData").val();
@@ -320,7 +320,7 @@
 						});
 					}
 				    zhlz();
-				    
+
 				    //合数单双
 				    function hsds(){
 				    	var selDate = $("#dateData").val();

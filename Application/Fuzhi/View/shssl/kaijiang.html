@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -16,7 +16,7 @@
 
 <div class="lot-wrap">
 			<include file="Public/lottory_op"/>
-<div class="clear"></div> 
+<div class="clear"></div>
 				<!--  内容开始 -->
     <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
 				<div id="lot-wrap">
@@ -27,7 +27,7 @@
 					    &nbsp;<a href="javascript:Search();" class="a-bottom">查询</a>
 					</div>
 						<div id="history_data-html"></div>
-	      			 	<script id="history_data-tmpl" type="text/template">   
+	      			 	<script id="history_data-tmpl" type="text/template">
 			            <table class="lot-table" id="history">
 			                <tr class="head">
 			                    <td width="160px">
@@ -41,19 +41,19 @@
 			                    </td>
 			                </tr>
 							{{
-								for (var i = 0; i <it.length; i++) { 
+								for (var i = 0; i <it.length; i++) {
 									var row=it[i];
 									var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
 									var totalNum=row.n1+row.n2+row.n3;
 									var totalBigOrSmallStr="";
 									if (totalNum >= 14)
 										totalBigOrSmallStr="大";
-									else 
+									else
 										totalBigOrSmallStr="小";
-										
+
 							}}
-					       	<tr class="{{=(i+1)%2==0?'even':'odd'}}"> 
-				           		<td> <p class="p">{{=row.termNum}} </p> <p class="t">{{=lowDate}}</p> </td> 
+					       	<tr class="{{=(i+1)%2==0?'even':'odd'}}">
+				           		<td> <p class="p">{{=row.termNum}} </p> <p class="t">{{=lowDate}}</p> </td>
 					            <td class="nums">
 			                        <span class='no1'>{{=row.n1}}</span>
 			                        <span class='no2'>{{=row.n2}}</span>
@@ -75,7 +75,7 @@
 						<script type="text/javascript">
 							function getHistoryData(date){
 					    		$.post("shssl/getHistoryData.do",
-					   				{count:180,date:date}, 
+					   				{count:180,date:date},
 					   				function(r) {
 					    				if (r) {
 					    					doTCompile("history_data", r.rows);
@@ -83,7 +83,7 @@
 					   			}, "json");
 					        }
 					        getHistoryData(null);
-					        
+
 						    function Search() {
 						    	getHistoryData($("#dateData").val());
 						    }

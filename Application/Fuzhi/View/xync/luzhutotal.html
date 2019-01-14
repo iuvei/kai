@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -16,16 +16,16 @@
 
 <div class="lot-wrap">
 			<include file="Public/lottory_op"/>
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
 				<input type="hidden" id="callFun" value="getLuzhuTotal"/>
 				<div style="clear: left; width: 100%; float: left;">
 					<div class="show-bjl">
                         <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
-				      	 选择日期: 
+				      	 选择日期:
 				      <input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
 				      <span ><a style="margin: 0px;" href="javascript:Search();" class="a-bottom">查询</a></span>
-				    </div> 
+				    </div>
 				</div>
 				<div id="lot-wrap">
 				<div class="clear"></div>
@@ -37,7 +37,7 @@
 				            <span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br />
 				                2.当长龙中断时，则另起一列显示结果；<br />
 				                3.总和路珠指8个开出的号码的总和对应的大小、单双，其中总合为85至132为大，36至83为小，和值为84。
-				
+
 				            </span>
 				        </span>
 				    </span>
@@ -57,11 +57,11 @@
 						<tr valign="top">
 						  <td class="odd">
 							{{
-								var preNum; 
+								var preNum;
 								var symbol;
 					            var index=1;
 					            var d=0;
-					            var x=0; 
+					            var x=0;
 					            var h=0;
 					      	    for(var i=0;i<=it.length;i++){
 					      	    	var num=it[i];
@@ -78,13 +78,13 @@
 					        			x+=1;
 					        	    }
 					        	    if(i==0||preNum==num){
-					      	  }}  
-					      	    	<{{=symbol}}>{{=num}}</{{=symbol}}> 
-			      	    	  {{ 
+					      	  }}
+					      	    	<{{=symbol}}>{{=num}}</{{=symbol}}>
+			      	    	  {{
 					          		}else{
 					          			index+=1;
 					          }}
-			      	    	  		</td><td class="{{=index%2==0?'even':'odd'}}"><{{=symbol}}>{{=num}}</{{=symbol}}> 
+			      	    	  		</td><td class="{{=index%2==0?'even':'odd'}}"><{{=symbol}}>{{=num}}</{{=symbol}}>
 			      	    	  {{
 					          		}
 					          		preNum=num;
@@ -99,7 +99,7 @@
 				</div>
 				<div class="roadmap-bjl">
 				</div>
-				
+
 				<table class="roadmap-table-caption">
 					<tr>
 						<td><span>今日累计：<span class="count"> 单（<span id="lzodd"></span>） 双（<span id="lzeven"></span>）
@@ -114,11 +114,11 @@
 						<tr valign="top">
 						  <td class="odd">
 							{{
-								var preNum; 
+								var preNum;
 								var symbol;
 					            var index=1;
 					            var odd=0;
-					            var even=0; 
+					            var even=0;
 					      	    for(var i=0;i<=it.length;i++){
 					      	    	var num=it[i];
 					      	    	if(!num)
@@ -131,13 +131,13 @@
 					        	    	even+=1;
 					        	    }
 					        	    if(i==0||preNum==num){
-					      	  }}  
-					      	    	<{{=symbol}}>{{=num}}</{{=symbol}}> 
-			      	    	  {{ 
+					      	  }}
+					      	    	<{{=symbol}}>{{=num}}</{{=symbol}}>
+			      	    	  {{
 					          		}else{
 					          			index+=1;
 					          }}
-			      	    	  		</td><td class="{{=index%2==0?'even':'odd'}}"><{{=symbol}}>{{=num}}</{{=symbol}}> 
+			      	    	  		</td><td class="{{=index%2==0?'even':'odd'}}"><{{=symbol}}>{{=num}}</{{=symbol}}>
 			      	    	  {{
 					          		}
 					          		preNum=num;
@@ -164,11 +164,11 @@
 						<tr valign="top">
 						  <td class="odd">
 							{{
-								var preNum; 
+								var preNum;
 								var symbol;
 					            var index=1;
 					            var d=0;
-					            var x=0; 
+					            var x=0;
 					            var h=0;
 					      	    for(var i=0;i<=it.length;i++){
 					      	    	var num=it[i];
@@ -182,13 +182,13 @@
 					        			x+=1;
 					        	    }
 					        	    if(i==0||preNum==num){
-					      	  }}  
-					      	    	<{{=symbol}}>{{=num}}</{{=symbol}}> 
-			      	    	  {{ 
+					      	  }}
+					      	    	<{{=symbol}}>{{=num}}</{{=symbol}}>
+			      	    	  {{
 					          		}else{
 					          			index+=1;
 					          }}
-			      	    	  		</td><td class="{{=index%2==0?'even':'odd'}}"><{{=symbol}}>{{=num}}</{{=symbol}}> 
+			      	    	  		</td><td class="{{=index%2==0?'even':'odd'}}"><{{=symbol}}>{{=num}}</{{=symbol}}>
 			      	    	  {{
 					          		}
 					          		preNum=num;
@@ -200,12 +200,12 @@
 					</table>
 				   </script>
 				</div>
-				
+
 				<script type="text/javascript">
 			      	function getLuzhuTotal(){
 			      		var date=$("#dateData").val();
 			      		$.post("xync/getLuzhuTotal.do",
-			   				{date:date,type:1}, 
+			   				{date:date,type:1},
 			   				function(r) {
 			    				if (r) {
 			    					doTCompile("lzTotalDx_data", r);
@@ -215,7 +215,7 @@
 			    				}
 			   			}, "json");
 			      		$.post("xync/getLuzhuTotal.do",
-				   				{date:date,type:2}, 
+				   				{date:date,type:2},
 				   				function(r) {
 				    				if (r) {
 				    					doTCompile("lzTotalDs_data", r);
@@ -224,7 +224,7 @@
 				    				}
 				   			}, "json");
 			      		$.post("xync/getLuzhuTotal.do",
-				   				{date:date,type:3}, 
+				   				{date:date,type:3},
 				   				function(r) {
 				    				if (r) {
 				    					doTCompile("lzTotalWeiDx_data", r);
@@ -237,7 +237,7 @@
 			      	function Search() {
 			      		getLuzhuTotal();
 				    }
-				 </script> 
+				 </script>
 				 </div>
 				<!--  内容结束-->
 	    </div>

@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -16,19 +16,19 @@
 
 <div class="lot-wrap">
 			<include file="Public/lottory_op"/>
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
     <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
 					<input type="hidden" id="callFun" value="Search"/>
 					<div style="clear:left; width:100%;float:left;">
 					     <div class="show-bjl">
-					      	 选择日期: 
+					      	 选择日期:
 						      <input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
 						      <span ><a style="margin: 0px;" href="javascript:Search();"  class="a-bottom">查询</a></span>
-					      </div> 
+					      </div>
 					 </div>
-					 
-					 
+
+
 					 <div id="lot-wrap">
 					    <ul class="lot-number-omit mbottom10 clearleft">
 					        <li class="ball" id="ball-choose">
@@ -66,8 +66,8 @@
 					      	  for(var i=1;i<=3;i++){
 					      		  var dxRow=it["dx"+i];
 					      		  var dsRow=it["ds"+i];
-					      	}}  
-								<div class="luzhu t_{{=i}}"> 
+					      	}}
+								<div class="luzhu t_{{=i}}">
 									<table class="roadmap-table-caption">
 								        <tr>
 								            <td>
@@ -82,7 +82,7 @@
 									        <tr valign="top">
 									        	<td class="odd">
 									        	{{
-										           var dxPreNum; 
+										           var dxPreNum;
 										           var dxSymbol;
 										           var dxIndex=1;
 										           var lzBigVal=0;
@@ -97,13 +97,13 @@
 										        		   dxSymbol="<label>小</label>";
 										        	   }
 										        	   if(n==0||dxPreNum==num){
-										           }}	   
-										           		{{=dxSymbol}} 
-										           {{ 
+										           }}
+										           		{{=dxSymbol}}
+										           {{
 										          		}else{
 										          			dxIndex+=1;
 										           }}
-										          		</td><td class="{{=dxIndex%2==0?'even':'odd'}}">{{=dxSymbol}} 
+										          		</td><td class="{{=dxIndex%2==0?'even':'odd'}}">{{=dxSymbol}}
 										           {{
 										          		}
 										          		dxPreNum=num;
@@ -114,10 +114,10 @@
 									        </tr>
 									    </table>
 									</div>
-									<div class="roadmap-bjl"></div>        
+									<div class="roadmap-bjl"></div>
 								</div>
-							
-		    					<div class="luzhu t_{{=i}}"> 
+
+		    					<div class="luzhu t_{{=i}}">
 									<table class="roadmap-table-caption">
 								        <tr>
 								            <td>
@@ -131,7 +131,7 @@
 									        <tr valign="top">
 												<td class="odd">
 									        	{{
-										           var dsPreNum; 
+										           var dsPreNum;
 										           var dsSymbol;
 										           var dsIndex=1;
 										           var lzdVal=0;
@@ -146,13 +146,13 @@
 										        		   dsSymbol="<label>双</label>";
 										        	   }
 										        	   if(n==0||dsPreNum==num){
-										           }}	   
-										           		{{=dsSymbol}} 
-										           {{ 
+										           }}
+										           		{{=dsSymbol}}
+										           {{
 										          		}else{
 										          			dsIndex+=1;
 										           }}
-										          		</td><td class="{{=dsIndex%2==0?'even':'odd'}}">{{=dsSymbol}} 
+										          		</td><td class="{{=dsIndex%2==0?'even':'odd'}}">{{=dsSymbol}}
 										           {{
 										          		}
 										          		dsPreNum=num;
@@ -163,7 +163,7 @@
 						                    </tr>
 									    </table>
 									</div>
-									<div class="roadmap-bjl"></div>        
+									<div class="roadmap-bjl"></div>
 								</div>
 							{{
 					      	  	}
@@ -175,7 +175,7 @@
 				      	function getLuzhuBigOrSmall(){
 				      		var date=$("#dateData").val();
 				      		$.post("shssl/getLuzhuBigOrSmall.do",
-				   				{date:date}, 
+				   				{date:date},
 				   				function(r) {
 				    				if (r) {
 				    					doTCompile("lzBigOrSmall_data", r);
@@ -192,7 +192,7 @@
 				      	function Search() {
 				      		getLuzhuBigOrSmall();
 					    }
-					 </script> 
+					 </script>
 				<!--  内容结束-->
 	    </div>
 	</div>

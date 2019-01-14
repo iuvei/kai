@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 	<link rel="stylesheet" href="css/nva.css"  />
 </block>
@@ -18,18 +18,18 @@
 <div class="lot-wrap">
 	<include file="Public/lottory_op"/>
 
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
 					<input type="hidden" value="getHistoryData|drawTrend" id="callFun" time="1000" />
-					
-			        
+
+
 			        <div class="index-history">
 			            <div class="title mt10">
 			                <h2>开奖记录</h2>
 			                <a href="js11x5/kaijiang.html" >查看全部>></a>
-			            </div>       
+			            </div>
 			            <div id="history_data-html"></div>
-	      				<script id="history_data-tmpl" type="text/template">    
+	      				<script id="history_data-tmpl" type="text/template">
 			            <table id="history" class="lot-table">
 				            <tbody>
 								<tr class="head">
@@ -43,7 +43,7 @@
 									<td style="width: 70px; text-align: center;">后三</td>
 								</tr>
 								{{
-									for (var i = 0; i <it.length; i++) { 
+									for (var i = 0; i <it.length; i++) {
 										var row=it[i];
 										var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
 										var totalNum=row.n1+row.n2+row.n3+row.n4+row.n5;
@@ -55,7 +55,7 @@
 										}else if(row.n1==row.n5){
 											lhStr="和";
 										}
-											
+
 								}}
 										<tr class="{{=(i+1)%2==0?'even':'odd'}}">
 											<td>
@@ -93,7 +93,7 @@
 					<a href="jiqiao/js11x5/" >更多&gt;&gt;</a>
 				</div>
 				<div class="wrap">
-				
+
     <ul>
 		<li>
 			<?php if(empty($artical_first['id'])){ ?>
@@ -107,19 +107,19 @@
 			<?php } ?>
 		</volist>
 						</ul>
-		
-                   
-                 
+
+
+
 				</div>
 			</div>
 			<div class="lot-about mt10">
                 <div class="l-title">
                     <h2>极速11选5号码走势图</h2>
                 </div>
-                
+
                     <div id="sContainer">
 				</div>
-               
+
             </div>
 			            </div>
 			        </div>
@@ -133,7 +133,7 @@
 				            $.get("js11x5/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
 				                showChartline("第一球走势图", data, function () { return this.x + '期:' + this.y }, 0, 10, true, 0, "sContainer");
 				            }, "json");
-				            
+
 				        }
 				        function getHistoryData(){
 			        		$.post("js11x5/getHistoryData.do",

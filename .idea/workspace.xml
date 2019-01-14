@@ -2,13 +2,682 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aeccc0ce-7afd-4f39-a56e-3d313d3b26de" name="Default" comment="头部游戏排序，游戏LOGO图片">
-      <change beforePath="$PROJECT_DIR$/Addons/js/Data/cfg/gameDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/Addons/js/Data/cfg/gameDate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html.bak" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Common/feedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Common/feedback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Common/resetpwd.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Common/resetpwd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/betmode.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/betmode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/guanyahestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/guanyahestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/guanyatrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/guanyatrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/luzhuleftorright.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/luzhuleftorright.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/nineplan.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/nineplan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/numberanalyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/numberanalyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/numberrulestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/numberrulestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/numbertrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/numbertrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/opencodeanalysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/opencodeanalysis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/positionanalyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/positionanalyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/samenotrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/samenotrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/samesumtrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/samesumtrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/shdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/shdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/shipin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/shipin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/bjft/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/betmode.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/betmode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/guanyahestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/guanyahestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/guanyatrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/guanyatrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/luzhuleftorright.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/luzhuleftorright.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/nineplan.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/nineplan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/numberanalyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/numberanalyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/numberrulestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/numberrulestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/numbertrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/numbertrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/opencodeanalysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/opencodeanalysis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/positionanalyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/positionanalyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/samenotrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/samenotrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/samesumtrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/samesumtrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/shdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/shdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/shipin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/shipin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/ftft/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gallery/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gallery/article.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gallery/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gallery/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhuTotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhuTotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhudnxb.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhudnxb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhumantissa.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhumantissa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhumerge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhumerge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhuzfb.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/luzhuzfb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/shipin/1index.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/shipin/1index.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/shipin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/shipin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/luzhumerge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/luzhumerge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/numberomit.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/numberomit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/samesumtrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/samesumtrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/shipin/index.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/shipin/index.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/shipin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/shipin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/article.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/betgame.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Data/cfg/gameDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Data/cfg/gameDate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/beforPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/beforPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/luzhumerge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/luzhumerge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/numberomit.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/numberomit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/samesumtrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/samesumtrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/shipin/index.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/shipin/index.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/shipin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/shipin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/luzhumerge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/luzhumerge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/numberomit.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/numberomit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/samesumtrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/samesumtrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/shipin/index.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/shipin/index.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/shipin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/shipin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/luzhumerge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/luzhumerge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/numberomit.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/numberomit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/samesumtrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/samesumtrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/shipin/index.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/shipin/index.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/shipin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/shipin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/betmode.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/betmode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/guanyahestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/guanyahestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/guanyatrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/guanyatrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/luzhuleftorright.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/luzhuleftorright.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/nineplan.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/nineplan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/numberanalyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/numberanalyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/numberrulestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/numberrulestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/numbertrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/numbertrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/opencodeanalysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/opencodeanalysis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/positionanalyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/positionanalyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/samenotrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/samenotrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/samesumtrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/samesumtrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/shdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/shdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/shipin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/shipin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jssc/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/bjft/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/bjft/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/bjft/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/bjft/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/bjft/betmode.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/bjft/betmode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/bjft/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/bjft/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/bjft/guanyahestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/bjft/guanyahestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/bjft/guanyatrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/bjft/guanyatrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/bjft/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/bjft/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/luzhuoddoreven.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/luzhuoddoreven.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/luzhuupordown.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/kl8/luzhuupordown.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/betmode.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/betmode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/guanyahestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/guanyahestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/guanyatrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/guanyatrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/luzhuleftorright.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/luzhuleftorright.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/nineplan.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/nineplan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/numberanalyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/numberanalyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/numberrulestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/numberrulestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/numbertrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/numbertrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/opencodeanalysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/opencodeanalysis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/positionanalyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/positionanalyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/samenotrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/samenotrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/samesumtrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/samesumtrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/shdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/shdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/shipin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/shipin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/betmode.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/betmode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/guanyahestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/guanyahestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/guanyatrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/guanyatrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/luzhuleftorright.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/luzhuleftorright.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/nineplan.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/nineplan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/numberanalyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/numberanalyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/numberrulestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/numberrulestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/numbertrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/numbertrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/opencodeanalysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/opencodeanalysis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/positionanalyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/positionanalyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/samenotrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/samenotrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/samesumtrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/samesumtrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/shdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/shdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/shipin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/shipin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/betmode.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/betmode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/guanyahestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/guanyahestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/guanyatrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/guanyatrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/luzhuleftorright.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/luzhuleftorright.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/nineplan.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/nineplan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/numberanalyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/numberanalyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/numberrulestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/numberrulestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/numbertrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/numbertrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/opencodeanalysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/opencodeanalysis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/positionanalyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/positionanalyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/samenotrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/samenotrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/samesumtrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/samesumtrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/shdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/shdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/shipin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/shipin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/shipin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/shipin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/shssl/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/betmode.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/betmode.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/guanyahestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/guanyahestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/guanyatrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/guanyatrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/luzhuleftorright.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/luzhuleftorright.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/nineplan.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/nineplan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/numberanalyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/numberanalyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/numberrulestat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/numberrulestat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/numbertrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/numbertrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/opencodeanalysis.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/opencodeanalysis.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/positionanalyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/positionanalyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/samenotrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/samenotrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/samesumtrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/samesumtrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/shdd.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/shdd.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/shipin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/shipin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/coldhotnumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/coldhotnumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/numbertooutput.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/numbertooutput.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/yilou.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/yilou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/uc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/uc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/uc/myfeedback.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/uc/myfeedback.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/ballstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/ballstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/betgame.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/betgame.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhubigorsmall.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhubigorsmall.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhudnxb.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhudnxb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhulonghu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhulonghu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhumantissa.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhumantissa.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhumerge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhumerge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhunumber.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhunumber.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhutotal.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhutotal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhuzfb.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/luzhuzfb.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/numberstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/numberstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/omitdata.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/omitdata.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/positiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/positiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/samepositiontrend.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/samepositiontrend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/shipin/index.htm" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/shipin/index.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/shipin/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/shipin/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/twosidedstat.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/twosidedstat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/zoushitu.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/zoushitu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +713,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="7" />
+          <entry key="css" value="8" />
           <entry key="htm" value="3" />
           <entry key="html" value="21" />
           <entry key="jpg" value="1" />
@@ -55,7 +724,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="7" />
+          <entry key="CSS" value="8" />
           <entry key="HTML" value="24" />
           <entry key="Image" value="5" />
           <entry key="JavaScript" value="4" />
@@ -64,6 +733,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="css" value="8" />
           <entry key="html" value="42" />
           <entry key="js" value="8" />
           <entry key="php" value="576" />
@@ -71,6 +741,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="CSS" value="8" />
           <entry key="HTML" value="42" />
           <entry key="JavaScript" value="8" />
           <entry key="PHP" value="576" />
@@ -117,7 +788,111 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/EmptyController.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="479">
+              <caret line="298" column="142" selection-start-line="298" selection-start-column="142" selection-end-line="298" selection-end-column="142" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="731" column="82" selection-start-line="731" selection-start-column="82" selection-end-line="731" selection-end-column="82" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="e#31#37#0" expanded="true" />
+                <element signature="e#38#44#0" expanded="true" />
+                <element signature="e#96#102#0" expanded="true" />
+                <element signature="e#102#108#0" expanded="true" />
+                <element signature="e#108#114#0" expanded="true" />
+                <element signature="e#114#120#0" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/ConfigMgr.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-150" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/ZstCodeAttr.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/RemoteDataMgr.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/ZstAnalyser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-779">
+              <caret line="34" column="27" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Common/Common/function.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="1" column="14914" selection-start-line="1" selection-start-column="14914" selection-end-line="1" selection-end-column="14914" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/m/pc28/award.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="21" column="46" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/lot/pc28/award.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="100" column="20" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -130,8 +905,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>6.66667vw</find>
-      <find>todaystatlist</find>
       <find>text</find>
       <find>findTodayCount</find>
       <find>style='height: 30px;' class='ball'</find>
@@ -158,6 +931,10 @@
       <find>pathname</find>
       <find>gd11x5</find>
       <find>jsk3</find>
+      <find>.lot-menu li</find>
+      <find>getHistoryData.do</find>
+      <find>style.css</find>
+      <find>style.css？v=2019</find>
     </findStrings>
     <replaceStrings>
       <replace>20181112</replace>
@@ -167,12 +944,16 @@
       <replace>jnd28</replace>
       <replace>js28</replace>
       <replace>jisuk3</replace>
+      <replace>style.css？v=2019</replace>
+      <replace>style.css?v=2019</replace>
     </replaceStrings>
     <dirStrings>
       <dir>F:\tckai\kai\Application</dir>
-      <dir>D:\kaijiang\kai</dir>
       <dir>D:\kaijiang\kai\Application</dir>
       <dir>D:\kia\Application\Fuzhi\View\jisuk3</dir>
+      <dir>D:\kaijiang\kai\m\pc28</dir>
+      <dir>D:\kaijiang\kai</dir>
+      <dir>D:\kaijiang\kai\Application\Fuzhi\View</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -181,7 +962,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Application/View/Common/index.html" />
         <option value="$PROJECT_DIR$/m/xyft/index.php" />
         <option value="$PROJECT_DIR$/m/txffc/index.php" />
         <option value="$PROJECT_DIR$/m/tcssc/index.php" />
@@ -232,6 +1012,7 @@
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/samesumtrend.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/zoushitu.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/index.html" />
+        <option value="$PROJECT_DIR$/css/style.css" />
       </list>
     </option>
   </component>
@@ -285,102 +1066,62 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kia" type="462c0819:PsiDirectoryNode" />
+              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kai" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kia" type="462c0819:PsiDirectoryNode" />
-              <item name="Addons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kia" type="462c0819:PsiDirectoryNode" />
-              <item name="Addons" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kia" type="462c0819:PsiDirectoryNode" />
-              <item name="Addons" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kia" type="462c0819:PsiDirectoryNode" />
-              <item name="Addons" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-              <item name="cfg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kia" type="462c0819:PsiDirectoryNode" />
+              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kai" type="462c0819:PsiDirectoryNode" />
               <item name="Application" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kia" type="462c0819:PsiDirectoryNode" />
+              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kai" type="462c0819:PsiDirectoryNode" />
               <item name="Application" type="462c0819:PsiDirectoryNode" />
               <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kia" type="462c0819:PsiDirectoryNode" />
+              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kai" type="462c0819:PsiDirectoryNode" />
               <item name="Application" type="462c0819:PsiDirectoryNode" />
               <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kia" type="462c0819:PsiDirectoryNode" />
-              <item name="Application" type="462c0819:PsiDirectoryNode" />
-              <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="gd11x5" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kia" type="462c0819:PsiDirectoryNode" />
-              <item name="Application" type="462c0819:PsiDirectoryNode" />
-              <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
-              <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="jisuk3" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kia" type="462c0819:PsiDirectoryNode" />
+              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kai" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kia" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kia" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="Data" type="462c0819:PsiDirectoryNode" />
-              <item name="cfg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kia" type="462c0819:PsiDirectoryNode" />
+              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kai" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="lot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kai" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="lot" type="462c0819:PsiDirectoryNode" />
+              <item name="pc28" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="kai" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
@@ -395,14 +1136,14 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\kaijiang\kai\Application\Fuzhi\View\jnd28" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\kaijiang\kai\images" />
       <recent name="D:\kaijiang\kai\picture\lot" />
       <recent name="D:\kaijiang\kai\Application\Fuzhi\View\gxk3" />
       <recent name="D:\kaijiang\kai\Application\Fuzhi\View\jlk3" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\kaijiang\kai\Application\Fuzhi\View\jnd28" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -484,12 +1225,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44456000" />
+    <option name="totallyTimeSpent" value="44930000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16684435" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17377399" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -560,16 +1301,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="头部游戏排序，游戏LOGO图片" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/m/jisuk3/demodata.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/jisuk3/detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-33" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/jisuk3/highcharts.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -656,59 +1387,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="599">
           <caret line="1612" column="38" selection-start-line="1612" selection-start-column="38" selection-end-line="1612" selection-end-column="38" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -747,14 +1425,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Common/Common/function.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
+        <state relative-caret-position="720">
           <caret line="1" column="14914" selection-start-line="1" selection-start-column="14914" selection-end-line="1" selection-end-column="14914" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/Controller/EmptyController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
+        <state relative-caret-position="479">
           <caret line="298" column="142" selection-start-line="298" selection-start-column="142" selection-end-line="298" selection-end-column="142" />
         </state>
       </provider>
@@ -763,14 +1441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="549" column="35" lean-forward="true" selection-start-line="549" selection-start-column="35" selection-end-line="549" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -778,14 +1448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="125" column="57" lean-forward="true" selection-start-line="125" selection-start-column="57" selection-end-line="125" selection-end-column="57" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -793,9 +1455,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="557">
           <caret line="252" column="37" selection-start-line="252" selection-start-column="37" selection-end-line="252" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#font#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -813,9 +1472,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="90" column="12" selection-start-line="90" selection-start-column="12" selection-end-line="90" selection-end-column="12" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -833,9 +1489,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html.bak">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html.bak" />
     <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -960,6 +1614,43 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="303" column="64" selection-start-line="303" selection-start-column="64" selection-end-line="303" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/BLL/LottoryDataMgr.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="731" column="82" selection-start-line="731" selection-start-column="82" selection-end-line="731" selection-end-column="82" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#td#0;n#tr#0;n#table#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="e#31#37#0" expanded="true" />
+            <element signature="e#38#44#0" expanded="true" />
+            <element signature="e#96#102#0" expanded="true" />
+            <element signature="e#102#108#0" expanded="true" />
+            <element signature="e#108#114#0" expanded="true" />
+            <element signature="e#114#120#0" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#td#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
         </state>
       </provider>
     </entry>

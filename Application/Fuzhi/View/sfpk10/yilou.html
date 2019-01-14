@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -298,7 +298,7 @@
                                         {{ } }}
                                		 </table>
 								</script>
-                            <!-- 
+                            <!--
                             <div class="paginator" style="margin-bottom: 10px; margin-top: 20px;">
                                 <a class="nolink">
                                     1
@@ -321,7 +321,7 @@
 	                            rank=1;
 	                        if(!orderCloumn)
 	                        	orderCloumn=1;
-	                        if(!orderType) 
+	                        if(!orderType)
 	                        	orderType=2;
 	                        var dataTypeNumsDesc={
 	                            "1":{"n1":"1","n2":"2","n3":"3","n4":"4","n5":"5","n6":"6","n7":"7","n8":"8","n9":"9","n10":"10"},
@@ -337,7 +337,7 @@
                         			rankVal="";
                         		}
                        			$.post("missing/getMissingList.do",
-                       				{dataType:dataType,gameId:gameId,rank:rankVal,orderCloumn:orderCloumn,orderType:orderType }, 
+                       				{dataType:dataType,gameId:gameId,rank:rankVal,orderCloumn:orderCloumn,orderType:orderType },
                        				function(r) {
                         				if (r) {
                         					doTCompile("missing_list", r.t);
@@ -351,7 +351,7 @@
                         					$("#rankLi"+rank).addClass("cur")
                         				}
                        			}, "json");
-                        	} 
+                        	}
                         	getMissingList();
                         	function gotoPage(dataTypeNum,rankNum){
                         		if(dataTypeNum)

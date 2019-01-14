@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -16,41 +16,41 @@
 
 <div class="lot-wrap">
 			<include file="Public/lottory_op"/>
-<div class="clear"></div> 
+<div class="clear"></div>
 				<!--  内容开始 -->
-					 <div id="lot-wrap"> 
-					   <input type="hidden" id="callFun" value="twosidedstat" container="gdkl10twosidedstat" unload="0" time="10000" /> 
-					   <a name="mark"></a> 
-					   <ul class="lot-number-omit" style="margin-bottom: 20px;"> 
-					    <li class="ball" id="choose_ball"> 
-					     <ul> 
-					      <li><a href="javascript:void(0);" ball="1" class="currball">第一球</a>| </li> 
-					      <li><a href="javascript:void(0);" ball="2">第二球</a>| </li> 
-					      <li><a href="javascript:void(0);" ball="3">第三球</a>| </li> 
-					      <li><a href="javascript:void(0);" ball="4">第四球</a>| </li> 
-					      <li><a href="javascript:void(0);" ball="5">第五球</a>| </li> 
-					      <li><a href="javascript:void(0);" ball="6">第六球</a>| </li> 
-					      <li><a href="javascript:void(0);" ball="7">第七球</a>| </li> 
-					      <li><a href="javascript:void(0);" ball="8">第八球</a> </li> 
-					     </ul> </li> 
-					   </ul> 
+					 <div id="lot-wrap">
+					   <input type="hidden" id="callFun" value="twosidedstat" container="gdkl10twosidedstat" unload="0" time="10000" />
+					   <a name="mark"></a>
+					   <ul class="lot-number-omit" style="margin-bottom: 20px;">
+					    <li class="ball" id="choose_ball">
+					     <ul>
+					      <li><a href="javascript:void(0);" ball="1" class="currball">第一球</a>| </li>
+					      <li><a href="javascript:void(0);" ball="2">第二球</a>| </li>
+					      <li><a href="javascript:void(0);" ball="3">第三球</a>| </li>
+					      <li><a href="javascript:void(0);" ball="4">第四球</a>| </li>
+					      <li><a href="javascript:void(0);" ball="5">第五球</a>| </li>
+					      <li><a href="javascript:void(0);" ball="6">第六球</a>| </li>
+					      <li><a href="javascript:void(0);" ball="7">第七球</a>| </li>
+					      <li><a href="javascript:void(0);" ball="8">第八球</a> </li>
+					     </ul> </li>
+					   </ul>
 					   <div class="twosidedtip">
-					     *以每10期为一组，统计最近20组中单双大小的出现次数。 
-					   </div> 
+					     *以每10期为一组，统计最近20组中单双大小的出现次数。
+					   </div>
 					   <div id="gdkl10twosidedstat">
 					    <div id="twoSidedStat_data-html"></div>
 		      		    <script id="twoSidedStat_data-tmpl" type="text/template">
-						    <table class="lot-table"> 
-						     <caption> 
-						     </caption> 
+						    <table class="lot-table">
+						     <caption>
+						     </caption>
 						     <tbody>
-						      <tr class="head"> 
-						       <td><b>日期</b></td> 
-						       <td width="18%"><b>单</b></td> 
-						       <td width="18%"><b>双</b></td> 
-						       <td width="18%"><b>大</b></td> 
-						       <td width="18%"><b>小</b></td> 
-						      </tr> 
+						      <tr class="head">
+						       <td><b>日期</b></td>
+						       <td width="18%"><b>单</b></td>
+						       <td width="18%"><b>双</b></td>
+						       <td width="18%"><b>大</b></td>
+						       <td width="18%"><b>小</b></td>
+						      </tr>
 						      {{
 								for(var i=0;i<it.length;i++){
 									var rowData=it[i];
@@ -85,7 +85,7 @@
 						        }
 					        }}
 						     </tbody>
-						    </table> 
+						    </table>
 					    </script>
 					    <script type="text/javascript">
 					        $(function () {
@@ -109,7 +109,7 @@
 					            changeBall($("#choose_ball li a.currball").attr("ball"));
 					        }
 					    </script>
-					   </div> 
+					   </div>
 					  </div>
 				<!--  内容结束-->
 	    </div>

@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -21,14 +21,14 @@
 		        var fixedMenu = $(".web_listOP");
 		        var x = fixedMenu.offset().left;
 		        var y = fixedMenu.offset().top;
-		
+
 		        $(window).resize(function () {
 		            fixedMenu.removeAttr("style");
 		            x = fixedMenu.offset().left;
 		            y = fixedMenu.offset().top;
 		        });
-		  
-		
+
+
 		        var scrollFunc = function (e) {
 		             if (location.pathname.indexOf("nineplan") > 0) return;
 		            e = e || window.event;
@@ -97,23 +97,23 @@
 			            $("#pageName").attr("unload", unload);
 			            $('#' + _container).css("position", "");
 			        }); */
-			        SearchLuzhu();			    
+			        SearchLuzhu();
 			    }
 			    $(function () {
 			        $(".show-bjl label").bind("click", function () {
 			            $("#ckb_pailu").click();
 			        });
-			
+
 			        $("#ckb_pailu").bind("click", function () {
 			            var check = $(this).hasClass("checked") ? false : true;
 			            var selDate = $("#dateData").val();
 			            var url = location.href;
 			            $.post("/home/pailusetting", { enable: check }, function (result) {
 			                //location.reload();
-			
+
 			                //由之前的post整个页面 变成局部更新
 			                setPaiLu();
-			
+
 			                var unload = "0";
 			                if (selDate != "" && new Date(selDate).getDate() == (new Date()).getDate()) {
 			                    unload = "0";
@@ -134,7 +134,7 @@
 
 
         <div id="lot-wrap" style="margin-bottom:20px;">
-            
+
 	    <ul class="lot-number-omit  clearleft">
 	        <li class="ball" id="ball-choose" style="margin-bottom: 0px;">
 				<div class="merge-title-table-title" style="margin-bottom: 10px;">
@@ -224,13 +224,13 @@
 	                            <span class="content">1.表格需从左向右浏览，右侧一列为最新结果；<br />
 	                                2.当长龙中断时，则另起一列显示结果；<br />
 	                                3.龙虎说明：<br />
-	
+
 	                                <b>冠　军龙/虎</b>：“第一名”车号大于“第十名”车号视为【龙】中奖、反之小于视为【虎】中奖；<br />
 	                                <b>亚　军龙/虎</b>：“第二名”车号大于“第九名”车号视为【龙】中奖、反之小于视为【虎】中奖；<br />
 	                                <b>第三名龙/虎</b>：“第三名”车号大于“第八名”车号视为【龙】中奖、反之小于视为【虎】中奖；<br />
 	                                <b>第四名龙/虎</b>：“第四名”车号大于“第七名”车号视为【龙】中奖、反之小于视为【虎】中奖；<br />
 	                                <b>第五名龙/虎</b>：“第五名”车号大于“第六名”车号视为【龙】中奖、反之小于视为【虎】中奖。
-	                                
+
 	                            </span>
 	                        </span>
 	                    </span>
@@ -240,23 +240,23 @@
 
 
 	        </li>
-	
+
 	    </ul>
-			<div id='lot_content'>    
+			<div id='lot_content'>
 				<script type="text/javascript">   lotteryLuzhu = "pk10luzhu_lh";</script>
 			<div class="clear"></div>
 			<!-- <input type="hidden" id="pageName" value="luzhulonghu?date=" container="lot_content" unload="0"/> -->
 			    <div id="luzhu_1" class="luzhu t_1">
-			        
+
 			    </div>
 			    <div id="luzhu_2" class="luzhu t_2">
-				      
+
 			    </div>
 			    <div id="luzhu_3" class="luzhu t_3">
-			                   
+
 			    </div>
 			    <div id="luzhu_4" class="luzhu t_4">
-			                
+
 			    </div>
 			    <div id="luzhu_5" class="luzhu t_5">
 				<!-- <div class="roadmap-bjl">
@@ -274,12 +274,12 @@
 				            <param name="wmode" value="transparent" />
 				            <embed src="http://rescsj.56hx.com/flash/proad.swf?v=20140811" quality="high" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="980" height="132"></embed>
 				        </object>
-				    </div>      -->       
+				    </div>      -->
 			    </div>
-			
+
 			<script type="text/javascript">
 			    $(function () {
-			       /*  changeLuZhuBall(); 
+			       /*  changeLuZhuBall();
 			        setLuzhuScroll(); */
 			        SearchLuzhu();
 			    });
@@ -383,41 +383,41 @@
 		            }
 			    }
 			    function CurentTime(diffrent)
-			    { 
+			    {
 			        var now = new Date();
-			        
+
 			        var year = now.getFullYear();       //年
 			        var month = now.getMonth() + 1;     //月
 			        var day = now.getDate();            //日
-			        
+
 // 			        var hh = now.getHours();            //时
 // 			        var mm = now.getMinutes();          //分
 // 			        var ss = now.getSeconds();           //秒
-			        
+
 			        var clock = year + "-";
-			        
+
 			        if(month < 10)
 			            clock += "0";
-			        
+
 			        clock += month + "-";
-			        
+
 			        day = (day*1)+diffrent;
 			        if(day < 10)
 			            clock += "0";
-			            
+
 			        clock += day + "";
-			        
+
 // 			        if(hh < 10)
 // 			            clock += "0";
-			            
-// 			        clock += hh + ":";
-// 			        if (mm < 10) clock += '0'; 
-// 			        clock += mm + ":"; 
-			         
-// 			        if (ss < 10) clock += '0'; 
-//			        clock += ss; 
 
-			        return(clock); 
+// 			        clock += hh + ":";
+// 			        if (mm < 10) clock += '0';
+// 			        clock += mm + ":";
+
+// 			        if (ss < 10) clock += '0';
+//			        clock += ss;
+
+			        return(clock);
 			}
 			</script>
 			</div>

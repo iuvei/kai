@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="css/draw5.css">
@@ -28,27 +28,27 @@
 <include file="Public/lottory_latest"/>
 
 <div class="lot-wrap">
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
 					<input type="hidden" id="callFun" value="updateRecord" />
-					
+
 					<div class ="jsloading"></div>
 				    <div class="web_dateLineBody" ms-controller="chart">
-				
+
 				        <div class="web_topNav2">
 				            <ul>
 				                <li class="hover" style="border-right: 1px solid #e1e1e1;">
 				                    <span class="web_topNav_img1"></span>
 				                    <span class="web_topNav_font">基本走势图</span>
 				                </li>
-				
+
 				                <li ><a href="xync/samepositiontrend.html" >
 				                    <span class="web_topNav_img2"></span>
 				                    <span class="web_topNav_font">同期走势图</span></a>
 				                </li>
 				            </ul>
 				        </div>
-				
+
 				        <div class="web_dataBallModel03">
 				            <div class="web_ball01s" id="cball">
 				                <div class="left">
@@ -64,8 +64,8 @@
 				                        <li  ms-class="hover:ball==5"><a href="javascript:void(0);" data-ball="5" ms-click="changeball('第五球',5)">第五球</a></li><li>|</li>
 				                         <li  ms-class="hover:ball==6"><a href="javascript:void(0);" data-ball="6" ms-click="changeball('第六球',6)">第六球</a></li><li>|</li>
 				                          <li  ms-class="hover:ball==7"><a href="javascript:void(0);" data-ball="7" ms-click="changeball('第七球',7)">第七球</a></li><li>|</li>
-				                         <li  ms-class="hover:ball==8"><a href="javascript:void(0);" data-ball="8" ms-click="changeball('第八球',8)">第八球</a></li> 
-				
+				                         <li  ms-class="hover:ball==8"><a href="javascript:void(0);" data-ball="8" ms-click="changeball('第八球',8)">第八球</a></li>
+
 				                         <li id="chkFGX" ms-click="chkFgx"><b ms-class-1="checkbox" ms-class-2="checked:fgxIscheck" ></b><label style="cursor: pointer">分割线</label></li>
 				                    </ul>
 				                </div>
@@ -81,8 +81,8 @@
 				                    </ul>
 				                </div>
 				            </div>
-				
-				
+
+
 				            <div class="dateLineTable">
 				                <table width="100%" border="0" cellspacing="1" cellpadding="0">
 				                    <tr>
@@ -98,26 +98,26 @@
 				                        <td class="huise">
 				                            <div class="web_tableLayer web_numWidth30">
 				                                <ul>
-				                                    <li >1</li>    
-				                                    <li >2</li>    
-				                                    <li >3</li>    
-				                                    <li >4</li>    
-				                                    <li >5</li>    
-				                                    <li >6</li>    
-				                                    <li >7</li>    
-				                                    <li >8</li>    
-				                                    <li >9</li>    
-				                                    <li >10</li>    
-				                                    <li >11</li>    
-				                                    <li >12</li>    
-				                                    <li >13</li>    
-				                                    <li >14</li>    
-				                                    <li >15</li>    
-				                                    <li >16</li>    
-				                                    <li >17</li>    
-				                                    <li >18</li>    
-				                                    <li >19</li>    
-				                                    <li style=border:none>20</li>    
+				                                    <li >1</li>
+				                                    <li >2</li>
+				                                    <li >3</li>
+				                                    <li >4</li>
+				                                    <li >5</li>
+				                                    <li >6</li>
+				                                    <li >7</li>
+				                                    <li >8</li>
+				                                    <li >9</li>
+				                                    <li >10</li>
+				                                    <li >11</li>
+				                                    <li >12</li>
+				                                    <li >13</li>
+				                                    <li >14</li>
+				                                    <li >15</li>
+				                                    <li >16</li>
+				                                    <li >17</li>
+				                                    <li >18</li>
+				                                    <li >19</li>
+				                                    <li style=border:none>20</li>
 				                                </ul>
 				                            </div>
 				                        </td>
@@ -186,16 +186,16 @@
 				                </table>
 				               <div class="trendChartloading">正在加载中……</div>
 				            </div>
-				
+
 				            <div class="web_Prompt01">
 				              *回摆：假如本期开出的结果大于上一期开出的结果则为“正向”，假如两期开出的结果相同则为“重号”，反之为“反向”。
 				            </div>
-				
+
 				            <div class="dateLineTable" style="padding: 0;" id="trendChart">
 				                <table width="100%" border="0" cellspacing="1" cellpadding="0">
 				                    <tr>
 				                        <td rowspan="2" class="blue3"><span>期号</span></td>
-				              
+
 				                        <td class="blue4" width="620"><span>{{ballName}}走势</span></td>
 				                        <td class="blue4" width="101">回摆</td>
 				                        <td class="blue4" width="68">单双</td>
@@ -205,26 +205,26 @@
 				                        <td class="huise2">
 				                            <div class="web_tableLayer web_numWidth30">
 				                                <ul>
-				                                    <li >1</li>    
-				                                    <li >2</li>    
-				                                    <li >3</li>    
-				                                    <li >4</li>    
-				                                    <li >5</li>    
-				                                    <li >6</li>    
-				                                    <li >7</li>    
-				                                    <li >8</li>    
-				                                    <li >9</li>    
-				                                    <li >10</li>    
-				                                    <li >11</li>    
-				                                    <li >12</li>    
-				                                    <li >13</li>    
-				                                    <li >14</li>    
-				                                    <li >15</li>    
-				                                    <li >16</li>    
-				                                    <li >17</li>    
-				                                    <li >18</li>    
-				                                    <li >19</li>    
-				                                    <li style=border:none>20</li>    
+				                                    <li >1</li>
+				                                    <li >2</li>
+				                                    <li >3</li>
+				                                    <li >4</li>
+				                                    <li >5</li>
+				                                    <li >6</li>
+				                                    <li >7</li>
+				                                    <li >8</li>
+				                                    <li >9</li>
+				                                    <li >10</li>
+				                                    <li >11</li>
+				                                    <li >12</li>
+				                                    <li >13</li>
+				                                    <li >14</li>
+				                                    <li >15</li>
+				                                    <li >16</li>
+				                                    <li >17</li>
+				                                    <li >18</li>
+				                                    <li >19</li>
+				                                    <li style=border:none>20</li>
 				                                </ul>
 				                            </div>
 				                        </td>
@@ -257,8 +257,8 @@
 				                     <tbody id="chart">
 				                    <tr ms-repeat="trendDatas" style="display: none" class="data-stat">
 				                        <td class="white2" align="center"><span ms-class="redColor:el.isVirtual">{{showPeriod(el.Period)}}</span></td>
-				              
-				                    
+
+
 				                        <td class="white2" valign="middle">
 				                            <div ms-class-1="web_numTenBall:el.isVirtual" ms-class-2="web_numTens:!el.isVirtual" ms-class-3="web_numWidth30">
 				                                <ul ms-if="!el.isVirtual">
@@ -299,7 +299,7 @@
 				                </table>
 				                <div class="trendChartloading">正在加载中……</div>
 				            </div>
-				
+
 				        </div>
 				        <input type="hidden"  id="dataopened"  ms-duplex="flagPeriod"/>
 				    </div>
@@ -314,7 +314,7 @@
 				        require(['trendChart'], function (trendChart) {
 				            var chartLine = new trendChart({ css: { noyl: "noyl", bline: "bline", lines: [".hover2"] }, lineWidth: 2, lineColor: "#BB8569", ckbSplit: "#chkFGX" });
 				            // ckbDistribute: "#chkYL", ckbSplit: "#chkBZX", chkZX: "#chkZX"
-				            
+
 				            $.get("xync/positionTrend.do", { ball: 1, count: 40, isToday: false, t: Math.random() }, function (r) {
 				            	var datas = r.list;
 					            var stats = r.stat;
@@ -509,7 +509,7 @@
 				                };
 				                vm.statTotal = function (d) {
 				                    var newArr = viewmodel.totalDatas;
-				
+
 				                    newArr[0].Nums[d.Result-1] += 1;
 				                    for (var i = 0; i < 20; i++) {
 				                        if (d.Nums[i] > newArr[1].Nums[i]) {
@@ -551,7 +551,7 @@
 				                    } else if (d.Even > newArr[1].Even) {
 				                        newArr[1].Even = d.Even;
 				                    }
-				
+
 				                    viewmodel.totalDatas = newArr;
 				                };
 				                vm.addVirtualBalls = function () {
@@ -583,10 +583,10 @@
 				                    }, 'json');
 				                })
 				            });
-				
+
 				            viewmodel.trendDatas = datas;
 				            viewmodel.totalDatas = stats;
-				
+
 				            $(".data-stat").show();
 				            $(".trendChartloading").hide();
 				            if (viewmodel.trendDatas.length > 0) {

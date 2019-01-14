@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="css/draw5.css">
@@ -28,26 +28,26 @@
 <include file="Public/lottory_latest"/>
 
 <div class="lot-wrap">
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
 					<div class="jsloading"></div>
 				    <input type="hidden" id="callFun" value="drawTrend" />
 				    <div class="web_dateLineBody" ms-controller="chart">
-				
+
 				        <div class="web_topNav">
 				            <ul>
 				                <li>
 				                    <a href="gdkl10/positiontrend.html" ><span class="web_topNav_img1"></span></a>
 				                    <a href="gdkl10/positiontrend.html" ><span class="web_topNav_font">基本走势图</span></a>
 				                </li>
-				
+
 				                <li class="hover" style="border-left: 1px solid #e1e1e1;">
 				                    <a href="gdkl10/samepositiontrend.html" ><span class="web_topNav_img2"></span></a>
 				                    <a href="gdkl10/samepositiontrend.html" ><span class="web_topNav_font">同期走势图</span></a>
 				                </li>
 				            </ul>
 				        </div>
-				
+
 				        <div class="web_dataBallModel03">
 				            <div class="web_ball01s" id="cball">
 				                <div class="left" id="ballchoose">
@@ -80,12 +80,12 @@
 				                    </ul>
 				                </div>
 				            </div>
-				
+
 				            <div class="nextPeriod"><b>当前期：</b><span id="currResult">第{{nextTime}}期&nbsp;&nbsp;待开奖</span></div>
 				            <div class="nextPeriodTip">*以下记录的是最近一个月的第{{time}}期开出的号码走势</div>
-				
+
 				            <div class="dateLineTable" id="trendChart">
-				
+
 				                <table width="100%" border="0" cellspacing="1" cellpadding="0">
 				                    <thead>
 				                        <tr>
@@ -147,7 +147,7 @@
 				                            <td valign="middle" class="pinkWhite5 huiseFont">18</td>
 				                            <td valign="middle" class="pinkWhite5 huiseFont">19</td>
 				                            <td valign="middle" class="pinkWhite5 huiseFont">20</td>
-				
+
 				                            <td class="white2">单</td>
 				                            <td class="white2">双</td>
 				                            <td class="white2">大</td>
@@ -160,7 +160,7 @@
 				                            <td ms-class-1="greenBg2:el.Even==1" ms-class-2="white2:el.Even==0" style="border: none;">双</td>
 				                            <td ms-class-1="yellowBg:el.Big==1" ms-class-2="white2:el.Big==0">大</td>
 				                            <td ms-class-1="yellowBg:el.Small==1" ms-class-2="white2:el.Small==0" style="border: none;">小</td>
-				
+
 				                        </tr>
 				                    </tbody>
 				                </table>
@@ -168,14 +168,14 @@
 				                <input type="hidden" id="periodInfo" ms-duplex="periodInfo" />
 				            </div>
 				        </div>
-				
+
 				    </div>
 				</div>
 				<script type="text/javascript">
 				    $(function () {
 				        require(['trendChart'], function (trendChart) {
 				            var chartLine = new trendChart({ css: { noyl: "noyl", bline: "bline", lines: [".shenred4"] }, lineWidth: 2, lineColor: "#BB8569" });
-				
+
 				            var ajaxUrl = "gdkl10/samePositionTrend.do";
 				            //首次读取后台数据
 // 				            var datas = '[{"Period":39,"Drawing_Date":"02-27","Drawing_Time":"15:00","Nums":"11","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-26","Drawing_Time":"15:00","Nums":"9","Big":0,"Small":1,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-25","Drawing_Time":"15:00","Nums":"16","Big":1,"Small":0,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"02-17","Drawing_Time":"15:00","Nums":"7","Big":0,"Small":1,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-16","Drawing_Time":"15:00","Nums":"11","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-15","Drawing_Time":"15:00","Nums":"9","Big":0,"Small":1,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-14","Drawing_Time":"15:00","Nums":"13","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-13","Drawing_Time":"15:00","Nums":"17","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-12","Drawing_Time":"15:00","Nums":"12","Big":1,"Small":0,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"02-11","Drawing_Time":"15:00","Nums":"7","Big":0,"Small":1,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-10","Drawing_Time":"15:00","Nums":"3","Big":0,"Small":1,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-09","Drawing_Time":"15:00","Nums":"6","Big":0,"Small":1,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"02-08","Drawing_Time":"15:00","Nums":"14","Big":1,"Small":0,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"02-07","Drawing_Time":"15:00","Nums":"19","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-06","Drawing_Time":"15:00","Nums":"17","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-05","Drawing_Time":"15:00","Nums":"1","Big":0,"Small":1,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-04","Drawing_Time":"15:00","Nums":"17","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-03","Drawing_Time":"15:00","Nums":"1","Big":0,"Small":1,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-02","Drawing_Time":"15:00","Nums":"13","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"02-01","Drawing_Time":"15:00","Nums":"14","Big":1,"Small":0,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"01-31","Drawing_Time":"15:00","Nums":"19","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"01-30","Drawing_Time":"15:00","Nums":"10","Big":0,"Small":1,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"01-29","Drawing_Time":"15:00","Nums":"20","Big":1,"Small":0,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"01-28","Drawing_Time":"15:00","Nums":"19","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"01-27","Drawing_Time":"15:00","Nums":"12","Big":1,"Small":0,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"01-26","Drawing_Time":"15:00","Nums":"13","Big":1,"Small":0,"Odd":1,"Even":0},{"Period":39,"Drawing_Date":"01-25","Drawing_Time":"15:00","Nums":"20","Big":1,"Small":0,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"01-24","Drawing_Time":"15:00","Nums":"6","Big":0,"Small":1,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"01-23","Drawing_Time":"15:00","Nums":"4","Big":0,"Small":1,"Odd":0,"Even":1},{"Period":39,"Drawing_Date":"01-22","Drawing_Time":"15:00","Nums":"7","Big":0,"Small":1,"Odd":1,"Even":0}]';//走势图数据json
@@ -207,12 +207,12 @@
 					                    chartLine.clearLines();
 					                    var vsel = $("#periodCount option:selected").val();
 					                    $.get(ajaxUrl, { id: vm.ball, pid: vsel }, function (data) {
-					                        var dataObj = data;//转换为json对象 
+					                        var dataObj = data;//转换为json对象
 					                        vm.totaldata = dataObj.chart;
-					
+
 					                        vm.SetStyle(vsel);
 					                        vm.drawLine();
-					
+
 					                        $(".data-stat").show();
 					                        $(".trendChartloading").hide();
 					                    }, 'json');
@@ -224,18 +224,18 @@
 					                    } else {
 					                        vperid = pid;
 					                    }
-					
+
 					                    $(".data-stat").hide();
 					                    $(".trendChartloading").show();
 					                    chartLine.clearLines();
 					                    $.get(ajaxUrl, { id: vm.ball, pid: vperid }, function (data) {
-					                        var dataObj =  data;//转换为json对象 
+					                        var dataObj =  data;//转换为json对象
 					                        vm.totaldata = dataObj.chart;
 					                        vm.time = vperid;
-					
+
 					                        vm.SetStyle(vperid);
 					                        vm.drawLine();
-					
+
 					                        $(".data-stat").show();
 					                        $(".trendChartloading").hide();
 					                    }, 'json');
@@ -247,9 +247,9 @@
 					                vm.newIssue = 0; //最近新一期期号
 					                vm.newNumber = "";//最近新一期开出开奖号码
 					                vm.nextCurrNo = "";//用于存储走势第一条期号
-					
+
 					                vm.SetStyle = function (vperid) {
-					
+
 					                    if (vm.nextNo == vperid || (vm.currNo == vperid && ((vperid == vm.newIssue && vm.newNumber == "") || vm.currNo > vm.newIssue))) {
 					                        vm.nextCurrNo = vperid;
 					                        $("#td_award").show();
@@ -260,7 +260,7 @@
 					                    else {
 					                        $("#td_award").hide();
 					                    }
-					
+
 					                }
 					                vm.AddOption = function () {
 					                    if ($("#periodCount option").eq(0).val() != vm.nextNo) {
@@ -277,44 +277,44 @@
 					                        vm.newIssue = data.newIssue.periodNumber;
 					                        vm.newNumber = data.newIssue.awardNumber;
 					                        if (true == bflag) {
-					
+
 					                            vm.AddOption();
-					
+
 					                            if ($("#periodCount option:selected").val() == vm.currNo) {
 					                                vm.changePeriod("", vm.currNo);
 					                            }
 					                        }
-					
+
 					                    }, 'json').error(function () {
-					
+
 					                    });
 					                }
 					                vm.drawLine = function () {
 					                    chartLine.clearLines();
 					                    chartLine.reDraw();
 					                };
-					
+
 					                vm.$watch("periodInfo", function (v) {
 					                    vm.periodInfo = v;
 					                    vm.SetLoadAwardInfo();
-					
+
 					                });
-					
+
 					            });
 					            var vjson = datas;
 					            viewmodel.totaldata = vjson;
 					            viewmodel.selectdata = option;
 	// 				            viewmodel.nextTime = maxcount;
-					
+
 					            $(".data-stat").show();
 					            $(".trendChartloading").hide();
 					            viewmodel.SetLoadAwardInfo();
-					
+
 					            avalon.scan();
 					            $(".jsloading").hide();
 					            viewmodel.drawLine();
-					       	  },"json");	
-					        
+					       	  },"json");
+
 					        });
 					    });
 					    var vdraw = 0;
@@ -324,7 +324,7 @@
 					        bflag = true;
 					        $("#periodInfo").val(vdraw);
 					    }
-				
+
 				</script>
 				<script src="js/avalon.js"  type="text/javascript"></script>
 				<!--  内容结束-->

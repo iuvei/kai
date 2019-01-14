@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -16,7 +16,7 @@
 
 <div class="lot-wrap">
 			<include file="Public/lottory_op"/>
-<div class="clear"></div> 
+<div class="clear"></div>
 				<!--  内容开始 -->
 
 	<div class="merge-title-table-title" style="margin-bottom: 10px;">
@@ -25,36 +25,36 @@
 
 
 	</div>
-					<div id="lot-wrap"> 
+					<div id="lot-wrap">
 					   <input type="hidden" id="callFun" value="reloadData" />
 					   <div id="history_data-html"></div>
-	      			   <script id="history_data-tmpl" type="text/template"> 
-					   <table class="lot-table"> 
-					    <caption></caption> 
+	      			   <script id="history_data-tmpl" type="text/template">
+					   <table class="lot-table">
+					    <caption></caption>
 					    <tbody>
-					     <tr class="head"> 
-					      <td style="width:5%;">1</td> 
-					      <td style="width:5%;">2</td> 
-					      <td style="width:5%;">3</td> 
-					      <td style="width:5%;">4</td> 
-					      <td style="width:5%;">5</td> 
-					      <td style="width:5%;">6</td> 
-					      <td style="width:5%;">7</td> 
-					      <td style="width:5%;">8</td> 
-					      <td style="width:5%;">9</td> 
-					      <td style="width:5%;">10</td> 
-					      <td style="width:5%;">11</td> 
-					      <td style="width:5%;">12</td> 
-					      <td style="width:5%;">13</td> 
-					      <td style="width:5%;">14</td> 
-					      <td style="width:5%;">15</td> 
-					      <td style="width:5%;">16</td> 
-					      <td style="width:5%;">17</td> 
-					      <td style="width:5%;">18</td> 
-					      <td style="width:5%;">19</td> 
-					      <td style="width:5%;">20</td> 
-					     </tr> 
-					     <tr valign="top"> 
+					     <tr class="head">
+					      <td style="width:5%;">1</td>
+					      <td style="width:5%;">2</td>
+					      <td style="width:5%;">3</td>
+					      <td style="width:5%;">4</td>
+					      <td style="width:5%;">5</td>
+					      <td style="width:5%;">6</td>
+					      <td style="width:5%;">7</td>
+					      <td style="width:5%;">8</td>
+					      <td style="width:5%;">9</td>
+					      <td style="width:5%;">10</td>
+					      <td style="width:5%;">11</td>
+					      <td style="width:5%;">12</td>
+					      <td style="width:5%;">13</td>
+					      <td style="width:5%;">14</td>
+					      <td style="width:5%;">15</td>
+					      <td style="width:5%;">16</td>
+					      <td style="width:5%;">17</td>
+					      <td style="width:5%;">18</td>
+					      <td style="width:5%;">19</td>
+					      <td style="width:5%;">20</td>
+					     </tr>
+					     <tr valign="top">
 					     {{
 							for(var i=1;i<=20;i++){
 								var rowsData=it["num"+i];
@@ -75,13 +75,13 @@
 				        		{{
 				        			}
 				        		}}
-							  </td> 
+							  </td>
 					     {{
 							}
 						 }}
-					     </tr> 
+					     </tr>
 					    </tbody>
-					   </table> 
+					   </table>
 					   </script>
 					  </div>
 						<script type="text/javascript">

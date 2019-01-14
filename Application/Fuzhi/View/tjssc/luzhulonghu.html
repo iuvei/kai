@@ -1,7 +1,7 @@
 <extend name="Base/common"/>
 
 <block name="style">
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/style.css?v=2019" rel="stylesheet" />
     <link href="css/lot/{$lottory}.css" rel="stylesheet" />
 </block>
 
@@ -16,16 +16,16 @@
 
 <div class="lot-wrap">
 			<include file="Public/lottory_op"/>
-				<div class="clear"></div> 
+				<div class="clear"></div>
 				<!--  内容开始 -->
     <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
 				<input type="hidden" id="callFun" value="getLuzhuLonghu"/>
 				<div style="clear: left; width: 100%; float: left;">
 					<div class="show-bjl">
-				      	 选择日期: 
+				      	 选择日期:
 				      <input name="dateData" type="text" id="dateData" class="Wdate"   onClick="WdatePicker();" readonly="readonly"></span>
 				      <span ><a style="margin: 0px;" href="javascript:Search();" class="a-bottom">查询</a></span>
-				    </div> 
+				    </div>
 				</div>
 				<div id="lot-wrap">
 					<div class="clear"></div>
@@ -50,27 +50,27 @@
 				      		  var totalLong=it["totalLong"+i];
 				      		  var totalHu=it["totalHu"+i];
 				      		  var totalHe=it["totalHe"+i];
-				      	  }}  
-					      	<div class="luzhu t_{{=i}}" style="clear:both;"> 
-						       <table class="roadmap-table-caption"> 
+				      	  }}
+					      	<div class="luzhu t_{{=i}}" style="clear:both;">
+						       <table class="roadmap-table-caption">
 						        <tbody>
-						         <tr> 
+						         <tr>
 						          <td> <span>今日累计：<span class="count"> 龙（<span id="lzTotal1{{=i}}">{{=totalLong}}</span>）
-																         虎（<span id="lzTotal2{{=i}}">{{=totalHu}}</span>） 
-																         和（<span id="lzTotal3{{=i}}">{{=totalHe}}</span>） 
-													  </span> 
+																         虎（<span id="lzTotal2{{=i}}">{{=totalHu}}</span>）
+																         和（<span id="lzTotal3{{=i}}">{{=totalHe}}</span>）
+													  </span>
 									   </span> 龙虎
-								   </td> 
-						         </tr> 
+								   </td>
+						         </tr>
 						        </tbody>
-						       </table> 
+						       </table>
 						       <div style="width:1198px; overflow-x: auto;" class="luzhu_scroll">
-						        <table class="roadmap-table mb-15" style="font-family:微软雅黑;"> 
+						        <table class="roadmap-table mb-15" style="font-family:微软雅黑;">
 						         <tbody>
-						          <tr valign="top"> 
+						          <tr valign="top">
 						          <td class="odd">
 						          {{
-						           var preNum; 
+						           var preNum;
 						           var symbol;
 						           var index=1;
 						           var lzTotal1Val=0;
@@ -89,13 +89,13 @@
 						        		   symbol='<p>和</p>';
 						        	    }
 						        	   if(n==row.length-1||preNum==num){
-						          }}	   
-						           		{{=symbol}} 
-						          {{ 
+						          }}
+						           		{{=symbol}}
+						          {{
 						          		}else{
 						          			index+=1;
 						          }}
-						          		</td><td class="{{=index%2==0?'even':'odd'}}">{{=symbol}} 
+						          		</td><td class="{{=index%2==0?'even':'odd'}}">{{=symbol}}
 						          {{
 						          		}
 						          		preNum=num;
@@ -104,11 +104,11 @@
 						          <input type="hidden" id="lzTotal1Val{{=i}}" value="{{=lzTotal1Val}}"/>
 						          <input type="hidden" id="lzTotal2Val{{=i}}" value="{{=lzTotal2Val}}"/>
 						          <input type="hidden" id="lzTotal3Val{{=i}}" value="{{=lzTotal3Val}}"/>
-						          </tr> 
+						          </tr>
 						         </tbody>
-						        </table> 
-						       </div> 
-						      </div> 
+						        </table>
+						       </div>
+						      </div>
 				      	  {{
 				      	  	}
 				          }}
@@ -117,7 +117,7 @@
 				      	function getLuzhuLonghu(){
 				      		var date=$("#dateData").val();
 				      		$.post("tjssc/getLuzhuLonghu.do",
-				   				{date:date}, 
+				   				{date:date},
 				   				function(r) {
 				    				if (r) {
 				    					doTCompile("lz_data", r);
@@ -133,7 +133,7 @@
 				      	function Search() {
 				      		getLuzhuLonghu();
 					    }
-					 </script> 
+					 </script>
 				</div>
 				<!--  内容结束-->
 	    </div>
