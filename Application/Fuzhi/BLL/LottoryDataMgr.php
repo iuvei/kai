@@ -672,13 +672,15 @@ class LottoryDataMgr
             $nextNo = $this->getGameNextNo($lotType, $module, $time);
             $kjHao = $module->query("select dat_codes from {$this->prename}data where dat_type={$lotType} and dat_expect='{$currentNo['actionNo']}'");
             if (!is_array($kjHao) || !$kjHao['dat_codes']) {
-                $kjHao = $module->query("select dat_codes,dat_expect from {$this->prename}data where dat_type={$lotType} order by dat_id desc limit 1");
+                $kjHao = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} order by dat_id desc limit 1");
             }
         $dat_expect = $kjHao[0]['dat_expect'];
         $awrdtime = date('Y-m-d H:i:s', $kjHao[0]['dat_open_time']);
         $awrdtime2 = date('Y-m-d H:i:s', $kjHao[0]['dat_open_time'] + 210);
-        $awrdtime3 = ($kjHao[0]['dat_open_time'] + 210) - time();
+        $awrdtime3 = ($kjHao[0]['dat_open_time'] + 210 - time());
         $pan = null;
+    //    print_r($kjHao);echo '</br>' ; print_r($awrdtime2);echo '</br>' ; print_r($awrdtime3);die;
+
         if ($kjHao === false || count($kjHao) == 0) {
             $kjHao = null;
         } else {
@@ -723,16 +725,12 @@ class LottoryDataMgr
         $retData["next"]["pan"] = null;
         $retData["next"]["isEnd"] = null;
         $retData["next"]["nextMinuteInterval"] = null;
-        $datatime  = strtotime($currentNo['actionTime']) ;
-
-//       if( $time  >= $datatime ){
-//           $retData["current"]["periodNumber1"] = $dat_expect+1;
-//           $retData["current"]["awardNumbers"] = "";
-//          $retData["next"]["periodNumberStr"] = $dat_expect+2;
-//       }
-
-//       print_r($time);echo '</br>' ; print_r($datatime);die;
-
+        $nextTime =  strtotime($nextNo["actionTime"])-time();
+       if($awrdtime3 < $nextTime ){
+           $retData["current"]["periodNumber1"] = $dat_expect+1;
+           $retData["current"]["awardNumbers"] = "";
+           $retData["next"]["periodNumberStr"] = $dat_expect+2;
+       }
         $ret = json_encode($retData);
         return $ret;
     }else{
@@ -783,14 +781,8 @@ class LottoryDataMgr
             $datas["next"] = $xres;
             $datas['status'] = $ret['status'];
             $datas = json_encode($datas);
-
             return $datas;
         }
-
-
-
-
-
     }
 
     function getPk10AnalysisData($type, $page, $lotType, $expire)
