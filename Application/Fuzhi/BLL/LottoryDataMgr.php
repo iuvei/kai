@@ -136,13 +136,13 @@ class LottoryDataMgr
         $lotType = (int)$lotType;
         $date = date('Y-m-d', strtotime($date));
         $yestoday = date("Y-m-d", strtotime("-$date day"));
-        if ($lotType == 43) {
+        /*if ($lotType == 43) {
             $startTime = strtotime($yestoday . ' 21:00:00');
             $endTime = strtotime($date . ' 19:00:00');
-        } else {
+        } else {*/
             $startTime = strtotime($date . ' 00:00:00');
             $endTime = strtotime($date . ' 23:59:59');
-        }
+//        }
 
         if ($pages != 0 && $offset != 0) {
             /* $pages  = 1;
@@ -724,11 +724,16 @@ class LottoryDataMgr
             $retData["next"]["isEnd"] = null;
             $retData["next"]["nextMinuteInterval"] = null;
             $nextTime =  strtotime($nextNo["actionTime"])-time();
-       if($awrdtime3 < $nextTime && ($nextTime - $awrdtime3) > -38){
+       if($awrdtime3 < $nextTime && $awrdtime3 > -210){
             $retData["current"]["periodNumber1"] = $dat_expect+1;
             $retData["current"]["awardNumbers"] = "";
             $retData["next"]["periodNumberStr"] = $dat_expect+2;
             $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
+//            print_r(strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime);
+       }elseif($awrdtime3 < -210){
+           $retData["current"]["periodNumber1"] = $dat_expect;
+           $retData["next"]["periodNumberStr"] = $dat_expect;
+           $retData["next"]["awardTimeInterval"] = 0;
        }
         $ret = json_encode($retData);
         return $ret;
