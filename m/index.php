@@ -17,7 +17,7 @@ include(dirname(__FILE__)."\conn.php");
 
 <script src="style/js/jquery.js"></script>
 <script src="style/js/jquery.cookie.js"></script>
-<link type="text/css" href="style/css/style.css?v=201811121" rel="stylesheet">
+<link type="text/css" href="style/css/style.css?v=<?php echo date("Y/m/d")?>" rel="stylesheet">
 <style>
 .add-home {
 	position:fixed;
