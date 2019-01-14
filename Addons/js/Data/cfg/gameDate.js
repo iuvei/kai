@@ -642,6 +642,49 @@ var webListOP = {
             "spanClass":"wen_newIcon"
         }
     ],
+    "js11x5": [
+
+        {
+            "text":"极速11选5",
+            "href":"jsdd/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"js11x5/kaijiang.html"
+        },
+        /*{
+            "text":"号码路珠",
+            "href":"js28/merge.html"
+        },*/
+        /*        {
+                    "text":"单双大小历史",
+                    "href":"js28/ballstat.html"
+                },*/
+        /*{
+            "text":"加拿大28开奖直播",
+            "href":"pcdd/shipin/",
+            "title":"在线观看番摊开奖直播",
+            "aClass":"redColor"
+        },*/
+        {
+            "text":"极速蛋蛋技巧",
+            "href":"jiqiao/js11x5/"
+        },
+        {
+            "text":"免费参考",
+            "href":"js11x5/betgame.html",
+            "spanClass":"wen_newIcon"
+        },
+        {
+            "text":"遗漏大数据",
+            "href":"js11x5/omitdata.html",
+
+        },
+        {
+            "text":"横版走势图",
+            "href":"js11x5/zoushitu.html"
+        }
+    ],
 		// "xync": [
 		// 			{
 		// 				"text":"幸运农场",
@@ -741,6 +784,128 @@ var webListOP = {
 					},*/
 					
 				],
+    "sfcft": [
+        {
+            "text":"三分彩番摊",
+            "href":"sfcft/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"sfcft/kaijiang.html"
+        },
+        {
+            "text":"番摊路珠",
+            "href":"sfcft/luzhulonghu.html"
+        },
+        {
+            "text":"番摊单双大小历史",
+            "href":"sfcft/ballstat.html"
+        },
+        {
+            "text":"历史号码统计",
+            "href":"sfcft/numberstat.html"
+        },
+        {
+            "text":"横版走势图",
+            "href":"sfcft/zoushitu.html"
+        },
+        {
+            "text":"番摊技巧",
+            "href":"jiqiao/sfcft/"
+        },
+        /*{
+            "text":"开奖视频",
+            "href":"cqft/shipin",
+            "aClass":"redColor"
+        },*/
+        {
+            "text":"遗漏大数据",
+            "href":"sfcft/omitdata.html",
+
+        }
+    ],
+	"ftft": [
+        {
+            "text":"飞艇番摊",
+            "href":"ftft/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"ftft/kaijiang.html"
+        },
+        {
+            "text":"番摊路珠",
+            "href":"ftft/merge.html"
+        },
+        {
+            "text":"今日号码统计",
+            "href":"ftft/opencodeanalysis.html"
+        },
+        {
+            "text":"番摊单双大小历史",
+            "href":"ftft/ballstat.html"
+        },
+        /*{
+            "text":"番摊开奖直播",
+            "href":"bjft/shipin/",
+            "title":"在线观看番摊开奖直播",
+            "aClass":"redColor"
+        },*/
+        {
+            "text":"番摊技巧",
+            "href":"jiqiao/ftft/"
+        },
+        {
+            "text":"遗漏大数据",
+            "href":"ftft/omitdata.html",
+
+        },
+        {
+            "text":"横版走势图",
+            "href":"ftft/zoushitu.html"
+        }
+    ],
+    "sfpk10ft": [
+        {
+            "text":"三分赛车番摊",
+            "href":"bjft/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"sfpk10ft/kaijiang.html"
+        },
+        {
+            "text":"番摊路珠",
+            "href":"sfpk10ft/merge.html"
+        },
+        {
+            "text":"今日号码统计",
+            "href":"sfpk10ft/opencodeanalysis.html"
+        },
+        {
+            "text":"番摊单双大小历史",
+            "href":"sfpk10ft/ballstat.html"
+        },
+        /*{
+            "text":"番摊开奖直播",
+            "href":"bjft/shipin/",
+            "title":"在线观看番摊开奖直播",
+            "aClass":"redColor"
+        },*/
+        {
+            "text":"番摊技巧",
+            "href":"jiqiao/sfpk10ft/"
+        },
+        {
+            "text":"遗漏大数据",
+            "href":"sfpk10ft/omitdata.html",
+
+        },
+        {
+            "text":"横版走势图",
+            "href":"sfpk10ft/zoushitu.html"
+        }
+    ],
 		"shssl": [
 					{
 						"text":"上海时时乐",

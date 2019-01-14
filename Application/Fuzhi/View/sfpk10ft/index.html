@@ -1,12 +1,13 @@
 <extend name="Base/common"/>
 
 <block name="style">
+	<link href="../../../../favicon.ico" type="image/x-icon" rel="shortcut icon">
     <link href="css/style.css" rel="stylesheet" />
-    <link href="css/lot/{$lottory}.css" rel="stylesheet" />
+    <link href="css/lot/{$lottory}.css?v=20181118" rel="stylesheet" />
 </block>
 
 <block name="body">
-
+ 
 <!--body-content-->
 <div class="body-content">
 	<!-- 彩票大厅 头部 -->
@@ -19,12 +20,11 @@
 
 <div class="clear"></div>
     <input type="hidden" value="getHistoryData|drawTrend" id="callFun" time="1000" />
-
+		
 		<div class="index-history">
 			<div class="title mt10">
-				<h2>
-					开奖记录</h2>
-				<a href="sfpk10/kaijiang.html" >查看全部>></a>
+				<h2>开奖记录</h2>
+				<a href="sfpk10ft/kaijiang.html" >查看全部>></a>
 			</div>
 			<table id="history" class="lot-table">
 				<tbody>
@@ -32,14 +32,15 @@
 						<td width="120">时间</td>
 						<td width="140">期号</td>
 						<td width="650">开奖号码</td>
-						<td colspan="3">冠亚军和</td>
-						<td colspan="5">1~5龙虎</td>
+						<td colspan="3">前三</td>
+						<td colspan="3">中三</td>
+						<td colspan="3">后三</td>
 					</tr>
 				</tbody>
 			</table>
             <script type="text/javascript">
                 $(function () {
-                    getHistoryData(20);
+                    getHistoryData(16);
                 });
                 function drawTrend() {
                     $.get("sfpk10/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
@@ -74,28 +75,73 @@
                                 html += '<i class="pk-no' + data.n8 + '"></i>';
                                 html += '<i class="pk-no' + data.n9 + '"></i>';
                                 html += '<i class="pk-no' + data.n10 + '"></i>';
-                                var guanyahe = data.n1 + data.n2;
+                                var guanyahe = data.n1 + data.n2 + data.n3;
+                                var srt = guanyahe%4;
                                 html += '</td>';
-                                html += '<td>' + guanyahe + '</td>';
-                                var guanyahedx = '大';
-                                if(guanyahe<=11){
-                                    var guanyahedx = '小';
+                                if(srt == 0){
+                                    html += '<td>4摊</td>';
+                                    html += "<td><p class='r'>大</p></td>";
+                                    html += '<td><p >双</p></td>';
+								}else {
+                                    html += '<td>' + srt + '摊</td>';
+                                    if(srt == 3){
+                                        html += "<td><p class='r'>大</p></td>";
+									}else {
+                                        html += "<td><p>小></td>";
+									}
+                                    if(srt == 2){
+                                        html += "<td><p >双</p></td>";
+                                    }else {
+                                        html += "<td><p class='r'>单></td>";
+                                    }
+
+								}
+
+                                var guanyahe2 = data.n5 + data.n6 + data.n7;
+                                var srt = guanyahe2%4;
+                                html += '</td>';
+                                if(srt == 0){
+                                    html += '<td>4摊</td>';
+                                    html += "<td><p class='r'>大</p></td>";
+                                    html += '<td><p >双</p></td>';
+                                }else {
+                                    html += '<td>' + srt + '摊</td>';
+                                    if(srt == 3){
+                                        html += "<td><p class='r'>大</p></td>";
+                                    }else {
+                                        html += "<td><p>小></td>";
+                                    }
+                                    if(srt == 2){
+                                        html += "<td><p >双</p></td>";
+                                    }else {
+                                        html += "<td><p class='r'>单></td>";
+                                    }
+
                                 }
-                                html += '<td><p ' + (guanyahedx == "大" ? 'class="r"' : '') + '>' + guanyahedx + '</p></td>';
-                                var guanyaheds = '单';
-                                if(guanyahe%2==0){
-                                    guanyaheds = '双';
+
+
+                                var guanyahe3 = data.n8 + data.n9 + data.n10;
+                                var srt = guanyahe3%4;
+                                html += '</td>';
+                                if(srt == 0){
+                                    html += '<td>4摊</td>';
+                                    html += "<td><p class='r'>大</p></td>";
+                                    html += '<td><p >双</p></td>';
+                                }else {
+                                    html += '<td>' + srt + '摊</td>';
+                                    if(srt == 3){
+                                        html += "<td><p class='r'>大</p></td>";
+                                    }else {
+                                        html += "<td><p>小></td>";
+                                    }
+                                    if(srt == 2){
+                                        html += "<td><p >双</p></td>";
+                                    }else {
+                                        html += "<td><p class='r'>单></td>";
+                                    }
+
                                 }
-                                html += '<td><p ' + (guanyaheds == "单" ? 'class="r"' : '') + '>' + guanyaheds + '</p></td>';
-                                var longhu = new Array();
-                                longhu[0] = (data.n1>data.n10)?"龙":"虎";
-                                longhu[1] = (data.n2>data.n9)?"龙":"虎";
-                                longhu[2] = (data.n3>data.n8)?"龙":"虎";
-                                longhu[3] = (data.n4>data.n7)?"龙":"虎";
-                                longhu[4] = (data.n5>data.n6)?"龙":"虎";
-                                for (var i = 0; i < longhu.length; i++) {
-                                    html += '<td><p ' + (longhu[i] == "龙" ? 'class="r"' : '') + '>' + longhu[i] + '</p></td>';
-                                }
+
                                 html += '</tr>';
                                 j++;
                             }
@@ -105,48 +151,42 @@
                         }
                     }, "json");
                 }
-                //         function drawTrend() {
-                //             $.get("pk10/numbertrendData.do", { ball: 1, count: 25, t: Math.random() }, function (data) {
-                // //                 var data = eval(result);
-                //                 showChartline("冠军走势图", data, function () { return this.x + '期:' + this.y }, 0, 10, true, 0, "sContainer");
-                //             }, "json");
-                //         }
             </script>
 		<div class="lot-article mt10">
 				<div class="l-title">
-					<h2>TC三分賽車技巧</h2>
-					<a href="jiqiao/sfpk10/" >更多&gt;&gt;</a>
+					<h2>三分赛车番摊技巧</h2>
+					<a href="jiqiao/sfpk10ft/" >更多&gt;&gt;</a>
 				</div>
 				<div class="wrap">
-
+				
        <ul>
 		   <li>
-			   <?php if(!empty($artical_first['id'])){ ?>
-			   <a target="_blank" href="jiqiao/sfpk10/{$artical_first['id']}.html" >·{$artical_first['title']}</a>
+			   <?php if(empty($artical_first['id'])){ ?>
+			   <!--<a target="_blank" href="jiqiao/sfpk10ft/{$artical_first['id']}.html" >·{$artical_first['title']}</a>-->
 			   <?php } ?>
 		   </li>
 		   <volist name="lists" id="data">
 			   <li>
-				   <?php if(!empty($data['id'])){ ?>
-				   <a target="_blank" href="jiqiao/sfpk10/{$data['id']}.html">·{$data.title}</a></li>
+				   <?php if(empty($data['id'])){ ?>
+				   <!--<a target="_blank" href="jiqiao/sfpk10ft/{$data['id']}.html">·{$data.title}</a></li>-->
 			   <?php } ?>
 		   </volist>
 						</ul>
-
-
-
+		
+                   
+                 
 				</div>
 			</div>
             <div class="lot-about mt10">
                 <div class="l-title">
-                    <h2>号码走势图</h2>
+                    <h2>三分赛车番摊号码走势图</h2>
                 </div>
-
+                
                     <div id="sContainer">
 				</div>
-
+               
             </div>
-
+            
         </div>
 		<div class="clear"></div>
 	</div>

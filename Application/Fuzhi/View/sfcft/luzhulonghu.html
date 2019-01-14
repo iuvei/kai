@@ -1,0 +1,366 @@
+<extend name="Base/common"/>
+
+<block name="style">
+	<link href="css/style.css" rel="stylesheet" />
+	<link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+		<include file="Public/top_ad"/>
+
+		<include file="Public/lottory_latest"/>
+		<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+			<div class="clear"></div>
+			<input type="hidden" id="callFun" value="load" time="1000"/>
+			<div style="margin-bottom:20px;">
+				<ul class="lot-number-omit">
+					<!--<li class="ball">-->
+						<!--<ul id="rankUl">-->
+							<!--&lt;!&ndash;<li>&ndash;&gt;-->
+								<!--&lt;!&ndash;<a href="javascript:gotoPage('',1)" id="rankLi1" class='cur'>&ndash;&gt;-->
+									<!--&lt;!&ndash;前三&ndash;&gt;-->
+								<!--&lt;!&ndash;</a>&ndash;&gt;-->
+								<!--&lt;!&ndash;|&ndash;&gt;-->
+							<!--&lt;!&ndash;</li>&ndash;&gt;-->
+							<!--&lt;!&ndash;<li>&ndash;&gt;-->
+								<!--&lt;!&ndash;<a href="javascript:gotoPage('',2)" id="rankLi2" >&ndash;&gt;-->
+									<!--&lt;!&ndash;中三&ndash;&gt;-->
+								<!--&lt;!&ndash;</a>&ndash;&gt;-->
+								<!--&lt;!&ndash;|&ndash;&gt;-->
+							<!--&lt;!&ndash;</li>&ndash;&gt;-->
+							<!--&lt;!&ndash;<li>&ndash;&gt;-->
+								<!--&lt;!&ndash;<a href="javascript:gotoPage('',3)" id="rankLi3" >&ndash;&gt;-->
+									<!--&lt;!&ndash;后三&ndash;&gt;-->
+								<!--&lt;!&ndash;</a>&ndash;&gt;-->
+
+							<!--&lt;!&ndash;</li>&ndash;&gt;-->
+						<!--</ul>-->
+					<!--</li>-->
+
+					<li class="type">
+						<div class="merge-title-table-title" style="margin-bottom: 10px;margin-top: -10px">
+
+							<span class="bbbb">路珠</span>
+
+							<ul id="mlist_ul" style="float: right">
+								<!--<li> <label> <input type="checkbox" name="c_p" id="c_p1" value="mlist-1"/>长龙提醒</label>&nbsp; </li> &nbsp;-->
+
+								<li> <label> <input type="checkbox" name="c_p" id="c_p3" value="mlist-3"/>大小/单双路珠</label>&nbsp; </li>
+								<li> <label> <input type="checkbox" name="c_p" id="c_p5" value="mlist-4"/>番摊路珠</label>&nbsp; </li>
+
+								<li > <label id="ballIndex" style="display: none;">0</label>&nbsp; </li>
+							</ul>
+						</div>
+
+					</li>
+				</ul>
+				<div class="clear"></div>
+				<div id="lot_content">
+
+					<!--<div style="height: 25px; clear: both;"> </div>-->
+
+
+					<div id="mlist-4">
+						<table class="merge-title-table">
+							<tbody>
+							<tr>
+								<td> <span>番摊路珠</span> </td>
+								<td> <!--<a class="move-up" onclick="movePanel('c_p5','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p5','down');" title="向下"></a>--> </td>
+							</tr>
+							</tbody>
+						</table>
+						<div id="luzhu_1" class="luzhu t_1"></div>
+						<br />
+					</div>
+
+					<div id="mlist-3">
+						<table class="merge-title-table">
+							<tbody>
+							<tr>
+								<td> <span>大小/单双路珠</span> </td>
+								<td> <!--<a class="move-up" onclick="movePanel('c_p4','up');" title="向上"></a> <a class="move-down" onclick="movePanel('c_p4','down');" title="向下"></a>--> </td>
+							</tr>
+							</tbody>
+						</table>
+						<div id='dx_lot_content_1' class="luzhu t_1" ></div>
+						<div id='dx_lot_content_2' class="luzhu t_2" ></div>
+						<br />
+					</div>
+
+
+				</div>
+				<script type="text/javascript">
+                    var request =  GetRequest();
+                    console.log(request);
+                    var dataType = request['dataType'];
+                    var rank = request['rank'];
+                    var gameId = request['gameId'];
+                    var orderCloumn = request['orderCloumn'];
+                    var orderType = request['orderType'];
+                    var rank_2 =0;
+                    if(!dataType)
+                        dataType=1;
+                    if(!gameId)
+                        gameId=1;
+                    if(!rank&&dataType==1){
+                        rank_2=2;
+                        rank=1;
+					}
+
+
+                    if(!orderCloumn)
+                        orderCloumn=1;
+                    if(!orderType)
+                        orderType=2;
+                    //长龙
+                    function getMergeData(){
+                        $.post("/cqssc/getMergeData.do",
+                            {rank:rank},
+                            function(r) {
+                                console.log(r);
+                                if (r) {
+                                    doTCompile("cl_list", r.clList);
+                                }
+                            }, "json");
+                    }
+                    //连续遗漏
+                    var dataTypeNumsDesc={
+                        "1":{"n1":"1","n2":"2","n3":"3","n4":"4","n5":"5","n6":"6","n7":"7","n8":"8","n9":"9","n10":"10"},
+                        "2":{"n1":"冠军龙","n2":"冠军虎","n3":"亚军龙","n4":"亚军虎","n5":"第三名龙","n6":"第三名虎","n7":"第四名龙","n8":"第四虎","n9":"第五名龙","n10":"第五名虎"},
+                        "3":{"n1":"冠亚和单","n2":"冠亚和双"},
+                        "4":{"n1":"冠亚和小","n2":"冠亚和大"},
+                        "5":{"n1":"单","n2":"双"},
+                        "6":{"n1":"小","n2":"大"}
+                    };
+                    function getMissingList(){
+                        var rankVal=rank;
+                        if(dataType==2||dataType==3||dataType==4){
+                            rankVal="";
+                        }
+                        $.post("/missing/getMissingList.do",
+                            {dataType:dataType,gameId:1,rank:rankVal,orderCloumn:orderCloumn,orderType:orderType },
+                            function(r) {
+                                if (r) {
+                                    doTCompile("missing_list", r.t);
+                                    //处理排序样式
+                                    $("#classUpDown"+orderCloumn).addClass(orderType==1?"btnUp":"btnDown");
+                                    //处理 类型样式
+                                    $("#dataTypeUl li a").removeClass("cur")
+                                    $("#dataTypeLi"+dataType).addClass("cur")
+                                    //处理排名样式
+                                    $("#rankUl li a").removeClass("cur")
+                                    $("#rankLi"+rank).addClass("cur")
+                                }
+                            }, "json");
+                    }
+                    function searchQianhouLuzhu(rows,n) {
+                        console.log(rows);
+                        var html = '<div style="width:1198px; overflow-x:auto;" class="luzhu_scroll">'
+                            +'<table class="roadmap-table "><tr valign="top">';
+                        var l1=0;
+                        var h3=0;
+                        var tag1 = '';
+                        for(var i=rows.length-1;i >= 0; i--){
+                            var data = rows[i];
+                            var a1 = data.n1 + data.n2 + data.n3 + data.n4 + data.n5;
+                            a1 = a1%4;
+                            if(a1 == 0){
+                                a1 = 4;
+							}
+                            var cl = '';
+                            var tag = '';
+                            if(a1 > 2){
+                                cl = 'odd';
+                                tag = '大';
+								l1++;
+                            }else{
+                                cl = 'even';
+								tag ='小';
+								h3++;
+                            }
+                            if(i==rows.length-1){
+                                html += "<td class='"+cl+"'>";
+                            }else if(tag1!=tag){
+                                html += "</td><td class='"+cl+"'>";
+                            }
+                                html += '<span style="width: 30px;">'+tag+'</span>';
+                            if(i==0){
+                                html += '</td>';
+                            }
+                            tag1 = tag;
+                        }
+                        html += '</tr> </table></div>';
+                        var tmp = '<table class="roadmap-table-caption"><tr><td>'+
+                            '<span>今日号码累计：<span class="count"> 大（'+l1+'）小（'+h3+'）</span>番摊大小单双</span>'
+                            +'</td></tr></table>';
+                        return tmp+html;
+
+                    }
+
+                    function searchQianhouLuzhu2(rows,n) {
+                        console.log(rows);
+                        var html = '<div style="width:1198px; overflow-x:auto;" class="luzhu_scroll">'
+                            +'<table class="roadmap-table "><tr valign="top">';
+                        var h1=0;
+                        var h2=0;
+                        var tag1 = '';
+                        var tag2 = '';
+                        for(var i=rows.length-1;i >= 0; i--){
+                            var data = rows[i];
+                            var a1 = data.n1 + data.n2 + data.n3 + data.n4 + data.n5;
+								 a1 = a1%4;
+                            var cl = '';
+                            var tag = '';
+                            if(a1%2 == 0){
+                                cl = 'odd';
+                                tag = '双';
+                                    h2++;
+                            }else{
+                                cl = 'even';
+								tag = '单';
+								h1++;
+                            }
+                            if(i==rows.length-1){
+                                html += "<td class='"+cl+"'>";
+                            }else if(tag1!=tag){
+                                html += "</td><td class='"+cl+"'>";
+                            }
+                            html += '<span style="width: 30px;">'+tag+'</span>';
+                            if(i==0){
+                                html += '</td>';
+                            }
+                            tag1 = tag;
+                        }
+                        html += '</tr> </table></div>';
+                        var tmp = '<table class="roadmap-table-caption"><tr><td>'+
+                            '<span>今日号码累计：<span class="count"> 单（'+h1+'） 双（'+h2+'）</span>番摊单双</span>'
+                            +'</td></tr></table>';
+                        return tmp+html;
+
+                    }
+
+                    //龙虎路珠
+                    var NUM_INDEX = {1:'冠军',2:'亚军',3:'第三名',4:'第四名',5:'第五名'};
+                    function luzhu(rows, n){
+                        var j = 0;
+                        var html = '<div style="width:1198px; overflow-x:auto;" class="luzhu_scroll">'
+                            +'<table class="roadmap-table "><tr valign="top">';
+                        var l1=0;
+                        var h1=0;
+                        var h2=0;
+                        var h3=0;
+                        var tag1 = '';
+                        for(var i=rows.length-1;i >= 0; i--){
+                            var data = rows[i];
+                            var a1, a2;
+                                a1 = data.n1 + data.n2 + data.n3 + data.n4 + data.n5;
+                            var cl = '';
+                            var tag = '';
+                            if(a1%4 == 0){
+                                cl = 'odd';
+                                tag = '4';
+                                l1++;
+                            }else{
+                                cl = 'even';
+
+                                tag =a1%4;
+                                if(a1%4 ==1 ){
+                                    h1++;
+                                }else if(a1%4 == 2){
+                                    h2++;
+                                }else {
+                                    h3++
+                                }
+                            }
+                            if(i==rows.length-1){
+                                html += "<td class='"+cl+"'>";
+                            }else if(tag1!=tag){
+                                html += "</td><td class='"+cl+"'>";
+                            }
+                            if(tag == '虎'){
+                                html += '<label style="width: 30px;">'+tag+'</label>';
+                            }else{
+                                html += '<span style="width: 30px;">'+tag+'</span>';
+                            }
+                            if(i==0){
+                                html += '</td>';
+                            }
+                            tag1 = tag;
+                        }
+                        html += '</tr> </table></div>';
+                        var tmp = '<table class="roadmap-table-caption"><tr><td>'+
+                            '<span>今日号码累计：<span class="count"> 4摊（'+l1+'）3摊（'+h3+'）2摊（'+h2+'） 1摊（'+h1+'）</span>番摊</span>'
+                            +'</td></tr></table>';
+                        return tmp + html;
+                    }
+                    function searchLuzhu() {
+                        $.get("/sfcft/kaijiang.do", {}, function (result) {
+                            var tmp1='', tmp2='', tmp3='', tmp4='', tmp5='',data,data2,data3;
+                            if(result&&result.rows&&result.rows.length>0){
+                                tmp1 = luzhu(result.rows, 1);
+                                data = searchQianhouLuzhu(result.rows, 1);
+                                data2 = searchQianhouLuzhu2(result.rows);
+                            }
+                            $('#luzhu_1').html(tmp1);
+                            $("#dx_lot_content_1").html(data);
+                            $("#dx_lot_content_2").html(data2);
+
+                        }, "json");
+                    }
+                    //龙虎结束
+
+                    //冠亚和路珠
+                    function getGuanyaLuzhubseo(){
+                        $.get("/pk10/guanyaLuzhubseo.do", {
+                            t : Math.random()
+                        }, function(text) {
+                            $('#jshtml').html(text);
+                            $("#luzhuhe_other").hide();
+                        });
+                    }
+                    //冠亚和路珠
+                    function load(){
+                        getMergeData();
+                        getMissingList();
+                        //    searchQianhouLuzhu();
+                        getGuanyaLuzhubseo();
+                        searchLuzhu();
+                    }
+                    load();
+                    function gotoPage(dataTypeNum,rankNum){
+                        if(dataTypeNum)
+                            dataType=dataTypeNum;
+                        if(rankNum)
+                            rank=rankNum;
+                        window.location.href="/sfcft/merge.html#dataType="+dataType+"&gameId="+gameId+"&rank="+rank+"&orderCloumn="+orderCloumn+"&orderType="+orderType;
+                        load();
+                    }
+                    $(".web_Sortk .btn span").live("click",
+                        function() {
+                            $(".web_Sortk li").removeClass("btnDown");
+                            $(".web_Sortk li").removeClass("btnUp");
+                            $(this).attr("class")=="btn1"?$(this).parents("li").addClass("btnUp"):$(this).parents("li").addClass("btnDown");
+                            orderCloumn=$(this).attr("order-cloumn");
+                            orderType=$(this).attr("order-type");
+                            gotoPage();
+                        }
+                    );
+
+                    $("input[name='c_p']").live("change",function(){
+                        var tid=$(this).attr("value");
+                        if($(this).attr("checked")=="checked"){
+                            $("#"+$(this).val()).show();
+                        }else{
+                            $("#"+$(this).val()).hide();
+                        }
+                    })
+				</script>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</block>
