@@ -659,14 +659,11 @@ class LottoryDataMgr
 
     private function getAwardTime($type, $page, $lotType, $expire)
     {
-
         $module = M();
         $retData = array();
         $time = time();
         $MillisecondTime = getMillisecond();
         $kjHao = null;
-
-
         if($lotType == 43) {
             $currentNo = $this->getGameCurrentNo($lotType, $module, $time);
             $nextNo = $this->getGameNextNo($lotType, $module, $time);
@@ -715,21 +712,23 @@ class LottoryDataMgr
         $retData["current"]["isEnd"] = null;
         $retData["current"]["nextMinuteInterval"] = null;
         //下期期数
-        $nextNoqishu = $this->getGameNextNoqishu($lotType, $module, $time);
-        $retData["next"]["periodNumber"] = $dat_expect;//测试数据是否正常
-        $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
-        $retData["next"]["fullPeriodNumber"] = 0;
-        $retData["next"]["periodNumberStr"] = $dat_expect+1;
-        $retData["next"]["awardNumbers"] = null;
-        $retData["next"]["delayTimeInterval"] = null;
-        $retData["next"]["pan"] = null;
-        $retData["next"]["isEnd"] = null;
-        $retData["next"]["nextMinuteInterval"] = null;
-        $nextTime =  strtotime($nextNo["actionTime"])-time();
-       if($awrdtime3 < $nextTime ){
-           $retData["current"]["periodNumber1"] = $dat_expect+1;
-           $retData["current"]["awardNumbers"] = "";
-           $retData["next"]["periodNumberStr"] = $dat_expect+2;
+            $nextTime =  strtotime($nextNo["actionTime"])-time();
+//            $nextNoqishu = $this->getGameNextNoqishu($lotType, $module, $time);
+            $retData["next"]["periodNumber"] = $dat_expect;//测试数据是否正常
+            $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
+            $retData["next"]["fullPeriodNumber"] = 0;
+            $retData["next"]["periodNumberStr"] = $dat_expect+1;
+            $retData["next"]["awardNumbers"] = null;
+            $retData["next"]["delayTimeInterval"] = null;
+            $retData["next"]["pan"] = null;
+            $retData["next"]["isEnd"] = null;
+            $retData["next"]["nextMinuteInterval"] = null;
+            $nextTime =  strtotime($nextNo["actionTime"])-time();
+       if($awrdtime3 < $nextTime && ($nextTime - $awrdtime3) > -38){
+            $retData["current"]["periodNumber1"] = $dat_expect+1;
+            $retData["current"]["awardNumbers"] = "";
+            $retData["next"]["periodNumberStr"] = $dat_expect+2;
+            $retData["next"]["awardTimeInterval"] = strtotime($nextNo["actionTime"]) * 1000 - $MillisecondTime;
        }
         $ret = json_encode($retData);
         return $ret;
@@ -743,11 +742,7 @@ class LottoryDataMgr
                 $xqqihao = str_replace("-", "0", $ret['issue']);
                 $sqqihao = str_replace("-", "0", $ret['preIssue']['issue']);
             }
-
             $kjHao1 = $module->query("select dat_codes,dat_expect,dat_open_time from {$this->prename}data where dat_type={$lotType} and dat_expect = $sqqihao");
-            if($lotType == 43 ){
-
-            }
             if ($kjHao1[0]['dat_codes'] == null) {
                 $kjHao1[0]['dat_codes'] = "";
             }
@@ -759,7 +754,6 @@ class LottoryDataMgr
                 }
                 $arr_str = implode(",", $arr);
                 $sres["awardNumbers"] = $arr_str;
-
             } else {
                 $sres["awardNumbers"] = $kjHao1[0]['dat_codes'];
             }
@@ -5582,9 +5576,10 @@ class LottoryDataMgr
 
         $types = $this->getTypes($module);
 
-        if ($type == 20) {
+
+//        if ($type == 20) {
             $today = strtotime(date("Y-m-d"), time());
-        }
+//        }
 
 
         // $sql = "select * from {$this->prename}data where type={$type} and actionTime{$today} order by actionTime limit 1";
@@ -5592,8 +5587,6 @@ class LottoryDataMgr
         $sql = "select dat_expect from {$this->prename}data where dat_type={$type} and dat_open_time<{$today} order by dat_open_time desc limit 1";
 
         $return = $module->query($sql);
-
-
         return $return;
     }
 
