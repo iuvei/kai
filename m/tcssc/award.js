@@ -38,80 +38,6 @@ $(function () {
             }
         }
     }
-    var awardTick = function () {
-        $.post('../../tcssc/getxjsscAwardTimes.do', { t: Math.random() }, function (data) {
-            //计数请求次数
-            requireCount += 1;
-            if(data.current.awardNumbers!='') {
-                $('.newIssue span').html(data.current.periodNumber1.substr(6));
-                $('.nextIssue span').html(data.next.periodNumberStr.substr(6));
-                $('.periodNumber').html(data.current.periodNumber);
-                $('.surplus_num').html(data.current.surplus_num);
-                var nums = data.current.awardNumbers.split(',');
-
-                var srt = '';
-                var sum = eval(nums.join("+"));
-                var dx = '';
-                var ds = '';
-                if (sum > 22) {
-                    dx = '大';
-                } else {
-                    dx = '小';
-                }
-                if (sum % 2 == 0) {
-                    ds = '双';
-                } else {
-                    ds = '单';
-                }
-
-                for (var i = 0; i < nums.length; i++) {
-
-                    srt = srt + '<a class="sscBall mg">' + nums[i] + '</a>';
-
-                }
-                srt = srt + '<div class="sscLH">';
-                srt = srt + '<a>' + long(nums[0], nums[4]) + '</a>';
-                srt = srt + '<a>' + '<span></span>' + '</a>';
-                srt = srt + '<a>' + '总和' + '</a>';
-                srt = srt + '<a>' + sum + '</a>';
-                srt = srt + '<a>' + dx + '</a>';
-                srt = srt + '<a>' + ds + '</a>';
-                srt = srt + '</div>';
-                $('.openCodeList').html(srt)
-
-            }
-            if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
-                timeInterval = 16000;
-                window.setTimeout(afterAwarded, 1000);
-                $(".currentAward .period").css("color", "green");
-                requireCount = errorCount = 0;
-                hideLotPeriodNumWarn();
-            }
-            if (timeInterval != 0) {
-                if (currentPeriodNumber != -1 ) {    //判断第一次加载
-
-                    //window.setTimeout(getHistoryData('50'), data.next.awardTimeInterval < 10 ? 1000 : _time);
-                }
-                if (currentPeriodNumber == -1) {    //判断第一次加载
-                    currentPeriodNumber = data.current.periodNumber;
-                }
-                currentPeriodNumber = data.current.periodNumber;
-                nextPeriodNumber = data.next.periodNumber;
-
-            }
-            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-            window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
-            timeInterval = 0;
-        }, 'json').error(function () {
-            if (errorCount < 20) {
-                window.setTimeout(awardTick, 1000 + Math.random() * 10000);
-                errorCount++;
-            }
-        });
-        if (errorCount >= 5 || requireCount > 90) {
-            showLotPeriodNumWarn(nextPeriodNumber);
-        }
-    };
 
     var loadAwardTimesTimer, ctimeOfPeriod = -1;
     var cpCurrAwardData = null;
@@ -189,7 +115,6 @@ $(function () {
         }
     }
 
-    window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
     function polling() {
@@ -285,25 +210,6 @@ function getHistoryData(count,date) {
                 html += '<div>'+'<a>'+ long(data.n1,data.n5) + '</a>'+'</div>';
 
                 html += '</div>';
-                // html += '<li class="' + clsName + '">';
-                // html += '<table width="100%">';
-                // html += '<tr>';
-                // html += '<td width="20%">' + data.termNum.substring(8, 16) +'期</br>';
-                // html += ''+ data.lotteryTime.substring(10, 16)+'</td>';
-                // html += '<td class=""><div class="nums-div">';
-                // html += '<i class="ball-red">' + data.n1 + '</i>';
-                // html += '<i class="ball-red">' + data.n2 + '</i>';
-                // html += '<i class="ball-red">' + data.n3 + '</i>';
-                // html += '<i class="ball-red">' + data.n4 + '</i>';
-                // html += '<i class="ball-red">' + data.n5 + '</i>';
-
-                // html += '<div class="bt-jg"><span>'+long(data.n1,data.n5)+'</span><span style="color: #bbbbbb">|</span><span>'+ sum +'</span><span>'+ dx(sum)+'</span><span>'+ds(sum)+'</span>'+
-                //     '</br><span class="span-2">'+shun(data.n1,data.n2,data.n3)+'</span><span class="span-2">'+shun(data.n2,data.n3,data.n4)+'</span>' +
-                //     '<span class="span-2">'+shun(data.n3,data.n4,data.n5)+'</span><span class="span-2">'+douniu(guanyahe)+'</span></div></div></td>';
-
-                // html += '</tr>';
-                // html += '</table>';
-                // html += '</li>';
                 j++;
             }
             $("#historyList").html(html);

@@ -8,106 +8,6 @@ $(function () {
     var errorCount = 0;
     //请求次数
     var requireCount = 0;
-    function afterAwarded() {
-        var _page = $("#pageName").val();
-        if (_page) {
-            var _container = $("#pageName").attr("container");
-            var _time = $("#pageName").attr("time");
-            var unload = $("#pageName").attr("unload");
-            if (unload && unload == "1") return;
-            _time = ~ ~_time;
-            _container = _container ? _container : "lot-wrap";
-
-            setTimeout(function () {
-                $.get('http://m.qx66.com/cqssc/' + _page, { t: Math.random() }, function (text) {
-                    $('#' + _container).html(text);
-                    //文字闪烁
-                    Glitter();
-                });
-            }, _time);
-        }
-        else {
-            var fun = $("#callFun").val();
-            var _time = $("#callFun").attr("time");
-            if (fun) {
-                var funs = fun.split('|');
-                setTimeout(function () {
-                    for (var i = 0; i < funs.length; i++) {
-                        window[funs[i]]();
-                    }
-                }, _time);
-            }
-        }
-    }
-    var awardTick = function () {
-        $.post('../../js28/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
-            if(data.current.awardNumbers!=''){
-                $('.newIssue span').html(data.current.periodNumber1.substr(6));
-                $('.nextIssue span').html(data.next.periodNumberStr.substr(6));
-                $('.periodNumber').html(data.current.periodNumber);
-                $('.surplus_num').html(data.current.surplus_num);
-                var nums = data.current.awardNumbers.split(',');
-
-                var str=''
-                str = str + '<a class="ball-red">' + nums[0] + '</a> + ';
-                str = str + '<a class="ball-red">' + nums[1] + '</a> + ';
-                str = str + '<a class="ball-red">' + nums[2] + '</a> = ';
-                str = str + '<a class="ball-blue">' + zh(nums[0],nums[1],nums[2]) + '</a>';
-                str = str + '<div class="sscLH">';
-                var zonghe =zh(nums[0],nums[1],nums[2]);
-                var dx =aaaa(zonghe)[0];
-                var ds =aaaa(zonghe)[1];
-                var bose =aaaa(zonghe)[2];
-                str = str + '<a>' + bose + '</a>';
-                str = str + '<a>' + dx + '</a>';
-                str = str + '<a>' + ds + '</a>';
-                // str = str + '<a>' + dat[4] + '</a>';
-                // str = str + '<a>' + dat[5] + '</a>';
-                // str = str + '<a>' + dat[6] + '</a>';
-                str = str + '</div>';
-                $('.openCodeList').html(str)
-            }
-            //计数请求次数
-            requireCount += 1;
-
-            if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
-                timeInterval = 16000;
-                window.setTimeout(afterAwarded, 1000);
-                $(".currentAward .period").css("color", "green");
-                requireCount = errorCount = 0;
-                hideLotPeriodNumWarn();
-            }
-            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-
-
-
-            if (timeInterval != 0) {
-                 if (currentPeriodNumber != -1 ) {    //判断第一次加载
-
-
-                }
-                if (currentPeriodNumber == -1) {    //判断第一次加载
-                    currentPeriodNumber = data.current.periodNumber;
-                }
-                currentPeriodNumber = data.current.periodNumber;
-                nextPeriodNumber = data.next.periodNumber;
-
-            }
-
-		
-            window.setTimeout(awardTick, (data.next.awardTimeInterval) < 10 ? 1000 : _time);
-            timeInterval = 0;
-
-        }, 'json').error(function () {
-            if (errorCount < 20) {
-                window.setTimeout(awardTick, 1000 + Math.random() * 10000);
-                errorCount++;
-            }
-        });
-        if (errorCount >= 5 || requireCount > 90) {
-            showLotPeriodNumWarn(nextPeriodNumber);
-        }
-    };
 
     var loadAwardTimesTimer, ctimeOfPeriod = -1;
     var cpCurrAwardData = null;
@@ -170,8 +70,6 @@ $(function () {
             showLotPeriodNumWarn(nextPeriodNumber);
         }
     }
-
-    window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
     function polling() {

@@ -886,16 +886,10 @@ var xyft_number = -1;
 var xyft_downTimer = null;
 var pk10_number = -1;
 var pk10_downTimer = null;
-var gdkl10_number = -1;
-var gdkl10_downTimer = null;
-var jssc_number = -1;
-var jssc_downTimer = null;
 var gd11x5_number = -1;
 var gd11x5_downTimer = null;
 var js11x5_number = -1;
 var js11x5_downTimer = null;
-var jsssc_number = -1;
-var jsssc_downTimer = null;
 var jsk3_number = -1;
 var jsk3_downTimer = null;
 var gxk3_number = -1;
@@ -936,11 +930,8 @@ $(function() {
     CheckAward("xyft", "GetXyftAwardTimes", this.xyft_downTimer, xyft_number, "xyft");
     CheckAward("pk10", "GetPk10AwardTimes", this.pk10_downTimer, pk10_number, "pk10");
     CheckAward("cqssc", "GetCqsscAwardTimes", this.cqssc_downTimer, cqssc_number, "cqssc");
-    CheckAward("gdkl10", "GetGdkl10AwardTimes", this.gdkl10_downTimer, gdkl10_number, "gdkl10");
-    CheckAward("jssc", "GetPk10AwardTimes", this.jssc_downTimer, jssc_number, "jssc");
     CheckAward("gd11x5", "GetGd11x5AwardTimes", this.gd11x5_downTimer, gd11x5_number, "gd11x5");
     CheckAward("js11x5", "GetGd11x5AwardTimes", this.js11x5_downTimer, js11x5_number, "js11x5");
-    CheckAward("jsssc", "GetXjsscAwardTimes", this.jsssc_downTimer, jsssc_number, "jsssc");
     CheckAward("cqft", "GetTjsscAwardTimes", this.cqft_downTimer, pk10_downTimer, "cqft");
     CheckAward("sfcft", "GetTjsscAwardTimes", this.sfcft_downTimer, pk10_downTimer, "sfcft");
     CheckAward("jsk3", "GetJsk3AwardTimes", this.jsk3_downTimer, jsk3_number, "jsk3");
@@ -970,16 +961,10 @@ function showTime(page, timeSpan, time, qihao) {
             CheckAward("xyft", "GetXyftAwardTimes", this.xyft_downTimer, xyft_number, "xyft", qihao)
         } else if (timeSpan == "shishicai") {
             CheckAward("shishicai", "GetCqsscAwardTimes", this.cqssc_downTimer, cqssc_number, "cqssc", qihao)
-        } else if (timeSpan == "gdkl10") {
-            CheckAward("gdkl10", "GetGdkl10AwardTimes", this.gdkl10_downTimer, gdkl10_number, "gdkl10", qihao)
-        } else if (timeSpan == "jssc") {
-            CheckAward("jssc", "GetXyncAwardTimes", this.jssc_downTimer, jssc_number, "jssc", qihao)
         } else if (timeSpan == "gd11x5") {
             CheckAward("gd11x5", "GetGd11x5AwardTimes", this.gd11x5_downTimer, gd11x5_number, "gd11x5", qihao)
         } else if (timeSpan == "js11x5") {
             CheckAward("js11x5", "GetGd11x5AwardTimes", this.js11x5_downTimer, js11x5_number, "js11x5", qihao)
-        } else if (timeSpan == "jsssc") {
-            CheckAward("jsssc", "GetXjsscAwardTimes", this.jsssc_downTimer, jsssc_number, "jsssc", qihao)
         } else if (timeSpan == "cqft") {
             CheckAward("cqft", "GetCqsscAwardTimes", this.cqft_downTimer, cqft_number, "cqft", qihao)
         } else if (timeSpan == "sfcft") {
@@ -1110,38 +1095,7 @@ function IndexOpen() {
         $("#txffc #number").html(str);
         $("#txffc .bt-jg").html(long);
 
-        $("#gdkl10 #qihao").text('第' + pad(data.gdkl10.dat_expect, 3) + '期');
-        var nums = data.gdkl10.dat_codes.split(',');
-        var str = "";
-        for (var i = 0; i < nums.length; i++) {
-            if (parseInt(nums[i]) > 18) {
-                str = str + "<i class='ball-blue'>" + nums[i] + "</i>"
-            } else {
-                str = str + "<i class='ball-red'>" + nums[i] + "</i>"
-            }
-        }
-        $("#gdkl10 .bt-jg").html('');
-        var long;
-        long = ssclh(nums,2);
-        $("#gdkl10 #number").html(str);
-        $("#gdkl10 .bt-jg").html(long);
-
-
-        $("#jssc #qihao").text('第' + pad(data.jssc.dat_expect, 3) + '期');
-        var nums = data.jssc.dat_codes.split(',');
-        var str = "";
-        for (var i = 0; i < nums.length; i++) {
-            str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i] + "</i>";
-        }
-        $("#jssc .bt-jg").html('');
-        var long;
-        long = lh(nums);
-        $("#jssc #number").html(str);
-        $("#jssc .bt-jg").html(long);
-
-
-
-
+        
         $("#gd11x5 #qihao").text('第' + pad(data.gd11x5.dat_expect, 3).substr(4) + '期');
         var nums = data.gd11x5.dat_codes.split(',');
         var str = "";
@@ -1168,18 +1122,6 @@ function IndexOpen() {
         $("#js11x5 #number").html(str);
         $("#js11x5 .bt-jg").html(long);
 
-
-        $("#jsssc #qihao").text('第' + pad(data.jsssc.dat_expect, 3) + '期');
-        var nums = data.jsssc.dat_codes.split(',');
-        var str = "";
-        for (var i = 0; i < nums.length; i++) {
-            str = str + "<i class='ball-red'>" + nums[i] + "</i>"
-        }
-        $("#jsssc .bt-jg").html('');
-        var long;
-        long = ssclh(nums,1);
-        $("#jsssc #number").html(str);
-        $("#jsssc .bt-jg").html(long);
 
 
         $("#jsk3 #qihao").text('第' + data.jsk3.dat_expect.substr(4) + '期');

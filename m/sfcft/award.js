@@ -100,76 +100,6 @@ $(function () {
             }
         }
     }
-    var awardTick = function () {
-        $.post('../../sfssc/getCqsscAwardTimes.do', { t: Math.random() }, function (data) {
-            if(data.current.awardNumbers!='') {
-                $('.newIssue span').html(data.current.periodNumber1.substr(4));
-                $('.nextIssue span').html(data.next.periodNumberStr.substr(4));
-                $('.periodNumber').html(data.current.periodNumber);
-                $('.surplus_num').html(data.current.surplus_num);
-                var nums = data.current.awardNumbers.split(',');
-                var srt = '';
-                var sum = eval(nums.join("+"));
-                var tan = sum % 4;
-                if (tan == 0) {
-                    tan = 4
-                }
-                var ft = '';
-                for (var i = 0; i < tan; i++) {
-                    ft = ft + '<span class="ball-red-span"></span>'
-                }
-                console.log(ft)
-                ft = '<a class="AFT">番摊：</a>' + ft;
-                for (var i = 0; i < nums.length; i++) {
-
-                    srt = srt + '<a class="sscBall2 mg">' + nums[i] + '</a>';
-
-                }
-                srt = srt +ft
-                $('.openCodeList1').html(srt)
-            }
-            //计数请求次数
-            requireCount += 1;
-            if ((data.current.periodNumber != currentPeriodNumber) && currentPeriodNumber != -1) {
-                timeInterval = 16000;
-                window.setTimeout(afterAwarded, 1000);
-                $(".currentAward .period").css("color", "green");
-                requireCount = errorCount = 0;
-                hideLotPeriodNumWarn();
-            }
-            var _time = parseInt(parseInt(data.next.awardTimeInterval) + timeInterval + parseInt(Math.random() * 3000));
-
-            if (timeInterval != 0) {
-                if (currentPeriodNumber != -1 ) {    //判断第一次加载
-
-
-                }
-                if (currentPeriodNumber == -1) {    //判断第一次加载
-                    currentPeriodNumber = data.current.periodNumber;
-                }
-                currentPeriodNumber = data.current.periodNumber;
-                nextPeriodNumber = data.next.periodNumber;
-
-
-            }
-
-
-
-            window.setTimeout(awardTick, data.next.awardTimeInterval < 10 ? 1000 : _time);
-            timeInterval = 0;
-
-
-
-        }, 'json').error(function () {
-            if (errorCount < 20) {
-                window.setTimeout(awardTick, 1000 + Math.random() * 10000);
-                errorCount++;
-            }
-        });
-        if (errorCount >= 5 || requireCount > 90) {
-            showLotPeriodNumWarn(nextPeriodNumber);
-        }
-    };
 
     var loadAwardTimesTimer, ctimeOfPeriod = -1;
     var cpCurrAwardData = null;
@@ -233,8 +163,6 @@ $(function () {
             showLotPeriodNumWarn(nextPeriodNumber);
         }
     }
-
-    window.setTimeout(awardTick, 1000);
     //每10秒刷新开奖时间数据
     loadAwardTimesTimer = window.setTimeout(loadAwardTimes, 1000);
     function polling() {
