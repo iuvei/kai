@@ -351,35 +351,37 @@ $(function () {
 });
 
 var publicUrl = config.publicUrl, imgUrl = config.imgUrl, indexObj = new Object, indextools = {}, bannernews = "", fanganyc = "";
-indexObj.ajaGxklsf = function (e, t, a) {
-    var e = void 0 == e ? "" : e, n = !1;
-    $.ajax({
-        url: publicUrl + "gdkl10/getGdkl10AwardData.do?" + Math.random(),
+// indexObj.ajaGxklsf = function (e, t, a) {
+//     var e = void 0 == e ? "" : e, n = !1;
+//     $.ajax({
+//         url: publicUrl + "gdkl10/getGdkl10AwardData.do?" + Math.random(),
+//
+//         type: "GET",
+//         data: {lotCode: t},
+//         timeout: 6e4,
+//         success: function (t) {
+//             try {
+//                 var n = tools.parseObj(t);
+//
+//                 if ("100002" == n.result.businessCode)throw new Error("error");
+//                 if (n = n.result.data, tools.operatorTime("" == n.drawTime ? "0" : n.drawTime, n.serverTime) <= 0)throw new Error("error");
+//                 tools.countDown(n.drawTime, n.serverTime, a)
+//             } catch (t) {
+//                 indextools.repeatAjax(e, a)
+//             }
+//         },
+//         error: function (t) {
+//             indextools.repeatAjax(e, a), n = !0
+//         },
+//         complete: function (t, i) {
+//             (n = !1) || "timeout" == i && setTimeout(function () {
+//                 ajaxRequst(e, a)
+//             }, "1000")
+//         }
+//     })
+// },
 
-        type: "GET",
-        data: {lotCode: t},
-        timeout: 6e4,
-        success: function (t) {
-            try {
-                var n = tools.parseObj(t);
-
-                if ("100002" == n.result.businessCode)throw new Error("error");
-                if (n = n.result.data, tools.operatorTime("" == n.drawTime ? "0" : n.drawTime, n.serverTime) <= 0)throw new Error("error");
-                tools.countDown(n.drawTime, n.serverTime, a)
-            } catch (t) {
-                indextools.repeatAjax(e, a)
-            }
-        },
-        error: function (t) {
-            indextools.repeatAjax(e, a), n = !0
-        },
-        complete: function (t, i) {
-            (n = !1) || "timeout" == i && setTimeout(function () {
-                ajaxRequst(e, a)
-            }, "1000")
-        }
-    })
-}, indexObj.ajaxpk10 = function (e, t, a) {
+    indexObj.ajaxpk10 = function (e, t, a) {
     var e = void 0 == e ? "" : e, n = !1;
     $.ajax({
         url: publicUrl + "pks/getLotteryPksInfo.do?issue=" + e,
@@ -431,97 +433,103 @@ indexObj.ajaGxklsf = function (e, t, a) {
             }, "1000")
         }
     })
-}, indexObj.ajaxPCdd = function (e, t, a) {
-    var e = void 0 == e ? "" : e, n = !1;
-    $.ajax({
-        url: urlbublic + "LuckTwenty/getPcLucky28.do?issue=" + e, type: "GET", beforeSend: function () {
-            void 0 == animateID[a] && animateMethod.sscAnimate(a)
-        }, success: function (n) {
-            try {
-                indexObj.creatDataHead(n, t, a), clearInterval(animateID[a]), delete animateID[a]
-            } catch (t) {
-                indextools.repeatAjax(e, a)
-            }
-        }, error: function (t) {
-            indextools.repeatAjax(e, a), n = !0
-        }, complete: function (t, i) {
-            (n = !1) || "timeout" == i && setTimeout(function () {
-                ajaxRequst(e, a)
-            }, "1000")
-        }
-    })
-}, indexObj.typeOf = function (e, t) {
-    if ("dxh" == e)switch (1 * t) {
-        case-1:
-            return "小";
-        case 0:
-            return "和";
-        case 1:
-            return "大"
-    } else if ("dsh" == e)switch (1 * t) {
-        case-1:
-            return "双";
-        case 0:
-            return "和";
-        case 1:
-            return "单"
-    }
-}, indexObj.creatDataHead = function (e, t, a) {
-    var n = tools.parseObj(e);
-    if ("100002" == n.result.businessCode)throw new Error("error");
-    if (n = n.result.data, tools.operatorTime("" == n.drawTime ? "0" : n.drawTime, n.serverTime) <= 0)throw new Error("error");
-    n.totalCount;
-    var i = n.totalCount;
-    $(a).find(".preDrawIssue").text(n.preDrawIssue), $(a).find(".drawCount").text(n.drawCount), $(a).find(".sdrawCountnext").text(1 * i - 1 * n.drawCount), $(a).find(".sumNum").text(n.sumNum), $(a).find(".sumBigSmall").text(indexObj.typeOf("dxh", n.sumBigSmall)), $(a).find(".sumSingleDouble").text(indexObj.typeOf("dsh", n.sumSingleDouble)), animateMethod.sscAnimateEnd(n.preDrawCode, a), tools.countDown(n.drawTime, n.serverTime, a)
-}, indexObj.ajaxKlsf = function (e, t, a) {
-    var e = void 0 == e ? "" : e, n = !1;
-    $.ajax({
-        url: publicUrl + "klsf/getLotteryInfo.do?issue=" + e,
-        type: "GET",
-        data: {lotCode: t},
-        timeout: 6e4,
-        beforeSend: function () {
-            void 0 == animateID[a] && animateMethod.sscAnimate(a)
-        },
-        success: function (n) {
-            try {
-                indexObj.klsfData(n, t, a), clearInterval(animateID[a]), delete animateID[a]
-            } catch (t) {
-                indextools.repeatAjax(e, a)
-            }
-        },
-        error: function (t) {
-            indextools.repeatAjax(e, a), n = !0
-        },
-        complete: function (t, i) {
-            (n = !1) || "timeout" == i && indextools.repeatAjax(e, a)
-        }
-    })
-}, indexObj.ajaxCqnc = function (e, t, a) {
-    var e = void 0 == e ? "" : e, n = !1;
-    $.ajax({
-        url: publicUrl + "klsf/getLotteryInfo.do?issue=" + e,
-        type: "GET",
-        data: {lotCode: t},
-        timeout: 6e4,
-        beforeSend: function () {
-            void 0 == animateID[a] && animateMethod.cqncAnimate(a)
-        },
-        success: function (t) {
-            try {
-                indexObj.cqncData(t, a), clearInterval(animateID[a]), delete animateID[a]
-            } catch (t) {
-                indextools.repeatAjax(e, a)
-            }
-        },
-        error: function (t) {
-            indextools.repeatAjax(e, a), n = !0
-        },
-        complete: function (t, i) {
-            (n = !1) || "timeout" == i && indextools.repeatAjax(e, a)
-        }
-    })
-}, indexObj.ajaxKuai3 = function (e, t, a) {
+},
+//         indexObj.ajaxPCdd = function (e, t, a) {
+//     var e = void 0 == e ? "" : e, n = !1;
+//     $.ajax({
+//         url: urlbublic + "LuckTwenty/getPcLucky28.do?issue=" + e, type: "GET", beforeSend: function () {
+//             void 0 == animateID[a] && animateMethod.sscAnimate(a)
+//         }, success: function (n) {
+//             try {
+//                 indexObj.creatDataHead(n, t, a), clearInterval(animateID[a]), delete animateID[a]
+//             } catch (t) {
+//                 indextools.repeatAjax(e, a)
+//             }
+//         }, error: function (t) {
+//             indextools.repeatAjax(e, a), n = !0
+//         }, complete: function (t, i) {
+//             (n = !1) || "timeout" == i && setTimeout(function () {
+//                 ajaxRequst(e, a)
+//             }, "1000")
+//         }
+//     })
+// }, indexObj.typeOf = function (e, t) {
+//     if ("dxh" == e)switch (1 * t) {
+//         case-1:
+//             return "小";
+//         case 0:
+//             return "和";
+//         case 1:
+//             return "大"
+//     } else if ("dsh" == e)switch (1 * t) {
+//         case-1:
+//             return "双";
+//         case 0:
+//             return "和";
+//         case 1:
+//             return "单"
+//     }
+// }, indexObj.creatDataHead = function (e, t, a) {
+//     var n = tools.parseObj(e);
+//     if ("100002" == n.result.businessCode)throw new Error("error");
+//     if (n = n.result.data, tools.operatorTime("" == n.drawTime ? "0" : n.drawTime, n.serverTime) <= 0)throw new Error("error");
+//     n.totalCount;
+//     var i = n.totalCount;
+//     $(a).find(".preDrawIssue").text(n.preDrawIssue), $(a).find(".drawCount").text(n.drawCount), $(a).find(".sdrawCountnext").text(1 * i - 1 * n.drawCount), $(a).find(".sumNum").text(n.sumNum), $(a).find(".sumBigSmall").text(indexObj.typeOf("dxh", n.sumBigSmall)), $(a).find(".sumSingleDouble").text(indexObj.typeOf("dsh", n.sumSingleDouble)), animateMethod.sscAnimateEnd(n.preDrawCode, a), tools.countDown(n.drawTime, n.serverTime, a)
+// },
+
+
+//         indexObj.ajaxKlsf = function (e, t, a) {
+//     var e = void 0 == e ? "" : e, n = !1;
+//     $.ajax({
+//         url: publicUrl + "klsf/getLotteryInfo.do?issue=" + e,
+//         type: "GET",
+//         data: {lotCode: t},
+//         timeout: 6e4,
+//         beforeSend: function () {
+//             void 0 == animateID[a] && animateMethod.sscAnimate(a)
+//         },
+//         success: function (n) {
+//             try {
+//                 indexObj.klsfData(n, t, a), clearInterval(animateID[a]), delete animateID[a]
+//             } catch (t) {
+//                 indextools.repeatAjax(e, a)
+//             }
+//         },
+//         error: function (t) {
+//             indextools.repeatAjax(e, a), n = !0
+//         },
+//         complete: function (t, i) {
+//             (n = !1) || "timeout" == i && indextools.repeatAjax(e, a)
+//         }
+//     })
+// }, indexObj.ajaxCqnc = function (e, t, a) {
+//     var e = void 0 == e ? "" : e, n = !1;
+//     $.ajax({
+//         url: publicUrl + "klsf/getLotteryInfo.do?issue=" + e,
+//         type: "GET",
+//         data: {lotCode: t},
+//         timeout: 6e4,
+//         beforeSend: function () {
+//             void 0 == animateID[a] && animateMethod.cqncAnimate(a)
+//         },
+//         success: function (t) {
+//             try {
+//                 indexObj.cqncData(t, a), clearInterval(animateID[a]), delete animateID[a]
+//             } catch (t) {
+//                 indextools.repeatAjax(e, a)
+//             }
+//         },
+//         error: function (t) {
+//             indextools.repeatAjax(e, a), n = !0
+//         },
+//         complete: function (t, i) {
+//             (n = !1) || "timeout" == i && indextools.repeatAjax(e, a)
+//         }
+//     })
+// },
+//
+    indexObj.ajaxKuai3 = function (e, t, a) {
     e = void 0 == e ? "" : e, $.ajax({
         url: publicUrl + "lotteryJSFastThree/getBaseJSFastThree.do?issue=" + e,
         type: "GET",

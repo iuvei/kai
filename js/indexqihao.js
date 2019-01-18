@@ -1,16 +1,16 @@
-indexdata();
-f12();
-f11();
-f10();
-f9();
+indexdata();//pk10
+f12(); //xyft
+f11(); //cqssc
+//f10();
+//f9();
 //f8();
-f7();
-f6();
-f5();
+f7(); //cqft
+f6(); //bjft
+f5(); //gd11x5
 /*f41();*/
-f4();
-f3();
-f2();
+f4();  //jsk3
+//f3();
+f2();  //txffc
 
 var m,s;
 
@@ -25,7 +25,7 @@ function indexdata() {
         function (data) {
             clearInterval(xiaoguo);
             if(data.current.awardNumbers == '' || data.current.awardNumbers == null){
-                setInterval(indexdata(),3000);
+                setTimeout(indexdata(),3000);
                 $("#pk10_hot .kajianhao").html("");
                 $("#pk10_hot .kajianhao").html("<span style='color: red'>开奖中...</span>");
                 $("#pk10 .kajianhao").html("");
@@ -346,145 +346,145 @@ function indexdata() {
             });
     }
 
-    function f10() {
-    $.getJSON("/gdkl10/getGdkl10AwardTimes.do", {t: Math.random()},
-        function (data) {
-            clearInterval(xiaoguo);
-            clearInterval(time_r6);
-            timer4(parseInt((data.next.awardTimeInterval) / 1000), "gdkl10 .nextkai_time", 'gdkl10');
-            $("#gdkl10 .kajianhao").html("");
-            var nums = data.current.awardNumbers.split(',');
-            var str = Number(nums[0]) + Number(nums[1]) + Number(Number(nums[2])) + Number(nums[3]) + Number(nums[4]);
-            //  cpNumber = data.current.periodNumber;
-            for (var i = 0; i < nums.length; i++) {
-                $("#gdkl10 .kajianhao").append("<li class='numblueHead'>" + nums[i] + "</li>");
-            }
-            $("#gdkl10").find(".sumNum").text(str),
-                $("#gdkl10").find(".sumSingleDouble").text(str % 2 == 0 ? "单" : "双"),
-                $("#gdkl10").find(".sumBigSmall").text(str > 23 ? "大" : "小");
-            var str_2 = String(str);
-            if (str_2.charAt(str_2.length - 1) > 5) {
-                $("#gdkl10 .longhu2").find(".lastBigSmall").text("尾大");
-            } else {
-                $("#gdkl10 .longhu2").find(".lastBigSmall").text("尾小");
-            }
-
-            if (Number(nums[0]) < Number(nums[7])) {
-                $("#gdkl10 .longhu2").find(".firstDragonTiger").text("虎");
-            } else if (Number(nums[0]) > Number(nums[7])) {
-                $("#gdkl10 .longhu2").find(".firstDragonTiger").text("龙");
-            } else {
-                $("#gdkl10 .longhu2").find(".firstDragonTiger").text("和");
-            }
-            if (Number(nums[1]) < Number(nums[6])) {
-                $("#gdkl10 .longhu2").find(".secondDragonTiger").text("虎");
-            } else if (Number(nums[1]) > Number(nums[6])) {
-                $("#gdkl10 .longhu2").find(".secondDragonTiger").text("龙");
-            } else {
-                $("#gdkl10 .longhu2").find(".secondDragonTiger").text("和");
-            }
-            if (Number(Number(nums[2])) < Number(nums[5])) {
-                $("#gdkl10 .longhu2").find(".thirdDragonTiger").text("虎");
-            } else if (Number(Number(nums[2])) > Number(nums[5])) {
-                $("#gdkl10 .longhu2").find(".thirdDragonTiger").text("龙");
-            } else {
-                $("#gdkl10 .longhu2").find(".thirdDragonTiger").text("和");
-            }
-            if (Number(nums[3]) < Number(nums[4])) {
-                $("#gdkl10 .longhu2").find(".fourthDragonTiger").text("虎");
-            } else if (Number(nums[4]) < Number(nums[3])) {
-                $("#gdkl10 .longhu2").find(".fourthDragonTiger").text("龙");
-            } else {
-                $("#gdkl10 .longhu2").find(".fourthDragonTiger").text("和");
-            }
-
-            cpNumber = data.current.periodNumber;
-            // var _time = data.current.awardTime.substring(11, 16);
-            //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
-            $("#gdkl10 .drawCount").html(cpNumber);
-            $("#gdkl10 .sdrawCountnext").html(84 - cpNumber);
-        });
-}
-    function f9() {
-        $.getJSON("/jssc/getPk10AwardTimes.do", {t: Math.random()},
-            function (data) {
-                clearInterval(xiaoguo);
-                clearInterval(time_r8);
-                clearInterval(time_r7);
-                timer5(parseInt((data.next.awardTimeInterval) / 1000), "jisusc .nextkai_time", 'jisusc');
-                timers5(parseInt((data.next.awardTimeInterval) / 1000), ".jssc .cuttime");
-                $("#jisusc .longhu").html("");
-                $("#jisusc .numberbox").html("");
-                var nums = data.current.awardNumbers.split(',');
-                var str = "";
-                for (var i = 0; i < nums.length; i++) {
-                    // str += ;
-                    if (nums[i] == 10) {
-                        $("#jisusc .numberbox").append("<li class='nub" + nums[i] + "'></li>");
-                    } else {
-                        $("#jisusc .numberbox").append("<li class='nub0" + nums[i] + "'></li>");
-                    }
-                    //alert(nums[i]);
-                }
-                if (Number(nums[0]) > nums[9]) {
-                    $("#jisusc .longhu").append("<td>龙</td>");
-                } else if (Number(nums[0]) < nums[9]) {
-                    $("#jisusc .longhu").append("<td>虎</td>");
-                } else {
-                    $("#jisusc .longhu").append("<td>和</td>");
-                }
-                if (Number(nums[1]) > nums[8]) {
-                    $("#jisusc .longhu").append("<td>龙</td>");
-                } else if (Number(nums[1]) < nums[8]) {
-                    $("#jisusc .longhu").append("<td>虎</td>");
-                } else {
-                    $("#jisusc .longhu").append("<td>和</td>");
-                }
-                if (Number(nums[2]) > Number(nums[7])) {
-                    $("#jisusc .longhu").append("<td>龙</td>");
-                } else if (Number(nums[2]) < Number(nums[7])) {
-                    $("#jisusc .longhu").append("<td>虎</td>");
-                } else {
-                    $("#jisusc .longhu").append("<td>和</td>");
-                }
-                if (Number(nums[3]) > Number(nums[6])) {
-                    $("#jisusc .longhu").append("<td>龙</td>");
-                } else if (Number(nums[3]) < Number(nums[6])) {
-                    $("#jisusc .longhu").append("<td>虎</td>");
-                } else {
-                    $("#jisusc .longhu").append("<td>和</td>");
-                }
-
-                if (Number(nums[4]) > Number(nums[5])) {
-
-                    $("#jisusc .longhu").append("<td>龙</td>");
-                } else if (Number(nums[4]) < Number(nums[5])) {
-
-                    $("#jisusc .longhu").append("<td>虎</td>");
-                } else {
-                    $("#jisusc .longhu").append("<td>和</td>");
-                }
-                var num = Number(nums[0]) + Number(nums[1]);
-                $("#jisusc .longhu").append("<td class='sumFS'>" + num + "</td>");
-                // alert( Number(nums[0])+ Number(nums[3]));
-                if (num <= 11) {
-                    $("#jisusc .longhu").append("<td class='sumBigSamll'>小</td>");
-                } else {
-                    $("#jisusc .longhu").append("<td class='sumBigSamll'>大</td>");
-                }
-                if (num % 2 == 0) {
-                    $("#jisusc .longhu").append("<td class='sumSingleDouble'>双</td>");
-                } else {
-                    $("#jisusc .longhu").append("<td class='sumSingleDouble'>单</td>");
-                }
-
-                cpNumber =( data.current.periodNumber - data.current.firstPeriod);
-                // var _time = data.current.awardTime.substring(11, 16);
-                //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
-                $("#jisusc .drawCount").html(data.current.fullPeriodNumber);
-                $("#jisusc .sdrawCountnext").html(1152 - cpNumber);
-            });
-    }
+//     function f10() {
+//     $.getJSON("/gdkl10/getGdkl10AwardTimes.do", {t: Math.random()},
+//         function (data) {
+//             clearInterval(xiaoguo);
+//             clearInterval(time_r6);
+//             timer4(parseInt((data.next.awardTimeInterval) / 1000), "gdkl10 .nextkai_time", 'gdkl10');
+//             $("#gdkl10 .kajianhao").html("");
+//             var nums = data.current.awardNumbers.split(',');
+//             var str = Number(nums[0]) + Number(nums[1]) + Number(Number(nums[2])) + Number(nums[3]) + Number(nums[4]);
+//             //  cpNumber = data.current.periodNumber;
+//             for (var i = 0; i < nums.length; i++) {
+//                 $("#gdkl10 .kajianhao").append("<li class='numblueHead'>" + nums[i] + "</li>");
+//             }
+//             $("#gdkl10").find(".sumNum").text(str),
+//                 $("#gdkl10").find(".sumSingleDouble").text(str % 2 == 0 ? "单" : "双"),
+//                 $("#gdkl10").find(".sumBigSmall").text(str > 23 ? "大" : "小");
+//             var str_2 = String(str);
+//             if (str_2.charAt(str_2.length - 1) > 5) {
+//                 $("#gdkl10 .longhu2").find(".lastBigSmall").text("尾大");
+//             } else {
+//                 $("#gdkl10 .longhu2").find(".lastBigSmall").text("尾小");
+//             }
+//
+//             if (Number(nums[0]) < Number(nums[7])) {
+//                 $("#gdkl10 .longhu2").find(".firstDragonTiger").text("虎");
+//             } else if (Number(nums[0]) > Number(nums[7])) {
+//                 $("#gdkl10 .longhu2").find(".firstDragonTiger").text("龙");
+//             } else {
+//                 $("#gdkl10 .longhu2").find(".firstDragonTiger").text("和");
+//             }
+//             if (Number(nums[1]) < Number(nums[6])) {
+//                 $("#gdkl10 .longhu2").find(".secondDragonTiger").text("虎");
+//             } else if (Number(nums[1]) > Number(nums[6])) {
+//                 $("#gdkl10 .longhu2").find(".secondDragonTiger").text("龙");
+//             } else {
+//                 $("#gdkl10 .longhu2").find(".secondDragonTiger").text("和");
+//             }
+//             if (Number(Number(nums[2])) < Number(nums[5])) {
+//                 $("#gdkl10 .longhu2").find(".thirdDragonTiger").text("虎");
+//             } else if (Number(Number(nums[2])) > Number(nums[5])) {
+//                 $("#gdkl10 .longhu2").find(".thirdDragonTiger").text("龙");
+//             } else {
+//                 $("#gdkl10 .longhu2").find(".thirdDragonTiger").text("和");
+//             }
+//             if (Number(nums[3]) < Number(nums[4])) {
+//                 $("#gdkl10 .longhu2").find(".fourthDragonTiger").text("虎");
+//             } else if (Number(nums[4]) < Number(nums[3])) {
+//                 $("#gdkl10 .longhu2").find(".fourthDragonTiger").text("龙");
+//             } else {
+//                 $("#gdkl10 .longhu2").find(".fourthDragonTiger").text("和");
+//             }
+//
+//             cpNumber = data.current.periodNumber;
+//             // var _time = data.current.awardTime.substring(11, 16);
+//             //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
+//             $("#gdkl10 .drawCount").html(cpNumber);
+//             $("#gdkl10 .sdrawCountnext").html(84 - cpNumber);
+//         });
+// }
+    // function f9() {
+    //     $.getJSON("/jssc/getPk10AwardTimes.do", {t: Math.random()},
+    //         function (data) {
+    //             clearInterval(xiaoguo);
+    //             clearInterval(time_r8);
+    //             clearInterval(time_r7);
+    //             timer5(parseInt((data.next.awardTimeInterval) / 1000), "jisusc .nextkai_time", 'jisusc');
+    //             timers5(parseInt((data.next.awardTimeInterval) / 1000), ".jssc .cuttime");
+    //             $("#jisusc .longhu").html("");
+    //             $("#jisusc .numberbox").html("");
+    //             var nums = data.current.awardNumbers.split(',');
+    //             var str = "";
+    //             for (var i = 0; i < nums.length; i++) {
+    //                 // str += ;
+    //                 if (nums[i] == 10) {
+    //                     $("#jisusc .numberbox").append("<li class='nub" + nums[i] + "'></li>");
+    //                 } else {
+    //                     $("#jisusc .numberbox").append("<li class='nub0" + nums[i] + "'></li>");
+    //                 }
+    //                 //alert(nums[i]);
+    //             }
+    //             if (Number(nums[0]) > nums[9]) {
+    //                 $("#jisusc .longhu").append("<td>龙</td>");
+    //             } else if (Number(nums[0]) < nums[9]) {
+    //                 $("#jisusc .longhu").append("<td>虎</td>");
+    //             } else {
+    //                 $("#jisusc .longhu").append("<td>和</td>");
+    //             }
+    //             if (Number(nums[1]) > nums[8]) {
+    //                 $("#jisusc .longhu").append("<td>龙</td>");
+    //             } else if (Number(nums[1]) < nums[8]) {
+    //                 $("#jisusc .longhu").append("<td>虎</td>");
+    //             } else {
+    //                 $("#jisusc .longhu").append("<td>和</td>");
+    //             }
+    //             if (Number(nums[2]) > Number(nums[7])) {
+    //                 $("#jisusc .longhu").append("<td>龙</td>");
+    //             } else if (Number(nums[2]) < Number(nums[7])) {
+    //                 $("#jisusc .longhu").append("<td>虎</td>");
+    //             } else {
+    //                 $("#jisusc .longhu").append("<td>和</td>");
+    //             }
+    //             if (Number(nums[3]) > Number(nums[6])) {
+    //                 $("#jisusc .longhu").append("<td>龙</td>");
+    //             } else if (Number(nums[3]) < Number(nums[6])) {
+    //                 $("#jisusc .longhu").append("<td>虎</td>");
+    //             } else {
+    //                 $("#jisusc .longhu").append("<td>和</td>");
+    //             }
+    //
+    //             if (Number(nums[4]) > Number(nums[5])) {
+    //
+    //                 $("#jisusc .longhu").append("<td>龙</td>");
+    //             } else if (Number(nums[4]) < Number(nums[5])) {
+    //
+    //                 $("#jisusc .longhu").append("<td>虎</td>");
+    //             } else {
+    //                 $("#jisusc .longhu").append("<td>和</td>");
+    //             }
+    //             var num = Number(nums[0]) + Number(nums[1]);
+    //             $("#jisusc .longhu").append("<td class='sumFS'>" + num + "</td>");
+    //             // alert( Number(nums[0])+ Number(nums[3]));
+    //             if (num <= 11) {
+    //                 $("#jisusc .longhu").append("<td class='sumBigSamll'>小</td>");
+    //             } else {
+    //                 $("#jisusc .longhu").append("<td class='sumBigSamll'>大</td>");
+    //             }
+    //             if (num % 2 == 0) {
+    //                 $("#jisusc .longhu").append("<td class='sumSingleDouble'>双</td>");
+    //             } else {
+    //                 $("#jisusc .longhu").append("<td class='sumSingleDouble'>单</td>");
+    //             }
+    //
+    //             cpNumber =( data.current.periodNumber - data.current.firstPeriod);
+    //             // var _time = data.current.awardTime.substring(11, 16);
+    //             //  $(".num_ul .preDrawIssue").html(data.current.periodNumber);
+    //             $("#jisusc .drawCount").html(data.current.fullPeriodNumber);
+    //             $("#jisusc .sdrawCountnext").html(1152 - cpNumber);
+    //         });
+    // }
 
     // function f8() {
     //     $.getJSON("/jsssc/getCqsscAwardTimes.do", {t: Math.random()},
@@ -636,7 +636,7 @@ function indexdata() {
         $.getJSON("/pk10/getPk10AwardTimes.do", {t: Math.random()},
             function (data) {
                 if(data.current.awardNumbers == '' || data.current.awardNumbers == null){
-                    setInterval(f6(),3000);
+                    setTimeout(f6(),3000);
                     $("#bjft .kajianhao").html("");
                     $("#bjft .kajianhao").html("<span style='color: red'>开奖中...</span>");
                     return;
@@ -788,7 +788,7 @@ function indexdata() {
         $.getJSON("/jsk3/getPk10AwardTimes.do", {t: Math.random()},
             function (data) {
                 if(data.current.awardNumbers == '' || data.current.awardNumbers == null){
-                    setInterval(f4(),3000);
+                    setTimeout(f4(),3000);
                     $("#kuai3 .kajianhao").html("");
                     $("#kuai3 .kajianhao").html("<span style='color: red'>开奖中...</span>");
                     return;
@@ -923,70 +923,70 @@ function indexdata() {
         });
 }*/
 
-    function f3() {
-        $.getJSON("/pc28/getPk10AwardTimes.do", {t: Math.random()},
-            function (data) {
-            if(data){
-                clearInterval(pc28_2);
-            }
-                clearInterval(xiaoguo);
-                clearInterval(time_r17);
-                timer11(parseInt((data.next.awardTimeInterval)), "pc28 .nextkai_time", 'pc28');
-                var nums = data.current.awardNumbers.split(',');
-                var totalNum_a = nums[1] + nums[4] + nums[7] + nums[10] + nums[13] + nums[16];
-                var totalNum_b = nums[2] + nums[5] + nums[8] + nums[11] + nums[14] + nums[17];
-                var totalNum_c = nums[3] + nums[6] + nums[9] + nums[12] + nums[15] + nums[18];
-                totalNum_a = Number(totalNum_a) % 10;
-                totalNum_b = Number(totalNum_b) % 10;
-                totalNum_c = Number(totalNum_c) % 10;
-                var totalNum = Number(totalNum_a) + Number(totalNum_b) + Number(totalNum_c);
-
-                var sebo = '';
-                var danshaung = '';
-                //  cpNumber = data.current.periodNumber;
-                $("#pc28 .kajianhao").find(".num11").text(totalNum_a);
-                $("#pc28 .kajianhao").find(".num22").text(totalNum_b);
-                $("#pc28 .kajianhao").find(".num33").text(totalNum_c);
-                $("#pc28 .kajianhao").find(".num55").text(totalNum);
-                if (totalNum == 1 || totalNum == 4 || totalNum == 7 || totalNum == 10 || totalNum == 16 || totalNum == 19 || totalNum == 22 || totalNum == 25) {
-                    sebo = '绿波';
-                } else if (totalNum == 2 || totalNum == 5 || totalNum == 8 || totalNum == 11 || totalNum == 17 || totalNum == 20 || totalNum == 23 || totalNum == 26) {
-                    sebo = '蓝波';
-                } else if (totalNum == 3 || totalNum == 6 || totalNum == 9 || totalNum == 12 || totalNum == 15 || totalNum == 18 || totalNum == 21 || totalNum == 24) {
-                    sebo = '红波';
-                } else if (totalNum == 0 || totalNum == 13 || totalNum == 14 || totalNum == 27) {
-                    sebo = '和';
-                }
-                if (totalNum == 13 || totalNum == 14) {
-                    danshaung = '和';
-                } else if (totalNum < 13 && totalNum > 5) {
-                    danshaung = '小';
-                } else if (totalNum < 22 && totalNum > 14) {
-                    danshaung = '大';
-                } else if (totalNum <= 5 && totalNum >= 0) {
-                    danshaung = '极小';
-                } else if (totalNum <= 27 && totalNum >= 22) {
-                    danshaung = '极大';
-                }
-
-                $("#pc28 .rowbox2").find(".sumNum").text(sebo),
-                    $("#pc28 .rowbox2").find(".sumNum2").text(totalNum % 2 == 0 ? "双" : "单"),
-                    $("#pc28 .rowbox2").find(".sumBigSmall").text(danshaung);
-                var cpNumber = data.current.periodNumber;
-                // var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-2);
-
-                //  $("#kuai3 .preDrawIssue").html(cpNumber);
-                $("#pc28 .preDrawIssue").html(data.current.periodNumber1+"期");
-                $("#pc28 .drawCount").html(cpNumber);
-                // $("#pc28 .sdrawCountnext").html(82 - cpNumber);
-            });
-    }
+    // function f3() {
+    //     $.getJSON("/pc28/getPk10AwardTimes.do", {t: Math.random()},
+    //         function (data) {
+    //         if(data){
+    //             clearInterval(pc28_2);
+    //         }
+    //             clearInterval(xiaoguo);
+    //             clearInterval(time_r17);
+    //             timer11(parseInt((data.next.awardTimeInterval)), "pc28 .nextkai_time", 'pc28');
+    //             var nums = data.current.awardNumbers.split(',');
+    //             var totalNum_a = nums[1] + nums[4] + nums[7] + nums[10] + nums[13] + nums[16];
+    //             var totalNum_b = nums[2] + nums[5] + nums[8] + nums[11] + nums[14] + nums[17];
+    //             var totalNum_c = nums[3] + nums[6] + nums[9] + nums[12] + nums[15] + nums[18];
+    //             totalNum_a = Number(totalNum_a) % 10;
+    //             totalNum_b = Number(totalNum_b) % 10;
+    //             totalNum_c = Number(totalNum_c) % 10;
+    //             var totalNum = Number(totalNum_a) + Number(totalNum_b) + Number(totalNum_c);
+    //
+    //             var sebo = '';
+    //             var danshaung = '';
+    //             //  cpNumber = data.current.periodNumber;
+    //             $("#pc28 .kajianhao").find(".num11").text(totalNum_a);
+    //             $("#pc28 .kajianhao").find(".num22").text(totalNum_b);
+    //             $("#pc28 .kajianhao").find(".num33").text(totalNum_c);
+    //             $("#pc28 .kajianhao").find(".num55").text(totalNum);
+    //             if (totalNum == 1 || totalNum == 4 || totalNum == 7 || totalNum == 10 || totalNum == 16 || totalNum == 19 || totalNum == 22 || totalNum == 25) {
+    //                 sebo = '绿波';
+    //             } else if (totalNum == 2 || totalNum == 5 || totalNum == 8 || totalNum == 11 || totalNum == 17 || totalNum == 20 || totalNum == 23 || totalNum == 26) {
+    //                 sebo = '蓝波';
+    //             } else if (totalNum == 3 || totalNum == 6 || totalNum == 9 || totalNum == 12 || totalNum == 15 || totalNum == 18 || totalNum == 21 || totalNum == 24) {
+    //                 sebo = '红波';
+    //             } else if (totalNum == 0 || totalNum == 13 || totalNum == 14 || totalNum == 27) {
+    //                 sebo = '和';
+    //             }
+    //             if (totalNum == 13 || totalNum == 14) {
+    //                 danshaung = '和';
+    //             } else if (totalNum < 13 && totalNum > 5) {
+    //                 danshaung = '小';
+    //             } else if (totalNum < 22 && totalNum > 14) {
+    //                 danshaung = '大';
+    //             } else if (totalNum <= 5 && totalNum >= 0) {
+    //                 danshaung = '极小';
+    //             } else if (totalNum <= 27 && totalNum >= 22) {
+    //                 danshaung = '极大';
+    //             }
+    //
+    //             $("#pc28 .rowbox2").find(".sumNum").text(sebo),
+    //                 $("#pc28 .rowbox2").find(".sumNum2").text(totalNum % 2 == 0 ? "双" : "单"),
+    //                 $("#pc28 .rowbox2").find(".sumBigSmall").text(danshaung);
+    //             var cpNumber = data.current.periodNumber;
+    //             // var number = data.current.fullPeriodNumber.substring(data.current.fullPeriodNumber.length-2);
+    //
+    //             //  $("#kuai3 .preDrawIssue").html(cpNumber);
+    //             $("#pc28 .preDrawIssue").html(data.current.periodNumber1+"期");
+    //             $("#pc28 .drawCount").html(cpNumber);
+    //             // $("#pc28 .sdrawCountnext").html(82 - cpNumber);
+    //         });
+    // }
     function f2() {
 
         $.getJSON("/txffc/getCqsscAwardTimes.do", {t: Math.random()},
             function (data) {
             if(data.current.awardNumbers == '' || data.current.awardNumbers == null){
-                setInterval(f2(),3000);
+                setTimeout(f2(),3000);
                 $("#txffc .kajianhao").html("");
                 $("#txffc .kajianhao").html("<span style='color: red'>开奖中...</span>");
                 return;
