@@ -5,7 +5,7 @@ jsk3();
 xyft();
 txffc();
 gd11x5();
-bjft();
+//bjft();
 /*倒计时ID*/
 var jsk3_itvId =null;
 var cqssc_itvId =null;
@@ -16,7 +16,7 @@ var txffc_itvId =null;
 var gd11x5_itvId =null;
 var bjft_itvId =null;
 var cqft_itvId =null;
-var cqssc_hot_itvId =null
+var cqssc_hot_itvId =null;
 
 /*倒计时*/
 function countDown(time,gamekey){
@@ -298,10 +298,16 @@ function pk10Zh(num,type) {
 function bjpk10() {
     $.getJSON("/pk10/getPk10AwardTimes.do", {t: Math.random()},
         function (data) {
-            if(bjpk10_itvId){clearInterval(bjpk10_itvId);clearInterval(bjpk10_hot_itvId)}
+            if(bjpk10_itvId){
+                clearInterval(bjpk10_itvId);
+                clearInterval(bjpk10_hot_itvId);
+                clearInterval(bjft_itvId)
+            }
             var time = parseInt(data.next.awardTimeInterval) / 1000;
             bjpk10_itvId = countDown(time,'pk10_hot');
             bjpk10_hot_itvId = countDown(time,'pk10');
+            bjft_itvId = countDown(time,'bjft');
+
             if(data.current.awardNumbers == '' || data.current.awardNumbers == null){
                 setTimeout(function () {
                     bjpk10()
@@ -315,6 +321,8 @@ function bjpk10() {
                 $("#pk10 .numberbox li:eq(" + i + ")").removeClass();
                 $("#pk10_hot .numberbox li:eq(" + i + ")").addClass("nub" + nums[i]);
                 $("#pk10 .numberbox li:eq(" + i + ")").addClass("nub" + nums[i]);
+                $("#bjft .kajianhao li:eq(" + i + ")").removeClass();
+                $("#bjft .kajianhao li:eq(" + i + ")").addClass("nub" + nums[i]);
 
             }
             //龙虎
@@ -337,6 +345,43 @@ function bjpk10() {
             $("#pk10 .sumSingleDouble").text(pk10Zh(parseInt(num),'oddEven'));
             $("#pk10_hot .sumSingleDouble").text(pk10Zh(parseInt(num),'oddEven'));
 
+            var num = Number(nums[0]) + Number(nums[1]) + Number(nums[2]);
+            var str = num % 4;
+            if (str == 0) {
+                $("#bjft .sumBigSmall").text("大");
+                $("#bjft .sumNum").text('4摊');
+            } else {
+                $("#bjft .sumNum").text(str + '摊');
+                $("#bjft .sumBigSmall").text(str > 2 ? "大" : "小");
+            }
+            $("#bjft .sumSingleDouble").text(num % 2 != 0 ? "单" : "双");
+
+            var num2 = Number(nums[4]) + Number(nums[5]) + Number(nums[6]);
+            var str = num2 % 4;
+            if (str == 0) {
+                $("#bjft .firstSeafood").text('4摊');
+                $("#bjft .thirdSeafood").text('大');
+
+            } else {
+                $("#bjft .firstSeafood").text(str + '摊');
+                $("#bjft .thirdSeafood").text(str > 2 ? "大" : "小");
+            }
+            $("#bjft .secondSeafood").text(num2 % 2 != 0 ? "单" : "双");
+
+
+            var num3 = Number(nums[7]) + Number(nums[8]) + Number(nums[9]);
+            var str = num3 % 4;
+            if (str == 0) {
+                $("#bjft .dx").text("大");
+                $("#bjft .tan").text('4摊');
+            } else {
+                $("#bjft .dx").text(str > 2 ? "大" : "小");
+                $("#bjft .tan").text(str + '摊');
+            }
+            $("#bjft .ds").text(num3 % 2 != 0 ? "单" : "双");
+
+
+
             var cpNumber = data.current.periodNumber;
             $("#pk10_hot .drawCount").html(cpNumber);
             $("#pk10_hot .sdrawCountnext").html(data.current.surplus_num);
@@ -344,69 +389,76 @@ function bjpk10() {
             $("#pk10 .drawCount").html(cpNumber);
             $("#pk10 .sdrawCountnext").html(data.current.surplus_num);
             $("#pk10 .preDrawIssue").html(data.current.periodNumber1);
-        });
-}
-
-function bjft() {
-    $.getJSON("/pk10/getPk10AwardTimes.do", {t: Math.random()},
-
-        function (data) {
-            if(bjft_itvId){clearInterval(bjft_itvId)}
-            var time = parseInt(data.next.awardTimeInterval) / 1000;
-            bjft_itvId = countDown(time,'bjft');
-            if(data.current.awardNumbers == '' || data.current.awardNumbers == null){
-                setTimeout(bjft(),3000);
-                return;
-            }
-
-            var nums = data.current.awardNumbers.split(',');
-            for (var i = 0; i < nums.length; i++) {
-                $("#bjft .kajianhao li:eq(" + i + ")").removeClass();
-                $("#bjft .kajianhao li:eq(" + i + ")").addClass("nub" + nums[i]);
-
-            }
-            var num = Number(nums[0]) + Number(nums[1]) + Number(nums[2]);
-            var str = num % 4;
-            if (str == 0) {
-                $("#bjft").find(".sumBigSmall").text("大");
-                $("#bjft .rowbox2").find(".sumNum").text('4摊');
-            } else {
-                $("#bjft .rowbox2").find(".sumNum").text(str + '摊');
-                $("#bjft").find(".sumBigSmall").text(str > 2 ? "大" : "小");
-            }
-            $("#bjft").find(".sumSingleDouble").text(num % 2 != 0 ? "单" : "双");
-
-
-            var num2 = Number(nums[4]) + Number(nums[5]) + Number(nums[6]);
-            var str = num2 % 4;
-            if (str == 0) {
-                $("#bjft").find(".thirdSeafood").text("大");
-                $("#bjft .rowbox2").find(".firstSeafood").text('4摊');
-            } else {
-                $("#bjft .rowbox2").find(".firstSeafood").text(str + '摊');
-                $("#bjft").find(".thirdSeafood").text(str > 2 ? "大" : "小");
-            }
-            $("#bjft").find(".secondSeafood").text(num2 % 2 != 0 ? "单" : "双");
-
-
-            var num3 = Number(nums[7]) + Number(nums[8]) + Number(nums[9]);
-            var str = num3 % 4;
-            if (str == 0) {
-                $("#bjft").find(".dx").text("大");
-                $("#bjft .rowbox2").find(".tan").text('4摊');
-            } else {
-                $("#bjft").find(".dx").text(str > 2 ? "大" : "小");
-                $("#bjft .rowbox2").find(".tan").text(str + '摊');
-            }
-            $("#bjft").find(".ds").text(num3 % 2 != 0 ? "单" : "双");
-
-            var cpNumber = data.current.periodNumber;
             $("#bjft .preDrawIssue").html(data.current.periodNumber1);
             $("#bjft .drawCount").html(cpNumber);
             $("#bjft .sdrawCountnext").html(179 - cpNumber);
-
         });
 }
+
+// function bjft() {
+//     $.getJSON("/pk10/getPk10AwardTimes.do", {t: Math.random()},
+//
+//         function (data) {
+//
+//             if(bjft_itvId){clearInterval(bjft_itvId)}
+//             var time = parseInt(data.next.awardTimeInterval) / 1000;
+//             bjft_itvId = countDown(time,'bjft');
+//             if(data.current.awardNumbers == '' || data.current.awardNumbers == null){
+//                 setTimeout(bjft(),3000);
+//                 return;
+//             }
+//
+//             var nums = data.current.awardNumbers.split(',');
+//             for (var i = 0; i < nums.length; i++) {
+//                 $("#bjft .kajianhao li:eq(" + i + ")").removeClass();
+//                 $("#bjft .kajianhao li:eq(" + i + ")").addClass("nub" + nums[i]);
+//
+//             }
+//             var num = Number(nums[0]) + Number(nums[1]) + Number(nums[2]);
+//             var str = num % 4;
+//             if (str == 0) {
+//                 $("#bjft .sumBigSmall").text("大");
+//                 $("#bjft .sumNum").text('4摊');
+//             } else {
+//                 $("#bjft .sumNum").text(str + '摊');
+//                 $("#bjft .sumBigSmall").text(str > 2 ? "大" : "小");
+//             }
+//
+//             $("#bjft .sumSingleDouble").text(num % 2 != 0 ? "单" : "双");
+//
+//
+//
+//             var num2 = Number(nums[4]) + Number(nums[5]) + Number(nums[6]);
+//             var str = num2 % 4;
+//             if (str == 0) {
+//                 $("#bjft .firstSeafood").text('4摊');
+//                 $("#bjft .thirdSeafood").text('大');
+//
+//             } else {
+//                 $("#bjft .firstSeafood").text(str + '摊');
+//                 $("#bjft .thirdSeafood").text(str > 2 ? "大" : "小");
+//             }
+//             $("#bjft .secondSeafood").text(num2 % 2 != 0 ? "单" : "双");
+//
+//
+//             var num3 = Number(nums[7]) + Number(nums[8]) + Number(nums[9]);
+//             var str = num3 % 4;
+//             if (str == 0) {
+//                 $("#bjft .dx").text("大");
+//                 $("#bjft .tan").text('4摊');
+//             } else {
+//                 $("#bjft .dx").text(str > 2 ? "大" : "小");
+//                 $("#bjft .tan").text(str + '摊');
+//             }
+//             $("#bjft .ds").text(num3 % 2 != 0 ? "单" : "双");
+//
+//             var cpNumber = data.current.periodNumber;
+//             $("#bjft .preDrawIssue").html(data.current.periodNumber1);
+//             $("#bjft .drawCount").html(cpNumber);
+//             $("#bjft .sdrawCountnext").html(179 - cpNumber);
+//
+//         });
+// }
 
 function cqssc() {
 
