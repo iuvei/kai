@@ -16,7 +16,7 @@ $row = $result->fetch_assoc();
 
 while( $row = $result->fetch_assoc()){
 	$exp = explode(",",$row['dat_codes']);
-	if($typeid == 1 || $typeid == 40 || $typeid == 44){
+	if($typeid == 1 || $typeid == 40 || $typeid == 44 ||$typeid == 61 ){
         $tarr = array(
             0=>substr($row['dat_expect'],-2),
             1=>$exp[$ball],
