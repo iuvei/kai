@@ -539,16 +539,15 @@ class LottoryDataMgr
     {
         if (IS_POST) {
             $count = (int)wjStrFilter(I('post.count'));
-            $date = wjStrFilter(I('post.date'));
+            $date = wjStrFilter(I('post.data'));
             $pages = (int)wjStrFilter(I('post.page'));
             $offset = (int)wjStrFilter(I('get.offset'));
         } else {
             $count = (int)wjStrFilter(I('get.count'));
-            $date = wjStrFilter(I('get.date'));
+            $date = wjStrFilter(I('get.data'));
             $pages = (int)wjStrFilter(I('get.page'));
             $offset = (int)wjStrFilter(I('get.offset'));
         }
-
         if (empty($date)) {
             $date = date('Y-m-d');
         }/*else{
@@ -557,7 +556,7 @@ class LottoryDataMgr
             }
         }*/
         $cacheName = $type . '_' . $page . '_' . $count . '_' . $date;
-//        $ret = S($cacheName);
+        $ret = S($cacheName);
         $ret=false;
 
         if ($ret === false || $ret == '') {
@@ -567,7 +566,6 @@ class LottoryDataMgr
             $retData["code"] = null;
             $retData["msg"] = null;
             $retData["rows"] = array();
-            // dump($lotType);die;
             if (isset($_GET['adate'])) $date = date("Y-m-d", time());
             if ($date == '' || $date == 'null') {
                 $openedCaiList = $this->getLottoryByCnt($module, $lotType, $count);
