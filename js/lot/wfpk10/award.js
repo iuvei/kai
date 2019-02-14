@@ -47,8 +47,8 @@ $(function () {
                     str = str + "<span class='no" + nums[i] + "'></span>";
                 }
                 $(".lot-nums").html(str);
-                $(".currentAward .period").html(data.current.periodNumber1.substr(6) + " 期");
-                $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(6) + "期");
+                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
                 $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             }
             //计数请求次数
@@ -102,8 +102,8 @@ $(function () {
                     str = str + "<span class='no" + nums[i] + "'></span>";
                 }
                 $(".lot-nums").html(str);
-                $(".currentAward .period").html(data.current.periodNumber1.substr(6) + " 期");
-                $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(6) + "期");
+                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                $(".warnTime #period").html("第" + data.next.periodNumberStr  + "期");
                 $(" .lot-award .currentAward .period-info .period-leave").html(data.current.surplus_num);
             }
             if (currentPeriodNumber == -1) {
@@ -150,8 +150,8 @@ $(function () {
                 return
             }
             if(data.current.awardNumbers==''){
-                $(".currentAward .period").html(data.current.periodNumber1.substr(6) + " 期");
-                $(".warnTime #period").html("第" + data.next.periodNumberStr.substr(6)+ "期");
+                $(".currentAward .period").html(data.current.periodNumber1 + " 期");
+                $(".warnTime #period").html("第" + data.next.periodNumberStr + "期");
                 $(".lot-nums").html('<p>等待开奖...<p>');
                 setTimeout(function () {
                     polling();
@@ -183,7 +183,7 @@ function getHistoryData(count) {
                 if (j%2==0) {
                     clsName = "odd";
                 }
-        		html += '<tr class="' + clsName + '"><td><p class="">' + data.termNum.substr(6)+ '</p></td><td><p class="">'
+        		html += '<tr class="' + clsName + '"><td><p class="">' + data.termNum + '</p></td><td><p class="">'
         				+  data.lotteryTime.substring(5, 16);
                 html += '</p></td><td class="nums">';
                 html += '<i class="pk-no' + data.n1 + '"></i>';
