@@ -544,12 +544,12 @@ class LottoryDataMgr
     {
         if (IS_POST) {
             $count = (int)wjStrFilter(I('post.count'));
-            $date = wjStrFilter(I('post.data'));
+            $date = wjStrFilter(I('post.date'));
             $pages = (int)wjStrFilter(I('post.page'));
             $offset = (int)wjStrFilter(I('get.offset'));
         } else {
             $count = (int)wjStrFilter(I('get.count'));
-            $date = wjStrFilter(I('get.data'));
+            $date = wjStrFilter(I('get.date'));
             $pages = (int)wjStrFilter(I('get.page'));
             $offset = (int)wjStrFilter(I('get.offset'));
         }
