@@ -145,7 +145,7 @@
                         if(!ball)
                             ball=1;
                         function awardNewData() {
-                            $.get("/sfpk10/getNewestRecord.do", { t: Math.random() }, function (data) {
+                            $.get("/wfpk10/getNewestRecord.do", { t: Math.random() }, function (data) {
                                 var numbers = data.numbers.split(',');
                                 var tr1 = $("#chart tr:first");
                                 var clsName = "odd";
@@ -179,14 +179,14 @@
                             $("#rankLi"+ball).addClass("cur")
 
                             count = $("#selDate").val();
-                            $.post("/sfpk10/getHistoryData.do",
+                            $.post("/wfpk10/getHistoryData.do",
                                     {count:count},
                                     function(r) {
                                         if (r) {
                                             doTCompile("history_data", r.rows);
 
                                             ckbSamepnClick();//注册监听事件
-                                            $.get("/sfpk10/getDataList.do", { num: ball,count:count, t: Math.random() }, function (data) {
+                                            $.get("/wfpk10/getDataList.do", { num: ball,count:count, t: Math.random() }, function (data) {
                                                 var chartDatas = [];
                                                 if (data.success) {
                                                     for (var i = 1; i < 11; i++) {
@@ -270,7 +270,7 @@
                             if(ballVal)
                                 ball=ballVal;
 
-                            window.location.href="sfpk10/numberrulestat.html#ball="+ball;
+                            window.location.href="wfpk10/numberrulestat.html#ball="+ball;
                             reloadData();
                         }
 

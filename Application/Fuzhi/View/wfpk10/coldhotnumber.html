@@ -43,7 +43,7 @@
 					reloadData();
 				});
 				function reloadData() {
-					$.get('sfpk10/findColdHotNumber.do?' + Math.random(), null, function(text) {
+					$.get('wfpk10/findColdHotNumber.do?' + Math.random(), null, function(text) {
 						$('#lot-wrap').append(text);
 					});
 				}

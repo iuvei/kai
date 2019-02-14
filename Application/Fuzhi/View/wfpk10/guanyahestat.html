@@ -28,7 +28,7 @@
 							.css("position", "relative")
 							.append(
 									"<div style='margin:0 auto; width:100%; color:#FFF; position:absolute; top:220px; z-index:11;left:0px;'>数据正在加载中...</div><div class='loaddingBg'></div>");
-					$.get("sfpk10/guanyaLuzhubseo.do", {
+					$.get("wfpk10/guanyaLuzhubseo.do", {
 						t : Math.random(),
 						date : selDate
 					}, function(text) {
@@ -38,12 +38,12 @@
 					});
 				}
 				function todayCount() {
-					$.get("sfpk10/guanyaLuzhuTodayCount.do", {}, function(text) {
+					$.get("wfpk10/guanyaLuzhuTodayCount.do", {}, function(text) {
 						$('#LuzhuSelectDate').html(text);
 					});
 				}
 				function twosideCount() {
-					$.get("sfpk10/findGuanYaDXDSLishi.do", {
+					$.get("wfpk10/findGuanYaDXDSLishi.do", {
 						gameId : 50
 					}, function(text) {
 						$('#LuzhuSelectDate').html(text);
@@ -51,7 +51,7 @@
 
 				}
 				function loadData(){
-					$.get("sfpk10/guanyaLuzhubseo.do", {
+					$.get("wfpk10/guanyaLuzhubseo.do", {
 						t : Math.random()
 					}, function(text) {
 						$('#jshtml').html(text);

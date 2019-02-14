@@ -67,7 +67,7 @@
                               <table class="ptable" cellpadding="0" cellspacing="0" style="width: 70%">
                                   <tr>
                                       <td class="td1">{{=rowData.lDate}}</td>
-                                      <td class="td2"><span>{{=rowData.endIndex}}-{{=rowData.startIndex}}期</span></td>
+                                      <td class="td2"><span>{{=rowData.endIndex.substr(2)}}-{{=rowData.startIndex.substr(2)}}期</span></td>
                                   </tr>
                               </table>
                           </td>
@@ -101,7 +101,7 @@
                   function changeBall(ball) {
                       var _container = $("#callFun").attr("container");
                       _container = _container ? _container : "lot-wrap";
-                      $.get("sfpk10/twoSidedStat.do", { t: Math.random(), id: ball }, function (r) {
+                      $.get("wfpk10/twoSidedStat.do", { t: Math.random(), id: ball }, function (r) {
                           doTCompile("twoSidedStat_data", r);
                       },"json");
                   }

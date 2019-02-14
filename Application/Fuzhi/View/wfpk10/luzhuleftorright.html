@@ -198,7 +198,7 @@
 	            	return tmp + html;
 			    }
 			    function SearchQianhouLuzhu() {
-			        $.get("sfpk10/kaijiang.do", { date: $("#dateData").val() }, function (result) {
+			        $.get("wfpk10/kaijiang.do", { date: $("#dateData").val() }, function (result) {
 			        	var tmp1='', tmp2='', tmp3='', tmp4='', tmp5='',tmp6='', tmp7='', tmp8='', tmp9='', tmp10='';
 			            if(result&&result.rows&&result.rows.length>0){
 			            	tmp1 = luzhu(result.rows, 1);

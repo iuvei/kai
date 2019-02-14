@@ -147,7 +147,7 @@
             })
             function SearchQianhouLuzhu() {
                 var selDate = $("#dateData").val();
-                $.get('/sfpk10/eobsLuzhu.do', {
+                $.get('/wfpk10/eobsLuzhu.do', {
                     date:selDate
                 }, function(data) {
                     $("#lot_content").html(data);
