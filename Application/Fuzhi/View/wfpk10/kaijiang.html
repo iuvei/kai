@@ -1,0 +1,151 @@
+<extend name="Base/common"/>
+
+<block name="style">
+	<link href="css/style.css?v=2019" rel="stylesheet" />
+	<link href="css/lot/{$lottory}.css" rel="stylesheet" />
+</block>
+
+<block name="body">
+
+	<!--body-content-->
+	<div class="body-content">
+		<!-- 彩票大厅 头部 -->
+		<include file="Public/top_ad"/>
+
+		<include file="Public/lottory_latest"/>
+
+		<div class="lot-wrap">
+			<include file="Public/lottory_op"/>
+			<div class="lot-wrap">
+				<div class="clear"></div>
+				<!--  内容开始 -->
+				<div id="lot-wrap">
+					<input type="hidden" value="Search" id="callFun" lottery="cqssc" />
+					<div class="lot-search">
+						<div class="lot-search">
+
+							<div class="car-num">
+								<ul class="lot-number-omit" style="margin-bottom: 10px;">
+									<li class="ball" style="padding-bottom: 2px;">
+										<div class="merge-title-table-title" style="margin-bottom: 10px;">
+
+											<span class="bbbb">开奖历史</span>
+
+											<script type="text/javascript" src="js/My97DatePicker/WdatePicker.js" ></script>
+											<ul style="float: right; width: 265px; text-align: right;">
+												<li>
+								<span style="display: block; float: left;">
+									<label style="margin: 0px;position: relative;top: 2px;">选择日期：</label></span>
+													<span style="display: block; float: left;">
+									<input name="dateData" type="text" id="dateData" class="Wdate"  onClick="WdatePicker();" readonly="readonly" style=""></span>
+													<span style="padding-left: 10px;"><a style="margin: 0px;" href="javascript:Search();" class="a-bottom">查询</a></span>
+												</li>
+											</ul>
+										</div>
+
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>
+					<div id="history_data-html"></div>
+					<script id="history_data-tmpl" type="text/template">
+						<table id="history" class="lot-table">
+							<tbody>
+							<tr class="head">
+								<td width="140">期号</td>
+								<td width="120">时间</td>
+								<td width="540">开奖号码</td>
+								<td colspan="3">冠亚和</td>
+								<td colspan="5">1~5龙虎</td>
+							</tr>
+							{{
+							for (var i = 0; i <it.length; i++) {
+							var row=it[i];
+							var lowDate=new Date(Date.parse(row.lotteryTime.replace(/-/g,"/"))).format("hh:mm");
+							var totalNum=row.n1+row.n2;
+							var lhStr="";
+							if(row.n1>row.n5){
+							lhStr="龙";
+							}else if(row.n1<row.n5){
+							lhStr="虎";
+							}else if(row.n1==row.n5){
+							lhStr="和";
+							}
+
+							}}
+							<tr class="{{=(i+1)%2==0?'even':'odd'}}">
+								<td>
+									<p class="">{{=row.termNum.substr(6)}}</p>
+
+								</td>
+								<td>
+									<p class="">{{=lowDate}}</p>
+								</td>
+								<td class="nums">
+									<i class="pk-no{{=row.n1}}"></i>
+									<i class="pk-no{{=row.n2}}"></i>
+									<i class="pk-no{{=row.n3}}"></i>
+									<i class="pk-no{{=row.n4}}"></i>
+									<i class="pk-no{{=row.n5}}"></i>
+									<i class="pk-no{{=row.n6}}"></i>
+									<i class="pk-no{{=row.n7}}"></i>
+									<i class="pk-no{{=row.n8}}"></i>
+									<i class="pk-no{{=row.n9}}"></i>
+									<i class="pk-no{{=row.n10}}"></i>
+								</td>
+								<td>{{=totalNum}}</td>
+								<td class="{{=totalNum%2!=0?'r':''}}"><p>{{=totalNum%2==0?"双":"单"}}</p></td>
+								<td class="{{=totalNum> 11?'r':''}}"><p>{{=totalNum<= 11?"小":"大"}}</p></td>
+								<td class="{{=row.n1>row.n10? 'r':''}}">{{=numFromDesc3(row.n1,row.n10)}}</td>
+								<td class="{{=row.n2>row.n9? 'r':''}}">{{=numFromDesc3(row.n2,row.n9)}}</td>
+								<td class="{{=row.n3>row.n8? 'r':''}}">{{=numFromDesc3(row.n3,row.n8)}}</td>
+								<td class="{{=row.n4>row.n7? 'r':''}}">{{=numFromDesc3(row.n4,row.n7)}}</td>
+								<td class="{{=row.n5>row.n6? 'r':''}}">{{=numFromDesc3(row.n5,row.n6)}}</td>
+							</tr>
+							{{
+							}
+							}}
+							</tbody>
+						</table>
+					</script>
+					<script type="text/javascript">
+                        //双号
+                        function reloadTwoBallRemind() {
+                            $.get("sfpk10/twoBallRemind.do", { t: Math.random() }, function (json) {
+                                $("#twoball_balls").text(json.TwoSided.length > 0 ? json.TwoSided : "无");
+                                $("#twoball_issuetoday").text(json.IssueToday);
+                                $("#twoball_issuenext").text(json.IssueNext);
+                                $("#twoball_omitcur").text(json.OmitCurrent);
+                                $("#twoball_omitmax").text(json.OmitTodayMax);
+                            },'json');
+                        }
+                        reloadTwoBallRemind();
+
+
+                        //开奖历史
+                        function getHistoryData(data){
+                            $.post("sfpk10/getHistoryData.do",
+                                {count:120,data:data},
+                                function(r) {
+                                    if (r) {
+                                        doTCompile("history_data", r.rows);
+                                    }
+                                }, "json");
+                        }
+                        getHistoryData(null);
+
+                        function Search() {
+                            getHistoryData($("#dateData").val());
+                        }
+
+					</script>
+				</div>
+				<!--  内容结束-->
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+</block>

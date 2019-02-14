@@ -183,6 +183,7 @@ class LottoryDataMgr
                     }elseif($type == 'ftft'){$type = 'xyft';$lotType = 34;}
 
                     $ret = $this->getAwardTime($type, $page, $lotType, $expire);
+
                 } else {
                     //print_r("123");die;
                     if ($page == "GetPk10AnalysisData") {
@@ -740,7 +741,7 @@ class LottoryDataMgr
     }else{
             $ret = $this->getIssueInfo($type);
             $xqqihao = str_replace("-", "0", $ret['issue']);
-            if ($lotType == 44 || $lotType == 1 || $lotType == 34 || $lotType == 47 || $lotType == 48 || $lotType == 46 || $lotType == 45 || $lotType == 6 || $lotType== 54 ||$lotType == 55 || $lotType == 56 || $lotType == 58 || $lotType == 39) {
+            if ($lotType == 44 || $lotType == 1 || $lotType == 34 || $lotType == 47 || $lotType == 48 || $lotType == 46 || $lotType == 45 || $lotType == 6 || $lotType== 54 ||$lotType == 55 || $lotType == 56 || $lotType == 58 || $lotType == 39 || $lotType == 61 ) {
                 $sqqihao = str_replace("-", "", $ret['preIssue']['issue']);
                 $xqqihao = str_replace("-", "", $ret['issue']);
             } else {
@@ -752,7 +753,7 @@ class LottoryDataMgr
                 $kjHao1[0]['dat_codes'] = "";
             }
             $sres['surplus_num'] = $ret['issue_total'] - $ret['preIssue']['issue_no'];
-            if ($lotType == 20 || $lotType == 34 || $lotType == 47 || $lotType == 46 || $lotType == 6 || $lotType == 58) {
+            if ($lotType == 20 || $lotType == 34 || $lotType == 47 || $lotType == 46 || $lotType == 6 || $lotType == 58 || $lotType == 62) {
                 $arr = explode(",", $kjHao1[0]['dat_codes']);
                 foreach ($arr as $k => $v) {
                     $arr[$k] = preg_replace('/^0*/', '', $v);
@@ -5250,6 +5251,10 @@ class LottoryDataMgr
                         return 56;
                     case 'js11x5':
                         return 58;
+                    case 'wfssc':
+                        return 61;
+                    case 'wfpk10':
+                        return 62;
                 }
             }
         }
@@ -5822,10 +5827,18 @@ class LottoryDataMgr
                 $issue = $this->getCombOpentimes_v2(0, 1440, 60, time());
                 break;
             case "sfpk10":
-                $issue = $this->getSfpkSscOpentimes($time);
-                break;
+            $issue = $this->getSfpkSscOpentimes($time);
+            break;
             case "sfssc":
                 $issue = $this->getSfSscOpentimes($time);
+                break;
+            case "wfpk10":
+                $issueStart = 33191864 + intval((time()-0 - strtotime('2019-02-14 00:00:00')) / 86400) * 288;
+//                $issueStart = 729391 + intval(( 0 - strtotime('2019-02-11 00:00:00')) / 86400) * 44;
+                $issue = $this->getCombOpentimes_v2(300, 288, 300, $time,$issueStart);;
+                break;
+            case "wfssc":
+                $issue = $this->getCombOpentimes_v2(0, 288, 300, time());;
                 break;
             case "tcssc":
                 $issue = $this->getJsSscOpentimes($time);

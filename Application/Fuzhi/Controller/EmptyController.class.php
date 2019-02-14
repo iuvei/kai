@@ -304,14 +304,14 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                                                                                 $this->keyword = C("WEB_SITE_wfssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                                                                                 $this->description = C("WEB_SITE_wfssc_DESCR");
                                                                                                                                 $lottoryName = "五分时时彩";
-                                                                                                                                $totalExpect = 1000;
+                                                                                                                                $totalExpect = 288;
                                                                                                                             }else{
                                                                                                                                 if ($ctrlName =='wfpk10'){
                                                                                                                                     $this->title = $title_c.C("WEB_SITE_wfpk10_TITLE") . ' - ' . C('WEB_SITE_TITLE');
                                                                                                                                     $this->keyword = C("WEB_SITE_wfpk10_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                                                                                                                     $this->description = C("WEB_SITE_wfpk10_DESCR");
                                                                                                                                     $lottoryName = "五分pk10";
-                                                                                                                                    $totalExpect = 1000;
+                                                                                                                                    $totalExpect = 288;
                                                                                                                                 }
                                                                                                                             }
                                                                                                                         }
