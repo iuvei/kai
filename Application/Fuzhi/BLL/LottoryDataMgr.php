@@ -33,9 +33,6 @@ class LottoryDataMgr
 
     static function getAwardData($type, $page, $param)
     {
-
-
-        //print_r($type);die;
         $ret = '';
         $ver = '1.1';
         if (S('lanmaocai_version') != $ver) {
@@ -44,13 +41,12 @@ class LottoryDataMgr
             $cfg->setValue($module, 'pk10', 'vc', $ver);
             S('lanmaocai_version', $ver, array('type' => 'file', 'expire' => 60 * 60 * 24 * 10));
         }
-        //print_r($cfg);die;
+//        print_r($cfg);die;
         $ret = LottoryDataMgr::getInstance()->getData($type, $page, $param);
         if (!($ret === false) && $ret != '') {
             return $ret;
         }
         $url = "http://www.cp166.com/{$type}/{$page}";
-
         $urlAll = $url;
         $cacheName = $url;
         $postParam = '';
@@ -63,6 +59,7 @@ class LottoryDataMgr
         }
         if ($page == "kaijiang.do") {
             $ret = RemoteDataMgr::getData($urlAll, $urlAll);
+
         } else {
             if (substr($page, strlen($page) - 13) == 'AwardTimes.do') {
                 $ret = RemoteDataMgr::getData($urlAll);
@@ -180,10 +177,10 @@ class LottoryDataMgr
                     }elseif($type == 'jnd28'){$type = 'pcdd';$lotType = 43;
                     }elseif($type == 'sfpk10ft'){$type = 'sfpk10';$lotType = 47;
                     }elseif($type == 'sfcft'){$type = 'sfssc';$lotType = 48;
-                    }elseif($type == 'ftft'){$type = 'xyft';$lotType = 34;}
+                    }elseif($type == 'ftft'){$type = 'xyft';$lotType = 34;
+                    }elseif($type == 'wfpk10'){$type = 'wfpk10';$lotType = 62;}
 
                     $ret = $this->getAwardTime($type, $page, $lotType, $expire);
-
                 } else {
                     //print_r("123");die;
                     if ($page == "GetPk10AnalysisData") {
@@ -282,6 +279,12 @@ class LottoryDataMgr
                 //  dump($type);die;
                 $ret = $this->getPk10Data($type, $page, $param);
             }
+            if($type == 'wfpk10'){
+                $ret = $this->getPk10Data($type, $page, $param);
+            }
+            if($type == 'wfssc'){
+                $ret = $this->getPk10Data($type, $page, $param);
+            }
             if ($type == 'pk10') {
                 // dump($type);die;
                 $ret = $this->getPk10Data($type, $page, $param);
@@ -312,12 +315,11 @@ class LottoryDataMgr
                                             } else {
                                                 if ($page == "getTodayNum.do") {
                                                     $ret = $this->getTodayNum($type, $page, $param);
-                                                } else {
-
                                                 }
                                             }
                                         }
                                     }
+
                                 }
                             }
                         }
@@ -331,6 +333,7 @@ class LottoryDataMgr
 
     private function getPk10Data($type, $page, $param)
     {
+
         $ret = false;
         $expire = 2;
         if ($type == 'cqft') {$type = 'cqssc';}
@@ -338,6 +341,7 @@ class LottoryDataMgr
         if($type == "sfcft"){$type == "sfssc";}
         if($type == "sfpk10ft"){$type == "sfpk10";}
         if($type == "ftft"){$type == "xyft";}
+//        if($type == "wfpk10"){$type == "wfpk10";}
 
         $lotType = $this->getLotTypeByType($type);
         if ($page == 'getMergeData.do') {
@@ -428,6 +432,7 @@ class LottoryDataMgr
                 $ret = $this->getGdkl10LuZhuTotal($type, $page, $lotType, $expire);
             } else {
                 if ($page == 'getMergeData.do') {
+
                     $ret = "{'clList':[]}";
                 }
             }
@@ -941,7 +946,7 @@ class LottoryDataMgr
                 }
             }
             $date = empty($_GET['date']) ? date('Y-m-d') : $_GET['date'];
-            // print_r($date);exit;
+             print_r($date);exit;
             $openedCaiList = $this->getLottoryByDate($module, $lotType, $date);
 
             foreach ($openedCaiList as $openedCai) {
