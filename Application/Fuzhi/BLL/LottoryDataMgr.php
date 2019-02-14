@@ -5807,8 +5807,10 @@ class LottoryDataMgr
                 $issue = $this->getSscOpentimes($time);
                 break;
             case "pk10":
-                $issueStart = 674080 + intval((time() - 32820 - strtotime('2018-04-01 00:00:00')) / 86400) * 179;
-                $issue = $this->getCombOpentimes_v2(32520, 179, 300, $time, $issueStart);
+//                $issueStart = 672827 + intval((time() - 32820 - strtotime('2018-04-01 00:00:00')) / 86400) * 179;729391
+//                $issue = $this->getCombOpentimes_v2(32520, 179, 300, $time, $issueStart);
+                $issueStart = 729391 + intval((time() - 9*3600+10*60+45 - strtotime('2019-02-11 00:00:00')) / 86400) * 44;
+                $issue = $this->getCombOpentimes_v2(9*3600+10*60+15, 44, 1200, $time, $issueStart);
                 break;
             case "xyft":
                 $issue = $this->getCombOpentimes_v2(46500 + 540, 180, 300, $time);
@@ -5968,7 +5970,7 @@ class LottoryDataMgr
     {
         $tsStart = 300;
         $issueCount = 120;
-        $ts = 600;
+        $ts = 600 *2;
 
         // 默认当前时间
         if (empty($time)) {
@@ -5980,21 +5982,29 @@ class LottoryDataMgr
          *  如果开奖时间不是00:00:00，那么time()的当前期号日期，可能自动跳为第二天
          *  所以，time()减去tsStart【第一期开奖时间】，则期号日期100%是当天的
          */
-        $rootTimespan = strtotime(date('Y-m-d', ($time - $tsStart)));
+        $rootTimespan = strtotime(date('Y-m-d', ($time - $tsStart)))+652;
         $opentimes = Array();
         $subIssueLength = strlen($issueCount);
         $preIssue = Array();
         for ($issue_no = 1; $issue_no <= $issueCount; $issue_no++) {
 
-            if ($issue_no < 24) {
-                $timespan = $rootTimespan + ($issue_no) * 300;
-            } elseif ($issue_no == 24) {
-                $timespan = $rootTimespan + 36000;
-            } elseif ($issue_no < 97) {
-                $timespan = $rootTimespan + (36000) + ($issue_no - 24) * 600;
+            if ($issue_no < 10) {
+                $timespan = $rootTimespan + ($issue_no) * 1200;
+            } elseif ($issue_no == 10) {
+                $timespan = $rootTimespan + 7 * 3600 + 20 * 60 - 7;
             } else {
-                $timespan = $rootTimespan + (79500) + ($issue_no - 97) * 300;
+                $timespan = $rootTimespan + (7 * 3600 + 20 * 60 -7) + ($issue_no - 10) * 1200;
             }
+
+//            if ($issue_no < 24) {
+//                $timespan = $rootTimespan + ($issue_no) * 300;
+//            } elseif ($issue_no == 24) {
+//                $timespan = $rootTimespan + 36000;
+//            } elseif ($issue_no < 97) {
+//                $timespan = $rootTimespan + (36000) + ($issue_no - 24) * 600;
+//            } else {
+//                $timespan = $rootTimespan + (79500) + ($issue_no - 97) * 300;
+//            }
 
             // 开奖时间
             $opentime = Array();

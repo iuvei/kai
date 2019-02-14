@@ -85,7 +85,7 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
 
 		}
         $this->assign('lottory', $ctrlName);
-        if ($ctrlName == 'tcpk10' || $ctrlName == 'tcssc' || $ctrlName == 'pk10' || $ctrlName == 'cqssc' || $ctrlName == 'gdkl10' || $ctrlName == 'jssc' || $ctrlName == 'jsk3' || $ctrlName == 'kl8' || $ctrlName == 'bjft' || $ctrlName == 'jsssc'  || $ctrlName == 'xyft'  || $ctrlName == 'fc3d' || $ctrlName == 'pl3' || $ctrlName == 'pl3' || $ctrlName == 'gd11x5' || $ctrlName == 'cqft' || $ctrlName == 'pc28' || $ctrlName == 'txffc' || $ctrlName == 'sfssc' || $ctrlName == 'sfpk10'||$ctrlName == 'pcdd'||$ctrlName == 'jlk3'|| $ctrlName == 'gxk3' || $ctrlName == 'jnd28' || $ctrlName == 'js28' ||$ctrlName == 'jisuk3'||$ctrlName == 'jsdd'||$ctrlName == 'js11x5' || $ctrlName == 'sfpk10ft' || $ctrlName == 'sfcft' || $ctrlName == 'ftft') {
+        if ($ctrlName == 'tcpk10' || $ctrlName == 'tcssc' || $ctrlName == 'pk10' || $ctrlName == 'cqssc' || $ctrlName == 'gdkl10' || $ctrlName == 'jssc' || $ctrlName == 'jsk3' || $ctrlName == 'kl8' || $ctrlName == 'bjft' || $ctrlName == 'jsssc'  || $ctrlName == 'xyft'  || $ctrlName == 'fc3d' || $ctrlName == 'pl3' || $ctrlName == 'pl3' || $ctrlName == 'gd11x5' || $ctrlName == 'cqft' || $ctrlName == 'pc28' || $ctrlName == 'txffc' || $ctrlName == 'sfssc' || $ctrlName == 'sfpk10'||$ctrlName == 'pcdd'||$ctrlName == 'jlk3'|| $ctrlName == 'gxk3' || $ctrlName == 'jnd28' || $ctrlName == 'js28' ||$ctrlName == 'jisuk3'||$ctrlName == 'jsdd'||$ctrlName == 'js11x5' || $ctrlName == 'sfpk10ft' || $ctrlName == 'sfcft' || $ctrlName == 'ftft' || $ctrlName == 'wfssc' || $ctrlName == 'wfpk10') {
             $lottoryName = '';
             $totalExpect = 0;
             if ($ctrlName == 'pk10') {
@@ -93,14 +93,14 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                 $this->keyword = C("WEB_SITE_PK10_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                 $this->description = C("WEB_SITE_PK10_DESCR");
                 $lottoryName = "北京pk10";
-                $totalExpect = 179;
+                $totalExpect = 44;
             } else {
                 if ($ctrlName == 'cqssc') {
                     $this->title = $title_c.C("WEB_SITE_cqssc_TITLE") . ' - ' . C('WEB_SITE_TITLE');
                     $this->keyword = C("WEB_SITE_cqssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                     $this->description = C("WEB_SITE_cqssc_DESCR");
                     $lottoryName = "重庆时时彩";
-                    $totalExpect = 120;
+                    $totalExpect = 66;
                 } else {
                     if ($ctrlName == 'gdkl10') {
                         $this->title = $title_c.C("WEB_SITE_GDKL10_TITLE") . ' - ' . C('WEB_SITE_TITLE');
@@ -170,14 +170,14 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                 $this->keyword = C("WEB_SITE_xjssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                 $this->description = C("WEB_SITE_xjssc_DESCR");
                                 $lottoryName = "北京番摊";
-                                $totalExpect = 179;
+                                $totalExpect = 44;
 												}else{
 													if ($ctrlName == 'cqft') {
                                 $this->title = $title_c.'重庆番摊开奖视频_重庆番摊开奖号码_重庆番摊开奖记录 - ' . C('WEB_SITE_TITLE');
                                 $this->keyword = C("WEB_SITE_xjssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
                                 $this->description = C("WEB_SITE_xjssc_DESCR");
                                 $lottoryName = "重庆番摊";
-                                $totalExpect = 120;
+                                $totalExpect = 66;
 												}else{
                                                         /*if ($ctrlName == 'pc28') {
                                                             $this->title = $title_c.'加拿大28开奖视频_加拿大28开奖号码_加拿大28开奖记录 - ' . C('WEB_SITE_TITLE');
@@ -298,6 +298,22 @@ header('Access-Control-Max-Age:86400'); // 允许访问的有效期
                                                                                                                             $this->description = C("WEB_SITE_ftft_DESCR");
                                                                                                                             $lottoryName = "飞艇番摊";//头彩
                                                                                                                             $totalExpect = 441;
+                                                                                                                        }else{
+                                                                                                                            if($ctrlName == 'wfssc'){
+                                                                                                                                $this->title = $title_c.C("WEB_SITE_wfssc_TITLE") . ' - ' . C('WEB_SITE_TITLE');
+                                                                                                                                $this->keyword = C("WEB_SITE_wfssc_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                                                                $this->description = C("WEB_SITE_wfssc_DESCR");
+                                                                                                                                $lottoryName = "五分时时彩";
+                                                                                                                                $totalExpect = 1000;
+                                                                                                                            }else{
+                                                                                                                                if ($ctrlName =='wfpk10'){
+                                                                                                                                    $this->title = $title_c.C("WEB_SITE_wfpk10_TITLE") . ' - ' . C('WEB_SITE_TITLE');
+                                                                                                                                    $this->keyword = C("WEB_SITE_wfpk10_KEYWORDS") . ' - ' . C('WEB_SITE_KEYWORD');
+                                                                                                                                    $this->description = C("WEB_SITE_wfpk10_DESCR");
+                                                                                                                                    $lottoryName = "五分pk10";
+                                                                                                                                    $totalExpect = 1000;
+                                                                                                                                }
+                                                                                                                            }
                                                                                                                         }
                                                                                                                     }
                                                                                                                 }

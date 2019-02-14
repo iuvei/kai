@@ -421,6 +421,12 @@ class ApiController extends Controller{
             case "js11x5":
                 return "js11x5";
                 break;
+            case "wfssc":
+                return "wfssc";
+                break;
+            case "wfpk10":
+                return "wfpk10";
+                break;
             default:
                 return "404";
 
