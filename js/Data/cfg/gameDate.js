@@ -1117,6 +1117,108 @@ var webListOP = {
 //					"spanClass":"wen_newIcon"
 //				}
     ],
+	"wfpk10": [
+        {
+            "text":"五分PK10",
+            "href":"wfpk10/index.html"
+        },
+        {
+            "text":"五分PK10开奖",
+            "href":"wfpk10/kaijiang.html"
+        },
+        {
+            "text":"综合版面",
+            "href":"wfpk10/merge.html"
+        },
+        {
+            "text":"号码遗漏统计",
+            "href":"wfpk10/yilou.html"
+        },
+        {
+            "text":"龙虎路珠",
+            "href":"wfpk10/luzhulonghu.html"
+        },
+        {
+            "text":"号码前后路珠",
+            "href":"wfpk10/luzhuleftorright.html"
+        },
+        {
+            "text":"冠、亚和路珠",
+            "href":"wfpk10/guanyahestat.html"
+        },
+        {
+            "text":"单双大小路珠",
+            "href":"wfpk10/luzhubigorsmall.html"
+        },
+        {
+            "text":"号码规律统计",
+            "href":"wfpk10/numberrulestat.html",
+            "spanClass":"wen_lasthostory"
+        },
+        {
+            "text":"今日号码统计",
+            "href":"wfpk10/opencodeanalysis.html"
+        },
+        {
+            "text":"单双大小历史",
+            "href":"wfpk10/ballstat.html"
+        },
+        {
+            "text":"龙虎历史",
+            "href":"wfpk10/numberstat.html"
+        },
+//				{
+//					"text":"淘宝模式",
+//					"href":"pk10/betmode.html"
+//				},
+        {
+            "text":"免费参考",
+            "href":"wfpk10/betgame.html"
+        },
+        /*{
+            "text":"TC三分赛车开奖直播",
+            "href":"wfpk10/shipin/",
+            "title":"在线观看TC三分赛车开奖直播",
+            "aClass":"redColor"
+        },*/
+        {
+            "text":"冷热码分析",
+            "href":"wfpk10/coldhotnumber.html"
+        },
+        // {
+        //     "text":"杀号定胆",
+        //     "href":"wfpk10/shdd.html"
+        // },
+        {
+            "text":"五分PK10技巧",
+            "href":"jiqiao/wfpk10/"
+        },
+        {
+            "text":"遗漏大数据",
+            "href":"wfpk10/omitdata.html",
+
+        },
+        {
+            "text":"两面数据统计",
+            "href":"wfpk10/twosidedstat.html",
+            "spanClass":"wen_newIcon"
+        },
+        {
+            "text":"免费多选分析",
+            "href":"wfpk10/positionanalyze.html",
+            "spanClass":"wen_newIcon"
+        },
+        {
+            "text":"横版走势图",
+            "href":"wfpk10/zoushitu.html"
+        }
+//				,
+//				{
+//					"text":"九宫计划",
+//					"href":"pk10/nineplan.html",
+//					"spanClass":"wen_newIcon"
+//				}
+    ],
 
 
     "sfssc": [
@@ -1177,6 +1279,67 @@ var webListOP = {
         {
             "text":"两面数据统计",
             "href":"sfssc/twosidedstat.html",
+            "spanClass":"wen_newIcon"
+        }
+    ],
+	"wfssc": [
+        {
+            "text":"五分时时彩",
+            "href":"wfssc/index.html"
+        },
+        {
+            "text":"历史开奖号码",
+            "href":"wfssc/kaijiang.html"
+        },
+        {
+            "text":"号码路珠",
+            "href":"wfssc/luzhunumber.html"
+        },
+        {
+            "text":"龙虎路珠",
+            "href":"wfssc/luzhulonghu.html"
+        },
+//					{
+//						"text":"号码规律统计",
+//						"href":"javascript:void(0);"
+//					},
+        {
+            "text":"单双大小路珠",
+            "href":"wfssc/luzhubigorsmall.html"
+        },
+        {
+            "text":"总和路珠",
+            "href":"wfssc/luzhutotal.html"
+        },
+        {
+            "text":"单双大小历史",
+            "href":"wfssc/ballstat.html"
+        },
+        {
+            "text":"历史号码统计",
+            "href":"wfssc/numberstat.html"
+        },
+        {
+            "text":"横版走势图",
+            "href":"wfssc/zoushitu.html"
+        },
+        {
+            "text":"时时彩技巧",
+            "href":"jiqiao/wfssc/"
+        },
+        /*{
+            "text":"开奖视频",
+            "href":"wfssc/shipin",
+            "aClass":"redColor"
+        },*/
+        {
+            "text":"遗漏大数据",
+            "href":"wfssc/omitdata.html",
+
+        },
+        {
+            "text":"两面数据统计",
+            "href":"wfssc/twosidedstat.html",
             "spanClass":"wen_newIcon"
         }
     ],

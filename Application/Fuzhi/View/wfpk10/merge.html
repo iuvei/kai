@@ -410,7 +410,7 @@
                    orderType=2;
                //长龙
                function getMergeData(){
-                   $.post("/sfpk10/getMergeData.do",
+                   $.post("/wfpk10/getMergeData.do",
                            {rank:rank},
                            function(r) {
                                if (r) {
@@ -456,7 +456,7 @@
                    $(".t_"+rank).show();
                }
                function searchQianhouLuzhu() {
-                   $.get('/sfpk10/eobsLuzhu.do', {
+                   $.get('/wfpk10/eobsLuzhu.do', {
                    }, function(data) {
                        $("#dx_lot_content").html(data);
                        luzhuShow();

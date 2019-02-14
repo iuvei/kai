@@ -77,7 +77,7 @@
 							}}
 							<tr class="{{=(i+1)%2==0?'even':'odd'}}">
 								<td>
-									<p class="">{{=row.termNum.substr(6)}}</p>
+									<p class="">{{=row.termNum.substr(2)}}</p>
 
 								</td>
 								<td>
@@ -113,7 +113,7 @@
 					<script type="text/javascript">
                         //双号
                         function reloadTwoBallRemind() {
-                            $.get("sfpk10/twoBallRemind.do", { t: Math.random() }, function (json) {
+                            $.get("wfpk10/twoBallRemind.do", { t: Math.random() }, function (json) {
                                 $("#twoball_balls").text(json.TwoSided.length > 0 ? json.TwoSided : "无");
                                 $("#twoball_issuetoday").text(json.IssueToday);
                                 $("#twoball_issuenext").text(json.IssueNext);
@@ -126,7 +126,7 @@
 
                         //开奖历史
                         function getHistoryData(data){
-                            $.post("sfpk10/getHistoryData.do",
+                            $.post("wfpk10/getHistoryData.do",
                                 {count:120,data:data},
                                 function(r) {
                                     if (r) {

@@ -35,6 +35,8 @@ var beforPageJs = {
 				|| pathname.indexOf("/pcdd") >= 0
 				|| pathname.indexOf("/jlk3") >= 0
 				|| pathname.indexOf("/jisuk3") >= 0
+				|| pathname.indexOf("/wfssc") >= 0
+				|| pathname.indexOf("/wfpk10") >= 0
 				|| pathname.indexOf("/gxk3") >= 0) {
             var i = 0;
             if(pathname.split("/")[1] == 'fuzhi')

@@ -3,13 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="aeccc0ce-7afd-4f39-a56e-3d313d3b26de" name="Default" comment="头部游戏排序，游戏LOGO图片">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/ajax/getindex.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/ajax/getindex.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/conn.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/conn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/public/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/public/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/public/paging.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/public/paging.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/public/sscPage.php" beforeDir="false" afterPath="$PROJECT_DIR$/m/public/sscPage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/m/style/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/m/style/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_op.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/merge.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/Data/cfg/gameDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Data/cfg/gameDate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/beforPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/beforPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/lot/wfpk10/award.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/lot/wfpk10/award.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,16 +89,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="39" />
-          <entry key="html" value="82" />
-          <entry key="js" value="94" />
+          <entry key="html" value="148" />
+          <entry key="js" value="130" />
           <entry key="php" value="464" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="39" />
-          <entry key="HTML" value="82" />
-          <entry key="JavaScript" value="94" />
+          <entry key="HTML" value="148" />
+          <entry key="JavaScript" value="130" />
           <entry key="PHP" value="464" />
         </counts>
       </usages-collector>
@@ -101,18 +106,18 @@
         <counts>
           <entry key="bak" value="1" />
           <entry key="css" value="3" />
-          <entry key="html" value="17" />
-          <entry key="js" value="15" />
-          <entry key="php" value="47" />
+          <entry key="html" value="27" />
+          <entry key="js" value="19" />
+          <entry key="php" value="48" />
           <entry key="ts" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="3" />
-          <entry key="HTML" value="17" />
-          <entry key="JavaScript" value="15" />
-          <entry key="PHP" value="47" />
+          <entry key="HTML" value="27" />
+          <entry key="JavaScript" value="19" />
+          <entry key="PHP" value="48" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="TypeScript" value="2" />
         </counts>
@@ -128,74 +133,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/wfssc/award.js">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="240" column="35" selection-start-line="240" selection-start-column="35" selection-end-line="240" selection-end-column="35" />
+            <state relative-caret-position="451">
+              <caret line="127" column="42" lean-forward="true" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/wfssc/smtj.php">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/merge.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
-              <caret line="247" column="64" lean-forward="true" selection-start-line="247" selection-start-column="64" selection-end-line="247" selection-end-column="64" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#font#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/wfssc/cltj.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2610" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/wfssc/hmzs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="315">
+              <caret line="432" column="34" lean-forward="true" selection-start-line="432" selection-start-column="34" selection-end-line="432" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/m/wfssc/hmzs.php">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/merge.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-508">
-              <caret line="88" column="43" lean-forward="true" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="314">
+              <caret line="461" column="35" lean-forward="true" selection-start-line="461" selection-start-column="35" selection-end-line="461" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/m/sfssc/award.js">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="244" column="9" selection-start-line="244" selection-start-column="9" selection-end-line="244" selection-end-column="35" />
-              <folding>
-                <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="479">
+              <caret line="130" column="105" lean-forward="true" selection-start-line="130" selection-start-column="17" selection-end-line="130" selection-end-column="105" />
             </state>
           </provider>
         </entry>
@@ -213,10 +181,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/images/txffc-logo.png?</find>
-      <find>腾讯分分彩</find>
-      <find>getCqsscAwardTimes.do</find>
-      <find>179</find>
       <find>getPk10AwardTimes.do</find>
       <find>xia-yxx-list</find>
       <find>pcdd</find>
@@ -235,14 +199,18 @@
       <find>style.css？v=2019</find>
       <find>style.css</find>
       <find>style.css?v=2019</find>
-      <find>sfssc</find>
-      <find>sfpk10</find>
       <find>wfpk10</find>
       <find>xia-yx1</find>
       <find>periodNumber1</find>
       <find>web_type</find>
       <find>pk10</find>
       <find>cqssc</find>
+      <find>五分彩</find>
+      <find>periodNumberStr</find>
+      <find>sfpk10</find>
+      <find>sfssc</find>
+      <find>三分</find>
+      <find>eobsLuzhu</find>
     </findStrings>
     <replaceStrings>
       <replace>20181112</replace>
@@ -255,8 +223,9 @@
       <replace>style.css?v=2019</replace>
       <replace />
       <replace>style.css?v=123456</replace>
-      <replace>wfpk10</replace>
       <replace>wfssc</replace>
+      <replace>五分</replace>
+      <replace>wfpk10</replace>
     </replaceStrings>
     <dirStrings>
       <dir>F:\tckai\kai\Application</dir>
@@ -274,15 +243,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/beforPage.js" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/betgame.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/luzhumerge.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/luzhunumber.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/numberomit.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/numberstat.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/positiontrend.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/samesumtrend.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/zoushitu.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/kaijiang.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/cqft/index.html" />
@@ -302,7 +262,6 @@
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/index.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/pk10/index.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/index.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/index.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/index.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/index.html" />
@@ -310,7 +269,6 @@
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/txffc/index.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/xyft/index.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/Public/head.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" />
         <option value="$PROJECT_DIR$/m/ajax/getindex.php" />
         <option value="$PROJECT_DIR$/m/public/header.php" />
         <option value="$PROJECT_DIR$/m/style/css/style.css" />
@@ -325,6 +283,17 @@
         <option value="$PROJECT_DIR$/m/wfssc/hmzs.php" />
         <option value="$PROJECT_DIR$/m/wfssc/award.js" />
         <option value="$PROJECT_DIR$/m/wfssc/smtj.php" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/kaijiang.html" />
+        <option value="$PROJECT_DIR$/js/lot/wfpk10/award.js" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_op.html" />
+        <option value="$PROJECT_DIR$/js/beforPage.js" />
+        <option value="$PROJECT_DIR$/js/Data/cfg/gameDate.js" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/index.html" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/merge.html" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/merge.html" />
       </list>
     </option>
   </component>
@@ -389,19 +358,28 @@
             <path>
               <item name="kia" type="b2602c69:ProjectViewProjectNode" />
               <item name="kia" type="462c0819:PsiDirectoryNode" />
-              <item name="m" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kia" type="b2602c69:ProjectViewProjectNode" />
               <item name="kia" type="462c0819:PsiDirectoryNode" />
-              <item name="m" type="462c0819:PsiDirectoryNode" />
-              <item name="sfssc" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kia" type="b2602c69:ProjectViewProjectNode" />
               <item name="kia" type="462c0819:PsiDirectoryNode" />
-              <item name="m" type="462c0819:PsiDirectoryNode" />
-              <item name="wfssc" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kia" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="wfpk10" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kia" type="b2602c69:ProjectViewProjectNode" />
@@ -427,14 +405,14 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\kaijiang\kai\Application\Fuzhi\View\jnd28" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\kaijiang\kai\images" />
       <recent name="D:\kaijiang\kai\picture\lot" />
       <recent name="D:\kaijiang\kai\Application\Fuzhi\View\gxk3" />
       <recent name="D:\kaijiang\kai\Application\Fuzhi\View\jlk3" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\kaijiang\kai\Application\Fuzhi\View\jnd28" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -504,7 +482,7 @@
       <updated>1542421779056</updated>
       <workItem from="1542421780281" duration="9976000" />
       <workItem from="1542657623621" duration="8516000" />
-      <workItem from="1550139050202" duration="5778000" />
+      <workItem from="1550139050202" duration="8265000" />
     </task>
     <task id="LOCAL-00001" summary="头部游戏排序，游戏LOGO图片">
       <created>1542446687940</created>
@@ -517,7 +495,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52302000" />
+    <option name="totallyTimeSpent" value="54789000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -594,83 +572,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="头部游戏排序，游戏LOGO图片" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/cqssc/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/ftft/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/gxk3/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/jlk3/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/jnd28/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/js11x5/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/js28/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/jsdd/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/jsk3/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/jssc/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -703,13 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -755,20 +649,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/head.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="92" />
         </state>
       </provider>
     </entry>
@@ -1167,13 +1051,115 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/m/wfssc/hmzs.php">
+    <entry file="file://$PROJECT_DIR$/m/sfssc/hmzs.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-508">
-          <caret line="88" column="43" lean-forward="true" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
+        <state relative-caret-position="225">
+          <caret line="66" column="27" lean-forward="true" selection-end-line="175" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/m/wfssc/hmzs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="89" column="12" lean-forward="true" selection-start-line="89" selection-start-column="12" selection-end-line="89" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="61" lean-forward="true" selection-start-line="13" selection-start-column="61" selection-end-line="13" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="235" column="87" lean-forward="true" selection-start-line="235" selection-start-column="87" selection-end-line="235" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lot/wfpk10/award.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="185" column="95" selection-start-line="185" selection-start-column="95" selection-end-line="185" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2250" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Addons/js/Data/cfg/gameDate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1629">
+          <caret line="867" column="11" selection-start-line="867" selection-start-column="5" selection-end-line="867" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_op.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="70" column="33" lean-forward="true" selection-start-line="70" selection-start-column="33" selection-end-line="70" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/beforPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="51" lean-forward="true" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Data/cfg/gameDate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="1215" column="17" lean-forward="true" selection-start-line="1215" selection-start-column="17" selection-end-line="1215" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="130" column="105" lean-forward="true" selection-start-line="130" selection-start-column="17" selection-end-line="130" selection-end-column="105" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="127" column="42" lean-forward="true" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/merge.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="432" column="34" lean-forward="true" selection-start-line="432" selection-start-column="34" selection-end-line="432" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/merge.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="461" column="35" lean-forward="true" selection-start-line="461" selection-start-column="35" selection-end-line="461" selection-end-column="35" />
         </state>
       </provider>
     </entry>
