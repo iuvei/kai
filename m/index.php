@@ -142,10 +142,12 @@ $.cookie('home_cookiea', '1', { expires: 7 });
             <li><a href="pk10/" game="pk10" class="">北京PK10</a></li>
             <li><a href="sfpk10/" game="jssc">TC三分赛车</a></li>
             <li><a href="tcpk10/" game="tcpk10">TC极速赛车</a></li>
+            <li><a href="wfpk10/" game="wfpk10">五分PK10</a></li>
             <li><a href="xyft/" game="xyft">幸运飞艇</a></li>
             <li><a href="cqssc/" game="cqssc">重庆时时彩</a></li>
             <li><a href="tcssc/" game="tcssc">TC分分彩</a></li>
             <li><a href="sfssc/" game="jsssc">TC三分彩</a></li>
+            <li><a href="wfssc/" game="wfssc">五分时时彩</a></li>
             <li><a game="bjft" href="bjft/">北京番摊</a></li>
             <li><a game="ftft" href="ftft/">飞艇番摊</a></li>
             <li><a game="sfpk10ft" href="sfpk10ft/">三分赛车番摊</a></li>
@@ -220,6 +222,35 @@ $.cookie('home_cookiea', '1', { expires: 7 });
         <div class="kaij-mylist-r">
             <div class="kaij-mylist-hd">
                 <div  class="yx_name">TC三分赛车
+                </div>
+                <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
+            </div>
+            <div class="kaij-mylist-bd">
+                <div class="itm-result">
+                    <div class="ball-wrap" id="number">
+                        <img src="style/images/loading2.gif" alt="载入中">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bt-jg"> </div>
+<!--        <div class="bt-aa">-->
+<!--            <a href="jssc/">开奖历史</a>-->
+<!--            <a href="jssc/smtj.php">两面统计</a>-->
+<!--            <a href="jssc/cltj.php">长龙统计</a>-->
+<!--            <a href="jssc/shipin.php">开奖视频</a>-->
+<!--        </div>-->
+
+        </a>
+    </li>
+    <li class="kaij-mylist-li" id="wfpk10">
+        <a href="wfpk10/" class="yx_a">
+
+<!--                     <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xync"></span></div>-->
+        <div class="kaij-mylist-r">
+            <div class="kaij-mylist-hd">
+                <div  class="yx_name">五分PK10
                 </div>
                 <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
                 <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
@@ -337,6 +368,35 @@ $.cookie('home_cookiea', '1', { expires: 7 });
         <div class="kaij-mylist-r">
             <div class="kaij-mylist-hd">
                 <div class="yx_name">TC三分彩
+                </div>
+                <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
+                <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
+            </div>
+            <div class="kaij-mylist-bd">
+                <div class="itm-result">
+                    <div class="ball-wrap fl" id="number">
+                        <img src="style/images/loading2.gif" alt="载入中">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bt-jg">  </div>
+<!--        <div class="bt-aa">-->
+<!--            <a href="jsssc/">开奖历史</a>-->
+<!--            <a href="jsssc/smtj.php">两面统计</a>-->
+<!--            <a href="jsssc/cltj.php">长龙统计</a>-->
+<!--            <a href="jsssc/shipin.php">开奖视频</a>-->
+<!--        </div>-->
+
+        </a>
+    </li>
+    <li class="kaij-mylist-li cq-box" id="wfssc">
+        <a href="wfssc/" class="yx_a">
+
+<!--                       <div class="kaij-mylist-l"><span class="ui-logo ui-logo-xjssc"></span></div>-->
+        <div class="kaij-mylist-r">
+            <div class="kaij-mylist-hd">
+                <div class="yx_name">五分时时彩
                 </div>
                 <div class="itm-time">下期开奖：<span id="time" class="itm-time-time">载入中</span></div>
                 <div class="itm-tit"><span class="itm-qih" id="qihao">载入中</span></div>
@@ -924,8 +984,12 @@ var jisuk3_number = -1;
  var tcpk10_downTimer = null;
  var sfssc_number = -1;
  var sfssc_downTimer = null;
+ var wfssc_number = -1;
+ var wfssc_downTimer = null;
  var sfpk10_number = -1;
  var sfpk10_downTimer = null;
+ var wfpk10_number = -1;
+ var wfpk10_downTimer = null;
 $(function() {
     CheckAward("xyft", "GetXyftAwardTimes", this.xyft_downTimer, xyft_number, "xyft");
     CheckAward("pk10", "GetPk10AwardTimes", this.pk10_downTimer, pk10_number, "pk10");
@@ -948,8 +1012,10 @@ $(function() {
     CheckAward("txffc", "GetTjsscAwardTimes", this.txffc_downTimer, txffc_number, "txffc");
     CheckAward("tcssc", "GetXjsscAwardTimes", this.tcssc_downTimer, tcssc_number, "tcssc");
     CheckAward("sfssc", "GetXjsscAwardTimes", this.sfssc_downTimer, sfssc_number, "sfssc");
+    CheckAward("wfssc", "GetXjsscAwardTimes", this.wfssc_downTimer, wfssc_number, "wfssc");
     CheckAward("tcpk10", "GetPk10AwardTimes", this.tcpk10_downTimer, tcpk10_number, "tcpk10");
     CheckAward("sfpk10", "GetPk10AwardTimes", this.sfpk10_downTimer, sfpk10_number, "sfpk10");
+    CheckAward("wfpk10", "GetPk10AwardTimes", this.wfpk10_downTimer, wfpk10_number, "wfpk10");
     IndexOpen();
 });
 
@@ -999,8 +1065,12 @@ function showTime(page, timeSpan, time, qihao) {
             CheckAward("tcpk10", "GetXjsscAwardTimes", this.tcpk10_downTimer, tcpk10_number, "tcpk10", qihao)
         }else if (timeSpan == "sfpk10") {
             CheckAward("sfpk10", "GetXjsscAwardTimes", this.sfpk10_downTimer, sfpk10_number, "sfpk10", qihao)
+        }else if (timeSpan == "wfpk10") {
+            CheckAward("wfpk10", "GetXjsscAwardTimes", this.wfpk10_downTimer, wfpk10_number, "wfpk10", qihao)
         }else if (timeSpan == "sfssc") {
             CheckAward("sfssc", "GetXjsscAwardTimes", this.sfssc_downTimer, sfssc_number, "sfssc", qihao)
+        }else if (timeSpan == "wfssc") {
+            CheckAward("wfssc", "GetXjsscAwardTimes", this.wfssc_downTimer, wfssc_number, "wfssc", qihao)
         }
 
         IndexOpen();
@@ -2039,7 +2109,7 @@ function IndexOpen() {
          long = lh(nums);
         $("#tcpk10 #number").html(str);
         $("#tcpk10 .bt-jg").html(long);
-        console.log( data.sfssc);
+
         $("#sfssc #qihao").text('第' + pad(data.sfssc.dat_expect, 3).substr(6) + '期');
 
         var nums = data.sfssc.dat_codes.split(',');
@@ -2053,6 +2123,21 @@ function IndexOpen() {
         $("#sfssc #number").html(str);
         $("#sfssc .bt-jg").html(long);
 
+        $("#wfssc #qihao").text('第' + pad(data.wfssc.dat_expect, 3).substr(6) + '期');
+
+        var nums = data.wfssc.dat_codes.split(',');
+        var str = "";
+        for (var i = 0; i < nums.length; i++) {
+            str = str + "<i class='ball-red'>" + nums[i] + "</i>"
+        }
+        $("#wfssc .bt-jg").html('');
+        var long;
+        long = ssclh(nums,1);
+        $("#wfssc #number").html(str);
+        $("#wfssc .bt-jg").html(long);
+
+
+
         $("#sfpk10 #qihao").text('第' + data.sfpk10.dat_expect.substr(6) + '期');
         var nums = data.sfpk10.dat_codes.split(',');
         var str = "";
@@ -2064,6 +2149,19 @@ function IndexOpen() {
         long = lh(nums);
         $("#sfpk10 #number").html(str);
         $("#sfpk10 .bt-jg").html(long);
+
+
+        $("#wfpk10 #qihao").text('第' + data.wfpk10.dat_expect.substr(2) + '期');
+        var nums = data.wfpk10.dat_codes.split(',');
+        var str = "";
+        for (var i = 0; i < nums.length; i++) {
+            str = str + "<i class='no" + nums[i].replace(/\b(0+)/gi,"") + "'>" + nums[i].replace(/\b(0+)/gi,"") + "</i>"
+        }
+        $("#wfpk10 .bt-jg").html('');
+        var long;
+        long = lh(nums);
+        $("#wfpk10 #number").html(str);
+        $("#wfpk10 .bt-jg").html(long);
 
     },
 

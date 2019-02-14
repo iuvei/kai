@@ -80,6 +80,12 @@ if(strpos($self,"xyft")){
 }elseif(strpos($self,"jnd28")){
     $web_type = "加拿大28";
     $name = 55;
+}elseif(strpos($self,"wfpk10")){
+    $web_type = "五分PK10";
+    $name = 62;
+}elseif(strpos($self,"wfssc")){
+    $web_type = "五分时时彩";
+    $name = 61;
 }else{
     $name = 20;
 	$web_type = "北京PK10";

@@ -56,7 +56,7 @@
                 if(result&&result.rows){
                     var j = 0;
                     var html = '';
-                    if(gamekey=='cqssc'||gamekey=='gd11x5'||gamekey=='js11x5'){
+                    if(gamekey=='cqssc'||gamekey=='gd11x5'||gamekey=='js11x5'||gamekey=='wfssc'){
                         for(var i in result.rows) {
                             var data = result.rows[i];
                             html += '<div class="openCode">';

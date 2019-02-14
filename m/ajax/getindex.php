@@ -2,9 +2,11 @@
 include("../conn.php");
 $ret = array();
 $ret['pk10'] = gettopdata(20);
+$ret['wfpk10'] = gettopdata(62);
 $ret['xyft'] = gettopdata(34);
 $ret['ftft'] = gettopdata(34);
 $ret['cqssc'] = gettopdata(1);
+$ret['wfssc'] = gettopdata(61);
 $ret['gdkl10'] = gettopdata(21);
 $ret['jssc'] = gettopdata(39);
 $ret['gd11x5'] = gettopdata(6);

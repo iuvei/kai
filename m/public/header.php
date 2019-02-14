@@ -9,11 +9,13 @@
 
             <li><a href="../pk10/" game="pk10" class="">北京PK10</a></li>
             <li><a href="../sfpk10/" game="jssc">TC三分赛车</a></li>
+            <li><a href="../wfpk10/" game="jssc">五分PK10</a></li>
             <li><a href="../tcpk10/" game="tcpk10">TC极速赛车</a></li>
             <li><a href="../xyft/" game="xyft">幸运飞艇</a></li>
             <li><a href="../cqssc/" game="cqssc">重庆时时彩</a></li>
             <li><a href="../tcssc/" game="tcssc">TC分分彩</a></li>
             <li><a href="../sfssc/" game="jsssc">TC三分彩</a></li>
+            <li><a href="../wfssc/" game="jsssc">五分时时彩</a></li>
             <li><a game="bjft" href="../bjft/">北京番摊</a></li>
             <li><a game="ftft" href="../ftft/">飞艇番摊</a></li>
             <li><a game="sfpk10ft" href="../sfpk10ft/">三分赛车番摊</a></li>
