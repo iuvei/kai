@@ -81,7 +81,7 @@ animateMethod.loadingList = function (n, i) {
                 a[t] = e[r], e.splice(r, 1)
             }
             for (var l = "", d = 0; d < 10; d++) {
-                var o = a[d] < 10 ? "nub0" + a[d] : "nub" + a[d];
+                var o ="nub" + a[d];
                 l += 9 == d ? "<li style='margin-right: 0px;' class='" + o + "'></li>" : "<li class='" + o + "'></li>"
             }
             $(n).find(".numberbox").empty(), $(n).find(".numberbox").append(l), 100 == i && $("#waringbox").show(300)
