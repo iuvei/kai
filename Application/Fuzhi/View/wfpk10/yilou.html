@@ -337,7 +337,7 @@
                         			rankVal="";
                         		}
                        			$.post("missing/getMissingList.do",
-                       				{dataType:dataType,gameId:gameId,rank:rankVal,orderCloumn:orderCloumn,orderType:orderType },
+                       				{dataType:dataType,gameId:62,rank:rankVal,orderCloumn:orderCloumn,orderType:orderType },
                        				function(r) {
                         				if (r) {
                         					doTCompile("missing_list", r.t);
@@ -358,7 +358,7 @@
                         			dataType=dataTypeNum;
                         		if(rankNum)
                         			rank=rankNum;
-                           	 	window.location.href="sfpk10/yilou.html#dataType="+dataType+"&gameId="+gameId+"&rank="+rank+"&orderCloumn="+orderCloumn+"&orderType="+orderType;
+                           	 	window.location.href="wfpk10/yilou.html#dataType="+dataType+"&gameId="+gameId+"&rank="+rank+"&orderCloumn="+orderCloumn+"&orderType="+orderType;
                            		getMissingList();
                            	}
                             $(".web_Sortk .btn span").live("click",

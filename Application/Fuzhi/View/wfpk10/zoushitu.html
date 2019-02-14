@@ -79,7 +79,7 @@
 							var num = $(".ball ul li .cur").attr("num");
 							var tag = $(".zst-type .cur").attr("tag");
 							if (tag == "guanya") {
-								$.get("sfpk10/guangyatrenddata.do", {
+								$.get("wfpk10/guangyatrenddata.do", {
 									count : 40,
 									t : Math.random()
 								}, function(result) {
@@ -90,7 +90,7 @@
 								}, "json");
 							} else {
 								if (!num && ball) {
-									$.get("sfpk10/numbertrendData.do", {
+									$.get("wfpk10/numbertrendData.do", {
 										ball : ball,
 										count : 40,
 										t : Math.random()
@@ -100,7 +100,7 @@
 											return this.x + '期:' + this.y }, 0, 10, true);
 									}, "json");
 								} else {
-									$.get("sfpk10/positiontrenddata.do", {
+									$.get("wfpk10/positiontrenddata.do", {
 										ball : num,
 										count : 40,
 										t : Math.random()

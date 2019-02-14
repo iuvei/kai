@@ -1069,10 +1069,7 @@ var webListOP = {
 //					"text":"淘宝模式",
 //					"href":"pk10/betmode.html"
 //				},
-        {
-            "text":"免费参考",
-            "href":"sfpk10/betgame.html"
-        },
+
         /*{
             "text":"TC三分赛车开奖直播",
             "href":"sfpk10/shipin/",
@@ -1171,10 +1168,7 @@ var webListOP = {
 //					"text":"淘宝模式",
 //					"href":"pk10/betmode.html"
 //				},
-        {
-            "text":"免费参考",
-            "href":"wfpk10/betgame.html"
-        },
+
         /*{
             "text":"TC三分赛车开奖直播",
             "href":"wfpk10/shipin/",

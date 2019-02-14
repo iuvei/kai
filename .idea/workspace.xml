@@ -2,19 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aeccc0ce-7afd-4f39-a56e-3d313d3b26de" name="Default" comment="头部游戏排序，游戏LOGO图片">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_op.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_op.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/merge.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqft/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/fc3d1/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/gxk3/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jiqiao/gd11x5/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jlk3/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js11x5/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/js28/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/js28/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsdd/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsk3/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/jsssc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pc28/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pcdd/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pk10/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/pl3/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfcft/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/sfssc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tcssc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/tjssc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/txffc/kaijiang.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/kaijiang.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/merge.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/merge.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/Data/cfg/gameDate.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/Data/cfg/gameDate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/beforPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/beforPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/lot/wfpk10/award.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/lot/wfpk10/award.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/wfssc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/wfssc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xjssc/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xyft/kaijiang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Fuzhi/View/xync/kaijiang.html" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Fuzhi/View/xync/kaijiang.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,8 +125,8 @@
         <counts>
           <entry key="bak" value="1" />
           <entry key="css" value="3" />
-          <entry key="html" value="27" />
-          <entry key="js" value="19" />
+          <entry key="html" value="60" />
+          <entry key="js" value="21" />
           <entry key="php" value="48" />
           <entry key="ts" value="2" />
         </counts>
@@ -115,8 +134,8 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="3" />
-          <entry key="HTML" value="27" />
-          <entry key="JavaScript" value="19" />
+          <entry key="HTML" value="60" />
+          <entry key="JavaScript" value="21" />
           <entry key="PHP" value="48" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="TypeScript" value="2" />
@@ -133,37 +152,89 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/kaijiang.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="127" column="42" lean-forward="true" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
+            <state relative-caret-position="270">
+              <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/merge.html">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/kaijiang.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1350" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/kaijiang.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="432" column="34" lean-forward="true" selection-start-line="432" selection-start-column="34" selection-end-line="432" selection-end-column="34" />
+              <caret line="21" column="69" lean-forward="true" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/kaijiang.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/tcssc/kaijiang.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/tjssc/kaijiang.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/txffc/kaijiang.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/kaijiang.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="354">
+              <caret line="113" column="28" lean-forward="true" selection-start-line="113" selection-start-column="28" selection-end-line="113" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/wfssc/kaijiang.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/merge.html">
+        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/xyft/kaijiang.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="461" column="35" lean-forward="true" selection-start-line="461" selection-start-column="35" selection-end-line="461" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="479">
-              <caret line="130" column="105" lean-forward="true" selection-start-line="130" selection-start-column="17" selection-end-line="130" selection-end-column="105" />
+            <state relative-caret-position="270">
+              <caret line="18" column="54" lean-forward="true" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -181,9 +252,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getPk10AwardTimes.do</find>
-      <find>xia-yxx-list</find>
-      <find>pcdd</find>
       <find>newIssue</find>
       <find>mlaft</find>
       <find>江苏骰宝</find>
@@ -207,10 +275,13 @@
       <find>cqssc</find>
       <find>五分彩</find>
       <find>periodNumberStr</find>
-      <find>sfpk10</find>
       <find>sfssc</find>
       <find>三分</find>
       <find>eobsLuzhu</find>
+      <find>sfpk10</find>
+      <find>{count:120,data:data},</find>
+      <find>pk10/getHistoryData.do</find>
+      <find>{count:120,date:date}</find>
     </findStrings>
     <replaceStrings>
       <replace>20181112</replace>
@@ -243,7 +314,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/jnd28/kaijiang.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/cqft/index.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/cqssc/index.html" />
@@ -285,7 +355,6 @@
         <option value="$PROJECT_DIR$/m/wfssc/smtj.php" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_latest.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/Common/index.html" />
-        <option value="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/kaijiang.html" />
         <option value="$PROJECT_DIR$/js/lot/wfpk10/award.js" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/Public/lottory_op.html" />
         <option value="$PROJECT_DIR$/js/beforPage.js" />
@@ -294,6 +363,8 @@
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/merge.html" />
         <option value="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/merge.html" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/kaijiang.html" />
+        <option value="$PROJECT_DIR$/Application/Fuzhi/View/pk10/kaijiang.html" />
       </list>
     </option>
   </component>
@@ -379,7 +450,28 @@
               <item name="Application" type="462c0819:PsiDirectoryNode" />
               <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
-              <item name="wfpk10" type="462c0819:PsiDirectoryNode" />
+              <item name="cqft" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kia" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="cqssc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kia" type="462c0819:PsiDirectoryNode" />
+              <item name="Application" type="462c0819:PsiDirectoryNode" />
+              <item name="Fuzhi" type="462c0819:PsiDirectoryNode" />
+              <item name="View" type="462c0819:PsiDirectoryNode" />
+              <item name="xyft" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="kia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="kia" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kia" type="b2602c69:ProjectViewProjectNode" />
@@ -482,7 +574,7 @@
       <updated>1542421779056</updated>
       <workItem from="1542421780281" duration="9976000" />
       <workItem from="1542657623621" duration="8516000" />
-      <workItem from="1550139050202" duration="8265000" />
+      <workItem from="1550139050202" duration="10688000" />
     </task>
     <task id="LOCAL-00001" summary="头部游戏排序，游戏LOGO图片">
       <created>1542446687940</created>
@@ -495,7 +587,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54789000" />
+    <option name="totallyTimeSpent" value="57212000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -572,452 +664,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="头部游戏排序，游戏LOGO图片" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/jssc/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/jsssc/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/pcdd/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-375">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/pk10/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-225">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfcft/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/tcssc/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/txffc/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/xyft/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/Public/head.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/ajax/getindex_qx66.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/public/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="54" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/style/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="302" column="20" lean-forward="true" selection-start-line="302" selection-start-column="20" selection-end-line="302" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="2152" lean-forward="true" selection-start-line="2152" selection-end-line="2152" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#4;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#6;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/wfpk10/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="999">
-          <caret line="207" column="42" selection-start-line="207" selection-start-column="38" selection-end-line="207" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/wfpk10/award.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="184" column="49" lean-forward="true" selection-start-line="184" selection-start-column="49" selection-end-line="184" selection-end-column="49" />
-          <folding>
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/gxk3/jiqiao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="59" column="52" selection-start-line="59" selection-start-column="44" selection-end-line="59" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/ajax/getindex.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/conn.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="85" column="31" lean-forward="true" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/wfpk10/smtj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="35" column="45" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="45" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#font#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/sfpk10/cltj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2690" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/sfpk10/hmzs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="93" column="55" selection-start-line="93" selection-start-column="55" selection-end-line="93" selection-end-column="55" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/wfpk10/hmzs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/wfpk10/cltj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="233" column="24" selection-start-line="233" selection-start-column="24" selection-end-line="233" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/wfssc/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1170" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/public/paging.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-193">
-          <caret line="175" column="61" lean-forward="true" selection-start-line="175" selection-start-column="61" selection-end-line="175" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#3;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/public/sscPage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="58" column="97" lean-forward="true" selection-start-line="58" selection-start-column="97" selection-end-line="58" selection-end-column="97" />
-          <folding>
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/wfpk10/hmzs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="887">
-          <caret line="146" column="37" selection-start-line="146" selection-start-column="37" selection-end-line="146" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/sfssc/award.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="244" column="9" selection-start-line="244" selection-start-column="9" selection-end-line="244" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#2;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/m/wfssc/award.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="240" column="35" selection-start-line="240" selection-start-column="35" selection-end-line="240" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/m/wfssc/lrtj.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1080">
@@ -1128,13 +774,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/kaijiang.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="72" column="32" selection-start-line="72" selection-start-column="32" selection-end-line="72" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="479">
@@ -1145,21 +784,272 @@
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="451">
-          <caret line="127" column="42" lean-forward="true" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
+          <caret line="127" column="42" selection-start-line="127" selection-start-column="42" selection-end-line="127" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/merge.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="432" column="34" lean-forward="true" selection-start-line="432" selection-start-column="34" selection-end-line="432" selection-end-column="34" />
+          <caret line="432" column="34" selection-start-line="432" selection-start-column="34" selection-end-line="432" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/merge.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="461" column="35" lean-forward="true" selection-start-line="461" selection-start-column="35" selection-end-line="461" selection-end-column="35" />
+        <state relative-caret-position="719">
+          <caret line="461" column="35" selection-start-line="461" selection-start-column="35" selection-end-line="461" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/kl8/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="144" column="37" selection-start-line="144" selection-start-column="37" selection-end-line="144" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/pk10/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lot/pk10/award.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="175" column="33" selection-start-line="175" selection-start-column="11" selection-end-line="175" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/lot/bjft/award.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+            <element signature="e#0#6#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/bjft/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3077">
+          <caret line="228" column="59" lean-forward="true" selection-start-line="228" selection-start-column="59" selection-end-line="228" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/cqft/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="72" lean-forward="true" selection-start-line="30" selection-start-column="72" selection-end-line="30" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/cqssc/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="65" selection-start-line="28" selection-start-column="65" selection-end-line="28" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/ftft/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="219" column="49" lean-forward="true" selection-start-line="219" selection-start-column="49" selection-end-line="219" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/gd11x5/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/gdkl10/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="29" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/gxk3/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/jisuk3/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="82" selection-start-line="23" selection-start-column="82" selection-end-line="23" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/jlk3/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/jnd28/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="67" lean-forward="true" selection-start-line="24" selection-start-column="67" selection-end-line="24" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/js11x5/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="67" lean-forward="true" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/js28/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="25" lean-forward="true" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/jsdd/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="60" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/jsk3/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/jsssc/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="25" lean-forward="true" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/pc28/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/pcdd/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="59" lean-forward="true" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/pk10/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="117" column="64" lean-forward="true" selection-start-line="117" selection-start-column="64" selection-end-line="117" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfcft/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="9" lean-forward="true" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfpk10ft/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1350" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/sfssc/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="69" lean-forward="true" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/tcpk10/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/tcssc/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="40" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/tjssc/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/txffc/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/wfpk10/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="113" column="28" lean-forward="true" selection-start-line="113" selection-start-column="28" selection-end-line="113" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/wfssc/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Application/Fuzhi/View/xyft/kaijiang.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="54" lean-forward="true" selection-start-line="18" selection-start-column="54" selection-end-line="18" selection-end-column="54" />
         </state>
       </provider>
     </entry>
