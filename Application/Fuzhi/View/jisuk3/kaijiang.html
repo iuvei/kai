@@ -75,7 +75,7 @@
 					    //$.get("jisuk3/getHistoryNumber.do?date=" + $("#dateData").val(), null, function (datas)
 					    var date=$("#dateData").val();
                         $.post("jisuk3/getHistoryData.do",
-                             {count:120,date:date}, function(datas) {
+                             {count:120}, function(datas) {
 					    	if(datas){
 					    		var data = datas.rows;
 					    		var str = '<tr class="head"><td width="140px">期号</td><td width="120px">时间</td> <td>开奖号码</td><td colspan="2">总和</td></tr>';
