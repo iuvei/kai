@@ -5391,7 +5391,7 @@ class LottoryDataMgr
 
     function getAllCodesCntByLotType($lotType)
     {
-        if ($lotType == 20 || $lotType == 34 || $lotType ==62) {
+        if ($lotType == 20 || $lotType == 34 || $lotType ==62 ||$lotType ==61) {
             return 10;
         } else {
             if ($lotType == 1) {
@@ -5439,7 +5439,7 @@ class LottoryDataMgr
                                                                     if ($lotType == 50) {
                                                                         return 6;
                                                                     }else{
-                                                                        if ($lotType == 51 || $lotType ==61) {
+                                                                        if ($lotType == 51) {
                                                                             return 6;
                                                                         }
                                                                     }
