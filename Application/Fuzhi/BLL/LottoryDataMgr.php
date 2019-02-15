@@ -67,6 +67,7 @@ class LottoryDataMgr
                 $ret = RemoteDataMgr::getData($urlAll);
             } else {
                 if ($page == "twoSidedStat.do") {
+//                    print_r(123);die;
                     $ret = RemoteDataMgr::getData($urlAll, "", $cacheName . I('get.id'));
                 } else {
                     if ($page == "numbertrendData.do" || $page == "positiontrenddata.do") {
@@ -2805,16 +2806,13 @@ class LottoryDataMgr
 
     function getTwoSidedStat($type, $page, $lotType, $expire)
     {
-
         $id = (int)wjStrFilter(I('get.id'));
-
         $cacheName = $type . '_' . $page . '_' . $id;
         $ret = S($cacheName);
         if ($ret === false || $ret == '') {
             $shows = array();
             $iOpenCodeCnt = $this->getOpenCodeCntByLotType($lotType);
             $iAllCodesCnt = $this->getAllCodesCntByLotType($lotType);
-
             $bFirstZero = $this->isStartFromZero($lotType);
 
             if ($id > 0 && $id <= $iOpenCodeCnt) {
@@ -2851,7 +2849,7 @@ class LottoryDataMgr
                         }
                     }
 
-                    if ($lotType == 20 || $lotType == 34 || $lotType == 46 || $lotType == 47) {
+                    if ($lotType == 20 || $lotType == 34 || $lotType == 46 || $lotType == 47 || $lotType ==62) {
                         $code = $OpenCodes[0] + $OpenCodes[1];
                         $code_num = 11;
                     } else if ($lotType == 1 || $lotType == 45 || $lotType == 48 || $lotType == 44 || $lotType == 6) {
@@ -5523,7 +5521,7 @@ class LottoryDataMgr
                                                                                 return true;
                                                                             } else{
                                                                                 if($lotType == 62){
-                                                                                    return true;
+                                                                                    return false;
                                                                                 }}
 
                                                                         }
