@@ -5,7 +5,6 @@ class RemoteDataMgr
 {
     static function getData($url, $postParam = "", $cacheName = NULL, $expire = 60)
     {
-
         $ret = null;
         $refresh = true;
         if ($cacheName) {
@@ -19,7 +18,11 @@ class RemoteDataMgr
         }
 
         if ($refresh) {
+            print_r($url.'---');
+            print_r($postParam);
+            exit;
             $ret = fopen_url($url, $postParam);
+
             if ($cacheName && $ret != '') {
                 S($cacheName, $ret, array('type' => 'file', 'expire' => $expire));
             }
