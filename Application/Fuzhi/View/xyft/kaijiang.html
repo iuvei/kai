@@ -154,7 +154,7 @@
 			        //开奖历史
 			        function getHistoryData(date){
 			    		$.post("xyft/getHistoryData.do",
-                            {count:120,date:date},
+			   				{count:120,date:date},
 			   				function(r) {
 			    				if (r) {
 			    					doTCompile("history_data", r.rows);
