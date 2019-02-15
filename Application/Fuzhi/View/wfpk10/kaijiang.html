@@ -123,23 +123,21 @@
                         }
                         reloadTwoBallRemind();
 
-
+                        function Search() {
+                            getHistory($("#dateData").val());
+                        }
                         //开奖历史
-                        function getHistoryData(data){
+                        function getHistory(data){
+                            console.log($("#dateData").val())
                             $.post("wfpk10/getHistoryData.do",
-                                {count:120,date:date},
+                                {count:120,date:data},
                                 function(r) {
                                     if (r) {
                                         doTCompile("history_data", r.rows);
                                     }
                                 }, "json");
                         }
-                        getHistoryData(null);
-
-                        function Search() {
-                            getHistoryData($("#dateData").val());
-                        }
-
+                        getHistory(null);
 					</script>
 				</div>
 				<!--  内容结束-->

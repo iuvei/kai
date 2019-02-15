@@ -103,7 +103,7 @@
 					        function changeBall(ball) {
 					            var _container = $("#callFun").attr("container");
 					            _container = _container ? _container : "lot-wrap";
-					            $.get("sfssc/twoSidedStat.do", { t: Math.random(), id: ball }, function (r) {
+					            $.get("wfssc/twoSidedStat.do", { t: Math.random(), id: ball }, function (r) {
 					            	doTCompile("twoSidedStat_data", r);
 					            },"json");
 					        }
