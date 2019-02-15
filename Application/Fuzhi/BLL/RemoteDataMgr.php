@@ -18,9 +18,6 @@ class RemoteDataMgr
         }
 
         if ($refresh) {
-            print_r($url.'---');
-            print_r($postParam);
-            exit;
             $ret = fopen_url($url, $postParam);
 
             if ($cacheName && $ret != '') {

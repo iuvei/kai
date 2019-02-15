@@ -287,7 +287,7 @@ class LottoryDataMgr
                 $ret = $this->getPk10Data($type, $page, $param);
             }
             if($type == 'wfssc'){
-                $ret = $this->getPk10Data($type, $page, $param);
+                $ret = $this->getcqsscData($type, $page, $param);
             }
             if ($type == 'pk10') {
                 // dump($type);die;
@@ -337,7 +337,6 @@ class LottoryDataMgr
 
     private function getPk10Data($type, $page, $param)
     {
-
         $ret = false;
         $expire = 2;
         if ($type == 'cqft') {$type = 'cqssc';}
@@ -2602,7 +2601,6 @@ class LottoryDataMgr
 
     function getcqsscHaomaLuData($type, $page, $lotType, $expire)
     {
-
 //        dump($type);dump($page);dump($lotType);dump($expire);die;
         $date = wjStrFilter(I('get.date'));
         $today = date("Y-m-d");
