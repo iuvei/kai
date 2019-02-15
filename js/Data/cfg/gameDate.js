@@ -93,11 +93,7 @@ var webListOP = {
 					"text":"pk10技巧",
 					"href":"jiqiao/pk10/"
 				},
-				{
-					"text":"遗漏大数据",
-					"href":"pk10/omitdata.html",
 
-				},
 				{
 					"text":"两面数据统计",
 					"href":"pk10/twosidedstat.html",
@@ -192,11 +188,7 @@ var webListOP = {
             "text":"幸运飞艇技巧",
             "href":"jiqiao/xyft/"
         },
-        {
-            "text":"遗漏大数据",
-            "href":"xyft/omitdata.html",
 
-        },
         {
             "text":"两面数据统计",
             "href":"xyft/twosidedstat.html",
@@ -295,11 +287,7 @@ var webListOP = {
             "text":"TC极速赛车技巧",
             "href":"jiqiao/jssc/"
         },
-        {
-            "text":"遗漏大数据",
-            "href":"jssc/omitdata.html",
 
-        },
         {
             "text":"两面数据统计",
             "href":"jssc/twosidedstat.html",
@@ -405,11 +393,7 @@ var webListOP = {
 					"href":"javascript:void(0);",
 					"spanClass":"wen_newIcon"
 				},
-				{
-					"text":"遗漏大数据",
-					"href":"gdkl10/omitdata.html",
 
-				},
 				{
 					"text":"两面数据统计",
 					"href":"gdkl10/twosidedstat.html",
@@ -499,11 +483,7 @@ var webListOP = {
 					"href":"cqssc/twosidedstat.html",
 					"spanClass":"wen_newIcon"
 				},
-				{
-					"text":"遗漏大数据",
-					"href":"cqssc/omitdata.html",
 
-				}
 			],
 
 		"jsk3": [
@@ -580,11 +560,7 @@ var webListOP = {
 						"href":"cqft/shipin",
 						"aClass":"redColor"
 					},*/
-					{
-						"text":"遗漏大数据",
-						"href":"cqft/omitdata.html",
 
-					}
 				],
 	"sfcft": [
 					{
@@ -620,11 +596,7 @@ var webListOP = {
 						"href":"cqft/shipin",
 						"aClass":"redColor"
 					},*/
-					{
-						"text":"遗漏大数据",
-						"href":"sfcft/omitdata.html",
 
-					}
 				],
     "bjft": [
         {
@@ -657,11 +629,7 @@ var webListOP = {
             "text":"番摊技巧",
             "href":"jiqiao/bjft/"
         },
-        {
-            "text":"遗漏大数据",
-            "href":"bjft/omitdata.html",
 
-        },
         {
             "text":"横版走势图",
             "href":"bjft/zoushitu.html"
@@ -698,11 +666,7 @@ var webListOP = {
             "text":"番摊技巧",
             "href":"jiqiao/ftft/"
         },
-        {
-            "text":"遗漏大数据",
-            "href":"ftft/omitdata.html",
 
-        },
         {
             "text":"横版走势图",
             "href":"ftft/zoushitu.html"
@@ -739,11 +703,7 @@ var webListOP = {
             "text":"番摊技巧",
             "href":"jiqiao/sfpk10ft/"
         },
-        {
-            "text":"遗漏大数据",
-            "href":"sfpk10ft/omitdata.html",
 
-        },
         {
             "text":"横版走势图",
             "href":"sfpk10ft/zoushitu.html"
@@ -777,11 +737,7 @@ var webListOP = {
     //         "text":"加拿大28技巧",
     //         "href":"jiqiao/pc28/"
     //     },
-    //     {
-    //         "text":"遗漏大数据",
-    //         "href":"pc28/omitdata.html",
-    //
-    //     },
+
     //     {
     //         "text":"横版走势图",
     //         "href":"pc28/zoushitu.html"
@@ -818,11 +774,7 @@ var webListOP = {
             "text":"分分彩技巧",
             "href":"jiqiao/txffc/"
         },
-        {
-            "text":"遗漏大数据",
-            "href":"txffc/omitdata.html",
 
-        },
         {
             "text":"横版走势图",
             "href":"txffc/zoushitu.html"
@@ -879,11 +831,7 @@ var webListOP = {
             "href":"jsssc/shipin",
             "aClass":"redColor"
         },*/
-        {
-            "text":"遗漏大数据",
-            "href":"jsssc/omitdata.html",
 
-        },
         {
             "text":"两面数据统计",
             "href":"jsssc/twosidedstat.html",
@@ -933,11 +881,7 @@ var webListOP = {
             "href":"tcssc/shipin",
             "aClass":"redColor"
         },*/
-        // {
-        //     "text":"遗漏大数据",
-        //     "href":"tcssc/omitdata.html",
-		//
-        // },
+
         // {
         //     "text":"两面数据统计",
         //     "href":"tcssc/twosidedstat.html",
@@ -1088,11 +1032,7 @@ var webListOP = {
             "text":"TC三分赛车技巧",
             "href":"jiqiao/sfpk10/"
         },
-        {
-            "text":"遗漏大数据",
-            "href":"sfpk10/omitdata.html",
 
-        },
         {
             "text":"两面数据统计",
             "href":"sfpk10/twosidedstat.html",
@@ -1187,11 +1127,7 @@ var webListOP = {
             "text":"五分PK10技巧",
             "href":"jiqiao/wfpk10/"
         },
-        {
-            "text":"遗漏大数据",
-            "href":"wfpk10/omitdata.html",
 
-        },
         {
             "text":"两面数据统计",
             "href":"wfpk10/twosidedstat.html",
@@ -1265,11 +1201,7 @@ var webListOP = {
             "href":"sfssc/shipin",
             "aClass":"redColor"
         },*/
-        {
-            "text":"遗漏大数据",
-            "href":"sfssc/omitdata.html",
 
-        },
         {
             "text":"两面数据统计",
             "href":"sfssc/twosidedstat.html",
@@ -1326,11 +1258,7 @@ var webListOP = {
             "href":"wfssc/shipin",
             "aClass":"redColor"
         },*/
-        {
-            "text":"遗漏大数据",
-            "href":"wfssc/omitdata.html",
 
-        },
         {
             "text":"两面数据统计",
             "href":"wfssc/twosidedstat.html",
@@ -1466,11 +1394,7 @@ var webListOP = {
             "href":"pcdd/betgame.html",
             "spanClass":"wen_newIcon"
         },
-        {
-            "text":"遗漏大数据",
-            "href":"pcdd/omitdata.html",
 
-        },
         {
             "text":"横版走势图",
             "href":"pcdd/zoushitu.html"
@@ -1509,11 +1433,7 @@ var webListOP = {
             "href":"js28/betgame.html",
             "spanClass":"wen_newIcon"
         },
-        {
-            "text":"遗漏大数据",
-            "href":"js28/omitdata.html",
 
-        },
         {
             "text":"横版走势图",
             "href":"js28/zoushitu.html"
@@ -1552,11 +1472,7 @@ var webListOP = {
             "href":"jsdd/betgame.html",
             "spanClass":"wen_newIcon"
         },
-        {
-            "text":"遗漏大数据",
-            "href":"jsdd/omitdata.html",
 
-        },
         {
             "text":"横版走势图",
             "href":"jsdd/zoushitu.html"
@@ -1595,11 +1511,7 @@ var webListOP = {
             "href":"jnd28/betgame.html",
             "spanClass":"wen_newIcon"
         },
-        {
-            "text":"遗漏大数据",
-            "href":"jnd28/omitdata.html",
 
-        },
         {
             "text":"横版走势图",
             "href":"jnd28/zoushitu.html"
@@ -1638,11 +1550,7 @@ var webListOP = {
             "href":"js11x5/betgame.html",
             "spanClass":"wen_newIcon"
         },
-        {
-            "text":"遗漏大数据",
-            "href":"js11x5/omitdata.html",
 
-        },
         {
             "text":"横版走势图",
             "href":"js11x5/zoushitu.html"
