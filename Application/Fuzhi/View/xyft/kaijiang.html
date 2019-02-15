@@ -152,7 +152,7 @@
 
 
 			        //开奖历史
-			        function getHistoryData(date){
+			        function getHistory(date){
 			    		$.post("xyft/getHistoryData.do",
 			   				{count:120,date:date},
 			   				function(r) {
@@ -161,10 +161,10 @@
 			    				}
 			   			}, "json");
 			        }
-			        getHistoryData(null);
+			        getHistory(null);
 
 				    function Search() {
-				    	getHistoryData($("#dateData").val());
+				    	getHistory($("#dateData").val());
 				    }
 
 				</script>
