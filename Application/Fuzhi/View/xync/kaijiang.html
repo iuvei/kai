@@ -92,7 +92,7 @@
 				        function getHistoryData(){
 				        	var date=$("#dateData").val();
 			        		$.post("xync/getHistoryData.do",
-			       				{count:120},
+                                {count:120,date:date},
 			       				function(r) {
 			        				if (r) {
 			        					doTCompile("history_data", r.rows);

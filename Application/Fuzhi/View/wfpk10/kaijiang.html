@@ -127,7 +127,7 @@
                         //开奖历史
                         function getHistoryData(data){
                             $.post("wfpk10/getHistoryData.do",
-                                {count:120},
+                                {count:120,date:date},
                                 function(r) {
                                     if (r) {
                                         doTCompile("history_data", r.rows);
