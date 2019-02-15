@@ -33,7 +33,7 @@
 			<script type="text/javascript">
                 function updatePickdate() {
                     var selDate = $("#dateData").val();
-                    $.get("/sfssc/getLonghuLuzhuData.do", {
+                    $.get("/wfssc/getLonghuLuzhuData.do", {
                         t : Math.random(),
                         date : selDate
                     }, function(text) {

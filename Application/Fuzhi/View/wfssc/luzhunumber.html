@@ -32,7 +32,7 @@
 			<script type="text/javascript">
                 function updatePickdate() {
                     var selDate = $("#dateData").val();
-                    $.get("/sfssc/getHaomaLuData.do", {
+                    $.get("/wfssc/getHaomaLuData.do", {
                         t : Math.random(),
                         date : selDate
                     }, function(text) {
